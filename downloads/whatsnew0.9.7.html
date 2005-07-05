@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=Shift_JIS">
+		<title>変更点 0.9.6 -> 0.9.7</title>
+	</head>
+	<body bgcolor="#ffffff">
+<h1>変更点 0.9.6 -> 0.9.7</h1>
+<ul>
+<li>「/*」などのパスパターンにMayaサーブレットがマッピングされている際の、
+ウェルカムファイルアクセスに対するパス解決機能を追加しました。</li>
+<li>Cactusの使用をやめ、関連Jarをプロジェクトから取り除きました。</li>
+<li>.mayaファイル中にネストしたタグインジェクションを記述した場合の挙動について
+ 細かなバグを修正しました。</li>
+<li>ComponentPageProcessorがテンプレートボディを2度出力してしまう場合がある
+ バグについて修正しました。</li>
+<li>SVNリポジトリに移動しました。https://www.seasar.org/svn/sandbox/maya/trunk
+ がリポジトリURLとなります。</li>
+<li>idによるインジェクションを行う際に、/maya/*[@m:id='message']のように、2層目のみの
+ idを検索するXPathから、/maya//*[@m:id='message']とn層目のidも検索するようにしました。</li>
+ <li>PropertyDefinitionのサービスメソッドを変更しました。プロパティ設定をPropertyDefinition
+ に委譲するように設計されていたものを、PropertyDefinitionはあくまでファクトリとして動作し、
+ ProcessorDefinition内で設定処理を行うようにしました。 </li>
+<li>独自の例外の基底をMayaExceptionとしました。このMayaExceptionは、
+ 同一パッケージにあるmessage.propertiesより、完全修飾型名をキーに
+ メッセージを取得する機能のみが実装されています。</li>
+<li>ページ描画途中に例外発生した際、コンテキストバッファをクリアしてなかったために、
+ 途中まで描画された後に例外ページの書き出しを行っていました。例外処理の中で
+ コンテキストバッファをクリアすることにより、この問題に対応しました。</li>
+<li>依存するJaxenのバージョンを1.1-beta7に変更しました。</li>
+<li>名前空間URIを、http://www.seasar.org/maya から http://maya.seasar.org に変更しました。</li>
+</ul>
+</body>
+</html>
