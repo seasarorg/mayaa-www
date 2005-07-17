@@ -1,0 +1,224 @@
+◆ Maya 0.9.7.1 簡易マニュアル ◆
+
+  この簡易マニュアルには簡単な使い方ができる程度の内容をまとめてあり
+ます。詳細なマニュアルはしばらくお待ちください。
+
+  MayaはJSPの代替に位置します。JSPを利用するフレームワーク
+であれば、基本的に置き換え可能です。
+
+
+■ファイルの種類
+
+confファイル:
+      Maya自身の設定ファイルです。Mayaを細かくカスタマイズする場合や、
+    デフォルト設定を変更する場合などに利用します。
+
+      簡易マニュアルでは省略します。
+
+HTMLファイル:
+      テンプレートとして利用するHTMLファイルです。用途によって純粋な
+    XHTML・HTMLファイルから、Maya独自の記述を追加したファイルまで利用
+    できます。
+
+mayaファイル:
+      HTMLファイルに１対１で対応するページ設定ファイルで、拡張子は
+    「.maya」です。HTMLファイル名の拡張子を「maya」に変更したものが
+    対応する設定ファイルになります。無くても構いません。
+      すべてのHTML用のデフォルト設定ファイルは「/WEB-INF/default.maya」
+    です。このファイル名はconfファイルにて変更可能です。
+
+      設定の優先度は次の順番です。
+        1. HTMLファイル上に記述した設定
+        2. ページ設定ファイル
+        3. デフォルトページ設定ファイル
+      3から順番に読み込まれ、2、1の順に上書きされると考えてください。
+    この仕組みで、デフォルトページ設定ファイルに全体的な設定を記述し、
+    一部のページのみ特殊な設定をする、ということも実現できます。
+
+■mayaファイルの書き方
+
+○名前空間の定義
+      ルートであるmayaタグにprefixとnamespaceの対応を設定します。
+    利用するタグライブラリの宣言にもなります。
+
+    定義の例: mayaファイルに書く場合
+        <maya xmlns:m="http://maya.seasar.org"
+                xmlns:c="http://java.sun.com/jstl/core_rt">
+        prefix: m
+            Mayaの各種機能
+        prefix: c
+            JSTL 1.0 coreのRequest Timeライブラリ版
+
+    定義の例: HTMLファイルに書く場合
+        <html lang="ja"
+                xmlns:m="http://maya.seasar.org"
+                xmlns:c="http://java.sun.com/jstl/core_rt">
+        prefix: m
+            Mayaの各種機能
+        prefix: c
+            JSTL 1.0 coreのRequest Timeライブラリ版
+
+      設定タグを記述する際の名前空間指定は、親要素と同じ場合にのみ
+    省略可能です。
+
+    省略の例:
+          例としてJSTL coreのoutタグを使うよう設定します。
+            <c:out m:id="greeting" c:value="こんにちは" />
+
+          タグの名前空間は"c"なので、outタグの属性"value"の名前空間を
+        省略できます。Maya属性は名前空間"m"なので省略できません。
+
+            <c:out m:id="greeting" value="こんにちは" />
+
+          HTMLファイル上に書く場合、タグの名前空間はHTMLタグの名前空間
+        になりますので、埋め込む設定用属性の名前空間を省略することは
+        できません。
+        (m:injectはHTMLタグ上に他名前空間の機能を埋め込むための属性で、
+        その値はm:injectの値で指定した名前空間を使って設定します)
+
+            <span m:inject="c:out" c:value="こんにちは">dummy</span>
+
+○タグの関連付け
+      タグと設定を関連付ける方法は２種類あります。
+
+        - idによる関連付け
+        - XPath (のロケーションパス) による関連付け
+
+      基本的にはidによる関連付けを利用することを想定しています。HTML
+    ファイルを編集できない場合や複数の要素へ一度に設定したい場合には、
+    XPathによる関連付けが有効です。
+
+・idによる関連付け
+      HTMLタグにid属性を付けている場合、このidによって設定対象のタグ
+    を特定できます。
+      基本的にid属性がついたタグは置き換えの対象となります。id属性を
+    持つタグをMayaに無視させたい場合、ignore指定をしてください。
+
+    設定方法:
+        <タグ m:id="対象のid" />
+
+    無視する設定:
+        <m:ignore m:id="無視するid"/>
+
+    設定の例:
+        HTMLファイル
+            <span id="catName">ダミーの猫名</span>
+
+        mayaファイル
+            <c:out m:id="catName" value="実際の猫名" />
+
+・XPathによる関連付け
+      id属性がある場合、ない場合に関わらず、設定対象のタグをXPath
+    (ロケーションパス) で指定できます。
+
+    設定方法:
+        <タグ m:xpath="対象のXPath指定" />
+
+    設定の例:
+        HTMLファイル
+            <html>
+                <head>
+                    <title>ダミーのタイトル</title>
+                </head>
+
+        mayaファイル
+            <c:out m:xpath="/html/head/title" value="実際のタイトル"
+                                                m:rendered="true"/>
+            ※m:renderedは指定したタグそのものを出力するという設定を
+              する属性です。trueの場合、タグのボディが置き換わります。
+
+    XPath指定の一例:
+        - titleタグの絶対パス指定
+            /html/head/title
+
+        - 全spanタグ指定
+            //span
+
+        - 全spanタグのうちclass属性がdummyのものを指定
+            //span[@class='dummy']
+
+        - 全タグのうちclass属性がdummyのものを指定
+            //*[@class='dummy']
+
+    参考:
+        W3C: XML Path Language (XPath) Version 1.0
+        http://www.w3.org/TR/1999/REC-xpath-19991116
+
+○動的値を使用する
+      動的な値を指定する場合、式言語を使います。式言語にはOGNLを
+    採用しています。
+        OGNL
+        http://www.ognl.org/
+        OGNL 2.6.7 言語ガイド
+        http://www.ognl.org/2.6.7/Documentation/html/LanguageGuide/
+
+      式言語は ${} で囲んで使います。
+
+    例:
+        <span m:inject="c:out" c:value="${ dto.message }">hello</span>
+
+○Maya独自属性リファレンス
+
+・mayaファイル上でのみ使う属性
+    - m:id
+        HTMLファイルのid属性を利用して設定を行うために使用します。
+        値にはHTMLファイルのid属性の値を指定します。
+
+    - m:xpath
+        HTMLファイルのXPathを利用して設定を行うために使用します。
+        値にはHTMLファイル要素のXPathを指定します。
+
+・HTMLファイル上でのみ使う属性
+    - m:inject
+        HTMLタグにMayaの機能を埋め込むために使用します。
+        値には名前空間を含めた機能名を指定します。埋め込んだ機能の
+        属性を指定する場合、属性の名前空間には機能の名前空間を記述
+        します。
+        たとえばJSTL coreのカスタムタグoutを指定する場合は次の
+        ようにします。
+
+        <span m:inject="c:out" c:value="hello">
+
+・mayaファイル、HTMLファイルの両方で使う属性
+    - m:rendered
+        HTMLタグを有効にする設定のために使用します。
+        値に"true"を指定した場合はタグが有効になります。
+
+        例えば次のように書いた場合、m:renderedがtrueならa、false なら
+        bのHTMLが生成されます。
+
+        <span class="greeting" m:inject="c:out"
+                c:value="hello" m:rendered="true">dummy</span>
+
+        a. rendered="true"の場合
+            <span class="greeting">hello</span>
+
+        b. rendered="false"の場合
+            hello
+
+    ライフサイクル機能で使う属性
+    - m:class
+        説明未作成
+
+    - m:scope
+        説明未作成
+
+    - m:beforeRender
+        説明未作成
+
+    - m:afterRender
+        説明未作成
+
+○コンポーネント機能
+      説明未作成
+
+
+○ライフサイクル機能
+      説明未作成
+
+    例: (sample/lifecycle1.maya)
+    <maya class="org.seasar.maya.sample.TimeModel"
+            scope="application"
+            beforeRender="${ beforeTime() }"
+            afterRender="${ afterTime() }" >
+
