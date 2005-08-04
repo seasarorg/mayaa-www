@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=Shift_JIS">
+		<title>Maya 変更点 0.9.6 -> 0.9.7</title>
+	</head>
+	<body bgcolor="#ffffff">
+<h1>変更点 0.9.7.1 -> 0.9.8</h1>
+<ul>
+<li>PageContextなどJSP-APIへの依存を局所化し、ServiceCycleオブジェクトに
+  Servlet-APIも隠蔽しました。</li>
+<li>未来日付のファイルを処理するときに、無限ループにはいる問題を修正しました。</li>
+<li>スペックを満たさないJSPカスタムタグを利用できないようにJSPコンテナとタグの
+ バージョンチェックする機能を復活させました。</li>
+<li>URLClassLoaderを前提としたJarライブラリの検索をやめ、ファイルシステムを利用した
+  Jarファイルの検索を行うようにしました。</li>
+<li>サンプルのプレビュー再現性においてCSSがうまく効いてなかったのを修正しました。</li>
+<li>デフォルト名前空間を適切に処理しないバグを修正しました。</li>
+<li>XML宣言を出力しない問題を修正しました。</li>
+<li>JSP暗黙オブジェクトの対応を追加修正しました。</li>
+<li>JSPカスタムタグの属性に式を指定したとき、その式の例外をキャッチして食いつぶしていたところを、
+  キャッチしないようにして、例外がそのまま伝播するように修正しました。</li>
+<li>その他、細かなバグ修正およびAPI仕様の変更をおこないました。</li>
+</ul>
+</body>
+</html>
