@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=Shift_JIS">
+		<title>Maya リリースノート</title>
+	</head>
+	<body bgcolor="#ffffff">
+<h1>変更点 0.9.10 -> 0.9.11</h1>
+<ul>
+
+<li>ECMA1.3のBoolean値の取り扱いにおいて、意図しない動作となる問題を回避しました。</li>
+
+<li>テンプレート上の属性に、空白文字を値とするものがあると動作しないバグを修正しました。</li>
+
+<li>テンプレート上のエレメントのIDがマッチするものが無いときに例外を出していたところを、
+ 警告のログ出力するにとどめるよう、変更しました。</li>
+
+<li>パース済みテンプレートがきちんとキャッシュされていないバグを修正しました。</li>
+
+<li>.mayaファイルの直接実行を可能にしました。ブラウザから直接.maya拡張子のURL
+  にアクセスすると、エンジンおよび該当ページの.mayaのイベント発火を行いますが、
+  テンプレート描画はしません。</li>
+
+<li>ServiceCycleに、スクリプトファイルをロードする、load(systemID, encoding)メソッドを
+  追加しました。この機能によって、スクリプトソースをスクリプト実行にて読み込むことが
+  できるようになりました。</li>
+
+</ul>
+</body>
+</html>
