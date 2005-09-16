@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=Shift_JIS">
+		<title>Maya リリースノート</title>
+	</head>
+	<body bgcolor="#ffffff">
+<h1>変更点 0.9.11 -> 0.9.12</h1>
+<ul>
+
+<li>ProviderFactoryImplで、maya.providerファイルを読み込む際に、各コンポーネントの
+  生成を決め打ちでおこなっていたところを修正しました。</li>
+
+<li>m:doRenderプロセッサで、m:rendered="true"としたときに、テンプレートエレメントが
+ 出力されない問題を修正しました。</li>
+
+<li>テンプレートエレメントが直接描画される場合に、m:rendered="false"を記述すると、
+ そのエレメントおよび子のエレメントの出力が抑制されるS2JSF互換機能を追加しました。</li>
+
+<li>ページ描画時のイベントを、m:beforeRender属性およびm:afterRender属性のもの
+ に加え、m:beforeRenderタグおよびm:afterRenderタグでも行う機能を追加しました。</li>
+
+<li>m:pageプロセッサおよびm:doRenderプロセッサに、m:name属性を追加し、名前明示
+ にて同一テンプレート中の複数コンポーネントブロックを呼び分けることができるようにしました。</li>
+
+<li>コンポーネント上でもちいる描画機能として、m:doBodyから分離してm:doBaseを
+ 用意しました。</li>
+
+<li>MLDのproperty定義に、final属性を追加し、アプリケーションにて変更不可の値設定を
+ 行えるようにしました。</li>
+
+<li>.mayaファイルだけでテンプレートの無いコンポーネントを作れるようにしました。</li>
+
+<li>Tiles類似のデザイン継承機能を追加しました。</li>
+
+<li>HTMLテンプレートのHTMLエレメントに直接m:classやm:beforeRenderなどの記述を
+  許していましたが、上記デザイン継承機能と矛盾するようになったので、廃止しました。
+  結果、ページモデルおよびページイベントの機能を利用する場合には、.mayaファイル
+  を必要とするようになりました。</li>
+
+</ul>
+</body>
+</html>
