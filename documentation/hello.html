@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+    <title>Maya : Documentation : 2-1. 最初の一歩</title>
+    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+</head>
+<body>
+<div class="header">
+<div>Maya : JavaServer Templates</div>
+</div>
+
+<div class="navi">
+<a href="./install.html">←インストールしよう</a>
+<a href="./index.html">↑index</a>
+<a href="./conditional.html">条件分岐とループ→</a>
+</div>
+
+<div class="main">
+
+<h1>2-1. 最初の一歩</h1>
+
+<p>早速ページを作成し、動作させてみましょう。Tomcat を再起動する必要はありません。「インストールしよう」で動作させた <code>C:\tomcat\webapps\maya</code> の下に新しくファイルを追加します。</p>
+
+<h2>Hello Maya</h2>
+
+<p>「Hello Maya!」とだけ表示するページを作ります。ダミーメッセージを含むテンプレート <code>hello.html</code> と、その設定を行う <code>hello.maya</code> を次のように作成します。</p>
+
+<pre>
+<code>hello.html</code>
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;span <strong>id="message"</strong>&gt;dummy message&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+<code>hello.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;m:write <strong>id="message"</strong> value="<strong>Hello Maya!</strong>" /&gt;
+&lt;/m:maya&gt;</div></pre>
+
+<p>テンプレート <code>hello.html</code> 上の span タグと <code>id</code> が一致するものを maya ファイル <code>hello.maya</code> 上から探し、<code>value</code> の値である「Hello maya!」という文字列に置き換えて出力します。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/maya/hello.html" target="_blank">http://localhost:8080/maya/hello.html</a></code> にアクセスしてみましょう。</p>
+
+<pre>
+実行結果 (改行などは実際の実行結果と異なります)
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    <strong>Hello Maya!</strong>
+&lt;/body&gt;
+&lt;/html&gt;</div></pre>
+
+
+<h2>テンプレート上のタグを残す</h2>
+
+<p>maya ファイルで使用している <code>m:write</code> は <code>value</code> の値をそのまま出力します。テンプレート上のタグを維持したまま中身だけ書き換えたい場合は、属性として <code>rendered="true"</code> を追加します。</p>
+
+<pre>
+<code>hello.html</code>
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;span id="message"&gt;dummy message&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+<code>hello.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;m:write id="message" value="Hello Maya!" <strong>rendered="true"</strong> /&gt;
+&lt;/m:maya&gt;</div>
+実行結果
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    <strong>&lt;span id="message"&gt;</strong>Hello Maya!<strong>&lt;/span&gt;</strong>
+&lt;/body&gt;
+&lt;/html&gt;</div></pre>
+
+
+<h2>スクリプトでオブジェクトを出力する</h2>
+
+<p>Maya では様々な場所でスクリプトを使用できます。スクリプト言語は JavaScript (標準で利用する実装は <a href="http://www.mozilla.org/rhino/" title="Rhino: JavaScript for Java">Rhino</a>) です。スクリプトを使用するときには <code>&#36;{ }</code> で囲んで記述します。</p>
+
+<pre>
+<code>hello.html</code>
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;span id="message"&gt;dummy message&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+<code>hello.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;m:write id="message" value="<strong>&#36;{ 1 + 2 }</strong>" /&gt;
+&lt;/m:maya&gt;</div>
+実行結果
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    <strong>3</strong>
+&lt;/body&gt;
+&lt;/html&gt;</div></pre>
+
+<h3>request や session に格納されている値を使う</h3>
+
+<p>JSP と同じようにスクリプトから request や session を使えます。たとえば request スコープにある "attributeName" という属性の値を取得するには、<code>&#36;{ request.getAttribute("attributeName") }</code> と書きます。</p>
+<p>参照するだけであれば、もっと簡単に、直接 <code>&#36;{ attributeName }</code> と変数名として記述できます。変数をスコープから探す順番は、ページのスコープ、request スコープ、session スコープの順で、どこにも見つからない場合は例外を投げます。</p>
+
+<p>試しに request スコープの値を参照してみましょう。<code>hello.maya</code>を次のように書き換えます。</p>
+
+<pre>
+<code>hello.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;m:write id="message" value="Hello <strong>&#36;{ name }</strong>" /&gt;
+&lt;/m:maya&gt;</div></pre>
+
+<p>ブラウザで <code><a href="http://localhost:8080/maya/hello.html?name=world" target="_blank">http://localhost:8080/maya/hello.html?name=world</a></code> にアクセスしてみましょう。</p>
+
+<pre>
+実行結果
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    <strong>Hello world</strong>
+&lt;/body&gt;
+&lt;/html&gt;</div></pre>
+
+<p>URL で渡した name を参照できましたね。</p>
+
+
+</div>
+
+<div class="navi">
+<a href="./install.html">←インストールしよう</a>
+<a href="./index.html">↑index</a>
+<a href="./conditional.html">条件分岐とループ→</a>
+</div>
+
+<div class="footer">
+&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
+</div>
+
+</body>
+</html>

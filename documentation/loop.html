@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+    <title>Maya : Documentation : 2-3. テンプレートを活かすループ</title>
+    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+</head>
+<body>
+<div class="header">
+<div>Maya : JavaServer Templates</div>
+</div>
+
+<div class="navi">
+<a href="./conditional.html">←条件分岐とループ</a>
+<a href="./index.html">↑index</a>
+<a href="./customtag.html">JSP カスタムタグを使う→</a>
+</div>
+
+<div class="main">
+
+<h1>2-3. テンプレートを活かすループ</h1>
+
+<p>ループする部分のテンプレートを活かしたサンプルを作ってみましょう。「インストールしよう」で動作させた <code>C:\tomcat\webapps\maya</code> の下に新しくファイルを追加します。</p>
+
+<h2>テーブルを作る</h2>
+
+<p>HTML の TABLE を作り、行のみを繰り返して出力します。まず、テンプレートをそのまま出力してみましょう。id で関連付けられたタグのボディを処理するには、<code>m:doBody</code> を使います。</p>
+
+<pre>
+<code>doBody.html</code>
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;table border="1"&gt;
+    &lt;span <strong>id="loop"</strong>&gt;
+        <strong>&lt;tr&gt;&lt;td&gt;hello&lt;/td&gt;&lt;/tr&gt;</strong>
+    &lt;/span&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+<code>doBody.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;m:for <strong>id="loop"</strong>
+            init="&#36;{ var i = 0 }"
+            test="&#36;{ i &amp;lt; 5 }"
+            after="&#36;{ i++ }"&gt;
+        &lt;<strong>m:doBody</strong> /&gt;
+    &lt;/m:for&gt;
+&lt;/m:maya&gt;</div></pre>
+
+<p>maya ファイルの <code>m:for</code> と関連付いているのは span タグです。span タグのボディである tr, td タグおよびその内容が、テンプレートの状態のまま繰り返し出力されます。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/maya/doBody.html" target="_blank">http://localhost:8080/maya/doBody.html</a></code> にアクセスしてみましょう。</p>
+
+<pre>
+実行結果
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;table border="1"&gt;
+        <strong>&lt;tr&gt;&lt;td&gt;hello&lt;/td&gt;&lt;/tr&gt;</strong>
+        <strong>&lt;tr&gt;&lt;td&gt;hello&lt;/td&gt;&lt;/tr&gt;</strong>
+        <strong>&lt;tr&gt;&lt;td&gt;hello&lt;/td&gt;&lt;/tr&gt;</strong>
+        <strong>&lt;tr&gt;&lt;td&gt;hello&lt;/td&gt;&lt;/tr&gt;</strong>
+        <strong>&lt;tr&gt;&lt;td&gt;hello&lt;/td&gt;&lt;/tr&gt;</strong>
+    &lt;/table&gt;
+&lt;/body&gt;&lt;/html&gt;</div></pre>
+
+<h2>動的な出力を繰り返す</h2>
+
+<p>次に、td タグの中身を動的な値に変更してみましょう。</p>
+
+<pre>
+<code>doBody.html</code>
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;table border="1"&gt;
+    &lt;span id="loop"&gt;
+        &lt;tr&gt;&lt;td&gt;<strong>&lt;span id="message"&gt;</strong>hello<strong>&lt;/span&gt;</strong>&lt;/td&gt;&lt;/tr&gt;
+    &lt;/span&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+<code>doBody.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;m:for id="loop"
+            init="&#36;{ var i = 0 }"
+            test="&#36;{ i &amp;lt; 5 }"
+            after="&#36;{ i++ }"&gt;
+        &lt;m:doBody /&gt;
+    &lt;/m:for&gt;
+
+    <strong>&lt;m:write id="message" value="&#36;{ i }" /&gt;</strong>
+&lt;/m:maya&gt;</div>
+実行結果
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;table border="1"&gt;
+        &lt;tr&gt;&lt;td&gt;<strong>0</strong>&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;<strong>1</strong>&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;<strong>2</strong>&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;<strong>3</strong>&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;<strong>4</strong>&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;&lt;/html&gt;</div></pre>
+
+<p>ループするとき、<code>m:doBody</code> を実行するタイミングで span タグのボディのみを maya ファイル全体と対応させて出力を行います。</p>
+
+<div class="figure">図 2-3-1: doBody 実行イメージ<br><img src="./images/doBody.png" title="図 2-3-1: doBody 実行イメージ" width="581" height="524"></div>
+
+<p>「<a href="./conditional.html">条件分岐とループ</a>」で「<q>初期化部 <code>init</code> で宣言した変数 <code>i</code> は、<code>m:for</code> の範囲内で有効です</q>」と説明しましたが、このサンプルでは <code>m:for</code> の外にある <code>m:write</code> で変数 <code>i</code> を使えています。</p>
+<p>これは現在処理している位置が <code>m:doBody</code> の位置にあるものとして処理されるためです。<code>m:doBody</code> は <code>m:for</code> のボディにありますので、ループ変数 <code>i</code> を利用できます。</p>
+
+<h2>span を使わずに実現する</h2>
+
+<p>制御のために span タグを埋め込みたくない場合もあるでしょう。<code>rendered="true"</code> を設定すれば、span タグを使わずに同じことを実現できます。</p>
+<p>繰り返すのは tr タグとその内側なので、<code>m:for</code> と関連付けるのは tr タグです。変数 <code>i</code> を出力するのは td タグの内側なので、<code>m:write</code> と関連付けるのは td タグです。</p>
+
+<pre>
+<code>doBody.html</code>
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;table border="1"&gt;
+        &lt;tr <strong>id="loop"</strong>&gt;&lt;td <strong>id="message"</strong>&gt;hello&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+<code>doBody.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;m:for id="loop" <strong>rendered="true"</strong>
+            init="&#36;{ var i = 0 }"
+            test="&#36;{ i &amp;lt; 5 }"
+            after="&#36;{ i++ }"&gt;
+        &lt;m:doBody /&gt;
+    &lt;/m:for&gt;
+
+    &lt;m:write id="message" value="&#36;{ i }" <strong>rendered="true"</strong> /&gt;
+&lt;/m:maya&gt;</div>
+実行結果
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;table border="1"&gt;
+        &lt;tr <strong>id="loop"</strong>&gt;&lt;td <strong>id="message"</strong>&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr <strong>id="loop"</strong>&gt;&lt;td <strong>id="message"</strong>&gt;1&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr <strong>id="loop"</strong>&gt;&lt;td <strong>id="message"</strong>&gt;2&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr <strong>id="loop"</strong>&gt;&lt;td <strong>id="message"</strong>&gt;3&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr <strong>id="loop"</strong>&gt;&lt;td <strong>id="message"</strong>&gt;4&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;&lt;/html&gt;</div></pre>
+
+<p>ただしこの方法では同じ id を持つタグが複数できてしまうため、生成される HTML は綺麗なものとはいえません。これが問題になるようであれば、span タグを使う方法を使ってください。</p>
+
+</div>
+
+<div class="navi">
+<a href="./conditional.html">←条件分岐とループ</a>
+<a href="./index.html">↑index</a>
+<a href="./customtag.html">JSP カスタムタグを使う→</a>
+</div>
+
+<div class="footer">
+&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
+</div>
+
+</body>
+</html>
