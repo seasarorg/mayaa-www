@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+    <title>Maya : Documentation : 2-7. HTML 部品を使う (動的)</title>
+    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+</head>
+<body>
+<div class="header">
+<div>Maya : JavaServer Templates</div>
+</div>
+
+<div class="navi">
+<a href="./component1.html">←HTML 部品を使う (静的)</a>
+<a href="./index.html">↑index</a>
+<a href="./layout.html">レイアウト共有機能を使う→</a>
+</div>
+
+<div class="main">
+
+
+<h1>2-7. HTML 部品を使う (動的)</h1>
+
+<p>コンポーネントで動的な表示を扱ってみましょう。スクリプトを使う方法などは通常のテンプレートと同じですので、特別なのは親 (利用する側) のページとの値の受け渡しです。基本的な考え方としては、コンポーネントを利用する <code>m:insert</code> タグの位置に、コンポーネントの内容を直接書いた場合と同じです。</p>
+
+
+<h2>コンポーネントで親ページの変数を使う</h2>
+
+<p>次のサンプルはコンポーネント側で必要とする変数を決め、それを親ページ側であらかじめセットしておく方法のサンプルです。コンポーネントは "Hello Maya!" という文字列に続けて変数 <code>count</code> の内容を出力します。親ページは <code>for</code> プロセッサを使いコンポーネントを繰り返し使用します。そのときのループカウンタとして <code>count</code> を使うようにします。</p>
+
+<pre>
+<code>hello.html</code>
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello&lt;/h1&gt;
+    &lt;div <strong>id="comp"</strong>&gt;dummy&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+<code>hello.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;m:for <strong>id="comp"</strong>
+            init="&#36;{ var <strong>count</strong> = 0 }"
+            test="&#36;{ count &amp;lt; 5 }"
+            after="&#36;{ count++ }"&gt;
+        &lt;<strong>m:insert</strong> path="/component.html" /&gt;
+    &lt;/m:for&gt;
+&lt;/m:maya&gt;</div>
+<code>component.html</code>
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;h1&gt;dummy for preview&lt;/h1&gt;
+    &lt;span <strong>id="centered"</strong>&gt;
+        &lt;div <strong>id="message"</strong> style="text-align: center"&gt;component value&lt;/div&gt;
+    &lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+<code>component.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;<strong>m:doRender</strong> <strong>id="centered"</strong> /&gt;
+
+    &lt;m:write <strong>id="message"</strong> value="Hello Maya! <strong>&#36;{ count }</strong>" rendered="true" /&gt;
+&lt;/m:maya&gt;</div></pre>
+
+<p>ブラウザで <code><a href="http://localhost:8080/maya/hello.html" target="_blank">http://localhost:8080/maya/hello.html</a></code> にアクセスしてみましょう。</p>
+
+<pre>
+実行結果
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello&lt;/h1&gt;
+        &lt;div id="message" style="text-align: center"&gt;Hello Maya! <strong>0</strong>&lt;/div&gt;
+        &lt;div id="message" style="text-align: center"&gt;Hello Maya! <strong>1</strong>&lt;/div&gt;
+        &lt;div id="message" style="text-align: center"&gt;Hello Maya! <strong>2</strong>&lt;/div&gt;
+        &lt;div id="message" style="text-align: center"&gt;Hello Maya! <strong>3</strong>&lt;/div&gt;
+        &lt;div id="message" style="text-align: center"&gt;Hello Maya! <strong>4</strong>&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div></pre>
+
+<p>親テンプレート側の変数を素直に利用できていることがわかります。イメージとしては、JavaScript の変数スコープの考え方と同じです。もしコンポーネントの処理をするスコープで <code>count</code> という名前の変数がない場合、変数が見つからないというエラーが発生します。</p>
+
+<div class="figure">図 2-7-1: コンポーネントの変数スコープのイメージ<br><img src="./images/component_var_scope.png" title="図 2-7-1: コンポーネントの変数スコープのイメージ" width="573" height="176"></div>
+
+
+<h2>親ページからコンポーネントに変数を渡す</h2>
+
+<p>親ページから変数を明示的にコンポーネントへ渡すこともできます。<code>m:insert</code> タグの属性として「変数名="値"」と書くことで、指定した変数をコンポーネントに渡すことになります。コンポーネントのタイトルやキャプションを指定する場合などに便利です。</p>
+<P>渡された変数を参照する場合、<code>&#36;{ binding.変数名 }</code> と書きます。存在しない変数名を指定すると <code>undefined</code> が返ります。</P>
+
+<pre>
+<code>hello.html</code>
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello&lt;/h1&gt;
+    &lt;div id="comp"&gt;dummy&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+<code>hello.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;m:insert id="comp" path="/component.html" <strong>title="Component Title"</strong> /&gt;
+&lt;/m:maya&gt;</div>
+<code>component.html</code>
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;h1&gt;dummy for preview&lt;/h1&gt;
+    &lt;span id="centered"&gt;
+        &lt;h2&gt;&lt;span <strong>id="componentTitle"</strong>&gt;Dummy Title&lt;/span&gt;&lt;/h2&gt;
+        &lt;div id="message" style="text-align: center"&gt;component value&lt;/div&gt;
+    &lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+<code>component.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;m:doRender id="centered" /&gt;
+
+    &lt;m:write <strong>id="componentTitle"</strong> value="<strong>&#36;{ binding.title }</strong>" /&gt;
+    &lt;m:write id="message" value="Hello Maya!" rendered="true" /&gt;
+&lt;/m:maya&gt;</div>
+実行結果
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello&lt;/h1&gt;
+        &lt;h2&gt;<strong>Component Title</strong>&lt;/h2&gt;
+        &lt;div id="message" style="text-align: center"&gt;Hello Maya!&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div></pre>
+
+<p>この表記法のため、<code>insert</code> プロセッサが本来持つ属性名と同じ変数名 (たとえば id, path) はそのままでは使用できません。そのような変数を渡すには、属性の名前空間を maya の名前空間以外にします。</p>
+<p>この変数の渡し方は、<code>insert</code> プロセッサの属性として正しくない属性を変数として扱うという仕組みのため、どんな名前空間を使っても問題ありません。プレフィクスを付けた場合でも、変数名には属性のローカル名 (プレフィクスの無い状態) が使われます。</p>
+
+
+<pre>
+独自の名前空間を作って割り当てる
+<code>hello.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"
+        <strong>xmlns:x="my_namespace"</strong>&gt;
+    &lt;m:insert id="comp" path="/component.html" <strong>x:</strong>title="Component Title" /&gt;
+&lt;/m:maya&gt;</div></pre>
+
+
+<h2>親ページの内容をコンポーネントの内側で出力する</h2>
+
+<p>コンポーネントに穴が開いているかのように、コンポーネントの内部で親ページの内容を出力できます。その際の変数スコープはコンポーネントの変数スコープの上になりますので、コンポーネントが定義した変数を親ページから参照することができます。</p>
+<p>親コンポーネントのボディを実行するには、<code>doBase</code> プロセッサを使います。使い方は <code>doBody</code> プロセッサとほぼ同じで、<code>doBase</code> プロセッサを実行するタイミングで、<code>insert</code> プロセッサが割り当てられたタグのボディを親ページの maya ファイルと合わせて実行します。</p>
+<p>次のサンプルは「親ページのボディを 5 回繰り返すコンポーネント」を使うサンプルです。親ページのボディでは、変数 <code>i</code> を使えます。</p>
+
+<pre>
+<code>hello.html</code>
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello&lt;/h1&gt;
+    &lt;div <strong>id="comp"</strong>&gt;
+        &lt;div id="message" style="text-align: center"&gt;Dummy&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+<code>hello.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;m:insert <strong>id="comp"</strong> path="/component.html" /&gt;
+
+    &lt;m:write id="message" value="<strong>&#36;{ i }</strong> Hello Maya!" rendered="true" /&gt;
+&lt;/m:maya&gt;</div>
+<code>component.html</code>
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;h1&gt;dummy for preview&lt;/h1&gt;
+    &lt;span <strong>id="loop"</strong>&gt;
+        &lt;span id="draw"&gt;component value&lt;/span&gt;
+    &lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+<code>component.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;<strong>m:doRender</strong> <strong>id="loop"</strong> /&gt;
+
+    &lt;m:for id="draw"
+            init="&#36;{ var i = 0 }"
+            test="&#36;{ i &amp;lt; 5 }"
+            after="&#36;{ i++ }"&gt;
+        <strong>&lt;m:doBase /&gt;</strong>
+    &lt;/m:for&gt;
+&lt;/m:maya&gt;</div>
+実行結果
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello&lt;/h1&gt;
+        &lt;div id="message" style="text-align: center"&gt;<strong>0</strong> Hello Maya!&lt;/div&gt;
+        &lt;div id="message" style="text-align: center"&gt;<strong>1</strong> Hello Maya!&lt;/div&gt;
+        &lt;div id="message" style="text-align: center"&gt;<strong>2</strong> Hello Maya!&lt;/div&gt;
+        &lt;div id="message" style="text-align: center"&gt;<strong>3</strong> Hello Maya!&lt;/div&gt;
+        &lt;div id="message" style="text-align: center"&gt;<strong>4</strong> Hello Maya!&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div></pre>
+
+<p>一度出力対象を親ページに戻すため、動作は通常のコンポーネントよりもやや複雑になります。</p>
+
+<div class="figure">図 2-7-2: doBase 実行イメージ<br><img src="./images/doBase.png" title="図 2-7-2: doBase 実行イメージ" width="569" height="534"></div>
+
+
+<h2>request, session で値を共有する</h2>
+
+<p>もちろん、request や session を使って値を共有することもできます。特別なことは何もありませんので説明は省略します。</p>
+
+</div>
+
+<div class="navi">
+<a href="./component1.html">←HTML 部品を使う (静的)</a>
+<a href="./index.html">↑index</a>
+<a href="./layout.html">レイアウト共有機能を使う→</a>
+</div>
+
+<div class="footer">
+&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
+</div>
+
+</body>
+</html>
