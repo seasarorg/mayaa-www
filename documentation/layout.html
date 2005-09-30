@@ -47,7 +47,7 @@
 &lt;m:maya xmlns:m="http://maya.seasar.org"
         <strong>extends="/layout.html"</strong>&gt;
 
-    &lt;<strong>m:doRender</strong> <strong>id="content"</strong> /&gt;
+    &lt;<strong>m:doRender</strong> <strong>id="content"</strong> <strong>name="contentBody"</strong> /&gt;
 &lt;/m:maya&gt;</div>
 <code>layout.html</code>
 <div class="file">&lt;html&gt;
@@ -60,7 +60,7 @@
 <code>layout.maya</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 &lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
-    &lt;<strong>m:insert</strong> <strong>id="contentPosition"</strong> /&gt;
+    &lt;<strong>m:insert</strong> <strong>id="contentPosition"</strong> <strong>name="contentBody"</strong> /&gt;
 &lt;/m:maya&gt;</div></pre>
 
 <p>コンポーネントの例と違う点は次の 4 点です。</p>
@@ -110,7 +110,7 @@
 
 <h2>レイアウトページの置き換え場所を複数指定する</h2>
 
-<p>レイアウトの置き換え場所 (<code>insert</code> プロセッサを置くところ) を複数指定することもできます。置き換え場所を区別するには、コンポーネントを複数作るときと同様に、それぞれの場所に名前を付けて区別します。</p>
+<p>レイアウトの置き換え場所 (<code>insert</code> プロセッサを置くところ) を複数指定することもできます。置き換え場所を区別するには、コンポーネントを複数作るときと同様に名前を使います。</p>
 
 <pre>
 <code>hello.html</code>
@@ -174,7 +174,7 @@
 &lt;m:maya xmlns:m="http://maya.seasar.org"
         extends="/layout.html"&gt;
 
-    &lt;m:doRender id="content" /&gt;
+    &lt;m:doRender id="content" name="contentBody" /&gt;
 &lt;/m:maya&gt;</div>
 <code>layout.html</code>
 <div class="file">&lt;html&gt;
@@ -188,7 +188,7 @@
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 &lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
     <strong>&lt;m:insert id="comp" path="/component.html" /&gt;</strong>
-    &lt;m:insert id="contentPosition" /&gt;
+    &lt;m:insert id="contentPosition" name="contentBody" /&gt;
 &lt;/m:maya&gt;</div>
 <code>component.html</code>
 <div class="file">&lt;html&gt;
