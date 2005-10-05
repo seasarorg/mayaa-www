@@ -41,7 +41,7 @@
 
 <h3>HTML タグにプロセッサを割り当てる</h3>
 
-<p>動的な出力を行うには、基本的には HTML タグに id 属性を付け、maya ファイルでその id を指定してプロセッサと対応させます。デフォルトでは id を指定した元のタグとそのボディ (タグで囲まれた範囲) を消し、maya ファイルで定義したプロセッサの出力によって置き換えます。プロセッサのタグに <code>rendered="true"</code> と属性を付けた場合、元のタグを消さずにボディだけをプロセッサの出力によって置き換えます。</p>
+<p>動的な出力を行うには、基本的には HTML タグに id 属性を付け、maya ファイルでその id を指定してプロセッサと対応させます。デフォルトでは id を指定した元のタグとそのボディ (タグで囲まれた範囲) を消し、maya ファイルで定義したプロセッサの出力によって置き換えます。プロセッサのタグに <code>replace="false"</code> と属性を付けた場合、元のタグを消さずにボディだけをプロセッサの出力によって置き換えます。</p>
 <p>「置き換える」という点に注意してください。たとえば図 2-5-2 のテンプレートには、id 属性を持つタグが 4 つあります。</p>
 
 <div class="figure">図 2-5-2: id でテンプレート上の要素を識別する<br><img src="./images/maya_file2.png" title="図 2-5-2: id で HTML ファイル上の要素を識別する" width="472" height="180"></div>
@@ -157,7 +157,7 @@ page.maya
 <code>hello.maya</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 &lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
-    &lt;m:write <strong>id="message"</strong> value="<strong>Hello Maya!</strong>" rendered="true" /&gt;
+    &lt;m:write <strong>id="message"</strong> value="<strong>Hello Maya!</strong>" replace="false" /&gt;
 &lt;/m:maya&gt;</div></pre>
 
 

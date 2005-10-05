@@ -43,7 +43,7 @@
 <code>hello.maya</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 &lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
-    &lt;<strong>m:insert</strong> <strong>id="comp"</strong> <strong>path="/component.html"</strong> rendered="true" /&gt;
+    &lt;<strong>m:insert</strong> <strong>id="comp"</strong> <strong>path="/component.html"</strong> replace="false" /&gt;
 &lt;/m:maya&gt;</div>
 <code>component.html</code>
 <div class="file">&lt;html&gt;
@@ -57,7 +57,7 @@
 <code>component.maya</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 &lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
-    &lt;<strong>m:doRender</strong> <strong>id="centered"</strong> rendered="true" /&gt;
+    &lt;<strong>m:doRender</strong> <strong>id="centered"</strong> replace="false" /&gt;
 &lt;/m:maya&gt;</div></pre>
 
 <p>関係するファイルは４つです。ユーザからリクエストされる <code>hello.html</code> およびその maya ファイル、それと <code>hello.html</code> から呼び出される <code>component.html</code> およびその maya ファイルです。</p>
@@ -78,7 +78,7 @@
 
 <div class="figure">図 2-6-2: コンポーネント描画イメージ<br><img src="./images/component2.png" title="図 2-6-2: コンポーネント描画イメージ" width="543" height="248"></div>
 
-<p>このとき <code>doRender</code> プロセッサおよび <code>insert</code> プロセッサに割り当てられているタグを出力するかどうかは、それぞれの <code>rendered</code> の値に従います。この例では <code>hello.html</code> と <code>component.html</code> の両方とも <code>rendered="true"</code> ですので、<code>hello.html</code> のタグの内側に <code>component.html</code> のタグが出力されています。</p>
+<p>このとき <code>doRender</code> プロセッサおよび <code>insert</code> プロセッサに割り当てられているタグを出力するかどうかは、それぞれの <code>replace</code> の値に従います。この例では <code>hello.html</code> と <code>component.html</code> の両方とも <code>replace="false"</code> ですので、<code>hello.html</code> のタグの内側に <code>component.html</code> のタグが出力されています。</p>
 
 
 <h2>ひとつのテンプレートで複数のコンポーネントを定義する</h2>
@@ -98,8 +98,8 @@
 <code>hello.maya</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 &lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
-    &lt;m:insert id="comp1" path="/component.html" <strong>name="center1"</strong> rendered="true" /&gt;
-    &lt;m:insert id="comp2" path="/component.html" <strong>name="center2"</strong> rendered="true" /&gt;
+    &lt;m:insert id="comp1" path="/component.html" <strong>name="center1"</strong> replace="false" /&gt;
+    &lt;m:insert id="comp2" path="/component.html" <strong>name="center2"</strong> replace="false" /&gt;
 &lt;/m:maya&gt;</div>
 <code>component.html</code>
 <div class="file">&lt;html&gt;
@@ -116,8 +116,8 @@
 <code>component.maya</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 &lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
-    &lt;m:doRender id="centered1" <strong>name="center1"</strong> rendered="true" /&gt;
-    &lt;m:doRender id="centered2" <strong>name="center2"</strong> rendered="true" /&gt;
+    &lt;m:doRender id="centered1" <strong>name="center1"</strong> replace="false" /&gt;
+    &lt;m:doRender id="centered2" <strong>name="center2"</strong> replace="false" /&gt;
 &lt;/m:maya&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
@@ -149,7 +149,7 @@
 <code>hello.maya</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 &lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
-    &lt;m:insert id="comp" path="/component1.html" rendered="true" /&gt;
+    &lt;m:insert id="comp" path="/component1.html" replace="false" /&gt;
 &lt;/m:maya&gt;</div>
 <code>component1.html</code>
 <div class="file">&lt;html&gt;
@@ -164,8 +164,8 @@
 <code>component1.maya</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 &lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
-    &lt;m:doRender id="centered" rendered="true" /&gt;
-    &lt;m:insert id="comp2" path="/component2.html" rendered="true" /&gt;
+    &lt;m:doRender id="centered" replace="false" /&gt;
+    &lt;m:insert id="comp2" path="/component2.html" replace="false" /&gt;
 &lt;/m:maya&gt;</div>
 <code>component2.html</code>
 <div class="file">&lt;html&gt;
@@ -179,7 +179,7 @@
 <code>component2.maya</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 &lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
-    <strong>&lt;m:doRender id="righted" rendered="true" /&gt;</strong>
+    <strong>&lt;m:doRender id="righted" replace="false" /&gt;</strong>
 &lt;/m:maya&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;

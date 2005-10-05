@@ -113,7 +113,7 @@
 
 <h2>span を使わずに実現する</h2>
 
-<p>制御のために span タグを埋め込みたくない場合もあるでしょう。<code>rendered="true"</code> を設定すれば、span タグを使わずに同じことを実現できます。</p>
+<p>制御のために span タグを埋め込みたくない場合もあるでしょう。<code>replace="false"</code> を設定すれば、span タグを使わずに同じことを実現できます。</p>
 <p>繰り返すのは tr タグとその内側なので、<code>m:for</code> と関連付けるのは tr タグです。変数 <code>i</code> を出力するのは td タグの内側なので、<code>m:write</code> と関連付けるのは td タグです。</p>
 
 <pre>
@@ -128,14 +128,14 @@
 <code>doBody.maya</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 &lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
-    &lt;m:for id="loop" <strong>rendered="true"</strong>
+    &lt;m:for id="loop" <strong>replace="false"</strong>
             init="&#36;{ var i = 0 }"
             test="&#36;{ i &amp;lt; 5 }"
             after="&#36;{ i++ }"&gt;
         &lt;m:doBody /&gt;
     &lt;/m:for&gt;
 
-    &lt;m:write id="message" value="&#36;{ i }" <strong>rendered="true"</strong> /&gt;
+    &lt;m:write id="message" value="&#36;{ i }" <strong>replace="false"</strong> /&gt;
 &lt;/m:maya&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;

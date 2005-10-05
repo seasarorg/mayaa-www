@@ -61,7 +61,7 @@
 &lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
     &lt;<strong>m:doRender</strong> <strong>id="centered"</strong> /&gt;
 
-    &lt;m:write <strong>id="message"</strong> value="Hello Maya! <strong>&#36;{ count }</strong>" rendered="true" /&gt;
+    &lt;m:write <strong>id="message"</strong> value="Hello Maya! <strong>&#36;{ count }</strong>" replace="false" /&gt;
 &lt;/m:maya&gt;</div></pre>
 
 <p>ブラウザで <code><a href="http://localhost:8080/maya/hello.html" target="_blank">http://localhost:8080/maya/hello.html</a></code> にアクセスしてみましょう。</p>
@@ -118,7 +118,7 @@
     &lt;m:doRender id="centered" /&gt;
 
     &lt;m:write <strong>id="componentTitle"</strong> value="<strong>&#36;{ binding.title }</strong>" /&gt;
-    &lt;m:write id="message" value="Hello Maya!" rendered="true" /&gt;
+    &lt;m:write id="message" value="Hello Maya!" replace="false" /&gt;
 &lt;/m:maya&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
@@ -165,7 +165,7 @@
 &lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
     &lt;m:insert <strong>id="comp"</strong> path="/component.html" /&gt;
 
-    &lt;m:write id="message" value="<strong>&#36;{ i }</strong> Hello Maya!" rendered="true" /&gt;
+    &lt;m:write id="message" value="<strong>&#36;{ i }</strong> Hello Maya!" replace="false" /&gt;
 &lt;/m:maya&gt;</div>
 <code>component.html</code>
 <div class="file">&lt;html&gt;
