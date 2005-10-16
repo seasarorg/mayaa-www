@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=Shift_JIS">
+		<title>Maya リリースノート</title>
+	</head>
+	<body bgcolor="#ffffff">
+<h1>変更点 0.9.16 -> 0.9.17</h1>
+<ul>
+
+<li>MLD中のproperty定義を、propertySet定義にまとめて再利用できるようにしました。</li>
+
+<li>API中の名前にて、～Typeと用いてるもののうち、JavaのClass型を指すものをすべて
+ ～Classと改名しました。</li>
+
+<li>mayaファイル中のXMLコメント(&lt;!-- --&gt;)を処理しないようにしました。</li>
+
+<li>CommentProcessorでボディを処理するようにしました。HTML出力としてコメントを
+ 書き出したい場合、テンプレートに書くかm:commentを使うことで実現できます。</li>
+
+<li>ServiceCycle#loadにエンコーディング指定なしのものを追加しました。
+ 無指定の場合はUTF-8として読み込みます。</li>
+
+<li>サービスのファクトリ群に対し、JSFライクなマーシャル機能を実装しました。</li>
+
+<li>APIを変更しています。Underlyable→ContextAware, Parameterizable→
+  ParameterAware としました。また、PositionAwareを新設し、
+  ソース上の位置情報を全体的に取得できるようにしました。</li>
+  
+<li>Underlyable→ContextAwareにおいて、getUnderlyingObject()メソッドを
+ getUnderlyingContext()と改めました。</li>
+
+</ul>
+</body>
+</html>
