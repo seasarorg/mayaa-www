@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+    <title>Maya : Documentation : 3-1. すべてのページで共通の設定をする</title>
+    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+</head>
+<body>
+<div class="header">
+<div>Maya : JavaServer Templates</div>
+</div>
+
+<div class="navi">
+<a href="./index.html">↑index</a>
+<a href="./before_render.html">レンダリング前後にスクリプトを実行する→</a>
+</div>
+
+<div class="main">
+
+<h1>3-1. すべてのページで共通の設定をする</h1>
+
+<h2>すべてのページで共通の設定をする</h2>
+
+<p>すべてのページで共通の設定をしたい内容がある場合、それぞれのページごとに設定していくのは大変です。そのような場合には、デフォルト設定を使うことで簡単に設定できます。</p>
+<p>デフォルト設定はコンテキストルートにある「<strong>default.maya</strong>」という名前のファイルで行います。このファイルが無い場合にはデフォルト設定は行われません。</p>
+<p>次の例はメッセージと共にシステム時刻を表示します。システム時刻は <code>hello_with_time.html</code> の <strong>currentTime</strong> という <code>id</code> に関連付けますが、<code>hello_with_time.maya</code> には対応する設定がありません。その代わり <code>default.maya</code> に設定されています。</p>
+
+<pre>
+<code>hello_with_time.html</code>
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;span <strong>id="currentTime"</strong>&gt;dummy time&lt;/span&gt;
+    &lt;br&gt;
+    &lt;span id="message"&gt;dummy message&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+<code>hello_with_time.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;m:write id="message" value="Hello Maya!" /&gt;
+&lt;/m:maya&gt;</div>
+<code>default.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;m:write <strong>id="currentTime"</strong>
+            value="<strong>&#36;{ new java.util.Date().toString() }</strong>" /&gt;
+&lt;/m:maya&gt;</div></pre>
+
+<p>ブラウザで <code><a href="http://localhost:8080/maya/hello_with_time.html" target="_blank">http://localhost:8080/maya/hello_with_time.html</a></code> にアクセスしてみましょう。</p>
+
+<pre>
+実行結果 (改行などは実際の実行結果と異なります)
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    <strong>Thu Oct 20 20:01:38 JST 2005</strong>
+    &lt;br&gt;
+    Hello Maya!
+&lt;/body&gt;
+&lt;/html&gt;</div></pre>
+
+<p>実行結果は、<code>default.maya</code> で設定したとおりにシステム時刻が出力されています。</p>
+
+
+<h2>デフォルト設定を個別設定で上書きする</h2>
+
+<p>デフォルト設定を使いたくない特殊なページを作ることがあるでしょう。その場合には、ページの設定で上書きをすることができます。</p>
+
+<pre>
+<code>hello_with_time.html</code>
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;span <strong>id="currentTime"</strong>&gt;dummy time&lt;/span&gt;
+    &lt;br&gt;
+    &lt;span id="message"&gt;dummy message&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+<code>hello_with_time.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;m:write id="message" value="Hello Maya!" /&gt;
+
+    &lt;m:write <strong>id="currentTime"</strong> value="<strong>Now</strong>" /&gt;
+&lt;/m:maya&gt;</div>
+<code>default.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;m:write id="currentTime"
+            value="&#36;{ new java.util.Date().toString() }" /&gt;
+&lt;/m:maya&gt;</div>
+実行結果 (改行などは実際の実行結果と異なります)
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    <strong>Now</strong>
+    &lt;br&gt;
+    Hello Maya!
+&lt;/body&gt;
+&lt;/html&gt;</div></pre>
+
+<p>デフォルト (<code>default.maya</code>) の設定ではなく <code>hello_with_time.maya</code> の設定が優先されていることがわかります。</p>
+
+
+</div>
+
+<div class="navi">
+<a href="./index.html">↑index</a>
+<a href="./before_render.html">レンダリング前後にスクリプトを実行する→</a>
+</div>
+
+<div class="footer">
+&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
+</div>
+
+</body>
+</html>

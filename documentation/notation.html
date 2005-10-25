@@ -142,7 +142,7 @@ page.maya
 &lt;/m:maya&gt;</div></pre>
 
 
-<h3>HTML の id を使いたくない場合</h3>
+<h3><a name="mayaid">HTML の id を使いたくない場合</a></h3>
 
 <p>HTML の id 属性は CSS や JavaScript などから利用することもあります。maya ファイルとのバインディングに id 属性を使いたくない場合には、<code>m:id</code> として maya 名前空間の id を使うことができます。その場合、maya ファイルに書いていた Maya の名前空間指定 (<code>xmlns:m="http://maya.seasar.org"</code>) を、テンプレートの html タグの属性として書く必要があります。</p>
 <p><code>m:id</code> 属性と id 属性の両方がある場合、maya ファイルとのバインディングには <code>m:id</code> 属性が優先されます。また、<code>m:id</code> 属性は実行時に出力されません。</p>

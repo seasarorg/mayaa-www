@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+    <title>Maya : Documentation : 3-10. コメントを書く</title>
+    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+</head>
+<body>
+<div class="header">
+<div>Maya : JavaServer Templates</div>
+</div>
+
+<div class="navi">
+<a href="./ignore.html">←指定した id を処理対象外にする</a>
+<a href="./index.html">↑index</a>
+</div>
+
+<div class="main">
+
+
+<h1>3-10. コメントを書く</h1>
+
+<p>Maya の「コメント」には２種類のコメントがあります。テンプレートの一部であるコメントと、maya ファイルに書くコメントです。</p>
+
+<h2>テンプレートの一部であるコメント</h2>
+
+<p>テンプレートの一部であるコメントとは、テンプレートに HTML コメントの形式 (<code>&lt;!-- --&gt;</code>) で記述したコメントのことで、処理結果として出力されます。このコメントの内側に <code>id</code> を持つタグがあっても無視されます。ただし <code>&#36;{ }</code> の形式でスクリプトが書かれている場合、それは処理対象になります。</p>
+<p>maya ファイルから HTML コメントを出力したい場合、<strong>comment プロセッサ</strong>を使います。</p>
+
+
+<h2>簡単な例</h2>
+
+<p>ごく簡単なサンプルで実際に使ってみましょう。<code>id</code> は <code>inComment</code> と <code>commentOut</code> がありますが、<code>inComment</code> のタグは HTML コメントの内部にあります。</p>
+
+<pre>
+comment.html
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;!--
+        &lt;span id="inComment"&gt;<strong>&#36;{ commentValue }</strong>&lt;/span&gt;
+    --&gt;
+
+    &lt;span id="<strong>commentOut</strong>"&gt;<strong>hello</strong>&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+comment.maya
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;m:beforeRender&gt;
+        var <strong>commentValue</strong> = "script in comment";
+    &lt;/m:beforeRender&gt;
+
+    &lt;m:write id="inComment" value="comment" /&gt;
+
+    &lt;<strong>m:comment</strong> id="<strong>commentOut</strong>"&gt;
+        &lt;m:write value="comment out by maya" /&gt;
+        &lt;<strong>m:doBody</strong> /&gt;
+    &lt;/m:comment&gt;
+&lt;/m:maya&gt;</div></pre>
+
+<p>ブラウザで <code><a href="http://localhost:8080/maya/comment.html" target="_blank">http://localhost:8080/maya/comment.html</a></code> にアクセスしてみましょう。</p>
+
+<pre>
+実行結果
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;!--
+        &lt;span id="inComment"&gt;<strong>script in comment</strong>&lt;/span&gt;
+    --&gt;
+
+    &lt;!--
+        comment out by maya
+        <strong>hello</strong>
+    --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div></pre>
+
+<p>コメント内にある <code>id="inComment"</code> は処理されず、そのボディにあった<strong>&#36;{ commentValue }</strong> が変数 <code>commentValue</code> の内容に置き換わっています。また、<code>id="commentOut"</code> が <code>comment</code> プロセッサによってコメントアウトされています。このように、コメント内に動的な値を出したい場合にも対応できます。</p>
+
+
+<h2>maya ファイルに書くコメント</h2>
+
+<p>maya ファイルに XML コメントの形式 (<code>&lt;!-- --&gt;</code>) で記述したコメントは、maya の処理対象外になります。つまりこちらは一般的なコメントの扱いになります。</p>
+
+
+</div>
+
+<div class="navi">
+<a href="./ignore.html">←指定した id を処理対象外にする</a>
+<a href="./index.html">↑index</a>
+</div>
+
+<div class="footer">
+&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
+</div>
+
+</body>
+</html>

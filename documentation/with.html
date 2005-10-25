@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+    <title>Maya : Documentation : 3-5. ひとつのタグに複数のプロセッサを対応付ける</title>
+    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+</head>
+<body>
+<div class="header">
+<div>Maya : JavaServer Templates</div>
+</div>
+
+<div class="navi">
+<a href="./echo.html">←タグの属性のみを置き換える</a>
+<a href="./index.html">↑index</a>
+<a href="./another_component.html">もうひとつのコンポーネント記述方法→</a>
+</div>
+
+<div class="main">
+
+
+<h1>3-5. ひとつのタグに複数のプロセッサを対応付ける</h1>
+
+<p>テンプレート上のタグひとつに対して複数のプロセッサを関連付けたい場合には、プロセッサの中に他のプロセッサを書くことで実現できます。たとえば <code>if</code> プロセッサの内側に <code>write</code> プロセッサを書く、などです。</p>
+
+<pre>
+&lt;m:if id="name" test="&#36;{ name != null }"&gt;
+    &lt;m:write value="hello, " /&gt;
+    &lt;m:write value="&#36;{ name }" /&gt;
+&lt;/m:if&gt;
+</pre>
+
+<p>常に複数のプロセッサを使いたい場合には <code>test</code> の中身を <code>true</code> にすることで実現できますが、それでは意図が分かりづらいです。ただ単に複数のプロセッサをまとめる目的であれば、<strong>with プロセッサ</strong>を使います。</p>
+
+
+<h2>簡単な例</h2>
+
+<p>ごく簡単なサンプルで実際に使ってみましょう。パラメータ <code>name</code> が空でなければ「<code>hello, &#36;{ name }</code>」と表示し、<code>name</code> が空なら「<code>no name</code>」と表示します。</p>
+
+<pre>
+with.html
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;span <strong>id="message"</strong>&gt;dummy&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+echo_list.maya
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;<strong>m:with</strong> <strong>id="message"</strong>&gt;
+        &lt;m:if test="&#36;{ param.name.length &gt; 0 }"&gt;
+            hello,
+        &lt;/m:if&gt;
+        &lt;m:write value="&#36;{ param.name }" default="no name" /&gt;
+    &lt;/<strong>m:with</strong>&gt;
+&lt;/m:maya&gt;</div></pre>
+
+<p>条件判定と <code>write</code> プロセッサの <code>default</code> を併用しています。パラメータ <code>name</code> 自体がない場合を考慮していませんので、かならず <code>name</code> を渡すようにしてください。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/maya/with.html?name=" target="_blank">http://localhost:8080/maya/with.html?name=</a></code> にアクセスしてみましょう。</p>
+
+<pre>
+実行結果
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    no name
+&lt;/body&gt;
+&lt;/html&gt;</div></pre>
+
+<p>パラメータ <code>name</code> の値が空ですので「<code>hello,</code>」は出力されず、<code>write</code> プロセッサの <code>default</code> 値である「<code>no name</code>」だけが出力されています。</p>
+
+<p>続いて <code><a href="http://localhost:8080/maya/with.html?name=hello" target="_blank">http://localhost:8080/maya/with.html?name=hello</a></code> にアクセスしてみましょう。</p>
+
+<pre>
+実行結果
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    hello, world
+&lt;/body&gt;
+&lt;/html&gt;</div></pre>
+
+<p>パラメータ <code>name</code> の値がありますので「<code>hello,</code>」に続いて <code>name</code> の値である「world」が出力されています。</p>
+
+
+</div>
+
+<div class="navi">
+<a href="./echo.html">←タグの属性のみを置き換える</a>
+<a href="./index.html">↑index</a>
+<a href="./another_component.html">もうひとつのコンポーネント記述方法→</a>
+</div>
+
+<div class="footer">
+&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
+</div>
+
+</body>
+</html>

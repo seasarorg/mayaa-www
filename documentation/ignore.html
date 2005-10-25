@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+    <title>Maya : Documentation : 3-9. 指定した id を処理対象外にする</title>
+    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+</head>
+<body>
+<div class="header">
+<div>Maya : JavaServer Templates</div>
+</div>
+
+<div class="navi">
+<a href="./remove.html">←指定したタグを出力しないようにする</a>
+<a href="./index.html">↑index</a>
+<a href="./comment.html">コメントを書く→</a>
+</div>
+
+<div class="main">
+
+
+<h1>3-9. 指定した id を処理対象外にする</h1>
+
+<p>CSS や JavaScript から使うために <code>id</code> 属性を定義しても、Maya はそれをプロセッサに対応付けようとします。同じ要素を Maya で処理する場合には <a href="notation.html#mayaid" title="設定の記述方法"><code>m:id</code> を使えば良い</a>のですが、Maya で処理したくない要素の場合もあるでしょう。</p>
+<p>テンプレート上の <code>id</code> を無視する場合には、<code>ignore</code> タグを使ってその <code>id</code> を無視指定します。プロセッサではありませんので xpath 指定はできません。</p>
+<p>maya ファイルに対応する指定がない場合には、初回アクセス時のログに次のような警告が出力されます。</p>
+
+<pre>
+the injection ID(<strong>[対象 ID の値]</strong>) is not found on the template, file://<strong>[URL]</strong>
+</pre>
+
+
+<h2>簡単な例</h2>
+
+<p>ごく簡単なサンプルで実際に使ってみましょう。テンプレートにリスト (<code>ul</code>) があり、リスト要素 (<code>li</code>) の先頭のみを使う場合を考えて見ましょう。</p>
+
+<pre>
+ignore.html
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;span id="notfound"&gt;not found&lt;/span&gt;
+    &lt;span <strong>id="ignored"</strong>&gt;ignored&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+ignore.maya
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;<strong>m:ignore</strong> <strong>id="ignored"</strong> /&gt;
+&lt;/m:maya&gt;</div></pre>
+
+<p>ブラウザで <code><a href="http://localhost:8080/maya/ignore.html" target="_blank">http://localhost:8080/maya/ignore.html</a></code> にアクセスしてみましょう。</p>
+
+<pre>
+実行結果
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;span id="notfound"&gt;not found&lt;/span&gt;
+    &lt;span id="ignored"&gt;ignored&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div></pre>
+
+<p>何の処理も行いませんので、テンプレートがそのまま出力されているのがわかります。Tomcat のログに前述の警告が出ていることを確認してください。「notfound」は警告されますが、無視指定している「ignored」の警告は出ていませんね。</p>
+
+
+</div>
+
+<div class="navi">
+<a href="./remove.html">←指定したタグを出力しないようにする</a>
+<a href="./index.html">↑index</a>
+<a href="./comment.html">コメントを書く→</a>
+</div>
+
+<div class="footer">
+&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
+</div>
+
+</body>
+</html>

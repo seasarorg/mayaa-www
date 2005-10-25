@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+    <title>Maya : Documentation : 3-8. 指定したタグを出力しないようにする</title>
+    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+</head>
+<body>
+<div class="header">
+<div>Maya : JavaServer Templates</div>
+</div>
+
+<div class="navi">
+<a href="./xpath.html">←id 指定の代わりに XPath を使う</a>
+<a href="./index.html">↑index</a>
+<a href="./ignore.html">指定した id を処理対象外にする→</a>
+</div>
+
+<div class="main">
+
+
+<h1>3-8. 指定したタグを出力しないようにする</h1>
+
+<p>テンプレートを直接ブラウザでプレビューするときのためのダミーを、実行時に自動的に非表示にしたい場合があるでしょう。その場合は <strong>null プロセッサ</strong>もしくは <strong>rendered 属性</strong>を使います。<code>rendered</code> 属性に <code>false</code> をセットした場合、プロセッサとして <code>null</code> プロセッサが指定したものとして扱います。</p>
+
+
+<h2>簡単な例</h2>
+
+<p>ごく簡単なサンプルで実際に使ってみましょう。テンプレートにリスト (<code>ul</code>) があり、リスト要素 (<code>li</code>) の先頭のみを使う場合を考えて見ましょう。</p>
+
+<pre>
+remove.html
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;ul&gt;
+        &lt;span id="loop"&gt;&lt;li&gt;&lt;span id="message"&gt;dummy message&lt;/span&gt;&lt;/li&gt;&lt;/span&gt;
+        <strong>&lt;li class="dummy"&gt;dummy 1&lt;/li&gt;</strong>
+        <strong>&lt;li class="dummy"&gt;dummy 2&lt;/li&gt;</strong>
+        <strong>&lt;li class="dummy"&gt;dummy 3&lt;/li&gt;</strong>
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+remove.maya
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    &lt;m:for id="loop"
+            init="&#36;{ var i = 0; }" test="&#36;{ i &amp;lt; 5 }" after="&#36;{ i += 1 }"&gt;
+    &lt;/m:for&gt;
+    &lt;m:write id="message" value="&#36;{ i }" /&gt;
+
+    &lt;<strong>m:null</strong> <strong>xpath="//li[@class='dummy']"</strong> /&gt;
+&lt;/m:maya&gt;</div></pre>
+
+<p>実行時に出力したくないタグに <code>class="dummy"</code> を設定し、XPath を使って <code>null</code> プロセッサを対応させています。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/maya/remove.html" target="_blank">http://localhost:8080/maya/remove.html</a></code> にアクセスしてみましょう。</p>
+
+<pre>
+実行結果
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;ul&gt;
+        &lt;li&gt;0&lt;/li&gt;
+        &lt;li&gt;1&lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;3&lt;/li&gt;
+        &lt;li&gt;4&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div></pre>
+
+<p>ダミーの要素は出力されず、ループして出力するよう設定したもののみが出力されていることがわかります。</p>
+
+
+<h2>使い分け</h2>
+
+<p>出力しない設定をする方法は <code>null</code> プロセッサと <code>rendered</code> 属性の 2 種類があります。基本的に maya ファイルに設定を記述する場合は <code>null</code> プロセッサを使い、テンプレートに設定を記述する場合は <code>rendered</code> 属性を使います。テンプレートに記述する場合は純粋な HTML でなくなってしまうことと、複数要素を一括して指定する方法がないというデメリットがあります。</p>
+
+
+</div>
+
+<div class="navi">
+<a href="./xpath.html">←id 指定の代わりに XPath を使う</a>
+<a href="./index.html">↑index</a>
+<a href="./ignore.html">指定した id を処理対象外にする→</a>
+</div>
+
+<div class="footer">
+&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
+</div>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 3-1. レンダリング前後にスクリプトを実行する</title>
+    <title>Maya : Documentation : 3-2. レンダリング前後にスクリプトを実行する</title>
     <link rel="STYLESHEET" href="./maya.css" type="text/css">
 </head>
 <body>
@@ -12,39 +12,61 @@
 </div>
 
 <div class="navi">
+<a href="./default.html">←すべてのページで共通の設定をする</a>
 <a href="./index.html">↑index</a>
+<a href="./exec.html">タグ描画のタイミングでスクリプトを実行する→</a>
 </div>
-
-<div style="font-size: xx-large; background-color: red; color: white">作成中</div>
 
 <div class="main">
 
-<h1>3-1. レンダリング前後にスクリプトを実行する</h1>
+<h1>3-2. レンダリング前後にスクリプトを実行する</h1>
 
 
 <h2>レンダリング前にスクリプトを実行する</h2>
 
-<p>ページのレンダリング処理を開始する前にスクリプトを実行できます。beforeRender プロセッサを使い、ボディにスクリプトをそのまま書いてください。</p>
+<p>レンダリングのための準備処理をしたい場合、<strong>beforeRender</strong> タグを使うことで、ページのレンダリング処理を開始する前に任意のスクリプトを実行できます。<code>beforeRender</code> タグのボディにスクリプトをそのまま書いてください。</p>
+
+<p>次の例では <code>beforeRender</code> で定義した変数を <code>write</code> プロセッサで出力します。</p>
 
 <pre>
-    &lt;m:beforeRender&gt;
+<code>before_render.html</code>
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;span id="past"&gt;dummy past time&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+<code>before_render.maya</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+    <strong>&lt;m:beforeRender&gt;</strong>
         var cal = java.util.Calendar.getInstance();
         cal.set(java.util.Calendar.YEAR, 2000);
         var date = cal.getTime();
-    &lt;/m:beforeRender&gt;
+    <strong>&lt;/m:beforeRender&gt;</strong>
 
     &lt;m:write id="past" value="&#36;{ date }" /&gt;
-</pre>
+&lt;/m:maya&gt;</div></pre>
 
-<p>等号などを使う場合、CDATA 宣言するとエスケープする必要がなくなります。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/maya/before_render.html" target="_blank">http://localhost:8080/maya/before_render.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
-    &lt;m:beforeRender&gt;&lt;[!CDATA[
+実行結果 (改行などは実際の実行結果と異なります)
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    <strong>Thu Oct 20 21:02:03 JST 2000</strong>
+&lt;/body&gt;
+&lt;/html&gt;</div></pre>
+
+<p>実行結果は、<code>beforeRender</code> で準備した変数 <code>date</code> の値が表示されています。変数 <code>date</code> には、現在時刻の年を 2000 にしたものがに入ります。</p>
+<p>また等号など XML として意味のある文字を使う場合は、<code>beforeRender</code> のボディを CDATA 宣言するとエスケープする必要がなくなります。</p>
+
+<pre>
+    &lt;m:beforeRender&gt;<strong>&lt;[!CDATA[</strong>
         var sum = 0;
         for (var i = 0; i < 10; i++) {
             sum += i;
         }
-    ]]&gt;&lt;/m:beforeRender&gt;
+    <strong>]]&gt;</strong>&lt;/m:beforeRender&gt;
 
     &lt;m:write id="result" value="&#36;{ sum }" /&gt;
 </pre>
@@ -52,17 +74,41 @@
 
 <h2>レンダリング後にスクリプトを実行する</h2>
 
-<p>ページのレンダリング処理が終了した後にスクリプトを実行できます。afterRender プロセッサを使い、ボディにスクリプトをそのまま書いてください。</p>
+<p>ページのレンダリング処理が終了した後に任意のスクリプトを実行できます。<strong>afterRender</strong> プロセッサを使い、ボディにスクリプトをそのまま書いてください。<code>beforeRender</code> と同じく、CDATA 宣言すると等号などをエスケープする必要がなくなります。</p>
+
+<p>たとえばレンダリング処理が終わった後にログを出力する場合、次のように書くことで実現できます。</p>
 
 <pre>
-    &lt;m:afterRender&gt;
+    <strong>&lt;m:afterRender&gt;</strong>
         Packages.org.example.Logger.log("rendered.");
-    &lt;/m:afterRender&gt;
+    <strong>&lt;/m:afterRender&gt;</strong>
 </pre>
 
-<p>beforeRender と同じく、CDATA 宣言すると等号などをエスケープする必要がなくなります。</p>
+<p>レンダリング処理の後に何かをするという場面は多くないでしょうから、<code>afterRender</code> を使う場面は少ないでしょう。描画のための一時リソースを開放する処理など、特殊な処理が必要な場合に <code>afterRender</code> を使ってください。</p>
 
 
+<h2>コンポーネントやレイアウトを使う場合の実行順</h2>
+
+<p>コンポーネントやレイアウト、さらには <code>default.maya</code> でも <code>beforeRender</code> と <code>afterRender</code> を使うことができます。これらを組み合わせて使うには、どういう順番で実行されるかを意識する必要があります。</p>
+
+<p>全体の設定である <code>default.maya</code> に書いた <code>beforeRender</code> は、他のすべての <code>beforeRender</code> よりも先に実行されます。そして <code>default.maya</code> の <code>afterRender</code> は他のすべての <code>afterRender</code> よりも後に実行されます。</p>
+<p>次にリクエストされたページの <code>beforeRender</code> が実行され、レイアウトを使っていればその次にレイアウトページの <code>beforeRender</code> が実行されます。全体の描画が終わったあと、レイアウトページの <code>afterRender</code>、リクエストされたページの <code>afterRender</code> が実行されます。</p>
+<p>コンポーネントの <code>beforeRender</code> はそのコンポーネントを処理する直前に処理されます。その後にコンポーネントがレンダリングされて <code>afterRender</code> が処理された後、コンポーネントを使うページのレンダリングに戻ります。ひとつのコンポーネントページに複数のコンポーネントを定義している場合、そのひとつひとつに同じ <code>beforeRender</code>、<code>afterRender</code> が定義されていると考えてください。</p>
+
+
+<h3>実行順イメージ</h3>
+<p>実行順のイメージを図 3-2-1 に示します。これはメインのページからコンポーネントをひとつとレイアウトを使っている単純な例です。流れを矢印で示し、何らかの処理が行われる部分を順番に数字で示しています。</p>
+
+<div class="figure">図 3-2-1: beforeRender と afterRender の実行順<br><img src="./images/howto_render.png" title="図 3-2-1: beforeRender と afterRender の実行順" width="552" height="437"></div></li>
+
+<p>レイアウトの上でコンポーネントを使う場合やコンポーネントの上でコンポーネントを使う場合も、リクエストされたページの上でコンポーネントを使う場合と同様です。コンポーネントを描画する直前に <code>beforeRender</code> が実行され、コンポーネントの描画が終わった後で <code>afterRender</code> が実行されます。</p>
+
+</div>
+
+<div class="navi">
+<a href="./default.html">←すべてのページで共通の設定をする</a>
+<a href="./index.html">↑index</a>
+<a href="./exec.html">タグ描画のタイミングでスクリプトを実行する→</a>
 </div>
 
 <div class="footer">

@@ -3,7 +3,7 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 3-5. id 指定の代わりに XPath を使う</title>
+    <title>Maya : Documentation : 3-7. id 指定の代わりに XPath を使う</title>
     <link rel="STYLESHEET" href="./maya.css" type="text/css">
 </head>
 <body>
@@ -12,17 +12,17 @@
 </div>
 
 <div class="navi">
+<a href="./another_component.html">←もうひとつのコンポーネント記述方法</a>
 <a href="./index.html">↑index</a>
+<a href="./remove.html">指定したタグを出力しないようにする→</a>
 </div>
-
-<div style="font-size: xx-large; background-color: red; color: white">作成中</div>
 
 <div class="main">
 
 
-<h1>3-5. id 指定の代わりに XPath を使う</h1>
+<h1>3-7. id 指定の代わりに XPath を使う</h1>
 
-<p>テンプレートのタグとプロセッサを関連付けるには id を使いますが、その代替手段として XPath を使う方法があります。使うには maya ファイルで id="テンプレートの id" と書く代わりに xpath="XPath ロケーションパス" と書きます。XPath に関する説明や参考資料はこのページの最後にあります。</p>
+<p>テンプレートのタグとプロセッサを関連付けるには id を使いますが、その代替手段として XPath を使う方法があります。使うには maya ファイルで id="テンプレートの id" と書く代わりに <code><strong>xpath="XPath ロケーションパス"</strong></code> と書きます。XPath に関する説明や参考資料はこのページの最後にあります。</p>
 
 
 <h2>簡単な例</h2>
@@ -55,6 +55,8 @@ xpath.maya
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
+<p>テンプレートに <code>id</code> がなくても置き換わっているのがわかります。</p>
+
 
 <h2>複数のタグを一度に指定する</h2>
 
@@ -62,7 +64,7 @@ xpath.maya
 <p>次の例では XPath のロケーションパスに "<code>//a</code>" を指定しています。このパスはすべての <code>a</code> タグにマッチしますので、すべての <code>a</code> タグに <code>target="_blank"</code> を追加します。</p>
 
 <pre>
-xpath.html
+xpath_multi.html
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;ul&gt;
@@ -72,13 +74,17 @@ xpath.html
     &lt;/ul&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-xpath.maya
+xpath_multi.maya
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 &lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
     &lt;m:echo xpath="<strong>//a</strong>"&gt;
         <strong>&lt;m:attribute name="target" value="_blank" /&gt;</strong>
     &lt;/m:echo&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:maya&gt;</div></pre>
+
+<p>ブラウザで <code><a href="http://localhost:8080/maya/xpath_multi.html" target="_blank">http://localhost:8080/maya/xpath_multi.html</a></code> にアクセスしてみましょう。</p>
+
+<pre>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
@@ -90,12 +96,13 @@ xpath.maya
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
+<p>指定したロケーションパスにマッチするもの、つまりすべての <code>a</code> タグに <code>target="_blank"</code> が追加されているのが分かります。</p>
+
 
 <h2>XPath</h2>
 
-<p>XPath は XML 文書からノードを選択するための簡潔な言語です。"/" 区切りでノードを選択する表記をロケーションパスと呼びます。Java2 SDK 5.0 から XPath を評価するための API が提供されます (javax.xml.xpath)。</p>
-
-<!-- TODO もう少し説明 -->
+<p>XPath は XML 文書からノードを選択するための簡潔な言語で、「ロケーションパス」という表記を使ってノードを指定します。"/" 区切りでノードを選択する表記はロケーションパスの簡略表記です。Java2 SDK 5.0 から XPath を評価するための API (javax.xml.xpath) が提供されます。</p>
+<p>XPath については参考文献をご覧ください。</p>
 
 
 <h3><a name="reference">参考文献</a></h3>
@@ -109,7 +116,9 @@ xpath.maya
 </div>
 
 <div class="navi">
+<a href="./another_component.html">←もうひとつのコンポーネント記述方法</a>
 <a href="./index.html">↑index</a>
+<a href="./remove.html">指定したタグを出力しないようにする→</a>
 </div>
 
 <div class="footer">

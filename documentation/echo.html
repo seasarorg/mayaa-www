@@ -12,17 +12,18 @@
 </div>
 
 <div class="navi">
+<a href="./exec.html">←タグ描画のタイミングでスクリプトを実行する</a>
 <a href="./index.html">↑index</a>
+<a href="./with.html">ひとつのタグに複数のプロセッサを対応付ける→</a>
 </div>
-
-<div style="font-size: xx-large; background-color: red; color: white">作成中</div>
 
 <div class="main">
 
 
 <h1>3-4. タグの属性のみを置き換える</h1>
 
-<p>通常はタグとボディを置き換えるかボディのみを置き換えることで動的ページを生成しますが、場合によってはテンプレートのタグの属性を一部のみ置き換えたいこともあるでしょう。その場合、<code>echo</code> プロセッサを使います。</p>
+<p>通常はタグとボディを置き換えるかボディのみを置き換えることで動的ページを生成しますが、場合によってはテンプレートのタグの属性を一部のみ置き換えたいこともあるでしょう。その場合、<strong>echo プロセッサ</strong>を使います。</p>
+
 
 <h2>簡単な例</h2>
 
@@ -108,13 +109,13 @@ echo_list.maya
 
 <h2>テンプレートの属性値を利用する</h2>
 
-<p>置き換える <code>m:echo</code> のスコープ内で、テンプレートの属性名を変数名として使用することで、テンプレートの属性値を参照できます。(文字列として取得するため、数値演算する場合には <code>eval</code> などを使う必要があります)</p>
+<p>置き換える <code>m:echo</code> のスコープ内で、テンプレートの属性名を変数名として使用することで、テンプレートの属性値を参照できます。</p>
 
 <pre>
 echo_list.html
 <div class="file">&lt;html&gt;
 &lt;body&gt;
-    &lt;ol id="list" type="A" start="3"&gt;
+    &lt;ol id="list" type="A" <strong>start="3"</strong>&gt;
         &lt;li&gt;item 1&lt;/li&gt;
         &lt;li&gt;item 2&lt;/li&gt;
         &lt;li&gt;item 3&lt;/li&gt;
@@ -128,13 +129,13 @@ echo_list.maya
     &lt;m:echo id="list"&gt;
         &lt;m:attribute name="type" value="i" /&gt;
         &lt;m:attribute name="style" value="color: blue;" /&gt;
-        &lt;m:attribute name="<strong>start</strong>" value="&#36;{ eval(<strong>start</strong>) + 2 }" /&gt;
+        &lt;m:attribute name="<strong>start</strong>" value="<strong>&#36;{ eval(start) + 2 }</strong>" /&gt;
     &lt;/m:echo&gt;
 &lt;/m:maya&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
-    &lt;ol id="list" type="i" start="<strong>5</strong>" style="color: blue;"&gt;
+    &lt;ol id="list" type="i" <strong>start="5"</strong> style="color: blue;"&gt;
         &lt;li&gt;item 1&lt;/li&gt;
         &lt;li&gt;item 2&lt;/li&gt;
         &lt;li&gt;item 3&lt;/li&gt;
@@ -144,14 +145,15 @@ echo_list.maya
 &lt;/html&gt;
 </div></pre>
 
-
-<!-- TODO 発展的な使い方：ボディで他のプロセッサを使い、doBody する -->
+<p>テンプレートの属性値は文字列であるため、数値として演算する場合には <code>eval</code> などを使う必要があります。</p>
 
 
 </div>
 
 <div class="navi">
+<a href="./exec.html">←タグ描画のタイミングでスクリプトを実行する</a>
 <a href="./index.html">↑index</a>
+<a href="./with.html">ひとつのタグに複数のプロセッサを対応付ける→</a>
 </div>
 
 <div class="footer">
