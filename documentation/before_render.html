@@ -58,7 +58,7 @@
 &lt;/html&gt;</div></pre>
 
 <p>実行結果は、<code>beforeRender</code> で準備した変数 <code>date</code> の値が表示されています。変数 <code>date</code> には、現在時刻の年を 2000 にしたものがに入ります。</p>
-<p>また等号など XML として意味のある文字を使う場合は、<code>beforeRender</code> のボディを CDATA 宣言するとエスケープする必要がなくなります。</p>
+<p>また不等号など XML として意味のある文字を使う場合は、<code>beforeRender</code> のボディを CDATA 宣言するとエスケープする必要がなくなります。</p>
 
 <pre>
     &lt;m:beforeRender&gt;<strong>&lt;[!CDATA[</strong>
@@ -74,7 +74,7 @@
 
 <h2>レンダリング後にスクリプトを実行する</h2>
 
-<p>ページのレンダリング処理が終了した後に任意のスクリプトを実行できます。<strong>afterRender</strong> プロセッサを使い、ボディにスクリプトをそのまま書いてください。<code>beforeRender</code> と同じく、CDATA 宣言すると等号などをエスケープする必要がなくなります。</p>
+<p>ページのレンダリング処理が終了した後に任意のスクリプトを実行できます。<strong>afterRender</strong> プロセッサを使い、ボディにスクリプトをそのまま書いてください。<code>beforeRender</code> と同じく、CDATA 宣言すると不等号などをエスケープする必要がなくなります。</p>
 
 <p>たとえばレンダリング処理が終わった後にログを出力する場合、次のように書くことで実現できます。</p>
 
