@@ -12,17 +12,37 @@
 </div>
 
 <div class="navi">
+<a href="./maya_customtag_diff.html">←JSP カスタムタグを使う場合の注意点</a>
 <a href="./index.html">↑index</a>
+<a href="./maya_rhino_tips.html">JavaScript を書くときの Tips→</a>
 </div>
-
-<div style="font-size: xx-large; background-color: red; color: white">作成中</div>
 
 <div class="main">
 
 <h1>appendix B. Maya core プロセッサ リファレンス</h1>
 
+<div class="toc">
+<a name="toc">目次</a>
+<ul>
+<li><a href="#write">write プロセッサ</a></li>
+<li><a href="#if">if プロセッサ</a></li>
+<li><a href="#for">for プロセッサ</a></li>
+<li><a href="#with">with プロセッサ</a></li>
+<li><a href="#exec">exec プロセッサ</a></li>
+<li><a href="#doBody">doBody プロセッサ</a></li>
+<li><a href="#insert">insert プロセッサ</a></li>
+<li><a href="#doRender">doRender プロセッサ</a></li>
+<li><a href="#doBase">doBase プロセッサ</a></li>
+<li><a href="#null">null プロセッサ</a></li>
+<li><a href="#element">element プロセッサ</a></li>
+<li><a href="#attribute">attribute プロセッサ</a></li>
+<li><a href="#echo">echo プロセッサ</a></li>
+<li><a href="#ignore">ignore タグ</a></li>
+</ul>
+</div>
 
-<h3><a name="write"></a>write プロセッサ</h3>
+
+<h2><a name="write">write プロセッサ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
 <p>オブジェクトを文字列として出力します。</p>
 
@@ -33,14 +53,16 @@
 <tbody>
 <tr><td>value</td><td>出力する値。</td><td>○</td><td>&nbsp;</td></tr>
 <tr><td>default</td><td>value が null の場合に出力する値。</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>escapeXml</td><td>value の &amp;, &lt;, &gt;, &quot;, &#39; を &amp;amp;, &amp;lt;, &amp;gt;, &amp;quot;, &amp;#39; に置換する。</td><td>&nbsp;</td><td>論理値</td></tr>
+<tr><td>escapeWhitespace</td><td>value の CR, LF, TAB文字 を &amp;#xd;, &amp;#xa;, &amp;#x9; に置換する。</td><td>&nbsp;</td><td>論理値</td></tr>
 </tbody>
 </table>
 
 
-<h3><a name="if"></a>if プロセッサ</h3>
+<h2><a name="if">if プロセッサ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
 <p>タグのボディが有効です。</p>
-<p>test の値が true の場合のみボディを処理します。</p>
+<p>属性 <code>test</code> の値が <code>true</code> の場合のみボディを処理します。</p>
 
 <table>
 <thead>
@@ -52,10 +74,10 @@
 </table>
 
 
-<h3><a name="for"></a>for プロセッサ</h3>
+<h2><a name="for">for プロセッサ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
 <p>タグのボディが有効です。</p>
-<p>繰り返し処理をします。最初に一度 init を実行してループ処理を開始します。1 回の処理の最初に test を実行し、true ならループ処理を続行し、false ならループ処理を終了します。1 回の処理の最後に after を実行します。</p>
+<p>繰り返し処理をします。最初に一度 <code>init</code> を実行してループ処理を開始します。1 回の処理の最初に <code>test</code> を実行し、<code>true</code> ならループ処理を続行し、<code>false</code> ならループ処理を終了します。1 回の処理の最後に <code>after</code> を実行します。</p>
 <p>ループ回数の上限を指定している場合、ループ回数が上限数以上になると例外が発生します。(<code>org.seasar.maya.impl.engine.processor.TooManyLoopException</code>)</p>
 
 <table>
@@ -71,13 +93,13 @@
 </table>
 
 
-<h3><a name="with"></a>with プロセッサ</h3>
+<h2><a name="with">with プロセッサ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
 <p>タグのボディが有効です。</p>
 <p>with プロセッサ自体は何もしません。複数のプロセッサをグルーピングするために使います。</p>
 
 
-<h3><a name="exec"></a>exec プロセッサ</h3>
+<h2><a name="exec">exec プロセッサ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
 <p>スクリプトを実行するために使います。</p>
 
@@ -88,20 +110,20 @@
 <tbody>
 <tr><td>script</td><td>実行するスクリプト。</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr><td>src</td><td>実行する外部 JavaScript ファイルのパス。</td><td>&nbsp;</td><td>文字列</td></tr>
-<tr><td>encoding</td><td>src で指定したファイルを読み込むときの文字エンコーディング</td><td>&nbsp;</td><td>Java で利用できる文字セット名</td></tr>
+<tr><td>encoding</td><td>属性 <code>src</code> で指定したファイルを読み込むときの文字エンコーディング</td><td>&nbsp;</td><td>Java で利用できる文字セット名</td></tr>
 </tbody>
 </table>
 
 
-<h3><a name="doBody"></a>doBody プロセッサ</h3>
+<h2><a name="doBody">doBody プロセッサ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
 <p>割り当てられたタグのボディを処理します。</p>
 
 
-<h3><a name="insert"></a>insert プロセッサ</h3>
+<h2><a name="insert">insert プロセッサ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
 
-<h4>コンポーネントを使う場合</h4>
+<h3>コンポーネントを使う場合</h3>
 
 <p>指定したパスのコンポーネントを割り当てます。</p>
 
@@ -111,28 +133,28 @@
 </thead>
 <tbody>
 <tr><td>path</td><td>コンポーネントのパス。</td><td>○</td><td>文字列</td></tr>
-<tr><td>name</td><td>コンポーネントの名前。デフォルトは "" (空文字列)。</td><td>&nbsp;</td><td>文字列</td></tr>
+<tr><td>name</td><td>コンポーネントの名前。デフォルトは <code>""</code> (空文字列)。</td><td>&nbsp;</td><td>文字列</td></tr>
 </tbody>
 </table>
 
 
-<h4>レイアウトを定義する場合</h4>
+<h3>レイアウトを定義する場合</h3>
 
-<p>extends しているテンプレートの名前が一致する doRender を割り当てます。</p>
+<p>属性 <code>extends</code> に指定したテンプレート上の <code>insert</code> に対し、名前が一致する <code>doRender</code> を割り当てます。</p>
 
 <table>
 <thead>
 <tr><th>属性名</th><th>説明</th><th>必須</th><th>値の制限</th></tr>
 </thead>
 <tbody>
-<tr><td>name</td><td>レイアウトの insert 名。デフォルトは "" (空文字列)。</td><td>&nbsp;</td><td>文字列</td></tr>
+<tr><td>name</td><td>レイアウトの <code>insert</code> 名。デフォルトは "" (空文字列)。</td><td>&nbsp;</td><td>文字列</td></tr>
 </tbody>
 </table>
 
 
-<h3><a name="doRender"></a>doRender プロセッサ</h3>
+<h2><a name="doRender">doRender プロセッサ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
-<h4>コンポーネントを定義する場合</h4>
+<h3>コンポーネントを定義する場合</h3>
 
 <p>割り当てられたタグをコンポーネントとして定義します。名前は同じテンプレート上で重複しないように付けてください。</p>
 
@@ -146,41 +168,41 @@
 </table>
 
 
-<h4>レイアウトを利用する場合</h4>
+<h3>レイアウトを利用する場合</h3>
 
-<p>レイアウトの insert に渡す部分を定義します。</p>
+<p>レイアウトの <code>insert</code> に渡す部分を定義します。</p>
 
 <table>
 <thead>
 <tr><th>属性名</th><th>説明</th><th>必須</th><th>値の制限</th></tr>
 </thead>
 <tbody>
-<tr><td>name</td><td>レイアウトの insert 名。デフォルトは "" (空文字列)。</td><td>&nbsp;</td><td>文字列</td></tr>
+<tr><td>name</td><td>レイアウトの <code>insert</code> 名。デフォルトは <code>""</code> (空文字列)。</td><td>&nbsp;</td><td>文字列</td></tr>
 </tbody>
 </table>
 
 
-<h3><a name="doBase"></a>doBase プロセッサ</h3>
+<h2><a name="doBase">doBase プロセッサ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
-<h4>コンポーネントで使う場合</h4>
+<h3>コンポーネントで使う場合</h3>
 
 <p>コンポーネントを使う元テンプレートのタグのボディを処理します。</p>
 
 
-<h4>レイアウトを利用するテンプレートで使う場合</h4>
+<h3>レイアウトを利用するテンプレートで使う場合</h3>
 
-<p>レイアウトの insert のタグのボディを処理します。</p>
+<p>レイアウトの <code>m:insert</code> のタグのボディを処理します。</p>
 
 
-<h3><a name="null"></a>null プロセッサ</h3>
+<h2><a name="null">null プロセッサ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
 <p>何も出力しません。</p>
 
 
-<h3><a name="element"></a>element プロセッサ</h3>
+<h2><a name="element">element プロセッサ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
 <p>タグのボディが有効です。</p>
-<p>name で指定したタグを出力します。m:element タグのボディに attribute プロセッサを書くと、属性を追加できます。</p>
+<p>属性 <code>name</code> で指定したタグを出力します。<code>m:element</code> タグのボディに <code>attribute</code> プロセッサを書くと、属性を追加できます。</p>
 
 <table>
 <thead>
@@ -192,9 +214,9 @@
 </table>
 
 
-<h3><a name="attribute"></a>attribute プロセッサ</h3>
+<h2><a name="attribute">attribute プロセッサ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
-<p>親タグのプロセッサに属性を追加します。暗黙の doBody の条件において、唯一例外として空白同様の扱いを受けるプロセッサです。</p>
+<p>親タグのプロセッサに属性を追加します。暗黙の <code>doBody</code> の条件において、唯一例外として空白同様の扱いを受けるプロセッサです。</p>
 
 <table>
 <thead>
@@ -207,20 +229,26 @@
 </table>
 
 
-<h3><a name="echo"></a>echo プロセッサ</h3>
+<h2><a name="echo">echo プロセッサ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
 <p>タグのボディが有効です。</p>
-<p>割り当てられたタグをそのまま出力します。m:echo タグのボディに attribute プロセッサを書くと、属性を追加または変更できます。</p>
+<p>割り当てられたタグをそのまま出力します。<code>m:echo</code> タグのボディに <code>attribute</code> プロセッサを書くと、属性を追加または変更できます。</p>
 
 
-<h3><a name="ignore"></a>ignore プロセッサ</h3>
+<h2><a name="ignore">ignore タグ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
-<p>割り当てた id を処理対象外にします。(正確には ignore はプロセッサではなくエンジン機能です)</p>
-
+<p>割り当てた <code>id</code> を処理対象外にします。(正確には <code>ignore</code> はプロセッサではなくエンジン機能です)</p>
 
 
 </div>
 
+<div class="navi">
+<a href="./maya_customtag_diff.html">←JSP カスタムタグを使う場合の注意点</a>
+<a href="./index.html">↑index</a>
+<a href="./maya_rhino_tips.html">JavaScript を書くときの Tips→</a>
+</div>
+
+<div style="height: 800px">&nbsp;</div>
 
 <div class="footer">
 &copy;2004-2005, The Seasar Foundation and the others, all rights reserved.

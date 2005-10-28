@@ -3,7 +3,7 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : appendix D. JavaScript を書くときの Tips</title>
+    <title>Maya : Documentation : appendix C. JavaScript を書くときの Tips</title>
     <link rel="STYLESHEET" href="./maya.css" type="text/css">
 </head>
 <body>
@@ -12,17 +12,25 @@
 </div>
 
 <div class="navi">
+<a href="./processor_reference.html">←Maya core プロセッサ リファレンス</a>
 <a href="./index.html">↑index</a>
+<a href="./note.html">その他の注意点→</a>
 </div>
-
-<div style="font-size: xx-large; background-color: red; color: white">作成中</div>
 
 <div class="main">
 
-<h1>appendix D. JavaScript を書くときの Tips</h1>
+<h1>appendix C. JavaScript を書くときの Tips</h1>
+
+<div class="toc">
+<a name="toc">目次</a>
+<ul>
+<li><a href="#javaclass">Java のクラスを使う</a></li>
+<li><a href="#exception">例外を処理する</a></li>
+</ul>
+</div>
 
 
-<h2>Java のクラスを使う</h2>
+<h2><a name="javaclass">Java のクラスを使う</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
 <p>Java のクラスは、<code>java.lang.String</code> や <code>java.util.ArrayList</code> のようにパッケージが "<code>java.</code>" で始まるクラスであれば、完全修飾名をそのまま書くだけで利用できます。しかしそれ以外のパッケージ ("<code>org.</code>" や "<code>com.</code>" など) の場合、先頭に "<code>Packages.</code>" を付ける必要があります。</p>
 
@@ -33,9 +41,9 @@ var myClass = new <strong>Packages.</strong>org.example.MyClass();
 </pre>
 
 
-<h2>例外を処理する</h2>
+<h2><a name="exception">例外を処理する</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
-<p>JavaScript にも try ～ catch 構文はありますので、Java で発生した例外を JavaScript で処理することもできます。Java でアプリケーションを作るときには Java 内で処理するものでしょうが、デバッグ時には役立つかもしれません。</p>
+<p>JavaScript にも try ～ catch 構文はありますので、Java で発生した例外を JavaScript で処理することもできます。Java でアプリケーションを作るときには Java 内で処理するでしょうから、デバッグ時には役立つかもしれません。</p>
 
 <pre>
 var catched = "";
@@ -50,6 +58,14 @@ var catched = "";
 
 
 </div>
+
+<div class="navi">
+<a href="./processor_reference.html">←Maya core プロセッサ リファレンス</a>
+<a href="./index.html">↑index</a>
+<a href="./note.html">その他の注意点→</a>
+</div>
+
+<div style="height: 800px">&nbsp;</div>
 
 <div class="footer">
 &copy;2004-2005, The Seasar Foundation and the others, all rights reserved.

@@ -34,6 +34,15 @@ body {
     padding: 1em;
 }
 
+.toc {
+    padding: 1em;
+}
+
+.to_toc {
+    font-size: xx-small;
+    font-weight: normal;
+}
+
 .footer {
     text-align: center;
     color: white;

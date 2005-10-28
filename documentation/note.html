@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+    <title>Maya : Documentation : appendix D. その他の注意点</title>
+    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+</head>
+<body>
+<div class="header">
+<div>Maya : JavaServer Templates</div>
+</div>
+
+<div class="navi">
+<a href="./maya_rhino_tips.html">←JavaScript を書くときの Tips</a>
+<a href="./index.html">↑index</a>
+</div>
+
+<div class="main">
+
+<h1>appendix D. その他の注意点</h1>
+
+<div class="toc">
+<a name="toc">目次</a>
+<ul>
+<li><a href="#dollar">テンプレートで &#36;{ } を書きたい</a></li>
+<li><a href="#charset">出力する文字エンコーディングを指定したい</a></li>
+<li><a href="#japanese">Java から出力した "～" が文字化けする</a></li>
+<li><a href="#escape">&lt;, &gt;, &amp; などを書きたい</a></li>
+</ul>
+</div>
+
+
+<h2><a name="dollar">テンプレートで &#36;{ } を書きたい</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
+
+<p>Maya ではスクリプトを書くときに <code>&#36;{ }</code> という表記を使います。テンプレート上でも maya ファイル上でも、この表記をした場合にはスクリプトとして扱います。</p>
+
+<p>そのためテンプレート上に <code>&#36;{ }</code> という文字列を書きたい場合、<code>&amp;#36;{ }</code> とエスケープして書く必要があります。</p>
+
+
+<h2><a name="charset">出力する文字エンコーディングを指定したい</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
+
+<p>Maya で出力する文字エンコーディングとテンプレート読み込み時の文字エンコーディングを決定するのは、テンプレートの文字エンコーディング指定です。HTML テンプレートであれば META タグでの指定、XML テンプレートであれば XML としての文字エンコーディング指定です。</p>
+<p>文字エンコーディングを指定しない場合は <code>ISO-8859-1</code> として扱います。常に文字エンコーディング指定をするようにしてください。</p>
+
+
+<h2><a name="japanese">Java から出力した "～" が文字化けする</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
+
+<p>日本語を扱う場合、文字エンコーディングの指定によっては文字化けが発生することがあります。文字化けを回避するには、Java ソースコードや他のリソースと同じ文字エンコーディングを使うようにしてください。</p>
+
+<p>たとえば Windows で開発する場合、一般的に Java ソースコードの文字エンコーディングは <code>MS932</code> です。この場合に HTML テンプレートに指定する文字エンコーディングは <code>Windows-31J</code> です。<strong>Shift_JIS ではありません</strong>。テンプレートの文字エンコーディングを <code>Shift_JIS</code> にした場合、Java ソースコード中に書いた "～" の文字を出力しようとすると文字化けが発生します。</p>
+
+
+<h2><a name="escape">&lt;, &gt;, &amp; などを書きたい</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
+
+<p>テンプレート、maya ファイルの両方とも、<code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code> などを文字として使いたい場合は <code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;amp;</code> のようにエスケープする必要があります。</p>
+<p>ちょっとややこしくなりますが、maya ファイルからテンプレートに「エスケープ後の文字列」を出力する場合、もう一段階エスケープしなければなりません。(<code>&amp;amp;lt;</code>, <code>&amp;amp;gt;</code>, <code>&amp;amp;amp;</code>)</p>
+
+
+</div>
+
+<div class="navi">
+<a href="./maya_rhino_tips.html">←JavaScript を書くときの Tips</a>
+<a href="./index.html">↑index</a>
+</div>
+
+<div style="height: 800px">&nbsp;</div>
+
+<div class="footer">
+&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
+</div>
+
+</body>
+</html>
