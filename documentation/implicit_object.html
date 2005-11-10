@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+    <title>Maya : Documentation : appendix E. スクリプトで使える定義済みオブジェクト</title>
+    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+</head>
+<body>
+<div class="header">
+<div>Maya : JavaServer Templates</div>
+</div>
+
+<div class="navi">
+<a href="./note.html">←その他の注意点</a>
+<a href="./index.html">↑index</a>
+</div>
+
+<div class="main">
+
+<h1>appendix E. スクリプトで使える定義済みオブジェクト</h1>
+
+<div class="toc">
+<a name="toc">目次</a>
+<ul>
+<li><a href="#scope">スコープ</a>
+<ul>
+	<li><a href="#application">application: アプリケーションスコープ</a></li>
+	<li><a href="#session">session: セッションスコープ</a></li>
+	<li><a href="#request">request: リクエストスコープ</a></li>
+	<li><a href="#page">page: ページスコープ</a></li>
+	<li><a href="#param">param: リクエストパラメータスコープ</a></li>
+	<li><a href="#paramValues">paramValues: リクエストパラメータスコープ (配列)</a></li>
+	<li><a href="#binding">binding: コンポーネント引数スコープ</a></li>
+	<li><a href="#header">header: リクエストヘッダスコープ</a></li>
+	<li><a href="#headerValues">headerValues: リクエストヘッダスコープ (配列)</a></li>
+</ul></li>
+<li><a href="#response">response: レスポンス</a></li>
+</ul>
+</div>
+
+<h2><a name="scope">定義済みオブジェクト</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
+
+<p>オブジェクトを格納するスコープは、Maya がスクリプトから操作できるオブジェクトとして定義しています。たとえば <code>request</code> スコープに格納されている <code>message</code> という名前の属性を操作するには２つの簡略表記があります。</p>
+
+<ul>
+<li><code>request.message</code></li>
+<li><code>request['message']</code></li>
+</ul>
+
+<p>どちらも意味的には同じですが、前者は属性としてわかりやすい表記、後者は動的な名前を扱える表記として使い分けられます。属性はスコープによって読み出し専用と書き込み可能の２種類があります。</p>
+
+<p>スコープのメソッドは次のものが用意されています。上記簡略表記は内部的に <code>getAttribute</code> と <code>setAttribute</code> を使います。</p>
+
+<dl>
+<dt><code>getAttribute(String name)</code></dt>
+<dd>指定名の属性をスコープから取得します。スコープ内になければ <code>undefined</code> を返します。</dd>
+<dt><code>setAttribute(String name, Object value)</code></dt>
+<dd>指定名の属性をスコープにセットします。読み込み専用スコープの場合は例外を投げます。(<code>org.seasar.maya.impl.cycle.scope.ScopeNotWritableException</code>)</dd>
+<dt><code>removeAttribute(String name)</code></dt>
+<dd>指定名の属性をスコープから削除します。読み込み専用スコープの場合は例外を投げます。(<code>org.seasar.maya.impl.cycle.scope.ScopeNotWritableException</code>)</dd>
+<dt><code>isAttributeWritable()</code></dt>
+<dd>スコープが書き込み可能かどうかを <code>true</code>/<code>false</code> で返します。</dd>
+<dt><code>hasAttribute(String name)</code></dt>
+<dd>指定名の属性がスコープに格納されているかどうかを <code>true</code>/<code>false</code> で返します。</dd>
+<dt><code>iterateAttributeNames()</code></dt>
+<dd>スコープが持つ属性の名前 (String) の Iterator を返します。</dd>
+<dt><code>newAttribute(String name, Class attributeClass)</code></dt>
+<dd>指定名の属性がスコープから取得します。スコープ内にない場合の処理はスコープごとに異なりますが、一般的には attributeClass のインスタンスを生成し、スコープに指定名でセットしてから返します。</dd>
+</dl>
+
+<p>Maya 標準のスコープは次の９つです。</p>
+
+<h3><a name="application">application: アプリケーションスコープ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
+
+<p>アプリケーション全体で共有されるスコープです。Servlet の <code>application</code> スコープにあたります。</p>
+
+
+<h3><a name="session">session: セッションスコープ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
+
+<p>セッション全体で共有されるスコープです。Servlet の <code>session</code> スコープにあたります。</p>
+
+
+<h3><a name="request">request: リクエストスコープ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
+
+<p>リクエスト全体で共有されるスコープです。Servlet の <code>request</code> スコープの属性 (<code>get/setAttribute</code>) にあたります。</p>
+
+
+<h3><a name="page">page: ページスコープ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
+
+<p>ページ内とタグの範囲で共有されるスコープです。JSP の <code>NESTED</code> 変数スコープにあたります。<code>m:beforeRender</code> で宣言した属性はページの描画が終わるまで有効ですが、<code>m:exec</code> や <code>m:for</code> などで宣言した属性はそのタグが終わるまでの間のみ有効です。スクリプトの <code>var</code> で宣言した変数は <code>page</code> スコープの属性として扱われます。</p>
+
+
+<h3><a name="param">param: リクエストパラメータスコープ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
+
+<p>リクエスト全体で共有される読み出し専用スコープです。Servlet の <code>request</code> スコープのパラメータ (<code>getParameter</code>) にあたります。同じ名前のパラメータが複数ある場合には、一番先頭のものひとつを返します。</p>
+
+
+<h3><a name="paramValues">paramValues: リクエストパラメータスコープ (配列)</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
+
+<p>リクエストパラメータを配列として取得します。同じ名前のパラメータがひとつのみの場合には長さ 1 の配列を返します。</p>
+
+
+<h3><a name="binding">binding: コンポーネント引数スコープ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
+
+<p>コンポーネント引数の読み出し専用スコープです。コンポーネントではない場合には <code>param</code> と同じ値を戻します。</p>
+
+
+<h3><a name="header">header: リクエストヘッダスコープ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
+
+<p>HTTP ヘッダの読み出し専用スコープです。同じ名前のパラメータが複数ある場合には、一番先頭のものひとつを返します。</p>
+
+
+<h3><a name="headerValues">headerValues: リクエストヘッダスコープ (配列)</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
+
+<p>HTTP ヘッダを配列として取得します。同じ名前の HTTP ヘッダがひとつのみの場合には長さ 1 の配列を返します。</p>
+
+
+
+<h2><a name="response">response: レスポンス</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
+
+<p>ブラウザへ返す情報を扱うオブジェクトです。Servlet の response にあたります。<strong>特殊な場合を除いて直接操作しないことを推奨します</strong>。</p>
+
+<p>レスポンスのメソッドのうち、使用する可能性が比較的高いものは以下の通りです。</p>
+
+<dl>
+<dt><code>setContentType(String contentType)</code></dt>
+<dd>コンテンツタイプ (MIME 型およびエンコーディング情報) を設定します。</dd>
+<dt><code>setStatus(int code)</code></dt>
+<dd>HTTP ステータスコードを設定します。(<code>200</code>, <code>404</code>, <code>500</code> など)</dd>
+<dt><code>addHeader(String name, String value)</code></dt>
+<dd>レスポンスのヘッダを追加します。</dd>
+<dt><code>setHeader(String name, String value)</code></dt>
+<dd>レスポンスのヘッダを設定します。同名のヘッダが設定されている場合は上書きします。</dd>
+<dt><code>getOutputStream()</code></dt>
+<dd>実際の出力となる <code>OutputStream</code> を取得します。</dd>
+<dt><code>getWriter()</code></dt>
+<dd>バッファされた <code>Writer</code> を取得します。</dd>
+<dt><code>flush()</code></dt>
+<dd>レスポンスのバッファを強制的に出力します。</dd>
+</dl>
+
+</div>
+
+<div class="navi">
+<a href="./note.html">←その他の注意点</a>
+<a href="./index.html">↑index</a>
+</div>
+
+<div style="height: 800px">&nbsp;</div>
+
+<div class="footer">
+&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
+</div>
+
+</body>
+</html>
