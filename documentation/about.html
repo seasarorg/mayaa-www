@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+    <title>Maya : Documentation : 1-1. Maya とは何か</title>
+    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+</head>
+<body>
+<div class="header">
+<div>Maya : JavaServer Templates</div>
+</div>
+
+<div class="navi">
+<a href="./index.html">↑index</a>
+<a href="./install.html">インストールしよう→</a>
+</div>
+
+<div class="main">
+
+<h1>1-1. Maya とは何か</h1>
+
+<h2>Maya の位置づけ</h2>
+
+<p>Maya をひとことで表すと、「HTML をテンプレートとして使う Web テンプレートエンジン」です。フレームワークとしての機能やページフローを扱う機能はなく、JSP を前提とするミドルウェア (Apache Struts など) と組み合わせて使うことを想定しています。</p>
+<p>図 1-1-1 に Maya の立ち位置を示します。Maya は一般的な JSP の使い方と同じ位置になり、Struts や WebWork2 などと連携して使用するものです。</p>
+
+<div class="figure">図 1-1-1: Maya の立ち位置<br><img src="./images/about_maya_position.png" title="図 1-1-1: Maya の立ち位置" width="546" height="213"></div>
+
+<p>Maya が目指すのは、デザインとロジックを分離すること、Web デザイナとプログラマの協業を助けること、既存の JSP カスタムタグライブラリを有効活用することです。</p>
+
+
+<h3>Web アプリケーションのビューにおける問題点</h3>
+
+<p>J2EE 標準の Web アプリケーション用ビュー技術は JSP (JavaServer Pages) です。しかし JSP はビュー技術として致命的な欠陥を持っています。</p>
+
+<ol>
+<li>ビューとロジックとが切り分けられていない</li>
+<li>実行しなければデザインの確認ができない</li>
+</ol>
+
+<p>1 番目の問題は JSP カスタムタグの登場によって軽減されましたが、2 番目の問題は未だに軽減すらされていません。そのため Web デザインを変更しづらく、Web デザイナかプログラマ、もしくは両者に負担がかかることになります。</p>
+
+
+<h3>その他の HTML テンプレートエンジンの難点</h3>
+
+<p>最終的に出力するものは HTML 文書ですから、HTML ファイルをテンプレートとして使えれば上記 2 番目の問題は解決するはずです。それは自明ですから、HTML ファイルをテンプレートとする技術はいくつも登場しました。</p>
+<p>しかしそれらの技術には JSP の代替として扱うには何かしら致命的な難点があり、決定的なものはありませんでした。難点をいくつか挙げると、たとえば次のようなものです。</p>
+
+<ul>
+<li>独自タグが必要なため HTML オーサリングツールを使えない</li>
+<li>制御用に特殊な文字列を埋め込むためデザイン確認に難がある</li>
+<li>ミドルウェア部分と一体になっているため他のミドルウェアを選択できない</li>
+<li>独自技術のため JSP カスタムタグの資産を使えない</li>
+</ul>
+
+
+<h3>ビューの課題に対する Maya の回答</h3>
+
+<p>Maya は JSP の代替として使えるよう設計されました。既存の HTML テンプレートエンジンの難点を解決し、JSP を前提としているフレームワークと組み合わせやすくなっています。</p>
+
+<ul>
+<li>テンプレートは HTML ファイルなのでブラウザでプレビューできる</li>
+<li>独自タグを使わないため HTML オーサリングツールを使える</li>
+<li>制御用に特殊な文字列を埋め込む必要はない</li>
+<li>利便性のため特殊な属性を埋め込む使い方もできる</li>
+<li>ビュー技術のみを役割とするため好きなミドルウェアを使える</li>
+<li>JSP カスタムタグをそのまま使える</li>
+</ul>
+
+<p>この中でも JSP カスタムタグを使えることは、既存のテンプレートエンジンにない特徴的な機能です。これによって、JSP の代替として使うときに過去の資産を活用できるようになります。</p>
+
+
+<h2>Maya の特徴</h2>
+
+<p>Maya の基本的な使い方では、HTML テンプレートファイルとそれに対応する設定ファイル (拡張子 .maya) の２つを元にして動的なページを生成します。HTML テンプレートの動的な部分に id 属性で印を付け、その id に対して設定をする形になります。</p>
+
+<div class="figure">図 1-1-2: Maya の基本的な動作<br><img src="./images/about_maya_standard.png" title="図 1-1-2: Maya の基本的な動作" width="543" height="222"></div>
+
+<p>テンプレート型ビュー技術としての Maya の主な特徴は次の４点です。</p>
+
+<ul>
+<li>テンプレートとして使えるファイルは HTML、XHTML、XML</li>
+<li>設定ファイルを使う方法、使わない方法があり、両方の混在も可能</li>
+<li>Java オブジェクトを操作する言語として JavaScript を採用</li>
+<li>JSP カスタムタグを使える</li>
+</ul>
+
+<p>Maya の機能範囲はビュー技術のみですので、通常使う際は何らかの Servlet から forward して使うことになるでしょう。</p>
+
+<div class="figure">図 1-1-3: 基本的には forward して使う<br><img src="./images/about_maya_forward.png" title="図 1-1-3: 基本的には forward して使う" width="318" height="215"></div>
+
+
+</div>
+
+<div class="navi">
+<a href="./index.html">↑index</a>
+<a href="./install.html">インストールしよう→</a>
+</div>
+
+<div class="footer">
+&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
+</div>
+
+</body>
+</html>

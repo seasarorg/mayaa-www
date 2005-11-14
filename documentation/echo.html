@@ -129,7 +129,7 @@ echo_list.maya
     &lt;m:echo id="list"&gt;
         &lt;m:attribute name="type" value="i" /&gt;
         &lt;m:attribute name="style" value="color: blue;" /&gt;
-        &lt;m:attribute name="<strong>start</strong>" value="<strong>&#36;{ eval(start) + 2 }</strong>" /&gt;
+        &lt;m:attribute name="<strong>start</strong>" value="<strong>&#36;{ new Number(start) + 2 }</strong>" /&gt;
     &lt;/m:echo&gt;
 &lt;/m:maya&gt;</div>
 実行結果
@@ -145,7 +145,7 @@ echo_list.maya
 &lt;/html&gt;
 </div></pre>
 
-<p>テンプレートの属性値は文字列であるため、数値として演算する場合には <code>eval</code> などを使う必要があります。</p>
+<p>テンプレートの属性値は文字列であるため、数値として演算する場合には <code>Number</code> に変換する必要があります。</p>
 
 
 </div>

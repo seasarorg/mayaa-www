@@ -22,21 +22,12 @@
 
 <h1>3-5. ひとつのタグに複数のプロセッサを対応付ける</h1>
 
-<p>テンプレート上のタグひとつに対して複数のプロセッサを関連付けたい場合には、プロセッサの中に他のプロセッサを書くことで実現できます。たとえば <code>if</code> プロセッサの内側に <code>write</code> プロセッサを書く、などです。</p>
-
-<pre>
-&lt;m:if id="name" test="&#36;{ name != null }"&gt;
-    &lt;m:write value="hello, " /&gt;
-    &lt;m:write value="&#36;{ name }" /&gt;
-&lt;/m:if&gt;
-</pre>
-
-<p>常に複数のプロセッサを使いたい場合には <code>test</code> の中身を <code>true</code> にすることで実現できますが、それでは意図が分かりづらいです。ただ単に複数のプロセッサをまとめる目的であれば、<strong>with プロセッサ</strong>を使います。</p>
+<p>テンプレート上のタグひとつに対して複数のプロセッサを関連付けたい場合には、プロセッサの中に他のプロセッサを書くことで実現できます。複数のプロセッサをまとめる目的であれば、<strong>with プロセッサ</strong>を使います。</p>
 
 
 <h2>簡単な例</h2>
 
-<p>ごく簡単なサンプルで実際に使ってみましょう。パラメータ <code>name</code> が空でなければ「<code>hello, &#36;{ name }</code>」と表示し、<code>name</code> が空なら「<code>no name</code>」と表示します。</p>
+<p>ごく簡単なサンプルで実際に使ってみましょう。パラメータ <code>name</code> が空でなければ「<code>hello, (name の値)</code>」と表示し、<code>name</code> が空なら「<code>no name</code>」と表示します。</p>
 
 <pre>
 with.html
@@ -45,18 +36,18 @@ with.html
     &lt;span <strong>id="message"</strong>&gt;dummy&lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-echo_list.maya
+with.maya
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 &lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
     &lt;<strong>m:with</strong> <strong>id="message"</strong>&gt;
-        &lt;m:if test="&#36;{ param.name.length &gt; 0 }"&gt;
+        &lt;m:if test="&#36;{ param.name &amp;amp;&amp;amp; param.name.length &gt; 0 }"&gt;
             hello,
         &lt;/m:if&gt;
         &lt;m:write value="&#36;{ param.name }" default="no name" /&gt;
     &lt;/<strong>m:with</strong>&gt;
 &lt;/m:maya&gt;</div></pre>
 
-<p>条件判定と <code>write</code> プロセッサの <code>default</code> を併用しています。パラメータ <code>name</code> 自体がない場合を考慮していませんので、かならず <code>name</code> を渡すようにしてください。</p>
+<p>条件判定と <code>write</code> プロセッサの <code>default</code> を併用しています。パラメータ <code>param.name</code> 自体がない場合は <code>param.name</code> を <code>boolean</code> として評価した結果が <code>false</code> になります。(JavaScript の <code>undefined</code>)</p>
 <p>ブラウザで <code><a href="http://localhost:8080/maya/with.html?name=" target="_blank">http://localhost:8080/maya/with.html?name=</a></code> にアクセスしてみましょう。</p>
 
 <pre>
