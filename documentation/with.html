@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 3-5. ひとつのタグに複数のプロセッサを対応付ける</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : 3-5. ひとつのタグに複数のプロセッサを対応付ける</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -36,19 +36,19 @@ with.html
     &lt;span <strong>id="message"</strong>&gt;dummy&lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-with.maya
+with.mayaa
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;<strong>m:with</strong> <strong>id="message"</strong>&gt;
         &lt;m:if test="&#36;{ param.name &amp;amp;&amp;amp; param.name.length &gt; 0 }"&gt;
             hello,
         &lt;/m:if&gt;
         &lt;m:write value="&#36;{ param.name }" default="no name" /&gt;
     &lt;/<strong>m:with</strong>&gt;
-&lt;/m:maya&gt;</div></pre>
+&lt;/m:mayaa&gt;</div></pre>
 
 <p>条件判定と <code>write</code> プロセッサの <code>default</code> を併用しています。パラメータ <code>param.name</code> 自体がない場合は <code>param.name</code> を <code>boolean</code> として評価した結果が <code>false</code> になります。(JavaScript の <code>undefined</code>)</p>
-<p>ブラウザで <code><a href="http://localhost:8080/maya/with.html?name=" target="_blank">http://localhost:8080/maya/with.html?name=</a></code> にアクセスしてみましょう。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/with.html?name=" target="_blank">http://localhost:8080/mayaa/with.html?name=</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果
@@ -60,7 +60,7 @@ with.maya
 
 <p>パラメータ <code>name</code> の値が空ですので「<code>hello,</code>」は出力されず、<code>write</code> プロセッサの <code>default</code> 値である「<code>no name</code>」だけが出力されています。</p>
 
-<p>続いて <code><a href="http://localhost:8080/maya/with.html?name=hello" target="_blank">http://localhost:8080/maya/with.html?name=hello</a></code> にアクセスしてみましょう。</p>
+<p>続いて <code><a href="http://localhost:8080/mayaa/with.html?name=hello" target="_blank">http://localhost:8080/mayaa/with.html?name=hello</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果

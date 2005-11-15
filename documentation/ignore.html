@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 3-9. 指定した id を処理対象外にする</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : 3-9. 指定した id を処理対象外にする</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -22,9 +22,9 @@
 
 <h1>3-9. 指定した id を処理対象外にする</h1>
 
-<p>CSS や JavaScript から使うために <code>id</code> 属性を定義しても、Maya はそれをプロセッサに対応付けようとします。同じ要素を Maya で処理する場合には <a href="notation.html#mayaid" title="設定の記述方法"><code>m:id</code> を使えば良い</a>のですが、Maya で処理したくない要素の場合もあるでしょう。</p>
+<p>CSS や JavaScript から使うために <code>id</code> 属性を定義しても、Mayaa はそれをプロセッサに対応付けようとします。同じ要素を Mayaa で処理する場合には <a href="notation.html#mayaaid" title="設定の記述方法"><code>m:id</code> を使えば良い</a>のですが、Mayaa で処理したくない要素の場合もあるでしょう。</p>
 <p>テンプレート上の <code>id</code> を無視する場合には、<code>ignore</code> タグを使ってその <code>id</code> を無視指定します。プロセッサではありませんので xpath 指定はできません。</p>
-<p>maya ファイルに対応する指定がない場合には、初回アクセス時のログに次のような警告が出力されます。</p>
+<p>mayaa ファイルに対応する指定がない場合には、初回アクセス時のログに次のような警告が出力されます。</p>
 
 <pre>
 the injection ID(<strong>[対象 ID の値]</strong>) is not found on the template, file://<strong>[URL]</strong>
@@ -43,13 +43,13 @@ ignore.html
     &lt;span <strong>id="ignored"</strong>&gt;ignored&lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-ignore.maya
+ignore.mayaa
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;<strong>m:ignore</strong> <strong>id="ignored"</strong> /&gt;
-&lt;/m:maya&gt;</div></pre>
+&lt;/m:mayaa&gt;</div></pre>
 
-<p>ブラウザで <code><a href="http://localhost:8080/maya/ignore.html" target="_blank">http://localhost:8080/maya/ignore.html</a></code> にアクセスしてみましょう。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/ignore.html" target="_blank">http://localhost:8080/mayaa/ignore.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果

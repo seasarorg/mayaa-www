@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 2-2. 条件分岐とループ</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : 2-2. 条件分岐とループ</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -21,11 +21,11 @@
 
 <h1>2-2. 条件分岐とループ</h1>
 
-<p>簡単な制御として、条件分岐とループを使ってみましょう。「インストールしよう」で動作させた <code>C:\tomcat\webapps\maya</code> の下に新しくファイルを追加します。</p>
+<p>簡単な制御として、条件分岐とループを使ってみましょう。「インストールしよう」で動作させた <code>C:\tomcat\webapps\mayaa</code> の下に新しくファイルを追加します。</p>
 
 <h2>条件分岐を使う</h2>
 
-<p>条件を満たす場合のみ出力するサンプルを作ります。<code>if.html</code> と、その設定を行う <code>if.maya</code> を次のように作成します。</p>
+<p>条件を満たす場合のみ出力するサンプルを作ります。<code>if.html</code> と、その設定を行う <code>if.mayaa</code> を次のように作成します。</p>
 
 <pre>
 <code>if.html</code>
@@ -34,26 +34,26 @@
     &lt;span id="message"&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>if.maya</code>
+<code>if.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;<strong>m:if</strong> id="message" <strong>test="&#36;{ 1 == 1 }"</strong>&gt;
-        &lt;m:write value="Hello Maya!" /&gt;
+        &lt;m:write value="Hello Mayaa!" /&gt;
     &lt;/<strong>m:if</strong>&gt;
-&lt;/m:maya&gt;</div></pre>
+&lt;/m:mayaa&gt;</div></pre>
 
-<p>動作は Java の if 文と同じです。maya ファイルにある <code>m:if</code> の <code>test</code> を評価すると <code>true</code> になりますので、ボディの <code>m:write</code> によって "Hello Maya!" と出力されます。</p>
-<p>ブラウザで <code><a href="http://localhost:8080/maya/if.html" target="_blank">http://localhost:8080/maya/if.html</a></code> にアクセスしてみましょう。</p>
+<p>動作は Java の if 文と同じです。mayaa ファイルにある <code>m:if</code> の <code>test</code> を評価すると <code>true</code> になりますので、ボディの <code>m:write</code> によって "Hello Mayaa!" と出力されます。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/if.html" target="_blank">http://localhost:8080/mayaa/if.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
-    <strong>Hello Maya!</strong>
+    <strong>Hello Mayaa!</strong>
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<p>test の内容が <code>false</code> になるよう変更すると、"Hello Maya!" は表示されません。</p>
+<p>test の内容が <code>false</code> になるよう変更すると、"Hello Mayaa!" は表示されません。</p>
 
 <pre>
 <code>if.html</code>
@@ -62,13 +62,13 @@
     &lt;span id="message"&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>if.maya</code>
+<code>if.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:if id="message" <strong>test="&#36;{ 1 &amp;lt; 1 }"</strong>&gt;
-        &lt;m:write value="Hello Maya!" /&gt;
+        &lt;m:write value="Hello Mayaa!" /&gt;
     &lt;/m:if&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
@@ -81,7 +81,7 @@
 
 <h2>ループを使う</h2>
 
-<p>一部分を繰り返し出力するサンプルを作ります。<code>for.html</code> と、その設定を行う <code>for.maya</code> を次のように作成します。</p>
+<p>一部分を繰り返し出力するサンプルを作ります。<code>for.html</code> と、その設定を行う <code>for.mayaa</code> を次のように作成します。</p>
 
 <pre>
 <code>for.html</code>
@@ -90,33 +90,33 @@
     &lt;span id="message"&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>for.maya</code>
+<code>for.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;<strong>m:for</strong> id="message"
             <strong>init="&#36;{ var i = 0 }"</strong>
             <strong>test="&#36;{ i &amp;lt; 5 }"</strong>
             <strong>after="&#36;{ i++ }"</strong>&gt;
-        &lt;m:write value="Hello Maya!<strong>&amp;lt;br&amp;gt;</strong>" /&gt;
+        &lt;m:write value="Hello Mayaa!<strong>&amp;lt;br&amp;gt;</strong>" /&gt;
     &lt;/<strong>m:for</strong>&gt;
-&lt;/m:maya&gt;</div></pre>
+&lt;/m:mayaa&gt;</div></pre>
 
-<p>動作は Java の for 文と同じです。maya ファイルにある <code>m:for</code> は、最初に一度だけ <code>init</code> を実行します。その後、<code>test</code> を評価して結果が <code>true</code> になるならボディを実行し、最後に <code>after</code> を実行してから <code>test</code> の評価に戻ります。(実行結果を見やすくするため、"<code>Hello Maya!</code>" の後ろに <code>&lt;br&gt;</code> を付けています)</p>
-<p>ブラウザで <code><a href="http://localhost:8080/maya/for.html" target="_blank">http://localhost:8080/maya/for.html</a></code> にアクセスしてみましょう。</p>
+<p>動作は Java の for 文と同じです。mayaa ファイルにある <code>m:for</code> は、最初に一度だけ <code>init</code> を実行します。その後、<code>test</code> を評価して結果が <code>true</code> になるならボディを実行し、最後に <code>after</code> を実行してから <code>test</code> の評価に戻ります。(実行結果を見やすくするため、"<code>Hello Mayaa!</code>" の後ろに <code>&lt;br&gt;</code> を付けています)</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/for.html" target="_blank">http://localhost:8080/mayaa/for.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
-    <strong>Hello Maya!&lt;br&gt;</strong>
-    <strong>Hello Maya!&lt;br&gt;</strong>
-    <strong>Hello Maya!&lt;br&gt;</strong>
-    <strong>Hello Maya!&lt;br&gt;</strong>
-    <strong>Hello Maya!&lt;br&gt;</strong>
+    <strong>Hello Mayaa!&lt;br&gt;</strong>
+    <strong>Hello Mayaa!&lt;br&gt;</strong>
+    <strong>Hello Mayaa!&lt;br&gt;</strong>
+    <strong>Hello Mayaa!&lt;br&gt;</strong>
+    <strong>Hello Mayaa!&lt;br&gt;</strong>
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<p>結果として <code>"Hello Maya&lt;br&gt;"</code> が 5 回出力されます。</p>
+<p>結果として <code>"Hello Mayaa&lt;br&gt;"</code> が 5 回出力されます。</p>
 <p>初期化部 <code>init</code> で宣言した変数 <code>i</code> は、<code>m:for</code> の範囲内で有効です。<code>m:write</code> を使って <code>i</code> の値を出力してみましょう。</p>
 
 <pre>
@@ -126,16 +126,16 @@
     &lt;span id="message"&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>for.maya</code>
+<code>for.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:for id="message"
             init="&#36;{ var i = 0 }"
             test="&#36;{ i &amp;lt; 5 }"
             after="&#36;{ i++ }"&gt;
         &lt;m:write value="<strong>&#36;{ i }</strong>&amp;lt;br&amp;gt;" /&gt;
     &lt;/m:for&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;

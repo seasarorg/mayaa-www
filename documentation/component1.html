@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 2-6. HTML 部品を使う (静的)</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : 2-6. HTML 部品を使う (静的)</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -22,7 +22,7 @@
 
 <h1>2-6. HTML 部品を使う (静的)</h1>
 
-<p>Maya には HTML テンプレートと maya ファイルのセットを部品として扱う機能があります。このテンプレート部品のことを「コンポーネント」と呼びます。コンポーネントを作ることで機能の共有・再利用を実現できます。</p>
+<p>Mayaa には HTML テンプレートと mayaa ファイルのセットを部品として扱う機能があります。このテンプレート部品のことを「コンポーネント」と呼びます。コンポーネントを作ることで機能の共有・再利用を実現できます。</p>
 <p>コンポーネントの作り方は簡単で、基本的には通常の HTML テンプレートを作るのと変わりません。作った HTML テンプレートのうちコンポーネントにしたい部分に id をつけ、<strong>doRender プロセッサ</strong>と結びつけることでコンポーネントとして扱えるようになります。コンポーネントを使う側は <strong>insert プロセッサ</strong>を使ってコンポーネントを指定します。コンポーネントの HTML テンプレートを直接表示させれば、通常の HTML テンプレートとして動作をテストすることもできます。</p>
 
 <div class="figure">図 2-6-1: コンポーネントはテンプレートの一部として作成<br><img src="./images/component1.png" title="図 2-6-1: コンポーネントはテンプレートの一部として作成" width="472" height="144"></div>
@@ -40,11 +40,11 @@
     &lt;div <strong>id="comp"</strong>&gt;dummy&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>hello.maya</code>
+<code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;<strong>m:insert</strong> <strong>id="comp"</strong> <strong>path="/component.html"</strong> replace="false" /&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 <code>component.html</code>
 <div class="file">&lt;html&gt;
 &lt;body&gt;
@@ -54,14 +54,14 @@
     &lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>component.maya</code>
+<code>component.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;<strong>m:doRender</strong> <strong>id="centered"</strong> replace="false" /&gt;
-&lt;/m:maya&gt;</div></pre>
+&lt;/m:mayaa&gt;</div></pre>
 
-<p>関係するファイルは４つです。ユーザからリクエストされる <code>hello.html</code> およびその maya ファイル、それと <code>hello.html</code> から呼び出される <code>component.html</code> およびその maya ファイルです。</p>
-<p>ブラウザで <code><a href="http://localhost:8080/maya/hello.html" target="_blank">http://localhost:8080/maya/hello.html</a></code> にアクセスしてみましょう。</p>
+<p>関係するファイルは４つです。ユーザからリクエストされる <code>hello.html</code> およびその mayaa ファイル、それと <code>hello.html</code> から呼び出される <code>component.html</code> およびその mayaa ファイルです。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello.html" target="_blank">http://localhost:8080/mayaa/hello.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果
@@ -96,14 +96,14 @@
     &lt;div id="comp2"&gt;dummy&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>hello.maya</code>
+<code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:insert id="comp1"
             path="/component.html" <strong>name="center1"</strong> replace="false" /&gt;
     &lt;m:insert id="comp2"
             path="/component.html" <strong>name="center2"</strong> replace="false" /&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 <code>component.html</code>
 <div class="file">&lt;html&gt;
 &lt;body&gt;
@@ -116,12 +116,12 @@
     &lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>component.maya</code>
+<code>component.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:doRender id="centered1" <strong>name="center1"</strong> replace="false" /&gt;
     &lt;m:doRender id="centered2" <strong>name="center2"</strong> replace="false" /&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
@@ -149,11 +149,11 @@
     &lt;div id="comp"&gt;dummy&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>hello.maya</code>
+<code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:insert id="comp" path="/component1.html" replace="false" /&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 <code>component1.html</code>
 <div class="file">&lt;html&gt;
 &lt;body&gt;
@@ -164,12 +164,12 @@
     &lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>component1.maya</code>
+<code>component1.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:doRender id="centered" replace="false" /&gt;
     &lt;m:insert id="comp2" path="/component2.html" replace="false" /&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 <code>component2.html</code>
 <div class="file">&lt;html&gt;
 &lt;body&gt;
@@ -179,11 +179,11 @@
     <strong>&lt;/span&gt;</strong>
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>component2.maya</code>
+<code>component2.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     <strong>&lt;m:doRender id="righted" replace="false" /&gt;</strong>
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;

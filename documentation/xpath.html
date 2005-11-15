@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 3-7. id 指定の代わりに XPath を使う</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : 3-7. id 指定の代わりに XPath を使う</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -22,7 +22,7 @@
 
 <h1>3-7. id 指定の代わりに XPath を使う</h1>
 
-<p>テンプレートのタグとプロセッサを関連付けるには id を使いますが、その代替手段として XPath を使う方法があります。使うには maya ファイルで id="テンプレートの id" と書く代わりに <code><strong>xpath="XPath ロケーションパス"</strong></code> と書きます。XPath に関する説明や参考資料はこのページの最後にあります。</p>
+<p>テンプレートのタグとプロセッサを関連付けるには id を使いますが、その代替手段として XPath を使う方法があります。使うには mayaa ファイルで id="テンプレートの id" と書く代わりに <code><strong>xpath="XPath ロケーションパス"</strong></code> と書きます。XPath に関する説明や参考資料はこのページの最後にあります。</p>
 
 
 <h2>簡単な例</h2>
@@ -37,14 +37,14 @@ xpath.html
     &lt;p&gt;content&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-xpath.maya
+xpath.mayaa
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:write <strong>xpath="/html/body/h1"</strong> value="<strong>Title</strong>" replace="false" /&gt;
-&lt;/m:maya&gt;</div></pre>
+&lt;/m:mayaa&gt;</div></pre>
 
 <p>ルートはそのまま HTML のルートですので、 "<code>/html/body/h1</code>" というロケーションパスは <code>h1</code> タグを指します。</p>
-<p>ブラウザで <code><a href="http://localhost:8080/maya/xpath.html" target="_blank">http://localhost:8080/maya/xpath.html</a></code> にアクセスしてみましょう。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/xpath.html" target="_blank">http://localhost:8080/mayaa/xpath.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果
@@ -74,15 +74,15 @@ xpath_multi.html
     &lt;/ul&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-xpath_multi.maya
+xpath_multi.mayaa
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:echo xpath="<strong>//a</strong>"&gt;
         <strong>&lt;m:attribute name="target" value="_blank" /&gt;</strong>
     &lt;/m:echo&gt;
-&lt;/m:maya&gt;</div></pre>
+&lt;/m:mayaa&gt;</div></pre>
 
-<p>ブラウザで <code><a href="http://localhost:8080/maya/xpath_multi.html" target="_blank">http://localhost:8080/maya/xpath_multi.html</a></code> にアクセスしてみましょう。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/xpath_multi.html" target="_blank">http://localhost:8080/mayaa/xpath_multi.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果

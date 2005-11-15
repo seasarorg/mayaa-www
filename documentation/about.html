@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 1-1. Maya とは何か</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : 1-1. Mayaa とは何か</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -18,16 +18,16 @@
 
 <div class="main">
 
-<h1>1-1. Maya とは何か</h1>
+<h1>1-1. Mayaa とは何か</h1>
 
-<h2>Maya の位置づけ</h2>
+<h2>Mayaa の位置づけ</h2>
 
-<p>Maya をひとことで表すと、「HTML をテンプレートとして使う Web テンプレートエンジン」です。フレームワークとしての機能やページフローを扱う機能はなく、JSP を前提とするミドルウェア (Apache Struts など) と組み合わせて使うことを想定しています。</p>
-<p>図 1-1-1 に Maya の立ち位置を示します。Maya は一般的な JSP の使い方と同じ位置になり、Struts や WebWork2 などと連携して使用するものです。</p>
+<p>Mayaa をひとことで表すと、「HTML をテンプレートとして使う Web テンプレートエンジン」です。フレームワークとしての機能やページフローを扱う機能はなく、JSP を前提とするミドルウェア (Apache Struts など) と組み合わせて使うことを想定しています。</p>
+<p>図 1-1-1 に Mayaa の立ち位置を示します。Mayaa は一般的な JSP の使い方と同じ位置になり、Struts や WebWork2 などと連携して使用するものです。</p>
 
-<div class="figure">図 1-1-1: Maya の立ち位置<br><img src="./images/about_maya_position.png" title="図 1-1-1: Maya の立ち位置" width="546" height="213"></div>
+<div class="figure">図 1-1-1: Mayaa の立ち位置<br><img src="./images/about_mayaa_position.png" title="図 1-1-1: Mayaa の立ち位置" width="546" height="213"></div>
 
-<p>Maya が目指すのは、デザインとロジックを分離すること、Web デザイナとプログラマの協業を助けること、既存の JSP カスタムタグライブラリを有効活用することです。</p>
+<p>Mayaa が目指すのは、デザインとロジックを分離すること、Web デザイナとプログラマの協業を助けること、既存の JSP カスタムタグライブラリを有効活用することです。</p>
 
 
 <h3>Web アプリケーションのビューにおける問題点</h3>
@@ -55,9 +55,9 @@
 </ul>
 
 
-<h3>ビューの課題に対する Maya の回答</h3>
+<h3>ビューの課題に対する Mayaa の回答</h3>
 
-<p>Maya は JSP の代替として使えるよう設計されました。既存の HTML テンプレートエンジンの難点を解決し、JSP を前提としているフレームワークと組み合わせやすくなっています。</p>
+<p>Mayaa は JSP の代替として使えるよう設計されました。既存の HTML テンプレートエンジンの難点を解決し、JSP を前提としているフレームワークと組み合わせやすくなっています。</p>
 
 <ul>
 <li>テンプレートは HTML ファイルなのでブラウザでプレビューできる</li>
@@ -71,13 +71,13 @@
 <p>この中でも JSP カスタムタグを使えることは、既存のテンプレートエンジンにない特徴的な機能です。これによって、JSP の代替として使うときに過去の資産を活用できるようになります。</p>
 
 
-<h2>Maya の特徴</h2>
+<h2>Mayaa の特徴</h2>
 
-<p>Maya の基本的な使い方では、HTML テンプレートファイルとそれに対応する設定ファイル (拡張子 .maya) の２つを元にして動的なページを生成します。HTML テンプレートの動的な部分に id 属性で印を付け、その id に対して設定をする形になります。</p>
+<p>Mayaa の基本的な使い方では、HTML テンプレートファイルとそれに対応する設定ファイル (拡張子 .mayaa) の２つを元にして動的なページを生成します。HTML テンプレートの動的な部分に id 属性で印を付け、その id に対して設定をする形になります。</p>
 
-<div class="figure">図 1-1-2: Maya の基本的な動作<br><img src="./images/about_maya_standard.png" title="図 1-1-2: Maya の基本的な動作" width="543" height="222"></div>
+<div class="figure">図 1-1-2: Mayaa の基本的な動作<br><img src="./images/about_mayaa_standard.png" title="図 1-1-2: Mayaa の基本的な動作" width="543" height="222"></div>
 
-<p>テンプレート型ビュー技術としての Maya の主な特徴は次の４点です。</p>
+<p>テンプレート型ビュー技術としての Mayaa の主な特徴は次の４点です。</p>
 
 <ul>
 <li>テンプレートとして使えるファイルは HTML、XHTML、XML</li>
@@ -86,9 +86,9 @@
 <li>JSP カスタムタグを使える</li>
 </ul>
 
-<p>Maya の機能範囲はビュー技術のみですので、通常使う際は何らかの Servlet から forward して使うことになるでしょう。</p>
+<p>Mayaa の機能範囲はビュー技術のみですので、通常使う際は何らかの Servlet から forward して使うことになるでしょう。</p>
 
-<div class="figure">図 1-1-3: 基本的には forward して使う<br><img src="./images/about_maya_forward.png" title="図 1-1-3: 基本的には forward して使う" width="318" height="215"></div>
+<div class="figure">図 1-1-3: 基本的には forward して使う<br><img src="./images/about_mayaa_forward.png" title="図 1-1-3: 基本的には forward して使う" width="318" height="215"></div>
 
 
 </div>

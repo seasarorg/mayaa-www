@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 2-8. レイアウト共有機能を使う</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : 2-8. レイアウト共有機能を使う</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -22,15 +22,15 @@
 
 <h1>2-8. レイアウト共有機能を使う</h1>
 
-<p>デザインを統一する手間や全体的な変更をする際の手間を小さくするため、、複数のページでレイアウトを共有したいことがあるでしょう。Maya では、レイアウト用のテンプレートを用意し設定することで、そのレイアウトを複数のテンプレートで共有できます。</p>
-<p>Maya のレイアウト共有機能は、コンポーネント機能の主従関係を逆転させたものだと考えると理解しやすいでしょう。主となるページがコンポーネントとして振る舞い、自分というコンポーネントを使用する「親ページ」を指定します。Web ブラウザによって直接アクセスされるのは主となるページですから、コンポーネントを使う場合とちょうど逆転する形になります。</p>
+<p>デザインを統一する手間や全体的な変更をする際の手間を小さくするため、、複数のページでレイアウトを共有したいことがあるでしょう。Mayaa では、レイアウト用のテンプレートを用意し設定することで、そのレイアウトを複数のテンプレートで共有できます。</p>
+<p>Mayaa のレイアウト共有機能は、コンポーネント機能の主従関係を逆転させたものだと考えると理解しやすいでしょう。主となるページがコンポーネントとして振る舞い、自分というコンポーネントを使用する「親ページ」を指定します。Web ブラウザによって直接アクセスされるのは主となるページですから、コンポーネントを使う場合とちょうど逆転する形になります。</p>
 
 <div class="figure">図 2-8-1: レイアウト共有機能はコンポーネント機能の逆<br><img src="./images/layout_component.png" title="図 2-8-1: レイアウト共有機能はコンポーネント機能の逆" width="533" height="152"></div>
 
 
 <h2>簡単な例</h2>
 
-<p>まずは簡単な例として、コンポーネントの例を逆転させてレイアウト共有機能を使ってみましょう。レイアウトを定義しているテンプレートを <code>maya</code> タグの <strong>m:extends 属性</strong>で指定します。</p>
+<p>まずは簡単な例として、コンポーネントの例を逆転させてレイアウト共有機能を使ってみましょう。レイアウトを定義しているテンプレートを <code>mayaa</code> タグの <strong>m:extends 属性</strong>で指定します。</p>
 <!-- TODO レイアウト共有機能という意味をわかりやすくするため、レイアウトページの title タグを置き換えます。 -->
 
 <pre>
@@ -39,16 +39,16 @@
 &lt;body&gt;
     &lt;h1&gt;DummyTitleHello&lt;/h1&gt;
 
-    &lt;div <strong>id="content"</strong>&gt;<strong>Hello Maya!</strong>&lt;/div&gt;
+    &lt;div <strong>id="content"</strong>&gt;<strong>Hello Mayaa!</strong>&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>hello.maya</code>
+<code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         <strong>extends="/layout.html"</strong>&gt;
 
     &lt;<strong>m:doRender</strong> <strong>id="content"</strong> <strong>name="contentBody"</strong> /&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 <code>layout.html</code>
 <div class="file">&lt;html&gt;
 &lt;body&gt;
@@ -57,27 +57,27 @@
     &lt;div <strong>id="contentPosition"</strong>&gt;Dummy content&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>layout.maya</code>
+<code>layout.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;<strong>m:insert</strong> <strong>id="contentPosition"</strong> <strong>name="contentBody"</strong> /&gt;
-&lt;/m:maya&gt;</div></pre>
+&lt;/m:mayaa&gt;</div></pre>
 
 <p>コンポーネントの例と違う点は次の 4 点です。</p>
 <ul>
     <li>アクセスされる <code>hello.html</code> で <code>doRender</code> プロセッサを使っている</li>
     <li>使われる側の <code>layout.html</code> で <code>insert</code> プロセッサを使っている</li>
     <li><code>insert</code> プロセッサに <code>path</code> 属性を指定していない</li>
-    <li><code>hello.maya</code> で <code>extends</code> 属性を使っている</li>
+    <li><code>hello.mayaa</code> で <code>extends</code> 属性を使っている</li>
 </ul>
-<p>ブラウザで <code><a href="http://localhost:8080/maya/hello.html" target="_blank">http://localhost:8080/maya/hello.html</a></code> にアクセスしてみましょう。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello.html" target="_blank">http://localhost:8080/mayaa/hello.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
-    <strong>Hello Maya!</strong>
+    <strong>Hello Mayaa!</strong>
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
@@ -100,7 +100,7 @@
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
-    <strong>Hello Maya!</strong>
+    <strong>Hello Mayaa!</strong>
     &lt;h1&gt;Hello&lt;/h1&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
@@ -118,19 +118,19 @@
 &lt;body&gt;
     &lt;h1&gt;DummyTitleHello&lt;/h1&gt;
 
-    &lt;div <strong>id="content1"</strong>&gt;Hello Maya! 1&lt;/div&gt;
+    &lt;div <strong>id="content1"</strong>&gt;Hello Mayaa! 1&lt;/div&gt;
 
-    &lt;div <strong>id="content2"</strong>&gt;Hello Maya! 2&lt;/div&gt;
+    &lt;div <strong>id="content2"</strong>&gt;Hello Mayaa! 2&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>hello.maya</code>
+<code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         <strong>extends="/layout.html"</strong>&gt;
 
     &lt;m:doRender <strong>id="content1"</strong> <strong>name="position1"</strong> /&gt;
     &lt;m:doRender <strong>id="content2"</strong> <strong>name="position2"</strong> /&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 <code>layout.html</code>
 <div class="file">&lt;html&gt;
 &lt;body&gt;
@@ -140,18 +140,18 @@
     &lt;div <strong>id="contentPosition2"</strong>&gt;Dummy content 2&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>layout.maya</code>
+<code>layout.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:insert <strong>id="contentPosition1"</strong> <strong>name="position1"</strong> /&gt;
     &lt;m:insert <strong>id="contentPosition2"</strong> <strong>name="position2"</strong> /&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
-    <strong>Hello Maya! 1</strong>
-    <strong>Hello Maya! 2</strong>
+    <strong>Hello Mayaa! 1</strong>
+    <strong>Hello Mayaa! 2</strong>
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
@@ -166,16 +166,16 @@
 &lt;body&gt;
     &lt;h1&gt;DummyTitleHello&lt;/h1&gt;
 
-    &lt;div id="content"&gt;Hello Maya!&lt;/div&gt;
+    &lt;div id="content"&gt;Hello Mayaa!&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>hello.maya</code>
+<code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         extends="/layout.html"&gt;
 
     &lt;m:doRender id="content" name="contentBody" /&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 <code>layout.html</code>
 <div class="file">&lt;html&gt;
 &lt;body&gt;
@@ -184,12 +184,12 @@
     &lt;div id="contentPosition"&gt;Dummy content&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>layout.maya</code>
+<code>layout.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     <strong>&lt;m:insert id="comp" path="/component.html" /&gt;</strong>
     &lt;m:insert id="contentPosition" name="contentBody" /&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 <code>component.html</code>
 <div class="file">&lt;html&gt;
 &lt;body&gt;
@@ -199,17 +199,17 @@
     &lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>component.maya</code>
+<code>component.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:doRender <strong>id="centered"</strong> /&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
     <strong>&lt;div style="text-align: center"&gt;component value&lt;/div&gt;</strong>
-    Hello Maya!
+    Hello Mayaa!
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
@@ -221,7 +221,7 @@
 <h2>レイアウト共有時の変数スコープ</h2>
 
 <p>レイアウト共有機能を使う場合の変数スコープは、コンポーネントの場合と同様です。つまり、一番下になるレイアウトページが一番外側のスコープになります。ここはちょっと直感に合わないかもしれませんが、レイアウトページを使う側はレイアウトページの変数スコープの内側で動く形になります。</p>
-<p>レイアウトページでコンポーネントを利用するサンプルの変数スコープは、maya ファイル単位で考えると図 2-8-3 のようになります。</p>
+<p>レイアウトページでコンポーネントを利用するサンプルの変数スコープは、mayaa ファイル単位で考えると図 2-8-3 のようになります。</p>
 
 <div class="figure">図 2-8-3: レイアウト共有時の変数スコープ<br><img src="./images/layout_var_scope.png" title="図 2-8-3: レイアウト共有時の変数スコープ" width="317" height="157"></div>
 

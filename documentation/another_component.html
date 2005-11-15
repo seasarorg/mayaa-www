@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 3-6. もうひとつのコンポーネント記述方法</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : 3-6. もうひとつのコンポーネント記述方法</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -28,23 +28,23 @@
 
 <pre>
 &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org" <strong>xmlns:x="/components"</strong>&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org" <strong>xmlns:x="/components"</strong>&gt;
 
     &lt;<strong>x:component1.html</strong> m:id="message" <strong>x:greeting="hello"</strong> /&gt;
 
-&lt;/m:maya&gt;
+&lt;/m:mayaa&gt;
 </pre>
 
 <p>これは次の表記と同じ意味です。(正確には「<code>greeting</code>」の名前空間が違います)</p>
 
 <pre>
 &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
 
     &lt;m:insert m:id="message"
         <strong>m:path="/components/component1.html"</strong> <strong>m:greeting="hello"</strong> /&gt;
 
-&lt;/m:maya&gt;
+&lt;/m:mayaa&gt;
 </pre>
 
 <p>ここでは名前空間プレフィクスとして「<code>x</code>」を使っていますが、「<code>x</code>」に限らず任意の名前空間を使えます。あらかじめ独自の名前空間を定義していますので「<code>id</code>」や「<code>name</code>」のような変数を制限されることなく使えます。逆に <code>m:id</code> や <code>m:replace</code> などの名前空間プレフィクス「<code>m</code>」を省略できません。</p>
@@ -62,12 +62,12 @@
     &lt;div id="comp"&gt;dummy&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>hello.maya</code>
+<code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:insert id="comp" replace="false"
             <strong>path="/components/component.html"</strong> target="world" /&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 <code>component.html</code>
 <div class="file">&lt;html&gt;
 &lt;body&gt;
@@ -77,15 +77,15 @@
     &lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>component.maya</code>
+<code>component.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:doRender id="centered" replace="false" /&gt;
 
     &lt;m:write id="message" value="&#36;{ binding.target }" /&gt;
-&lt;/m:maya&gt;</div></pre>
+&lt;/m:mayaa&gt;</div></pre>
 
-<p>ブラウザで <code><a href="http://localhost:8080/maya/hello.html" target="_blank">http://localhost:8080/maya/hello.html</a></code> にアクセスしてみましょう。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello.html" target="_blank">http://localhost:8080/mayaa/hello.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果
@@ -100,14 +100,14 @@
 
 <p>正しくコンポーネントの内容が表示されています。</p>
 
-<p>では次に <code>hello.maya</code> の内容を次のように書き換えて実行してみましょう。置き換わっていることを確認するために <code>target</code> の内容を少し変えます。</p>
+<p>では次に <code>hello.mayaa</code> の内容を次のように書き換えて実行してみましょう。置き換わっていることを確認するために <code>target</code> の内容を少し変えます。</p>
 
 <pre>
-<code>hello.maya</code>
+<code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org" <strong>xmlns:x="/components"</strong>&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org" <strong>xmlns:x="/components"</strong>&gt;
     &lt;<strong>x:component.html</strong> <strong>m:</strong>id="comp" <strong>m:</strong>replace="false" target="<strong>new world</strong>" /&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;

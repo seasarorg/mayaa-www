@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 1-3. どのように使うのか</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : 1-3. どのように使うのか</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -22,7 +22,7 @@
 <h1>1-3. どのように使うのか</h1>
 
 <p>チュートリアルに進む前に、簡単な動作サンプルを見て雰囲気をつかみましょう。細かい内容については、チュートリアルで順番に説明していきます。</p>
-<p>実際に使うときは Servlet で HttpServletRequest に JavaBean をセットし、Maya へ forward して画面を表示する使い方が多いでしょう。ここでは話を簡単にするため、Maya だけで済ませてしまいます。</p>
+<p>実際に使うときは Servlet で HttpServletRequest に JavaBean をセットし、Mayaa へ forward して画面を表示する使い方が多いでしょう。ここでは話を簡単にするため、Mayaa だけで済ませてしまいます。</p>
 
 
 <h2>JavaBean の内容を表示する</h2>
@@ -49,7 +49,7 @@ public class MyBean {
     // setter, getter 省略
 </div></pre>
 
-<p>この JavaBean を表示するサンプルは次の通りです。usebean.maya の 5 行目で request の属性として MyBean のインスタンスをセットし、それを画面に表示しています。</p>
+<p>この JavaBean を表示するサンプルは次の通りです。usebean.mayaa の 5 行目で request の属性として MyBean のインスタンスをセットし、それを画面に表示しています。</p>
 
 <pre>
 <code>usebean.html</code>
@@ -83,9 +83,9 @@ public class MyBean {
     &lt;/table&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>usebean.maya</code>
+<code>usebean.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"&gt;
     &lt;m:beforeRender&gt;
         request.setAttribute('bean', new Packages.example.MyBean());
@@ -96,9 +96,9 @@ public class MyBean {
     &lt;fmt:formatNumber m:id="decimal" value="<strong>&#36;{ bean.decimal }</strong>" /&gt;
     &lt;fmt:formatDate m:id="timestamp" value="<strong>&#36;{ bean.timestamp }</strong>" /&gt;
 
-&lt;/m:maya&gt;</div></pre>
+&lt;/m:mayaa&gt;</div></pre>
 
-<p>これらのファイルはあらかじめパッケージに含まれています。ブラウザで <code><a href="http://localhost:8080/maya/usebean.html" target="_blank">http://localhost:8080/maya/usebean.html</a></code> にアクセスしてみましょう。</p>
+<p>これらのファイルはあらかじめパッケージに含まれています。ブラウザで <code><a href="http://localhost:8080/mayaa/usebean.html" target="_blank">http://localhost:8080/mayaa/usebean.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
@@ -133,7 +133,7 @@ public class MyBean {
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<p>テンプレートに JavaBean の内容を埋め込んだページが表示されました。それではテンプレートや .maya ファイルの書き方をチュートリアルをたどりながら見ていきましょう。</p>
+<p>テンプレートに JavaBean の内容を埋め込んだページが表示されました。それではテンプレートや .mayaa ファイルの書き方をチュートリアルをたどりながら見ていきましょう。</p>
 
 
 </div>

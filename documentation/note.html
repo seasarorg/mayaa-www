@@ -3,16 +3,16 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : appendix D. その他の注意点</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : appendix D. その他の注意点</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
-<a href="./maya_rhino_tips.html">←JavaScript を書くときの Tips</a>
+<a href="./mayaa_rhino_tips.html">←JavaScript を書くときの Tips</a>
 <a href="./index.html">↑index</a>
 <a href="./implicit_object.html">スクリプトで使える定義済みオブジェクト→</a>
 </div>
@@ -24,7 +24,7 @@
 <div class="toc">
 <a name="toc">目次</a>
 <ul>
-<li><a href="#dollar">テンプレートで &#36;{ } を書きたい</a></li>
+<li><a href="#dollar">テンプレートに &#36;{ } を書きたい</a></li>
 <li><a href="#charset">出力する文字エンコーディングを指定したい</a></li>
 <li><a href="#japanese">Java から出力した "～" が文字化けする</a></li>
 <li><a href="#escape">&lt;, &gt;, &amp; などを書きたい</a></li>
@@ -32,16 +32,16 @@
 </div>
 
 
-<h2><a name="dollar">テンプレートで &#36;{ } を書きたい</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
+<h2><a name="dollar">テンプレートに &#36;{ } を書きたい</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
-<p>Maya ではスクリプトを書くときに <code>&#36;{ }</code> という表記を使います。テンプレート上でも maya ファイル上でも、この表記をした場合にはスクリプトとして扱います。</p>
+<p>Mayaa ではスクリプトを書くときに <code>&#36;{ }</code> という表記を使います。テンプレート上でも mayaa ファイル上でも、この表記をした場合にはスクリプトとして扱います。</p>
 
 <p>そのためテンプレート上に <code>&#36;{ }</code> という文字列を書きたい場合、<code>&amp;#36;{ }</code> とエスケープして書く必要があります。</p>
 
 
 <h2><a name="charset">出力する文字エンコーディングを指定したい</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
-<p>Maya で出力する文字エンコーディングとテンプレート読み込み時の文字エンコーディングを決定するのは、テンプレートの文字エンコーディング指定です。HTML テンプレートであれば META タグでの指定、XML テンプレートであれば XML としての文字エンコーディング指定です。</p>
+<p>Mayaa で出力する文字エンコーディングとテンプレート読み込み時の文字エンコーディングを決定するのは、テンプレートの文字エンコーディング指定です。HTML テンプレートであれば META タグでの指定、XML テンプレートであれば XML としての文字エンコーディング指定です。</p>
 <p>文字エンコーディングを指定しない場合、HTML と XML で動作が異なります。HTML の場合、<code>UTF-8</code> と自動判定できる場合は <code>UTF-8</code> として、それ以外は <code>ISO-8859-1</code> として扱います。XML の場合は <code>UTF-8</code> として扱います。文字エンコーディングはトラブルの元となりやすいため、基本的には明示的に文字エンコーディング指定をするようにしてください。</p>
 
 
@@ -54,14 +54,14 @@
 
 <h2><a name="escape">&lt;, &gt;, &amp; などを書きたい</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
-<p>テンプレート、maya ファイルの両方とも、<code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code> などを文字として使いたい場合は <code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;amp;</code> のようにエスケープする必要があります。</p>
-<p>ちょっとややこしくなりますが、maya ファイルからテンプレートに「エスケープ後の文字列」を出力する場合、もう一段階エスケープしなければなりません。(<code>&amp;amp;lt;</code>, <code>&amp;amp;gt;</code>, <code>&amp;amp;amp;</code>)</p>
+<p>テンプレート、mayaa ファイルの両方とも、<code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code> などを文字として使いたい場合は <code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;amp;</code> のようにエスケープする必要があります。</p>
+<p>ちょっとややこしくなりますが、mayaa ファイルからテンプレートに「エスケープ後の文字列」を出力する場合、もう一段階エスケープしなければなりません。(<code>&amp;amp;lt;</code>, <code>&amp;amp;gt;</code>, <code>&amp;amp;amp;</code>)</p>
 
 
 </div>
 
 <div class="navi">
-<a href="./maya_rhino_tips.html">←JavaScript を書くときの Tips</a>
+<a href="./mayaa_rhino_tips.html">←JavaScript を書くときの Tips</a>
 <a href="./index.html">↑index</a>
 <a href="./implicit_object.html">スクリプトで使える定義済みオブジェクト→</a>
 </div>

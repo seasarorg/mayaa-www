@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 3-3. タグ描画のタイミングでスクリプトを実行する</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : 3-3. タグ描画のタイミングでスクリプトを実行する</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -37,9 +37,9 @@ exec.html
     &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-exec.maya
+exec.mayaa
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
 
     &lt;m:for id="loop" init="&#36;{ var i = 1 }"
             test="&#36;{ i &amp;lt; 6 }" after="&#36;{ i += 1 }" /&gt;
@@ -51,10 +51,10 @@ exec.maya
 
     &lt;m:write id="value" value="&#36;{ i + ': ' + evenodd }" /&gt;
 
-&lt;/m:maya&gt;</div></pre>
+&lt;/m:mayaa&gt;</div></pre>
 
 <p>変数 <code>evenodd</code> は <code>exec</code> プロセッサのボディ内でのみ有効です。<code>id="value"</code> の <code>write</code> プロセッサは <code>doBody</code> の結果 <code>exec</code> プロセッサのボディ内にあると見なせますので、<code>evenodd</code> 変数を参照することができます。</p>
-<p>ブラウザで <code><a href="http://localhost:8080/maya/exec.html" target="_blank">http://localhost:8080/maya/exec.html</a></code> にアクセスしてみましょう。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/exec.html" target="_blank">http://localhost:8080/mayaa/exec.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果

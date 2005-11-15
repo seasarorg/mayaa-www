@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 2-4. JSP カスタムタグを使う</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : 2-4. JSP カスタムタグを使う</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -21,13 +21,13 @@
 
 <h1>2-4. JSP カスタムタグを使う</h1>
 
-<p>Maya では JSP カスタムタグをほぼそのまま利用できます (違いについては「<a href="./maya_customtag_diff.html" title="appendix A. Maya と JSP カスタムタグ">Maya と JSP カスタムタグ</a>」を参照してください)。ここでは例として JSTL 1.0 の一部を使ってみましょう。Maya Getting Started package には JSTL 1.1 のライブラリ (Jakarta Taglibs - Standard Taglib 1.1.2) を同梱していますので、.maya ファイルに記述を追加するだけで使えるようになります。(core および format のみ)</p>
+<p>Mayaa では JSP カスタムタグをほぼそのまま利用できます (違いについては「<a href="./mayaa_customtag_diff.html" title="appendix A. Mayaa と JSP カスタムタグ">Mayaa と JSP カスタムタグ</a>」を参照してください)。ここでは例として JSTL 1.0 の一部を使ってみましょう。Mayaa Getting Started package には JSTL 1.1 のライブラリ (Jakarta Taglibs - Standard Taglib 1.1.2) を同梱していますので、.mayaa ファイルに記述を追加するだけで使えるようになります。(core および format のみ)</p>
 
 
 <h2>JSTL core の out タグを使う</h2>
 
-<p>「Hello Maya!」とだけ表示するサンプルを JSTL core の <code>out</code> タグを使って作ってみましょう。「インストールしよう」で動作させた <code>C:\tomcat\webapps\maya</code> の下に新しくファイルを追加します。</p>
-<p>ダミーメッセージを含むテンプレート <code>hello_jstl.html</code> と、その設定を行う <code>hello_jstl.maya</code> を次のように作成します。</p>
+<p>「Hello Mayaa!」とだけ表示するサンプルを JSTL core の <code>out</code> タグを使って作ってみましょう。「インストールしよう」で動作させた <code>C:\tomcat\webapps\mayaa</code> の下に新しくファイルを追加します。</p>
+<p>ダミーメッセージを含むテンプレート <code>hello_jstl.html</code> と、その設定を行う <code>hello_jstl.mayaa</code> を次のように作成します。</p>
 
 
 <pre>
@@ -37,21 +37,21 @@
     &lt;span id="message"&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>hello_jstl.maya</code>
+<code>hello_jstl.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         <strong>xmlns:c="http://java.sun.com/jsp/jstl/core"</strong>&gt;
-    &lt;<strong>c:out</strong> <strong>m:</strong>id="message" value="Hello Maya!" /&gt;
-&lt;/m:maya&gt;</div></pre>
+    &lt;<strong>c:out</strong> <strong>m:</strong>id="message" value="Hello Mayaa!" /&gt;
+&lt;/m:mayaa&gt;</div></pre>
 
-<p>「2. 最初の一歩」で作成したものとの異なるのは maya ファイルのみです。記述方法については次の「6. 設定の記述方法」で説明しますので、ここでは例の通りに作成してください。</p>
-<p>ブラウザで <code><a href="http://localhost:8080/maya/hello_jstl.html" target="_blank">http://localhost:8080/maya/hello_jstl.html</a></code> にアクセスしてみましょう。</p>
+<p>「2. 最初の一歩」で作成したものとの異なるのは mayaa ファイルのみです。記述方法については次の「6. 設定の記述方法」で説明しますので、ここでは例の通りに作成してください。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello_jstl.html" target="_blank">http://localhost:8080/mayaa/hello_jstl.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
-    <strong>Hello Maya!</strong>
+    <strong>Hello Mayaa!</strong>
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
@@ -68,16 +68,16 @@
     &lt;span id="message"&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>hello_jstl.maya</code>
+<code>hello_jstl.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         xmlns:c="http://java.sun.com/jsp/jstl/core"&gt;
-    &lt;<strong>c:out</strong> <strong>m:</strong>id="message" value="Hello Maya!" <strong>m:</strong>replace="false" /&gt;
-&lt;/m:maya&gt;</div>
+    &lt;<strong>c:out</strong> <strong>m:</strong>id="message" value="Hello Mayaa!" <strong>m:</strong>replace="false" /&gt;
+&lt;/m:mayaa&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
-    <strong>&lt;span id="message"&gt;</strong>Hello Maya!<strong>&lt;/span&gt;</strong>
+    <strong>&lt;span id="message"&gt;</strong>Hello Mayaa!<strong>&lt;/span&gt;</strong>
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
@@ -93,12 +93,12 @@
     &lt;span id="message"&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>hello_jstl.maya</code>
+<code>hello_jstl.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         xmlns:c="http://java.sun.com/jsp/jstl/core"&gt;
     &lt;<strong>c:out</strong> <strong>m:</strong>id="message" value="<strong>&#36;{ 1 + 2 }</strong>" /&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
@@ -106,7 +106,7 @@
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<p>この実行結果は <code>m:write</code> の実行結果「3」と異なり、「3.0」になっています。これは、スクリプトから <code>c:out</code> に渡る値の型が double になるためです。(「<a href="./maya_customtag_diff.html" title="appendix A. Maya と JSP カスタムタグ">Maya と JSP カスタムタグ</a>」を参照してください)</p>
+<p>この実行結果は <code>m:write</code> の実行結果「3」と異なり、「3.0」になっています。これは、スクリプトから <code>c:out</code> に渡る値の型が double になるためです。(「<a href="./mayaa_customtag_diff.html" title="appendix A. Mayaa と JSP カスタムタグ">Mayaa と JSP カスタムタグ</a>」を参照してください)</p>
 
 </div>
 

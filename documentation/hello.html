@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 2-1. 最初の一歩</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : 2-1. 最初の一歩</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -21,11 +21,11 @@
 
 <h1>2-1. 最初の一歩</h1>
 
-<p>最初に簡単なページを作成し、動作させてみましょう。Tomcat を再起動する必要はありません。「インストールしよう」で動作させた <code>C:\tomcat\webapps\maya</code> の下に新しくファイルを追加します。</p>
+<p>最初に簡単なページを作成し、動作させてみましょう。Tomcat を再起動する必要はありません。「インストールしよう」で動作させた <code>C:\tomcat\webapps\mayaa</code> の下に新しくファイルを追加します。</p>
 
-<h2>Hello Maya</h2>
+<h2>Hello Mayaa</h2>
 
-<p>「Hello Maya!」とだけ表示するページを作ります。ダミーメッセージを含むテンプレート <code>hello.html</code> と、その設定を行う <code>hello.maya</code> を次のように作成します。</p>
+<p>「Hello Mayaa!」とだけ表示するページを作ります。ダミーメッセージを含むテンプレート <code>hello.html</code> と、その設定を行う <code>hello.mayaa</code> を次のように作成します。</p>
 
 <pre>
 <code>hello.html</code>
@@ -34,27 +34,27 @@
     &lt;span <strong>id="message"</strong>&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>hello.maya</code>
+<code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
-    &lt;m:write <strong>id="message"</strong> value="<strong>Hello Maya!</strong>" /&gt;
-&lt;/m:maya&gt;</div></pre>
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
+    &lt;m:write <strong>id="message"</strong> value="<strong>Hello Mayaa!</strong>" /&gt;
+&lt;/m:mayaa&gt;</div></pre>
 
-<p>テンプレート <code>hello.html</code> 上の span タグと <code>id</code> が一致するものを maya ファイル <code>hello.maya</code> 上から探し、<code>value</code> の値である「Hello maya!」という文字列に置き換えて出力します。</p>
-<p>ブラウザで <code><a href="http://localhost:8080/maya/hello.html" target="_blank">http://localhost:8080/maya/hello.html</a></code> にアクセスしてみましょう。</p>
+<p>テンプレート <code>hello.html</code> 上の span タグと <code>id</code> が一致するものを mayaa ファイル <code>hello.mayaa</code> 上から探し、<code>value</code> の値である「Hello mayaa!」という文字列に置き換えて出力します。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello.html" target="_blank">http://localhost:8080/mayaa/hello.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
-    <strong>Hello Maya!</strong>
+    <strong>Hello Mayaa!</strong>
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
 
 <h2>テンプレート上のタグを残す</h2>
 
-<p>maya ファイルで使用している <code>m:write</code> は <code>value</code> の値をそのまま出力します。テンプレート上のタグを維持したまま中身だけ書き換えたい場合は、属性として <code>replace="false"</code> を追加します。<code>replace</code> はテンプレート上のタグを残すかどうかの設定で、デフォルトは <code>true</code> です。</p>
+<p>mayaa ファイルで使用している <code>m:write</code> は <code>value</code> の値をそのまま出力します。テンプレート上のタグを維持したまま中身だけ書き換えたい場合は、属性として <code>replace="false"</code> を追加します。<code>replace</code> はテンプレート上のタグを残すかどうかの設定で、デフォルトは <code>true</code> です。</p>
 
 <pre>
 <code>hello.html</code>
@@ -63,22 +63,22 @@
     &lt;span id="message"&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>hello.maya</code>
+<code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
-    &lt;m:write id="message" value="Hello Maya!" <strong>replace="false"</strong> /&gt;
-&lt;/m:maya&gt;</div>
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
+    &lt;m:write id="message" value="Hello Mayaa!" <strong>replace="false"</strong> /&gt;
+&lt;/m:mayaa&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
-    <strong>&lt;span id="message"&gt;</strong>Hello Maya!<strong>&lt;/span&gt;</strong>
+    <strong>&lt;span id="message"&gt;</strong>Hello Mayaa!<strong>&lt;/span&gt;</strong>
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
 
 <h2><a name="script">スクリプトでオブジェクトを出力する</a></h2>
 
-<p>Maya では様々な場所でスクリプトを使用できます。スクリプト言語は JavaScript (標準で利用する実装は <a href="http://www.mozilla.org/rhino/" title="Rhino: JavaScript for Java">Rhino</a>) です。スクリプトを使用するときには <code>&#36;{ }</code> で囲んで記述します。</p>
+<p>Mayaa では様々な場所でスクリプトを使用できます。スクリプト言語は JavaScript (標準で利用する実装は <a href="http://www.mozilla.org/rhino/" title="Rhino: JavaScript for Java">Rhino</a>) です。スクリプトを使用するときには <code>&#36;{ }</code> で囲んで記述します。</p>
 
 <pre>
 <code>hello.html</code>
@@ -87,11 +87,11 @@
     &lt;span id="message"&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>hello.maya</code>
+<code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:write id="message" value="<strong>&#36;{ 1 + 2 }</strong>" /&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
@@ -105,16 +105,16 @@
 <p>参照するだけであれば、もっと簡単に、直接 <code>&#36;{ 属性名 }</code> と変数名として記述できます。変数をスコープから探す順番は、page スコープ、request スコープ、session スコープ、application スコープの順で、どこにも見つからない場合は例外を投げます。</p>
 <p>またクライアントから送信されてきたパラメータを参照するには、<code>&#36;{ param.パラメータ名 }</code> とします。この場合、存在しないパラメータ名を指定すると <code>undefined</code> が返ります。</p>
 
-<p>試しにクライアントから送信されてきたパラメータを参照してみましょう。<code>hello.maya</code> を次のように書き換えます。</p>
+<p>試しにクライアントから送信されてきたパラメータを参照してみましょう。<code>hello.mayaa</code> を次のように書き換えます。</p>
 
 <pre>
-<code>hello.maya</code>
+<code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:write id="message" value="Hello <strong>&#36;{ param.name }</strong>" /&gt;
-&lt;/m:maya&gt;</div></pre>
+&lt;/m:mayaa&gt;</div></pre>
 
-<p>ブラウザで <code><a href="http://localhost:8080/maya/hello.html?name=world" target="_blank">http://localhost:8080/maya/hello.html?name=world</a></code> にアクセスしてみましょう。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello.html?name=world" target="_blank">http://localhost:8080/mayaa/hello.html?name=world</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果

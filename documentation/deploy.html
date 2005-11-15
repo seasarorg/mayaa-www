@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 2-9. アプリケーションサーバに配置する</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : 2-9. アプリケーションサーバに配置する</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -20,25 +20,25 @@
 
 <h1>2-9. アプリケーションサーバに配置する</h1>
 
-<p>Maya を使うアプリケーションをアプリケーションサーバに配置する際に必要なことを説明します。</p>
+<p>Mayaa を使うアプリケーションをアプリケーションサーバに配置する際に必要なことを説明します。</p>
 
 
 <h2>ページを置く場所</h2>
 
-<p>Maya はリクエストされたファイルを次の順番で探します。(例: http://localhost:8080/maya/index.html にアクセスされた場合)</p>
+<p>Mayaa はリクエストされたファイルを次の順番で探します。(例: http://localhost:8080/mayaa/index.html にアクセスされた場合)</p>
 
 <ol>
-<li>コンテキストルートの下 (例: C:\tomcat\webapps\maya\index.html)</li>
-<li>/WEB-INF/page の下 (例: C:\tomcat\webapps\maya\WEB-INF\page\index.html)</li>
-<li>クラスパス (例: C:\tomcat\webapps\maya\WEB-INF\classes\index.html)</li>
+<li>コンテキストルートの下 (例: C:\tomcat\webapps\mayaa\index.html)</li>
+<li>/WEB-INF/page の下 (例: C:\tomcat\webapps\mayaa\WEB-INF\page\index.html)</li>
+<li>クラスパス (例: C:\tomcat\webapps\mayaa\WEB-INF\classes\index.html)</li>
 </ol>
 
-<p>2, 3 番目は、Maya を通さなければアクセスできない場所ですので、MayaServlet の設定を間違えている場合や MayaServlet のみ異常終了した場合に、直接テンプレートの HTML ファイルを表示してしまうことを防げます。</p>
+<p>2, 3 番目は、Mayaa を通さなければアクセスできない場所ですので、MayaaServlet の設定を間違えている場合や MayaaServlet のみ異常終了した場合に、直接テンプレートの HTML ファイルを表示してしまうことを防げます。</p>
 
 
 <h3>標準のディレクトリ構成</h3>
 
-<p>Maya の標準設定では下記のようになっています。Maya が動作するために必要なファイルはこれで全部です。</p>
+<p>Mayaa の標準設定では下記のようになっています。Mayaa が動作するために必要なファイルはこれで全部です。</p>
 
 <pre>コンテキストルート
   + WEB-INF
@@ -46,7 +46,7 @@
       - commons-beanutils-core-*.jar
       - commons-logging-*.jar
       - jaxen-*.jar
-      - maya-*.jar
+      - mayaa-*.jar
       - nekohtml-*.jar
       - rhino-*.jar
       - xercesImpl-*.jar
@@ -56,12 +56,12 @@
 
 <h2>web.xml の書き方</h2>
 
-<p>Maya の基本的な使い方は、MayaServlet を定義しページを返すときに forward する使い方です。JSP に forward する場合と同じです。従って、Maya に任せるファイル (一般的には *.html) を MayaServlet にマッピングする設定を行います。</p>
+<p>Mayaa の基本的な使い方は、MayaaServlet を定義しページを返すときに forward する使い方です。JSP に forward する場合と同じです。従って、Mayaa に任せるファイル (一般的には *.html) を MayaaServlet にマッピングする設定を行います。</p>
 
 
-<h3>MayaServlet を設定する</h3>
+<h3>MayaaServlet を設定する</h3>
 
-<p>拡張子が .html の HTML ファイルのみを Maya に任せる場合、次のように設定します。</p>
+<p>拡張子が .html の HTML ファイルのみを Mayaa に任せる場合、次のように設定します。</p>
 
 <pre>
 &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
@@ -70,22 +70,22 @@
     "http://java.sun.com/dtd/web-app_2_3.dtd"&gt;
 &lt;web-app&gt;
     &lt;servlet&gt;
-        &lt;servlet-name&gt;MayaServlet&lt;/servlet-name&gt;
-        &lt;servlet-class&gt;org.seasar.maya.impl.MayaServlet&lt;/servlet-class&gt;
+        &lt;servlet-name&gt;MayaaServlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;org.seasar.mayaa.impl.MayaaServlet&lt;/servlet-class&gt;
     &lt;/servlet&gt;
 
     &lt;servlet-mapping&gt;
-        &lt;servlet-name&gt;MayaServlet&lt;/servlet-name&gt;
+        &lt;servlet-name&gt;MayaaServlet&lt;/servlet-name&gt;
         &lt;url-pattern&gt;*.html&lt;/url-pattern&gt;
     &lt;/servlet-mapping&gt;
 &lt;/web-app&gt;
 </pre>
 
-<p>Maya はリクエストされたファイルの Mime-Type が html、xhtml、xml であるか、もしくは拡張子が .maya である場合に処理を行います。それ以外であれば前述のパス解決を行ったあと、そのまま素通しします。他の Servlet やアプリケーションに処理を任せるものがなければ、すべての URL を Maya に任せることもできます。</p>
+<p>Mayaa はリクエストされたファイルの Mime-Type が html、xhtml、xml であるか、もしくは拡張子が .mayaa である場合に処理を行います。それ以外であれば前述のパス解決を行ったあと、そのまま素通しします。他の Servlet やアプリケーションに処理を任せるものがなければ、すべての URL を Mayaa に任せることもできます。</p>
 
 <pre>
     &lt;servlet-mapping&gt;
-        &lt;servlet-name&gt;MayaServlet&lt;/servlet-name&gt;
+        &lt;servlet-name&gt;MayaaServlet&lt;/servlet-name&gt;
         &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
     &lt;/servlet-mapping&gt;
 </pre>

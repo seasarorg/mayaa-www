@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 3-8. 指定したタグを出力しないようにする</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : 3-8. 指定したタグを出力しないようにする</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -41,19 +41,19 @@ remove.html
     &lt;/ul&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-remove.maya
+remove.mayaa
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:for id="loop"
             init="&#36;{ var i = 0; }" test="&#36;{ i &amp;lt; 5 }" after="&#36;{ i += 1 }"&gt;
     &lt;/m:for&gt;
     &lt;m:write id="message" value="&#36;{ i }" /&gt;
 
     &lt;<strong>m:null</strong> <strong>xpath="//li[@class='dummy']"</strong> /&gt;
-&lt;/m:maya&gt;</div></pre>
+&lt;/m:mayaa&gt;</div></pre>
 
 <p>実行時に出力したくないタグに <code>class="dummy"</code> を設定し、XPath を使って <code>null</code> プロセッサを対応させています。</p>
-<p>ブラウザで <code><a href="http://localhost:8080/maya/remove.html" target="_blank">http://localhost:8080/maya/remove.html</a></code> にアクセスしてみましょう。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/remove.html" target="_blank">http://localhost:8080/mayaa/remove.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果
@@ -74,7 +74,7 @@ remove.maya
 
 <h2>使い分け</h2>
 
-<p>出力しない設定をする方法は <code>null</code> プロセッサと <code>rendered</code> 属性の 2 種類があります。基本的に maya ファイルに設定を記述する場合は <code>null</code> プロセッサを使い、テンプレートに設定を記述する場合は <code>rendered</code> 属性を使います。テンプレートに記述する場合は純粋な HTML でなくなってしまうことと、複数要素を一括して指定する方法がないというデメリットがあります。</p>
+<p>出力しない設定をする方法は <code>null</code> プロセッサと <code>rendered</code> 属性の 2 種類があります。基本的に mayaa ファイルに設定を記述する場合は <code>null</code> プロセッサを使い、テンプレートに設定を記述する場合は <code>rendered</code> 属性を使います。テンプレートに記述する場合は純粋な HTML でなくなってしまうことと、複数要素を一括して指定する方法がないというデメリットがあります。</p>
 
 
 </div>

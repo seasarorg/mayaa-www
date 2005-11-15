@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 3-2. レンダリング前後にスクリプトを実行する</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : 3-2. レンダリング前後にスクリプトを実行する</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -35,9 +35,9 @@
     &lt;span id="past"&gt;dummy past time&lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>before_render.maya</code>
+<code>before_render.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     <strong>&lt;m:beforeRender&gt;</strong>
         var cal = java.util.Calendar.getInstance();
         cal.set(java.util.Calendar.YEAR, 2000);
@@ -45,9 +45,9 @@
     <strong>&lt;/m:beforeRender&gt;</strong>
 
     &lt;m:write id="past" value="&#36;{ date }" /&gt;
-&lt;/m:maya&gt;</div></pre>
+&lt;/m:mayaa&gt;</div></pre>
 
-<p>ブラウザで <code><a href="http://localhost:8080/maya/before_render.html" target="_blank">http://localhost:8080/maya/before_render.html</a></code> にアクセスしてみましょう。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/before_render.html" target="_blank">http://localhost:8080/mayaa/before_render.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
@@ -89,9 +89,9 @@
 
 <h2>コンポーネントやレイアウトを使う場合の実行順</h2>
 
-<p>コンポーネントやレイアウト、さらには <code>default.maya</code> でも <code>beforeRender</code> と <code>afterRender</code> を使うことができます。これらを組み合わせて使うには、どういう順番で実行されるかを意識する必要があります。</p>
+<p>コンポーネントやレイアウト、さらには <code>default.mayaa</code> でも <code>beforeRender</code> と <code>afterRender</code> を使うことができます。これらを組み合わせて使うには、どういう順番で実行されるかを意識する必要があります。</p>
 
-<p>全体の設定である <code>default.maya</code> に書いた <code>beforeRender</code> は、他のすべての <code>beforeRender</code> よりも先に実行されます。そして <code>default.maya</code> の <code>afterRender</code> は他のすべての <code>afterRender</code> よりも後に実行されます。</p>
+<p>全体の設定である <code>default.mayaa</code> に書いた <code>beforeRender</code> は、他のすべての <code>beforeRender</code> よりも先に実行されます。そして <code>default.mayaa</code> の <code>afterRender</code> は他のすべての <code>afterRender</code> よりも後に実行されます。</p>
 <p>次にリクエストされたページの <code>beforeRender</code> が実行され、レイアウトを使っていればその次にレイアウトページの <code>beforeRender</code> が実行されます。全体の描画が終わったあと、レイアウトページの <code>afterRender</code>、リクエストされたページの <code>afterRender</code> が実行されます。</p>
 <p>コンポーネントの <code>beforeRender</code> はそのコンポーネントを処理する直前に処理されます。その後にコンポーネントがレンダリングされて <code>afterRender</code> が処理された後、コンポーネントを使うページのレンダリングに戻ります。ひとつのコンポーネントページに複数のコンポーネントを定義している場合、そのひとつひとつに同じ <code>beforeRender</code>、<code>afterRender</code> が定義されていると考えてください。</p>
 

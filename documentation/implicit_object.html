@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : appendix E. スクリプトで使える定義済みオブジェクト</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : appendix E. スクリプトで使える定義済みオブジェクト</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -41,7 +41,7 @@
 
 <h2><a name="scope">定義済みオブジェクト</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h2>
 
-<p>オブジェクトを格納するスコープは、Maya がスクリプトから操作できるオブジェクトとして定義しています。たとえば <code>request</code> スコープに格納されている <code>message</code> という名前の属性を操作するには２つの簡略表記があります。</p>
+<p>オブジェクトを格納するスコープは、Mayaa がスクリプトから操作できるオブジェクトとして定義しています。たとえば <code>request</code> スコープに格納されている <code>message</code> という名前の属性を操作するには２つの簡略表記があります。</p>
 
 <ul>
 <li><code>request.message</code></li>
@@ -56,9 +56,9 @@
 <dt><code>getAttribute(String name)</code></dt>
 <dd>指定名の属性をスコープから取得します。スコープ内になければ <code>undefined</code> を返します。</dd>
 <dt><code>setAttribute(String name, Object value)</code></dt>
-<dd>指定名の属性をスコープにセットします。読み込み専用スコープの場合は例外を投げます。(<code>org.seasar.maya.impl.cycle.scope.ScopeNotWritableException</code>)</dd>
+<dd>指定名の属性をスコープにセットします。読み込み専用スコープの場合は例外を投げます。(<code>org.seasar.mayaa.impl.cycle.scope.ScopeNotWritableException</code>)</dd>
 <dt><code>removeAttribute(String name)</code></dt>
-<dd>指定名の属性をスコープから削除します。読み込み専用スコープの場合は例外を投げます。(<code>org.seasar.maya.impl.cycle.scope.ScopeNotWritableException</code>)</dd>
+<dd>指定名の属性をスコープから削除します。読み込み専用スコープの場合は例外を投げます。(<code>org.seasar.mayaa.impl.cycle.scope.ScopeNotWritableException</code>)</dd>
 <dt><code>isAttributeWritable()</code></dt>
 <dd>スコープが書き込み可能かどうかを <code>true</code>/<code>false</code> で返します。</dd>
 <dt><code>hasAttribute(String name)</code></dt>
@@ -69,7 +69,7 @@
 <dd>指定名の属性がスコープから取得します。スコープ内にない場合の処理はスコープごとに異なりますが、一般的には attributeClass のインスタンスを生成し、スコープに指定名でセットしてから返します。</dd>
 </dl>
 
-<p>Maya 標準のスコープは次の９つです。</p>
+<p>Mayaa 標準のスコープは次の９つです。</p>
 
 <h3><a name="application">application: アプリケーションスコープ</a> <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
 

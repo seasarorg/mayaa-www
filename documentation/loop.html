@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 2-3. テンプレートを活かすループ</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : 2-3. テンプレートを活かすループ</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -21,7 +21,7 @@
 
 <h1>2-3. テンプレートを活かすループ</h1>
 
-<p>ループする部分のテンプレートを活かしたサンプルを作ってみましょう。「インストールしよう」で動作させた <code>C:\tomcat\webapps\maya</code> の下に新しくファイルを追加します。</p>
+<p>ループする部分のテンプレートを活かしたサンプルを作ってみましょう。「インストールしよう」で動作させた <code>C:\tomcat\webapps\mayaa</code> の下に新しくファイルを追加します。</p>
 
 <h2>テーブルを作る</h2>
 
@@ -38,19 +38,19 @@
     &lt;/table&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>doBody.maya</code>
+<code>doBody.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:for <strong>id="loop"</strong>
             init="&#36;{ var i = 0 }"
             test="&#36;{ i &amp;lt; 5 }"
             after="&#36;{ i++ }"&gt;
         &lt;<strong>m:doBody</strong> /&gt;
     &lt;/m:for&gt;
-&lt;/m:maya&gt;</div></pre>
+&lt;/m:mayaa&gt;</div></pre>
 
-<p>maya ファイルの <code>m:for</code> と関連付いているのは span タグです。span タグのボディである tr, td タグおよびその内容が、テンプレートの状態のまま繰り返し出力されます。</p>
-<p>ブラウザで <code><a href="http://localhost:8080/maya/doBody.html" target="_blank">http://localhost:8080/maya/doBody.html</a></code> にアクセスしてみましょう。</p>
+<p>mayaa ファイルの <code>m:for</code> と関連付いているのは span タグです。span タグのボディである tr, td タグおよびその内容が、テンプレートの状態のまま繰り返し出力されます。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/doBody.html" target="_blank">http://localhost:8080/mayaa/doBody.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果
@@ -80,9 +80,9 @@
     &lt;/table&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>doBody.maya</code>
+<code>doBody.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:for id="loop"
             init="&#36;{ var i = 0 }"
             test="&#36;{ i &amp;lt; 5 }"
@@ -91,7 +91,7 @@
     &lt;/m:for&gt;
 
     <strong>&lt;m:write id="message" value="&#36;{ i }" /&gt;</strong>
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
@@ -104,7 +104,7 @@
     &lt;/table&gt;
 &lt;/body&gt;&lt;/html&gt;</div></pre>
 
-<p>ループするとき、<code>m:doBody</code> を実行するタイミングで span タグのボディのみを maya ファイル全体と対応させて出力を行います。</p>
+<p>ループするとき、<code>m:doBody</code> を実行するタイミングで span タグのボディのみを mayaa ファイル全体と対応させて出力を行います。</p>
 
 <div class="figure">図 2-3-1: doBody 実行イメージ<br><img src="./images/doBody.png" title="図 2-3-1: doBody 実行イメージ" width="581" height="524"></div>
 
@@ -125,9 +125,9 @@
     &lt;/table&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>doBody.maya</code>
+<code>doBody.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:for id="loop" <strong>replace="false"</strong>
             init="&#36;{ var i = 0 }"
             test="&#36;{ i &amp;lt; 5 }"
@@ -136,7 +136,7 @@
     &lt;/m:for&gt;
 
     &lt;m:write id="message" value="&#36;{ i }" <strong>replace="false"</strong> /&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;

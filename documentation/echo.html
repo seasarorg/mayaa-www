@@ -3,12 +3,12 @@
 <html lang="ja">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Maya : Documentation : 3-4. タグの属性のみを置き換える</title>
-    <link rel="STYLESHEET" href="./maya.css" type="text/css">
+    <title>Mayaa : Documentation : 3-4. タグの属性のみを置き換える</title>
+    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
 </head>
 <body>
 <div class="header">
-<div>Maya : JavaServer Templates</div>
+<div>Mayaa : JavaServer Templates</div>
 </div>
 
 <div class="navi">
@@ -41,16 +41,16 @@ echo_list.html
     &lt;/ol&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-echo_list.maya
+echo_list.mayaa
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;<strong>m:echo</strong> id="list"&gt;
         &lt;<strong>m:attribute</strong> name="type" value="i" /&gt;
     &lt;/<strong>m:echo</strong>&gt;
-&lt;/m:maya&gt;</div></pre>
+&lt;/m:mayaa&gt;</div></pre>
 
 <p>テンプレートの <code>ol</code> タグに <code>m:echo</code> を対応付け、<code>m:echo</code> の子として <code>m:attribute</code> を書きます。<code>m:attribute</code> の <code>name</code> 属性に変更したい属性名、<code>value</code> に変更後の属性値を設定します。<code>m:attribute</code> を複数書けば、複数の属性を置き換えられます。</p>
-<p>ブラウザで <code><a href="http://localhost:8080/maya/echo_list.html" target="_blank">http://localhost:8080/maya/echo_list.html</a></code> にアクセスしてみましょう。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/echo_list.html" target="_blank">http://localhost:8080/mayaa/echo_list.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果
@@ -85,14 +85,14 @@ echo_list.html
     &lt;/ol&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-echo_list.maya
+echo_list.mayaa
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:echo id="list"&gt;
         &lt;m:attribute name="type" value="i" /&gt;
         &lt;m:attribute <strong>name="style"</strong> <strong>value="color: blue;"</strong> /&gt;
     &lt;/m:echo&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
@@ -123,15 +123,15 @@ echo_list.html
     &lt;/ol&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-echo_list.maya
+echo_list.mayaa
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:maya xmlns:m="http://maya.seasar.org"&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:echo id="list"&gt;
         &lt;m:attribute name="type" value="i" /&gt;
         &lt;m:attribute name="style" value="color: blue;" /&gt;
         &lt;m:attribute name="<strong>start</strong>" value="<strong>&#36;{ new Number(start) + 2 }</strong>" /&gt;
     &lt;/m:echo&gt;
-&lt;/m:maya&gt;</div>
+&lt;/m:mayaa&gt;</div>
 実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
