@@ -62,16 +62,6 @@
 <p>この例の場合に限れば、文字列に変換した後で渡す <code>fmt:numberFormat</code> を使うなどの回避策があります。式言語の暗黙的な動作を期待しているカスタムタグの場合はこのような回避策を取る必要があるかもしれません。</p>
 
 
-<h2>スクリプト変数のスコープの違い</h2>
-
-<p>JSP カスタムタグで「スクリプト変数」を定義する (たとえば <code>c:set</code>) 場合、スクリプト変数は page スコープに置かれ、有効な範囲はカスタムタグによってコントロールされます。(AT_BEGIN (タグ開始からページ終わりまで), AT_END (タグ終了からページ終わりまで), NESTED (タグ開始からタグ終了まで))</p>
-<p>しかし Mayaa の場合すべてのタグは自分の変数スコープを持ち、その範囲は NESTED (タグ開始からタグ終了まで) になります。従って <code>c:set</code> タグで <code>scope="page"</code> と指定した場合、もしくは <code>scope</code> を指定しない場合は実質的に何も行われません。<code>c:set</code> タグを使う場合、<code>scope</code> は <code>request</code>, <code>session</code>, <code>application</code> のいずれかを指定してください。page スコープにスクリプト変数をセットする JSP カスタムタグはすべて同様です。</p>
-
-<div class="figure">図 A-1-1: 変数スコープの層<br><img src="./images/appendix_scope.png" title="図 A-1-1: 変数スコープの層" width="458" height="273"></div>
-
-<p>暗黙的ですが、JSTL core の <code>c:catch</code> タグは catch した例外を page スコープに格納します。このため <code>c:catch</code> タグを Mayaa で使う場合、変数にセットした例外は読み出される前に消えてしまいます。</p>
-
-
 </div>
 
 <div class="navi">
