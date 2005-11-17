@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    targetNamespace="http://mayaa.seasar.org"
+    xmlns:m="http://mayaa.seasar.org"
+    version="0.9.20">
+
+  <xsd:element name="mayaa">
+    <xsd:complexType>
+      <xsd:all>
+        <xsd:element ref="m:beforeRender"/>
+        <xsd:element ref="m:afterRender"/>
+        <xsd:element maxOccurs="unbounded" ref="m:comment"/>
+        <xsd:element maxOccurs="unbounded" ref="m:write"/>
+        <xsd:element maxOccurs="unbounded" ref="m:if"/>
+        <xsd:element maxOccurs="unbounded" ref="m:for"/>
+        <xsd:element maxOccurs="unbounded" ref="m:with"/>
+        <xsd:element maxOccurs="unbounded" ref="m:exec"/>
+        <xsd:element maxOccurs="unbounded" ref="m:insert"/>
+        <xsd:element maxOccurs="unbounded" ref="m:doRender"/>
+        <xsd:element maxOccurs="unbounded" ref="m:null"/>
+        <xsd:element maxOccurs="unbounded" ref="m:element"/>
+        <xsd:element maxOccurs="unbounded" ref="m:echo"/>
+        <xsd:element maxOccurs="unbounded" ref="m:ignore"/>
+      </xsd:all>
+      <xsd:attribute name="contentType" type="xsd:NCName"/>
+      <xsd:attribute name="noCache" type="xsd:boolean" default="false" />
+      <xsd:attribute name="templateSuffix" type="xsd:NCName"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:complexType  name="ProcessorType">
+    <xsd:choice minOccurs="0">
+      <xsd:attribute name="id" type="xsd:NCName"/>
+      <xsd:attribute name="xpath" type="xsd:NCName"/>
+      <xsd:attribute name="replace" type="xsd:boolean" default="false"/>
+    </xsd:choice>
+  </xsd:complexType>
+
+  <xsd:group name="ProcessorGroup">
+    <xsd:all maxOccurs="unbounded">
+      <xsd:element ref="m:write"/>
+      <xsd:element ref="m:if"/>
+      <xsd:element ref="m:for"/>
+      <xsd:element ref="m:with"/>
+      <xsd:element ref="m:exec"/>
+      <xsd:element ref="m:insert"/>
+      <xsd:element ref="m:element"/>
+      <xsd:element ref="m:comment"/>
+    </xsd:all>
+ </xsd:group>
+
+  <xsd:element name="beforeRender" type="xsd:string"/>
+
+  <xsd:element name="afterRender" type="xsd:string"/>
+
+  <xsd:element name="doRender">
+    <xsd:extension base="ProcessorType">
+      <xsd:attribute name="name" use="required" type="xsd:NCName"/>
+    </xsd:extension>
+  </xsd:element>
+
+  <xsd:element name="null">
+    <xsd:extension base="ProcessorType" />
+  </xsd:element>
+
+  <xsd:element name="echo">
+    <xsd:extension base="ProcessorType">
+      <xsd:all minOccurs="0">
+        <xsd:element ref="m:doBody"/>
+        <xsd:element maxOccurs="unbounded" ref="m:attribute"/>
+      </xsd:all>
+    </xsd:extension>
+  </xsd:element>
+
+  <xsd:element name="ignore">
+    <xsd:extension base="ProcessorType">
+      <xsd:attribute name="id" type="xsd:NCName"/>
+      <xsd:attribute name="xpath" type="xsd:NCName"/>
+    </xsd:extension>
+  </xsd:element>
+
+  <xsd:element name="comment">
+    <xsd:extension base="ProcessorType">
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:NCName"/>
+      </xsd:simpleContent>
+    </xsd:extension>
+  </xsd:element>
+
+  <xsd:element name="write">
+    <xsd:extension base="ProcessorType">
+      <xsd:attribute name="default" type="xsd:NCName"/>
+      <xsd:attribute name="escapeWhitespace" type="xsd:boolean" default="false"/>
+      <xsd:attribute name="escapeXml" type="xsd:boolean" default="false"/>
+      <xsd:attribute name="value" use="required" type="xsd:NCName"/>
+    </xsd:extension>
+  </xsd:element>
+
+  <xsd:element name="if">
+    <xsd:extension base="ProcessorType">
+      <xsd:all>
+        <xsd:group ref="ProcessorGroup" />
+        <xsd:element ref="m:doBase"/>
+        <xsd:element ref="m:doBody"/>
+      </xsd:all>
+      <xsd:attribute name="test" use="required" type="xsd:boolean"/>
+    </xsd:extension>
+  </xsd:element>
+
+  <xsd:element name="for">
+    <xsd:extension base="ProcessorType">
+      <xsd:all>
+        <xsd:group ref="ProcessorGroup" />
+        <xsd:element ref="m:doBase"/>
+        <xsd:element ref="m:doBody"/>
+      </xsd:all>
+      <xsd:attribute name="after" use="required" type="xsd:NCName"/>
+      <xsd:attribute name="init" use="required" type="xsd:NCName"/>
+      <xsd:attribute name="max" type="xsd:integer"/>
+      <xsd:attribute name="test" use="required" type="xsd:boolean"/>
+    </xsd:extension>
+  </xsd:element>
+
+  <xsd:element name="with">
+    <xsd:extension base="ProcessorType">
+      <xsd:all>
+        <xsd:group ref="ProcessorGroup" />
+        <xsd:element ref="m:doBase"/>
+        <xsd:element ref="m:doBody"/>
+      </xsd:all>
+    </xsd:extension>
+  </xsd:element>
+
+  <xsd:element name="exec">
+    <xsd:extension base="ProcessorType">
+      <xsd:all>
+        <xsd:group ref="ProcessorGroup" />
+        <xsd:element ref="m:doBase"/>
+        <xsd:element ref="m:doBody"/>
+      </xsd:all>
+      <xsd:attribute name="encoding" type="xsd:NCName"/>
+      <xsd:attribute name="script" type="xsd:NCName"/>
+      <xsd:attribute name="src" type="xsd:NCName"/>
+    </xsd:extension>
+  </xsd:element>
+
+  <xsd:element name="insert">
+    <xsd:extension base="ProcessorType">
+      <xsd:attribute name="name" use="required" type="xsd:NCName"/>
+      <xsd:attribute name="path" use="required" type="xsd:NCName"/>
+    </xsd:extension>
+  </xsd:element>
+
+  <xsd:element name="element">
+    <xsd:extension base="ProcessorType">
+      <xsd:all>
+        <xsd:element ref="m:doBody"/>
+        <xsd:element maxOccurs="unbounded" ref="m:attribute"/>
+      </xsd:all>
+      <xsd:attribute name="name" use="required" type="xsd:NCName"/>
+    </xsd:extension>
+  </xsd:element>
+
+  <xsd:element name="doBody">
+    <xsd:complexType/>
+  </xsd:element>
+
+  <xsd:element name="attribute">
+    <xsd:complexType>
+      <xsd:attribute name="name" use="required" type="xsd:NCName"/>
+      <xsd:attribute name="value" use="required" type="xsd:NCName"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="doBase">
+    <xsd:complexType/>
+  </xsd:element>
+
+</xsd:schema>
