@@ -1,33 +1,58 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Mayaa : Documentation : 3-4. �^�O�̑����݂̂�u��������</title>
-    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
-</head>
-<body>
-<div class="header">
-<div>Mayaa : JavaServer Templates</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>3-4. 属性のみを置き換える : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<div class="navi">
-<a href="./exec.html">���^�O�`��̃^�C�~���O�ŃX�N���v�g�����s����</a>
-<a href="./index.html">��index</a>
-<a href="./with.html">�ЂƂ̃^�O�ɕ����̃v���Z�b�T��Ή��t���遨</a>
-</div>
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
 
-<div class="main">
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
 
 
-<h1>3-4. �^�O�̑����݂̂�u��������</h1>
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">更新履歴</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">スライドなど</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa 導入</a></DIV>
+<DIV class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></DIV>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenutext"><A href="default.html">3-1. ページ共通の設定</A></DIV>
+<DIV class="sidemenutext"><A href="before_render.html">3-2. 描画前後のスクリプト</A></DIV>
+<DIV class="sidemenutext"><A href="exec.html">3-3. タグ描画時のスクリプト</A></DIV>
+<DIV class="sidemenutext"><span>3-4. 属性のみを置き換える</span></DIV>
+<DIV class="sidemenutext"><A href="with.html">3-5. プロセッサをまとめる</A></DIV>
+<DIV class="sidemenutext"><A href="xpath.html">3-6. id の代わりに XPath</A></DIV>
+<DIV class="sidemenutext"><A href="remove.html">3-7. タグを消す</A></DIV>
+<DIV class="sidemenutext"><A href="ignore.html">3-8. id を処理対象外に</A></DIV>
+<DIV class="sidemenutext"><A href="comment.html">3-9. コメントを書く</A></DIV>
+<BR>
 
-<p>�ʏ�̓^�O�ƃ{�f�B��u�������邩�{�f�B�݂̂�u�������邱�Ƃœ��I�y�[�W�𐶐����܂����A�ꍇ�ɂ���Ă̓e���v���[�g�̃^�O�̑������ꕔ�̂ݒu�������������Ƃ�����ł��傤�B���̏ꍇ�A<strong>echo �v���Z�b�T</strong>���g���܂��B</p>
+<DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
+<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
+</DIV>
 
 
-<h2>�ȒP�ȗ�</h2>
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>3-4. 属性のみを置き換える</H2>
 
-<p>�����ȒP�ȃT���v���Ŏ��ۂɎg���Ă݂܂��傤�B<code>ol</code> �^�O�� <code>type</code> ������ <code>A</code> ���� <code>i</code> �ɒu�������܂��B<code>start</code> �����̓e���v���[�g�̂܂܏o�͂���܂��B</p>
+<p>通常はタグとボディを置き換えるかボディのみを置き換えることで動的ページを生成しますが、場合によってはテンプレートのタグの属性を一部のみ置き換えたいこともあるでしょう。その場合、<strong>echo プロセッサ</strong>を使います。</p>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">簡単な例</H3>
+
+<p>ごく簡単なサンプルで実際に使ってみましょう。<code>ol</code> タグの <code>type</code> 属性の値を <code>"A"</code> から <code>"i"</code> に置き換えます。<code>start</code> 属性はテンプレートのまま出力されます。</p>
 
 <pre>
 echo_list.html
@@ -49,11 +74,11 @@ echo_list.mayaa
     &lt;/<strong>m:echo</strong>&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
-<p>�e���v���[�g�� <code>ol</code> �^�O�� <code>m:echo</code> ��Ή��t���A<code>m:echo</code> �̎q�Ƃ��� <code>m:attribute</code> �������܂��B<code>m:attribute</code> �� <code>name</code> �����ɕύX�������������A<code>value</code> �ɕύX��̑����l��ݒ肵�܂��B<code>m:attribute</code> �𕡐������΁A�����̑�����u���������܂��B</p>
-<p>�u���E�U�� <code><a href="http://localhost:8080/mayaa/echo_list.html" target="_blank">http://localhost:8080/mayaa/echo_list.html</a></code> �ɃA�N�Z�X���Ă݂܂��傤�B</p>
+<p>テンプレートの <code>ol</code> タグに <code>m:echo</code> を対応付け、<code>m:echo</code> の子として <code>m:attribute</code> を書きます。<code>m:attribute</code> の <code>name</code> 属性に変更したい属性名、<code>value</code> に変更後の属性値を設定します。<code>m:attribute</code> を複数書けば、複数の属性を置き換えられます。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/echo_list.html" target="_blank">http://localhost:8080/mayaa/echo_list.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
-���s����
+実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;ol id="list" <strong>type="i"</strong> start="3"&gt;
@@ -66,12 +91,12 @@ echo_list.mayaa
 &lt;/html&gt;
 </div></pre>
 
-<p>���̑����͂��̂܂܂ɁA<code>type</code> ���������u�������܂����ˁB</p>
+<p>他の属性はそのままに、<code>type</code> 属性だけ置き換わりましたね。</p>
 
 
-<h2>������ǉ�����</h2>
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">属性を追加する</H3>
 
-<p>��قǂ̗�͊����̑����l��ύX������̂ł������A<code>echo</code> �v���Z�b�T�ŐV�K�ɑ�����ǉ����邱�Ƃ��ł��܂��B�e���v���[�g�̃^�O�Œ�`����Ă��Ȃ����������w�肷��΁A�V�K�ɒǉ����邱�ƂɂȂ�܂��B</p>
+<p>先ほどの例は既存の属性値を変更するものでしたが、<code>echo</code> プロセッサで新規に属性を追加することもできます。テンプレートのタグで定義されていない属性名を指定すれば、新規に追加することになります。</p>
 
 <pre>
 echo_list.html
@@ -93,7 +118,7 @@ echo_list.mayaa
         &lt;m:attribute <strong>name="style"</strong> <strong>value="color: blue;"</strong> /&gt;
     &lt;/m:echo&gt;
 &lt;/m:mayaa&gt;</div>
-���s����
+実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;ol id="list" type="i" start="3" <strong>style="color: blue;"</strong>&gt;
@@ -107,9 +132,9 @@ echo_list.mayaa
 </div></pre>
 
 
-<h2>�e���v���[�g�̑����l�𗘗p����</h2>
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">テンプレートの属性値を利用する</H3>
 
-<p>�u�������� <code>m:echo</code> �̃X�R�[�v���ŁA�e���v���[�g�̑�������ϐ����Ƃ��Ďg�p���邱�ƂŁA�e���v���[�g�̑����l���Q�Ƃł��܂��B</p>
+<p>置き換える <code>m:echo</code> のスコープ内で、テンプレートの属性名を変数名として使用することで、スクリプトからテンプレートの属性値を参照できます。</p>
 
 <pre>
 echo_list.html
@@ -132,7 +157,7 @@ echo_list.mayaa
         &lt;m:attribute name="<strong>start</strong>" value="<strong>&#36;{ new Number(start) + 2 }</strong>" /&gt;
     &lt;/m:echo&gt;
 &lt;/m:mayaa&gt;</div>
-���s����
+実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;ol id="list" type="i" <strong>start="5"</strong> style="color: blue;"&gt;
@@ -145,20 +170,16 @@ echo_list.mayaa
 &lt;/html&gt;
 </div></pre>
 
-<p>�e���v���[�g�̑����l�͕�����ł��邽�߁A���l�Ƃ��ĉ��Z����ꍇ�ɂ� <code>Number</code> �ɕϊ�����K�v������܂��B</p>
+<p>テンプレートの属性値は文字列であるため、数値として演算する場合には <code>Number</code> に変換する必要があります。</p>
 
 
-</div>
+<DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
 
-<div class="navi">
-<a href="./exec.html">���^�O�`��̃^�C�~���O�ŃX�N���v�g�����s����</a>
-<a href="./index.html">��index</a>
-<a href="./with.html">�ЂƂ̃^�O�ɕ����̃v���Z�b�T��Ή��t���遨</a>
-</div>
+</DIV>
 
-<div class="footer">
-&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
-</div>
-
-</body>
-</html>
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

@@ -1,258 +1,361 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Mayaa : Documentation : appendix B. Mayaa core ƒvƒƒZƒbƒT ƒŠƒtƒ@ƒŒƒ“ƒX</title>
-    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
-</head>
-<body>
-<div class="header">
-<div>Mayaa : JavaServer Templates</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>4-1. Mayaa core ãƒ—ãƒ­ã‚»ãƒƒã‚µ ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹ : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<div class="navi">
-<a href="./mayaa_customtag_diff.html">©JSP ƒJƒXƒ^ƒ€ƒ^ƒO‚ðŽg‚¤ê‡‚Ì’ˆÓ“_</a>
-<a href="./index.html">ªindex</a>
-<a href="./mayaa_rhino_tips.html">JavaScript ‚ð‘‚­‚Æ‚«‚Ì Tips¨</a>
-</div>
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
 
-<div class="main">
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
 
-<h1>appendix B. Mayaa core ƒvƒƒZƒbƒT ƒŠƒtƒ@ƒŒƒ“ƒX</h1>
+
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">æ›´æ–°å±¥æ­´</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">ã‚¹ãƒ©ã‚¤ãƒ‰ãªã©</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa å°Žå…¥</a></DIV>
+<DIV class="sidemenu"><a href="hello.html">2. Mayaa ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«</a></DIV>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenu"><a href="#top">4. ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹</a></DIV>
+<DIV class="sidemenutext"><span>4-1. ãƒ—ãƒ­ã‚»ãƒƒã‚µ ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹</span></DIV>
+<DIV class="sidemenutext"><a href="implicit_object.html">4-2. å®šç¾©æ¸ˆã¿ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</a></DIV>
+<BR>
+<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">ä»˜éŒ²</a></DIV>
+</DIV>
+
+
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>4-1. Mayaa core ãƒ—ãƒ­ã‚»ãƒƒã‚µ ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹</H2>
 
 <div class="toc">
-<a name="toc">–ÚŽŸ</a>
+<a name="toc"></a>ç›®æ¬¡
 <ul>
-<li><a href="#write">write ƒvƒƒZƒbƒT</a></li>
-<li><a href="#if">if ƒvƒƒZƒbƒT</a></li>
-<li><a href="#for">for ƒvƒƒZƒbƒT</a></li>
-<li><a href="#with">with ƒvƒƒZƒbƒT</a></li>
-<li><a href="#exec">exec ƒvƒƒZƒbƒT</a></li>
-<li><a href="#doBody">doBody ƒvƒƒZƒbƒT</a></li>
-<li><a href="#insert">insert ƒvƒƒZƒbƒT</a></li>
-<li><a href="#doRender">doRender ƒvƒƒZƒbƒT</a></li>
-<li><a href="#doBase">doBase ƒvƒƒZƒbƒT</a></li>
-<li><a href="#null">null ƒvƒƒZƒbƒT</a></li>
-<li><a href="#element">element ƒvƒƒZƒbƒT</a></li>
-<li><a href="#attribute">attribute ƒvƒƒZƒbƒT</a></li>
-<li><a href="#echo">echo ƒvƒƒZƒbƒT</a></li>
-<li><a href="#ignore">ignore ƒ^ƒO</a></li>
+<li><a href="#write">write ãƒ—ãƒ­ã‚»ãƒƒã‚µ</a></li>
+<li><a href="#if">if ãƒ—ãƒ­ã‚»ãƒƒã‚µ</a></li>
+<li><a href="#for">for ãƒ—ãƒ­ã‚»ãƒƒã‚µ</a></li>
+<li><a href="#with">with ãƒ—ãƒ­ã‚»ãƒƒã‚µ</a></li>
+<li><a href="#exec">exec ãƒ—ãƒ­ã‚»ãƒƒã‚µ</a></li>
+<li><a href="#doBody">doBody ãƒ—ãƒ­ã‚»ãƒƒã‚µ</a></li>
+<li><a href="#insert">insert ãƒ—ãƒ­ã‚»ãƒƒã‚µ</a></li>
+<li><a href="#doRender">doRender ãƒ—ãƒ­ã‚»ãƒƒã‚µ</a></li>
+<li><a href="#doBase">doBase ãƒ—ãƒ­ã‚»ãƒƒã‚µ</a></li>
+<li><a href="#null">null ãƒ—ãƒ­ã‚»ãƒƒã‚µ</a></li>
+<li><a href="#element">element ãƒ—ãƒ­ã‚»ãƒƒã‚µ</a></li>
+<li><a href="#attribute">attribute ãƒ—ãƒ­ã‚»ãƒƒã‚µ</a></li>
+<li><a href="#echo">echo ãƒ—ãƒ­ã‚»ãƒƒã‚µ</a></li>
+<li><a href="#ignore">ignore ã‚¿ã‚°</a></li>
 </ul>
 </div>
 
-
-<h2><a name="write">write ƒvƒƒZƒbƒT</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
-
-<p>ƒIƒuƒWƒFƒNƒg‚ð•¶Žš—ñ‚Æ‚µ‚Äo—Í‚µ‚Ü‚·B</p>
-
-<table>
+<H4><a name="write"></a>â– write ãƒ—ãƒ­ã‚»ãƒƒã‚µ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></H4>
+<P>ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ–‡å­—åˆ—ã¨ã—ã¦å‡ºåŠ›ã—ã¾ã™ã€‚</P>
+<table align="center" cellpadding="5" cellspacing="2" class="tbline">
 <thead>
-<tr><th>‘®«–¼</th><th>à–¾</th><th>•K{</th><th>’l‚Ì§ŒÀ</th></tr>
+<tr>
+<th nowrap><DIV align="center">å±žæ€§å</DIV></th>
+<th nowrap><DIV align="center">èª¬æ˜Ž</DIV></th>
+<th><DIV align="center">å¿…é ˆ</DIV></th>
+<th><DIV align="center">å€¤ã®åˆ¶é™</DIV></th>
+</tr>
 </thead>
 <tbody>
-<tr><td>value</td><td>o—Í‚·‚é’lB</td><td>›</td><td>&nbsp;</td></tr>
-<tr><td>default</td><td>value ‚ª null ‚Ìê‡‚Éo—Í‚·‚é’lB</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-<tr><td>escapeXml</td><td>value ‚Ì &amp;, &lt;, &gt;, &quot;, &#39; ‚ð &amp;amp;, &amp;lt;, &amp;gt;, &amp;quot;, &amp;#39; ‚É’uŠ·‚·‚éB</td><td>&nbsp;</td><td>˜_—’l</td></tr>
-<tr><td>escapeWhitespace</td><td>value ‚Ì CR, LF, TAB•¶Žš ‚ð &amp;#xd;, &amp;#xa;, &amp;#x9; ‚É’uŠ·‚·‚éB</td><td>&nbsp;</td><td>˜_—’l</td></tr>
+<tr>
+<td nowrap>value</td>
+<td nowrap>å‡ºåŠ›ã™ã‚‹å€¤ã€‚</td>
+<td><DIV align="center">â—‹</DIV></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td nowrap>default</td>
+<td nowrap>value ãŒ null ã®å ´åˆã«å‡ºåŠ›ã™ã‚‹å€¤ã€‚</td>
+<td></td>
+<td>&nbsp;</td>
+</tr>
 </tbody>
 </table>
 
-
-<h2><a name="if">if ƒvƒƒZƒbƒT</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
-
-<p>ƒ^ƒO‚Ìƒ{ƒfƒB‚ª—LŒø‚Å‚·B</p>
-<p>‘®« <code>test</code> ‚Ì’l‚ª <code>true</code> ‚Ìê‡‚Ì‚Ýƒ{ƒfƒB‚ðˆ—‚µ‚Ü‚·B</p>
-
-<table>
+<H4><a name="if"></a>â– if ãƒ—ãƒ­ã‚»ãƒƒã‚µ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></H4>
+<P>ã‚¿ã‚°ã®ãƒœãƒ‡ã‚£ãŒæœ‰åŠ¹ã§ã™ã€‚<BR>
+test ã®å€¤ãŒ true ã®å ´åˆã®ã¿ãƒœãƒ‡ã‚£ã‚’å‡¦ç†ã—ã¾ã™ã€‚</P>
+<table align="center" cellpadding="5" cellspacing="2" class="tbline">
 <thead>
-<tr><th>‘®«–¼</th><th>à–¾</th><th>•K{</th><th>’l‚Ì§ŒÀ</th></tr>
+<tr>
+<th nowrap><DIV align="center">å±žæ€§å</DIV></th>
+<th nowrap><DIV align="center">èª¬æ˜Ž</DIV></th>
+<th><DIV align="center">å¿…é ˆ</DIV></th>
+<th><DIV align="center">å€¤ã®åˆ¶é™</DIV></th>
+</tr>
 </thead>
 <tbody>
-<tr><td>test</td><td>”»’è‚·‚éðŒŽ®Btrue ‚È‚ç‚Î—LŒøB</td><td>›</td><td>˜_—’l</td></tr>
+<tr>
+<td nowrap>test</td>
+<td nowrap>åˆ¤å®šã™ã‚‹æ¡ä»¶å¼ã€‚true ãªã‚‰ã°æœ‰åŠ¹ã€‚</td>
+<td><DIV align="center">â—‹</DIV></td>
+<td>è«–ç†å€¤</td>
+</tr>
 </tbody>
 </table>
 
-
-<h2><a name="for">for ƒvƒƒZƒbƒT</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
-
-<p>ƒ^ƒO‚Ìƒ{ƒfƒB‚ª—LŒø‚Å‚·B</p>
-<p>ŒJ‚è•Ô‚µˆ—‚ð‚µ‚Ü‚·BÅ‰‚Éˆê“x <code>init</code> ‚ðŽÀs‚µ‚Äƒ‹[ƒvˆ—‚ðŠJŽn‚µ‚Ü‚·B1 ‰ñ‚Ìˆ—‚ÌÅ‰‚É <code>test</code> ‚ðŽÀs‚µA<code>true</code> ‚È‚çƒ‹[ƒvˆ—‚ð‘±s‚µA<code>false</code> ‚È‚çƒ‹[ƒvˆ—‚ðI—¹‚µ‚Ü‚·B1 ‰ñ‚Ìˆ—‚ÌÅŒã‚É <code>after</code> ‚ðŽÀs‚µ‚Ü‚·B</p>
-<p>ƒ‹[ƒv‰ñ”‚ÌãŒÀ‚ðŽw’è‚µ‚Ä‚¢‚éê‡Aƒ‹[ƒv‰ñ”‚ªãŒÀ”ˆÈã‚É‚È‚é‚Æ—áŠO‚ª”­¶‚µ‚Ü‚·B(<code>org.seasar.mayaa.impl.engine.processor.TooManyLoopException</code>)</p>
-
-<table>
+<H4><a name="for"></a>â– for ãƒ—ãƒ­ã‚»ãƒƒã‚µ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></H4>
+<P>ã‚¿ã‚°ã®ãƒœãƒ‡ã‚£ãŒæœ‰åŠ¹ã§ã™ã€‚<BR>
+ç¹°ã‚Šè¿”ã—å‡¦ç†ã‚’ã—ã¾ã™ã€‚æœ€åˆã«ä¸€åº¦ init ã‚’å®Ÿè¡Œã—ã¦ãƒ«ãƒ¼ãƒ—å‡¦ç†ã‚’é–‹å§‹ã—ã¾ã™ã€‚1 å›žã®å‡¦ç†ã®æœ€åˆã« test ã‚’å®Ÿè¡Œã—ã€true ãªã‚‰ãƒ«ãƒ¼ãƒ—å‡¦ç†ã‚’ç¶šè¡Œã—ã€false ãªã‚‰ãƒ«ãƒ¼ãƒ—å‡¦ç†ã‚’çµ‚äº†ã—ã¾ã™ã€‚1 å›žã®å‡¦ç†ã®æœ€å¾Œã« after ã‚’å®Ÿè¡Œã—ã¾ã™ã€‚<BR>
+ãƒ«ãƒ¼ãƒ—å›žæ•°ã®ä¸Šé™ã‚’æŒ‡å®šã—ã¦ã„ã‚‹å ´åˆã€ãƒ«ãƒ¼ãƒ—å›žæ•°ãŒä¸Šé™æ•°ä»¥ä¸Šã«ãªã‚‹ã¨ä¾‹å¤–ãŒç™ºç”Ÿã—ã¾ã™ã€‚(<code>org.seasar.maya.impl.engine.processor.TooManyLoopException</code>)</P>
+<table align="center" cellpadding="5" cellspacing="2" class="tbline">
 <thead>
-<tr><th>‘®«–¼</th><th>à–¾</th><th>•K{</th><th>’l‚Ì§ŒÀ</th></tr>
+<tr>
+<th nowrap><DIV align="center">å±žæ€§å</DIV></th>
+<th><DIV align="center">èª¬æ˜Ž</DIV></th>
+<th><DIV align="center">å¿…é ˆ</DIV></th>
+<th><DIV align="center">å€¤ã®åˆ¶é™</DIV></th>
+</tr>
 </thead>
 <tbody>
-<tr><td>init</td><td>‰Šú‰»ˆ—B</td><td>›</td><td>&nbsp;</td></tr>
-<tr><td>test</td><td>”»’è‚·‚éðŒŽ®Btrue ‚È‚ç‚Îˆ—‚ð‘±sB</td><td>›</td><td>˜_—’l</td></tr>
-<tr><td>after</td><td>ƒ‹[ƒvˆ— 1 ‰ñ‚ÌŒãˆ—B</td><td>›</td><td>&nbsp;</td></tr>
-<tr><td>max</td><td>ƒ‹[ƒv‰ñ”‚ÌãŒÀB</td><td>&nbsp;</td><td>®”’l</td></tr>
+<tr>
+<td nowrap>init</td>
+<td>åˆæœŸåŒ–å‡¦ç†ã€‚</td>
+<td><DIV align="center">â—‹</DIV></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td nowrap>test</td>
+<td>åˆ¤å®šã™ã‚‹æ¡ä»¶å¼ã€‚true ãªã‚‰ã°å‡¦ç†ã‚’ç¶šè¡Œã€‚</td>
+<td><DIV align="center">â—‹</DIV></td>
+<td>è«–ç†å€¤</td>
+</tr>
+<tr>
+<td nowrap>after</td>
+<td>ãƒ«ãƒ¼ãƒ—å‡¦ç† 1 å›žã®å¾Œå‡¦ç†ã€‚</td>
+<td><DIV align="center">â—‹</DIV></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td nowrap>max</td>
+<td>ãƒ«ãƒ¼ãƒ—å›žæ•°ã®ä¸Šé™ã€‚</td>
+<td><DIV align="center"></DIV></td>
+<td>æ•´æ•°å€¤</td>
+</tr>
 </tbody>
 </table>
 
+<H4><a name="with"></a>â– with ãƒ—ãƒ­ã‚»ãƒƒã‚µ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></H4>
+<P>ã‚¿ã‚°ã®ãƒœãƒ‡ã‚£ãŒæœ‰åŠ¹ã§ã™ã€‚<BR>
+with ãƒ—ãƒ­ã‚»ãƒƒã‚µè‡ªä½“ã¯ä½•ã‚‚ã—ã¾ã›ã‚“ã€‚è¤‡æ•°ã®ãƒ—ãƒ­ã‚»ãƒƒã‚µã‚’ã‚°ãƒ«ãƒ¼ãƒ”ãƒ³ã‚°ã™ã‚‹ãŸã‚ã«ä½¿ã„ã¾ã™ã€‚</P>
 
-<h2><a name="with">with ƒvƒƒZƒbƒT</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
-
-<p>ƒ^ƒO‚Ìƒ{ƒfƒB‚ª—LŒø‚Å‚·B</p>
-<p>with ƒvƒƒZƒbƒTŽ©‘Ì‚Í‰½‚à‚µ‚Ü‚¹‚ñB•¡”‚ÌƒvƒƒZƒbƒT‚ðƒOƒ‹[ƒsƒ“ƒO‚·‚é‚½‚ß‚ÉŽg‚¢‚Ü‚·B</p>
-
-
-<h2><a name="exec">exec ƒvƒƒZƒbƒT</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
-
-<p>ƒXƒNƒŠƒvƒg‚ðŽÀs‚·‚é‚½‚ß‚ÉŽg‚¢‚Ü‚·B</p>
-
-<table>
+<H4><a name="exec"></a>â– exec ãƒ—ãƒ­ã‚»ãƒƒã‚µ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></H4>
+<P>ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å®Ÿè¡Œã™ã‚‹ãŸã‚ã«ä½¿ã„ã¾ã™ã€‚</P>
+<table width="90%" align="center" cellpadding="5" cellspacing="2" class="tbline">
 <thead>
-<tr><th>‘®«–¼</th><th>à–¾</th><th>•K{</th><th>’l‚Ì§ŒÀ</th></tr>
+<tr>
+<th width="12%"><DIV align="center">å±žæ€§å</DIV></th>
+<th width="56%"><DIV align="center">èª¬æ˜Ž</DIV></th>
+<th width="8%" nowrap><DIV align="center">å¿…é ˆ</DIV></th>
+<th width="24%"><DIV align="center">å€¤ã®åˆ¶é™</DIV></th>
+</tr>
 </thead>
 <tbody>
-<tr><td>script</td><td>ŽÀs‚·‚éƒXƒNƒŠƒvƒgB</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-<tr><td>src</td><td>ŽÀs‚·‚éŠO•” JavaScript ƒtƒ@ƒCƒ‹‚ÌƒpƒXB</td><td>&nbsp;</td><td>•¶Žš—ñ</td></tr>
-<tr><td>encoding</td><td>‘®« <code>src</code> ‚ÅŽw’è‚µ‚½ƒtƒ@ƒCƒ‹‚ð“Ç‚Ýž‚Þ‚Æ‚«‚Ì•¶ŽšƒGƒ“ƒR[ƒfƒBƒ“ƒO</td><td>&nbsp;</td><td>Java ‚Å—˜—p‚Å‚«‚é•¶ŽšƒZƒbƒg–¼</td></tr>
+<tr>
+<td>script</td>
+<td>å®Ÿè¡Œã™ã‚‹ã‚¹ã‚¯ãƒªãƒ—ãƒˆã€‚</td>
+<td nowrap>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>src</td>
+<td>å®Ÿè¡Œã™ã‚‹å¤–éƒ¨ JavaScript ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‘ã‚¹ã€‚</td>
+<td nowrap>&nbsp;</td>
+<td>æ–‡å­—åˆ—</td>
+</tr>
+<tr>
+<td>encoding</td>
+<td>src ã§æŒ‡å®šã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã‚€ã¨ãã®æ–‡å­—ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°</td>
+<td nowrap>&nbsp;</td>
+<td>Java ã§åˆ©ç”¨ã§ãã‚‹<BR>
+æ–‡å­—ã‚»ãƒƒãƒˆå</td>
+</tr>
 </tbody>
 </table>
 
+<H4><a name="doBody"></a>â– doBody ãƒ—ãƒ­ã‚»ãƒƒã‚µ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></H4>
+<P>å‰²ã‚Šå½“ã¦ã‚‰ã‚ŒãŸã‚¿ã‚°ã®ãƒœãƒ‡ã‚£ã‚’å‡¦ç†ã—ã¾ã™ã€‚</P>
 
-<h2><a name="doBody">doBody ƒvƒƒZƒbƒT</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
-
-<p>Š„‚è“–‚Ä‚ç‚ê‚½ƒ^ƒO‚Ìƒ{ƒfƒB‚ðˆ—‚µ‚Ü‚·B</p>
-
-
-<h2><a name="insert">insert ƒvƒƒZƒbƒT</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
-
-
-<h3>ƒRƒ“ƒ|[ƒlƒ“ƒg‚ðŽg‚¤ê‡</h3>
-
-<p>Žw’è‚µ‚½ƒpƒX‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ðŠ„‚è“–‚Ä‚Ü‚·B</p>
-
-<table>
+<H4><a name="insert"></a>â– insert ãƒ—ãƒ­ã‚»ãƒƒã‚µ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></H4>
+<P>ãƒ»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’ä½¿ã†å ´åˆ<BR>
+æŒ‡å®šã—ãŸãƒ‘ã‚¹ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å‰²ã‚Šå½“ã¦ã¾ã™ã€‚</P>
+<table align="center" cellpadding="5" cellspacing="2" class="tbline">
 <thead>
-<tr><th>‘®«–¼</th><th>à–¾</th><th>•K{</th><th>’l‚Ì§ŒÀ</th></tr>
+<tr>
+<th><DIV align="center">å±žæ€§å</DIV></th>
+<th><DIV align="center">èª¬æ˜Ž</DIV></th>
+<th><DIV align="center">å¿…é ˆ</DIV></th>
+<th><DIV align="center">å€¤ã®åˆ¶é™</DIV></th>
+</tr>
 </thead>
 <tbody>
-<tr><td>path</td><td>ƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌƒpƒXB</td><td>›</td><td>•¶Žš—ñ</td></tr>
-<tr><td>name</td><td>ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ì–¼‘OBƒfƒtƒHƒ‹ƒg‚Í <code>""</code> (‹ó•¶Žš—ñ)B</td><td>&nbsp;</td><td>•¶Žš—ñ</td></tr>
+<tr>
+<td>path</td>
+<td>ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®ãƒ‘ã‚¹ã€‚</td>
+<td><DIV align="center">â—‹</DIV></td>
+<td>æ–‡å­—åˆ—</td>
+</tr>
+<tr>
+<td>name</td>
+<td>ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®åå‰ã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ "" (ç©ºæ–‡å­—åˆ—)ã€‚</td>
+<td><DIV align="center"></DIV></td>
+<td>æ–‡å­—åˆ—</td>
+</tr>
 </tbody>
 </table>
 
-
-<h3>ƒŒƒCƒAƒEƒg‚ð’è‹`‚·‚éê‡</h3>
-
-<p>‘®« <code>extends</code> ‚ÉŽw’è‚µ‚½ƒeƒ“ƒvƒŒ[ƒgã‚Ì <code>insert</code> ‚É‘Î‚µA–¼‘O‚ªˆê’v‚·‚é <code>doRender</code> ‚ðŠ„‚è“–‚Ä‚Ü‚·B</p>
-
-<table>
+<P>ãƒ»ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã‚’å®šç¾©ã™ã‚‹å ´åˆ<BR>
+extends ã—ã¦ã„ã‚‹ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã®åå‰ãŒä¸€è‡´ã™ã‚‹ doRender ã‚’å‰²ã‚Šå½“ã¦ã¾ã™ã€‚</P>
+<table align="center" cellpadding="5" cellspacing="2" class="tbline">
 <thead>
-<tr><th>‘®«–¼</th><th>à–¾</th><th>•K{</th><th>’l‚Ì§ŒÀ</th></tr>
+<tr>
+<th><DIV align="center">å±žæ€§å</DIV></th>
+<th><DIV align="center">èª¬æ˜Ž</DIV></th>
+<th><DIV align="center">å¿…é ˆ</DIV></th>
+<th><DIV align="center">å€¤ã®åˆ¶é™</DIV></th>
+</tr>
 </thead>
 <tbody>
-<tr><td>name</td><td>ƒŒƒCƒAƒEƒg‚Ì <code>insert</code> –¼BƒfƒtƒHƒ‹ƒg‚Í "" (‹ó•¶Žš—ñ)B</td><td>&nbsp;</td><td>•¶Žš—ñ</td></tr>
+<tr>
+<td>name</td>
+<td>ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã® insert åã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ "" (ç©ºæ–‡å­—åˆ—)ã€‚</td>
+<td>&nbsp;</td>
+<td>æ–‡å­—åˆ—</td>
+</tr>
 </tbody>
 </table>
 
-
-<h2><a name="doRender">doRender ƒvƒƒZƒbƒT</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
-
-<h3>ƒRƒ“ƒ|[ƒlƒ“ƒg‚ð’è‹`‚·‚éê‡</h3>
-
-<p>Š„‚è“–‚Ä‚ç‚ê‚½ƒ^ƒO‚ðƒRƒ“ƒ|[ƒlƒ“ƒg‚Æ‚µ‚Ä’è‹`‚µ‚Ü‚·B–¼‘O‚Í“¯‚¶ƒeƒ“ƒvƒŒ[ƒgã‚Åd•¡‚µ‚È‚¢‚æ‚¤‚É•t‚¯‚Ä‚­‚¾‚³‚¢B</p>
-
-<table>
+<H4><a name="doRender"></a>â– doRender ãƒ—ãƒ­ã‚»ãƒƒã‚µ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></H4>
+<P>ãƒ»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å®šç¾©ã™ã‚‹å ´åˆ<BR>
+å‰²ã‚Šå½“ã¦ã‚‰ã‚ŒãŸã‚¿ã‚°ã‚’ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã¨ã—ã¦å®šç¾©ã—ã¾ã™ã€‚åå‰ã¯åŒã˜ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆä¸Šã§é‡è¤‡ã—ãªã„ã‚ˆã†ã«ä»˜ã‘ã¦ãã ã•ã„ã€‚</P>
+<table align="center" cellpadding="5" cellspacing="2" class="tbline">
 <thead>
-<tr><th>‘®«–¼</th><th>à–¾</th><th>•K{</th><th>’l‚Ì§ŒÀ</th></tr>
+<tr>
+<th><DIV align="center">å±žæ€§å</DIV></th>
+<th><DIV align="center">èª¬æ˜Ž</DIV></th>
+<th><DIV align="center">å¿…é ˆ</DIV></th>
+<th><DIV align="center">å€¤ã®åˆ¶é™</DIV></th>
+</tr>
 </thead>
 <tbody>
-<tr><td>name</td><td>ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ì–¼‘OBƒfƒtƒHƒ‹ƒg‚Í "" (‹ó•¶Žš—ñ)B</td><td>&nbsp;</td><td>•¶Žš—ñ</td></tr>
+<tr>
+<td>name</td>
+<td>ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®åå‰ã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ "" (ç©ºæ–‡å­—åˆ—)ã€‚</td>
+<td>&nbsp;</td>
+<td>æ–‡å­—åˆ—</td>
+</tr>
 </tbody>
 </table>
 
-
-<h3>ƒŒƒCƒAƒEƒg‚ð—˜—p‚·‚éê‡</h3>
-
-<p>ƒŒƒCƒAƒEƒg‚Ì <code>insert</code> ‚É“n‚·•”•ª‚ð’è‹`‚µ‚Ü‚·B</p>
-
-<table>
+<P>ãƒ»ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã‚’åˆ©ç”¨ã™ã‚‹å ´åˆ<BR>
+ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã® insert ã«æ¸¡ã™éƒ¨åˆ†ã‚’å®šç¾©ã—ã¾ã™ã€‚</P>
+<table align="center" cellpadding="5" cellspacing="2" class="tbline">
 <thead>
-<tr><th>‘®«–¼</th><th>à–¾</th><th>•K{</th><th>’l‚Ì§ŒÀ</th></tr>
+<tr>
+<th><DIV align="center">å±žæ€§å</DIV></th>
+<th><DIV align="center">èª¬æ˜Ž</DIV></th>
+<th><DIV align="center">å¿…é ˆ</DIV></th>
+<th><DIV align="center">å€¤ã®åˆ¶é™</DIV></th>
+</tr>
 </thead>
 <tbody>
-<tr><td>name</td><td>ƒŒƒCƒAƒEƒg‚Ì <code>insert</code> –¼BƒfƒtƒHƒ‹ƒg‚Í <code>""</code> (‹ó•¶Žš—ñ)B</td><td>&nbsp;</td><td>•¶Žš—ñ</td></tr>
+<tr>
+<td>name</td>
+<td>ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã® insert åã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ "" (ç©ºæ–‡å­—åˆ—)ã€‚</td>
+<td>&nbsp;</td>
+<td>æ–‡å­—åˆ—</td>
+</tr>
 </tbody>
 </table>
 
+<H4><a name="doBase"></a>â– doBase ãƒ—ãƒ­ã‚»ãƒƒã‚µ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></H4>
+<P>ãƒ»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã§ä½¿ã†å ´åˆ<BR>
+ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’ä½¿ã†å…ƒãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã®ã‚¿ã‚°ã®ãƒœãƒ‡ã‚£ã‚’å‡¦ç†ã—ã¾ã™ã€‚</P>
 
-<h2><a name="doBase">doBase ƒvƒƒZƒbƒT</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
-
-<h3>ƒRƒ“ƒ|[ƒlƒ“ƒg‚ÅŽg‚¤ê‡</h3>
-
-<p>ƒRƒ“ƒ|[ƒlƒ“ƒg‚ðŽg‚¤Œ³ƒeƒ“ƒvƒŒ[ƒg‚Ìƒ^ƒO‚Ìƒ{ƒfƒB‚ðˆ—‚µ‚Ü‚·B</p>
-
-
-<h3>ƒŒƒCƒAƒEƒg‚ð—˜—p‚·‚éƒeƒ“ƒvƒŒ[ƒg‚ÅŽg‚¤ê‡</h3>
-
-<p>ƒŒƒCƒAƒEƒg‚Ì <code>m:insert</code> ‚Ìƒ^ƒO‚Ìƒ{ƒfƒB‚ðˆ—‚µ‚Ü‚·B</p>
+<P>ãƒ»ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã‚’åˆ©ç”¨ã™ã‚‹ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã§ä½¿ã†å ´åˆ<BR>
+ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã® insert ã®ã‚¿ã‚°ã®ãƒœãƒ‡ã‚£ã‚’å‡¦ç†ã—ã¾ã™ã€‚</P>
 
 
-<h2><a name="null">null ƒvƒƒZƒbƒT</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
+<H4><a name="null"></a>â– null ãƒ—ãƒ­ã‚»ãƒƒã‚µ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></H4>
+<P>ä½•ã‚‚å‡ºåŠ›ã—ã¾ã›ã‚“ã€‚</P>
 
-<p>‰½‚ào—Í‚µ‚Ü‚¹‚ñB</p>
-
-
-<h2><a name="element">element ƒvƒƒZƒbƒT</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
-
-<p>ƒ^ƒO‚Ìƒ{ƒfƒB‚ª—LŒø‚Å‚·B</p>
-<p>‘®« <code>name</code> ‚ÅŽw’è‚µ‚½ƒ^ƒO‚ðo—Í‚µ‚Ü‚·B<code>m:element</code> ƒ^ƒO‚Ìƒ{ƒfƒB‚É <code>attribute</code> ƒvƒƒZƒbƒT‚ð‘‚­‚ÆA‘®«‚ð’Ç‰Á‚Å‚«‚Ü‚·B</p>
-
-<table>
+<H4><a name="element"></a>â– element ãƒ—ãƒ­ã‚»ãƒƒã‚µ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></H4>
+<P>ã‚¿ã‚°ã®ãƒœãƒ‡ã‚£ãŒæœ‰åŠ¹ã§ã™ã€‚<BR>
+name ã§æŒ‡å®šã—ãŸã‚¿ã‚°ã‚’å‡ºåŠ›ã—ã¾ã™ã€‚m:element ã‚¿ã‚°ã®ãƒœãƒ‡ã‚£ã« attribute ãƒ—ãƒ­ã‚»ãƒƒã‚µã‚’æ›¸ãã¨ã€å±žæ€§ã‚’è¿½åŠ ã§ãã¾ã™ã€‚</P>
+<table align="center" cellpadding="5" cellspacing="2" class="tbline">
 <thead>
-<tr><th>‘®«–¼</th><th>à–¾</th><th>•K{</th><th>’l‚Ì§ŒÀ</th></tr>
+<tr>
+<th><DIV align="center">å±žæ€§å</DIV></th>
+<th><DIV align="center">èª¬æ˜Ž</DIV></th>
+<th><DIV align="center">å¿…é ˆ</DIV></th>
+<th><DIV align="center">å€¤ã®åˆ¶é™</DIV></th>
+</tr>
 </thead>
 <tbody>
-<tr><td>name</td><td>¶¬‚·‚éƒ^ƒO‚Ì—v‘f–¼B</td><td>›</td><td>•¶Žš—ñ</td></tr>
+<tr>
+<td>name</td>
+<td>ç”Ÿæˆã™ã‚‹ã‚¿ã‚°ã®è¦ç´ åã€‚</td>
+<td><DIV align="center">â—‹</DIV></td>
+<td>æ–‡å­—åˆ—</td>
+</tr>
 </tbody>
 </table>
 
-
-<h2><a name="attribute">attribute ƒvƒƒZƒbƒT</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
-
-<p>eƒ^ƒO‚ÌƒvƒƒZƒbƒT‚É‘®«‚ð’Ç‰Á‚µ‚Ü‚·BˆÃ–Ù‚Ì <code>doBody</code> ‚ÌðŒ‚É‚¨‚¢‚ÄA—Bˆê—áŠO‚Æ‚µ‚Ä‹ó”’“¯—l‚Ìˆµ‚¢‚ðŽó‚¯‚éƒvƒƒZƒbƒT‚Å‚·B</p>
-
-<table>
+<H4><a name="attribute"></a>â– attribute ãƒ—ãƒ­ã‚»ãƒƒã‚µ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></H4>
+<P>è¦ªã‚¿ã‚°ã®ãƒ—ãƒ­ã‚»ãƒƒã‚µã«å±žæ€§ã‚’è¿½åŠ ã—ã¾ã™ã€‚æš—é»™ã® doBody ã®æ¡ä»¶ã«ãŠã„ã¦ã€å”¯ä¸€ä¾‹å¤–ã¨ã—ã¦ç©ºç™½åŒæ§˜ã®æ‰±ã„ã‚’å—ã‘ã‚‹ãƒ—ãƒ­ã‚»ãƒƒã‚µã§ã™ã€‚</P>
+<table align="center" cellpadding="5" cellspacing="2" class="tbline">
 <thead>
-<tr><th>‘®«–¼</th><th>à–¾</th><th>•K{</th><th>’l‚Ì§ŒÀ</th></tr>
+<tr>
+<th><DIV align="center">å±žæ€§å</DIV></th>
+<th><DIV align="center">èª¬æ˜Ž</DIV></th>
+<th><DIV align="center">å¿…é ˆ</DIV></th>
+<th><DIV align="center">å€¤ã®åˆ¶é™</DIV></th>
+</tr>
 </thead>
 <tbody>
-<tr><td>name</td><td>¶¬‚·‚é‘®«–¼B</td><td>›</td><td>•¶Žš—ñ</td></tr>
-<tr><td>value</td><td>¶¬‚·‚é‘®«’lB</td><td>›</td><td>•¶Žš—ñ</td></tr>
+<tr>
+<td>name</td>
+<td>ç”Ÿæˆã™ã‚‹å±žæ€§åã€‚</td>
+<td><DIV align="center">â—‹</DIV></td>
+<td>æ–‡å­—åˆ—</td>
+</tr>
+<tr>
+<td>value</td>
+<td>ç”Ÿæˆã™ã‚‹å±žæ€§å€¤ã€‚</td>
+<td><DIV align="center">â—‹</DIV></td>
+<td>æ–‡å­—åˆ—</td>
+</tr>
 </tbody>
 </table>
 
-
-<h2><a name="echo">echo ƒvƒƒZƒbƒT</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
-
-<p>ƒ^ƒO‚Ìƒ{ƒfƒB‚ª—LŒø‚Å‚·B</p>
-<p>Š„‚è“–‚Ä‚ç‚ê‚½ƒ^ƒO‚ð‚»‚Ì‚Ü‚Üo—Í‚µ‚Ü‚·B<code>m:echo</code> ƒ^ƒO‚Ìƒ{ƒfƒB‚É <code>attribute</code> ƒvƒƒZƒbƒT‚ð‘‚­‚ÆA‘®«‚ð’Ç‰Á‚Ü‚½‚Í•ÏX‚Å‚«‚Ü‚·B</p>
+<H4><a name="echo"></a>â– echo ãƒ—ãƒ­ã‚»ãƒƒã‚µ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></H4>
+<P>ã‚¿ã‚°ã®ãƒœãƒ‡ã‚£ãŒæœ‰åŠ¹ã§ã™ã€‚<BR>
+å‰²ã‚Šå½“ã¦ã‚‰ã‚ŒãŸã‚¿ã‚°ã‚’ãã®ã¾ã¾å‡ºåŠ›ã—ã¾ã™ã€‚m:echo ã‚¿ã‚°ã®ãƒœãƒ‡ã‚£ã« attribute ãƒ—ãƒ­ã‚»ãƒƒã‚µã‚’æ›¸ãã¨ã€å±žæ€§ã‚’è¿½åŠ ã¾ãŸã¯å¤‰æ›´ã§ãã¾ã™ã€‚</P>
 
 
-<h2><a name="ignore">ignore ƒ^ƒO</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
+<H4><a name="ignore"></a>â– ignore ãƒ—ãƒ­ã‚»ãƒƒã‚µ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></H4>
+<P>å‰²ã‚Šå½“ã¦ãŸ id ã‚’å‡¦ç†å¯¾è±¡å¤–ã«ã—ã¾ã™ã€‚(æ­£ç¢ºã«ã¯ ignore ã¯ãƒ—ãƒ­ã‚»ãƒƒã‚µã§ã¯ãªãã‚¨ãƒ³ã‚¸ãƒ³æ©Ÿèƒ½ã§ã™)</P>
 
-<p>Š„‚è“–‚Ä‚½ <code>id</code> ‚ðˆ—‘ÎÛŠO‚É‚µ‚Ü‚·B(³Šm‚É‚Í <code>ignore</code> ‚ÍƒvƒƒZƒbƒT‚Å‚Í‚È‚­ƒGƒ“ƒWƒ“‹@”\‚Å‚·)</p>
+<DIV class="navi"><a href="#top">â†‘ã“ã®ãƒšãƒ¼ã‚¸ã®ãƒˆãƒƒãƒ—ã¸</a></DIV>
 
-
-</div>
-
-<div class="navi">
-<a href="./mayaa_customtag_diff.html">©JSP ƒJƒXƒ^ƒ€ƒ^ƒO‚ðŽg‚¤ê‡‚Ì’ˆÓ“_</a>
-<a href="./index.html">ªindex</a>
-<a href="./mayaa_rhino_tips.html">JavaScript ‚ð‘‚­‚Æ‚«‚Ì Tips¨</a>
-</div>
-
-<div style="height: 800px">&nbsp;</div>
-
-<div class="footer">
-&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
-</div>
-
-</body>
-</html>
+</DIV>
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

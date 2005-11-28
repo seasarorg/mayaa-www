@@ -1,33 +1,56 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Mayaa : Documentation : 1-3. �ǂ̂悤�Ɏg���̂�</title>
-    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
-</head>
-<body>
-<div class="header">
-<div>Mayaa : JavaServer Templates</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>1-3. どのように使うのか : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<div class="navi">
-<a href="./install.html">���C���X�g�[�����悤</a>
-<a href="./index.html">��index</a>
-<a href="./hello.html">�ŏ��̈����</a>
-</div>
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
 
-<div class="main">
-
-<h1>1-3. �ǂ̂悤�Ɏg���̂�</h1>
-
-<p>�`���[�g���A���ɐi�ޑO�ɁA�ȒP�ȓ���T���v�������ĕ��͋C�����݂܂��傤�B�ׂ������e�ɂ��ẮA�`���[�g���A���ŏ��Ԃɐ������Ă����܂��B</p>
-<p>���ۂɎg���Ƃ��� Servlet �� HttpServletRequest �� JavaBean ���Z�b�g���AMayaa �� forward ���ĉ�ʂ�\������g�����������ł��傤�B�����ł͘b���ȒP�ɂ��邽�߁AMayaa �����ōς܂��Ă��܂��܂��B</p>
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
 
 
-<h2>JavaBean �̓��e��\������</h2>
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">更新履歴</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">スライドなど</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa 導入</a></DIV>
+<DIV class="sidemenutext"><A href="about.html">1-1. Mayaaとは何か</A></DIV>
+<DIV class="sidemenutext"><A href="install.html">1-2. インストールしよう</A></DIV>
+<DIV class="sidemenutext"><span>1-3. どのように使うのか</span></DIV>
+<BR>
+<DIV class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></DIV>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
+<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
+</DIV>
 
-<p>�����Ŏg�� JavaBean �� <code>example.MyBean</code> �ł��B�l�̓C���X�^���X�������ɃZ�b�g���Ă��܂��܂��B</p>
+
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>1-3. どのように使うのか</H2>
+
+<p>チュートリアルに進む前に、簡単な動作サンプルを見て雰囲気をつかみましょう。細かい内容については、チュートリアルで順番に説明していきます。</p>
+<p>実際に使うときは Servlet で HttpServletRequest に JavaBean をセットし、Mayaa へ forward して画面を表示する使い方が多いでしょう。ここでは話を簡単にするため、Mayaa だけで済ませてしまいます。</p>
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">JavaBean の内容を表示する</H3>
+
+<p>ここで使う JavaBean は <code>example.MyBean</code> です。値はインスタンス生成時にセットしてしまいます。</p>
+
+
+<H4>■事前準備</H4>
+<p><a href="http://java.sun.com/j2se/index.html">Java 2 SDK</a> および <a href="http://jakarta.apache.org/tomcat/index.html">Apache Tomcat</a> をインストールしておいてください。ここでは次の環境を想定して説明します。</p>
+<p>想定と異なる環境を使う場合は適宜読み替えてください。チュートリアルで JSTL 1.1 を使用していますので、Servlet コンテナは JSP 2.0 に対応している必要があります。</p>
 
 <pre>
 <code>MyBean.java</code>
@@ -46,10 +69,10 @@ public class MyBean {
 
     private Date _timestamp = <strong>new Date()</strong>;
 
-    // setter, getter �ȗ�
+    // setter, getter 省略
 </div></pre>
 
-<p>���� JavaBean ��\������T���v���͎��̒ʂ�ł��Busebean.mayaa �� 5 �s�ڂ� request �̑����Ƃ��� MyBean �̃C���X�^���X���Z�b�g���A�������ʂɕ\�����Ă��܂��B</p>
+<p>この JavaBean を表示するサンプルは次の通りです。usebean.mayaa の 5 行目で request の属性として MyBean のインスタンスをセットし、それを画面に表示しています。</p>
 
 <pre>
 <code>usebean.html</code>
@@ -98,10 +121,10 @@ public class MyBean {
 
 &lt;/m:mayaa&gt;</div></pre>
 
-<p>�����̃t�@�C���͂��炩���߃p�b�P�[�W�Ɋ܂܂�Ă��܂��B�u���E�U�� <code><a href="http://localhost:8080/mayaa/usebean.html" target="_blank">http://localhost:8080/mayaa/usebean.html</a></code> �ɃA�N�Z�X���Ă݂܂��傤�B</p>
+<p>これらのファイルはあらかじめパッケージに含まれています。ブラウザで <code><a href="http://localhost:8080/mayaa/usebean.html" target="_blank">http://localhost:8080/mayaa/usebean.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
-���s���� (���s�Ȃǂ͎��ۂ̎��s���ʂƈقȂ�܂�)
+実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;head&gt;
     &lt;title&gt;use bean&lt;/title&gt;
@@ -133,20 +156,15 @@ public class MyBean {
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<p>�e���v���[�g�� JavaBean �̓��e�𖄂ߍ��񂾃y�[�W���\������܂����B����ł̓e���v���[�g�� .mayaa �t�@�C���̏��������`���[�g���A�������ǂ�Ȃ��猩�Ă����܂��傤�B</p>
+<p>テンプレートに JavaBean の内容を埋め込んだページが表示されました。それではテンプレートや .mayaa ファイルの書き方をチュートリアルをたどりながら見ていきましょう。</p>
 
+<DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
 
-</div>
+</DIV>
 
-<div class="navi">
-<a href="./install.html">���C���X�g�[�����悤</a>
-<a href="./index.html">��index</a>
-<a href="./hello.html">�ŏ��̈����</a>
-</div>
-
-<div class="footer">
-&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
-</div>
-
-</body>
-</html>
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

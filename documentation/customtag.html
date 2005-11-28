@@ -1,33 +1,58 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Mayaa : Documentation : 2-4. JSP �J�X�^���^�O���g��</title>
-    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
-</head>
-<body>
-<div class="header">
-<div>Mayaa : JavaServer Templates</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>2-3. JSP カスタムタグを使う : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<div class="navi">
-<a href="./loop.html">���e���v���[�g�����������[�v</a>
-<a href="./index.html">��index</a>
-<a href="./notation.html">�ݒ�̋L�q���@��</a>
-</div>
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
 
-<div class="main">
-
-<h1>2-4. JSP �J�X�^���^�O���g��</h1>
-
-<p>Mayaa �ł� JSP �J�X�^���^�O���قڂ��̂܂ܗ��p�ł��܂� (�Ⴂ�ɂ��Ắu<a href="./mayaa_customtag_diff.html" title="appendix A. Mayaa �� JSP �J�X�^���^�O">Mayaa �� JSP �J�X�^���^�O</a>�v���Q�Ƃ��Ă�������)�B�����ł͗�Ƃ��� JSTL 1.0 �̈ꕔ���g���Ă݂܂��傤�BMayaa Getting Started package �ɂ� JSTL 1.1 �̃��C�u���� (Jakarta Taglibs - Standard Taglib 1.1.2) �𓯍����Ă��܂��̂ŁA.mayaa �t�@�C���ɋL�q��ǉ����邾���Ŏg����悤�ɂȂ�܂��B(core ����� format �̂�)</p>
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
 
 
-<h2>JSTL core �� out �^�O���g��</h2>
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">更新履歴</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">スライドなど</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa 導入</a></DIV>
+<DIV class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></DIV>
+<DIV class="sidemenutext"><A href="hello.html">2-1. 最初の一歩</A></DIV>
+<DIV class="sidemenutext"><A href="conditional.html">2-2. 条件分岐とループ</A></DIV>
+<DIV class="sidemenutext"><span>2-3. JSP カスタムタグを使う</span></DIV>
+<DIV class="sidemenutext"><A href="notation.html">2-4. 設定の記述方法</A></DIV>
+<DIV class="sidemenutext"><A href="component1.html">2-5. HTML 部品 (静的)</A></DIV>
+<DIV class="sidemenutext"><A href="component2.html">2-6. HTML 部品 (動的)</A></DIV>
+<DIV class="sidemenutext"><A href="layout.html">2-7. レイアウト共有</A></DIV>
+<DIV class="sidemenutext"><A href="deploy.html">2-8. サーバに配置する</A></DIV>
+<BR>
 
-<p>�uHello Mayaa!�v�Ƃ����\������T���v���� JSTL core �� <code>out</code> �^�O���g���č���Ă݂܂��傤�B�u�C���X�g�[�����悤�v�œ��삳���� <code>C:\tomcat\webapps\mayaa</code> �̉��ɐV�����t�@�C����ǉ����܂��B</p>
-<p>�_�~�[���b�Z�[�W���܂ރe���v���[�g <code>hello_jstl.html</code> �ƁA���̐ݒ���s�� <code>hello_jstl.mayaa</code> �����̂悤�ɍ쐬���܂��B</p>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
+<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
+</DIV>
+
+
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>2-3. JSP カスタムタグを使う</H2>
+
+<p>Mayaa では JSP カスタムタグをほぼそのまま利用できます (違いについては「<a href="./mayaa_customtag_diff.html" title="appendix A. Mayaa と JSP カスタムタグ">Mayaa と JSP カスタムタグ</a>」を参照してください)。ここでは例として JSTL 1.0 の一部を使ってみましょう。Mayaa Getting Started package には JSTL 1.1 のライブラリ (Jakarta Taglibs - Standard Taglib 1.1.2) を同梱していますので、.mayaa ファイルに記述を追加するだけで使えるようになります。(core および format のみ)</p>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">JSTL core の out タグを使う</H3>
+
+<p>「Hello Mayaa!」とだけ表示するサンプルを JSTL core の <code>out</code> タグを使って作ってみましょう。「インストールしよう」で動作させた <code>C:\tomcat\webapps\mayaa</code> の下に新しくファイルを追加します。</p>
+<p>ダミーメッセージを含むテンプレート <code>hello_jstl.html</code> と、その設定を行う <code>hello_jstl.mayaa</code> を次のように作成します。</p>
 
 
 <pre>
@@ -44,22 +69,22 @@
     &lt;<strong>c:out</strong> <strong>m:</strong>id="message" value="Hello Mayaa!" /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
-<p>�u2. �ŏ��̈���v�ō쐬�������̂Ƃ̈قȂ�̂� mayaa �t�@�C���݂̂ł��B�L�q���@�ɂ��Ă͎��́u6. �ݒ�̋L�q���@�v�Ő������܂��̂ŁA�����ł͗�̒ʂ�ɍ쐬���Ă��������B</p>
-<p>�u���E�U�� <code><a href="http://localhost:8080/mayaa/hello_jstl.html" target="_blank">http://localhost:8080/mayaa/hello_jstl.html</a></code> �ɃA�N�Z�X���Ă݂܂��傤�B</p>
+<p>「2. 最初の一歩」で作成したものとの異なるのは mayaa ファイルのみです。記述方法については次の「6. 設定の記述方法」で説明しますので、ここでは例の通りに作成してください。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello_jstl.html" target="_blank">http://localhost:8080/mayaa/hello_jstl.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
-���s���� (���s�Ȃǂ͎��ۂ̎��s���ʂƈقȂ�܂�)
+実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>Hello Mayaa!</strong>
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<p>�u2. �ŏ��̈���v�� <code>m:write</code> ���g�����ꍇ�ƑS���������ʂɂȂ�܂����Bid �w�肵���^�O���o�͂��邱�Ƃ��A�l�Ƃ��ăX�N���v�g���g�p���邱�Ƃ��A<code>m:write</code> �Ɠ��l�Ɏ����ł��܂��B</p>
+<p>「2. 最初の一歩」で <code>m:write</code> を使った場合と全く同じ結果になりました。id 指定したタグを出力することも、値としてスクリプトを使用することも、<code>m:write</code> と同様に実現できます。</p>
 
-<h3>�e���v���[�g��̃^�O���c��</h3>
+<h4>■テンプレート上のタグを残す</h4>
 
-<p>�u2. �ŏ��̈���v�̃T���v���� <code>m:write</code> �� JSTL core �� <code>out</code> �^�O�ɒu�����������̂ł��B</p>
+<p>「2. 最初の一歩」のサンプルの <code>m:write</code> を JSTL core の <code>out</code> タグに置き換えたものです。</p>
 
 <pre>
 <code>hello_jstl.html</code>
@@ -74,7 +99,7 @@
         xmlns:c="http://java.sun.com/jsp/jstl/core"&gt;
     &lt;<strong>c:out</strong> <strong>m:</strong>id="message" value="Hello Mayaa!" <strong>m:</strong>replace="false" /&gt;
 &lt;/m:mayaa&gt;</div>
-���s����
+実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>&lt;span id="message"&gt;</strong>Hello Mayaa!<strong>&lt;/span&gt;</strong>
@@ -82,9 +107,9 @@
 &lt;/html&gt;</div></pre>
 
 
-<h3>�X�N���v�g�ŃI�u�W�F�N�g���o�͂���</h3>
+<h4>■スクリプトでオブジェクトを出力する</h4>
 
-<p>�u2. �ŏ��̈���v�̃T���v���� <code>m:write</code> �� JSTL core �� <code>out</code> �^�O�ɒu�����������̂ł��B</p>
+<p>「2. 最初の一歩」のサンプルの <code>m:write</code> を JSTL core の <code>out</code> タグに置き換えたものです。</p>
 
 <pre>
 <code>hello_jstl.html</code>
@@ -99,26 +124,23 @@
         xmlns:c="http://java.sun.com/jsp/jstl/core"&gt;
     &lt;<strong>c:out</strong> <strong>m:</strong>id="message" value="<strong>&#36;{ 1 + 2 }</strong>" /&gt;
 &lt;/m:mayaa&gt;</div>
-���s����
+実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>3.0</strong>
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<p>���̎��s���ʂ� <code>m:write</code> �̎��s���ʁu3�v�ƈقȂ�A�u3.0�v�ɂȂ��Ă��܂��B����́A�X�N���v�g���� <code>c:out</code> �ɓn��l�̌^�� double �ɂȂ邽�߂ł��B(�u<a href="./mayaa_customtag_diff.html" title="appendix A. Mayaa �� JSP �J�X�^���^�O">Mayaa �� JSP �J�X�^���^�O</a>�v���Q�Ƃ��Ă�������)</p>
+<p>この実行結果は <code>m:write</code> の実行結果「3」と異なり、「3.0」になっています。これは、スクリプトから <code>c:out</code> に渡る値の型が double になるためです。(「<a href="./mayaa_customtag_diff.html" title="appendix A. Mayaa と JSP カスタムタグ">Mayaa と JSP カスタムタグ</a>」を参照してください)</p>
 
-</div>
 
-<div class="navi">
-<a href="./loop.html">���e���v���[�g�����������[�v</a>
-<a href="./index.html">��index</a>
-<a href="./notation.html">�ݒ�̋L�q���@��</a>
-</div>
+<DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
 
-<div class="footer">
-&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
-</div>
+</DIV>
 
-</body>
-</html>
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

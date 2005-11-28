@@ -1,77 +1,93 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Mayaa :Documentation : appendix A. Mayaa �� JSP �J�X�^���^�O</title>
-    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
-</head>
-<body>
-<div class="header">
-<div>Mayaa : JavaServer Templates</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>Appendix 1. JSP カスタムタグの注意点 : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<div class="navi">
-<a href="./index.html">��index</a>
-<a href="./processor_reference.html">Mayaa core �v���Z�b�T ���t�@�����X��</a>
-</div>
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
 
-<div class="main">
-
-<h1>appendix A. JSP �J�X�^���^�O���g���ꍇ�̒��ӓ_</h1>
-
-<p>Mayaa �� JSP �J�X�^���^�O�𗘗p����ꍇ�AJSP �J�X�^���^�O�̎d�l�ƈقȂ�_������܂��B</p>
-<p>JSTL ���g���ꍇ�ɒ��ӂ���_�́A���I�Ȓl�̈������̈Ⴂ�A�X�N���v�g�ϐ��̃X�R�[�v�̈Ⴂ�� 2 �_�ł��B</p>
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
 
 
-<h2>���I�Ȓl�̈������̈Ⴂ</h2>
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">更新履歴</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">スライドなど</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa 導入</a></DIV>
+<DIV class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></DIV>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
+<DIV class="sidemenu"><a href="#top">付録</a></DIV>
+<DIV class="sidemenutext"><span>A-1. カスタムタグの注意点</span></DIV>
+<DIV class="sidemenutext"><a href="mayaa_rhino_tips.html">A-2. JavaScript Tips</a></DIV>
+<DIV class="sidemenutext"><a href="note.html">A-3. その他の注意点</a></DIV>
+<BR>
+</DIV>
 
-<p>JSP �Ƃ̑傫�ȈႢ�́A���I�Ȓl�̈������ł��BJSP �J�X�^���^�O�̓��I�Ȓl�̈������� 3 ��ނ���܂��B���ꂼ��̏ꍇ�ɂ��āAJSP �� Mayaa �̈Ⴂ��������܂��B</p>
+
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>Appendix 1. カスタムタグの注意点</H2>
+
+<p>Mayaa で JSP カスタムタグを利用する場合、JSP カスタムタグの仕様と異なる点があります。</p>
+<p>JSTL を使う場合に注意する点は、動的な値の扱い方の違い、スクリプト変数のスコープの違いの 2 点です。</p>
 
 
-<h3>RT �� (JSTL 1.0)</h3>
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">動的な値の扱い方の違い</H3>
 
-<p>Mayaa �����I�Ȓl���������܂��B</p>
-<p>RT �łƂ́A���I�Ȓl�� Scriptlet ���g�����̂ł��BTLD �� <code>rtexprvalue</code> �� <code>true</code> ���ݒ肳��Ă��鑮���� Scriptlet ���g���܂��B���Ƃ��Ύ��̂悤�ȏ����������܂��B</p>
+<p>JSP との大きな違いは、動的な値の扱い方です。JSP カスタムタグの動的な値の扱い方は 3 種類あります。それぞれの場合について、JSP と Mayaa の違いを説明します。</p>
+
+
+<h4>■RT 版 (JSTL 1.0)</h4>
+
+<p>Mayaa が動的な値を処理します。</p>
+<p>RT 版とは、動的な値に Scriptlet を使うものです。TLD で <code>rtexprvalue</code> に <code>true</code> が設定されている属性に Scriptlet を使えます。たとえば次のような書き方をします。</p>
 <pre>&lt;c:out value="<strong>&lt;%= name %&gt;</strong>" /&gt;</pre>
-<p>Mayaa �ł� Scriptlet �̈ʒu�� <code>&#36;{ .. }</code> �̌`���ŃX�N���v�g�������܂��B�]�����ʂ��J�X�^���^�O�ɓn�邱�Ƃ� JSP �Ɠ����ł��B</p>
+<p>Mayaa では Scriptlet の位置に <code>&#36;{ .. }</code> の形式でスクリプトを書きます。評価結果がカスタムタグに渡ることは JSP と同じです。</p>
 <pre>&lt;c:out value="<strong>&#36;{ name }</strong>" /&gt;</pre>
-<p>Mayaa �� RT �ł��g���ꍇ�A���I�Ȓl�� <code>&#36;{ .. }</code> �̌`���ŃX�N���v�g���L�q���Ă��������B</p>
+<p>Mayaa で RT 版を使う場合、動的な値は <code>&#36;{ .. }</code> の形式でスクリプトを記述してください。</p>
 
 
-<h3>JSP 1.2 EL �� (JSTL 1.0)</h3>
+<h4>■JSP 1.2 EL 版 (JSTL 1.0)</h4>
 
-<p>�J�X�^���^�O�����I�Ȓl���������܂��B</p>
-<p>EL �łƂ́A���I�Ȓl�ɃJ�X�^���^�O�̎�������g�����̂ł��BTLD �ł��ׂĂ̑����� <code>rtexprvalue</code> �� <code>false</code> ���ݒ肳��Ă��܂��B���Ƃ��Ύ��̂悤�ȏ����������܂��B</p>
+<p>カスタムタグが動的な値を処理します。</p>
+<p>EL 版とは、動的な値にカスタムタグの式言語を使うものです。TLD ですべての属性に <code>rtexprvalue</code> に <code>false</code> が設定されています。たとえば次のような書き方をします。</p>
 <pre>&lt;c:out value="<strong>&#36;{ name }</strong>" /&gt;</pre>
-<p>JSP 1.2 EL �łł́A<strong>������̂܂܃J�X�^���^�O�ɓn����A�J�X�^���^�O�̏����Ƃ��Ď�����̕]�����s���܂�</strong>�B�]���� JSP 1.2 EL �ł̓���� JSP �� Mayaa �ɈႢ�͂���܂���B�������AMayaa �̃X�N���v�g�ƋL�q���@�������Ȃ��ߍ������Ȃ��悤���ӂ��Ă��������B</p>
-<p>Mayaa �� JSP 1.2 EL �ł��g���ꍇ�A<code>&#36;{ .. }</code> �̒��ɂ� JSP 1.2 �d�l�� EL ���L�q���Ă��������B</p>
+<p>JSP 1.2 EL 版では、<strong>文字列のままカスタムタグに渡され、カスタムタグの処理として式言語の評価が行われます</strong>。従って JSP 1.2 EL 版の動作は JSP と Mayaa に違いはありません。ただし、Mayaa のスクリプトと記述方法が同じなため混同しないよう注意してください。</p>
+<p>Mayaa で JSP 1.2 EL 版を使う場合、<code>&#36;{ .. }</code> の中には JSP 1.2 仕様の EL を記述してください。</p>
 
 
-<h3>JSP 2.0 EL �� (JSTL 1.1)</h3>
+<h4>■JSP 2.0 EL 版 (JSTL 1.1)</h4>
 
-<p>Mayaa �����I�Ȓl���������܂��B</p>
-<p>JSP 2.0 EL �ł� JSP 1.2 EL �łƈႢ�A������̕]���� JSP �R���e�i���s���܂��B<code>rtexprvalue</code> �� <code>true</code> ���ݒ肳��Ă��鑮���Ɏ�������g���܂��BMayaa �� JSP �R���e�i�Ƃ��ĐU�����܂��̂ŁA������̕]���� Mayaa �̖�ڂɂȂ�܂��BMayaa �Ŏ�����ɂ�����̂̓X�N���v�g�ł�����A<code>&#36;{ .. }</code> �Ƃ����L�q�� Mayaa ���X�N���v�g�Ƃ��ĕ]�����܂��B�]���� Mayaa �̏ꍇ�ART �ł� JSP 2.0 EL �łœ��I�Ȓl�̈������͓����ł��B</p>
-<p>Mayaa �� JSP 2.0 EL �ł��g���ꍇ�A<code>&#36;{ .. }</code> �� Mayaa �̃X�N���v�g�Ƃ��ċL�q���Ă��������B</p>
-
-
-<h3>Mayaa �̃X�N���v�g�Ǝ�����̈Ⴂ</h3>
-
-<p>Mayaa �̃X�N���v�g�� JavaScript (ECMA Script: ������ <a href="http://www.mozilla.org/rhino/" title="Rhino - JavaScript for Java">Rhino</a>) �ł��B���@�͓��R Java �ƈقȂ�܂����A����ȊO�ɂ��ŏI���ʂƂ��� Java �̃I�u�W�F�N�g�܂��̓v���~�e�B�u�l�Ƃ��ĕԂ��Ƃ��Ɋ��҂��铮��ƈقȂ�ꍇ������܂��B</p>
-<p>���Ƃ��΁u<a href="hello.html#script" title="2-1. �ŏ��̈��">�X�N���v�g�ŃI�u�W�F�N�g���o�͂���</a>�v�̗�ł́A���ʂƂ��āu3�v�����҂����Ƃ���u3.0�v���Ԃ��Ă��܂����B����� JSP �J�X�^���^�O�� Object �^���󂯎��悤�ɍ���Ă��邽�߂Ɍ^������ł����A�ł����x�̍��� double �œn���Ă��邱�Ƃ������ł��B</p>
-<p>���̗�̏ꍇ�Ɍ���΁A������ɕϊ�������œn�� <code>fmt:numberFormat</code> ���g���Ȃǂ̉���􂪂���܂��B������̈ÖٓI�ȓ�������҂��Ă���J�X�^���^�O�̏ꍇ�͂��̂悤�ȉ��������K�v�����邩������܂���B</p>
+<p>Mayaa が動的な値を処理します。</p>
+<p>JSP 2.0 EL 版は JSP 1.2 EL 版と違い、式言語の評価を JSP コンテナが行います。<code>rtexprvalue</code> に <code>true</code> が設定されている属性に式言語を使えます。Mayaa は JSP コンテナとして振舞いますので、式言語の評価も Mayaa の役目になります。Mayaa で式言語にあたるのはスクリプトですから、<code>&#36;{ .. }</code> という記述を Mayaa がスクリプトとして評価します。従って Mayaa の場合、RT 版と JSP 2.0 EL 版で動的な値の扱い方は同じです。</p>
+<p>Mayaa で JSP 2.0 EL 版を使う場合、<code>&#36;{ .. }</code> は Mayaa のスクリプトとして記述してください。</p>
 
 
-</div>
+<h4>■Mayaa のスクリプトと式言語の違い</h4>
 
-<div class="navi">
-<a href="./index.html">��index</a>
-<a href="./processor_reference.html">Mayaa core �v���Z�b�T ���t�@�����X��</a>
-</div>
+<p>Mayaa のスクリプトは JavaScript (ECMA Script: 実装は <a href="http://www.mozilla.org/rhino/" title="Rhino - JavaScript for Java">Rhino</a>) です。文法は当然 Java と異なりますが、それ以外にも最終結果として Java のオブジェクトまたはプリミティブ値として返すときに期待する動作と異なる場合があります。</p>
+<p>たとえば「<a href="hello.html#script" title="2-1. 最初の一歩">スクリプトでオブジェクトを出力する</a>」の例では、結果として「3」を期待したところ「3.0」が返ってきました。これは JSP カスタムタグが Object 型を受け取るように作られているために型を決定できず、最も精度の高い double で渡していることが原因です。</p>
+<p>この例の場合に限れば、文字列に変換した後で渡す <code>fmt:numberFormat</code> を使うなどの回避策があります。式言語の暗黙的な動作を期待しているカスタムタグの場合はこのような回避策を取る必要があるかもしれません。</p>
 
-<div class="footer">
-&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
-</div>
 
-</body>
-</html>
+<DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
+
+</DIV>
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

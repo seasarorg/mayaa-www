@@ -1,32 +1,58 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Mayaa : Documentation : 3-2. �����_�����O�O��ɃX�N���v�g�����s����</title>
-    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
-</head>
-<body>
-<div class="header">
-<div>Mayaa : JavaServer Templates</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>3-2. 描画前後のスクリプト : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<div class="navi">
-<a href="./default.html">�����ׂẴy�[�W�ŋ��ʂ̐ݒ������</a>
-<a href="./index.html">��index</a>
-<a href="./exec.html">�^�O�`��̃^�C�~���O�ŃX�N���v�g�����s���遨</a>
-</div>
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
 
-<div class="main">
-
-<h1>3-2. �����_�����O�O��ɃX�N���v�g�����s����</h1>
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
 
 
-<h2>�����_�����O�O�ɃX�N���v�g�����s����</h2>
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">更新履歴</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">スライドなど</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa 導入</a></DIV>
+<DIV class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></DIV>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenutext"><A href="default.html">3-1. ページ共通の設定</A></DIV>
+<DIV class="sidemenutext"><span>3-2. 描画前後のスクリプト</span></DIV>
+<DIV class="sidemenutext"><A href="exec.html">3-3. タグ描画時のスクリプト</A></DIV>
+<DIV class="sidemenutext"><A href="echo.html">3-4. 属性のみを置き換える</A></DIV>
+<DIV class="sidemenutext"><A href="with.html">3-5. プロセッサをまとめる</A></DIV>
+<DIV class="sidemenutext"><A href="xpath.html">3-6. id の代わりに XPath</A></DIV>
+<DIV class="sidemenutext"><A href="remove.html">3-7. タグを消す</A></DIV>
+<DIV class="sidemenutext"><A href="ignore.html">3-8. id を処理対象外に</A></DIV>
+<DIV class="sidemenutext"><A href="comment.html">3-9. コメントを書く</A></DIV>
+<BR>
 
-<p>�����_�����O�̂��߂̏����������������ꍇ�A<strong>beforeRender</strong> �^�O���g�����ƂŁA�y�[�W�̃����_�����O�������J�n����O�ɔC�ӂ̃X�N���v�g�����s�ł��܂��B<code>beforeRender</code> �^�O�̃{�f�B�ɃX�N���v�g�����̂܂܏����Ă��������B</p>
+<DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
+<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
+</DIV>
 
-<p>���̗�ł� <code>beforeRender</code> �Œ�`�����ϐ��� <code>write</code> �v���Z�b�T�ŏo�͂��܂��B</p>
+
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>3-2. 描画前後のスクリプト</H2>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">レンダリング前にスクリプトを実行する</H3>
+
+<p>レンダリングのための準備処理をしたい場合、<strong>beforeRender</strong> タグを使うことで、ページのレンダリング処理を開始する前に任意のスクリプトを実行できます。<code>beforeRender</code> タグのボディにスクリプトをそのまま書いてください。基本的に <code>beforeRender</code> は、<code>request</code> 内の値を別変数に入れ直すときなどに使います。</p>
+
+<p>次の例では <code>beforeRender</code> で定義した変数を <code>write</code> プロセッサで出力します。</p>
 
 <pre>
 <code>before_render.html</code>
@@ -47,18 +73,18 @@
     &lt;m:write id="past" value="&#36;{ date }" /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
-<p>�u���E�U�� <code><a href="http://localhost:8080/mayaa/before_render.html" target="_blank">http://localhost:8080/mayaa/before_render.html</a></code> �ɃA�N�Z�X���Ă݂܂��傤�B</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/before_render.html" target="_blank">http://localhost:8080/mayaa/before_render.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
-���s���� (���s�Ȃǂ͎��ۂ̎��s���ʂƈقȂ�܂�)
+実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>Thu Oct 20 21:02:03 JST 2000</strong>
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<p>���s���ʂ́A<code>beforeRender</code> �ŏ��������ϐ� <code>date</code> �̒l���\������Ă��܂��B�ϐ� <code>date</code> �ɂ́A���ݎ����̔N�� 2000 �ɂ������̂��ɓ���܂��B</p>
-<p>�܂��s�����Ȃ� XML �Ƃ��ĈӖ��̂��镶�����g���ꍇ�́A<code>beforeRender</code> �̃{�f�B�� CDATA �錾����ƃG�X�P�[�v����K�v���Ȃ��Ȃ�܂��B</p>
+<p>実行結果は、<code>beforeRender</code> で準備した変数 <code>date</code> の値が表示されています。変数 <code>date</code> には、現在時刻の年を 2000 にしたものがに入ります。</p>
+<p>また不等号など XML として意味のある文字を使う場合は、<code>beforeRender</code> のボディを CDATA 宣言するとエスケープする必要がなくなります。</p>
 
 <pre>
     &lt;m:beforeRender&gt;<strong>&lt;[!CDATA[</strong>
@@ -72,11 +98,11 @@
 </pre>
 
 
-<h2>�����_�����O��ɃX�N���v�g�����s����</h2>
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">レンダリング後にスクリプトを実行する</H3>
 
-<p>�y�[�W�̃����_�����O�������I��������ɔC�ӂ̃X�N���v�g�����s�ł��܂��B<strong>afterRender</strong> �v���Z�b�T���g���A�{�f�B�ɃX�N���v�g�����̂܂܏����Ă��������B<code>beforeRender</code> �Ɠ������ACDATA �錾����ƕs�����Ȃǂ��G�X�P�[�v����K�v���Ȃ��Ȃ�܂��B</p>
+<p>ページのレンダリング処理が終了した後に任意のスクリプトを実行できます。<strong>afterRender</strong> プロセッサを使い、ボディにスクリプトをそのまま書いてください。<code>beforeRender</code> と同じく、CDATA 宣言すると不等号などをエスケープする必要がなくなります。</p>
 
-<p>���Ƃ��΃����_�����O�������I�������Ƀ��O���o�͂���ꍇ�A���̂悤�ɏ������ƂŎ����ł��܂��B</p>
+<p>たとえばレンダリング処理が終わった後にログを出力する場合、次のように書くことで実現できます。</p>
 
 <pre>
     <strong>&lt;m:afterRender&gt;</strong>
@@ -84,36 +110,33 @@
     <strong>&lt;/m:afterRender&gt;</strong>
 </pre>
 
-<p>�����_�����O�����̌�ɉ���������Ƃ�����ʂ͑����Ȃ��ł��傤����A<code>afterRender</code> ���g����ʂ͏��Ȃ��ł��傤�B�`��̂��߂̈ꎞ���\�[�X���J�����鏈���ȂǁA����ȏ������K�v�ȏꍇ�� <code>afterRender</code> ���g���Ă��������B</p>
+<p>レンダリング処理の後に何かをするという場面は多くないでしょうから、<code>afterRender</code> を使う場面は少ないでしょう。描画のための一時リソースを開放する処理など、特殊な処理が必要な場合に <code>afterRender</code> を使ってください。</p>
 
 
-<h2>�R���|�[�l���g�⃌�C�A�E�g���g���ꍇ�̎��s��</h2>
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">コンポーネントやレイアウトを使う場合の実行順</H3>
 
-<p>�R���|�[�l���g�⃌�C�A�E�g�A����ɂ� <code>default.mayaa</code> �ł� <code>beforeRender</code> �� <code>afterRender</code> ���g�����Ƃ��ł��܂��B������g�ݍ��킹�Ďg���ɂ́A�ǂ��������ԂŎ��s����邩���ӎ�����K�v������܂��B</p>
+<p>コンポーネントやレイアウト、さらには <code>default.mayaa</code> でも <code>beforeRender</code> と <code>afterRender</code> を使うことができます。これらを組み合わせて使うには、どういう順番で実行されるかを意識する必要があります。</p>
 
-<p>�S�̂̐ݒ�ł��� <code>default.mayaa</code> �ɏ����� <code>beforeRender</code> �́A���̂��ׂĂ� <code>beforeRender</code> ������Ɏ��s����܂��B������ <code>default.mayaa</code> �� <code>afterRender</code> �͑��̂��ׂĂ� <code>afterRender</code> ������Ɏ��s����܂��B</p>
-<p>���Ƀ��N�G�X�g���ꂽ�y�[�W�� <code>beforeRender</code> �����s����A���C�A�E�g���g���Ă���΂��̎��Ƀ��C�A�E�g�y�[�W�� <code>beforeRender</code> �����s����܂��B�S�̂̕`�悪�I��������ƁA���C�A�E�g�y�[�W�� <code>afterRender</code>�A���N�G�X�g���ꂽ�y�[�W�� <code>afterRender</code> �����s����܂��B</p>
-<p>�R���|�[�l���g�� <code>beforeRender</code> �͂��̃R���|�[�l���g���������钼�O�ɏ�������܂��B���̌�ɃR���|�[�l���g�������_�����O����� <code>afterRender</code> ���������ꂽ��A�R���|�[�l���g���g���y�[�W�̃����_�����O�ɖ߂�܂��B�ЂƂ̃R���|�[�l���g�y�[�W�ɕ����̃R���|�[�l���g���`���Ă���ꍇ�A���̂ЂƂЂƂɓ��� <code>beforeRender</code>�A<code>afterRender</code> ����`����Ă���ƍl���Ă��������B</p>
+<p>全体の設定である <code>default.mayaa</code> に書いた <code>beforeRender</code> は、他のすべての <code>beforeRender</code> よりも先に実行されます。そして <code>default.mayaa</code> の <code>afterRender</code> は他のすべての <code>afterRender</code> よりも後に実行されます。</p>
+<p>次にリクエストされたページの <code>beforeRender</code> が実行され、レイアウトを使っていればその次にレイアウトページの <code>beforeRender</code> が実行されます。全体の描画が終わったあと、レイアウトページの <code>afterRender</code>、リクエストされたページの <code>afterRender</code> が実行されます。</p>
+<p>コンポーネントの <code>beforeRender</code> はそのコンポーネントを処理する直前に処理されます。その後にコンポーネントがレンダリングされて <code>afterRender</code> が処理された後、コンポーネントを使うページのレンダリングに戻ります。ひとつのコンポーネントページに複数のコンポーネントを定義している場合、そのひとつひとつに同じ <code>beforeRender</code>、<code>afterRender</code> が定義されていると考えてください。</p>
 
 
-<h3>���s���C���[�W</h3>
-<p>���s���̃C���[�W��} 3-2-1 �Ɏ����܂��B����̓��C���̃y�[�W����R���|�[�l���g���ЂƂƃ��C�A�E�g���g���Ă���P���ȗ�ł��B�������Ŏ����A���炩�̏������s���镔�������Ԃɐ����Ŏ����Ă��܂��B</p>
+<h4>■実行順イメージ</h4>
+<p>実行順のイメージを図 3-2-1 に示します。これはメインのページからコンポーネントをひとつとレイアウトを使っている単純な例です。流れを矢印で示し、何らかの処理が行われる部分を順番に数字で示しています。</p>
 
-<div class="figure">�} 3-2-1: beforeRender �� afterRender �̎��s��<br><img src="./images/howto_render.png" title="�} 3-2-1: beforeRender �� afterRender �̎��s��" width="552" height="437"></div></li>
+<div class="figure">図 3-2-1: beforeRender と afterRender の実行順<br><img src="./images/howto_render.gif" title="図 3-2-1: beforeRender と afterRender の実行順" width="494" height="344"></div></li>
 
-<p>���C�A�E�g�̏�ŃR���|�[�l���g���g���ꍇ��R���|�[�l���g�̏�ŃR���|�[�l���g���g���ꍇ���A���N�G�X�g���ꂽ�y�[�W�̏�ŃR���|�[�l���g���g���ꍇ�Ɠ��l�ł��B�R���|�[�l���g��`�悷�钼�O�� <code>beforeRender</code> �����s����A�R���|�[�l���g�̕`�悪�I�������� <code>afterRender</code> �����s����܂��B</p>
+<p>レイアウトの上でコンポーネントを使う場合やコンポーネントの上でコンポーネントを使う場合も、リクエストされたページの上でコンポーネントを使う場合と同様です。コンポーネントを描画する直前に <code>beforeRender</code> が実行され、コンポーネントの描画が終わった後で <code>afterRender</code> が実行されます。</p>
 
-</div>
 
-<div class="navi">
-<a href="./default.html">�����ׂẴy�[�W�ŋ��ʂ̐ݒ������</a>
-<a href="./index.html">��index</a>
-<a href="./exec.html">�^�O�`��̃^�C�~���O�ŃX�N���v�g�����s���遨</a>
-</div>
+<DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
 
-<div class="footer">
-&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
-</div>
+</DIV>
 
-</body>
-</html>
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

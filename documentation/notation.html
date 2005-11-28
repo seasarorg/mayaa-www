@@ -1,57 +1,83 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Mayaa : Documentation : 2-5. Ý’è‚Ì‹Lq•û–@</title>
-    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
-</head>
-<body>
-<div class="header">
-<div>Mayaa : JavaServer Templates</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>2-4. è¨­å®šã®è¨˜è¿°æ–¹æ³• : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<div class="navi">
-<a href="./customtag.html">©JSP ƒJƒXƒ^ƒ€ƒ^ƒO‚ðŽg‚¤</a>
-<a href="./index.html">ªindex</a>
-<a href="./component1.html">HTML •”•i‚ðŽg‚¤ (Ã“I)¨</a>
-</div>
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
 
-<div class="main">
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
 
 
-<h1>2-5. Ý’è‚Ì‹Lq•û–@</h1>
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">æ›´æ–°å±¥æ­´</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">ã‚¹ãƒ©ã‚¤ãƒ‰ãªã©</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa å°Žå…¥</a></DIV>
+<DIV class="sidemenu"><a href="hello.html">2. Mayaa ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«</a></DIV>
+<DIV class="sidemenutext"><A href="hello.html">2-1. æœ€åˆã®ä¸€æ­©</A></DIV>
+<DIV class="sidemenutext"><A href="conditional.html">2-2. æ¡ä»¶åˆ†å²ã¨ãƒ«ãƒ¼ãƒ—</A></DIV>
+<DIV class="sidemenutext"><A href="customtag.html">2-3. JSP ã‚«ã‚¹ã‚¿ãƒ ã‚¿ã‚°ã‚’ä½¿ã†</A></DIV>
+<DIV class="sidemenutext"><span>2-4. è¨­å®šã®è¨˜è¿°æ–¹æ³•</span></DIV>
+<DIV class="sidemenutext"><A href="component1.html">2-5. HTML éƒ¨å“ (é™çš„)</A></DIV>
+<DIV class="sidemenutext"><A href="component2.html">2-6. HTML éƒ¨å“ (å‹•çš„)</A></DIV>
+<DIV class="sidemenutext"><A href="layout.html">2-7. ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆå…±æœ‰</A></DIV>
+<DIV class="sidemenutext"><A href="deploy.html">2-8. ã‚µãƒ¼ãƒã«é…ç½®ã™ã‚‹</A></DIV>
+<BR>
 
-<p>Mayaa ‚ÌÝ’è‚ð‹Lq‚·‚é•û–@‚Í‘å‚«‚­•ª‚¯‚Ä 2 Ží—Þ‚ ‚è‚Ü‚·B‚Ð‚Æ‚Â‚Í‚±‚ê‚Ü‚Å‚ÌƒTƒ“ƒvƒ‹ƒR[ƒh‚Ì‚æ‚¤‚É mayaa ƒtƒ@ƒCƒ‹‚ðŽg‚¤•û–@A‚à‚¤‚Ð‚Æ‚Â‚Íƒeƒ“ƒvƒŒ[ƒg‚Ì HTML ƒtƒ@ƒCƒ‹‚É’¼ÚÝ’è‚ð‘‚«ž‚Þ•û–@‚Å‚·B‚Ü‚½A‚±‚Ì 2 Ží—Þ‚Ì•û–@‚ð¬Ý‚³‚¹‚é‚±‚Æ‚à‚Å‚«‚Ü‚·B</p>
-
-<h2>mayaa ƒtƒ@ƒCƒ‹‚ðŽg‚¤</h2>
-
-<p>Mayaa ‚ÌŠî–{“I‚È—˜—p•û–@‚ÍAƒeƒ“ƒvƒŒ[ƒg‚É‘Î‰ž‚·‚é mayaa ƒtƒ@ƒCƒ‹‚ð—pˆÓ‚·‚é•û–@‚Å‚·Bƒeƒ“ƒvƒŒ[ƒg‚ðƒˆ‚È HTML ‚Ì‚Ü‚Ü‚É‚µ‚½‚¢ê‡‚Í‚±‚ÌŒ`‚ðŽg‚¢‚Ü‚·B</p>
-
-<!-- ƒeƒ“ƒvƒŒ[ƒgØ‚è‘Ö‚¦‹@”\‚Ì˜b‚Í•Ê -->
-<p>mayaa ƒtƒ@ƒCƒ‹‚Íƒeƒ“ƒvƒŒ[ƒg HTML ƒtƒ@ƒCƒ‹‚ÌŠg’£Žq‚ð <code>.mayaa</code> ‚É•Ï‚¦‚½ XML ƒtƒ@ƒCƒ‹‚Å‚·Bƒeƒ“ƒvƒŒ[ƒg‚É‚Â‚«‚Ð‚Æ‚Â‚Ì mayaa ƒtƒ@ƒCƒ‹‚ð—pˆÓ‚µA“®“I‚Èˆ—‚ðÝ’è‚µ‚Ü‚·B</p>
-
-<div class="figure">} 2-5-1: ƒeƒ“ƒvƒŒ[ƒg‚Æ mayaa ƒtƒ@ƒCƒ‹‚©‚çƒy[ƒW‚ð¶¬‚·‚é<br><img src="./images/about_mayaa_standard.png" title="} 2-5-1: ƒeƒ“ƒvƒŒ[ƒg‚Æ mayaa ƒtƒ@ƒCƒ‹‚©‚çƒy[ƒW‚ð¶¬‚·‚é" width="543" height="222"></div>
-
-<p>‹Lq•û–@‚ÍA‘O’ñ’mŽ¯‚Æ‚µ‚Ä XML –¼‘O‹óŠÔ‚ð’m‚Á‚Ä‚¢‚é‚Æ—‰ð‚µ‚â‚·‚­‚È‚è‚Ü‚·BXML –¼‘O‹óŠÔ‚ÉŠÖ‚·‚éà–¾‚âŽQlŽ‘—¿‚Í‚±‚Ìƒy[ƒW‚ÌÅŒã‚É‚ ‚è‚Ü‚·B‚±‚±‚Å‚Í Mayaa ‚Ì‹@”\‚ð•\‚·ƒvƒŒƒtƒBƒNƒX‚Æ‚µ‚Ä "<code>m:</code>" ‚ðŽg‚Á‚Äà–¾‚µ‚Ü‚·B</p>
-
-<h3>mayaa ƒtƒ@ƒCƒ‹‚Ìƒ^ƒO‚ÍƒvƒƒZƒbƒT</h3>
-<p>mayaa ƒtƒ@ƒCƒ‹‚Éƒ^ƒO‚Æ‚µ‚Ä‘‚­AMayaa ‚Ì—lX‚Èƒeƒ“ƒvƒŒ[ƒgˆ—‹@”\‚Ì‚±‚Æ‚ðƒvƒƒZƒbƒT‚ÆŒÄ‚Ñ‚Ü‚·B‚½‚Æ‚¦‚Îu<code>write</code> ƒvƒƒZƒbƒTv‚ðŽg‚¤‚È‚ç <code>&lt;m:write&gt;</code> ƒ^ƒO‚ð‘‚«Au<code>if</code> ƒvƒƒZƒbƒTv‚ðŽg‚¤‚È‚ç <code>&lt;m:if&gt;</code> ƒ^ƒO‚ð‘‚«‚Ü‚·B</p>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenu"><a href="processor_reference.html">4. ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹</a></DIV>
+<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">ä»˜éŒ²</a></DIV>
+</DIV>
 
 
-<h3>HTML ƒ^ƒO‚ÉƒvƒƒZƒbƒT‚ðŠ„‚è“–‚Ä‚é</h3>
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>2-4. è¨­å®šã®è¨˜è¿°æ–¹æ³•</H2>
 
-<p>“®“I‚Èo—Í‚ðs‚¤‚É‚ÍAŠî–{“I‚É‚Í HTML ƒ^ƒO‚É id ‘®«‚ð•t‚¯Amayaa ƒtƒ@ƒCƒ‹‚Å‚»‚Ì id ‚ðŽw’è‚µ‚ÄƒvƒƒZƒbƒT‚Æ‘Î‰ž‚³‚¹‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Å‚Í id ‚ðŽw’è‚µ‚½Œ³‚Ìƒ^ƒO‚Æ‚»‚Ìƒ{ƒfƒB (ƒ^ƒO‚ÅˆÍ‚Ü‚ê‚½”ÍˆÍ) ‚ðÁ‚µAmayaa ƒtƒ@ƒCƒ‹‚Å’è‹`‚µ‚½ƒvƒƒZƒbƒT‚Ìo—Í‚É‚æ‚Á‚Ä’u‚«Š·‚¦‚Ü‚·BƒvƒƒZƒbƒT‚Ìƒ^ƒO‚É <code>replace="false"</code> ‚Æ‘®«‚ð•t‚¯‚½ê‡AŒ³‚Ìƒ^ƒO‚ðÁ‚³‚¸‚Éƒ{ƒfƒB‚¾‚¯‚ðƒvƒƒZƒbƒT‚Ìo—Í‚É‚æ‚Á‚Ä’u‚«Š·‚¦‚Ü‚·B</p>
-<p>u’u‚«Š·‚¦‚év‚Æ‚¢‚¤“_‚É’ˆÓ‚µ‚Ä‚­‚¾‚³‚¢B‚½‚Æ‚¦‚Î} 2-5-2 ‚Ìƒeƒ“ƒvƒŒ[ƒg‚É‚ÍAid ‘®«‚ðŽ‚Âƒ^ƒO‚ª 3 ‚Â‚ ‚è‚Ü‚·B</p>
+<p>Mayaa ã®è¨­å®šã‚’è¨˜è¿°ã™ã‚‹æ–¹æ³•ã¯å¤§ããåˆ†ã‘ã¦ 2 ç¨®é¡žã‚ã‚Šã¾ã™ã€‚ã²ã¨ã¤ã¯ã“ã‚Œã¾ã§ã®ã‚µãƒ³ãƒ—ãƒ«ã‚³ãƒ¼ãƒ‰ã®ã‚ˆã†ã« mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½¿ã†æ–¹æ³•ã€ã‚‚ã†ã²ã¨ã¤ã¯ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã® HTML ãƒ•ã‚¡ã‚¤ãƒ«ã«ç›´æŽ¥è¨­å®šã‚’æ›¸ãè¾¼ã‚€æ–¹æ³•ã§ã™ã€‚ã¾ãŸã€ã“ã® 2 ç¨®é¡žã®æ–¹æ³•ã‚’æ··åœ¨ã•ã›ã‚‹ã“ã¨ã‚‚ã§ãã¾ã™ã€‚</p>
 
-<div class="figure">} 2-5-2: id ‚Åƒeƒ“ƒvƒŒ[ƒgã‚Ì—v‘f‚ðŽ¯•Ê‚·‚é<br><img src="./images/mayaa_file2.png" title="} 2-5-2: id ‚Å HTML ƒtƒ@ƒCƒ‹ã‚Ì—v‘f‚ðŽ¯•Ê‚·‚é" width="472" height="161"></div>
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½¿ã†</H3>
 
-<p>‚±‚Ìƒeƒ“ƒvƒŒ[ƒg‚É‘Î‚µ} 2-5-3 ‚Ì mayaa ƒtƒ@ƒCƒ‹‚ð‡‚í‚¹‚ÄŽÀs‚·‚é‚ÆAŽÀÛ‚Éˆ—‚³‚ê‚é‚Ì‚Í (A)(1) ‚Æ (B)(2) ‚Ì‚Ý‚É‚È‚è‚Ü‚·B‚±‚ê‚Í (B) ‚ª’u‚«Š·‚¦‚ç‚ê‚½Œ‹‰ÊA(B) ‚É“à•ï‚³‚ê‚Ä‚¢‚é (C) ‚ª–³‚­‚È‚Á‚Ä‚µ‚Ü‚¤‚½‚ß‚Å‚·B</p>
+<p>Mayaa ã®åŸºæœ¬çš„ãªåˆ©ç”¨æ–¹æ³•ã¯ã€ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã«å¯¾å¿œã™ã‚‹ mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç”¨æ„ã™ã‚‹æ–¹æ³•ã§ã™ã€‚ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã‚’ç´”ç²‹ãª HTML ã®ã¾ã¾ã«ã—ãŸã„å ´åˆã¯ã“ã®å½¢ã‚’ä½¿ã„ã¾ã™ã€‚</p>
 
-<div class="figure">} 2-5-3: ƒeƒ“ƒvƒŒ[ƒgã‚Ì—v‘f‚ÉƒvƒƒZƒbƒT‚ðÝ’è‚·‚é<br><img src="./images/mayaa_file3.png" title="} 2-5-3: ƒeƒ“ƒvƒŒ[ƒgã‚Ì—v‘f‚ÉƒvƒƒZƒbƒT‚ðÝ’è‚·‚é" width="491" height="104"></div>
+<!-- ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆåˆ‡ã‚Šæ›¿ãˆæ©Ÿèƒ½ã®è©±ã¯åˆ¥ -->
+<p>mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã¯ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ HTML ãƒ•ã‚¡ã‚¤ãƒ«ã®æ‹¡å¼µå­ã‚’ <code>.mayaa</code> ã«å¤‰ãˆãŸ XML ãƒ•ã‚¡ã‚¤ãƒ«ã§ã™ã€‚ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã«ã¤ãã²ã¨ã¤ã® mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç”¨æ„ã—ã€å‹•çš„ãªå‡¦ç†ã‚’è¨­å®šã—ã¾ã™ã€‚</p>
+
+<div class="figure">å›³ 2-5-1: ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã¨ mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ãƒšãƒ¼ã‚¸ã‚’ç”Ÿæˆã™ã‚‹<br><img src="images/about_mayaa_standard.gif" title="å›³ 2-5-1: ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã¨ mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ãƒšãƒ¼ã‚¸ã‚’ç”Ÿæˆã™ã‚‹" width="471" height="226"></div>
+
+<p>è¨˜è¿°æ–¹æ³•ã¯ã€å‰æçŸ¥è­˜ã¨ã—ã¦ XML åå‰ç©ºé–“ã‚’çŸ¥ã£ã¦ã„ã‚‹ã¨ç†è§£ã—ã‚„ã™ããªã‚Šã¾ã™ã€‚XML åå‰ç©ºé–“ã«é–¢ã™ã‚‹èª¬æ˜Žã‚„å‚è€ƒè³‡æ–™ã¯ã“ã®ãƒšãƒ¼ã‚¸ã®æœ€å¾Œã«ã‚ã‚Šã¾ã™ã€‚ã“ã“ã§ã¯ Mayaa ã®æ©Ÿèƒ½ã‚’è¡¨ã™ãƒ—ãƒ¬ãƒ•ã‚£ã‚¯ã‚¹ã¨ã—ã¦ "<code>m:</code>" ã‚’ä½¿ã£ã¦èª¬æ˜Žã—ã¾ã™ã€‚</p>
+
+
+<h4>â– mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚¿ã‚°ã¯ãƒ—ãƒ­ã‚»ãƒƒã‚µ</h4>
+
+<p>mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã«ã‚¿ã‚°ã¨ã—ã¦æ›¸ãã€Mayaa ã®æ§˜ã€…ãªãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆå‡¦ç†æ©Ÿèƒ½ã®ã“ã¨ã‚’ãƒ—ãƒ­ã‚»ãƒƒã‚µã¨å‘¼ã³ã¾ã™ã€‚ãŸã¨ãˆã°ã€Œ<code>write</code> ãƒ—ãƒ­ã‚»ãƒƒã‚µã€ã‚’ä½¿ã†ãªã‚‰ <code>&lt;m:write&gt;</code> ã‚¿ã‚°ã‚’æ›¸ãã€ã€Œ<code>if</code> ãƒ—ãƒ­ã‚»ãƒƒã‚µã€ã‚’ä½¿ã†ãªã‚‰ <code>&lt;m:if&gt;</code> ã‚¿ã‚°ã‚’æ›¸ãã¾ã™ã€‚</p>
+
+
+<h4>â– HTML ã‚¿ã‚°ã«ãƒ—ãƒ­ã‚»ãƒƒã‚µã‚’å‰²ã‚Šå½“ã¦ã‚‹</h4>
+
+<p>å‹•çš„ãªå‡ºåŠ›ã‚’è¡Œã†ã«ã¯ã€åŸºæœ¬çš„ã«ã¯ HTML ã‚¿ã‚°ã« id å±žæ€§ã‚’ä»˜ã‘ã€mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã§ãã® id ã‚’æŒ‡å®šã—ã¦ãƒ—ãƒ­ã‚»ãƒƒã‚µã¨å¯¾å¿œã•ã›ã¾ã™ã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã¯ id ã‚’æŒ‡å®šã—ãŸå…ƒã®ã‚¿ã‚°ã¨ãã®ãƒœãƒ‡ã‚£ (ã‚¿ã‚°ã§å›²ã¾ã‚ŒãŸç¯„å›²) ã‚’æ¶ˆã—ã€mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã§å®šç¾©ã—ãŸãƒ—ãƒ­ã‚»ãƒƒã‚µã®å‡ºåŠ›ã«ã‚ˆã£ã¦ç½®ãæ›ãˆã¾ã™ã€‚ãƒ—ãƒ­ã‚»ãƒƒã‚µã®ã‚¿ã‚°ã« <code>replace="false"</code> ã¨å±žæ€§ã‚’ä»˜ã‘ãŸå ´åˆã€å…ƒã®ã‚¿ã‚°ã‚’æ¶ˆã•ãšã«ãƒœãƒ‡ã‚£ã ã‘ã‚’ãƒ—ãƒ­ã‚»ãƒƒã‚µã®å‡ºåŠ›ã«ã‚ˆã£ã¦ç½®ãæ›ãˆã¾ã™ã€‚</p>
+<p>ã€Œç½®ãæ›ãˆã‚‹ã€ã¨ã„ã†ç‚¹ã«æ³¨æ„ã—ã¦ãã ã•ã„ã€‚ãŸã¨ãˆã°å›³ 2-5-2 ã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã«ã¯ã€id å±žæ€§ã‚’æŒã¤ã‚¿ã‚°ãŒ 3 ã¤ã‚ã‚Šã¾ã™ã€‚</p>
+
+<div class="figure">å›³ 2-5-2: id ã§ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆä¸Šã®è¦ç´ ã‚’è­˜åˆ¥ã™ã‚‹<br><img src="./images/mayaa_file1.gif" title="å›³ 2-5-2: id ã§ HTML ãƒ•ã‚¡ã‚¤ãƒ«ä¸Šã®è¦ç´ ã‚’è­˜åˆ¥ã™ã‚‹" width="363" height="135"></div>
+
+<p>ã“ã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã«å¯¾ã—å›³ 2-5-3 ã® mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã‚’åˆã‚ã›ã¦å®Ÿè¡Œã™ã‚‹ã¨ã€å®Ÿéš›ã«å‡¦ç†ã•ã‚Œã‚‹ã®ã¯ (A)(1) ã¨ (B)(2) ã®ã¿ã«ãªã‚Šã¾ã™ã€‚ã“ã‚Œã¯ (B) ãŒç½®ãæ›ãˆã‚‰ã‚ŒãŸçµæžœã€(B) ã«å†…åŒ…ã•ã‚Œã¦ã„ã‚‹ (C) ãŒç„¡ããªã£ã¦ã—ã¾ã†ãŸã‚ã§ã™ã€‚</p>
+
+<div class="figure">å›³ 2-5-3: ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆä¸Šã®è¦ç´ ã«ãƒ—ãƒ­ã‚»ãƒƒã‚µã‚’è¨­å®šã™ã‚‹<br><img src="./images/mayaa_file2.gif" title="å›³ 2-5-3: ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆä¸Šã®è¦ç´ ã«ãƒ—ãƒ­ã‚»ãƒƒã‚µã‚’è¨­å®šã™ã‚‹" width="363" height="93"></div>
 
 <pre>
-} 2-5-2 ‚Ìƒeƒ“ƒvƒŒ[ƒg‚ð} 2-5-3 ‚Ì mayaa ƒtƒ@ƒCƒ‹‚Æ‡‚í‚¹‚½ê‡‚ÌŽÀsŒ‹‰Ê
+å›³ 2-5-2 ã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã‚’å›³ 2-5-3 ã® mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã¨åˆã‚ã›ãŸå ´åˆã®å®Ÿè¡Œçµæžœ
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;dynamic title&lt;/h1&gt;
@@ -60,89 +86,13 @@
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<p>(C) ‚ð—LŒø‚É‚·‚é‚É‚ÍA(B) ‚Éƒ{ƒfƒBˆ—‚Å‚«‚éƒvƒƒZƒbƒT‚ð‘Î‰ž‚³‚¹Aƒ{ƒfƒB‚ðˆ—‚µ‚½‚¢ƒ^ƒCƒ~ƒ“ƒO‚Å <code>doBody</code> ƒvƒƒZƒbƒT‚ðŒÄ‚Ño‚µ‚Ü‚·Bƒ{ƒfƒBˆ—‚Å‚«‚éƒvƒƒZƒbƒT‚É‚ÍA‚½‚Æ‚¦‚Î <code>if</code> ‚ª‚ ‚è‚Ü‚·B‚Ç‚ÌƒvƒƒZƒbƒT‚ªƒ{ƒfƒBˆ—‚Å‚«‚é‚©‚Í<a href="./processor_reference.html">ƒvƒƒZƒbƒT ƒŠƒtƒ@ƒŒƒ“ƒX</a>‚ðŽQÆ‚µ‚Ä‚­‚¾‚³‚¢B</p>
-<p>(B) ‚Ìƒ{ƒfƒBˆ—‚ð <code>m:doBody</code> ‚ÌˆÊ’u‚ÅŽÀs‚µ‚Ü‚·‚ªA‘Î‰ž‚·‚éÝ’èƒtƒ@ƒCƒ‹‚ÍŒ³‚Ì mayaa ƒtƒ@ƒCƒ‹‘S‘Ì‚Å‚·B(3) ‚Í (2) ‚ÌŠO‚É‚ ‚è‚Ü‚·‚ªA(C) ‚Í³‚µ‚­ (C)(3) ‚Åˆ—‚³‚ê‚Ü‚·B</p>
-
-<div class="figure">} 2-5-4: ƒ{ƒfƒB‚ðˆ—‚·‚é‚æ‚¤Ý’è‚·‚é<br><img src="./images/mayaa_file4.png" title="} 2-5-4: ƒ{ƒfƒB‚ðˆ—‚·‚é‚æ‚¤Ý’è‚·‚é" width="491" height="133"></div>
-
-<pre>
-} 2-5-2 ‚Ìƒeƒ“ƒvƒŒ[ƒg‚ð} 2-5-4 ‚Ì mayaa ƒtƒ@ƒCƒ‹‚Æ‡‚í‚¹‚½ê‡‚ÌŽÀsŒ‹‰Ê
-<div class="file">&lt;html&gt;
-&lt;body&gt;
-    &lt;h1&gt;dynamic title&lt;/h1&gt;
-
-        &lt;p&gt;dynamic contentBody&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</div></pre>
-
-<p>‚à‚µ (2) ‚É <code>m:doBody</code> ‚ð‘‚©‚¸ (3) ‚ð‚»‚Ì‚Ü‚Ü‘‚¢‚Ä‚µ‚Ü‚Á‚½ê‡A(B)(2) ˆ—‚Ì‚Æ‚«‚É (3) ‚ª id ‚Æ–³ŠÖŒW‚Éˆ—‚³‚ê‚Ü‚·B‚»‚ÌÛ‚É (C) ‚ðˆÍ‚Þƒ^ƒO‚à (B) ‚Æˆê‚ÉÁ‚¦‚Ä‚µ‚Ü‚¤‚½‚ßAŽÀsŒ‹‰Ê‚Í (3) ‚Ìo—Í‚Ì‚Ý‚É‚È‚è‚Ü‚·B</p>
-
-<div class="figure">} 2-5-6: ƒ{ƒfƒB‚Æ‚µ‚Äˆ—‚³‚ê‚éƒvƒƒZƒbƒTƒ^ƒO‚Íƒeƒ“ƒvƒŒ[ƒg‚Æ–³ŠÖŒW<br><img src="./images/mayaa_file5.png" title="} 2-5-6: ƒ{ƒfƒB‚Æ‚µ‚Äˆ—‚³‚ê‚éƒvƒƒZƒbƒTƒ^ƒO‚Íƒeƒ“ƒvƒŒ[ƒg‚Æ–³ŠÖŒW" width="525" height="119"></div>
-
-<pre>
-} 2-5-2 ‚Ìƒeƒ“ƒvƒŒ[ƒg‚ð} 2-5-6 ‚Ì mayaa ƒtƒ@ƒCƒ‹‚Æ‡‚í‚¹‚½ê‡‚ÌŽÀsŒ‹‰Ê
-<div class="file">&lt;html&gt;
-&lt;body&gt;
-    &lt;h1&gt;dynamic title&lt;/h1&gt;
-
-        dynamic contentBody
-&lt;/body&gt;
-&lt;/html&gt;</div></pre>
-
-<p>(3) ‚ª‚»‚Ì‚Ü‚Üo—Í‚³‚ê‚½‚æ‚¤‚ÉAƒ{ƒfƒBˆ—‚Å‚«‚éƒvƒƒZƒbƒT‚Ìƒ^ƒOƒ{ƒfƒB‚É‘‚©‚ê‚½‚à‚Ì‚ÍŠî–{“I‚É‚»‚Ì‚Ü‚Üˆ—‚³‚ê‚Ü‚· (ƒvƒƒZƒbƒT‚ÉˆË‘¶)B]‚Á‚ÄA‚±‚±‚É•¶Žš—ñ‚ð‘‚¯‚Î•¶Žš—ñ‚ª‚»‚Ì‚Ü‚Üo—Í‚³‚ê‚Ü‚·‚µAƒvƒƒZƒbƒT‚ð‘‚¯‚ÎŽÀs‚³‚ê‚Ü‚·BHTML ƒ^ƒO‚ÍƒvƒƒZƒbƒT‚Æ‘Î‰ž‚µ‚Ü‚¹‚ñ‚Ì‚ÅA•¶Žš—ñ‚Æ‚µ‚Ä‚»‚Ì‚Ü‚Üo—Í‚³‚ê‚Ü‚·B</p>
-
-<div class="figure">} 2-5-7: ƒ{ƒfƒB‚É‘‚¢‚½ƒ^ƒO‚Í‚»‚Ì‚Ü‚Üˆ—‚³‚ê‚é<br><img src="./images/mayaa_file6.png" title="} 2-5-7: ƒ{ƒfƒB‚É‘‚¢‚½ƒ^ƒO‚Í‚»‚Ì‚Ü‚Üˆ—‚³‚ê‚é" width="491" height="169"></div>
-
-<pre>
-} 2-5-2 ‚Ìƒeƒ“ƒvƒŒ[ƒg‚ð} 2-5-7 ‚Ì mayaa ƒtƒ@ƒCƒ‹‚Æ‡‚í‚¹‚½ê‡‚ÌŽÀsŒ‹‰Ê
-<div class="file">&lt;html&gt;
-&lt;body&gt;
-    &lt;h1&gt;dynamic title&lt;/h1&gt;
-
-    &lt;table border="1"&gt;&lt;tr&gt;&lt;td&gt;
-        &lt;p&gt;dynamic contentBody&lt;/p&gt;
-    &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/body&gt;
-&lt;/html&gt;</div></pre>
+<p>(C) ã‚’æœ‰åŠ¹ã«ã™ã‚‹ã«ã¯ã€(B) ã«ãƒœãƒ‡ã‚£å‡¦ç†ã§ãã‚‹ãƒ—ãƒ­ã‚»ãƒƒã‚µã‚’å¯¾å¿œã•ã›ã¾ã™ã€‚ãƒœãƒ‡ã‚£å‡¦ç†ã§ãã‚‹ãƒ—ãƒ­ã‚»ãƒƒã‚µã«ã¯ã€ãŸã¨ãˆã° <code>if</code> ãŒã‚ã‚Šã¾ã™ã€‚ã©ã®ãƒ—ãƒ­ã‚»ãƒƒã‚µãŒãƒœãƒ‡ã‚£å‡¦ç†ã§ãã‚‹ã‹ã¯<a href="./processor_reference.html">ãƒ—ãƒ­ã‚»ãƒƒã‚µ ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹</a>ã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚</p>
 
 
-<h3><a name="implicitDoBody">ˆÃ–Ù‚Ì <code>m:doBody</code></a></h3>
+<h4>â– <a name="mayaaid"></a>ãƒã‚¤ãƒ³ãƒ‡ã‚£ãƒ³ã‚°ã« HTML ã® id ã‚’ä½¿ã„ãŸããªã„å ´åˆ</h4>
 
-<p>Mayaa ‚ÍŽŸ‚Ì2“_‚ð–ž‚½‚·ê‡AˆÃ–Ù“I‚É <code>m:doBody</code> ‚ª‘‚©‚ê‚½‚à‚Ì‚Æ‚Ý‚È‚µ‚Ü‚·B</p>
-
-<ul>
-<li>ƒ{ƒfƒBˆ—‚Å‚«‚éƒvƒƒZƒbƒT‚Å‚ ‚é‚±‚Æ</li>
-<li>ƒ{ƒfƒB‚É‹ó”’A‰üsATAB •¶ŽšˆÈŠO‚ðŠÜ‚Ü‚È‚¢‚±‚Æ (<a href="./processor_reference.html#attribute" title="attribute ƒvƒƒZƒbƒT">—áŠO‚ ‚è</a>)</li>
-</ul>
-
-<p>‚½‚Æ‚¦‚Î <code>if</code> ƒvƒƒZƒbƒT‚ðŽg‚¢Aƒeƒ“ƒvƒŒ[ƒgã‚É‘‚©‚ê‚½ƒ^ƒO‚Ì•\Ž¦/”ñ•\Ž¦‚ðØ‚è‘Ö‚¦‚é‚¾‚¯‚Ìê‡AŽŸ‚Ì‚æ‚¤‚É‘‚¯‚Ü‚·B‚±‚Ì—á‚Å‚Í <code>user</code> ‚Æ‚¢‚¤ƒIƒuƒWƒFƒNƒg‚É <code>isManager</code> ‚Æ‚¢‚¤ƒƒ\ƒbƒh‚ª‚ ‚èAŠÇ—ŽÒ‚Ìê‡‚Ì‚Ý <code>true</code>‚ð•Ô‚·‚Æ‚µ‚Ü‚·B</p>
-
-<pre>
-page.html
-<div class="file">&lt;html&gt;
-&lt;body&gt;
-    &lt;h1&gt;dynamic title&lt;/h1&gt;
-
-    &lt;div id="adminMenu"&gt;
-        &lt;a href="add_user.html"&gt;add user&lt;/a&gt;
-    &lt;/div&gt;
-
-    &lt;div&gt;
-        contents
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</div>
-page.mayaa
-<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:if id="adminMenu" test="&#36;{ user.isManager() }" /&gt;
-&lt;/m:mayaa&gt;</div></pre>
-
-
-<h3><a name="mayaaid">ƒoƒCƒ“ƒfƒBƒ“ƒO‚É HTML ‚Ì id ‚ðŽg‚¢‚½‚­‚È‚¢ê‡</a></h3>
-
-<p>HTML ‚Ì id ‘®«‚Í CSS ‚â JavaScript ‚È‚Ç‚©‚ç—˜—p‚·‚é‚±‚Æ‚à‚ ‚è‚Ü‚·Bmayaa ƒtƒ@ƒCƒ‹‚Æ‚ÌƒoƒCƒ“ƒfƒBƒ“ƒO‚É id ‘®«‚ðŽg‚¢‚½‚­‚È‚¢ê‡‚É‚ÍA<code>m:id</code> ‚Æ‚µ‚Ä mayaa –¼‘O‹óŠÔ‚Ì id ‚ðŽg‚¤‚±‚Æ‚ª‚Å‚«‚Ü‚·B‚»‚Ìê‡Amayaa ƒtƒ@ƒCƒ‹‚É‘‚¢‚Ä‚¢‚½ Mayaa ‚Ì–¼‘O‹óŠÔŽw’è (<code>xmlns:m="http://mayaa.seasar.org"</code>) ‚ðAƒeƒ“ƒvƒŒ[ƒg‚Ì html ƒ^ƒO‚Ì‘®«‚Æ‚µ‚Ä‘‚­•K—v‚ª‚ ‚è‚Ü‚·B</p>
-<p><code>m:id</code> ‘®«‚Æ id ‘®«‚Ì—¼•û‚ª‚ ‚éê‡Amayaa ƒtƒ@ƒCƒ‹‚Æ‚ÌƒoƒCƒ“ƒfƒBƒ“ƒO‚É‚Í <code>m:id</code> ‘®«‚ª—Dæ‚³‚ê‚Ü‚·B‚Ü‚½A<code>m:id</code> ‘®«‚ÍŽÀsŽž‚Éo—Í‚³‚ê‚Ü‚¹‚ñB</p>
+<p>HTML ã® id å±žæ€§ã¯ CSS ã‚„ JavaScript ãªã©ã‹ã‚‰åˆ©ç”¨ã™ã‚‹ã“ã¨ã‚‚ã‚ã‚Šã¾ã™ã€‚mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã¨ã®ãƒã‚¤ãƒ³ãƒ‡ã‚£ãƒ³ã‚°ã« id å±žæ€§ã‚’ä½¿ã„ãŸããªã„å ´åˆã«ã¯ã€<code>m:id</code> ã¨ã—ã¦ mayaa åå‰ç©ºé–“ã® id ã‚’ä½¿ã†ã“ã¨ãŒã§ãã¾ã™ã€‚ãã®å ´åˆã€mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ã„ã¦ã„ãŸ Mayaa ã®åå‰ç©ºé–“æŒ‡å®š (<code>xmlns:m="http://mayaa.seasar.org"</code>) ã‚’ã€ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã® html ã‚¿ã‚°ã®å±žæ€§ã¨ã—ã¦æ›¸ãå¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚</p>
+<p><code>m:id</code> å±žæ€§ã¨ id å±žæ€§ã®ä¸¡æ–¹ãŒã‚ã‚‹å ´åˆã€mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã¨ã®ãƒã‚¤ãƒ³ãƒ‡ã‚£ãƒ³ã‚°ã«ã¯ <code>m:id</code> å±žæ€§ãŒå„ªå…ˆã•ã‚Œã¾ã™ã€‚ã¾ãŸã€<code>m:id</code> å±žæ€§ã¯å®Ÿè¡Œæ™‚ã«å‡ºåŠ›ã•ã‚Œã¾ã›ã‚“ã€‚</p>
 
 <pre>
 <code>hello.html</code>
@@ -158,24 +108,24 @@ page.mayaa
 &lt;/m:mayaa&gt;</div></pre>
 
 
-<h2>ƒeƒ“ƒvƒŒ[ƒgã‚ÉÝ’è‚ð‘‚­</h2>
+<h3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆä¸Šã«è¨­å®šã‚’æ›¸ã</h3>
 
-<p>Mayaa ‚ÍAmayaa ƒtƒ@ƒCƒ‹‚Å‚Í‚È‚­ƒeƒ“ƒvƒŒ[ƒgã‚ÉÝ’è‚ð‘‚­‚±‚Æ‚à‚Å‚«‚Ü‚·BŒãq‚·‚éƒŒƒCƒAƒEƒg‹¤—L‹@”\‚È‚Çˆê•”‚Ì‹@”\‚Í mayaa ƒtƒ@ƒCƒ‹‚ðŽg‚í‚È‚¯‚ê‚ÎŽÀŒ»‚Å‚«‚Ü‚¹‚ñ‚ªAŠÈ’P‚Èˆ—‚Ìê‡‚È‚Ç‚Éƒtƒ@ƒCƒ‹”‚ª‘½‚­‚È‚é‚Ì‚ð”ð‚¯‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·B</p>
+<p>Mayaa ã¯ã€mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã§ã¯ãªããƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆä¸Šã«è¨­å®šã‚’æ›¸ãã“ã¨ã‚‚ã§ãã¾ã™ã€‚å¾Œè¿°ã™ã‚‹ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆå…±æœ‰æ©Ÿèƒ½ãªã©ä¸€éƒ¨ã®æ©Ÿèƒ½ã¯ mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½¿ã‚ãªã‘ã‚Œã°å®Ÿç¾ã§ãã¾ã›ã‚“ãŒã€ç°¡å˜ãªå‡¦ç†ã®å ´åˆãªã©ã«ãƒ•ã‚¡ã‚¤ãƒ«æ•°ãŒå¤šããªã‚‹ã®ã‚’é¿ã‘ã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚</p>
 
-<h3>HTML ƒ^ƒO‚ÉƒvƒƒZƒbƒT‚ðŠ„‚è“–‚Ä‚é</h3>
+<h4>â– HTML ã‚¿ã‚°ã«ãƒ—ãƒ­ã‚»ãƒƒã‚µã‚’å‰²ã‚Šå½“ã¦ã‚‹</h4>
 
-<p>mayaa ƒtƒ@ƒCƒ‹‚ðŽg‚¤ê‡‚ÍAid ‚É‚æ‚éƒ}ƒbƒsƒ“ƒO‚Å HTML ƒ^ƒO‚ÉƒvƒƒZƒbƒT‚ðŠ„‚è“–‚Ä‚Ü‚·Bƒeƒ“ƒvƒŒ[ƒg‚É’¼Ú‘‚­ê‡‚ÍA‚»‚Ì‘ã‚í‚è‚Æ‚µ‚Ä <code>m:inject</code> ‘®«‚ðŽg‚¢‚Ü‚·B‚Ü‚½Amayaa ƒtƒ@ƒCƒ‹‚É‘‚¢‚Ä‚¢‚½–¼‘O‹óŠÔŽw’è (<code>xmlns:m="http://mayaa.seasar.org"</code>) ‚ðAƒeƒ“ƒvƒŒ[ƒg‚Ì html ƒ^ƒO‚Ì‘®«‚Æ‚µ‚Ä‘‚­•K—v‚ª‚ ‚è‚Ü‚·B</p>
-<p><code>m:inject</code> ‘®«‚Ì’l‚É‚Íƒ}ƒbƒsƒ“ƒO‚·‚éƒvƒƒZƒbƒT–¼ (mayaa ƒtƒ@ƒCƒ‹‚É‘‚­ê‡‚Ìƒ^ƒO–¼) ‚ð‘‚«AƒvƒƒZƒbƒT‚Ì‘®«‚Í mayaa ƒtƒ@ƒCƒ‹‚Æ“¯—l‚É‘‚«‚Ü‚·B‚½‚¾‚µAƒvƒƒZƒbƒT‚Ì‘®«‚ÌƒvƒŒƒtƒBƒNƒX‚ðÈ—ª‚·‚é‚±‚Æ‚Í‚Å‚«‚Ü‚¹‚ñB(–¼‘O‹óŠÔ‚ÆƒvƒŒƒtƒBƒNƒX‚É‚Â‚¢‚Ä‚Í‚±‚Ìƒy[ƒW‚ÌÅŒã‚Åà–¾‚µ‚Ä‚¢‚Ü‚·)</p>
-<p>—á‚Æ‚µ‚Ä <code>m:write</code> (hello.html) ‚Æ <code>c:out</code> (hello_jstl.html) ‚ÌƒTƒ“ƒvƒ‹‚ðAƒeƒ“ƒvƒŒ[ƒgã‚ÉÝ’è‚ð‘‚­Œ`‚Å‘‚«Š·‚¦‚Ä‚Ý‚Ü‚·B“Á‚É <code>c:out</code> ‚ÌƒTƒ“ƒvƒ‹‚É’ˆÓ‚µ‚Ä‚­‚¾‚³‚¢B<code>value</code> ‚Í <code>c:out</code> ‚Ì‘®«‚Å‚ ‚é‚½‚ßAƒvƒŒƒtƒBƒNƒX‚Æ‚µ‚Ä <code>c:</code> ‚ª•t‚«‚Ü‚·B</p>
+<p>mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½¿ã†å ´åˆã¯ã€id ã«ã‚ˆã‚‹ãƒžãƒƒãƒ”ãƒ³ã‚°ã§ HTML ã‚¿ã‚°ã«ãƒ—ãƒ­ã‚»ãƒƒã‚µã‚’å‰²ã‚Šå½“ã¦ã¾ã™ã€‚ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã«ç›´æŽ¥æ›¸ãå ´åˆã¯ã€ãã®ä»£ã‚ã‚Šã¨ã—ã¦ <code>m:inject</code> å±žæ€§ã‚’ä½¿ã„ã¾ã™ã€‚ã¾ãŸã€mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ã„ã¦ã„ãŸåå‰ç©ºé–“æŒ‡å®š (<code>xmlns:m="http://mayaa.seasar.org"</code>) ã‚’ã€ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã® html ã‚¿ã‚°ã®å±žæ€§ã¨ã—ã¦æ›¸ãå¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚</p>
+<p><code>m:inject</code> å±žæ€§ã®å€¤ã«ã¯ãƒžãƒƒãƒ”ãƒ³ã‚°ã™ã‚‹ãƒ—ãƒ­ã‚»ãƒƒã‚µå (mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå ´åˆã®ã‚¿ã‚°å) ã‚’æ›¸ãã€ãƒ—ãƒ­ã‚»ãƒƒã‚µã®å±žæ€§ã¯ mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã¨åŒæ§˜ã«æ›¸ãã¾ã™ã€‚ãŸã ã—ã€ãƒ—ãƒ­ã‚»ãƒƒã‚µã®å±žæ€§ã®ãƒ—ãƒ¬ãƒ•ã‚£ã‚¯ã‚¹ã‚’çœç•¥ã™ã‚‹ã“ã¨ã¯ã§ãã¾ã›ã‚“ã€‚(åå‰ç©ºé–“ã¨ãƒ—ãƒ¬ãƒ•ã‚£ã‚¯ã‚¹ã«ã¤ã„ã¦ã¯ã“ã®ãƒšãƒ¼ã‚¸ã®æœ€å¾Œã§èª¬æ˜Žã—ã¦ã„ã¾ã™)</p>
+<p>ä¾‹ã¨ã—ã¦ <code>m:write</code> (hello.html) ã¨ <code>c:out</code> (hello_jstl.html) ã®ã‚µãƒ³ãƒ—ãƒ«ã‚’ã€ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆä¸Šã«è¨­å®šã‚’æ›¸ãå½¢ã§æ›¸ãæ›ãˆã¦ã¿ã¾ã™ã€‚ç‰¹ã« <code>c:out</code> ã®ã‚µãƒ³ãƒ—ãƒ«ã«æ³¨æ„ã—ã¦ãã ã•ã„ã€‚<code>value</code> ã¯ <code>c:out</code> ã®å±žæ€§ã§ã‚ã‚‹ãŸã‚ã€ãƒ—ãƒ¬ãƒ•ã‚£ã‚¯ã‚¹ã¨ã—ã¦ <code>c:</code> ãŒä»˜ãã¾ã™ã€‚</p>
 
 <pre>
-<code>hello.html</code> ‚Åƒeƒ“ƒvƒŒ[ƒgã‚ÉÝ’è‚ð‘‚¢‚½ê‡
+<code>hello.html</code> ã§ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆä¸Šã«è¨­å®šã‚’æ›¸ã„ãŸå ´åˆ
 <div class="file">&lt;html <strong>xmlns:m="http://mayaa.seasar.org"</strong>&gt;
 &lt;body&gt;
     &lt;span <strong>m:inject="m:write"</strong> <strong>m:value="Hello Mayaa!"</strong>&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
-<code>hello_jstl.html</code> ‚Åƒeƒ“ƒvƒŒ[ƒgã‚ÉÝ’è‚ð‘‚¢‚½ê‡
+<code>hello_jstl.html</code> ã§ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆä¸Šã«è¨­å®šã‚’æ›¸ã„ãŸå ´åˆ
 <div class="file">&lt;html <strong>xmlns:m="http://mayaa.seasar.org"</strong>
       <strong>xmlns:c="http://java.sun.com/jsp/jstl/core"</strong>&gt;
 &lt;body&gt;
@@ -184,13 +134,13 @@ page.mayaa
 &lt;/html&gt;</div></pre>
 
 
-<h2>mayaa ƒtƒ@ƒCƒ‹‚Æƒeƒ“ƒvƒŒ[ƒgã‚ÌÝ’è‚Ì—¼•û‚ðŽg‚¤</h2>
+<h3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã¨ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆä¸Šã®è¨­å®šã®ä¸¡æ–¹ã‚’ä½¿ã†</h3>
 
-<p>mayaa ƒtƒ@ƒCƒ‹‚ðŽg‚¤•û–@‚Æƒeƒ“ƒvƒŒ[ƒgã‚É‘‚­•û–@‚Ì 2 Ží—Þ‚ðà–¾‚µ‚Ü‚µ‚½‚ªA‚±‚ê‚ç‚Ì•û–@‚ð¬Ý‚³‚¹‚é‚±‚Æ‚à‚Å‚«‚Ü‚·B</p>
+<p>mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½¿ã†æ–¹æ³•ã¨ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆä¸Šã«æ›¸ãæ–¹æ³•ã® 2 ç¨®é¡žã‚’èª¬æ˜Žã—ã¾ã—ãŸãŒã€ã“ã‚Œã‚‰ã®æ–¹æ³•ã‚’æ··åœ¨ã•ã›ã‚‹ã“ã¨ã‚‚ã§ãã¾ã™ã€‚</p>
 
 
 <pre>
-<code>hello.html</code> ‚Å id Žw’è‚Æƒeƒ“ƒvƒŒ[ƒgã‚ÌÝ’è‚Ì—¼•û‚ðŽg‚¤
+<code>hello.html</code> ã§ id æŒ‡å®šã¨ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆä¸Šã®è¨­å®šã®ä¸¡æ–¹ã‚’ä½¿ã†
 <div class="file">&lt;html <strong>xmlns:m="http://mayaa.seasar.org"</strong>&gt;
 &lt;body&gt;
     &lt;div <strong>id="condition"</strong>&gt;
@@ -204,26 +154,27 @@ page.mayaa
     &lt;m:if <strong>id="condition"</strong> test="&#36;{ 1 == 1 }" /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
-<p>“¯‚¶ƒ^ƒO‚Éƒeƒ“ƒvƒŒ[ƒgã‚ÌŽw’èAmayaa ƒtƒ@ƒCƒ‹‚Å‚ÌŽw’è‚Ì—¼•û‚ð‘‚¢‚½ê‡Aƒeƒ“ƒvƒŒ[ƒgã‚ÌŽw’è‚ª—Dæ‚³‚ê‚Ü‚·B</p>
+<p>åŒã˜ã‚¿ã‚°ã«ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆä¸Šã®æŒ‡å®šã€mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã§ã®æŒ‡å®šã®ä¸¡æ–¹ã‚’æ›¸ã„ãŸå ´åˆã€ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆä¸Šã®æŒ‡å®šãŒå„ªå…ˆã•ã‚Œã¾ã™ã€‚</p>
 
 
-<h2>–¼‘O‹óŠÔ‚ÆƒvƒŒƒtƒBƒNƒX</h2>
+<h3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">åå‰ç©ºé–“ã¨ãƒ—ãƒ¬ãƒ•ã‚£ã‚¯ã‚¹</h3>
 
-<p>Mayaa ‚ÌÝ’èƒtƒ@ƒCƒ‹‚Í XML Œ`Ž®‚ÅAƒvƒƒZƒbƒT‚ðƒ^ƒO‚Æ‚µ‚Ä‹Lq‚µ‚Ü‚·BMayaa ‚ÌƒGƒ“ƒWƒ“‹@”\‚Æ JSP ƒJƒXƒ^ƒ€ƒ^ƒO‚È‚Ç‚Ì‹@”\–¼‚ªd•¡‚µ‚È‚¢‚æ‚¤AXML –¼‘O‹óŠÔ‚ð—˜—p‚µ‚Ä‹æ•Ê‚µ‚Ü‚·B‚±‚±‚Å‚Í XML –¼‘O‹óŠÔ‚É‚Â‚¢‚Ä‚Ìà–¾‚ðs‚¢‚Ü‚¹‚ñB‚Ü‚½AŠÈ’P‚Ì‚½‚ßŒµ–§‚Å‚Í‚È‚¢•\Œ»‚ð‚·‚é‚±‚Æ‚ª‚ ‚è‚Ü‚·BXML –¼‘O‹óŠÔ‚É‚Â‚¢‚Ä‚Í<a href="#reference">ŽQl•¶Œ£</a>‚ð‚²——‚­‚¾‚³‚¢B</p>
+<p>Mayaa ã®è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã¯ XML å½¢å¼ã§ã€ãƒ—ãƒ­ã‚»ãƒƒã‚µã‚’ã‚¿ã‚°ã¨ã—ã¦è¨˜è¿°ã—ã¾ã™ã€‚Mayaa ã®ã‚¨ãƒ³ã‚¸ãƒ³æ©Ÿèƒ½ã¨ JSP ã‚«ã‚¹ã‚¿ãƒ ã‚¿ã‚°ãªã©ã®æ©Ÿèƒ½åãŒé‡è¤‡ã—ãªã„ã‚ˆã†ã€XML åå‰ç©ºé–“ã‚’åˆ©ç”¨ã—ã¦åŒºåˆ¥ã—ã¾ã™ã€‚ã“ã“ã§ã¯ XML åå‰ç©ºé–“ã«ã¤ã„ã¦ã®èª¬æ˜Žã‚’è¡Œã„ã¾ã›ã‚“ã€‚ã¾ãŸã€ç°¡å˜ã®ãŸã‚åŽ³å¯†ã§ã¯ãªã„è¡¨ç¾ã‚’ã™ã‚‹ã“ã¨ãŒã‚ã‚Šã¾ã™ã€‚XML åå‰ç©ºé–“ã«ã¤ã„ã¦ã¯<a href="#reference">å‚è€ƒæ–‡çŒ®</a>ã‚’ã”è¦§ãã ã•ã„ã€‚</p>
 
-<p>Mayaa ‚Ì‹@”\‚Å„§‚·‚éƒvƒŒƒtƒBƒNƒX‚ÍŽŸ‚Ì’Ê‚è‚Å‚·B</p>
-<table>
+<p>Mayaa ã®æ©Ÿèƒ½ã§æŽ¨å¥¨ã™ã‚‹ãƒ—ãƒ¬ãƒ•ã‚£ã‚¯ã‚¹ã¯æ¬¡ã®é€šã‚Šã§ã™ã€‚</p>
+
+<table align="center" cellpadding="5" cellspacing="2" class="tbline">
 <thead>
-    <tr><th>‹@”\–¼</th><th>URL</th><th>„§ƒvƒŒƒtƒBƒNƒX</th></tr>
+    <tr><th><div align="center">æ©Ÿèƒ½å</div></th><th><div align="center">URL</div></th><th><div align="center">æŽ¨å¥¨ãƒ—ãƒ¬ãƒ•ã‚£ã‚¯ã‚¹</div></th></tr>
 </thead>
 <tbody>
-    <tr><td>Mayaa ‚ÌƒGƒ“ƒWƒ“‹@”\</td><td>http://mayaa.seasar.org</td><td>m</td></tr>
+    <tr><td>Mayaa ã®ã‚¨ãƒ³ã‚¸ãƒ³æ©Ÿèƒ½</td><td>http://mayaa.seasar.org</td><td>m</td></tr>
 </tbody>
 </table>
 
-<p>JSP ƒJƒXƒ^ƒ€ƒ^ƒO‚ð—˜—p‚·‚éê‡AJSP ‚Ì taglib ƒfƒBƒŒƒNƒeƒBƒu‚ÅŽw’è‚·‚éƒvƒŒƒtƒBƒNƒX‚Æ URI ‚ðAXML –¼‘O‹óŠÔ‚ÌƒvƒŒƒtƒBƒNƒXAURL ‚Æ‚µ‚ÄŽw’è‚µ‚Ü‚·B</p>
+<p>JSP ã‚«ã‚¹ã‚¿ãƒ ã‚¿ã‚°ã‚’åˆ©ç”¨ã™ã‚‹å ´åˆã€JSP ã® taglib ãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–ã§æŒ‡å®šã™ã‚‹ãƒ—ãƒ¬ãƒ•ã‚£ã‚¯ã‚¹ã¨ URI ã‚’ã€XML åå‰ç©ºé–“ã®ãƒ—ãƒ¬ãƒ•ã‚£ã‚¯ã‚¹ã€URL ã¨ã—ã¦æŒ‡å®šã—ã¾ã™ã€‚</p>
 
-<p>‘®«‚Ì–¼‘O‹óŠÔ‚ª‘®‚µ‚Ä‚¢‚éƒ^ƒO‚Æ“¯‚¶ê‡‚ÍƒvƒŒƒtƒBƒNƒX‚ðÈ—ª‚Å‚«‚Ü‚·B‰º‚Ì—á‚ÅÂFEŽÎ‘Ì‚É‚È‚Á‚Ä‚¢‚éƒvƒŒƒtƒBƒNƒX‚ªÈ—ª‰Â”\‚È‚à‚Ì‚Å‚·B‚±‚ê‚Ü‚Å‚ÌƒTƒ“ƒvƒ‹‚ÍÈ—ª‚µ‚½Œ`‚Å•\‹L‚µ‚Ä‚¢‚Ü‚µ‚½‚ªAŒµ–§‚È‹Lq‚ð‚·‚é‚Æ‚«‚É‚Í‚±‚Ì—á‚Ì‚æ‚¤‚É‚È‚è‚Ü‚·B</p>
+<p>å±žæ€§ã®åå‰ç©ºé–“ãŒå±žã—ã¦ã„ã‚‹ã‚¿ã‚°ã¨åŒã˜å ´åˆã¯ãƒ—ãƒ¬ãƒ•ã‚£ã‚¯ã‚¹ã‚’çœç•¥ã§ãã¾ã™ã€‚ä¸‹ã®ä¾‹ã§é’è‰²ãƒ»æ–œä½“ã«ãªã£ã¦ã„ã‚‹ãƒ—ãƒ¬ãƒ•ã‚£ã‚¯ã‚¹ãŒçœç•¥å¯èƒ½ãªã‚‚ã®ã§ã™ã€‚ã“ã‚Œã¾ã§ã®ã‚µãƒ³ãƒ—ãƒ«ã¯çœç•¥ã—ãŸå½¢ã§è¡¨è¨˜ã—ã¦ã„ã¾ã—ãŸãŒã€åŽ³å¯†ãªè¨˜è¿°ã‚’ã™ã‚‹ã¨ãã«ã¯ã“ã®ä¾‹ã®ã‚ˆã†ã«ãªã‚Šã¾ã™ã€‚</p>
 
 <pre>
 <div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
@@ -237,29 +188,24 @@ page.mayaa
 &lt;/m:mayaa&gt;</div></pre>
 
 
-<h3><a name="reference">ŽQl•¶Œ£</a></h3>
+<h4>â– <a name="reference"></a>å‚è€ƒæ–‡çŒ®</h4>
 
-<dl>
+<dl class="reference">
 <dt>Namespaces in XML</dt>
 <dd><cite><a href="http://www.w3.org/TR/REC-xml-names">http://www.w3.org/TR/REC-xml-names</a></cite></dd>
 
-<dt>XML–¼‘O‹óŠÔ‚ÌŠÈ’P‚Èà–¾</dt>
+<dt>XMLåå‰ç©ºé–“ã®ç°¡å˜ãªèª¬æ˜Ž</dt>
 <dd><cite><a href="http://www.kanzaki.com/docs/sw/names.html">http://www.kanzaki.com/docs/sw/names.html</a></cite></dd>
 </dl>
 
 
+<DIV class="navi"><a href="#top">â†‘ã“ã®ãƒšãƒ¼ã‚¸ã®ãƒˆãƒƒãƒ—ã¸</a></DIV>
 
-</div>
+</DIV>
 
-<div class="navi">
-<a href="./customtag.html">©JSP ƒJƒXƒ^ƒ€ƒ^ƒO‚ðŽg‚¤</a>
-<a href="./index.html">ªindex</a>
-<a href="./component1.html">HTML •”•i‚ðŽg‚¤ (Ã“I)¨</a>
-</div>
-
-<div class="footer">
-&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
-</div>
-
-</body>
-</html>
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

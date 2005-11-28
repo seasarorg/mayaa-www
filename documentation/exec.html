@@ -1,32 +1,58 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Mayaa : Documentation : 3-3. �^�O�`��̃^�C�~���O�ŃX�N���v�g�����s����</title>
-    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
-</head>
-<body>
-<div class="header">
-<div>Mayaa : JavaServer Templates</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>3-3. タグ描画時のスクリプト : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<div class="navi">
-<a href="./before_render.html">�������_�����O�O��ɃX�N���v�g�����s����</a>
-<a href="./index.html">��index</a>
-<a href="./echo.html">�^�O�̑����݂̂�u�������遨</a>
-</div>
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
 
-<div class="main">
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
 
 
-<h1>3-3. �^�O�`��̃^�C�~���O�ŃX�N���v�g�����s����</h1>
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">更新履歴</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">スライドなど</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa 導入</a></DIV>
+<DIV class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></DIV>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenutext"><A href="default.html">3-1. ページ共通の設定</A></DIV>
+<DIV class="sidemenutext"><A href="before_render.html">3-2. 描画前後のスクリプト</A></DIV>
+<DIV class="sidemenutext"><span>3-3. タグ描画時のスクリプト</span></DIV>
+<DIV class="sidemenutext"><A href="echo.html">3-4. 属性のみを置き換える</A></DIV>
+<DIV class="sidemenutext"><A href="with.html">3-5. プロセッサをまとめる</A></DIV>
+<DIV class="sidemenutext"><A href="xpath.html">3-6. id の代わりに XPath</A></DIV>
+<DIV class="sidemenutext"><A href="remove.html">3-7. タグを消す</A></DIV>
+<DIV class="sidemenutext"><A href="ignore.html">3-8. id を処理対象外に</A></DIV>
+<DIV class="sidemenutext"><A href="comment.html">3-9. コメントを書く</A></DIV>
+<BR>
 
-<p>���[�v���Ƃɏ���������������������ȂǁA�^�O�������_�����O����^�C�~���O�ŃX�N���v�g�����s�������ꍇ������ł��傤�B���̏ꍇ�ɂ� <strong>exec �v���Z�b�T</strong>���g���܂��B</p>
+<DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
+<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
+</DIV>
 
-<h2>�ȒP�ȗ�</h2>
 
-<p>�����ȒP�ȃT���v���Ŏ��ۂɎg���Ă݂܂��傤�B<code>exec</code> �v���Z�b�T�Ń��[�v�ϐ�������������𔻒肵�A�ϐ� <code>evenodd</code> �Ɋi�[���܂��B����� <code>write</code> �v���Z�b�T���g���ă��[�v�ϐ��̒l�Ɣ��茋�ʂ��o�͂��܂��B</p>
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>3-3. タグ描画時のスクリプト</H2>
+
+<p>ループごとに少しだけ準備処理をするなど、タグをレンダリングするタイミングでスクリプトを実行したい場合があるでしょう。その場合には <strong>exec プロセッサ</strong>を使います。</p>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">簡単な例</H3>
+
+<p>ごく簡単なサンプルで実際に使ってみましょう。<code>exec</code> プロセッサでループ変数が偶数か奇数かを判定し、変数 <code>evenodd</code> に格納します。さらに <code>write</code> プロセッサを使ってループ変数の値と判定結果を出力します。</p>
 
 <pre>
 exec.html
@@ -45,19 +71,17 @@ exec.mayaa
             test="&#36;{ i &amp;lt; 6 }" after="&#36;{ i += 1 }" /&gt;
 
     &lt;m:exec <strong>id="evenodd"</strong> replace="false"
-            <strong>script="&#36;{ var evenodd = (i % 2 == 0) ? 'even' : 'odd'; }"</strong>&gt;
-        &lt;m:doBody /&gt;
-    &lt;/m:exec&gt;
+        <strong>script="&#36;{ var evenodd = (i % 2 == 0) ? 'even' : 'odd'; }"</strong> /&gt;
 
     &lt;m:write id="value" value="&#36;{ i + ': ' + evenodd }" /&gt;
 
 &lt;/m:mayaa&gt;</div></pre>
 
-<p>�ϐ� <code>evenodd</code> �� <code>exec</code> �v���Z�b�T�̃{�f�B���ł̂ݗL���ł��B<code>id="value"</code> �� <code>write</code> �v���Z�b�T�� <code>doBody</code> �̌��� <code>exec</code> �v���Z�b�T�̃{�f�B���ɂ���ƌ��Ȃ��܂��̂ŁA<code>evenodd</code> �ϐ����Q�Ƃ��邱�Ƃ��ł��܂��B</p>
-<p>�u���E�U�� <code><a href="http://localhost:8080/mayaa/exec.html" target="_blank">http://localhost:8080/mayaa/exec.html</a></code> �ɃA�N�Z�X���Ă݂܂��傤�B</p>
+<p>変数 <code>evenodd</code> は <code>exec</code> プロセッサのボディ内でのみ有効です。<code>id="value"</code> の <code>write</code> プロセッサは <code>doBody</code> の結果 <code>exec</code> プロセッサのボディ内にあると見なせますので、<code>evenodd</code> 変数を参照することができます。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/exec.html" target="_blank">http://localhost:8080/mayaa/exec.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
-���s����
+実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;div id="evenodd"&gt;1: odd&lt;/div&gt;
@@ -68,24 +92,21 @@ exec.mayaa
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<p>���s���ʂɂ́A������ <code>evenodd</code> �ϐ��̓��e���o�͂���܂����B</p>
+<p>実行結果には、正しく <code>evenodd</code> 変数の内容が出力されました。</p>
 
-<p>���̃T���v�������Ō���ƈӖ����Ȃ��悤�Ɍ����邩������܂��񂪁A���Ƃ��Δz��̗v�f��v�Z���ʂ�ϐ��Œ�`���Ȃ����āA�ݒ�t�@�C���̌��ʂ���ǂ�����悤�Ȏg�����Ɍ��ʂ𔭊����܂��B</p>
+<p>このサンプルだけで見ると意味がないように見えるかもしれませんが、たとえば配列の要素や計算結果を変数で定義しなおして、設定ファイルの見通しを良くするような使い方に効果を発揮します。</p>
 
-<p>���p��ʂ��l���Ă݂܂��傤�Brequest �ɓ����Ă���I�u�W�F�N�g�̐[���ʒu�փA�N�Z�X����ɂ́A<code>object.getProperty().getChildren()[1].getValue()</code> �̂悤�ɒ������ŃA�N�Z�X�����邱�ƂɂȂ��Ă��܂��܂��BJavaScript �̋@�\���g���ĒZ�k���Ă� <code>object.property.children[1].value</code> �ł�͂蕪����Â炢�ł��B</p>
-<p>���̂悤�ȂƂ��� <code>var child = object.property.children[1]</code> �ƕϐ��錾����΁A<code>child.value</code>�A<code>child.name</code> �̂悤�ɕ�����₷���v���p�e�B���Q�Ƃł��܂��B</p>
+<p>実用場面を考えてみましょう。request に入っているオブジェクトの深い位置へアクセスするには、<code>object.getProperty().getChildren()[1].getValue()</code> のように長い文でアクセスをすることになってしまいます。JavaScript の機能を使って短縮しても <code>object.property.children[1].value</code> でやはり分かりづらいです。</p>
+<p>このようなときに <code>var child = object.property.children[1]</code> と変数宣言すれば、<code>child.value</code>、<code>child.name</code> のように分かりやすくプロパティを参照できます。</p>
 
-</div>
 
-<div class="navi">
-<a href="./before_render.html">�������_�����O�O��ɃX�N���v�g�����s����</a>
-<a href="./index.html">��index</a>
-<a href="./echo.html">�^�O�̑����݂̂�u�������遨</a>
-</div>
+<DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
 
-<div class="footer">
-&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
-</div>
+</DIV>
 
-</body>
-</html>
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

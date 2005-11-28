@@ -1,49 +1,68 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Mayaa : Documentation : appendix C. JavaScript ‚ğ‘‚­‚Æ‚«‚Ì Tips</title>
-    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
-</head>
-<body>
-<div class="header">
-<div>Mayaa : JavaServer Templates</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>Appendix 2. JavaScript Tips : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<div class="navi">
-<a href="./processor_reference.html">©Mayaa core ƒvƒƒZƒbƒT ƒŠƒtƒ@ƒŒƒ“ƒX</a>
-<a href="./index.html">ªindex</a>
-<a href="./note.html">‚»‚Ì‘¼‚Ì’ˆÓ“_¨</a>
-</div>
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
 
-<div class="main">
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
 
-<h1>appendix C. JavaScript ‚ğ‘‚­‚Æ‚«‚Ì Tips</h1>
+
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">æ›´æ–°å±¥æ­´</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">ã‚¹ãƒ©ã‚¤ãƒ‰ãªã©</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa å°å…¥</a></DIV>
+<DIV class="sidemenu"><a href="hello.html">2. Mayaa ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«</a></DIV>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenu"><a href="processor_reference.html">4. ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹</a></DIV>
+<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">ä»˜éŒ²</a></DIV>
+<DIV class="sidemenutext"><a href="mayaa_customtag_diff.html">A-1. ã‚«ã‚¹ã‚¿ãƒ ã‚¿ã‚°ã®æ³¨æ„ç‚¹</a></DIV>
+<DIV class="sidemenutext"><span>A-2. JavaScript Tips</span></DIV>
+<DIV class="sidemenutext"><a href="note.html">A-3. ãã®ä»–ã®æ³¨æ„ç‚¹</a></DIV>
+<BR>
+</DIV>
+
+
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>Appendix 2. JavaScript Tips</H2>
 
 <div class="toc">
-<a name="toc">–ÚŸ</a>
+<a name="toc">ç›®æ¬¡</a>
 <ul>
-<li><a href="#javaclass">Java ‚ÌƒNƒ‰ƒX‚ğg‚¤</a></li>
-<li><a href="#exception">—áŠO‚ğˆ—‚·‚é</a></li>
+<li><a href="#javaclass">Java ã®ã‚¯ãƒ©ã‚¹ã‚’ä½¿ã†</a></li>
+<li><a href="#exception">ä¾‹å¤–ã‚’å‡¦ç†ã™ã‚‹</a></li>
 </ul>
 </div>
 
 
-<h2><a name="javaclass">Java ‚ÌƒNƒ‰ƒX‚ğg‚¤</a> <span class="to_toc">(<a href="#toc" title="–ÚŸ‚Ö">ª–ÚŸ‚Ö</a>)</span></h2>
+<H3><a name="javaclass"></a><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">Java ã®ã‚¯ãƒ©ã‚¹ã‚’ä½¿ã† <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></H3>
 
-<p>Java ‚ÌƒNƒ‰ƒX‚ÍA<code>java.lang.String</code> ‚â <code>java.util.ArrayList</code> ‚Ì‚æ‚¤‚ÉƒpƒbƒP[ƒW‚ª "<code>java.</code>" ‚Ån‚Ü‚éƒNƒ‰ƒX‚Å‚ ‚ê‚ÎAŠ®‘SCü–¼‚ğ‚»‚Ì‚Ü‚Ü‘‚­‚¾‚¯‚Å—˜—p‚Å‚«‚Ü‚·B‚µ‚©‚µ‚»‚êˆÈŠO‚ÌƒpƒbƒP[ƒW ("<code>org.</code>" ‚â "<code>com.</code>" ‚È‚Ç) ‚Ìê‡Aæ“ª‚É "<code>Packages.</code>" ‚ğ•t‚¯‚é•K—v‚ª‚ ‚è‚Ü‚·B</p>
+<p>Java ã®ã‚¯ãƒ©ã‚¹ã¯ã€<code>java.lang.String</code> ã‚„ <code>java.util.ArrayList</code> ã®ã‚ˆã†ã«ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ãŒ "<code>java.</code>" ã§å§‹ã¾ã‚‹ã‚¯ãƒ©ã‚¹ã§ã‚ã‚Œã°ã€å®Œå…¨ä¿®é£¾åã‚’ãã®ã¾ã¾æ›¸ãã ã‘ã§åˆ©ç”¨ã§ãã¾ã™ã€‚ã—ã‹ã—ãã‚Œä»¥å¤–ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ ("<code>org.</code>" ã‚„ "<code>com.</code>" ãªã©) ã®å ´åˆã€å…ˆé ­ã« "<code>Packages.</code>" ã‚’ä»˜ã‘ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚</p>
 
 <pre>
-—á:
+ä¾‹:
 var list = new java.util.ArrayList();
 var myClass = new <strong>Packages.</strong>org.example.MyClass();
 </pre>
 
 
-<h2><a name="exception">—áŠO‚ğˆ—‚·‚é</a> <span class="to_toc">(<a href="#toc" title="–ÚŸ‚Ö">ª–ÚŸ‚Ö</a>)</span></h2>
+<H3><a name="exception"></a><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">ä¾‹å¤–ã‚’å‡¦ç†ã™ã‚‹ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></H3>
 
-<p>JavaScript ‚É‚à try ` catch \•¶‚Í‚ ‚è‚Ü‚·‚Ì‚ÅAJava ‚Å”­¶‚µ‚½—áŠO‚ğ JavaScript ‚Åˆ—‚·‚é‚±‚Æ‚à‚Å‚«‚Ü‚·BJava ‚ÅƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ğì‚é‚Æ‚«‚É‚Í Java “à‚Åˆ—‚·‚é‚Å‚µ‚å‚¤‚©‚çAƒfƒoƒbƒO‚É‚Í–ğ—§‚Â‚©‚à‚µ‚ê‚Ü‚¹‚ñB</p>
+<p>JavaScript ã«ã‚‚ try ï½ catch æ§‹æ–‡ã¯ã‚ã‚Šã¾ã™ã®ã§ã€Java ã§ç™ºç”Ÿã—ãŸä¾‹å¤–ã‚’ JavaScript ã§å‡¦ç†ã™ã‚‹ã“ã¨ã‚‚ã§ãã¾ã™ã€‚Java ã§ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚’ä½œã‚‹ã¨ãã«ã¯ Java å†…ã§å‡¦ç†ã™ã‚‹ã§ã—ã‚‡ã†ã‹ã‚‰ã€ãƒ‡ãƒãƒƒã‚°æ™‚ã«ã¯å½¹ç«‹ã¤ã‹ã‚‚ã—ã‚Œã¾ã›ã‚“ã€‚</p>
 
 <pre>
 var catched = "";
@@ -57,19 +76,12 @@ var catched = "";
 </pre>
 
 
-</div>
+<DIV class="navi"><a href="#top">â†‘ã“ã®ãƒšãƒ¼ã‚¸ã®ãƒˆãƒƒãƒ—ã¸</a></DIV>
 
-<div class="navi">
-<a href="./processor_reference.html">©Mayaa core ƒvƒƒZƒbƒT ƒŠƒtƒ@ƒŒƒ“ƒX</a>
-<a href="./index.html">ªindex</a>
-<a href="./note.html">‚»‚Ì‘¼‚Ì’ˆÓ“_¨</a>
-</div>
-
-<div style="height: 800px">&nbsp;</div>
-
-<div class="footer">
-&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
-</div>
-
-</body>
-</html>
+</DIV>
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

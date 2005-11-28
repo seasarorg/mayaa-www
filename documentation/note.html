@@ -1,76 +1,89 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Mayaa : Documentation : appendix D. ‚»‚Ì‘¼‚Ì’ˆÓ“_</title>
-    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
-</head>
-<body>
-<div class="header">
-<div>Mayaa : JavaServer Templates</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>Appendix 3. ãã®ä»–ã®æ³¨æ„ç‚¹ : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<div class="navi">
-<a href="./mayaa_rhino_tips.html">©JavaScript ‚ð‘‚­‚Æ‚«‚Ì Tips</a>
-<a href="./index.html">ªindex</a>
-<a href="./implicit_object.html">ƒXƒNƒŠƒvƒg‚ÅŽg‚¦‚é’è‹`Ï‚ÝƒIƒuƒWƒFƒNƒg¨</a>
-</div>
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
 
-<div class="main">
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
 
-<h1>appendix D. ‚»‚Ì‘¼‚Ì’ˆÓ“_</h1>
+
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">æ›´æ–°å±¥æ­´</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">ã‚¹ãƒ©ã‚¤ãƒ‰ãªã©</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa å°Žå…¥</a></DIV>
+<DIV class="sidemenu"><a href="hello.html">2. Mayaa ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«</a></DIV>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenu"><a href="processor_reference.html">4. ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹</a></DIV>
+<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">ä»˜éŒ²</a></DIV>
+<DIV class="sidemenutext"><a href="mayaa_customtag_diff.html">A-1. ã‚«ã‚¹ã‚¿ãƒ ã‚¿ã‚°ã®æ³¨æ„ç‚¹</a></DIV>
+<DIV class="sidemenutext"><a href="mayaa_rhino_tips.html">A-2. JavaScript Tips</a></DIV>
+<DIV class="sidemenutext"><span>A-3. ãã®ä»–ã®æ³¨æ„ç‚¹</span></DIV>
+<BR>
+</DIV>
+
+
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>Appendix 3. ãã®ä»–ã®æ³¨æ„ç‚¹</H2>
 
 <div class="toc">
-<a name="toc">–ÚŽŸ</a>
+<a name="toc">ç›®æ¬¡</a>
 <ul>
-<li><a href="#dollar">ƒeƒ“ƒvƒŒ[ƒg‚É &#36;{ } ‚ð‘‚«‚½‚¢</a></li>
-<li><a href="#charset">o—Í‚·‚é•¶ŽšƒGƒ“ƒR[ƒfƒBƒ“ƒO‚ðŽw’è‚µ‚½‚¢</a></li>
-<li><a href="#japanese">Java ‚©‚ço—Í‚µ‚½ "`" ‚ª•¶Žš‰»‚¯‚·‚é</a></li>
-<li><a href="#escape">&lt;, &gt;, &amp; ‚È‚Ç‚ð‘‚«‚½‚¢</a></li>
+<li><a href="#dollar">ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã« &#36;{ } ã‚’æ›¸ããŸã„</a></li>
+<li><a href="#charset">å‡ºåŠ›ã™ã‚‹æ–‡å­—ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã‚’æŒ‡å®šã—ãŸã„</a></li>
+<li><a href="#japanese">Java ã‹ã‚‰å‡ºåŠ›ã—ãŸ "ï½ž" ãŒæ–‡å­—åŒ–ã‘ã™ã‚‹</a></li>
+<li><a href="#escape">&lt;, &gt;, &amp; ãªã©ã‚’æ›¸ããŸã„</a></li>
 </ul>
 </div>
 
 
-<h2><a name="dollar">ƒeƒ“ƒvƒŒ[ƒg‚É &#36;{ } ‚ð‘‚«‚½‚¢</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
+<h3><a name="dollar"></a><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã« &#36;{ } ã‚’æ›¸ããŸã„ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></h3>
 
-<p>Mayaa ‚Å‚ÍƒXƒNƒŠƒvƒg‚ð‘‚­‚Æ‚«‚É <code>&#36;{ }</code> ‚Æ‚¢‚¤•\‹L‚ðŽg‚¢‚Ü‚·Bƒeƒ“ƒvƒŒ[ƒgã‚Å‚à mayaa ƒtƒ@ƒCƒ‹ã‚Å‚àA‚±‚Ì•\‹L‚ð‚µ‚½ê‡‚É‚ÍƒXƒNƒŠƒvƒg‚Æ‚µ‚Äˆµ‚¢‚Ü‚·B</p>
+<p>Mayaa ã§ã¯ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’æ›¸ãã¨ãã« <code>&#36;{ }</code> ã¨ã„ã†è¡¨è¨˜ã‚’ä½¿ã„ã¾ã™ã€‚ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆä¸Šã§ã‚‚ mayaa ãƒ•ã‚¡ã‚¤ãƒ«ä¸Šã§ã‚‚ã€ã“ã®è¡¨è¨˜ã‚’ã—ãŸå ´åˆã«ã¯ã‚¹ã‚¯ãƒªãƒ—ãƒˆã¨ã—ã¦æ‰±ã„ã¾ã™ã€‚</p>
 
-<p>‚»‚Ì‚½‚ßƒeƒ“ƒvƒŒ[ƒgã‚É <code>&#36;{ }</code> ‚Æ‚¢‚¤•¶Žš—ñ‚ð‘‚«‚½‚¢ê‡A<code>&amp;#36;{ }</code> ‚ÆƒGƒXƒP[ƒv‚µ‚Ä‘‚­•K—v‚ª‚ ‚è‚Ü‚·B</p>
-
-
-<h2><a name="charset">o—Í‚·‚é•¶ŽšƒGƒ“ƒR[ƒfƒBƒ“ƒO‚ðŽw’è‚µ‚½‚¢</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
-
-<p>Mayaa ‚Åo—Í‚·‚é•¶ŽšƒGƒ“ƒR[ƒfƒBƒ“ƒO‚Æƒeƒ“ƒvƒŒ[ƒg“Ç‚Ýž‚ÝŽž‚Ì•¶ŽšƒGƒ“ƒR[ƒfƒBƒ“ƒO‚ðŒˆ’è‚·‚é‚Ì‚ÍAƒeƒ“ƒvƒŒ[ƒg‚Ì•¶ŽšƒGƒ“ƒR[ƒfƒBƒ“ƒOŽw’è‚Å‚·BHTML ƒeƒ“ƒvƒŒ[ƒg‚Å‚ ‚ê‚Î META ƒ^ƒO‚Å‚ÌŽw’èAXML ƒeƒ“ƒvƒŒ[ƒg‚Å‚ ‚ê‚Î XML ‚Æ‚µ‚Ä‚Ì•¶ŽšƒGƒ“ƒR[ƒfƒBƒ“ƒOŽw’è‚Å‚·B</p>
-<p>•¶ŽšƒGƒ“ƒR[ƒfƒBƒ“ƒO‚ðŽw’è‚µ‚È‚¢ê‡AHTML ‚Æ XML ‚Å“®ì‚ªˆÙ‚È‚è‚Ü‚·BHTML ‚Ìê‡A<code>UTF-8</code> ‚ÆŽ©“®”»’è‚Å‚«‚éê‡‚Í <code>UTF-8</code> ‚Æ‚µ‚ÄA‚»‚êˆÈŠO‚Í <code>ISO-8859-1</code> ‚Æ‚µ‚Äˆµ‚¢‚Ü‚·BXML ‚Ìê‡‚Í <code>UTF-8</code> ‚Æ‚µ‚Äˆµ‚¢‚Ü‚·B•¶ŽšƒGƒ“ƒR[ƒfƒBƒ“ƒO‚Íƒgƒ‰ƒuƒ‹‚ÌŒ³‚Æ‚È‚è‚â‚·‚¢‚½‚ßAŠî–{“I‚É‚Í–¾Ž¦“I‚É•¶ŽšƒGƒ“ƒR[ƒfƒBƒ“ƒOŽw’è‚ð‚·‚é‚æ‚¤‚É‚µ‚Ä‚­‚¾‚³‚¢B</p>
+<p>ãã®ãŸã‚ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆä¸Šã« <code>&#36;{ }</code> ã¨ã„ã†æ–‡å­—åˆ—ã‚’æ›¸ããŸã„å ´åˆã€<code>&amp;#36;{ }</code> ã¨ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã—ã¦æ›¸ãå¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚</p>
 
 
-<h2><a name="japanese">Java ‚©‚ço—Í‚µ‚½ "`" ‚ª•¶Žš‰»‚¯‚·‚é</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
+<h3><a name="charset"></a><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">å‡ºåŠ›ã™ã‚‹æ–‡å­—ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã‚’æŒ‡å®šã—ãŸã„ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></h2>
 
-<p>“ú–{Œê‚ðˆµ‚¤ê‡A•¶ŽšƒGƒ“ƒR[ƒfƒBƒ“ƒO‚ÌŽw’è‚É‚æ‚Á‚Ä‚Í•¶Žš‰»‚¯‚ª”­¶‚·‚é‚±‚Æ‚ª‚ ‚è‚Ü‚·B•¶Žš‰»‚¯‚ð‰ñ”ð‚·‚é‚É‚ÍAJava ƒ\[ƒXƒR[ƒh‚â‘¼‚ÌƒŠƒ\[ƒX‚Æ“¯‚¶•¶ŽšƒGƒ“ƒR[ƒfƒBƒ“ƒO‚ðŽg‚¤‚æ‚¤‚É‚µ‚Ä‚­‚¾‚³‚¢B</p>
-
-<p>‚½‚Æ‚¦‚Î Windows ‚ÅŠJ”­‚·‚éê‡Aˆê”Ê“I‚É Java ƒ\[ƒXƒR[ƒh‚Ì•¶ŽšƒGƒ“ƒR[ƒfƒBƒ“ƒO‚Í <code>MS932</code> ‚Å‚·B‚±‚Ìê‡‚É HTML ƒeƒ“ƒvƒŒ[ƒg‚ÉŽw’è‚·‚é•¶ŽšƒGƒ“ƒR[ƒfƒBƒ“ƒO‚Í <code>Windows-31J</code> ‚Å‚·B<strong>Shift_JIS ‚Å‚Í‚ ‚è‚Ü‚¹‚ñ</strong>Bƒeƒ“ƒvƒŒ[ƒg‚Ì•¶ŽšƒGƒ“ƒR[ƒfƒBƒ“ƒO‚ð <code>Shift_JIS</code> ‚É‚µ‚½ê‡AJava ƒ\[ƒXƒR[ƒh’†‚É‘‚¢‚½ "`" ‚Ì•¶Žš‚ðo—Í‚µ‚æ‚¤‚Æ‚·‚é‚Æ•¶Žš‰»‚¯‚ª”­¶‚µ‚Ü‚·B</p>
-
-
-<h2><a name="escape">&lt;, &gt;, &amp; ‚È‚Ç‚ð‘‚«‚½‚¢</a> <span class="to_toc">(<a href="#toc" title="–ÚŽŸ‚Ö">ª–ÚŽŸ‚Ö</a>)</span></h2>
-
-<p>ƒeƒ“ƒvƒŒ[ƒgAmayaa ƒtƒ@ƒCƒ‹‚Ì—¼•û‚Æ‚àA<code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code> ‚È‚Ç‚ð•¶Žš‚Æ‚µ‚ÄŽg‚¢‚½‚¢ê‡‚Í <code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;amp;</code> ‚Ì‚æ‚¤‚ÉƒGƒXƒP[ƒv‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B</p>
-<p>‚¿‚å‚Á‚Æ‚â‚â‚±‚µ‚­‚È‚è‚Ü‚·‚ªAmayaa ƒtƒ@ƒCƒ‹‚©‚çƒeƒ“ƒvƒŒ[ƒg‚ÉuƒGƒXƒP[ƒvŒã‚Ì•¶Žš—ñv‚ðo—Í‚·‚éê‡A‚à‚¤ˆê’iŠKƒGƒXƒP[ƒv‚µ‚È‚¯‚ê‚Î‚È‚è‚Ü‚¹‚ñB(<code>&amp;amp;lt;</code>, <code>&amp;amp;gt;</code>, <code>&amp;amp;amp;</code>)</p>
+<p>Mayaa ã§å‡ºåŠ›ã™ã‚‹æ–‡å­—ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã¨ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆèª­ã¿è¾¼ã¿æ™‚ã®æ–‡å­—ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã‚’æ±ºå®šã™ã‚‹ã®ã¯ã€ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã®æ–‡å­—ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°æŒ‡å®šã§ã™ã€‚HTML ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã§ã‚ã‚Œã° META ã‚¿ã‚°ã§ã®æŒ‡å®šã€XML ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã§ã‚ã‚Œã° XML ã¨ã—ã¦ã®æ–‡å­—ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°æŒ‡å®šã§ã™ã€‚</p>
+<p>æ–‡å­—ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã‚’æŒ‡å®šã—ãªã„å ´åˆã€HTML ã¨ XML ã§å‹•ä½œãŒç•°ãªã‚Šã¾ã™ã€‚HTML ã®å ´åˆã€<code>UTF-8</code> ã¨è‡ªå‹•åˆ¤å®šã§ãã‚‹å ´åˆã¯ <code>UTF-8</code> ã¨ã—ã¦ã€ãã‚Œä»¥å¤–ã¯ <code>ISO-8859-1</code> ã¨ã—ã¦æ‰±ã„ã¾ã™ã€‚XML ã®å ´åˆã¯ <code>UTF-8</code> ã¨ã—ã¦æ‰±ã„ã¾ã™ã€‚æ–‡å­—ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã¯ãƒˆãƒ©ãƒ–ãƒ«ã®å…ƒã¨ãªã‚Šã‚„ã™ã„ãŸã‚ã€åŸºæœ¬çš„ã«ã¯æ˜Žç¤ºçš„ã«æ–‡å­—ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°æŒ‡å®šã‚’ã™ã‚‹ã‚ˆã†ã«ã—ã¦ãã ã•ã„ã€‚</p>
 
 
-</div>
+<h3><a name="japanese"></a><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">Java ã‹ã‚‰å‡ºåŠ›ã—ãŸ "ï½ž" ãŒæ–‡å­—åŒ–ã‘ã™ã‚‹ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></h3>
 
-<div class="navi">
-<a href="./mayaa_rhino_tips.html">©JavaScript ‚ð‘‚­‚Æ‚«‚Ì Tips</a>
-<a href="./index.html">ªindex</a>
-<a href="./implicit_object.html">ƒXƒNƒŠƒvƒg‚ÅŽg‚¦‚é’è‹`Ï‚ÝƒIƒuƒWƒFƒNƒg¨</a>
-</div>
+<p>æ—¥æœ¬èªžã‚’æ‰±ã†å ´åˆã€æ–‡å­—ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã®æŒ‡å®šã«ã‚ˆã£ã¦ã¯æ–‡å­—åŒ–ã‘ãŒç™ºç”Ÿã™ã‚‹ã“ã¨ãŒã‚ã‚Šã¾ã™ã€‚æ–‡å­—åŒ–ã‘ã‚’å›žé¿ã™ã‚‹ã«ã¯ã€Java ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã‚„ä»–ã®ãƒªã‚½ãƒ¼ã‚¹ã¨åŒã˜æ–‡å­—ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã‚’ä½¿ã†ã‚ˆã†ã«ã—ã¦ãã ã•ã„ã€‚</p>
 
-<div style="height: 800px">&nbsp;</div>
+<p>ãŸã¨ãˆã° Windows ã§é–‹ç™ºã™ã‚‹å ´åˆã€ä¸€èˆ¬çš„ã« Java ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã®æ–‡å­—ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã¯ <code>MS932</code> ã§ã™ã€‚ã“ã®å ´åˆã« HTML ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã«æŒ‡å®šã™ã‚‹æ–‡å­—ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã¯ <code>Windows-31J</code> ã§ã™ã€‚<strong>Shift_JIS ã§ã¯ã‚ã‚Šã¾ã›ã‚“</strong>ã€‚ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã®æ–‡å­—ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã‚’ <code>Shift_JIS</code> ã«ã—ãŸå ´åˆã€Java ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ä¸­ã«æ›¸ã„ãŸ "ï½ž" ã®æ–‡å­—ã‚’å‡ºåŠ›ã—ã‚ˆã†ã¨ã™ã‚‹ã¨æ–‡å­—åŒ–ã‘ãŒç™ºç”Ÿã—ã¾ã™ã€‚</p>
 
-<div class="footer">
-&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
-</div>
 
-</body>
-</html>
+<h3><a name="escape"></a><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">&lt;, &gt;, &amp; ãªã©ã‚’æ›¸ããŸã„ <span class="to_toc">(<a href="#toc" title="ç›®æ¬¡ã¸">â†‘ç›®æ¬¡ã¸</a>)</span></h3>
+
+<p>ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã€mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã®ä¸¡æ–¹ã¨ã‚‚ã€<code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code> ãªã©ã‚’æ–‡å­—ã¨ã—ã¦ä½¿ã„ãŸã„å ´åˆã¯ <code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;amp;</code> ã®ã‚ˆã†ã«ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚</p>
+<p>ã¡ã‚‡ã£ã¨ã‚„ã‚„ã“ã—ããªã‚Šã¾ã™ãŒã€mayaa ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã«ã€Œã‚¨ã‚¹ã‚±ãƒ¼ãƒ—å¾Œã®æ–‡å­—åˆ—ã€ã‚’å‡ºåŠ›ã™ã‚‹å ´åˆã€ã‚‚ã†ä¸€æ®µéšŽã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã—ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“ã€‚(<code>&amp;amp;lt;</code>, <code>&amp;amp;gt;</code>, <code>&amp;amp;amp;</code>)</p>
+
+
+
+<DIV class="navi"><a href="#top">â†‘ã“ã®ãƒšãƒ¼ã‚¸ã®ãƒˆãƒƒãƒ—ã¸</a></DIV>
+
+</DIV>
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

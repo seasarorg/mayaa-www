@@ -1,35 +1,51 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Mayaa : Documentation : 1-2. �C���X�g�[�����悤</title>
-    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
-</head>
-<body>
-<div class="header">
-<div>Mayaa : JavaServer Templates</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>1-2. インストールしよう : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<div class="navi">
-<a href="./about.html">��Mayaa �Ƃ͉���</a>
-<a href="./index.html">��index</a>
-<a href="./usebean.html">�ǂ̂悤�Ɏg���̂���</a>
-</div>
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
 
-<div class="main">
-
-<h1>1-2. �C���X�g�[�����悤</h1>
-
-<h2>Mayaa ����肷��</h2>
-
-<p>Mayaa �̃p�b�P�[�W�� war �`���Ŕz�z���Ă��܂��̂ŁAwar �t�@�C�����_�E�����[�h���� Servlet �R���e�i�ɔz�u���邾���ŁAMayaa �𓮍삳���邱�Ƃ��ł��܂��B</p>
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
 
 
-<h3>���O����</h3>
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">更新履歴</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">スライドなど</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa 導入</a></DIV>
+<DIV class="sidemenutext"><A href="about.html">1-1. Mayaaとは何か</A></DIV>
+<DIV class="sidemenutext"><span>1-2. インストールしよう</span></DIV>
+<DIV class="sidemenutext"><A href="usebean.html">1-3. どのように使うのか</A></DIV>
+<BR>
+<DIV class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></DIV>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
+<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
+</DIV>
 
-<p><a href="http://java.sun.com/j2se/index.html">Java 2 SDK</a> ����� <a href="http://jakarta.apache.org/tomcat/index.html">Apache Tomcat</a> ���C���X�g�[�����Ă����Ă��������B�����ł͎��̊���z�肵�Đ������܂��B</p>
-<p>�z��ƈقȂ�����g���ꍇ�͓K�X�ǂݑւ��Ă��������B�`���[�g���A���� JSTL 1.1 ���g�p���Ă��܂��̂ŁAServlet �R���e�i�� JSP 2.0 �ɑΉ����Ă���K�v������܂��B</p>
+
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>1-2. インストールしよう</H2>
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">Mayaaを入手する</H3>
+<P>Mayaa のパッケージは war 形式で配布していますので、war ファイルをダウンロードして Servlet コンテナに配置するだけで、Mayaa を動作させることができます。</P>
+
+<H4>■事前準備</H4>
+<p><a href="http://java.sun.com/j2se/index.html">Java 2 SDK</a> および <a href="http://jakarta.apache.org/tomcat/index.html">Apache Tomcat</a> をインストールしておいてください。ここでは次の環境を想定して説明します。</p>
+<p>想定と異なる環境を使う場合は適宜読み替えてください。チュートリアルで JSTL 1.1 を使用していますので、Servlet コンテナは JSP 2.0 に対応している必要があります。</p>
 
 <ul>
     <li>OS
@@ -37,62 +53,54 @@
     </li>
 
     <li>Java 2 SDK
-        <table>
-            <tr><th>�o�[�W����</th>
-                <td><code>1.4.2_09</code></td></tr>
-            <tr><th>�C���X�g�[����</th>
+        <table width="400" border="0" align="center" cellpadding="5" cellspacing="2" class="tbline">
+            <tr><th width="115">バージョン</th>
+                <td width="257"><code>1.4.2_09</code></td></tr>
+            <tr><th>インストール先</th>
                 <td><code>C:\Program Files\j2sdk1.4.2_09</code></td></tr>
-            <tr><th>���ϐ�</th>
+            <tr><th>環境変数</th>
                 <td><code>JAVA_HOME="C:\Program Files\j2sdk1.4.2_09"</code></td></tr>
-        </table>
+    </table>
     </li>
 
     <li>Apache Tomcat
-        <table>
-            <tr><th>�o�[�W����</th>
-                <td><code>5.0.28</code></td></tr>
-            <tr><th>�C���X�g�[����</th>
+        <table width="400" border="0" align="center" cellpadding="5" cellspacing="2" class="tbline">
+            <tr><th width="115">バージョン</th>
+                <td width="257"><code>5.0.28</code></td></tr>
+            <tr><th>インストール先</th>
                 <td><code>C:\tomcat</code></td></tr>
-            <tr><th>�|�[�g�ԍ�</th>
+            <tr><th>ポート番号</th>
                 <td><code>8080</code></td></tr>
-        </table>
+    </table>
     </li>
 </ul>
 
+<H4>■Mayaa のサイトから導入パッケージをダウンロードする</H4>
+<P>ダウンロードサイト ( <code><a href="http://mayaa.sandbox.seasar.org/downloads/">http://mayaa.sandbox.seasar.org/downloads/</a></code> ) にアクセスし、最新版の導入パッケージをダウンロードしてください。バージョンが 1.0.0 の場合、ファイル名は<br>「<code>mayaa-getting-started-1.0.0.war</code>」です。</P>
 
-<h3>Mayaa �̃T�C�g���瓱���p�b�P�[�W���_�E�����[�h����</h3>
-
-<p>�_�E�����[�h�T�C�g ( <code><a href="http://mayaa.sandbox.seasar.org/downloads/">http://mayaa.sandbox.seasar.org/downloads/</a></code> ) �ɃA�N�Z�X���A�ŐV�ł̓����p�b�P�[�W���_�E�����[�h���Ă��������B�o�[�W������ 0.9.20 �̏ꍇ�A�t�@�C�����́u<code>mayaa-getting-started-0.9.20.war</code>�v�ł��B</p>
-
-
-<h2>�����p�b�P�[�W��z�u���A���s����</h2>
-
-<p>�����p�b�P�[�W�� Tomcat �ɔz�u���āA���ۂɓ������Ă݂܂��傤�B</p>
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">導入パッケージを配置し、実行する</H3>
+<p>導入パッケージを Tomcat に配置して、実際に動かしてみましょう。</p>
 
 <ol>
-    <li>URL ���ȒP�ɂ��邽�߁Awar �t�@�C���̃t�@�C�������u<code>mayaa.war</code>�v�ɕύX���܂��B</li>
+    <li><p>URL を簡単にするため、war ファイルのファイル名を「<code>mayaa.war</code>」に変更します。</p></li>
 
-    <li><p><code>C:\tomcat\webapps</code> �� <code>mayaa.war</code> ��u���܂��B</p>
-        <div class="figure">�} 1-2-1: webapps �� mayaa.war ��u��<br><img src="./images/deploy_mayaa.png" title="�} 1-2-1: tomcat/webapps �� mayaa.war ��u��" width="262" height="419"></div></li>
+    <li><p><code>C:\tomcat\webapps</code> に <code>mayaa.war</code> を置きます。</p>
+        <div class="figure">図 1-2-1: webapps に mayaa.war を置く<br><img src="./images/deploy_mayaa.png" title="図 1-2-1: tomcat/webapps に mayaa.war を置く" width="262" height="419"></div></li>
 
-    <li><p><code>C:\tomcat\bin\startup.bat</code> �����s���� Tomcat ���N�����܂��B</p>
-        <div class="figure">�} 1-2-2: Tomcat �N�����<br><img src="./images/startup_tomcat.png" title="�} 1-2-2: Tomcat �N�����" width="444" height="160"></div></li>
+    <li><p><code>C:\tomcat\bin\startup.bat</code> を実行して Tomcat を起動します。</p>
+        <div class="figure">図 1-2-2: Tomcat 起動画面<br><img src="./images/startup_tomcat.png" title="図 1-2-2: Tomcat 起動画面" width="444" height="160"></div></li>
 
-    <li><p>�N�����I���̂�҂��āA�u���E�U�� <code><a href="http://localhost:8080/mayaa/index.html" target="_blank">http://localhost:8080/mayaa/index.html</a></code> ���J���܂��B<br>��ʂ��\�������΁A�z�u�͐����ł��B</p>
-        <div class="figure">�} 1-2-3: Mayaa Getting Started package �g�b�v�y�[�W���J�����Ƃ���<br><img src="./images/open_mayaa.png" title="�} 1-2-3: Mayaa Getting Started package �g�b�v�y�[�W���J�����Ƃ���" width="444" height="300"></div></li>
+    <li><p>起動が終わるのを待って、ブラウザで <code><a href="http://localhost:8080/mayaa/index.html" target="_blank">http://localhost:8080/mayaa/index.html</a></code> を開きます。<br>画面が表示されれば、配置は成功です。</p>
+        <div class="figure">図 1-2-3: Mayaa Getting Started package トップページを開いたところ<br><img src="./images/open_mayaa.png" title="図 1-2-3: Mayaa Getting Started package トップページを開いたところ" width="444" height="300"></div></li>
 </ol>
 
-</div>
+<DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
 
-<div class="navi">
-<a href="./about.html">��Mayaa �Ƃ͉���</a>
-<a href="./index.html">��index</a>
-<a href="./usebean.html">�ǂ̂悤�Ɏg���̂���</a>
-</div>
+</DIV>
 
-<div class="footer">
-&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
-</div>
-
-</body>
-</html>
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

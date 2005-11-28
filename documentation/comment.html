@@ -1,37 +1,64 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Mayaa : Documentation : 3-10. �R�����g������</title>
-    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
-</head>
-<body>
-<div class="header">
-<div>Mayaa : JavaServer Templates</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>3-9. コメントを書く : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<div class="navi">
-<a href="./ignore.html">���w�肵�� id �������ΏۊO�ɂ���</a>
-<a href="./index.html">��index</a>
-</div>
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
 
-<div class="main">
-
-
-<h1>3-10. �R�����g������</h1>
-
-<p>Mayaa �́u�R�����g�v�ɂ͂Q��ނ̃R�����g������܂��B�e���v���[�g�̈ꕔ�ł���R�����g�ƁAmayaa �t�@�C���ɏ����R�����g�ł��B</p>
-
-<h2>�e���v���[�g�̈ꕔ�ł���R�����g</h2>
-
-<p>�e���v���[�g�̈ꕔ�ł���R�����g�Ƃ́A�e���v���[�g�� HTML �R�����g�̌`�� (<code>&lt;!-- --&gt;</code>) �ŋL�q�����R�����g�̂��ƂŁA�������ʂƂ��ďo�͂���܂��B���̃R�����g�̓����� <code>id</code> �����^�O�������Ă���������܂��B������ <code>&#36;{ }</code> �̌`���ŃX�N���v�g��������Ă���ꍇ�A����͏����ΏۂɂȂ�܂��B</p>
-<p>mayaa �t�@�C������ HTML �R�����g���o�͂������ꍇ�A<strong>comment �v���Z�b�T</strong>���g���܂��B</p>
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
 
 
-<h2>�ȒP�ȗ�</h2>
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">更新履歴</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">スライドなど</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa 導入</a></DIV>
+<DIV class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></DIV>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenutext"><A href="default.html">3-1. ページ共通の設定</A></DIV>
+<DIV class="sidemenutext"><A href="before_render.html">3-2. 描画前後のスクリプト</A></DIV>
+<DIV class="sidemenutext"><A href="exec.html">3-3. タグ描画時のスクリプト</A></DIV>
+<DIV class="sidemenutext"><A href="echo.html">3-4. 属性のみを置き換える</A></DIV>
+<DIV class="sidemenutext"><A href="with.html">3-5. プロセッサをまとめる</A></DIV>
+<DIV class="sidemenutext"><A href="xpath.html">3-6. id の代わりに XPath</A></DIV>
+<DIV class="sidemenutext"><A href="remove.html">3-7. タグを消す</A></DIV>
+<DIV class="sidemenutext"><A href="ignore.html">3-8. id を処理対象外に</A></DIV>
+<DIV class="sidemenutext"><span>3-9. コメントを書く</span></DIV>
+<BR>
 
-<p>�����ȒP�ȃT���v���Ŏ��ۂɎg���Ă݂܂��傤�B<code>id</code> �� <code>inComment</code> �� <code>commentOut</code> ������܂����A<code>inComment</code> �̃^�O�� HTML �R�����g�̓����ɂ���܂��B</p>
+<DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
+<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
+</DIV>
+
+
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>3-9. コメントを書く</H2>
+
+<p>Mayaa の「コメント」には２種類のコメントがあります。テンプレートの一部であるコメントと、mayaa ファイルに書くコメントです。</p>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">テンプレートの一部であるコメント</H3>
+
+<p>テンプレートの一部であるコメントとは、テンプレートに HTML コメントの形式 (<code>&lt;!-- --&gt;</code>) で記述したコメントのことで、処理結果として出力されます。このコメントの内側に <code>id</code> を持つタグがあっても無視されます。ただし <code>&#36;{ }</code> の形式でスクリプトが書かれている場合、それは処理対象になります。</p>
+<p>mayaa ファイルから HTML コメントを出力したい場合、<strong>comment プロセッサ</strong>を使います。</p>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">簡単な例</H3>
+
+<p>ごく簡単なサンプルで実際に使ってみましょう。サンプル中の <code>id</code> は <code>inComment</code> と <code>commentOut</code> がありますが、<code>inComment</code> のタグは HTML コメントの内部にあります。</p>
 
 <pre>
 comment.html
@@ -59,10 +86,10 @@ comment.mayaa
     &lt;/m:comment&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
-<p>�u���E�U�� <code><a href="http://localhost:8080/mayaa/comment.html" target="_blank">http://localhost:8080/mayaa/comment.html</a></code> �ɃA�N�Z�X���Ă݂܂��傤�B</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/comment.html" target="_blank">http://localhost:8080/mayaa/comment.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
-���s����
+実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;!--
@@ -76,24 +103,21 @@ comment.mayaa
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<p>�R�����g���ɂ��� <code>id="inComment"</code> �͏������ꂸ�A���̃{�f�B�ɂ�����<strong>&#36;{ commentValue }</strong> ���ϐ� <code>commentValue</code> �̓��e�ɒu��������Ă��܂��B�܂��A<code>id="commentOut"</code> �� <code>comment</code> �v���Z�b�T�ɂ���ăR�����g�A�E�g����Ă��܂��B���̂悤�ɁA�R�����g���ɓ��I�Ȓl���o�������ꍇ�ɂ��Ή��ł��܂��B</p>
+<p>コメント内にある <code>id="inComment"</code> は処理されず、そのボディにあった<strong>&#36;{ commentValue }</strong> が変数 <code>commentValue</code> の内容に置き換わっています。また、<code>id="commentOut"</code> が <code>comment</code> プロセッサによってコメントアウトされています。このように、コメント内に動的な値を出したい場合にも対応できます。</p>
 
 
-<h2>mayaa �t�@�C���ɏ����R�����g</h2>
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">mayaa ファイルに書くコメント</H3>
 
-<p>mayaa �t�@�C���� XML �R�����g�̌`�� (<code>&lt;!-- --&gt;</code>) �ŋL�q�����R�����g�́Amayaa �̏����ΏۊO�ɂȂ�܂��B�܂肱����͈�ʓI�ȃR�����g�̈����ɂȂ�܂��B</p>
+<p>mayaa ファイルに XML コメントの形式 (<code>&lt;!-- --&gt;</code>) で記述したコメントは、mayaa の処理対象外になります。つまりこちらは一般的なコメントの扱いになります。</p>
 
 
-</div>
+<DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
 
-<div class="navi">
-<a href="./ignore.html">���w�肵�� id �������ΏۊO�ɂ���</a>
-<a href="./index.html">��index</a>
-</div>
+</DIV>
 
-<div class="footer">
-&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
-</div>
-
-</body>
-</html>
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

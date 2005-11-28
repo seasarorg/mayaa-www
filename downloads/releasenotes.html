@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>Release Note - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
+
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
+
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudown">
+<A href="../about/index.html" ID="menu01"><IMG src="images/menu_about.gif" width="125" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../documentation/index.html" id="menu03"><IMG src="images/menu_doc.gif" alt="Documentation" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><IMG src="images/menu_down_o.gif" width="126" height="55"><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
+
+
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><A href="index.html#changelog">変更履歴</A></DIV>
+<DIV class="sidemenu"><A href="index.html#new">最新のリリース</A></DIV>
+<DIV class="sidemenu"><A href="index.html#sample">サンプル</A></DIV>
+<DIV class="sidemenu"><A href="index.html#past">過去のリリース</A></DIV>
+</DIV>
+
+<DIV ID="contentsright">
+<H1>Release Note</H1>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="1.0.0-beta1"></A>変更点 0.9.20a -> 1.0.0-beta1 (2005/11/28)</H3>
+<ul>
+<li>HTMLのid, XHTMLのidをバインディングに使わない設定を可能にしました。</li>
+<li>スクリプトのコメント内に閉じブレース (}) を書くと整合性エラーになっていたのを修正しました。</li>
+<li>beforeRender, afterRenderのブレース整合性チェックを強化しました。</li>
+<li>テンプレートを探すパスの設定が正常に動作しないのを修正しました。</li>
+<li>テンプレートを全ファイルシステム上の指定パスから探せる設定を追加しました。org.seasar.mayaa.source.PageSourceFactoryに「absolutePath」というパラメータを設定した場合、その値をファイルシステムのパスとして扱います。</li>
+<li>Mayaaエンジン設定ファイルのパラメータに${ }で囲んだシステムプロパティを扱えるようにしました。</li>
+<li>mayaaファイルでredirectした場合、responseを一度flushしないと例外が発生していたのを修正しました。</li>
+</ul>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="0.9.20a"></A>変更点 0.9.20 -> 0.9.20a (2005/11/16)</H3>
+<ul>
+<li>プロセッサプロパティの自動設定機能は意図しない動作を引き起こす場合があるため、動作しないようにしました。</li>
+</ul>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="0.9.20"></A>変更点 0.9.19 -> 0.9.20 (2005/11/16)</H3>
+<ul>
+<li>Mayaのプロダクト名をMayaaに変更しました。</li>
+<li>プロセッサの属性に書いたスクリプトの実行結果がundefinedの場合、期待型がBooleanの場合は今までどおりfalse、それ以外はnullを返すように変更しました。</li>
+<li>JSPのTagExtraInfoで指定するスクリプティング変数のスコープを正常に使えるよう修正しました。</li>
+<li>MayaaServletでrequestのCharacterEncodingをセットできるよう変更しました。ServiceProvider設定ファイルのengine/requestCharacterEncodingで指定します。mayaa-sampleで使用しています。</li>
+<li>TLDもしくはMLDに定義されているプロセッサプロパティについては、.mayaaに値の定義が無い場合、テンプレート上のノードを参照し、ノードの名前空間に属する該当する名前の属性値があれば、それを用いるように機能追加しました。</li>
+</ul>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="0.9.19"></A>変更点 0.9.18 -> 0.9.19 (2005/11/10)</H3>
+<ul>
+<li>テンプレートにスクリプトを書いた場合にエンティティ解決していなかったのを修正しました。</li>
+<li>レイアウトを使う場合にホストページmayaファイルのm:noCacheが有効にならないのを修正しました。</li>
+<li>headerスコープが正常に使えないのを修正しました。</li>
+</ul>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="0.9.18"></A>変更点 0.9.17 -> 0.9.18 (2005/10/28)</H3>
+<ul>
+<li>XMLをテンプレートとしたときにXML宣言が出力されないのを修正しました。</li>
+<li>レイアウト機能において、doRenderをカスケードしたページ全部を辿って探すように修正しました。</li>
+<li>WriteProcessorのdefaultプロパティにスクリプトを使えるよう変更しました。</li>
+<li>スクリプトのXMLエンティティを２重に解決していたのを修正しました。</li>
+<li>WriteProcessorにescapeWhitespaceプロパティを追加しました。escapeWhitespaceをtrueにするとCR, LF, タブ文字をそれぞれ&amp;#xd, &amp;#xa, &amp;#x9にエスケープします。</li>
+<li>AttributeProcessorのvalueにスクリプトを書いた場合、実行結果を自動的にXMLエスケープし、改行文字を空白に置き換えるよう修正しました。</li>
+</ul>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="0.9.17"></A>変更点 0.9.16 -> 0.9.17 (2005/10/17)</H3>
+<ul>
+<li>MLD中のproperty定義を、propertySet定義にまとめて再利用できるようにしました。</li>
+<li>API中の名前にて、～Typeと用いてるもののうち、JavaのClass型を指すものをすべて～Classと改名しました。</li>
+<li>mayaファイル中のXMLコメント(&lt;!-- --&gt;)を処理しないようにしました。</li>
+<li>CommentProcessorでボディを処理するようにしました。HTML出力としてコメントを
+ 書き出したい場合、テンプレートに書くかm:commentを使うことで実現できます。</li>
+<li>ServiceCycle#loadにエンコーディング指定なしのものを追加しました。無指定の場合はUTF-8として読み込みます。</li>
+<li>サービスのファクトリ群に対し、JSFライクなマーシャル機能を実装しました。</li>
+<li>APIを変更しています。Underlyable→ContextAware, Parameterizable→ParameterAware としました。また、PositionAwareを新設し、ソース上の位置情報を全体的に取得できるようにしました。</li>
+<li>Underlyable→ContextAwareにおいて、getUnderlyingObject()メソッドをgetUnderlyingContext()と改めました。</li>
+</ul>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="0.9.16"></A>変更点 0.9.15 -> 0.9.16 (2005/10/05)</H3>
+<ul>
+<li>InsertProcessorにおいて、ページをハードリファレンスで保持していたのを、SoftReferenceをもちいて参照保持するように修正しました。</li>
+<li>プロセッサプロパティのプロパティ設定メカニズムに、カスタマイズ可能な型変換機能を追加しました。</li>
+<li>XMLのハンドルユーティリティにおいて、ソースSystemIDと行番号を常に取れるようにしました。その利用で、MLDおよびTLDのパース結果において、SystemIDと行番号を例外メッセージおよびツール等で利用するために保持しています。</li>
+<li>m:rendered="true"によるエレメントの複製機能は、m:replace="false"によって発動するように変更しました。一方、m:rendered="false"と明示した場合、そのノード全体を削除するようになっています。m:replaceはデフォルトがfalse、m:renderedはデフォルトがtrueです。</li>
+<li>XHTMLのプレフィックスマッピングが適切に描画されない問題が、プロパティ設定メカニズムの変更に伴って再発していたものを修正しました。</li>
+<li>ページのスクリプトイベント（m:beforeRenderおよびm:afterRender）について、コンポーネントやレイアウト機能による複数ページが連携する際のイベント呼び出し順について、仕様を整理し、修正しました。</li>
+</ul>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="0.9.15"></A>変更点 0.9.14 -> 0.9.15 (2005/09/30)</H3>
+<ul>
+<li>空の属性があるタグをレンダリングした場合に"null"が入る問題が再発したのを修正しました。</li>
+<li>テンプレートとmayaファイルをロックしないよう修正しました。</li>
+<li>テンプレートとmayaファイルを削除した場合、キャッシュを使わないように変更しました。</li>
+</ul>
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="0.9.14"></A>変更点 0.9.13 -> 0.9.14 (2005/09/28)</H3>
+<ul>
+<li>JSF等のミドルウェアから利用するために、描画前のデコードフェーズを実行できる機能を追加しました。</li>
+<li>JSF等のミドルウェアから利用するために、スクリプトをELライクに実行する機能を追加しました。</li>
+<li>WEBコンテナがスレッドをプールすることに起因するバグを解決しました。このバグはとても重大なものなので、以前のバージョンをご利用の場合は、すみやかにアップデートください。</li>
+</ul>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="0.9.13"></A>変更点 0.9.12 -> 0.9.13 (2005/09/27)</H3>
+<ul>
+<li>テンプレートコンポーネントから自コンポーネントを呼び出すネスト構造のときに、きちんとm:doBaseを呼べるようにコールスタック処理を追加しました。</li>
+<li>ページやテンプレートのオブジェクトのキャッシュの効率を見直し、インスタンス生成の個数を減らすようにチューニングしました。</li>
+<li>テンプレートとしてXMLを使えるようにしました。</li>
+<li>m:echoプロセッサを追加しました。テンプレートに無い属性を追加することができます。テンプレートのタグにある属性の値を置き換えることができます。スクリプトから属性の名前を変数名として指定することで元の属性の値を利用できます。</li>
+<li>例外メッセージテンプレートでオリジナルノードとインジェクションノードを参照できるようにしました。</li>
+<li>「page」スコープのメソッド群がうまくJavaScript中から呼び出せないバグを修正しました。</li>
+<li>mayaノードの、m:classおよび、m:scopeを廃止しました。代わりに、より汎用なAttributeScope#newAttribute(String, Class)メソッドを追加しました。</li>
+<li>SessionのコンテキストであるHttpSessionオブジェクトの生成を必要になるまで遅延するようにしました。</li>
+<li>同梱のRhinoのバージョンを最新の1.6-r2に置換えました。</li>
+<li>Cycleのフラッシュ関連の仕組みを整理微調整しました。</li>
+<li>XMLテンプレートで用いられるプレフィックスの解決において、.maya上のプレフィックスマッピングをテンプレート上でそのまま使っている箇所があったので修正しました。</li>
+<li>ライセンスを、SSL1.1から、ASL2.0に変更しました。</li>
+<li>ログ文字列の出力において、適切な文字列フォーマット処理を行えていなかった箇所を修正し、適切な出力が行われるようにしました。</li>
+<li>NekoHTML0.9.5の挙動にて、ごくまれにxmlns:*というプレフィックスマッピングの記述を、xmlns名前空間の単なる属性としてSAXハンドラにわたってくることがある場合の、回避を行いました。</li>
+<li>強制的にMayaの出力をProxy/ブラウザキャッシュさせないようにしていたところを、設定可能にし、デフォルト状態ではキャッシュコントロールをしないようにしました。</li>
+<li>テンプレートコンポーネントも、デザイン継承機能を利用できるように修正しました。</li>
+<li>WARファイルによるディストロに、開発時参照用のソースコートアーカイブ（ZIPファイル）を作成・添付するようにしました。</li>
+</ul>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="0.9.12"></A>変更点 0.9.11 -> 0.9.12 (2005/09/16)</H3>
+<ul>
+<li>ProviderFactoryImplで、maya.providerファイルを読み込む際に、各コンポーネントの生成を決め打ちでおこなっていたところを修正しました。</li>
+<li>m:doRenderプロセッサで、m:rendered="true"としたときに、テンプレートエレメントが出力されない問題を修正しました。</li>
+<li>テンプレートエレメントが直接描画される場合に、m:rendered="false"を記述すると、そのエレメントおよび子のエレメントの出力が抑制されるS2JSF互換機能を追加しました。</li>
+<li>ページ描画時のイベントを、m:beforeRender属性およびm:afterRender属性のものに加え、m:beforeRenderタグおよびm:afterRenderタグでも行う機能を追加しました。</li>
+<li>m:pageプロセッサおよびm:doRenderプロセッサに、m:name属性を追加し、名前明示にて同一テンプレート中の複数コンポーネントブロックを呼び分けることができるようにしました。</li>
+<li>コンポーネント上でもちいる描画機能として、m:doBodyから分離してm:doBaseを用意しました。</li>
+<li>MLDのproperty定義に、final属性を追加し、アプリケーションにて変更不可の値設定を行えるようにしました。</li>
+<li>.mayaファイルだけでテンプレートの無いコンポーネントを作れるようにしました。</li>
+<li>Tiles類似のデザイン継承機能を追加しました。</li>
+<li>HTMLテンプレートのHTMLエレメントに直接m:classやm:beforeRenderなどの記述を許していましたが、上記デザイン継承機能と矛盾するようになったので、廃止しました。結果、ページモデルおよびページイベントの機能を利用する場合には、.mayaファイルを必要とするようになりました。</li>
+</ul>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="0.9.11"></A>変更点 0.9.10 -> 0.9.11 (2005/09/07)</H3>
+<ul>
+<li>ECMA1.3のBoolean値の取り扱いにおいて、意図しない動作となる問題を回避しました。</li>
+<li>テンプレート上の属性に、空白文字を値とするものがあると動作しないバグを修正しました。</li>
+<li>テンプレート上のエレメントのIDがマッチするものが無いときに例外を出していたところを、警告のログ出力するにとどめるよう、変更しました。</li>
+<li>パース済みテンプレートがきちんとキャッシュされていないバグを修正しました。</li>
+<li>.mayaファイルの直接実行を可能にしました。ブラウザから直接.maya拡張子のURLにアクセスすると、エンジンおよび該当ページの.mayaのイベント発火を行いますが、テンプレート描画はしません。</li>
+<li>ServiceCycleに、スクリプトファイルをロードする、load(systemID, encoding)メソッドを追加しました。この機能によって、スクリプトソースをスクリプト実行にて読み込むことができるようになりました。</li>
+</ul>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="0.9.10"></A>変更点 0.9.9 -> 0.9.10 (2005/09/06)</H3>
+<ul>
+<li>m:forプロセッサに、最大ループ回数を制限するmaxプロパティを新設しました。</li>
+<li>.mayaファイル上のノードボディで直接スクリプトブロックを記述したとき、かつそのノードがm:attribute以外のノードを含まないときに、隠蔽されるべきテンプレート上の子ノードを出力してしまうバグを修正しました。</li>
+<li>Responseがnullを出力時にNullPointerExceptionを発生させてしまうバグを修正しました。</li>
+<li>m:elementプロセッサにおいて、動的に追加されたm:attributeオブジェクトを、自スレッドの他プロセッサで共有してしまうというバグを修正しました。</li>
+<li>ScriptResolverを廃止して、AttributeScopeによる拡張を行うように、スクリプト環境のスコープ概念と併せて変更しました。</li>
+<li>AttributeScope#getAttribute(String)において、スクリプト内部のオブジェクトをJavaのオブジェクトに変換せずに返していていたために問題が発生していたので、Javaオブジェクトを基本として、冗長変換を行うように修正しました。</li>
+<li>web.xmlに、taglib-locationにて「/WEB-INF/」を含むパスの指定を行うと不正なソース指定方法としていたところ、正常な処理を行うように変更しました。</li>
+<li>m:startComponentプロセッサをm:doRenderに、m:endComponentプロセッサをm:doBodyにそれぞれ統合しました。</li>
+<li>FolderSourceScannerのプロパティに再帰的に読むかどうかのフラグを追加しました。nameはrecursive、valueはtrueまたはfalseを指定します。</li>
+<li>FolderSourceScannerのプロパティに読むファイルを拡張子指定するものを追加しました。nameはextension、valueはピリオド(.)ありの拡張子を指定します。無指定の場合は対象となるファイルはありません。</li>
+<li>TLDの探し方を修正し、WEB-INF以下のすべてのTLDを読み込むようにしました。</li>
+<li>MLDの探し方をTLDに合わせて変更し、WEB-INF以下のすべてのMLDを読み込むようにしました。</li>
+<li>ElementProcessorをXHTMLに利用した場合において、xmlnsのマッピング定義出力を適切に行うように修正しました。</li>
+<li>.maya設定ファイルに、直接HTMLを書けるようにしました。</li>
+</ul>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="0.9.9"></A>変更点 0.9.8 -> 0.9.9 (2005/08/30)</H3>
+<ul>
+<li>ServiceProviderなどをStrutsなどの外部のフレームワークからも利用できるように、
+ThreadLocalを利用してServiceCycleを保持するようにしました。</li>
+<li>TemplateProcessor、ScriptResolverといったメソッド引数にServiceCycleを取るものを全て整理し、
+ServiceCycleを引数渡しせず、ServiceProviderから取得するようにしました。</li>
+<li>例外時やデバッグ作業時に、実行中のテンプレートもしくは設定XMLの該当箇所を知る手がかりを得られるように、
+ServiceCycle#getOriginalNode() メソッドおよび、getInjectionNode()メソッドを追加し、
+エンジン中で情報更新を常に行うようにしました。</li>
+<li>JSP関連の機能およびコンポーネント関連の機能を、コアに移動しました。</li>
+<li>同梱するNekoHTMLのバージョンを0.9.5にアップデートしました。</li>
+<li>同梱するXercesのバージョンを2.7.1にアップデートしました。</li>
+<li>式言語の使用を廃止し、代えてスクリプト言語を利用するようにしました。実装では、
+JavaScriptのエンジンである、Rhinoを採用しています。</li>
+<li>外部のスクリプトソースファイルを読み込み実行する機能を追加しました。</li>
+<li>テンプレートや設定ファイル等のリソース読み込みメカニズムを全面刷新しました。
+maya.confファイルをJarのMETA-INFフォルダに配置しています。このことにより、
+Mayaのアプリケーションを開発する際に、開発者が行わなければならない手順を簡便化できました。</li>
+<li>デフォルトのエラーページのテンプレートを、JarのMETA-INFフォルダ直下に配置しました。</li>
+<li>本体、サンプル、テストをそれぞれ別々のEclipseプロジェクトにしました。</li>
+<li>ページの解決方法を変更し、/WEB-INF相対と、デフォルトパッケージ相対は読まないようにしました。
+それぞれ、/WEB-INF/page相対、/META-INF相対を読むようになっています。</li>
+<li>ウェルカムファイルの対応ががデグレして機能していなかったものを修正しました。</li>
+<li>ブランクアプリケーションをWARファイルで配布するようにしました。</li>
+<li>ページスコープを、スタック構造とすることによって、テンプレート上でのスクリプト実行において、名前衝突が発生しないようにしました。</li>
+<li>BeanPropertiesProcessorおよび、StackTraceElementsProcessorを廃止しました。
+スタックトレースのダンプは、ForProcessorとスクリプトの併用で対応できました。</li>
+<li>例外処理を行うErrorHandler内でさらに例外が発生したときに、先のアプリケーションで生じた例外を隠蔽してしまう問題を回避しました。</li>
+</ul>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="0.9.8"></A>変更点 0.9.7.1 -> 0.9.8 (2005/08/04)</H3>
+<ul>
+<li>PageContextなどJSP-APIへの依存を局所化し、ServiceCycleオブジェクトにServlet-APIも隠蔽しました。</li>
+<li>未来日付のファイルを処理するときに、無限ループにはいる問題を修正しました。</li>
+<li>スペックを満たさないJSPカスタムタグを利用できないようにJSPコンテナとタグの
+ バージョンチェックする機能を復活させました。</li>
+<li>URLClassLoaderを前提としたJarライブラリの検索をやめ、ファイルシステムを利用したJarファイルの検索を行うようにしました。</li>
+<li>サンプルのプレビュー再現性においてCSSがうまく効いてなかったのを修正しました。</li>
+<li>デフォルト名前空間を適切に処理しないバグを修正しました。</li>
+<li>XML宣言を出力しない問題を修正しました。</li>
+<li>JSP暗黙オブジェクトの対応を追加修正しました。</li>
+<li>JSPカスタムタグの属性に式を指定したとき、その式の例外をキャッチして食いつぶしていたところを、キャッチしないようにして、例外がそのまま伝播するように修正しました。</li>
+<li>その他、細かなバグ修正およびAPI仕様の変更をおこないました。</li>
+</ul>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="0.9.7.1"></A>変更点 0.9.7 -> 0.9.7.1 (2005/07/17)</H3>
+<ul>
+<li>ネットワークに接続していないPC上で動作させると、web.xmlのDTD解決のために
+   sun.comへ接続しようとして失敗し、動作しないという問題の回避策を行いました。</li>
+</ul>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="0.9.7"></A>変更点 0.9.6 -> 0.9.7 (2005/07/05)</H3>
+<ul>
+<li>「/*」などのパスパターンにMayaサーブレットがマッピングされている際の、
+ウェルカムファイルアクセスに対するパス解決機能を追加しました。</li>
+<li>Cactusの使用をやめ、関連Jarをプロジェクトから取り除きました。</li>
+<li>.mayaファイル中にネストしたタグインジェクションを記述した場合の挙動について
+ 細かなバグを修正しました。</li>
+<li>ComponentPageProcessorがテンプレートボディを2度出力してしまう場合がある
+ バグについて修正しました。</li>
+<li>SVNリポジトリに移動しました。https://www.seasar.org/svn/sandbox/maya/trunk
+ がリポジトリURLとなります。</li>
+<li>idによるインジェクションを行う際に、/maya/*[@m:id='message']のように、2層目のみの
+ idを検索するXPathから、/maya//*[@m:id='message']とn層目のidも検索するようにしました。</li>
+ <li>PropertyDefinitionのサービスメソッドを変更しました。プロパティ設定をPropertyDefinition
+ に委譲するように設計されていたものを、PropertyDefinitionはあくまでファクトリとして動作し、
+ ProcessorDefinition内で設定処理を行うようにしました。 </li>
+<li>独自の例外の基底をMayaExceptionとしました。このMayaExceptionは、
+ 同一パッケージにあるmessage.propertiesより、完全修飾型名をキーに
+ メッセージを取得する機能のみが実装されています。</li>
+<li>ページ描画途中に例外発生した際、コンテキストバッファをクリアしてなかったために、
+ 途中まで描画された後に例外ページの書き出しを行っていました。例外処理の中で
+ コンテキストバッファをクリアすることにより、この問題に対応しました。</li>
+<li>依存するJaxenのバージョンを1.1-beta7に変更しました。</li>
+<li>名前空間URIを、http://www.seasar.org/maya から http://maya.seasar.org に変更しました。</li>
+</ul>
+
+</DIV>
+
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

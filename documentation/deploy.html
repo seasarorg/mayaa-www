@@ -1,46 +1,71 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Mayaa : Documentation : 2-9. �A�v���P�[�V�����T�[�o�ɔz�u����</title>
-    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
-</head>
-<body>
-<div class="header">
-<div>Mayaa : JavaServer Templates</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>2-8. サーバに配置する : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<div class="navi">
-<a href="./layout.html">�����C�A�E�g���L�@�\���g��</a>
-<a href="./index.html">��index</a>
-</div>
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
 
-<div class="main">
-
-<h1>2-9. �A�v���P�[�V�����T�[�o�ɔz�u����</h1>
-
-<p>Mayaa ���g���A�v���P�[�V�������A�v���P�[�V�����T�[�o�ɔz�u����ۂɕK�v�Ȃ��Ƃ�������܂��B</p>
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
 
 
-<h2>�y�[�W��u���ꏊ</h2>
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">更新履歴</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">スライドなど</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa 導入</a></DIV>
+<DIV class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></DIV>
+<DIV class="sidemenutext"><A href="hello.html">2-1. 最初の一歩</A></DIV>
+<DIV class="sidemenutext"><A href="conditional.html">2-2. 条件分岐とループ</A></DIV>
+<DIV class="sidemenutext"><A href="customtag.html">2-3. JSP カスタムタグを使う</A></DIV>
+<DIV class="sidemenutext"><A href="notation.html">2-4. 設定の記述方法</A></DIV>
+<DIV class="sidemenutext"><A href="component1.html">2-5. HTML 部品 (静的)</A></DIV>
+<DIV class="sidemenutext"><A href="component2.html">2-6. HTML 部品 (動的)</A></DIV>
+<DIV class="sidemenutext"><A href="layout.html">2-7. レイアウト共有</A></DIV>
+<DIV class="sidemenutext"><span>2-8. サーバに配置する</span></DIV>
+<BR>
 
-<p>Mayaa �̓��N�G�X�g���ꂽ�t�@�C�������̏��ԂŒT���܂��B(��: http://localhost:8080/mayaa/index.html �ɃA�N�Z�X���ꂽ�ꍇ)</p>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
+<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
+</DIV>
+
+
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>2-8. サーバに配置する</H2>
+
+<p>Mayaa を使うアプリケーションをアプリケーションサーバに配置する際に必要なことを説明します。</p>
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">ページを置く場所</H3>
+
+<p>Mayaa はリクエストされたファイルを次の順番で探します。(例: http://localhost:8080/mayaa/index.html にアクセスされた場合)</p>
 
 <ol>
-<li>�R���e�L�X�g���[�g�̉� (��: C:\tomcat\webapps\mayaa\index.html)</li>
-<li>/WEB-INF/page �̉� (��: C:\tomcat\webapps\mayaa\WEB-INF\page\index.html)</li>
-<li>�N���X�p�X (��: C:\tomcat\webapps\mayaa\WEB-INF\classes\index.html)</li>
+<li>コンテキストルートの下 (例: C:\tomcat\webapps\mayaa\index.html)</li>
+<li>/WEB-INF/page の下 (例: C:\tomcat\webapps\mayaa\WEB-INF\page\index.html)</li>
+<li>クラスパス (例: C:\tomcat\webapps\mayaa\WEB-INF\classes\index.html)</li>
 </ol>
 
-<p>2, 3 �Ԗڂ́AMayaa ��ʂ��Ȃ���΃A�N�Z�X�ł��Ȃ��ꏊ�ł��̂ŁAMayaaServlet �̐ݒ���ԈႦ�Ă���ꍇ�� MayaaServlet �ُ݈̂�I�������ꍇ�ɁA���ڃe���v���[�g�� HTML �t�@�C����\�����Ă��܂����Ƃ�h���܂��B</p>
+<p>2, 3 番目は、Mayaa を通さなければアクセスできない場所ですので、MayaaServlet の設定を間違えている場合や MayaaServlet のみ異常終了した場合に、直接テンプレートの HTML ファイルを表示してしまうことを防げます。</p>
 
 
-<h3>�W���̃f�B���N�g���\��</h3>
+<h4>■標準のディレクトリ構成</h4>
 
-<p>Mayaa �̕W���ݒ�ł͉��L�̂悤�ɂȂ��Ă��܂��BMayaa �����삷�邽�߂ɕK�v�ȃt�@�C���͂���őS���ł��B</p>
+<p>Mayaa の標準設定では下記のようになっています。Mayaa が動作するために必要なファイルはこれで全部です。</p>
 
-<pre>�R���e�L�X�g���[�g
+<pre>コンテキストルート
   + WEB-INF
     + lib
       - commons-beanutils-core-*.jar
@@ -54,14 +79,14 @@
     - web.xml</pre>
 
 
-<h2>web.xml �̏�����</h2>
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">web.xml の書き方</H3>
 
-<p>Mayaa �̊�{�I�Ȏg�����́AMayaaServlet ���`���y�[�W��Ԃ��Ƃ��� forward ����g�����ł��BJSP �� forward ����ꍇ�Ɠ����ł��B�]���āAMayaa �ɔC����t�@�C�� (��ʓI�ɂ� *.html) �� MayaaServlet �Ƀ}�b�s���O����ݒ���s���܂��B</p>
+<p>Mayaa の基本的な使い方は、MayaaServlet を定義しページを返すときに forward する使い方です。JSP に forward する場合と同じです。従って、Mayaa に任せるファイル (一般的には *.html) を MayaaServlet にマッピングする設定を行います。</p>
 
 
-<h3>MayaaServlet ��ݒ肷��</h3>
+<h4>■MayaaServlet を設定する</h4>
 
-<p>�g���q�� .html �� HTML �t�@�C���݂̂� Mayaa �ɔC����ꍇ�A���̂悤�ɐݒ肵�܂��B</p>
+<p>拡張子が .html の HTML ファイルのみを Mayaa に任せる場合、次のように設定します。</p>
 
 <pre>
 &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
@@ -81,7 +106,7 @@
 &lt;/web-app&gt;
 </pre>
 
-<p>Mayaa �̓��N�G�X�g���ꂽ�t�@�C���� Mime-Type �� html�Axhtml�Axml �ł��邩�A�������͊g���q�� .mayaa �ł���ꍇ�ɏ������s���܂��B����ȊO�ł���ΑO�q�̃p�X�������s�������ƁA���̂܂ܑf�ʂ����܂��B���� Servlet ��A�v���P�[�V�����ɏ�����C������̂��Ȃ���΁A���ׂĂ� URL �� Mayaa �ɔC���邱�Ƃ��ł��܂��B</p>
+<p>Mayaa はリクエストされたファイルの Mime-Type が html、xhtml、xml であるか、もしくは拡張子が .mayaa である場合に処理を行います。それ以外であれば前述のパス解決を行ったあと、そのまま素通しします。他の Servlet やアプリケーションに処理を任せるものがなければ、すべての URL を Mayaa に任せることもできます。</p>
 
 <pre>
     &lt;servlet-mapping&gt;
@@ -91,16 +116,13 @@
 </pre>
 
 
-</div>
+<DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
 
-<div class="navi">
-<a href="./layout.html">�����C�A�E�g���L�@�\���g��</a>
-<a href="./index.html">��index</a>
-</div>
+</DIV>
 
-<div class="footer">
-&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
-</div>
-
-</body>
-</html>
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

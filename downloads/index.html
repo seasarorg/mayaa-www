@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>Downloads - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
+
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
+
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudown">
+<A href="../about/index.html" ID="menu01"><IMG src="images/menu_about.gif" width="125" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../documentation/index.html" id="menu03"><IMG src="images/menu_doc.gif" alt="Documentation" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><IMG src="images/menu_down_o.gif" width="126" height="55"><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
+
+
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><A href="#new">最新のリリース</A></DIV>
+<DIV class="sidemenu"><A href="#changelog">変更履歴</A></DIV>
+<DIV class="sidemenu"><A href="#sample">サンプル</A></DIV>
+<!--
+<DIV class="sidemenu"><A href="#past">過去のリリース</A></DIV>
+-->
+<DIV class="sidemenu"><A href="#source">ソースコード</A></DIV>
+</DIV>
+
+<DIV ID="contentsright">
+<H1>Downloads</H1>
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="new"></A>最新のリリース</H3>
+
+<h4>Mayaa 1.0.0-beta1 (2005/11/28)</h4>
+<BR>
+<DIV class="download_direct">
+	<DIV><a href="mayaa-1.0.0-beta1.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Blank War</a></DIV>
+	<DIV><a href="mayaa-getting-started-1.0.0-beta1.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> 導入 War</a></DIV>
+	<DIV><a href="mayaa-project-1.0.0-beta1.zip"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Eclipse Project Zip</a></DIV>
+</DIV>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="changelog"></A>変更履歴</H3>
+<div class="releasenote">(<a href="releasenotes.html">過去の変更履歴</a>)</div>
+
+<H4><A name="1.0.0-beta1"></A>変更点 0.9.20a -> 1.0.0-beta1 (2005/11/28)</H4>
+<ul>
+<li>HTMLのid, XHTMLのidをバインディングに使わない設定を可能にしました。</li>
+<li>スクリプトのコメント内に閉じブレース (}) を書くと整合性エラーになっていたのを修正しました。</li>
+<li>beforeRender, afterRenderのブレース整合性チェックを強化しました。</li>
+<li>テンプレートを探すパスの設定が正常に動作しないのを修正しました。</li>
+<li>テンプレートを全ファイルシステム上の指定パスから探せる設定を追加しました。org.seasar.mayaa.source.PageSourceFactoryに「absolutePath」というパラメータを設定した場合、その値をファイルシステムのパスとして扱います。</li>
+<li>Mayaaエンジン設定ファイルのパラメータに${ }で囲んだシステムプロパティを扱えるようにしました。</li>
+<li>mayaaファイルでredirectした場合、responseを一度flushしないと例外が発生していたのを修正しました。</li>
+</ul>
+
+<H4><A name="0.9.20a"></A>変更点 0.9.20 -> 0.9.20a (2005/11/16)</H4>
+<ul>
+<li>プロセッサプロパティの自動設定機能は意図しない動作を引き起こす場合があるため、動作しないようにしました。</li>
+</ul>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="sample"></A>サンプル</H3>
+<ul>
+	<li>Mayaaの単独利用例：<br><a href="mayaa-sample-1.0.0-beta1.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Mayaaサンプル集</a> 2005/11/28</li>
+	<li>Strutsを利用した例：<br><a href="mayaa-hangman-struts-1.0.0-beta1.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Struts利用版Hangmanゲーム</a> 2005/11/28</li>
+	<li>Mayaaで簡易なMVCを実現した例：<br><a href="mayaa-hangman-solo-1.0.0-beta1.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Mayaa単独版Hangmanゲーム</a> 2005/11/28</li>
+	<li>Mayaaの内部API利用例：<br><a href="mayaa-libman-1.0.0-beta1.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Libman - Mayaa Library Manager</a> 2005/11/28</li>
+	<li>アプリケーション例：<br><a href="mayaa-sample-app-1.0.0-beta1.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> 申し込みフォームアプリケーション</a> (S2Struts, HSQLDB) 2005/11/28</li>
+</ul>
+
+
+<!--
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="past"></A>過去のリリース</H3>
+<ul>
+	<li><a href="#">Maya 1.0β10</a> (2006/01/20)</li>
+	<li><a href="#">Maya 1.0β09</a> (2006/01/10)</li>
+	<li><a href="#">Maya 1.0β08</a> (2006/01/07)</li>
+</ul>
+-->
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="source"></A>ソースコード</H3>
+<p>ソースコードはSubversion（https/WebDAV）で管理されています。下記URLにTortoiseSVNやSubclipseなどの
+SVNクライアントでアクセスすると、ソースコードを取得することができます。WEBブラウザよりアクセスすると、ファイルの表示のみ行うことが可能です。</p>
+<ul>
+	<li><a href="http://www.seasar.org/websvn/listing.php?repname=sandbox.mayaa&path=%2Ftrunk%2F&rev=0&sc=0">Mayaa svn trunk folder (WebSVN)</a></li>
+</ul>
+
+</DIV>
+
+
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

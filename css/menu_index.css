@@ -1,0 +1,32 @@
+a:hover {
+	background-color: transparent;
+	text-decoration: underline; 
+} 
+
+#menu01 {
+    font-size:220px;
+}
+
+#menu02 {
+    font-size:220px;
+}
+
+#menu03 {
+    font-size:220px;
+}
+
+#menu04 {
+    font-size:220px;
+}
+
+#menu05 {
+    font-size:220px;
+}
+
+#menu06 {
+    font-size:220px;
+}
+
+.indexmenu a:hover img {
+	visibility: hidden; 
+}

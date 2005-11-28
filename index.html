@@ -1,284 +1,107 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=Shift_JIS">
-		<link rel="stylesheet" type="text/css" href="base.css">
-		<title>JavaServer Templates "Mayaa"</title>
-	</head>
-	<body bgcolor="#ffffff">
-		<h1><img src="images/Mayaa_gray.png" alt="Mayaa">JavaServer Templates "Mayaa"</h1>
-		<p><a href="#changelog">ÅIXV“ú: 2005/11/16 (18:30 ÄƒŠƒŠ[ƒX‚µ‚Ü‚µ‚½)</a></p>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="css/base.css" rel="stylesheet" type="text/css">
+<LINK href="css/menu_index.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-		<h2>ƒvƒƒ_ƒNƒg–¼•ÏX (2005/11/16 Maya ¨ Mayaa)</h2>
-		<p>ƒvƒƒ_ƒNƒg–¼‚ðuMayav‚©‚çuMayaav‚Ö‚Æ•ÏX‚µ‚Ü‚µ‚½BŠù‘¶‚Ì¤•W‚Æ‚ÌŠÖ˜A‚É‚¨‚¢‚Ä‚ÌŒœ”O‚ÌŒyŒ¸‚ðˆÓ}‚µ‚½‚à‚Ì‚Å‚·B
-		ƒ†[ƒU[‚ÌŠF—l‚É‚ÍˆÚs‚Ì‚¨Žè”‚ð‚Æ‚ç‚¹A‚²–À˜f‚ð‚¨‚©‚¯‚µ‚Ü‚·‚ªA‚²—‰ð‚²‹¦—Í‚ð‚æ‚ë‚µ‚­‚¨Šè‚¢‚¢‚½‚µ‚Ü‚·B</p>
-		<p>•ÏX“à—e‚ÍˆÈ‰º‚Ì’Ê‚è‚Å‚·B</p>
-		<ul>
-			<li>ƒzƒXƒg–¼ (maya.sandbox.seasar.org ¨ mayaa.sandbox.seasar.org)</li>
-			<li>ƒpƒbƒP[ƒW–¼ (org.seasar.maya ¨ org.seasar.mayaa)</li>
-			<li>ƒ[ƒŠƒ“ƒOƒŠƒXƒg (maya-user ¨ mayaa-user)</li>
-			<li>ƒpƒbƒP[ƒW–¼‚ðŽg—p‚·‚é“à•”Ý’èƒtƒ@ƒCƒ‹–¼</li>
-			<li>Ý’èƒtƒ@ƒCƒ‹Šg’£Žq (.maya ¨ .mayaa)<b> *</b></li>
-			<li>–¼‘O‹óŠÔ‚È‚ÇÝ’èƒtƒ@ƒCƒ‹‚É‹Lq‚·‚é“à—e (m:maya ¨ m:mayaa)<b> *</b></li>
-			<li>Ý’èƒtƒ@ƒCƒ‹‚É‚¨‚¯‚éDTD‚ÌPublicID‚¨‚æ‚ÑSystemID<b> *</b></li>
-			<li>WEBƒTƒCƒgƒRƒ“ƒeƒ“ƒcAƒhƒLƒ…ƒƒ“ƒg—Þ</li>
-		</ul>
-		<p><b>*</b> - ˆÚs‚ÉŠÖ‚í‚é•ÏX“à—e</p>
+<DIV align="center"><IMG src="images/topbar.gif" width="760" height="4"></DIV>
 
-		<h2>Mayaa‚Æ‚Í </h2>
-		<p>Mayaa‚Æ‚ÍAHTML‚ðƒx[ƒX‚Æ‚µ‚½ƒeƒ“ƒvƒŒ[ƒg‚É‚æ‚éAƒvƒƒOƒ‰ƒ}‚ÆƒfƒUƒCƒi‚Ìì‹Æ•ª’S‚ð‹­‚­ˆÓŽ¯‚µ‚½Pure Java‚ÌWEBƒtƒƒ“ƒgƒT[ƒrƒXƒGƒ“ƒWƒ“‚Å‚·B</p>
-		<ul>
-			<li>Mayaa‚ª—p‚¢‚éHTMLƒeƒ“ƒvƒŒ[ƒg‚Í‚Ù‚Úƒˆ‚ÌHTML‚à‚µ‚­‚ÍXHTML‚Å‚·B‚»‚Ì‚½‚ßŠù‘¶‚ÌWEBƒI[ƒTƒŠƒ“ƒOƒc[ƒ‹‚Å‚¢‚Â‚Å‚àƒeƒ“ƒvƒŒ[ƒg‚Ì•ÏXEŠm”F‚ªƒXƒgƒŒƒX–³‚­‚Å‚«‚Ü‚·B </li>
-			<li>Mayaa‚ÍHTMLƒeƒ“ƒvƒŒ[ƒg‚ÉJSPƒJƒXƒ^ƒ€ƒ^ƒO‚ð‘g‚Ýž‚Ý‚Ü‚·B‚»‚Ì‚½‚ßAStrutsEJSFEJSTL‚â‰ß‹ŽŠJ”­Ž‘ŽY‚È‚Ç‚ÌŠù‘¶‚ÌJSPƒ^ƒOƒ‰ƒCƒuƒ‰ƒŠ‚ð—˜—p‚Å‚«‚Ü‚·B </li>
-			<li>HTMLƒeƒ“ƒvƒŒ[ƒg‚ÍÄ—˜—p‰Â”\‚ÈƒRƒ“ƒ|[ƒlƒ“ƒg‰»‚·‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·B</li>
-			<li>Žç”õ”ÍˆÍ‚ðƒvƒŒƒ[ƒ“ƒe[ƒVƒ‡ƒ“‘w‚ÉŒÀ’è‚·‚éŽ–‚ÅŠù‘¶‹Zp‚Æ‚Ì‚‚¢e˜a«‚ðŽÀŒ»‚µ‚Ü‚·Bƒy[ƒWƒtƒ[‚Ì§Œä‚âƒhƒƒCƒ“ƒ‚ƒfƒ‹‘w‚ÌŠÇ—‚ÍMayaa‚ÌŽç”õ”ÍˆÍŠO‚Å‚·B</li>
-			<li>ƒƒWƒbƒN•”‚Ì\’z‚É‚ÍASeasar2‚È‚Ç‚ÌDIƒRƒ“ƒeƒi‚âStruts‚à‚µ‚­‚ÍJSF‚È‚Ç‚ª—p‚¢‚ç‚ê‚é‚±‚Æ‚ª‘z’è‚³‚êA‚»‚ê‚ç‚Æ‚ÍŽ®Œ¾Œê‚É‚æ‚éŠÈ•Ö‚È‹Lq‚ÅƒoƒCƒ“ƒfƒBƒ“ƒO‚µ‚Ü‚·B</li>
-			<li>ƒoƒCƒ“ƒfƒBƒ“ƒOî•ñ‚ÍAHTMLƒeƒ“ƒvƒŒ[ƒg‚É’¼Ú‹Lq‚·‚é•û–@‚ÆAŠO•”XML‚É‹Lq‚·‚é•û–@‚Ì2’Ê‚è‚ð‘I‘ðE¬Ý‚·‚é‚±‚Æ‚ª‰Â”\‚Å‚·BHTMLƒeƒ“ƒvƒŒ[ƒg‚É’¼Ú‹Lq‚·‚éê‡‚Íƒˆ‚ÈHTML‚Ü‚½‚ÍXHTML‚Å‚Í‚È‚­‚È‚è‚Ü‚·B</li>
-			<li>Mayaaiƒ}ƒ„[j‚Í‰«“ê‚ÌŒ¾—t‚Å”L‚Ì‚±‚Æ‚Å‚·B’†‘Œê‚ÌMaoiƒ}ƒI=”Lj‚ªŒêŒ¹‚Æ‚³‚ê‚Ä‚¢‚Ü‚·BƒCƒŠƒIƒ‚ƒeƒ„ƒ}ƒlƒR‚ðŽw‚µ‚Äƒ„ƒ}ƒ}ƒ„‚ÆŒÄ‚Ô‚»‚¤‚Å‚·B</li>
-		</ul>
+<DIV align="center">
+<DIV><IMG src="images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"><IMG src="images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="indexmenu">
+<A href="about/index.html" id="menu01"><IMG src="images/menuindex_about.jpg" alt="About" width="125" height="175"></A><IMG src="images/menuindex_div.gif" width="1" height="175"><A href="news/index.html" id="menu02"><IMG src="images/menuindex_news.jpg" alt="News" width="126" height="175"></A><IMG src="images/menuindex_div.gif" width="1" height="175"><A href="documentation/index.html" id="menu03"><IMG src="images/menuindex_doc.jpg" alt="Documentation" width="126" height="175"></A><IMG src="images/menuindex_div.gif" width="1" height="175"><A href="downloads/index.html" id="menu04"><IMG src="images/menuindex_down.jpg" alt="Downloads" width="126" height="175"></A><IMG src="images/menuindex_div.gif" width="1" height="175"><A href="subprojects/index.html" id="menu05"><IMG src="images/menuindex_subpro.jpg" alt="SubProjects" width="126" height="175"></A><IMG src="images/menuindex_div.gif" width="1" height="175"><A href="support/index.html" id="menu06"><IMG src="images/menuindex_support.jpg" alt="Support" width="126" height="175"></A>
+</DIV>
+</DIV>
 
-		<h2>JavaServer Templates‚Æ‚Í</h2>
-		<p>JavaServer Templates‚Æ‚ÍMayaa‚ÌƒA[ƒLƒeƒNƒ`ƒƒ‚Ì‚¤‚¿A”Ä—pE‹¤’Ê•”•ª‚É‚Â‚¢‚ÄŽd—l‰»‚µ‚½‚à‚Ì‚ðŒ¾‚¢‚Ü‚·B</p>
-		<h2>IPA–¢“¥ƒ\ƒtƒgƒEƒFƒA‘n‘¢Ž–‹Æ</h2>
-		<p>Mayaa‚ÍAu<a href="http://www.ipa.go.jp/jinzai/esp/2005mito1/gaiyou/10-13.html">JavaServer Templates uMayav‚ÌŠJ”­‚Æ¢ŠE”­M</a>v‚Æ‚¢‚¤ƒe[ƒ}‚ÅA
-		IPA‚ÌŽÀŽ{‚·‚é2005”NãŠú–¢“¥ƒ\ƒtƒgƒEƒFƒA‘n‘¢Ž–‹Æ‚ÉÌ‘ð‚³‚ê‚Ü‚µ‚½B</p>
-		<p>Mayaa‚ÍA‚·‚Å‚É2004”N11ŒŽ‚æ‚èAŠJ”­‚ªƒXƒ^[ƒg‚µ‚Ä‚¢‚Ü‚·BŽ–‹Æ‚É‰ž•å‚µ‚½2005”N3ŒŽŒ»Ý‚Å‚àAˆê’Ê‚è‚ÌƒRƒ“ƒZƒvƒg‚ðŽÀ‘•‚µ‚½ƒvƒƒgƒ^ƒCƒv»•i‚ªƒŠƒŠ[ƒX’¼‘O‚Ìó‘Ô‚Å‚Í‚ ‚è‚Ü‚µ‚½B
-		‚µ‚©‚µA»•i‚Æ‚µ‚Ä‚ÍJavaServer TemplatesŽd—l‚Ì®—‚ª•K—v‚È‚±‚ÆA‹@”\–Ê‚Å‚Í‘½—l‚Èƒj[ƒY‚ð–ž‚½‚·‚½‚ß‚Ì‹@”\‚à‚µ‚­‚ÍŠg’£ƒ|ƒCƒ“ƒg‚ðŽÀ‘•‚·‚é‚±‚Æ‚ÆA
-		»•i•iŽ¿‚Å‚ÍŒ˜˜S‚©‚ÂƒXƒP[ƒ‰ƒrƒŠƒeƒB‚ÌŽÀŒ»‚É‚¨‚¢‚Ä‚Ü‚¾‚Ü‚¾—]’n‚ª‚ ‚è‚Ü‚·B‚Ü‚½AŽd—lƒhƒLƒ…ƒƒ“ƒgAGettingStartA
-		ƒfƒxƒƒbƒp[ƒKƒCƒh‚Æ‚¢‚¤‚æ‚¤‚ÈƒhƒLƒ…ƒƒ“ƒg–Ê‚Ì[ŽÀ‚¨‚æ‚ÑWEBƒy[ƒW‚Ì[ŽÀ‚à‚±‚ê‚©‚ç‚Å‚·B‚»‚Ì‚½‚ßAŒp‘±“I‚ÉW’†‚µ‚Ä‚±‚ê‚ç‚ÌŽæ‚è‘g‚Ý‚ðs‚¢‚½‚­A
-		¡‰ñ‚Ì2005”N“xãŠú–¢“¥ƒ\ƒtƒgƒEƒFƒA‘n‘¢Ž–‹Æ‚É‰ž•å‚¢‚½‚µ‚Ü‚µ‚½B</p>
 
-		<h2>ƒ_ƒEƒ“ƒ[ƒh</h2>
-		<p>“±“üƒpƒbƒP[ƒW‚Ì<a href="documentation/install.html">ƒCƒ“ƒXƒg[ƒ‹•û–@</a>B(‘¼ƒpƒbƒP[ƒW‚à“¯—l‚Å‚·)</p>
-		<ul>
-			<li><a href="downloads/whatsnew0.9.20a.html">Mayaa0.9.20a‚Ì•ÏX“_</a> 2005/11/16</li>
-			<li><a href="downloads/mayaa-project-0.9.20a.zip">Mayaa0.9.20a (Eclipse Project)</a> 2005/11/16</li>
-			<li><a href="downloads/mayaa-0.9.20a.war">Mayaa0.9.20a (Blank War)</a> 2005/11/16</li>
-			<li><a href="downloads/mayaa-faces-0.3.war">MayaaFaces 0.3 (Mayaa‚ÌJSFƒCƒ“ƒeƒOƒŒ[ƒVƒ‡ƒ“)</a> 2005/11/16</li>
-			<li><a href="downloads/mayaa-getting-started-0.9.20a.war">Mayaa0.9.20a (ƒ†[ƒUƒhƒLƒ…ƒƒ“ƒg‚ðŠÜ‚Þ“±“üWar)</a> 2005/11/16</li>
-		</ul>
+<DIV class="maincontents">
 
-		<h2>ƒTƒ“ƒvƒ‹</h2>
-		<ul>
-			<li>Mayaa‚Ì’P“Æ—˜—p—áF<a href="downloads/mayaa-sample-0.9.20a.war">MayaaƒTƒ“ƒvƒ‹W</a> 2005/11/16</li>
-			<li>Struts‚ð—˜—p‚µ‚½—áF<a href="downloads/mayaa-hangman-struts-0.9.20a.war">Struts—˜—p”ÅHangmanƒQ[ƒ€</a> 2005/11/16</li>
-			<li>Mayaa‚ÅŠÈˆÕ‚ÈMVC‚ðŽÀŒ»‚µ‚½—áF<a href="downloads/mayaa-hangman-solo-0.9.20a.war">Mayaa’P“Æ”ÅHangmanƒQ[ƒ€</a> 2005/11/16</li>
-			<li>Mayaa‚Ì“à•”API—˜—p—áF<a href="downloads/mayaa-libman-0.9.20a.war">Libman - Mayaa Library Manager</a> 2005/11/16</li>
-			<li>ƒAƒvƒŠƒP[ƒVƒ‡ƒ“—áF<a href="downloads/mayaa-sample-app-0.9.20a.war">\‚µž‚ÝƒtƒH[ƒ€ƒAƒvƒŠƒP[ƒVƒ‡ƒ“</a>(Struts, HSQLDB) 2005/11/16</li>
-		</ul>
+<DIV ID="contentsleft">
+<P class="text10px">æœ€æ–°æ›´æ–°æ—¥ï¼š2005/11/28</P>
+<H3 class="top">Mayaaã¨ã¯</H3>
+<P>Mayaaã¯HTMLã‚’ãƒ™ãƒ¼ã‚¹ã¨ã—ãŸãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã«ã‚ˆã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒžã¨ãƒ‡ã‚¶ã‚¤ãƒŠã®ä½œæ¥­åˆ†æ‹…ã‚’å¼·ãæ„è­˜ã—ãŸWEBãƒ•ãƒ­ãƒ³ãƒˆã‚µãƒ¼ãƒ“ã‚¹ã‚¨ãƒ³ã‚¸ãƒ³ã§ã™ã€‚</P>
+<TABLE width="158" border="0" align="center" cellpadding="0" cellspacing="0">
+<TR>
+<TD width="9" height="9" align="left" valign="top"><IMG src="images/column_r01.gif" width="9" height="9"></TD>
+<TD width="140"><IMG src="images/column_top.gif" width="140" height="9"></TD>
+<TD width="9" height="9" align="right" valign="top"><IMG src="images/column_r02.gif" width="9" height="9"></TD>
+</TR>
+<TR>
+<TD rowspan="2" background="images/column_left.gif"><IMG src="images/column_left.gif" width="9" height="100"></TD>
+<TD bgcolor="#E7F0FF"><H5><IMG src="images/icon_download.gif" alt="æœ€æ–°ç‰ˆãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰" width="37" height="26" align="absmiddle"><a href="downloads/index.html">æœ€æ–°ç‰ˆãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰</a></H5></TD>
+<TD rowspan="2" background="images/column_right.gif"><IMG src="images/column_right.gif" width="9" height="100"></TD>
+</TR>
+<TR>
+<TD align="left" valign="top" bgcolor="#E7F0FF">
+<DIV class="release"><span class="text10px">2005/11/28</span><br>Mayaa 1.0.0-beta1<br>(<a href="downloads/index.html#changelog">å¤‰æ›´ç‚¹</a>)</DIV>
+<DIV class="download">
+<DIV><a href="downloads/mayaa-1.0.0-beta1.war">Blank War</a></DIV>
+<DIV><a href="downloads/mayaa-getting-started-1.0.0-beta1.war">å°Žå…¥ War</a></DIV>
+<DIV><a href="downloads/mayaa-project-1.0.0-beta1.zip">Eclipse Project Zip</a></DIV>
+</DIV>
+</TD>
+</TR>
+<TR>
+<TD width="9" height="9" align="right" valign="top"><IMG src="images/column_r04.gif" width="9" height="9"></TD>
+<TD width="9" height="9"><IMG src="images/column_bottom.gif" width="140" height="9"></TD>
+<TD width="9" height="9" align="right" valign="top"><IMG src="images/column_r03.gif" width="9" height="9"></TD>
+</TR>
+</TABLE>
 
-		<h2>ƒ†[ƒUƒhƒLƒ…ƒƒ“ƒg</h2>
-		<p>ˆÈ‰º‚ÌƒhƒLƒ…ƒƒ“ƒg‚ÍAMayaa‚Ì—˜—pŽÒA‚Ü‚½‚ÍMayaa‚ðŽg‚¢Žn‚ß‚él‚Ì•‚¯‚É‚È‚é‚à‚Ì‚Å‚·B“±“üŽèˆø‚«Aƒ`ƒ…[ƒgƒŠƒAƒ‹‚È‚Ç‚ðŠÜ‚Ý‚Ü‚·B</p>
-		<ul>
-			<li><a href="documentation/index.html">ƒ†[ƒUƒhƒLƒ…ƒƒ“ƒg</a> 2005/11/16</li>
-		</ul>
+</DIV>
 
-		<h2>ŠÖ˜AƒhƒLƒ…ƒƒ“ƒg</h2>
-		<ul>
-			<li><a href="documentation/slide/TheMayaaWay.pdf">OSC2005-fall uMayaav‚Ì‚²Ð‰îƒvƒŒƒ[ƒ“ƒe[ƒVƒ‡ƒ“</a> 2005/09/17</li>
-			<li><a href="documentation/slide/10-13kickoff.pdf">–¢“¥ƒLƒbƒNƒIƒtƒZƒ~ƒi[ƒvƒŒƒ[ƒ“ƒe[ƒVƒ‡ƒ“</a> 2005/07/17</li>
-		</ul>
+<DIV ID="contentsline">
+<!-- ãƒˆãƒƒãƒ—ãƒšãƒ¼ã‚¸ä¸­å¤®ãƒ©ã‚¤ãƒ³: glay ã® height ã‚’æ›´æ–°ã™ã‚‹ -->
+<IMG src="images/contents_div_blue.gif" width="4" height="31"><IMG src="images/contents_div_gray.gif" width="4" height="167">
+<IMG src="images/spacer.gif" width="4" height="10">
+<IMG src="images/contents_div_blue.gif" width="4" height="31"><IMG src="images/contents_div_gray.gif" width="4" height="140">
+</DIV>
 
-		<h2>ƒ\[ƒXƒR[ƒh</h2>
-		<p>ƒ\[ƒXƒR[ƒh‚ÍSubversionihttps/WebDAVj‚ÅŠÇ—‚³‚ê‚Ä‚¢‚Ü‚·B‰º‹LURL‚ÉTortoiseSVN‚âSubclipse‚È‚Ç‚Ì
-		SVNƒNƒ‰ƒCƒAƒ“ƒg‚ÅƒAƒNƒZƒX‚·‚é‚ÆAƒ\[ƒXƒR[ƒh‚ðŽæ“¾‚·‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·BWEBƒuƒ‰ƒEƒU‚æ‚èƒAƒNƒZƒX‚·‚é‚ÆAƒtƒ@ƒCƒ‹‚Ì•\Ž¦‚Ì‚Ýs‚¤‚±‚Æ‚ª‰Â”\‚Å‚·B</p>
-		<ul>
-			<li><a href="http://www.seasar.org/websvn/listing.php?repname=sandbox.mayaa&path=%2Ftrunk%2F&rev=0&sc=0">Mayaa svn trunk folder (WebSVN)</a></li>
-		</ul>
+<DIV ID="contentsright_top">
+<H1>News</H1>
+<DIV class="infomark">
 
-		<h2>ƒTƒ|[ƒg &amp; ƒtƒB[ƒhƒoƒbƒN</h2>
-		<p>Mayaa‚ÌƒTƒ|[ƒg &amp; ƒtƒB[ƒhƒoƒbƒN‚ÍAMayaa-User MLi“ú–{Œêj‚É‚æ‚Á‚Äs‚¢‚Ü‚·BML‚Ö‚ÌŽQ‰Á‚Í‰º‹LURLƒy[ƒW‚æ‚èw“Ç“o˜^‚µ‚Ä‚­‚¾‚³‚¢B
-		ML‚Ö‚Ì“Še‚ÍASPAM–hŽ~‚Ì‚½‚ßMLw“ÇŽÒ‚ÉŒÀ’è‚µ‚Ä‚¢‚Ü‚·BML‚Ìw“Ç‚Í§ŒÀ‚µ‚Ä‚¨‚è‚Ü‚¹‚ñ‚Ì‚ÅA‚Ç‚È‚½‚Å‚àŽQ‰Á‚Å‚«‚Ü‚·B</p>
-		<ul>
-			<li><a href="https://www.seasar.org/mailman/listinfo/mayaa-user">https://www.seasar.org/mailman/listinfo/mayaa-user</a></li>
-		</ul>
+<!-- News æ›´æ–°éƒ¨ã“ã“ã‹ã‚‰ -->
 
-		<h2>ƒ‰ƒCƒZƒ“ƒX</h2>
-		<p>Mayaa‚ÍAu<a href="http://www.apache.org/licenses/LICENSE-2.0">The Apache Software License, Version 2.0</a>(ˆÈ‰ºAhƒ‰ƒCƒZƒ“ƒXh)v‚Ì‰ºA”z•z‚³‚ê‚Ä‚¢‚Ü‚·Bhƒ‰ƒCƒZƒ“ƒX"‚ÍOSI”FØ‚Ì
-		ƒI[ƒvƒ“ƒ\[ƒXƒ\ƒtƒgƒEƒFƒAƒ‰ƒCƒZƒ“ƒX‚Å‚·Bˆê•ûAŠé‹Æ‚Ì»•i‚É‘g‚Ýž‚ñ‚Å—˜—p‚·‚éê‡‚È‚ÇA“–Ž–ŽÒƒTƒ|[ƒgƒ‚ƒfƒ‹‚ðŠ®‘S‚É•úŠü‚µ‚È‚¢A
-		‚æ‚è¤—p—˜—p‚µ‚â‚·‚¢ƒ‰ƒCƒZƒ“ƒX‚àŒŸ“¢’†‚Å‚·BŒŸ“¢’†‚ÌVƒ‰ƒCƒZƒ“ƒX‚ðÌ—p‚·‚éê‡‚É‚ÍAhƒ‰ƒCƒZƒ“ƒX"‚Æ‚Ìƒfƒ…ƒAƒ‹ƒ‰ƒCƒZƒ“ƒXŒ`‘Ô‚Å‚Ì”z•z‚Æ‚µA
-		—˜—pŽÒ‚ª‘I‘ð“I‚É‚Ç‚¿‚ç‚©‚Ìƒ‰ƒCƒZƒ“ƒX‚ðÌ—p‚Å‚«‚é‚æ‚¤‚É‚·‚é‚±‚Æ‚ð—\’è‚µ‚Ä‚¢‚Ü‚·B</p>
+<DIV><a href="http://jp.sun.com/company/events/javaone/2005/" title="JavaOne Tokyo 2005">JavaOne Tokyo 2005</a> (2005/10/21)<BR>
+JavaOne Tokyo 2005ã®BoFæž ã§ç™ºè¡¨ã—ã¾ã™ã€‚æœ€çµ‚æ—¥11æœˆ10æ—¥ 20æ™‚ï½ž20æ™‚45åˆ†ã®æž ã§ã™ã€‚</DIV>
 
-		<h2>ŠJ”­ŽÒ</h2>
-		<p>ƒvƒƒWƒFƒNƒgƒŠ[ƒ_[F</p>
-		<ul>
-			<li><a href="http://d.hatena.ne.jp/masataka_k/">ŒIŒ´ Œ†‹</a> i<a href="http://www.gluegent.com">Š”Ž®‰ïŽÐƒOƒ‹[ƒWƒFƒ“ƒg</a>j</li>
-		</ul>
-		<p>ƒRƒ~ƒbƒ^F</p>
-		<ul>
-			<li><a href="http://suga.parfe.jp/td/index.cgi">{‰ê KŽŸ</a> i<a href="http://www.gluegent.com">Š”Ž®‰ïŽÐƒOƒ‹[ƒWƒFƒ“ƒg</a>j</li>
-			<li><a href="http://d.hatena.ne.jp/maruo_syunsuke/">š¢”ö r‰î</a> i<a href="http://www.gluegent.com">Š”Ž®‰ïŽÐƒOƒ‹[ƒWƒFƒ“ƒg</a>j</li>
-			<li><a href="http://d.hatena.ne.jp/duran/">duran</a></li>
-		</ul>
+<DIV><a href="http://pcweb.mycom.co.jp/articles/2005/09/26/maya/" title="ã‚ªãƒ¼ãƒ—ãƒ³ã‚½ãƒ¼ã‚¹ã‚«ãƒ³ãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹2005 Tokyo/Fall - JavaServer Templatesã€ŒMayaã€">MYCOM PC WEB: ã‚ªãƒ¼ãƒ—ãƒ³ã‚½ãƒ¼ã‚¹ã‚«ãƒ³ãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹2005 Tokyo/Fall</a> (2005/09/26)<BR>
+ã‚ªãƒ¼ãƒ—ãƒ³ã‚½ãƒ¼ã‚¹ã‚«ãƒ³ãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹2005 Tokyo/Fallã®ç™ºè¡¨ãŒMYCOM PC WEBã§ç´¹ä»‹ã•ã‚Œã¾ã—ãŸã€‚</DIV>
 
-		<h2><a name="changelog">XV—š—ð</a></h2>
-		<ul>
-			<li>2005/11/16
-			<ul>
-				<li><a href="downloads/whatsnew0.9.20a.html">ƒo[ƒWƒ‡ƒ“0.9.20a‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a></li>
-				<li>0.9.20a‚ð“¯«‚µ‚½ƒTƒ“ƒvƒ‹W‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.20a‚ð“¯«‚µ‚½HangmanƒQ[ƒ€‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.20a‚ð“¯«‚µ‚½Libman‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.20a‚ð“¯«‚µ‚½“±“üWar‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.20a‚ð“¯«‚µ‚½\‚µž‚ÝƒtƒH[ƒ€ƒTƒ“ƒvƒ‹‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.20a‚ð“¯«‚µ‚½MayaaFaces 0.3 ‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-			</ul></li>
-			<li>2005/11/16
-			<ul>
-				<li>ƒvƒƒ_ƒNƒg–¼‚ðuMayav‚©‚çuMayaav‚É•ÏX‚µ‚Ü‚µ‚½B‚»‚ê‚É‚Æ‚à‚È‚¢ƒ\[ƒXƒR[ƒh‚¨‚æ‚ÑƒhƒLƒ…ƒƒ“ƒgAƒTƒCƒg‚ð‘S–Ê“I‚É•ÏX‚µ‚Ü‚µ‚½B</li>
-				<li><a href="downloads/whatsnew0.9.20.html">ƒo[ƒWƒ‡ƒ“0.9.20‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a></li>
-				<li>0.9.20‚ð“¯«‚µ‚½ƒTƒ“ƒvƒ‹W‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.20‚ð“¯«‚µ‚½HangmanƒQ[ƒ€‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.20‚ð“¯«‚µ‚½Libman‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.20‚ð“¯«‚µ‚½“±“üWar‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.20‚ð“¯«‚µ‚½\‚µž‚ÝƒtƒH[ƒ€ƒTƒ“ƒvƒ‹‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.20‚ð“¯«‚µ‚½MayaaFaces 0.3 ‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li><a href="documentation/index.html">ƒ†[ƒUƒhƒLƒ…ƒƒ“ƒg‚ðXV‚µ‚Ü‚µ‚½B</a></li>
-			</ul></li>
-			<li>2005/11/14
-			<ul>
-				<li><a href="documentation/index.html">ƒ†[ƒUƒhƒLƒ…ƒƒ“ƒg‚ðXV‚µ‚Ü‚µ‚½B</a></li>
-				<li>ƒ†[ƒUƒhƒLƒ…ƒƒ“ƒg‚ðXV‚µ‚½“±“üWar‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-			</ul></li>
-			<li>2005/11/10
-			<ul>
-				<li><a href="downloads/whatsnew0.9.19.html">ƒo[ƒWƒ‡ƒ“0.9.19‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a></li>
-				<li>0.9.19‚ð“¯«‚µ‚½ƒTƒ“ƒvƒ‹W‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.19‚ð“¯«‚µ‚½HangmanƒQ[ƒ€‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.19‚ð“¯«‚µ‚½Libman‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.19‚ð“¯«‚µ‚½“±“üWar‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.19‚ð“¯«‚µ‚½\‚µž‚ÝƒtƒH[ƒ€ƒTƒ“ƒvƒ‹‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.19‚ð“¯«‚µ‚½MayaaFaces 0.3 ‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li><a href="documentation/index.html">ƒ†[ƒUƒhƒLƒ…ƒƒ“ƒg‚ðXV‚µ‚Ü‚µ‚½B</a></li>
-			</ul></li>
-			<li>2005/10/30
-			<ul>
-				<li>ƒTƒ|[ƒg &amp; ƒtƒB[ƒhƒoƒbƒN‚ðs‚¤AMayaa-User ML‚ðŠJÝ‚µAŽQ‰Á‚ÌˆÄ“à‚ð’Ç‰Á‚µ‚Ü‚µ‚½B</li>
-			</ul></li>
-			<li>2005/10/29
-			<ul>
-				<li><a href="documentation/index.html">ƒ†[ƒUƒhƒLƒ…ƒƒ“ƒg‚ðXV‚µ‚Ü‚µ‚½B</a></li>
-			</ul></li>
-			<li>2005/10/28
-			<ul>
-				<li><a href="downloads/whatsnew0.9.18.html">ƒo[ƒWƒ‡ƒ“0.9.18‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a></li>
-				<li>0.9.18‚ð“¯«‚µ‚½ƒTƒ“ƒvƒ‹W‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.18‚ð“¯«‚µ‚½HangmanƒQ[ƒ€‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.18‚ð“¯«‚µ‚½Libman‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.18‚ð“¯«‚µ‚½“±“üWar‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.18‚ð“¯«‚µ‚½\‚µž‚ÝƒtƒH[ƒ€ƒTƒ“ƒvƒ‹‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li><a href="documentation/index.html">ƒ†[ƒUƒhƒLƒ…ƒƒ“ƒg‚ðXV‚µ‚Ü‚µ‚½B</a></li>
-				<li>MayaaFaces 0.3 ‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-			</ul></li>
-			<li>2005/10/25
-			<ul>
-				<li><a href="documentation/index.html">ƒ†[ƒUƒhƒLƒ…ƒƒ“ƒg‚ðXV‚µ‚Ü‚µ‚½B</a></li>
-			</ul></li>
-			<li>2005/10/17
-			<ul>
-				<li><a href="downloads/whatsnew0.9.17.html">ƒo[ƒWƒ‡ƒ“0.9.17‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a></li>
-				<li>0.9.17‚ð“¯«‚µ‚½ƒTƒ“ƒvƒ‹W‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.17‚ð“¯«‚µ‚½HangmanƒQ[ƒ€‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.17‚ð“¯«‚µ‚½Libman‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.17‚ð“¯«‚µ‚½“±“üWar‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-			</ul></li>
-			<li>2005/10/09
-			<ul>
-				<li>MayaaFaces 0.2.1 ‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-			</ul></li>
-			<li>2005/10/07
-			<ul>
-				<li>MayaaFaces 0.2 ‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-			</ul></li>
-			<li>2005/10/05
-			<ul>
-				<li><a href="downloads/whatsnew0.9.16.html">ƒo[ƒWƒ‡ƒ“0.9.16‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a></li>
-				<li>0.9.16‚ð“¯«‚µ‚½ƒTƒ“ƒvƒ‹W‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.16‚ð“¯«‚µ‚½HangmanƒQ[ƒ€‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.16‚ð“¯«‚µ‚½Libman‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.16‚ð“¯«‚µ‚½“±“üWar‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li><a href="documentation/index.html">ƒ†[ƒUƒhƒLƒ…ƒƒ“ƒg‚ðXV‚µ‚Ü‚µ‚½B</a></li>
-			</ul></li>
-			<li>2005/09/30
-			<ul>
-				<li><a href="downloads/whatsnew0.9.15.html">ƒo[ƒWƒ‡ƒ“0.9.15‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a></li>
-				<li>0.9.15‚ð“¯«‚µ‚½ƒTƒ“ƒvƒ‹W‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.15‚ð“¯«‚µ‚½HangmanƒQ[ƒ€‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.15‚ð“¯«‚µ‚½Libman‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.15‚ð“¯«‚µ‚½“±“üWar‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li><a href="documentation/index.html">ƒ†[ƒUƒhƒLƒ…ƒƒ“ƒg‚ðXV‚µ‚Ü‚µ‚½B</a></li>
-			</ul></li>
-			<li>2005/09/28
-			<ul>
-				<li><a href="downloads/whatsnew0.9.14.html">ƒo[ƒWƒ‡ƒ“0.9.14‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a></li>
-				<li>0.9.14‚ð“¯«‚µ‚½ƒTƒ“ƒvƒ‹W‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.14‚ð“¯«‚µ‚½HangmanƒQ[ƒ€‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.14‚ð“¯«‚µ‚½Libman‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.14‚ð“¯«‚µ‚½“±“üWar‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li><a href="documentation/index.html">ƒ†[ƒUƒhƒLƒ…ƒƒ“ƒg‚ðXV‚µ‚Ü‚µ‚½B</a></li>
-			</ul></li>
-			<li>2005/09/27
-			<ul>
-				<li>0.9.13‚ð“¯«‚µ‚½“±“üWar‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li><a href="documentation/index.html">ƒ†[ƒUƒhƒLƒ…ƒƒ“ƒg‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a> (ì¬“r’†)</li>
-			</ul></li>
-			<li>2005/09/23
-			<ul>
-				<li><a href="downloads/whatsnew0.9.13.html">ƒo[ƒWƒ‡ƒ“0.9.13‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a></li>
-				<li>0.9.13‚ð“¯«‚µ‚½ƒTƒ“ƒvƒ‹W‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.13‚ð“¯«‚µ‚½HangmanƒQ[ƒ€‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.13‚ð“¯«‚µ‚½Libman‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-			</ul></li>
-			<li>2005/09/17
-			<ul>
-				<li><a href="documentation/slide/TheMayaaWay.pdf">OSC2005-fall‚Å‚ÌƒvƒŒƒ[ƒ“ƒe[ƒVƒ‡ƒ“‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a></li>
-			</ul></li>
-			<li>2005/09/16
-			<ul>
-				<li><a href="downloads/whatsnew0.9.12.html">ƒo[ƒWƒ‡ƒ“0.9.12‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a></li>
-				<li>0.9.12‚ð“¯«‚µ‚½ƒTƒ“ƒvƒ‹W‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.12‚ð“¯«‚µ‚½HangmanƒQ[ƒ€‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.12‚ð“¯«‚µ‚½Libman‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-			</ul></li>
-			<li>2005/09/07
-			<ul>
-				<li><a href="downloads/whatsnew0.9.11.html">ƒo[ƒWƒ‡ƒ“0.9.11‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a></li>
-				<li>0.9.11‚ð“¯«‚µ‚½ƒTƒ“ƒvƒ‹W‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-			</ul></li>
-			<li>2005/09/06
-			<ul>
-				<li><a href="downloads/whatsnew0.9.10.html">ƒo[ƒWƒ‡ƒ“0.9.10‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a></li>
-				<li>0.9.10‚ð“¯«‚µ‚½ƒTƒ“ƒvƒ‹W‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.10‚ð“¯«‚µ‚½HangmanƒQ[ƒ€‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.10‚ð“¯«‚µ‚½Libman‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-			</ul></li>
-			<li>2005/08/30
-			<ul>
-				<li><a href="downloads/whatsnew0.9.9.html">ƒo[ƒWƒ‡ƒ“0.9.9‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a></li>
-				<li>0.9.9‚ð“¯«‚µ‚½ƒTƒ“ƒvƒ‹W‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>0.9.9‚ð“¯«‚µ‚½HangmanƒQ[ƒ€‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-			</ul></li>
-			<li>2005/08/04
-			<ul>
-				<li><a href="downloads/whatsnew0.9.8.html">ƒo[ƒWƒ‡ƒ“0.9.8‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a></li>
-				<li>0.9.8‚ð“¯«‚µ‚½HangmanƒQ[ƒ€‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>ƒeƒ“ƒvƒŒ[ƒg‚ÉŠÖ‚·‚é‹Lq‚ð­‚µ’Ç‰Á‚µ‚Ü‚µ‚½B</li>
-			</ul></li>
-			<li>2005/07/17
-			<ul>
-				<li>ServiceProviderŽd—l‚ðƒo[ƒWƒ‡ƒ“ƒAƒbƒv‚µ‚Ü‚µ‚½B</li>
-				<li>–¢“¥ƒLƒbƒNƒIƒtƒZƒ~ƒi[ƒvƒŒƒ[ƒ“ƒe[ƒVƒ‡ƒ“Ž‘—¿‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li><a href="downloads/whatsnew0.9.7.1.html">ƒo[ƒWƒ‡ƒ“0.9.7.1‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a></li>
-				<li>uSeasar‚Ì‚·‚È‚ ‚»‚Ñv‚ÅŽg—p‚µ‚½ƒfƒ‚‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-				<li>ŠÈˆÕƒ}ƒjƒ…ƒAƒ‹‚ðŒöŠJ‚µ‚Ü‚µ‚½B</li>
-			</ul></li>
-			<li>2005/07/05
-			<ul>
-				<li><a href="downloads/whatsnew0.9.7.html">ƒo[ƒWƒ‡ƒ“0.9.7‚ðŒöŠJ‚µ‚Ü‚µ‚½B</a></li>
-			</ul></li>
-		</ul>
+<!-- News æ›´æ–°éƒ¨ã“ã“ã¾ã§ -->
 
-        <p><img src="images/mayaa_banner.gif" width="146" height="33" alt="Mayaa"></p>
-		<p>Copyright &copy; 2004-2005 the Seasar Foundation and the Others. all rights reserved.</p>
-	</body>
-</html>
+<p>(<a href="news/index.html">éŽåŽ»ã®News</a>)</p>
+
+</DIV>
+
+<H1>Information</H1>
+<DIV class="infomark">
+
+<!-- Information æ›´æ–°éƒ¨ã“ã“ã‹ã‚‰ -->
+
+<DIV>2005/11/28
+<ul>
+    <li><a href="../downloads/releasenotes.html">1.0.0-beta1ã‚’ãƒªãƒªãƒ¼ã‚¹ã—ã¾ã—ãŸã€‚</a></li>
+    <li>Webã‚µã‚¤ãƒˆã‚’ãƒªãƒ‹ãƒ¥ãƒ¼ã‚¢ãƒ«ã—ã¾ã—ãŸã€‚</li>
+</ul>
+</DIV>
+
+<!-- Information æ›´æ–°éƒ¨ã“ã“ã¾ã§ -->
+
+<p>(<a href="news/information.html">éŽåŽ»ã®Information</a>)</p>
+
+</DIV>
+
+</DIV>
+
+</DIV>
+
+<DIV align="center">
+<IMG src="images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20"></DIV>
+</BODY>
+</HTML>

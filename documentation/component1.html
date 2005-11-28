@@ -1,36 +1,60 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Mayaa : Documentation : 2-6. HTML ���i���g�� (�ÓI)</title>
-    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
-</head>
-<body>
-<div class="header">
-<div>Mayaa : JavaServer Templates</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>2-5. HTML 部品 (静的) : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<div class="navi">
-<a href="./notation.html">���ݒ�̋L�q���@</a>
-<a href="./index.html">��index</a>
-<a href="./component2.html">HTML ���i���g�� (���I)��</a>
-</div>
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
 
-<div class="main">
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
 
 
-<h1>2-6. HTML ���i���g�� (�ÓI)</h1>
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">更新履歴</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">スライドなど</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa 導入</a></DIV>
+<DIV class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></DIV>
+<DIV class="sidemenutext"><A href="hello.html">2-1. 最初の一歩</A></DIV>
+<DIV class="sidemenutext"><A href="conditional.html">2-2. 条件分岐とループ</A></DIV>
+<DIV class="sidemenutext"><A href="customtag.html">2-3. JSP カスタムタグを使う</A></DIV>
+<DIV class="sidemenutext"><A href="notation.html">2-4. 設定の記述方法</A></DIV>
+<DIV class="sidemenutext"><span>2-5. HTML 部品 (静的)</span></DIV>
+<DIV class="sidemenutext"><A href="component2.html">2-6. HTML 部品 (動的)</A></DIV>
+<DIV class="sidemenutext"><A href="layout.html">2-7. レイアウト共有</A></DIV>
+<DIV class="sidemenutext"><A href="deploy.html">2-8. サーバに配置する</A></DIV>
+<BR>
 
-<p>Mayaa �ɂ� HTML �e���v���[�g�� mayaa �t�@�C���̃Z�b�g�𕔕i�Ƃ��Ĉ����@�\������܂��B���̃e���v���[�g���i�̂��Ƃ��u�R���|�[�l���g�v�ƌĂт܂��B�R���|�[�l���g����邱�Ƃŋ@�\�̋��L�E�ė��p�������ł��܂��B</p>
-<p>�R���|�[�l���g�̍����͊ȒP�ŁA��{�I�ɂ͒ʏ�� HTML �e���v���[�g�����̂ƕς��܂���B����� HTML �e���v���[�g�̂����R���|�[�l���g�ɂ����������� id �����A<strong>doRender �v���Z�b�T</strong>�ƌ��т��邱�ƂŃR���|�[�l���g�Ƃ��Ĉ�����悤�ɂȂ�܂��B�R���|�[�l���g���g������ <strong>insert �v���Z�b�T</strong>���g���ăR���|�[�l���g���w�肵�܂��B�R���|�[�l���g�� HTML �e���v���[�g�𒼐ڕ\��������΁A�ʏ�� HTML �e���v���[�g�Ƃ��ē�����e�X�g���邱�Ƃ��ł��܂��B</p>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
+<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
+</DIV>
 
-<div class="figure">�} 2-6-1: �R���|�[�l���g�̓e���v���[�g�̈ꕔ�Ƃ��č쐬<br><img src="./images/component1.png" title="�} 2-6-1: �R���|�[�l���g�̓e���v���[�g�̈ꕔ�Ƃ��č쐬" width="472" height="144"></div>
+
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>2-5. HTML 部品 (静的)</H2>
+
+<p>Mayaa には HTML テンプレートと mayaa ファイルのセットを部品として扱う機能があります。このテンプレート部品のことを「コンポーネント」と呼びます。コンポーネントを作ることで機能の共有・再利用を実現できます。</p>
+<p>コンポーネントの作り方は簡単で、基本的には通常の HTML テンプレートを作るのと変わりません。作った HTML テンプレートのうちコンポーネントにしたい部分に id をつけ、<strong>doRender プロセッサ</strong>と結びつけることでコンポーネントとして扱えるようになります。コンポーネントを使う側は <strong>insert プロセッサ</strong>を使ってコンポーネントを指定します。コンポーネントの HTML テンプレートを直接表示させれば、通常の HTML テンプレートとして動作をテストすることもできます。</p>
+
+<div class="figure">図 2-6-1: コンポーネントはテンプレートの一部として作成<br><img src="images/component1.gif" title="図 2-6-1: コンポーネントはテンプレートの一部として作成" width="491" height="126"></div>
 
 
-<h2>�ȒP�ȗ�</h2>
+<h3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">簡単な例</h3>
 
-<p>�܂��͊ȒP�ȗ�Ƃ��āA�ÓI�ȕ\���̃R���|�[�l���g������Ă݂܂��傤�B</p>
+<p>まずは簡単な例として、静的な表示のコンポーネントを作ってみましょう。</p>
 
 <pre>
 <code>hello.html</code>
@@ -60,11 +84,11 @@
     &lt;<strong>m:doRender</strong> <strong>id="centered"</strong> replace="false" /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
-<p>�֌W����t�@�C���͂S�ł��B���[�U���烊�N�G�X�g����� <code>hello.html</code> ����т��� mayaa �t�@�C���A����� <code>hello.html</code> ����Ăяo����� <code>component.html</code> ����т��� mayaa �t�@�C���ł��B</p>
-<p>�u���E�U�� <code><a href="http://localhost:8080/mayaa/hello.html" target="_blank">http://localhost:8080/mayaa/hello.html</a></code> �ɃA�N�Z�X���Ă݂܂��傤�B</p>
+<p>関係するファイルは４つです。ユーザからリクエストされる <code>hello.html</code> およびその mayaa ファイル、それと <code>hello.html</code> から呼び出される <code>component.html</code> およびその mayaa ファイルです。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello.html" target="_blank">http://localhost:8080/mayaa/hello.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
-���s����
+実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
@@ -74,18 +98,18 @@
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<p>���s���ʂ́A�x�[�X�ƂȂ� <code>hello.html</code> �� <code>&lt;div id="comp"&gt;</code> �̃{�f�B���A�R���|�[�l���g�ł��� <code>component.html</code> �� <code>&lt;span id="centered"&gt;</code> �ɂ���Ēu��������ꂽ���̂ɂȂ��Ă��܂��B</p>
+<p>実行結果は、ベースとなる <code>hello.html</code> の <code>&lt;div id="comp"&gt;</code> のボディが、コンポーネントである <code>component.html</code> の <code>&lt;span id="centered"&gt;</code> によって置き換えられたものになっています。</p>
 
-<div class="figure">�} 2-6-2: �R���|�[�l���g�`��C���[�W<br><img src="./images/component2.png" title="�} 2-6-2: �R���|�[�l���g�`��C���[�W" width="543" height="248"></div>
+<div class="figure">図 2-6-2: コンポーネント描画イメージ<br><img src="images/component2.gif" title="図 2-6-2: コンポーネント描画イメージ" width="486" height="213"></div>
 
-<p>���̂Ƃ� <code>doRender</code> �v���Z�b�T����� <code>insert</code> �v���Z�b�T�Ɋ��蓖�Ă��Ă���^�O���o�͂��邩�ǂ����́A���ꂼ��� <code>replace</code> �̒l�ɏ]���܂��B���̗�ł� <code>hello.html</code> �� <code>component.html</code> �̗����Ƃ� <code>replace="false"</code> �ł��̂ŁA<code>hello.html</code> �̃^�O�̓����� <code>component.html</code> �̃^�O���o�͂���Ă��܂��B</p>
-<p>path�Ɏw�肷��R���|�[�l���g�t�@�C���p�X�́A�R���e�L�X�g���[�g����̑��΃p�X���w�肵�܂��B�擪"/"�̓R���e�L�X�g���[�g��\���܂��B</p>
+<p>このとき <code>doRender</code> プロセッサおよび <code>insert</code> プロセッサに割り当てられているタグを出力するかどうかは、それぞれの <code>replace</code> の値に従います。この例では <code>hello.html</code> と <code>component.html</code> の両方とも <code>replace="false"</code> ですので、<code>hello.html</code> のタグの内側に <code>component.html</code> のタグが出力されています。</p>
+<p>pathに指定するコンポーネントファイルパスは、コンテキストルートからの相対パスを指定します。先頭"/"はコンテキストルートを表します。</p>
 
 
-<h2>�ЂƂ̃e���v���[�g�ŕ����̃R���|�[�l���g���`����</h2>
+<h3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">ひとつのテンプレートで複数のコンポーネントを定義する</h3>
 
-<p>�R���|�[�l���g�͂ЂƂ̃e���v���[�g�ŕ�����`�ł��܂��B��`�����R���|�[�l���g����ʂ���ɂ́A���ꂼ��̃R���|�[�l���g�ɖ��O��t���A�Ăяo���Ƃ��ɂ��̖��O���w�肵�܂��B</p>
-<p>���O��t���Ȃ��ꍇ�A�󕶎��� ("") �����O�Ƃ��Ďg���܂��B�܂��A����e���v���[�g��̕����̃R���|�[�l���g�ɓ������O��t���邱�Ƃ͂ł��܂���B</p>
+<p>コンポーネントはひとつのテンプレートで複数定義できます。定義したコンポーネントを区別するには、それぞれのコンポーネントに名前を付け、呼び出すときにその名前を指定します。</p>
+<p>名前を付けない場合、空文字列 ("") が名前として使われます。また、同一テンプレート上の複数のコンポーネントに同じ名前を付けることはできません。</p>
 
 <pre>
 <code>hello.html</code>
@@ -122,7 +146,7 @@
     &lt;m:doRender id="centered1" <strong>name="center1"</strong> replace="false" /&gt;
     &lt;m:doRender id="centered2" <strong>name="center2"</strong> replace="false" /&gt;
 &lt;/m:mayaa&gt;</div>
-���s����
+実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
@@ -136,10 +160,10 @@
 &lt;/html&gt;</div></pre>
 
 
-<h2>�R���|�[�l���g�ŃR���|�[�l���g���g��</h2>
+<h3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">コンポーネントでコンポーネントを使う</h3>
 
-<p>�R���|�[�l���g�͒ʏ�̃e���v���[�g���l�A���̃R���|�[�l���g�𗘗p�ł��܂��B���p���@�����l�ł��B</p>
-<p>���̗�� <code>hello.html</code> �� <code>component1.html</code> �̃R���|�[�l���g�𗘗p���A<code>component1.html</code> �̃R���|�[�l���g�� <code>component2.html</code> �̃R���|�[�l���g�𗘗p���Ă��܂��B</p>
+<p>コンポーネントは通常のテンプレート同様、他のコンポーネントを利用できます。利用方法も同様です。</p>
+<p>次の例は <code>hello.html</code> が <code>component1.html</code> のコンポーネントを利用し、<code>component1.html</code> のコンポーネントが <code>component2.html</code> のコンポーネントを利用しています。</p>
 
 <pre>
 <code>hello.html</code>
@@ -184,7 +208,7 @@
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     <strong>&lt;m:doRender id="righted" replace="false" /&gt;</strong>
 &lt;/m:mayaa&gt;</div>
-���s����
+実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
@@ -197,20 +221,17 @@
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<div class="figure">�} 2-6-3: 2 �i�̃R���|�[�l���g�`��C���[�W<br><img src="./images/component3.png" title="�} 2-6-3: 2 �i�̃R���|�[�l���g�`��C���[�W" width="543" height="355"></div>
+<div class="figure">図 2-6-3: 2 段のコンポーネント描画イメージ<br><img src="images/component3.gif" title="図 2-6-3: 2 段のコンポーネント描画イメージ" width="481" height="254"></div>
 
 
-</div>
 
-<div class="navi">
-<a href="./notation.html">���ݒ�̋L�q���@</a>
-<a href="./index.html">��index</a>
-<a href="./component2.html">HTML ���i���g�� (���I)��</a>
-</div>
+<DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
 
-<div class="footer">
-&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
-</div>
+</DIV>
 
-</body>
-</html>
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

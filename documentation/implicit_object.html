@@ -1,157 +1,172 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Mayaa : Documentation : appendix E. �X�N���v�g�Ŏg�����`�ς݃I�u�W�F�N�g</title>
-    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
-</head>
-<body>
-<div class="header">
-<div>Mayaa : JavaServer Templates</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>4-2. 定義済みオブジェクト : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<div class="navi">
-<a href="./note.html">�����̑��̒��ӓ_</a>
-<a href="./index.html">��index</a>
-</div>
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
 
-<div class="main">
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
 
-<h1>appendix E. �X�N���v�g�Ŏg�����`�ς݃I�u�W�F�N�g</h1>
+
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">更新履歴</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">スライドなど</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa 導入</a></DIV>
+<DIV class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></DIV>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
+<DIV class="sidemenutext"><a href="processor_reference.html">4-1. プロセッサ リファレンス</a></DIV>
+<DIV class="sidemenutext"><span>4-2. 定義済みオブジェクト</span></DIV>
+<BR>
+<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
+</DIV>
+
+
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>4-2. 定義済みオブジェクト</H2>
+
 
 <div class="toc">
-<a name="toc">�ڎ�</a>
+<a name="toc">目次</a>
 <ul>
-<li><a href="#scope">�X�R�[�v</a>
+<li><a href="#scope">スコープ</a>
 <ul>
-	<li><a href="#application">application: �A�v���P�[�V�����X�R�[�v</a></li>
-	<li><a href="#session">session: �Z�b�V�����X�R�[�v</a></li>
-	<li><a href="#request">request: ���N�G�X�g�X�R�[�v</a></li>
-	<li><a href="#page">page: �y�[�W�X�R�[�v</a></li>
-	<li><a href="#param">param: ���N�G�X�g�p�����[�^�X�R�[�v</a></li>
-	<li><a href="#paramValues">paramValues: ���N�G�X�g�p�����[�^�X�R�[�v (�z��)</a></li>
-	<li><a href="#binding">binding: �R���|�[�l���g�����X�R�[�v</a></li>
-	<li><a href="#header">header: ���N�G�X�g�w�b�_�X�R�[�v</a></li>
-	<li><a href="#headerValues">headerValues: ���N�G�X�g�w�b�_�X�R�[�v (�z��)</a></li>
+	<li><a href="#application">application: アプリケーションスコープ</a></li>
+	<li><a href="#session">session: セッションスコープ</a></li>
+	<li><a href="#request">request: リクエストスコープ</a></li>
+	<li><a href="#page">page: ページスコープ</a></li>
+	<li><a href="#param">param: リクエストパラメータスコープ</a></li>
+	<li><a href="#paramValues">paramValues: リクエストパラメータスコープ (配列)</a></li>
+	<li><a href="#binding">binding: コンポーネント引数スコープ</a></li>
+	<li><a href="#header">header: リクエストヘッダスコープ</a></li>
+	<li><a href="#headerValues">headerValues: リクエストヘッダスコープ (配列)</a></li>
 </ul></li>
-<li><a href="#response">response: ���X�|���X</a></li>
+<li><a href="#response">response: レスポンス</a></li>
 </ul>
 </div>
 
-<h2><a name="scope">��`�ς݃I�u�W�F�N�g</a> <span class="to_toc">(<a href="#toc" title="�ڎ���">���ڎ���</a>)</span></h2>
+<h3><a name="scope"></a><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">定義済みオブジェクト <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
 
-<p>�I�u�W�F�N�g���i�[����X�R�[�v�́AMayaa ���X�N���v�g���瑀��ł���I�u�W�F�N�g�Ƃ��Ē�`���Ă��܂��B���Ƃ��� <code>request</code> �X�R�[�v�Ɋi�[����Ă��� <code>message</code> �Ƃ������O�̑����𑀍삷��ɂ͂Q�̊ȗ��\�L������܂��B</p>
+<p>オブジェクトを格納するスコープは、Mayaa がスクリプトから操作できるオブジェクトとして定義しています。たとえば <code>request</code> スコープに格納されている <code>message</code> という名前の属性を操作するには２つの簡略表記があります。</p>
 
 <ul>
 <li><code>request.message</code></li>
 <li><code>request['message']</code></li>
 </ul>
 
-<p>�ǂ�����Ӗ��I�ɂ͓����ł����A�O�҂͑����Ƃ��Ă킩��₷���\�L�A��҂͓��I�Ȗ��O��������\�L�Ƃ��Ďg���������܂��B�����̓X�R�[�v�ɂ���ēǂݏo����p�Ə������݉\�̂Q��ނ�����܂��B</p>
+<p>どちらも意味的には同じですが、前者は属性としてわかりやすい表記、後者は動的な名前を扱える表記として使い分けられます。属性はスコープによって読み出し専用と書き込み可能の２種類があります。</p>
 
-<p>�X�R�[�v�̃��\�b�h�͎��̂��̂��p�ӂ���Ă��܂��B��L�ȗ��\�L�͓����I�� <code>getAttribute</code> �� <code>setAttribute</code> ���g���܂��B</p>
+<p>スコープのメソッドは次のものが用意されています。上記簡略表記は内部的に <code>getAttribute</code> と <code>setAttribute</code> を使います。</p>
 
-<dl>
+<dl class="list">
 <dt><code>getAttribute(String name)</code></dt>
-<dd>�w�薼�̑������X�R�[�v����擾���܂��B�X�R�[�v���ɂȂ���� <code>undefined</code> ��Ԃ��܂��B</dd>
+<dd>指定名の属性をスコープから取得します。スコープ内になければ <code>undefined</code> を返します。</dd>
 <dt><code>setAttribute(String name, Object value)</code></dt>
-<dd>�w�薼�̑������X�R�[�v�ɃZ�b�g���܂��B�ǂݍ��ݐ�p�X�R�[�v�̏ꍇ�͗�O�𓊂��܂��B(<code>org.seasar.mayaa.impl.cycle.scope.ScopeNotWritableException</code>)</dd>
+<dd>指定名の属性をスコープにセットします。読み込み専用スコープの場合は例外を投げます。(<code>org.seasar.mayaa.impl.cycle.scope.ScopeNotWritableException</code>)</dd>
 <dt><code>removeAttribute(String name)</code></dt>
-<dd>�w�薼�̑������X�R�[�v����폜���܂��B�ǂݍ��ݐ�p�X�R�[�v�̏ꍇ�͗�O�𓊂��܂��B(<code>org.seasar.mayaa.impl.cycle.scope.ScopeNotWritableException</code>)</dd>
+<dd>指定名の属性をスコープから削除します。読み込み専用スコープの場合は例外を投げます。(<code>org.seasar.mayaa.impl.cycle.scope.ScopeNotWritableException</code>)</dd>
 <dt><code>isAttributeWritable()</code></dt>
-<dd>�X�R�[�v���������݉\���ǂ����� <code>true</code>/<code>false</code> �ŕԂ��܂��B</dd>
+<dd>スコープが書き込み可能かどうかを <code>true</code>/<code>false</code> で返します。</dd>
 <dt><code>hasAttribute(String name)</code></dt>
-<dd>�w�薼�̑������X�R�[�v�Ɋi�[����Ă��邩�ǂ����� <code>true</code>/<code>false</code> �ŕԂ��܂��B</dd>
+<dd>指定名の属性がスコープに格納されているかどうかを <code>true</code>/<code>false</code> で返します。</dd>
 <dt><code>iterateAttributeNames()</code></dt>
-<dd>�X�R�[�v���������̖��O (String) �� Iterator ��Ԃ��܂��B</dd>
+<dd>スコープが持つ属性の名前 (String) の Iterator を返します。</dd>
 <dt><code>newAttribute(String name, Class attributeClass)</code></dt>
-<dd>�w�薼�̑������X�R�[�v����擾���܂��B�X�R�[�v���ɂȂ��ꍇ�̏����̓X�R�[�v���ƂɈقȂ�܂����A��ʓI�ɂ� attributeClass �̃C���X�^���X�𐶐����A�X�R�[�v�Ɏw�薼�ŃZ�b�g���Ă���Ԃ��܂��B</dd>
+<dd>指定名の属性がスコープから取得します。スコープ内にない場合の処理はスコープごとに異なりますが、一般的には attributeClass のインスタンスを生成し、スコープに指定名でセットしてから返します。</dd>
 </dl>
 
-<p>Mayaa �W���̃X�R�[�v�͎��̂X�ł��B</p>
+<p>Mayaa 標準のスコープは次の９つです。</p>
 
-<h3><a name="application">application: �A�v���P�[�V�����X�R�[�v</a> <span class="to_toc">(<a href="#toc" title="�ڎ���">���ڎ���</a>)</span></h3>
+<h4><a name="application"></a>■application: アプリケーションスコープ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
 
-<p>�A�v���P�[�V�����S�̂ŋ��L�����X�R�[�v�ł��BServlet �� <code>application</code> �X�R�[�v�ɂ�����܂��B</p>
-
-
-<h3><a name="session">session: �Z�b�V�����X�R�[�v</a> <span class="to_toc">(<a href="#toc" title="�ڎ���">���ڎ���</a>)</span></h3>
-
-<p>�Z�b�V�����S�̂ŋ��L�����X�R�[�v�ł��BServlet �� <code>session</code> �X�R�[�v�ɂ�����܂��B</p>
+<p>アプリケーション全体で共有されるスコープです。Servlet の <code>application</code> スコープにあたります。</p>
 
 
-<h3><a name="request">request: ���N�G�X�g�X�R�[�v</a> <span class="to_toc">(<a href="#toc" title="�ڎ���">���ڎ���</a>)</span></h3>
+<h4><a name="session"></a>■session: セッションスコープ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
 
-<p>���N�G�X�g�S�̂ŋ��L�����X�R�[�v�ł��BServlet �� <code>request</code> �X�R�[�v�̑��� (<code>get/setAttribute</code>) �ɂ�����܂��B</p>
-
-
-<h3><a name="page">page: �y�[�W�X�R�[�v</a> <span class="to_toc">(<a href="#toc" title="�ڎ���">���ڎ���</a>)</span></h3>
-
-<p>�y�[�W���ƃ^�O�͈̔͂ŋ��L�����X�R�[�v�ł��BJSP �� <code>NESTED</code> �ϐ��X�R�[�v�ɂ�����܂��B<code>m:beforeRender</code> �Ő錾���������̓y�[�W�̕`�悪�I���܂ŗL���ł����A<code>m:exec</code> �� <code>m:for</code> �ȂǂŐ錾���������͂��̃^�O���I���܂ł̊Ԃ̂ݗL���ł��B�X�N���v�g�� <code>var</code> �Ő錾�����ϐ��� <code>page</code> �X�R�[�v�̑����Ƃ��Ĉ����܂��B</p>
+<p>セッション全体で共有されるスコープです。Servlet の <code>session</code> スコープにあたります。</p>
 
 
-<h3><a name="param">param: ���N�G�X�g�p�����[�^�X�R�[�v</a> <span class="to_toc">(<a href="#toc" title="�ڎ���">���ڎ���</a>)</span></h3>
+<h4><a name="request"></a>■request: リクエストスコープ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
 
-<p>���N�G�X�g�S�̂ŋ��L�����ǂݏo����p�X�R�[�v�ł��BServlet �� <code>request</code> �X�R�[�v�̃p�����[�^ (<code>getParameter</code>) �ɂ�����܂��B�������O�̃p�����[�^����������ꍇ�ɂ́A��Ԑ擪�̂��̂ЂƂ�Ԃ��܂��B</p>
-
-
-<h3><a name="paramValues">paramValues: ���N�G�X�g�p�����[�^�X�R�[�v (�z��)</a> <span class="to_toc">(<a href="#toc" title="�ڎ���">���ڎ���</a>)</span></h3>
-
-<p>���N�G�X�g�p�����[�^��z��Ƃ��Ď擾���܂��B�������O�̃p�����[�^���ЂƂ݂̂̏ꍇ�ɂ͒��� 1 �̔z���Ԃ��܂��B</p>
+<p>リクエスト全体で共有されるスコープです。Servlet の <code>request</code> スコープの属性 (<code>get/setAttribute</code>) にあたります。</p>
 
 
-<h3><a name="binding">binding: �R���|�[�l���g�����X�R�[�v</a> <span class="to_toc">(<a href="#toc" title="�ڎ���">���ڎ���</a>)</span></h3>
+<h4><a name="page"></a>■page: ページスコープ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
 
-<p>�R���|�[�l���g�����̓ǂݏo����p�X�R�[�v�ł��B�R���|�[�l���g�ł͂Ȃ��ꍇ�ɂ� <code>param</code> �Ɠ����l��߂��܂��B</p>
-
-
-<h3><a name="header">header: ���N�G�X�g�w�b�_�X�R�[�v</a> <span class="to_toc">(<a href="#toc" title="�ڎ���">���ڎ���</a>)</span></h3>
-
-<p>HTTP �w�b�_�̓ǂݏo����p�X�R�[�v�ł��B�������O�̃p�����[�^����������ꍇ�ɂ́A��Ԑ擪�̂��̂ЂƂ�Ԃ��܂��B</p>
+<p>ページ内とタグの範囲で共有されるスコープです。JSP の <code>NESTED</code> 変数スコープにあたります。<code>m:beforeRender</code> で宣言した属性はページの描画が終わるまで有効ですが、<code>m:exec</code> や <code>m:for</code> などで宣言した属性はそのタグが終わるまでの間のみ有効です。スクリプトの <code>var</code> で宣言した変数は <code>page</code> スコープの属性として扱われます。</p>
 
 
-<h3><a name="headerValues">headerValues: ���N�G�X�g�w�b�_�X�R�[�v (�z��)</a> <span class="to_toc">(<a href="#toc" title="�ڎ���">���ڎ���</a>)</span></h3>
+<h4><a name="param"></a>■param: リクエストパラメータスコープ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
 
-<p>HTTP �w�b�_��z��Ƃ��Ď擾���܂��B�������O�� HTTP �w�b�_���ЂƂ݂̂̏ꍇ�ɂ͒��� 1 �̔z���Ԃ��܂��B</p>
+<p>リクエスト全体で共有される読み出し専用スコープです。Servlet の <code>request</code> スコープのパラメータ (<code>getParameter</code>) にあたります。同じ名前のパラメータが複数ある場合には、一番先頭のものひとつを返します。</p>
+
+
+<h4><a name="paramValues"></a>■paramValues: リクエストパラメータスコープ (配列) <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
+
+<p>リクエストパラメータを配列として取得します。同じ名前のパラメータがひとつのみの場合には長さ 1 の配列を返します。</p>
+
+
+<h4><a name="binding"></a>■binding: コンポーネント引数スコープ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
+
+<p>コンポーネント引数の読み出し専用スコープです。コンポーネントではない場合には <code>param</code> と同じ値を戻します。</p>
+
+
+<h4><a name="header"></a>■header: リクエストヘッダスコープ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
+
+<p>HTTP ヘッダの読み出し専用スコープです。同じ名前のパラメータが複数ある場合には、一番先頭のものひとつを返します。</p>
+
+
+<h4><a name="headerValues"></a>■headerValues: リクエストヘッダスコープ (配列) <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
+
+<p>HTTP ヘッダを配列として取得します。同じ名前の HTTP ヘッダがひとつのみの場合には長さ 1 の配列を返します。</p>
 
 
 
-<h2><a name="response">response: ���X�|���X</a> <span class="to_toc">(<a href="#toc" title="�ڎ���">���ڎ���</a>)</span></h2>
+<h3><a name="response"></a><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">response: レスポンス <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
 
-<p>�u���E�U�֕Ԃ����������I�u�W�F�N�g�ł��BServlet �� response �ɂ�����܂��B<strong>����ȏꍇ�������Ē��ڑ��삵�Ȃ����Ƃ𐄏����܂�</strong>�B</p>
+<p>ブラウザへ返す情報を扱うオブジェクトです。Servlet の response にあたります。<strong>特殊な場合を除いて直接操作しないことを推奨します</strong>。</p>
 
-<p>���X�|���X�̃��\�b�h�̂����A�g�p����\������r�I�������͈̂ȉ��̒ʂ�ł��B</p>
+<p>レスポンスのメソッドのうち、使用する可能性が比較的高いものは以下の通りです。</p>
 
-<dl>
+<dl class="list">
 <dt><code>setContentType(String contentType)</code></dt>
-<dd>�R���e���c�^�C�v (MIME �^����уG���R�[�f�B���O���) ��ݒ肵�܂��B</dd>
+<dd>コンテンツタイプ (MIME 型およびエンコーディング情報) を設定します。</dd>
 <dt><code>setStatus(int code)</code></dt>
-<dd>HTTP �X�e�[�^�X�R�[�h��ݒ肵�܂��B(<code>200</code>, <code>404</code>, <code>500</code> �Ȃ�)</dd>
+<dd>HTTP ステータスコードを設定します。(<code>200</code>, <code>404</code>, <code>500</code> など)</dd>
 <dt><code>addHeader(String name, String value)</code></dt>
-<dd>���X�|���X�̃w�b�_��ǉ����܂��B</dd>
+<dd>レスポンスのヘッダを追加します。</dd>
 <dt><code>setHeader(String name, String value)</code></dt>
-<dd>���X�|���X�̃w�b�_��ݒ肵�܂��B�����̃w�b�_���ݒ肳��Ă���ꍇ�͏㏑�����܂��B</dd>
+<dd>レスポンスのヘッダを設定します。同名のヘッダが設定されている場合は上書きします。</dd>
 <dt><code>getOutputStream()</code></dt>
-<dd>���ۂ̏o�͂ƂȂ� <code>OutputStream</code> ���擾���܂��B</dd>
+<dd>実際の出力となる <code>OutputStream</code> を取得します。</dd>
 <dt><code>getWriter()</code></dt>
-<dd>�o�b�t�@���ꂽ <code>Writer</code> ���擾���܂��B</dd>
+<dd>バッファされた <code>Writer</code> を取得します。</dd>
 <dt><code>flush()</code></dt>
-<dd>���X�|���X�̃o�b�t�@�������I�ɏo�͂��܂��B</dd>
+<dd>レスポンスのバッファを強制的に出力します。</dd>
 </dl>
 
-</div>
 
-<div class="navi">
-<a href="./note.html">�����̑��̒��ӓ_</a>
-<a href="./index.html">��index</a>
-</div>
+<DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
 
-<div style="height: 800px">&nbsp;</div>
-
-<div class="footer">
-&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
-</div>
-
-</body>
-</html>
+</DIV>
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

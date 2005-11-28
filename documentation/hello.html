@@ -1,31 +1,56 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Mayaa : Documentation : 2-1. �ŏ��̈��</title>
-    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
-</head>
-<body>
-<div class="header">
-<div>Mayaa : JavaServer Templates</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>2-1. 最初の一歩 : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<div class="navi">
-<a href="./usebean.html">���ǂ̂悤�Ɏg���̂�</a>
-<a href="./index.html">��index</a>
-<a href="./conditional.html">��������ƃ��[�v��</a>
-</div>
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
 
-<div class="main">
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
 
-<h1>2-1. �ŏ��̈��</h1>
 
-<p>�ŏ��ɊȒP�ȃy�[�W���쐬���A���삳���Ă݂܂��傤�BTomcat ���ċN������K�v�͂���܂���B�u�C���X�g�[�����悤�v�œ��삳���� <code>C:\tomcat\webapps\mayaa</code> �̉��ɐV�����t�@�C����ǉ����܂��B</p>
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">更新履歴</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">スライドなど</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa 導入</a></DIV>
+<DIV class="sidemenu"><a href="#top">2. Mayaa チュートリアル</a></DIV>
+<DIV class="sidemenutext"><span>2-1. 最初の一歩</span></DIV>
+<DIV class="sidemenutext"><A href="conditional.html">2-2. 条件分岐とループ</A></DIV>
+<DIV class="sidemenutext"><A href="customtag.html">2-3. JSP カスタムタグを使う</A></DIV>
+<DIV class="sidemenutext"><A href="notation.html">2-4. 設定の記述方法</A></DIV>
+<DIV class="sidemenutext"><A href="component1.html">2-5. HTML 部品 (静的)</A></DIV>
+<DIV class="sidemenutext"><A href="component2.html">2-6. HTML 部品 (動的)</A></DIV>
+<DIV class="sidemenutext"><A href="layout.html">2-7. レイアウト共有</A></DIV>
+<DIV class="sidemenutext"><A href="deploy.html">2-8. サーバに配置する</A></DIV>
+<BR>
 
-<h2>Hello Mayaa</h2>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
+<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
+</DIV>
 
-<p>�uHello Mayaa!�v�Ƃ����\������y�[�W�����܂��B�_�~�[���b�Z�[�W���܂ރe���v���[�g <code>hello.html</code> �ƁA���̐ݒ���s�� <code>hello.mayaa</code> �����̂悤�ɍ쐬���܂��B</p>
+
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>2-1. 最初の一歩</H2>
+
+<p>最初に簡単なページを作成し、動作させてみましょう。Tomcat を再起動する必要はありません。「インストールしよう」で動作させた <code>C:\tomcat\webapps\mayaa</code> の下に新しくファイルを追加します。</p>
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">Hello Mayaa</H3>
+
+<p>「Hello Mayaa!」とだけ表示するページを作ります。ダミーメッセージを含むテンプレート <code>hello.html</code> と、その設定を行う <code>hello.mayaa</code> を次のように作成します。</p>
 
 <pre>
 <code>hello.html</code>
@@ -40,11 +65,11 @@
     &lt;m:write <strong>id="message"</strong> value="<strong>Hello Mayaa!</strong>" /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
-<p>�e���v���[�g <code>hello.html</code> ��� span �^�O�� <code>id</code> ����v������̂� mayaa �t�@�C�� <code>hello.mayaa</code> �ォ��T���A<code>value</code> �̒l�ł���uHello mayaa!�v�Ƃ���������ɒu�������ďo�͂��܂��B</p>
-<p>�u���E�U�� <code><a href="http://localhost:8080/mayaa/hello.html" target="_blank">http://localhost:8080/mayaa/hello.html</a></code> �ɃA�N�Z�X���Ă݂܂��傤�B</p>
+<p>テンプレート <code>hello.html</code> 上の span タグと <code>id</code> が一致するものを mayaa ファイル <code>hello.mayaa</code> 上から探し、<code>value</code> の値である「Hello mayaa!」という文字列に置き換えて出力します。</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello.html" target="_blank">http://localhost:8080/mayaa/hello.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
-���s���� (���s�Ȃǂ͎��ۂ̎��s���ʂƈقȂ�܂�)
+実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>Hello Mayaa!</strong>
@@ -52,9 +77,9 @@
 &lt;/html&gt;</div></pre>
 
 
-<h2>�e���v���[�g��̃^�O���c��</h2>
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">テンプレート上のタグを残す</H3>
 
-<p>mayaa �t�@�C���Ŏg�p���Ă��� <code>m:write</code> �� <code>value</code> �̒l�����̂܂܏o�͂��܂��B�e���v���[�g��̃^�O���ێ������܂ܒ��g�����������������ꍇ�́A�����Ƃ��� <code>replace="false"</code> ��ǉ����܂��B<code>replace</code> �̓e���v���[�g��̃^�O���c�����ǂ����̐ݒ�ŁA�f�t�H���g�� <code>true</code> �ł��B</p>
+<p>mayaa ファイルで使用している <code>m:write</code> は <code>value</code> の値をそのまま出力します。テンプレート上のタグを維持したまま中身だけ書き換えたい場合は、属性として <code>replace="false"</code> を追加します。<code>replace</code> はテンプレート上のタグを残すかどうかの設定で、デフォルトは <code>true</code> です。</p>
 
 <pre>
 <code>hello.html</code>
@@ -68,7 +93,7 @@
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:write id="message" value="Hello Mayaa!" <strong>replace="false"</strong> /&gt;
 &lt;/m:mayaa&gt;</div>
-���s����
+実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>&lt;span id="message"&gt;</strong>Hello Mayaa!<strong>&lt;/span&gt;</strong>
@@ -76,9 +101,9 @@
 &lt;/html&gt;</div></pre>
 
 
-<h2><a name="script">�X�N���v�g�ŃI�u�W�F�N�g���o�͂���</a></h2>
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><a name="script"></a>スクリプトでオブジェクトを出力する</H3>
 
-<p>Mayaa �ł͗l�X�ȏꏊ�ŃX�N���v�g���g�p�ł��܂��B�X�N���v�g����� JavaScript (�W���ŗ��p��������� <a href="http://www.mozilla.org/rhino/" title="Rhino: JavaScript for Java">Rhino</a>) �ł��B�X�N���v�g���g�p����Ƃ��ɂ� <code>&#36;{ }</code> �ň͂�ŋL�q���܂��B</p>
+<p>Mayaa では様々な場所でスクリプトを使用できます。スクリプト言語は JavaScript (標準で利用する実装は <a href="http://www.mozilla.org/rhino/" title="Rhino: JavaScript for Java">Rhino</a>) です。スクリプトを使用するときには <code>&#36;{ }</code> で囲んで記述します。</p>
 
 <pre>
 <code>hello.html</code>
@@ -92,20 +117,21 @@
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:write id="message" value="<strong>&#36;{ 1 + 2 }</strong>" /&gt;
 &lt;/m:mayaa&gt;</div>
-���s����
+実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>3</strong>
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<h3>request �� session ���Ɋi�[����Ă���l���g��</h3>
 
-<p>JSP �Ɠ����悤�ɃX�N���v�g���� request �� session ���g���܂��B���Ƃ��� request �X�R�[�v�ɂ��� "attributeName" �Ƃ��������̒l���擾����ɂ́A<code>&#36;{ request.getAttribute("������") }</code> �Ə����܂��B</p>
-<p>�Q�Ƃ��邾���ł���΁A�����ƊȒP�ɁA���� <code>&#36;{ ������ }</code> �ƕϐ����Ƃ��ċL�q�ł��܂��B�ϐ����X�R�[�v����T�����Ԃ́Apage �X�R�[�v�Arequest �X�R�[�v�Asession �X�R�[�v�Aapplication �X�R�[�v�̏��ŁA�ǂ��ɂ�������Ȃ��ꍇ�͗�O�𓊂��܂��B</p>
-<p>�܂��N���C�A���g���瑗�M����Ă����p�����[�^���Q�Ƃ���ɂ́A<code>&#36;{ param.�p�����[�^�� }</code> �Ƃ��܂��B���̏ꍇ�A���݂��Ȃ��p�����[�^�����w�肷��� <code>undefined</code> ���Ԃ�܂��B</p>
+<h4>■request や session 等に格納されている値を使う</h4>
 
-<p>�����ɃN���C�A���g���瑗�M����Ă����p�����[�^���Q�Ƃ��Ă݂܂��傤�B<code>hello.mayaa</code> �����̂悤�ɏ��������܂��B</p>
+<p>JSP と同じようにスクリプトから request や session を使えます。たとえば request スコープにある "attributeName" という属性の値を取得するには、<code>&#36;{ request.getAttribute("属性名") }</code> と書きます。</p>
+<p>参照するだけであれば、もっと簡単に、直接 <code>&#36;{ 属性名 }</code> と変数名として記述できます。変数をスコープから探す順番は、page スコープ、request スコープ、session スコープ、application スコープの順で、どこにも見つからない場合は例外を投げます。</p>
+<p>またクライアントから送信されてきたパラメータを参照するには、<code>&#36;{ param.パラメータ名 }</code> とします。この場合、存在しないパラメータ名を指定すると <code>undefined</code> が返ります。</p>
+
+<p>試しにクライアントから送信されてきたパラメータを参照してみましょう。<code>hello.mayaa</code> を次のように書き換えます。</p>
 
 <pre>
 <code>hello.mayaa</code>
@@ -114,30 +140,25 @@
     &lt;m:write id="message" value="Hello <strong>&#36;{ param.name }</strong>" /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
-<p>�u���E�U�� <code><a href="http://localhost:8080/mayaa/hello.html?name=world" target="_blank">http://localhost:8080/mayaa/hello.html?name=world</a></code> �ɃA�N�Z�X���Ă݂܂��傤�B</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello.html?name=world" target="_blank">http://localhost:8080/mayaa/hello.html?name=world</a></code> にアクセスしてみましょう。</p>
 
 <pre>
-���s����
+実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>Hello world</strong>
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<p>URL �œn���� name ���Q�Ƃł��܂����ˁB</p>
+<p>URL で渡した name を参照できましたね。</p>
 
+<DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
 
-</div>
+</DIV>
 
-<div class="navi">
-<a href="./usebean.html">���ǂ̂悤�Ɏg���̂�</a>
-<a href="./index.html">��index</a>
-<a href="./conditional.html">��������ƃ��[�v��</a>
-</div>
-
-<div class="footer">
-&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
-</div>
-
-</body>
-</html>
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

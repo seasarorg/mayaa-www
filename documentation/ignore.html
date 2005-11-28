@@ -1,39 +1,64 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>Mayaa : Documentation : 3-9. �w�肵�� id �������ΏۊO�ɂ���</title>
-    <link rel="STYLESHEET" href="./mayaa.css" type="text/css">
-</head>
-<body>
-<div class="header">
-<div>Mayaa : JavaServer Templates</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>3-8. id を処理対象外に : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<div class="navi">
-<a href="./remove.html">���w�肵���^�O���o�͂��Ȃ��悤�ɂ���</a>
-<a href="./index.html">��index</a>
-<a href="./comment.html">�R�����g��������</a>
-</div>
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
 
-<div class="main">
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
 
 
-<h1>3-9. �w�肵�� id �������ΏۊO�ɂ���</h1>
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">更新履歴</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">スライドなど</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa 導入</a></DIV>
+<DIV class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></DIV>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenutext"><A href="default.html">3-1. ページ共通の設定</A></DIV>
+<DIV class="sidemenutext"><A href="before_render.html">3-2. 描画前後のスクリプト</A></DIV>
+<DIV class="sidemenutext"><A href="exec.html">3-3. タグ描画時のスクリプト</A></DIV>
+<DIV class="sidemenutext"><A href="echo.html">3-4. 属性のみを置き換える</A></DIV>
+<DIV class="sidemenutext"><A href="with.html">3-5. プロセッサをまとめる</A></DIV>
+<DIV class="sidemenutext"><A href="xpath.html">3-6. id の代わりに XPath</A></DIV>
+<DIV class="sidemenutext"><A href="remove.html">3-7. タグを消す</A></DIV>
+<DIV class="sidemenutext"><span>3-8. id を処理対象外に</span></DIV>
+<DIV class="sidemenutext"><A href="comment.html">3-9. コメントを書く</A></DIV>
+<BR>
 
-<p>CSS �� JavaScript ����g�����߂� <code>id</code> �������`���Ă��AMayaa �͂�����v���Z�b�T�ɑΉ��t���悤�Ƃ��܂��B�����v�f�� Mayaa �ŏ�������ꍇ�ɂ� <a href="notation.html#mayaaid" title="�ݒ�̋L�q���@"><code>m:id</code> ���g���Ηǂ�</a>�̂ł����AMayaa �ŏ����������Ȃ��v�f�̏ꍇ������ł��傤�B</p>
-<p>�e���v���[�g��� <code>id</code> �𖳎�����ꍇ�ɂ́A<code>ignore</code> �^�O���g���Ă��� <code>id</code> �𖳎��w�肵�܂��B�v���Z�b�T�ł͂���܂���̂� xpath �w��͂ł��܂���B</p>
-<p>mayaa �t�@�C���ɑΉ�����w�肪�Ȃ��ꍇ�ɂ́A����A�N�Z�X���̃��O�Ɏ��̂悤�Ȍx�����o�͂���܂��B</p>
+<DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
+<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
+</DIV>
+
+
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>3-8. id を処理対象外に</H2>
+
+<p>CSS や JavaScript から使うために <code>id</code> 属性を定義しても、Mayaa はそれをプロセッサに対応付けようとします。同じ要素を Mayaa で処理する場合には <a href="notation.html#mayaaid" title="設定の記述方法"><code>m:id</code> を使えば良い</a>のですが、Mayaa で処理したくない要素の場合もあるでしょう。</p>
+<p>テンプレート上の <code>id</code> を無視する場合には、<code>ignore</code> タグを使ってその <code>id</code> を無視指定します。プロセッサではありませんので xpath 指定はできません。</p>
+<p>mayaa ファイルに対応する指定がない場合には、初回アクセス時のログに次のような警告が出力されます。</p>
 
 <pre>
-the injection ID(<strong>[�Ώ� ID �̒l]</strong>) is not found on the template, file://<strong>[URL]</strong>
+the injection ID(<strong>[対象 ID の値]</strong>) is not found on the template, file://<strong>[URL]</strong>
 </pre>
 
 
-<h2>�ȒP�ȗ�</h2>
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">簡単な例</H3>
 
-<p>�����ȒP�ȃT���v���Ŏ��ۂɎg���Ă݂܂��傤�B�e���v���[�g�Ƀ��X�g (<code>ul</code>) ������A���X�g�v�f (<code>li</code>) �̐擪�݂̂��g���ꍇ���l���Č��܂��傤�B</p>
+<p>ごく簡単なサンプルで実際に使ってみましょう。テンプレートにリスト (<code>ul</code>) があり、リスト要素 (<code>li</code>) の先頭のみを使う場合を考えて見ましょう。</p>
 
 <pre>
 ignore.html
@@ -49,10 +74,10 @@ ignore.mayaa
     &lt;<strong>m:ignore</strong> <strong>id="ignored"</strong> /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
-<p>�u���E�U�� <code><a href="http://localhost:8080/mayaa/ignore.html" target="_blank">http://localhost:8080/mayaa/ignore.html</a></code> �ɃA�N�Z�X���Ă݂܂��傤�B</p>
+<p>ブラウザで <code><a href="http://localhost:8080/mayaa/ignore.html" target="_blank">http://localhost:8080/mayaa/ignore.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
-���s����
+実行結果
 <div class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;span id="notfound"&gt;not found&lt;/span&gt;
@@ -60,20 +85,16 @@ ignore.mayaa
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<p>���̏������s���܂���̂ŁA�e���v���[�g�����̂܂܏o�͂���Ă���̂��킩��܂��BTomcat �̃��O�ɑO�q�̌x�����o�Ă��邱�Ƃ��m�F���Ă��������B�unotfound�v�͌x������܂����A�����w�肵�Ă���uignored�v�̌x���͏o�Ă��܂���ˁB</p>
+<p>何の処理も行いませんので、テンプレートがそのまま出力されているのがわかります。Tomcat のログに前述の警告が出ていることを確認してください。「notfound」は警告されますが、無視指定している「ignored」の警告は出ていませんね。</p>
 
 
-</div>
+<DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
 
-<div class="navi">
-<a href="./remove.html">���w�肵���^�O���o�͂��Ȃ��悤�ɂ���</a>
-<a href="./index.html">��index</a>
-<a href="./comment.html">�R�����g��������</a>
-</div>
+</DIV>
 
-<div class="footer">
-&copy;2004-2005, The Seasar Foundation and the others, all rights reserved.
-</div>
-
-</body>
-</html>
+<DIV align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2005 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>
