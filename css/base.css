@@ -166,12 +166,6 @@ pre div.file {
 	padding-top: 0;
 }
 
-#contentsline {
-	float: left;
-	width: 4px;
-	padding-top: 4px;
-}
-
 #contentsright {
 	float: left;
 	width: 554px;
@@ -183,12 +177,11 @@ pre div.file {
 
 #contentsright_top {
 	float: left;
-	width: 550px;
+	width: 554px;
 	text-align: left;
-	margin-left: 2px;
-	background-image: url(../banner/mayaa01.gif);
-	background-position: 400px 100%;
-	background-repeat: no-repeat;
+	padding-left: 6px;
+	background-image: url(../images/contents_div_gray.gif);
+	background-repeat: repeat-y;
 }
 
 .text10px {
@@ -221,6 +214,12 @@ pre div.file {
 	margin: 0;
 	padding-left: 0;
 	margin-left: 20px;
+}
+
+.banner {
+	float: right;
+	padding: 0;
+	margin: 0;
 }
 
 .download div {
