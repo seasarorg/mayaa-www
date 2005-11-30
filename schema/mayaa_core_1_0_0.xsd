@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m="http://mayaa.seasar.org" targetNamespace="http://mayaa.seasar.org" elementFormDefault="qualified">
+	<xs:element name="mayaa">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="m:beforeRender" minOccurs="0"/>
+				<xs:element ref="m:afterRender" minOccurs="0"/>
+				<xs:element ref="m:comment" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="m:write" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="m:if" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="m:for" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="m:with" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="m:exec" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="m:insert" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="m:doRender" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="m:null" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="m:element" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="m:echo" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="m:ignore" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:attribute name="noCache" type="xs:boolean" default="false" use="optional"/>
+			<xs:attribute name="templateSuffix" type="xs:string" use="optional"/>
+			<xs:attribute name="contentType" type="xs:string" use="optional"/>
+			<xs:attribute name="extends" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:attributeGroup name="IDInjectionAttributeGroup">
+		<xs:attribute name="id" type="xs:string" use="required"/>
+		<xs:attribute name="xpath" type="xs:string" use="prohibited"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="XPathInjectionAttributeGroup">
+		<xs:attribute name="id" type="xs:string" use="prohibited"/>
+		<xs:attribute name="xpath" type="xs:string" use="required"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="NoInjectionAttributeGroup">
+		<xs:attribute name="id" type="xs:string" use="prohibited"/>
+		<xs:attribute name="xpath" type="xs:string" use="prohibited"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="injectionAttributeGroup">
+		<xs:attribute name="id" type="xs:string"/>
+		<xs:attribute name="xpath" type="xs:string"/>
+	</xs:attributeGroup>
+
+	<xs:attributeGroup name="anyAttributeGroup">
+		<xs:anyAttribute namespace="##any" processContents="lax"/>
+	</xs:attributeGroup>
+	<xs:element name="beforeRender" type="xs:string"/>
+	<xs:element name="afterRender" type="xs:string"/>
+	<xs:element name="attribute">
+		<xs:complexType>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="value" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="comment">
+		<xs:complexType mixed="true">
+			<xs:attributeGroup ref="m:injectionAttributeGroup"/>
+			<xs:attribute name="replace" type="xs:boolean" default="true"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="doBase"/>
+	<xs:element name="doBody"/>
+	<xs:element name="doRender">
+		<xs:complexType>
+			<xs:attributeGroup ref="m:injectionAttributeGroup"/>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="replace" type="xs:boolean" default="true"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="echo">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="m:anyElements">
+					<xs:attributeGroup ref="m:anyAttributeGroup"/>
+					<xs:attributeGroup ref="m:injectionAttributeGroup"/>
+					<xs:attribute name="replace" type="xs:boolean" default="true"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="element">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="m:doBody" minOccurs="0"/>
+				<xs:element ref="m:attribute" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attributeGroup ref="m:anyAttributeGroup"/>
+			<xs:attributeGroup ref="m:injectionAttributeGroup"/>
+			<xs:attribute name="replace" type="xs:boolean" default="true"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="exec">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="m:anyElements">
+					<xs:attribute name="script" type="xs:string"/>
+					<xs:attribute name="src" type="xs:string"/>
+					<xs:attribute name="encoding" type="xs:string"/>
+					<xs:attributeGroup ref="m:injectionAttributeGroup"/>
+					<xs:attribute name="replace" type="xs:boolean" default="true"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="for">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="m:anyElements">
+					<xs:attribute name="init" type="xs:string" use="required"/>
+					<xs:attribute name="test" type="xs:string" use="required"/>
+					<xs:attribute name="after" type="xs:string" use="required"/>
+					<xs:attribute name="max" type="xs:integer"/>
+					<xs:attributeGroup ref="m:injectionAttributeGroup"/>
+					<xs:attribute name="replace" type="xs:boolean" default="true"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="if">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="m:anyElements">
+					<xs:attribute name="test" type="xs:string" use="required"/>
+					<xs:attributeGroup ref="m:injectionAttributeGroup"/>
+					<xs:attribute name="replace" type="xs:boolean" default="true"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ignore">
+		<xs:complexType>
+			<xs:attributeGroup ref="m:injectionAttributeGroup"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="insert">
+		<xs:complexType>
+			<xs:attribute name="path" type="xs:string" use="required"/>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attributeGroup ref="m:anyAttributeGroup"/>
+			<xs:attributeGroup ref="m:injectionAttributeGroup"/>
+			<xs:attribute name="replace" type="xs:boolean" default="true"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="null">
+		<xs:complexType>
+			<xs:attributeGroup ref="m:injectionAttributeGroup"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="with">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="m:anyElements">
+					<xs:attributeGroup ref="m:injectionAttributeGroup"/>
+					<xs:attribute name="replace" type="xs:boolean" default="true"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="write">
+		<xs:complexType>
+			<xs:attribute name="value" type="xs:string" use="required"/>
+			<xs:attribute name="default" type="xs:string"/>
+			<xs:attribute name="escapeXml" type="xs:boolean" default="false"/>
+			<xs:attribute name="escapeWhitespace" type="xs:boolean" default="false"/>
+			<xs:attributeGroup ref="m:injectionAttributeGroup"/>
+			<xs:attribute name="replace" type="xs:boolean" default="true"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="anyElements" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="anyMayaaElements" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="m:doBody" minOccurs="0"/>
+			<xs:element ref="m:doBase" minOccurs="0"/>
+			<xs:element ref="m:comment" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="m:write" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="m:if" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="m:for" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="m:with" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="m:exec" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="m:insert" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="m:element" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>
