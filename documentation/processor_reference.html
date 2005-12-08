@@ -135,7 +135,7 @@
 <li>1 回の処理の最初に <code>test</code> を実行し、<code>true</code> ならループ処理を続行し、<code>false</code> ならループ処理を終了します。</li>
 <li>1 回の処理の最後に <code>after</code> を実行します。</li>
 </ol>
-<P class="nomagin-top">ループ回数の上限を指定している場合、ループ回数が上限数以上になると例外が発生します。(<code>org.seasar.maya.impl.engine.processor.TooManyLoopException</code>)</P>
+<P class="nomagin-top">無限ループを避けるため、ループ回数が上限数以上になると例外が発生します。(<code>org.seasar.maya.impl.engine.processor.TooManyLoopException</code>)</P>
 <table align="center" cellpadding="5" cellspacing="2" class="tbline">
 <thead>
 <tr>
