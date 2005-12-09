@@ -21,14 +21,32 @@
 <DIV class="maincontents">
 <DIV ID="contentsleft">
 <IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
-<DIV class="sidemenu"><A href="index.html#changelog">変更履歴</A></DIV>
 <DIV class="sidemenu"><A href="index.html#new">最新のリリース</A></DIV>
+<DIV class="sidemenu"><A href="index.html#changelog">変更履歴</A></DIV>
 <DIV class="sidemenu"><A href="index.html#sample">サンプル</A></DIV>
+<!--
 <DIV class="sidemenu"><A href="index.html#past">過去のリリース</A></DIV>
+-->
+<DIV class="sidemenu"><A href="index.html#source">ソースコード</A></DIV>
 </DIV>
 
 <DIV ID="contentsright">
 <H1>Release Note</H1>
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="1.0.0-beta2"></A>変更点 1.0.0-beta1 -> 1.0.0-beta2 (2005/12/09)</H3>
+<ul>
+<li>Mayaaエンジン設定に「templatePathPattern」を追加しました。値として正規表現を取ります。Mayaaがテンプレートとして扱うかどうかは、この正規表現にマッチするかどうかで判定します (requestedPathと完全マッチ)。デフォルトでは設定なしで、すべてをテンプレートとして扱います。</li>
+<li>Mayaaエンジン設定に「notTemplatePathPattern」を追加しました。値として正規表現を取ります。Mayaaがテンプレートとして扱うかどうかは、この正規表現にマッチしないかどうかで判定します (requestedPathと完全マッチ)。デフォルトではパターンなしです。</li>
+<li>templatePathPattern, およびnotTemplatePathPatternは複数指定でき、後に書いた方から順番に判定されます。</li>
+<li>web.xmlのtaglib-locationにjarファイル名を書いた場合、jar内のMETA-INF/taglib.tldにtaglib-uriをマッピングするよう修正しました。(WEB-INF/libにあるjarのみです)</li>
+<li>ファイルのタイムスタンプをチェックする回数を減らし、パフォーマンスを向上させました。</li>
+</ul>
+
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="1.0.0-beta1-a"></A>臨時：導入 War のみ (2005/12/07)</H3>
+<ul>
+<li>導入 War のパッケージングを修正しました。context ルートにアクセスするために /samples/ を通す必要があったものを、ドキュメントどおりにアクセスできるようにしました。</li>
+</ul>
 
 
 <H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="1.0.0-beta1"></A>変更点 0.9.20a -> 1.0.0-beta1 (2005/11/28)</H3>

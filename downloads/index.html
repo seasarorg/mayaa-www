@@ -35,22 +35,33 @@
 
 <H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="new"></A>最新のリリース</H3>
 
-<h4>Mayaa 1.0.0-beta1 (2005/11/28)</h4>
+<h4>Mayaa 1.0.0-beta2 (2005/12/09)</h4>
 <BR>
 <DIV class="download_direct">
-	<DIV><a href="mayaa-1.0.0-beta1.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Blank War</a></DIV>
-	<DIV><a href="mayaa-getting-started-1.0.0-beta1_a.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> 導入 War</a> (<a href="../documentation/install.html">インストール方法</a>) (臨時更新: 12/07)</DIV>
-	<DIV><a href="mayaa-project-1.0.0-beta1.zip"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Eclipse Project Zip</a></DIV>
+	<DIV><a href="mayaa-1.0.0-beta2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Blank War</a></DIV>
+	<DIV><a href="mayaa-getting-started-1.0.0-beta2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> 導入 War</a> (<a href="../documentation/install.html">インストール方法</a>) (臨時更新: 12/07)</DIV>
+	<DIV><a href="mayaa-project-1.0.0-beta2.zip"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Eclipse Project Zip</a></DIV>
 </DIV>
 
 
 <H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="changelog"></A>変更履歴</H3>
 <div class="releasenote">(<a href="releasenotes.html">過去の変更履歴</a>)</div>
 
+<H4><A name="1.0.0-beta2"></A>変更点 1.0.0-beta1 -> 1.0.0-beta2 (2005/12/09)</H4>
+<ul>
+<li>Mayaaエンジン設定に「templatePathPattern」を追加しました。値として正規表現を取ります。Mayaaがテンプレートとして扱うかどうかは、この正規表現にマッチするかどうかで判定します (requestedPathと完全マッチ)。デフォルトでは設定なしで、すべてをテンプレートとして扱います。</li>
+<li>Mayaaエンジン設定に「notTemplatePathPattern」を追加しました。値として正規表現を取ります。Mayaaがテンプレートとして扱うかどうかは、この正規表現にマッチしないかどうかで判定します (requestedPathと完全マッチ)。デフォルトではパターンなしです。</li>
+<li>templatePathPattern, およびnotTemplatePathPatternは複数指定でき、後に書いた方から順番に判定されます。</li>
+<li>web.xmlのtaglib-locationにjarファイル名を書いた場合、jar内のMETA-INF/taglib.tldにtaglib-uriをマッピングするよう修正しました。(WEB-INF/libにあるjarのみです)</li>
+<li>ファイルのタイムスタンプをチェックする回数を減らし、パフォーマンスを向上させました。</li>
+</ul>
+
+
 <H4><A name="1.0.0-beta1-a"></A>臨時：導入 War のみ (2005/12/07)</H4>
 <ul>
 <li>導入 War のパッケージングを修正しました。context ルートにアクセスするために /samples/ を通す必要があったものを、ドキュメントどおりにアクセスできるようにしました。</li>
 </ul>
+
 
 <H4><A name="1.0.0-beta1"></A>変更点 0.9.20a -> 1.0.0-beta1 (2005/11/28)</H4>
 <ul>
@@ -63,19 +74,14 @@
 <li>mayaaファイルでredirectした場合、responseを一度flushしないと例外が発生していたのを修正しました。</li>
 </ul>
 
-<H4><A name="0.9.20a"></A>変更点 0.9.20 -> 0.9.20a (2005/11/16)</H4>
-<ul>
-<li>プロセッサプロパティの自動設定機能は意図しない動作を引き起こす場合があるため、動作しないようにしました。</li>
-</ul>
-
 
 <H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="sample"></A>サンプル</H3>
 <ul>
-	<li>Mayaaの単独利用例：<br><a href="mayaa-sample-1.0.0-beta1.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Mayaaサンプル集</a> 2005/11/28</li>
-	<li>Strutsを利用した例：<br><a href="mayaa-hangman-struts-1.0.0-beta1.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Struts利用版Hangmanゲーム</a> 2005/11/28</li>
-	<li>Mayaaで簡易なMVCを実現した例：<br><a href="mayaa-hangman-solo-1.0.0-beta1.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Mayaa単独版Hangmanゲーム</a> 2005/11/28</li>
-	<li>Mayaaの内部API利用例：<br><a href="mayaa-libman-1.0.0-beta1.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Libman - Mayaa Library Manager</a> 2005/11/28</li>
-	<li>アプリケーション例：<br><a href="mayaa-sample-app-1.0.0-beta1.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> 申し込みフォームアプリケーション</a> (S2Struts, HSQLDB) 2005/11/28</li>
+	<li>Mayaaの単独利用例：<br><a href="mayaa-sample-1.0.0-beta2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Mayaaサンプル集</a> 2005/12/09</li>
+	<li>Strutsを利用した例：<br><a href="mayaa-hangman-struts-1.0.0-beta2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Struts利用版Hangmanゲーム</a> 2005/12/09</li>
+	<li>Mayaaで簡易なMVCを実現した例：<br><a href="mayaa-hangman-solo-1.0.0-beta2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Mayaa単独版Hangmanゲーム</a> 2005/12/09</li>
+	<li>Mayaaの内部API利用例：<br><a href="mayaa-libman-1.0.0-beta2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Libman - Mayaa Library Manager</a> 2005/12/09</li>
+	<li>アプリケーション例：<br><a href="mayaa-sample-app-1.0.0-beta2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> 申し込みフォームアプリケーション</a> (S2Struts, HSQLDB) 2005/12/09</li>
 </ul>
 
 
