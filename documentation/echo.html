@@ -171,7 +171,12 @@ echo_list.mayaa
 &lt;/html&gt;
 </div></pre>
 
-<p>テンプレートの属性値は文字列であるため、数値として演算する場合には <code>Number</code> に変換する必要があります。</p>
+<h4>注意点</h4>
+
+<ul>
+<li>テンプレートの属性値は文字列であるため、数値として演算する場合には <code>Number</code> に変換する必要があります。</li>
+<li>"<code>class</code>" など、JavaScript の予約語になっている属性名の場合、<code>page['class']</code> のように <code>page</code> スコープの属性であることを明示する必要があります。</li>
+</ul>
 
 
 <DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
