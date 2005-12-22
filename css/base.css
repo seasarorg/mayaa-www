@@ -364,6 +364,11 @@ table.tbline th {
 	color: #1C4BAF;
 }
 
+.omit {
+	font-style: italic;
+	color: #6060F0;
+}
+
 .center {
 	text-align: center;
 }
