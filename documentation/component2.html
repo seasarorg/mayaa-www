@@ -120,7 +120,7 @@
 <h3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">親ページからコンポーネントに変数を渡す</h3>
 
 <p>親ページから変数を明示的にコンポーネントへ渡すこともできます。<code>m:insert</code> タグの属性として「変数名="値"」と書くことで、指定した変数をコンポーネントに渡すことになります。コンポーネントのタイトルやキャプションを指定する場合などに便利です。</p>
-<P>渡された変数を参照する場合、<code>&#36;{ binding.変数名 }</code> と書きます。存在しない変数名を指定すると <code>undefined</code> が返ります。</P>
+<P>渡された変数を参照する場合、<code>&#36;{ binding.変数名 }</code> と書きます。存在しない変数名を指定すると <code>null</code> が返ります。</P>
 
 <pre>
 <code>hello.html</code>

@@ -74,7 +74,7 @@
 
 <dl class="list">
 <dt><code>getAttribute(String name)</code></dt>
-<dd>指定名の属性をスコープから取得します。スコープ内になければ <code>undefined</code> を返します。</dd>
+<dd>指定名の属性をスコープから取得します。スコープ内になければ <code>null</code> を返します。</dd>
 <dt><code>setAttribute(String name, Object value)</code></dt>
 <dd>指定名の属性をスコープにセットします。読み込み専用スコープの場合は例外を投げます。(<code>org.seasar.mayaa.impl.cycle.scope.ScopeNotWritableException</code>)</dd>
 <dt><code>removeAttribute(String name)</code></dt>
