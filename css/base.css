@@ -11,12 +11,6 @@ body {
 	background-position: center center;
 }
 
-.topbar {
-	background-image: url(../images/topbar.gif);
-	background-repeat: no-repeat;
-	background-position: center top;
-}
-
 img {
 	border: none
 }
@@ -404,4 +398,41 @@ dl.list dd {
 	font-size: 12px;
 	margin-bottom: 1em;
 	margin-left: 20px;
+}
+
+@media print {
+
+	#contentsleft {
+		display: none;
+	}
+
+	#contentsright {
+		width: 100%;
+		padding-left: 0;
+		background-image: none;
+	}
+
+	#contentsright_top {
+		width: 100%;
+		padding-left: 0;
+		background-image: none;
+	}
+
+	.navi {
+		display: none;
+	}
+
+	.contentslogo {
+		display: none;
+	}
+
+	.menudocs {
+		display: none;
+	}
+
+	.background {
+		background-image: none;
+		background-color: white;
+	}
+
 }

@@ -77,7 +77,7 @@
 
 <h4>■Mayaa のスクリプトと式言語の違い</h4>
 
-<p>Mayaa のスクリプトは JavaScript (ECMA Script: 実装は <a href="http://www.mozilla.org/rhino/" title="Rhino - JavaScript for Java">Rhino</a>) です。文法は当然 Java と異なりますが、それ以外にも最終結果として Java のオブジェクトまたはプリミティブ値として返すときに期待する動作と異なる場合があります。</p>
+<p>Mayaa のスクリプトは JavaScript (ECMA Script: 実装は <a href="http://www.mozilla.org/rhino/" title="Rhino - JavaScript for Java">Rhino (http://www.mozilla.org/rhino/)</a>) です。文法は当然 Java と異なりますが、それ以外にも最終結果として Java のオブジェクトまたはプリミティブ値として返すときに期待する動作と異なる場合があります。</p>
 <p>たとえば「<a href="hello.html#script" title="2-1. 最初の一歩">スクリプトでオブジェクトを出力する</a>」の例では、結果として「3」を期待したところ「3.0」が返ってきました。これは JSP カスタムタグが Object 型を受け取るように作られているために型を決定できず、最も精度の高い double で渡していることが原因です。</p>
 <p>この例の場合に限れば、文字列に変換した後で渡す <code>fmt:numberFormat</code> を使うなどの回避策があります。式言語の暗黙的な動作を期待しているカスタムタグの場合はこのような回避策を取る必要があるかもしれません。</p>
 
