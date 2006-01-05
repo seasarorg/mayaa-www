@@ -44,8 +44,7 @@ div.navi {
 }
 
 div.copyrights {
-    text-align: center;
-    border: 1px solid red;
+	text-align: center;
 }
 
 .sidemenu a{
@@ -139,7 +138,7 @@ pre div.file {
 .indexmenu {
 	width: 760px;
 	height: 175px;
-    background-color: white;
+	background-color: white;
 	background-image: url(../images/menuback.jpg);
 	background-repeat: no-repeat;
 }
@@ -315,11 +314,11 @@ span.top_recent {
 }
 
 p.nomagin-top {
-    margin-top: 0;
+	margin-top: 0;
 }
 
 p.nomagin-bottom {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 table.tbline {
@@ -433,6 +432,10 @@ dl.list dd {
 	.background {
 		background-image: none;
 		background-color: white;
+	}
+
+	div.copyrights {
+		display: none;
 	}
 
 }
