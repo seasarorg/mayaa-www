@@ -61,6 +61,7 @@
 
 <H4><a name="write"></a>■write プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></H4>
 <P>オブジェクトを文字列として出力します。</P>
+<p>(<strong>※</strong>:beta3で変更・追加されたもの)</p>
 <table align="center" cellpadding="5" cellspacing="2" class="tbline">
 <thead>
 <tr>
@@ -91,7 +92,7 @@
 <td>value の<br>&amp; , &lt; , &gt; , &quot; , &#39;<br>を<br>&amp;amp; , &amp;lt; , &amp;gt; , &amp;quot; , &amp;#39;<br>に置換する。</td>
 <td>&nbsp;</td>
 <td>論理値</td>
-<td>false</td>
+<td>true<strong>(※)</strong></td>
 </tr>
 <tr>
 <td nowrap>escapeWhitespace</td>
@@ -99,6 +100,13 @@
 <td>&nbsp;</td>
 <td>論理値</td>
 <td>false</td>
+</tr>
+<tr>
+<td nowrap>escapeEol<strong>(※)</strong></td>
+<td>value の改行コード (CRLF, CR, LF) を<br>&lt;br /&gt; に置換する。</td>
+<td>&nbsp;</td>
+<td>論理値</td>
+<td>true</td>
 </tr>
 </tbody>
 </table>
