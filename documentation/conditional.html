@@ -137,7 +137,7 @@
             value="Hello Mayaa!<strong>&amp;lt;br&amp;gt;</strong>" <strong>escapeXml="false"</strong> /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
-<p>動作は Java の for 文と同じです。mayaa ファイルにある <code>m:for</code> は、最初に一度だけ <code>init</code> を実行します。その後、<code>test</code> を評価して結果が <code>true</code> になるならボディを実行し、最後に <code>after</code> を実行してから <code>test</code> の評価に戻ります。(実行結果を見やすくするため、"<code>Hello Mayaa!</code>" の後ろに <code>&lt;br&gt;</code> を付けています)</p>
+<p>動作は Java の for 文と同じです。mayaa ファイルにある <code>m:for</code> は、最初に一度だけ <code>init</code> を実行します。その後、<code>test</code> を評価して結果が <code>true</code> になるならボディを実行し、最後に <code>after</code> を実行してから <code>test</code> の評価に戻ります。(実行結果を見やすくするため、"<code>Hello Mayaa!</code>" の後ろに <code>&lt;br&gt;</code> を付け、タグをそのまま出力するよう <a href="processor_reference.html#write" title="プロセッサリファレンス">escapeXml 属性</a>を false に設定しています)</p>
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/for.html" target="_blank">http://localhost:8080/mayaa/for.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
