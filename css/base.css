@@ -349,6 +349,10 @@ table.tbline th {
 	border-right-color: #C0C0C0;
 }
 
+table.tbline th div {
+	text-align: center;
+}
+
 .figure {
 	text-align: center;
 	margin-left: 5px;
