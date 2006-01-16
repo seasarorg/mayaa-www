@@ -10,6 +10,9 @@
 				<xs:element ref="m:write" minOccurs="0" maxOccurs="unbounded"/>
 				<xs:element ref="m:if" minOccurs="0" maxOccurs="unbounded"/>
 				<xs:element ref="m:for" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="m:forEach" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="m:formatDate" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="m:formatNumber" minOccurs="0" maxOccurs="unbounded"/>
 				<xs:element ref="m:with" minOccurs="0" maxOccurs="unbounded"/>
 				<xs:element ref="m:exec" minOccurs="0" maxOccurs="unbounded"/>
 				<xs:element ref="m:insert" minOccurs="0" maxOccurs="unbounded"/>
@@ -119,11 +122,48 @@
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
+	<xs:element name="forEach">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="m:anyElements">
+					<xs:attribute name="items" type="xs:string" use="required"/>
+					<xs:attribute name="var" type="xs:string" use="required"/>
+					<xs:attribute name="index" type="xs:string" use="required"/>
+					<xs:attributeGroup ref="m:injectionAttributeGroup"/>
+					<xs:attribute name="replace" type="xs:boolean" default="true"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
 	<xs:element name="if">
 		<xs:complexType>
 			<xs:complexContent>
 				<xs:extension base="m:anyElements">
 					<xs:attribute name="test" type="xs:string" use="required"/>
+					<xs:attributeGroup ref="m:injectionAttributeGroup"/>
+					<xs:attribute name="replace" type="xs:boolean" default="true"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="formatNumber">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="m:anyElements">
+					<xs:attribute name="value" type="xs:string" use="required"/>
+					<xs:attribute name="pattern" type="xs:string"/>
+					<xs:attributeGroup ref="m:injectionAttributeGroup"/>
+					<xs:attribute name="replace" type="xs:boolean" default="true"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="formatDate">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="m:anyElements">
+					<xs:attribute name="value" type="xs:string" use="required"/>
+					<xs:attribute name="pattern" type="xs:string"/>
 					<xs:attributeGroup ref="m:injectionAttributeGroup"/>
 					<xs:attribute name="replace" type="xs:boolean" default="true"/>
 				</xs:extension>
