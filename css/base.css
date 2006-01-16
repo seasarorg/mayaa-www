@@ -313,11 +313,11 @@ span.top_recent {
 	color: #1C4BAF;
 }
 
-p.nomagin-top {
+.nomargin-top {
 	margin-top: 0;
 }
 
-p.nomagin-bottom {
+.nomargin-bottom {
 	margin-bottom: 0;
 }
 
