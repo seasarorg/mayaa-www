@@ -32,6 +32,8 @@
 <DIV class="sidemenutext"><span>4-2. 定義済みオブジェクト</span></DIV>
 <BR>
 <DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
+<br>
+<DIV class="sidemenu"><a href="link.html">外部へのリンク</a></DIV>
 </DIV>
 
 
@@ -56,6 +58,7 @@
 	<li><a href="#headerValues">headerValues: リクエストヘッダスコープ (配列)</a></li>
 </ul></li>
 <li><a href="#response">response: レスポンス</a></li>
+<li><a href="#functions">グローバル関数</a></li>
 </ul>
 </div>
 
@@ -158,6 +161,26 @@
 <dd>バッファされた <code>Writer</code> を取得します。</dd>
 <dt><code>flush()</code></dt>
 <dd>レスポンスのバッファを強制的に出力します。</dd>
+</dl>
+
+
+<h3><a name="functions"></a><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">グローバル関数 <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
+
+<p>Mayaa 独自の関数として、forward, redirect, error, load の 4 つ (引数の違うものも含めると 6 つ) が定義されています。これらは Mayaa 上のスクリプトから呼び出せます。</p>
+
+<dl class="list">
+<dt><code>forward(String path)</code></dt>
+<dd>リクエストを指定したパスに転送します。</dd>
+<dt><code>redirect(String path)</code></dt>
+<dd>指定したパスへのリダイレクト応答を送信します。</dd>
+<dt><code>error(int errorCode)</code></dt>
+<dd>指定した HTTP ステータスコードの HTTP エラー応答を送信します。(<code>403</code>, <code>404</code>, <code>500</code> など)</dd>
+<dt><code>error(int errorCode, String message)</code></dt>
+<dd>指定した HTTP ステータスコード、エラーメッセージの HTTP エラー応答を送信します。</dd>
+<dt><code>load(String scriptPath)</code></dt>
+<dd>指定したパスのスクリプトを読み込み、実行します。文字コードは UTF-8 とします。<code>exec</code> プロセッサの <code>src</code> 属性を使う場合と同様です。</dd>
+<dt><code>load(String scriptPath, String encoding)</code></dt>
+<dd>指定したパスのスクリプトを指定した文字コードで読み込み、実行します。<code>exec</code> プロセッサの <code>src</code> 属性、<code>encoding</code> 属性を使う場合と同様です。</dd>
 </dl>
 
 

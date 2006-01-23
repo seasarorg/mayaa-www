@@ -2,7 +2,7 @@
 <HTML lang="ja">
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=utf-8">
-<TITLE>Appendix 2. JavaScript Tips : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<TITLE>外部へのリンク : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
 <LINK href="../css/base.css" rel="stylesheet" type="text/css">
 <LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
 </HEAD>
@@ -29,52 +29,20 @@
 <DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
 <DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
 <DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
-<DIV class="sidemenutext"><a href="mayaa_customtag_diff.html">A-1. カスタムタグの注意点</a></DIV>
-<DIV class="sidemenutext"><span>A-2. JavaScript Tips</span></DIV>
-<DIV class="sidemenutext"><a href="note.html">A-3. その他の注意点</a></DIV>
-<BR>
-<DIV class="sidemenu"><a href="link.html">外部へのリンク</a></DIV>
+<br>
+<DIV class="sidemenu"><a href="#top">外部へのリンク</a></DIV>
 </DIV>
 
 
 <DIV ID="contentsright">
 <H1><A name="top"></A>Documentation</H1>
-<H2>Appendix 2. JavaScript Tips</H2>
-
-<div class="toc">
-<a name="toc">目次</a>
-<ul>
-<li><a href="#javaclass">Java のクラスを使う</a></li>
-<li><a href="#exception">例外を処理する</a></li>
-</ul>
-</div>
+<H2>外部へのリンク</H2>
 
 
-<H3><a name="javaclass"></a><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">Java のクラスを使う <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></H3>
+<h3><a name="netbeans"></a><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">NetBeans 5 で Mayaa を使う</h3>
 
-<p>Java のクラスは、<code>java.lang.String</code> や <code>java.util.ArrayList</code> のようにパッケージが "<code>java.</code>" で始まるクラスであれば、完全修飾名をそのまま書くだけで利用できます。しかしそれ以外のパッケージ ("<code>org.</code>" や "<code>com.</code>" など) の場合、先頭に "<code>Packages.</code>" を付ける必要があります。</p>
+<p><a href="http://www.fk.urban.ne.jp/home/kishida/" title="Kishida's SITE">きしだなおき</a>さんが <a href="http://www.fk.urban.ne.jp/home/kishida/kouza/mayaa/mayaa.html" title="Webフレームワークモジュール">NetBeans 5 で Mayaa モジュールを作る過程</a>を丁寧に説明されています。</p>
 
-<pre>
-例:
-var list = new java.util.ArrayList();
-var myClass = new <strong>Packages.</strong>org.example.MyClass();
-</pre>
-
-
-<H3><a name="exception"></a><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">例外を処理する <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></H3>
-
-<p>JavaScript にも try ～ catch 構文はありますので、Java で発生した例外を JavaScript で処理することもできます。Java でアプリケーションを作るときには Java 内で処理するでしょうから、デバッグ時には役立つかもしれません。</p>
-
-<pre>
-var catched = "";
-<strong>try {</strong>
-    var list = myLogic.findByName(name);
-<strong>} catch (e) {</strong>
-    catched = e;
-<strong>}</strong>
-
-&lt;m:write id="error" value="&#36;{ catched }" /&gt;
-</pre>
 
 
 <DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
