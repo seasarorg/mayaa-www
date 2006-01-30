@@ -24,14 +24,21 @@
 <DIV class="sidemenu"><A href="index.html#new">最新のリリース</A></DIV>
 <DIV class="sidemenu"><A href="index.html#changelog">変更履歴</A></DIV>
 <DIV class="sidemenu"><A href="index.html#sample">サンプル</A></DIV>
-<!--
 <DIV class="sidemenu"><A href="index.html#past">過去のリリース</A></DIV>
--->
 <DIV class="sidemenu"><A href="index.html#source">ソースコード</A></DIV>
 </DIV>
 
 <DIV ID="contentsright">
 <H1>Release Note</H1>
+
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="1.0.0"></A>変更点 1.0.0 -> 1.0.1 (2006/01/30)</H3>
+<ul>
+<li>予約名前空間"xml"を使った場合、名前空間"xml"を定義していない場合に例外が発生する問題を修正しました。</li>
+<li>forEachプロセッサに単純なオブジェクト以外を使うと例外が出る問題を修正しました。</li>
+<li>forEachプロセッサでスレッド再利用時にNullPointerExceptionが出る問題を修正しました。</li>
+<li>JspFactoryを受け取れなかった場合のJSPバージョンを2.0としました。</li>
+<li>ライブラリのprefixマッピングで"/"開始のときはディレクトリ存在チェックをし、存在しなければInsertに変換しないようにしました。</li>
+</ul>
 
 <H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="1.0.0"></A>変更点 1.0.0-rc1 -> 1.0.0 (2006/01/23)</H3>
 <ul>
