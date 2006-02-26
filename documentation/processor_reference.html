@@ -31,6 +31,7 @@
 <DIV class="sidemenutext"><span>4-1. プロセッサ リファレンス</span></DIV>
 <DIV class="sidemenutext"><a href="implicit_object.html">4-2. 定義済みオブジェクト</a></DIV>
 <BR>
+<DIV class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></DIV>
 <DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
 <br>
 <DIV class="sidemenu"><a href="link.html">外部へのリンク</a></DIV>
@@ -126,7 +127,6 @@
 </table>
 
 <h4><a name="formatDate"></a>■formatDate プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
-<p><strong>※</strong> RC1 で追加されました。</p>
 <P>日付を指定したパターンにフォーマットして出力します。value に null を渡した場合は何も出力しません。</P>
 <table align="center" cellpadding="5" cellspacing="2" class="tbline">
 <thead><tr><th nowrap><DIV>属性名</DIV></th><th nowrap><DIV>説明</DIV></th><th><DIV>必須</DIV></th><th><DIV>値の制限</DIV></th><th><DIV>規定値</DIV></th></tr></thead>
@@ -150,7 +150,6 @@
 </table>
 
 <h4><a name="formatNumber"></a>■formatNumber プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
-<p><strong>※</strong> RC1 で追加されました。</p>
 <P>数値を指定したパターンにフォーマットして出力します。value に null を渡した場合は何も出力しません。</P>
 <table align="center" cellpadding="5" cellspacing="2" class="tbline">
 <thead><tr><th nowrap><DIV>属性名</DIV></th><th nowrap><DIV>説明</DIV></th><th><DIV>必須</DIV></th><th><DIV>値の制限</DIV></th><th><DIV>規定値</DIV></th></tr></thead>
@@ -175,7 +174,7 @@
 
 <h4><a name="write"></a>■write プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
 <P>オブジェクトを文字列として出力します。</P>
-<p>(<strong>※</strong>:beta3で変更・追加されたもの)</p>
+<p>(<strong>※</strong>:1.0.2で変更されたもの)</p>
 <table align="center" cellpadding="5" cellspacing="2" class="tbline">
 <thead><tr><th nowrap><DIV>属性名</DIV></th><th nowrap><DIV>説明</DIV></th><th><DIV>必須</DIV></th><th><DIV>値の制限</DIV></th><th><DIV>規定値</DIV></th></tr></thead>
 </thead>
@@ -189,7 +188,7 @@
 </tr>
 <tr>
 	<td nowrap>default</td>
-	<td nowrap>value が null の場合に出力する値。</td>
+	<td nowrap>value が null の場合に出力する値。<br>(escapeXml, escapeWhitespace, escapeEol<br>による置換処理の対象になりません)<strong>(※)</strong></td>
 	<td></td>
 	<td></td>
 	<td></td>
@@ -199,7 +198,7 @@
 	<td>value の<br>&amp; , &lt; , &gt; , &quot; , &#39;<br>を<br>&amp;amp; , &amp;lt; , &amp;gt; , &amp;quot; , &amp;#39;<br>に置換する。</td>
 	<td></td>
 	<td>論理値</td>
-	<td>true<strong>(※)</strong></td>
+	<td>true</td>
 </tr>
 <tr>
 	<td nowrap>escapeWhitespace</td>
@@ -209,7 +208,7 @@
 	<td>false</td>
 </tr>
 <tr>
-	<td nowrap>escapeEol<strong>(※)</strong></td>
+	<td nowrap>escapeEol</td>
 	<td>value の改行コード (CRLF, CR, LF) を<br>br タグに置換する。</td>
 	<td></td>
 	<td>論理値</td>
@@ -265,7 +264,6 @@
 </table>
 
 <h4><a name="forEach"></a>■forEach プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
-<p><strong>※</strong> RC1 で追加されました。</p>
 <P>タグのボディが有効です。</P>
 <P>items の値を繰り返し処理します。現在の要素は var 属性で指定した名前の変数に格納され、繰り返し回数は index 属性で指定した名前の変数に格納されます (0 から始まります)。</p>
 <p>items には java.util.Collection、java.util.Iterator、java.util.Enumeration、java.util.Map を実装したものと、配列を使えます。Iterator、Enumeration、配列はそのままの順番で処理します。Collection は iterator メソッドで取得した Iterator の順番で処理します。</p>

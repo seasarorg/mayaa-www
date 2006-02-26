@@ -2,7 +2,7 @@
 <HTML lang="ja">
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=utf-8">
-<TITLE>外部へのリンク : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<TITLE>5-1. エンジン設定方法 : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
 <LINK href="../css/base.css" rel="stylesheet" type="text/css">
 <LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
 </HEAD>
@@ -28,22 +28,53 @@
 <DIV class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></DIV>
 <DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
 <DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
-<DIV class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></DIV>
+<DIV class="sidemenu"><a href="#top">5. エンジン設定</a></DIV>
+<DIV class="sidemenutext"><span>5-1. エンジン設定方法</span></DIV>
+<DIV class="sidemenutext"><a href="jsp_template_attribute.html">5-2. 属性自動セット</a></DIV>
+<BR>
 <DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
-<br>
-<DIV class="sidemenu"><a href="#top">外部へのリンク</a></DIV>
+<DIV class="sidemenu"><a href="link.html">外部へのリンク</a></DIV>
 </DIV>
 
 
 <DIV ID="contentsright">
 <H1><A name="top"></A>Documentation</H1>
-<H2>外部へのリンク</H2>
+<H2>5-1. エンジン設定方法</H2>
 
+<h3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">ServiceProviderの設定</h3>
 
-<h3><a name="netbeans"></a><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">NetBeans 5 で Mayaa を使う</h3>
+<p>Mayaa エンジンの設定には、次に示す XML ファイルを使います。このファイルは <code>META-INF</code> の下に <code>org.seasar.mayaa.provider.ServiceProvider</code> という名前で作成します。</p>
 
-<p><a href="http://www.fk.urban.ne.jp/home/kishida/" title="Kishida's SITE">きしだなおき</a>さんが <a href="http://www.fk.urban.ne.jp/home/kishida/kouza/mayaa/mayaa.html" title="Webフレームワークモジュール">NetBeans 5 で Mayaa モジュールを作る過程</a>を丁寧に説明されています。</p>
+<div class="figure">図 5-1-1: ファイルを置く場所<br>
+<pre>WEB-INF/
+ +-- classes/
+ |    |
+ |    +-- META-INF/
+ |    |    |
+ |    |    +-- <strong>org.seasar.mayaa.provider.ServiceProvider</strong>
+ |    |
+ |    +-- (クラスファイルなど)
+ |
+ +-- lib/
+ |
+ (省略)
+</pre>
+</div>
 
+<h4>■何もしない設定ファイル</h4>
+
+<p>これは何もしない設定ファイルです。この中に各種の設定を書くことで、Mayaa の動作を設定できます。</p>
+
+<pre>
+<code>org.seasar.mayaa.provider.ServiceProvider</code>
+<div class="file">&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
+&lt;!DOCTYPE provider
+    PUBLIC "-//The Seasar Foundation//DTD Mayaa Provider 1.0//EN"
+    "http://mayaa.seasar.org/dtd/mayaa-provider_1_0.dtd"&gt;
+&lt;provider&gt;
+
+&lt;/provider&gt;
+</div></pre>
 
 
 <DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>

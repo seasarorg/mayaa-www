@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>5-2. 属性自動セット : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
+<LINK href="../css/base.css" rel="stylesheet" type="text/css">
+<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
+
+<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
+
+<DIV align="center">
+<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
+<DIV class="menudocs">
+<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
+</DIV>
+</DIV>
+
+
+<DIV class="maincontents">
+<DIV ID="contentsleft">
+<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
+<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
+<DIV class="sidemenu"><a href="changelog.html">更新履歴</a></DIV>
+<DIV class="sidemenu"><a href="slide.html">スライドなど</a></DIV>
+<DIV class="sidemenu"><a href="about.html">1. Mayaa 導入</a></DIV>
+<DIV class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></DIV>
+<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
+<DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
+<DIV class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></DIV>
+<DIV class="sidemenutext"><a href="engine_settings.html">5-1. エンジン設定方法</a></DIV>
+<DIV class="sidemenutext"><span>5-2. 属性自動セット</span></DIV>
+<BR>
+<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
+<DIV class="sidemenu"><a href="link.html">外部へのリンク</a></DIV>
+</DIV>
+
+
+<DIV ID="contentsright">
+<H1><A name="top"></A>Documentation</H1>
+<H2>5-2. 属性自動セット</H2>
+
+<h3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">JSP カスタムタグに HTML テンプレートの属性をセットする</h3>
+
+<p>JSP カスタムタグのなかには HTML のタグを出力するものがあり、そのために HTML のタグと同じ属性を持つものがあります。そのような JSP カスタムタグの場合、HTML テンプレートと Mayaa ファイルの JSP カスタムタグとに同じ属性を書くことになり、数が多い場合には大変です。</p>
+
+<p>Mayaa には、HTML テンプレートにある属性を自動的に JSP カスタムタグの属性としてセットする機能があります。完全自動では意図しない動作を引き起こすため、この機能はデフォルト設定で無効になっています。適切に設定することで、この機能を有効にできます。</p>
+<p>この機能を有効にすると、TLD から取得できる情報を元に JSP カスタムタグの属性を調べ、Mayaa ファイル上で指定されていない属性には HTML テンプレート上の同名属性から値を取得してセットします。Mayaa ファイル上でセットしている属性には何もしません。</p>
+
+
+<h4>■実行イメージ</h4>
+
+<p>実行時イメージは次のようになります。実行結果の強調部分は、Mayaa ファイルには書いていない属性です。(例として Struts の JSP カスタムタグを使用しています)</p>
+
+<pre>
+<code>hello.html</code>
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;form id="greetingForm"&gt;
+        &lt;input id="greetingInput" name="greeting" value="Hello."
+            size="20" maxlength="20"&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+<code>hello.mayaa</code>
+<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
+            xmlns:html="http://struts.apache.org/tags-html"&gt;
+    &lt;html:form m:id="greetingForm" action="/hello" /&gt;
+
+    &lt;!-- html:text には size, maxlength, styleId などの属性があります --&gt;
+    &lt;html:text m:id="greetingInput" property="greeting" /&gt;
+&lt;/m:mayaa&gt;</div>
+実行結果
+<div class="file">&lt;html&gt;
+&lt;body&gt;
+    &lt;form action="/mayaa/hello.do"&gt;
+        &lt;input id="greetingInput" name="greeting" value=""
+            <strong>size="20"</strong> <strong>maxlength="20"</strong>&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div></pre>
+
+<p>html:text タグには <code>size</code> 属性, <code>maxlength</code> 属性, <code>styleId</code> 属性を指定していませんが、出力はそれらを指定したかのようなものになっています。このような動作をさせるには、たとえば次のように設定します。</p>
+
+<pre>
+<code>org.seasar.mayaa.provider.ServiceProvider</code>
+<div class="file">&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
+&lt;!DOCTYPE provider
+    PUBLIC "-//The Seasar Foundation//DTD Mayaa Provider 1.0//EN"
+    "http://mayaa.seasar.org/dtd/mayaa-provider_1_0.dtd"&gt;
+&lt;provider&gt;
+
+    &lt;<strong>templateAttributeReader</strong>&gt;
+        &lt;!-- 無視する属性の設定 (複数記述可能) --&gt;
+        &lt;<strong>ignoreAttribute</strong>
+                <strong>qName</strong>="{http://struts.apache.org/tags-html}*"
+                <strong>attribute</strong>="id" /&gt;
+        &lt;ignoreAttribute
+                qName="{http://struts.apache.org/tags-html}text"
+                attribute="name" /&gt;
+        &lt;ignoreAttribute
+                qName="{http://struts.apache.org/tags-html}text"
+                attribute="value" /&gt;
+
+        &lt;!-- 別名で置き換える属性の設定 (複数記述可能) --&gt;
+        &lt;<strong>aliasAttribute</strong>
+                <strong>qName</strong>="{http://struts.apache.org/tags-html}*"
+                <strong>attribute</strong>="styleId"
+                <strong>templateAttribute</strong>="id" /&gt;
+
+        &lt;!-- 機能を有効にする設定 (デフォルトは false) --&gt;
+        &lt;<strong>parameter</strong> <strong>name</strong>="enabled" <strong>value</strong>="true" /&gt;
+    &lt;/<strong>templateAttributeReader</strong>&gt;
+
+&lt;/provider&gt;
+</div></pre>
+
+
+<h4>■設定タグ・属性の説明</h4>
+
+<p>この機能の設定は <strong>templateAttributeReader</strong> タグでおこないます。<code>templateAttributeReader</code> タグのボディには <strong>ignoreAttribute</strong> タグ、<code>aliasAttribute</code> タグ、<code>parameter</code> タグを書くことができ、それぞれ複数、この順番で記述します。(<code>parameter</code> タグで設定する内容は <code>enabled</code> のひとつだけです)</p>
+
+
+<h5>・属性自動セット機能を有効にする</h5>
+
+<pre>例
+&lt;<strong>parameter</strong> <strong>name</strong>="enabled" <strong>value</strong>="true" /&gt;
+</pre>
+
+<p>機能を有効にするには、<code>templateAttributeReader</code> タグの子として <strong>parameter</strong> タグを書き、<code>name</code> 属性に <code>"enabled"</code>、<code>value</code> 属性に <code>"true"</code> を書きます。デフォルトは <code>"false"</code> になっています。</p>
+<p>機能を有効にすると、すべての JSP カスタムタグの属性に対し、対応づけられた HTML テンプレート上のタグにある同名の属性が自動的にセットされるようになります。</p>
+
+
+<h5>・自動セットしない属性を指定する</h5>
+
+<pre>例
+&lt;<strong>ignoreAttribute</strong>
+        <strong>qName</strong>="{http://struts.apache.org/tags-html}text"
+        <strong>attribute</strong>="value" /&gt;
+</pre>
+
+<p>すべての属性を自動的にセットすると、JSP カスタムタグによっては正常に動作しない場合があります。たとえば例に挙げた Struts の <code>html:text</code> は、<code>property</code> 属性と <code>value</code> 属性を同時にセットすると <code>property</code> 属性の指定は無効になるため、<code>property</code> 属性を使いたい場合には HTML テンプレート側に <code>value</code> 属性を付けられないということになります。</p>
+<p>この対策として、JSP カスタムタグの属性ごとに、HTML テンプレート上の属性を使わないよう設定できます。設定をするには、<code>templateAttributeReader</code> タグの子として <strong>ignoreAttribute</strong> タグを書き、<code>qName</code> 属性に設定する対象の JSP カスタムタグ名を、<code>attribute</code> 属性に自動セットの対象外とする JSP カスタムタグの属性名を書きます。</p>
+<p><code>qName</code> 属性の値にはブレース ("{", "}") で囲んだ <code>uri</code> (Mayaa ファイルの xmlns で指定するもの) と、それに続けて JSP カスタムタグ名を指定します。これは完全一致か前方一致を指定でき、前方一致の場合には末尾に "*" を指定します。末尾以外の "*" は特別な意味を持ちません。</p>
+<p><code>attribute</code> 属性の値には <code>qName</code> で指定した JSP カスタムタグの属性名を指定します。これは完全一致か前方一致を指定でき、前方一致の場合には末尾にワイルドカード ("*") を指定します。末尾以外の "*" は特別な意味を持ちません。</p>
+
+
+<h5>・自動セットするときに属性名を変える</h5>
+
+<pre>例
+&lt;<strong>aliasAttribute</strong>
+        <strong>qName</strong>="{http://struts.apache.org/tags-html}text"
+        <strong>attribute</strong>="styleId"
+        <strong>templateAttribute</strong>="id" /&gt;
+</pre>
+
+<p>JSP カスタムタグによっては、出力する HTML の属性名と JSP カスタムタグでの属性名が異なる場合があります (例: Struts では <code>styleId</code> 属性の値が <code>id</code> 属性の値として出力される)。</p>
+<p>このような属性名が異なる場合の設定をするには、<code>templateAttributeReader</code> タグの子として <strong>aliasAttribute</strong> タグを書き、<code>qName</code> 属性に設定する対象の JSP カスタムタグ名を、<code>attribute</code> 属性に JSP カスタムタグの属性名を、<code>templateAttribute</code> 属性に HTML テンプレート上の属性名を書きます。</p>
+<p><code>qName</code> 属性、および <code>attribute</code> 属性は ignoreAttribute タグの同名属性と同じです。</p>
+<p><code>templateAttribute</code> 属性の値には <code>attribute</code> 属性で指定した JSP カスタムタグの属性に対応する HTML テンプレート上の属性の名前を指定します。上記の例では、<code>text</code> カスタムタグの <code>styleId</code> 属性に、HTML テンプレート上の <code>id</code> 属性の値がセットされることになります。<code>templateAttribute</code> 属性にはワイルドカードを使うことはできません。</p>
+
+
+<DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
+
+</DIV>
+<DIV class="copyrights" align="center">
+<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2006 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</DIV>
+</DIV>
+</BODY>
+</HTML>

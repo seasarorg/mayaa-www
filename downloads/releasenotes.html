@@ -31,6 +31,15 @@
 <DIV ID="contentsright">
 <H1>Release Note</H1>
 
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="1.0.2"></A>変更点 1.0.1 -> 1.0.2 (2006/02/26)</H3>
+<ul>
+<li>ログメッセージのシングルクォーテーション (') のエスケープをしていなかったのを修正しました。</li>
+<li>Java5.0で実行する場合にXMLパーサーに関連するログが大量に出力されるため、それらのログレベルをDEBUGに変更しました。</li>
+<li>JSPカスタムタグでdoStartTagの戻り値がEVAL_BODY_BUFFEREDの場合に、doAfterBodyでHTMLへ書き込めないバグを修正しました。</li>
+<li><a href="../documentation/jsp_template_attribute.html">JSPカスタムタグにテンプレートの属性値を渡す機能</a>を追加しました。この機能はデフォルトでは無効です。</li>
+<li><strong>アップグレード時注意</strong>：writeプロセッサのdefault属性値をエスケープ (escapeXml, escapeEol, escapeWhitespace) の対象外にしました。</li>
+</ul>
+
 <H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="1.0.0"></A>変更点 1.0.0 -> 1.0.1 (2006/01/30)</H3>
 <ul>
 <li>予約名前空間"xml"を使った場合、名前空間"xml"を定義していない場合に例外が発生する問題を修正しました。</li>
