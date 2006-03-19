@@ -53,10 +53,8 @@
 	<li><a href="#request">request: リクエストスコープ</a></li>
 	<li><a href="#page">page: ページスコープ</a></li>
 	<li><a href="#param">param: リクエストパラメータスコープ</a></li>
-	<li><a href="#paramValues">paramValues: リクエストパラメータスコープ (配列)</a></li>
 	<li><a href="#binding">binding: コンポーネント引数スコープ</a></li>
 	<li><a href="#header">header: リクエストヘッダスコープ</a></li>
-	<li><a href="#headerValues">headerValues: リクエストヘッダスコープ (配列)</a></li>
 </ul></li>
 <li><a href="#response">response: レスポンス</a></li>
 <li><a href="#functions">グローバル関数</a></li>
@@ -91,9 +89,14 @@
 <dd>スコープが持つ属性の名前 (String) の Iterator を返します。</dd>
 <dt><code>newAttribute(String name, Class attributeClass)</code></dt>
 <dd>指定名の属性がスコープから取得します。スコープ内にない場合の処理はスコープごとに異なりますが、一般的には attributeClass のインスタンスを生成し、スコープに指定名でセットしてから返します。</dd>
+<dt><code>getParamValues(String name)</code></dt>
+<dd>リクエストパラメータを配列として取得します。同じ名前のパラメータがひとつのみの場合には長さ 1 の配列を返します。</dd>
+<dt><code>getHeaderValues(String name)</code></dt>
+<dd>HTTP ヘッダを配列として取得します。同じ名前の HTTP ヘッダがひとつのみの場合には長さ 1 の配列を返します。</dd>
 </dl>
 
-<p>Mayaa 標準のスコープは次の９つです。</p>
+
+<p>Mayaa 標準のスコープは次の 7 つです。</p>
 
 <h4><a name="application"></a>■application: アプリケーションスコープ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
 
@@ -120,11 +123,6 @@
 <p>リクエスト全体で共有される読み出し専用スコープです。Servlet の <code>request</code> スコープのパラメータ (<code>getParameter</code>) にあたります。同じ名前のパラメータが複数ある場合には、一番先頭のものひとつを返します。</p>
 
 
-<h4><a name="paramValues"></a>■paramValues: リクエストパラメータスコープ (配列) <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
-
-<p>リクエストパラメータを配列として取得します。同じ名前のパラメータがひとつのみの場合には長さ 1 の配列を返します。</p>
-
-
 <h4><a name="binding"></a>■binding: コンポーネント引数スコープ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
 
 <p>コンポーネント引数の読み出し専用スコープです。コンポーネントではない場合には <code>param</code> と同じ値を戻します。</p>
@@ -133,12 +131,6 @@
 <h4><a name="header"></a>■header: リクエストヘッダスコープ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
 
 <p>HTTP ヘッダの読み出し専用スコープです。同じ名前のパラメータが複数ある場合には、一番先頭のものひとつを返します。</p>
-
-
-<h4><a name="headerValues"></a>■headerValues: リクエストヘッダスコープ (配列) <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
-
-<p>HTTP ヘッダを配列として取得します。同じ名前の HTTP ヘッダがひとつのみの場合には長さ 1 の配列を返します。</p>
-
 
 
 <h3><a name="response"></a><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">response: レスポンス <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>

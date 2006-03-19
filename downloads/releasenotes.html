@@ -31,6 +31,16 @@
 <DIV ID="contentsright">
 <H1>Release Note</H1>
 
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="1.0.3"></A>変更点 1.0.2 -> 1.0.3 (2006/03/19)</H3>
+<ul>
+<li>JavaScriptの戻り値がvoid (Voidではなく) の場合に例外が発生するのを修正しました。</li>
+<li>テンプレート側にxmlns:m="http://mayaa.seasar.org"を記述する場合に、この宣言がそのまま出力されてしまうのを修正しました。"http://mayaa.seasar.org"で始まる名前空間宣言はすべて出力されません。</li>
+<li>多段階のコンポーネントに同名で引数を渡すと無限ループするのを修正しました。</li>
+<li>JSPカスタムタグにテンプレートの属性値を渡す機能のうち、属性名のエイリアスを定義するときに、テンプレート側属性名としてQNameの形式でセットできるようにしました。</li>
+<li>HttpSessionオブジェクトを生成するタイミングを、setAttributeするときのみに変更しました。</li>
+<li>m:injectに記述したものがhtml,xhtml,xmlの名前空間に属する場合にはエラーログを出力するよう変更しました。</li>
+</ul>
+
 <H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="1.0.2"></A>変更点 1.0.1 -> 1.0.2 (2006/02/26)</H3>
 <ul>
 <li>ログメッセージのシングルクォーテーション (') のエスケープをしていなかったのを修正しました。</li>

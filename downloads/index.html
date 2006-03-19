@@ -33,17 +33,27 @@
 
 <H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="new"></A>最新のリリース</H3>
 
-<h4>Mayaa 1.0.2 (2006/02/26)</h4>
+<h4>Mayaa 1.0.3 (2006/03/19)</h4>
 <BR>
 <DIV class="download_direct">
-	<DIV><a href="mayaa-1.0.2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Blank War</a></DIV>
-	<DIV><a href="mayaa-getting-started-1.0.2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> 導入 War</a> (<a href="../documentation/install.html">インストール方法</a>)</DIV>
-	<DIV><a href="mayaa-project-1.0.2.zip"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Eclipse Project Zip</a></DIV>
+	<DIV><a href="mayaa-1.0.3.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Blank War</a></DIV>
+	<DIV><a href="mayaa-getting-started-1.0.3.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> 導入 War</a> (<a href="../documentation/install.html">インストール方法</a>)</DIV>
+	<DIV><a href="mayaa-project-1.0.3.zip"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Eclipse Project Zip</a></DIV>
 </DIV>
 
 
 <H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="changelog"></A>変更履歴</H3>
 <div class="releasenote">(<a href="releasenotes.html">過去の変更履歴</a>)</div>
+
+<H4><A name="1.0.3"></A>変更点 1.0.2 -> 1.0.3 (2006/03/19)</H4>
+<ul>
+<li>JavaScriptの戻り値がvoid (Voidではなく) の場合に例外が発生するのを修正しました。</li>
+<li>テンプレート側にxmlns:m="http://mayaa.seasar.org"を記述する場合に、この宣言がそのまま出力されてしまうのを修正しました。"http://mayaa.seasar.org"で始まる名前空間宣言はすべて出力されません。</li>
+<li>多段階のコンポーネントに同名で引数を渡すと無限ループするのを修正しました。</li>
+<li>JSPカスタムタグにテンプレートの属性値を渡す機能のうち、属性名のエイリアスを定義するときに、テンプレート側属性名としてQNameの形式でセットできるようにしました。</li>
+<li>HttpSessionオブジェクトを生成するタイミングを、setAttributeするときのみに変更しました。</li>
+<li>m:injectに記述したものがhtml,xhtml,xmlの名前空間に属する場合にはエラーログを出力するよう変更しました。</li>
+</ul>
 
 <H4><A name="1.0.2"></A>変更点 1.0.1 -> 1.0.2 (2006/02/26)</H4>
 <ul>
@@ -54,32 +64,31 @@
 <li><strong>アップグレード時注意</strong>：writeプロセッサのdefault属性値をエスケープ (escapeXml, escapeEol, escapeWhitespace) の対象外にしました。</li>
 </ul>
 
-<H4><A name="1.0.1"></A>変更点 1.0.0 -> 1.0.1 (2006/01/30)</H4>
-<ul>
-<li>予約名前空間"xml"を使った場合、名前空間"xml"を定義していない場合に例外が発生する問題を修正しました。</li>
-<li>forEachプロセッサに単純なオブジェクト以外を使うと例外が出る問題を修正しました。</li>
-<li>forEachプロセッサでスレッド再利用時にNullPointerExceptionが出る問題を修正しました。</li>
-<li>JspFactoryを受け取れなかった場合のJSPバージョンを2.0としました。</li>
-<li>ライブラリのprefixマッピングで"/"開始のときはディレクトリ存在チェックをし、存在しなければInsertに変換しないようにしました。</li>
-</ul>
-
-<H4><A name="1.0.0"></A>変更点 1.0.0-rc1 -> 1.0.0 (2006/01/23)</H4>
-<ul>
-<li>ServiceCycleにHTTPエラーを返すためのerror(int)とerror(int, String)を追加しました。HttpServletResponse#sendErrorに準じます。</li>
-</ul>
-
 
 <H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="sample"></A>サンプル</H3>
 <ul>
-	<li>Mayaaの単独利用例：<br><a href="mayaa-sample-1.0.2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Mayaaサンプル集</a> 2006/02/26</li>
-	<li>Strutsを利用した例：<br><a href="mayaa-hangman-struts-1.0.2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Struts利用版Hangmanゲーム</a> 2006/02/26</li>
-	<li>Mayaaで簡易なMVCを実現した例：<br><a href="mayaa-hangman-solo-1.0.2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Mayaa単独版Hangmanゲーム</a> 2006/02/26</li>
-	<li>Mayaaの内部API利用例：<br><a href="mayaa-libman-1.0.2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Libman - Mayaa Library Manager</a> 2006/02/26</li>
-	<li>アプリケーション例：<br><a href="mayaa-sample-app-1.0.2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> 申し込みフォームアプリケーション</a> (S2Struts, HSQLDB) 2006/02/26</li>
+	<li>Mayaaの単独利用例：<br><a href="mayaa-sample-1.0.3.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Mayaaサンプル集</a> 2006/03/19</li>
+	<li>Strutsを利用した例：<br><a href="mayaa-hangman-struts-1.0.3.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Struts利用版Hangmanゲーム</a> 2006/03/19</li>
+	<li>Mayaaで簡易なMVCを実現した例：<br><a href="mayaa-hangman-solo-1.0.3.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Mayaa単独版Hangmanゲーム</a> 2006/03/19</li>
+	<li>Mayaaの内部API利用例：<br><a href="mayaa-libman-1.0.3.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Libman - Mayaa Library Manager</a> 2006/03/19</li>
+	<li>アプリケーション例：<br><a href="mayaa-sample-app-1.0.3.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> 申し込みフォームアプリケーション</a> (S2Struts, HSQLDB) 2006/03/19</li>
 </ul>
 
 
 <H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="past"></A>過去のリリース</H3>
+
+<h4>バージョン 1.0.2 (2006/02/26)</h4>
+<ul>
+	<li><a href="mayaa-1.0.2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Blank War</a></li>
+	<li><a href="mayaa-getting-started-1.0.2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> 導入 War</a></li>
+	<li><a href="mayaa-project-1.0.2.zip"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Eclipse Project Zip</a></li>
+	<li><a href="mayaa-sample-1.0.2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Mayaaサンプル集</a></li>
+	<li><a href="mayaa-sample-1.0.2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Mayaaサンプル集</a></li>
+	<li><a href="mayaa-hangman-struts-1.0.2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Struts利用版Hangmanゲーム</a></li>
+	<li><a href="mayaa-hangman-solo-1.0.2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Mayaa単独版Hangmanゲーム</a></li>
+	<li><a href="mayaa-libman-1.0.2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> Libman - Mayaa Library Manager</a></li>
+	<li><a href="mayaa-sample-app-1.0.2.war"><IMG src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle" /> 申し込みフォームアプリケーション</a></li>
+</ul>
 
 <h4>バージョン 1.0.1 (2006/01/30)</h4>
 <ul>
