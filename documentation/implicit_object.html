@@ -75,24 +75,20 @@
 <p>スコープのメソッドは次のものが用意されています。上記簡略表記は内部的に <code>getAttribute</code> と <code>setAttribute</code> を使います。</p>
 
 <dl class="list">
-<dt><code>getAttribute(String name)</code></dt>
-<dd>指定名の属性をスコープから取得します。スコープ内になければ <code>null</code> を返します。</dd>
-<dt><code>setAttribute(String name, Object value)</code></dt>
-<dd>指定名の属性をスコープにセットします。読み込み専用スコープの場合は例外を投げます。(<code>org.seasar.mayaa.impl.cycle.scope.ScopeNotWritableException</code>)</dd>
-<dt><code>removeAttribute(String name)</code></dt>
-<dd>指定名の属性をスコープから削除します。読み込み専用スコープの場合は例外を投げます。(<code>org.seasar.mayaa.impl.cycle.scope.ScopeNotWritableException</code>)</dd>
-<dt><code>isAttributeWritable()</code></dt>
-<dd>スコープが書き込み可能かどうかを <code>true</code>/<code>false</code> で返します。</dd>
-<dt><code>hasAttribute(String name)</code></dt>
-<dd>指定名の属性がスコープに格納されているかどうかを <code>true</code>/<code>false</code> で返します。</dd>
-<dt><code>iterateAttributeNames()</code></dt>
-<dd>スコープが持つ属性の名前 (String) の Iterator を返します。</dd>
-<dt><code>newAttribute(String name, Class attributeClass)</code></dt>
-<dd>指定名の属性がスコープから取得します。スコープ内にない場合の処理はスコープごとに異なりますが、一般的には attributeClass のインスタンスを生成し、スコープに指定名でセットしてから返します。</dd>
-<dt><code>getParamValues(String name)</code></dt>
-<dd>リクエストパラメータを配列として取得します。同じ名前のパラメータがひとつのみの場合には長さ 1 の配列を返します。</dd>
-<dt><code>getHeaderValues(String name)</code></dt>
-<dd>HTTP ヘッダを配列として取得します。同じ名前の HTTP ヘッダがひとつのみの場合には長さ 1 の配列を返します。</dd>
+    <dt><code>getAttribute(String name)</code></dt>
+    <dd>指定名の属性をスコープから取得します。スコープ内になければ <code>null</code> を返します。</dd>
+    <dt><code>setAttribute(String name, Object value)</code></dt>
+    <dd>指定名の属性をスコープにセットします。読み込み専用スコープの場合は例外を投げます。(<code>org.seasar.mayaa.impl.cycle.scope.ScopeNotWritableException</code>)</dd>
+    <dt><code>removeAttribute(String name)</code></dt>
+    <dd>指定名の属性をスコープから削除します。読み込み専用スコープの場合は例外を投げます。(<code>org.seasar.mayaa.impl.cycle.scope.ScopeNotWritableException</code>)</dd>
+    <dt><code>isAttributeWritable()</code></dt>
+    <dd>スコープが書き込み可能かどうかを <code>true</code>/<code>false</code> で返します。</dd>
+    <dt><code>hasAttribute(String name)</code></dt>
+    <dd>指定名の属性がスコープに格納されているかどうかを <code>true</code>/<code>false</code> で返します。</dd>
+    <dt><code>iterateAttributeNames()</code></dt>
+    <dd>スコープが持つ属性の名前 (String) の Iterator を返します。</dd>
+    <dt><code>newAttribute(String name, Class attributeClass)</code></dt>
+    <dd>指定名の属性がスコープから取得します。スコープ内にない場合の処理はスコープごとに異なりますが、一般的には attributeClass のインスタンスを生成し、スコープに指定名でセットしてから返します。</dd>
 </dl>
 
 
@@ -111,6 +107,26 @@
 <h4><a name="request"></a>■request: リクエストスコープ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
 
 <p>リクエスト全体で共有されるスコープです。Servlet の <code>request</code> スコープの属性 (<code>get/setAttribute</code>) にあたります。</p>
+<dl class="list">
+    <dt><code>getContextPath()</code></dt>
+    <dd>WEBアプリケーションコンテキストのパス部を返します。("http://localhost/mayaa/index.html"にアクセスされた場合には"/mayaa")</dd>
+    <dt><code>getRequestedPath()</code></dt>
+    <dd>リクエストされたパス文字列を返します。("http://localhost/mayaa/index.html"にアクセスされた場合には"/index.html")</dd>
+    <dt><code>getPageName()</code></dt>
+    <dd>リクエストされたページ名を返します。("http://localhost/mayaa/index.html"にアクセスされた場合には"/index")</dd>
+    <dt><code>getRequestedSuffix()</code></dt>
+    <dd>リクエストで明示されたページ接尾辞を返します。</dd>
+    <dt><code>getExtension()</code></dt>
+    <dd>リクエストされたページ拡張子を返します。("http://localhost/mayaa/index.html"にアクセスされた場合には"html")</dd>
+    <dt><code>getMimeType()</code></dt>
+    <dd>リクエストされたパスより類推できるMIME型を返します。</dd>
+    <dt><code>getLocales()</code></dt>
+    <dd>リクエストのロケール (<code>java.util.Locale</code>の配列) を返します。</dd>
+    <dt><code>getParamValues(String name)</code></dt>
+    <dd>リクエストパラメータを配列として取得します。同じ名前のパラメータがひとつのみの場合には長さ 1 の配列を返します。</dd>
+    <dt><code>getHeaderValues(String name)</code></dt>
+    <dd>HTTP ヘッダを配列として取得します。同じ名前の HTTP ヘッダがひとつのみの場合には長さ 1 の配列を返します。</dd>
+</dl>
 
 
 <h4><a name="page"></a>■page: ページスコープ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>

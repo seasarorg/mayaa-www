@@ -31,6 +31,17 @@
 <DIV ID="contentsright">
 <H1>Release Note</H1>
 
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="1.1.0-beta2"></A>変更点 1.1.0-beta1 -> 1.1.0-beta2 (2006/04/08)</H3>
+<ul>
+<li>EngineのdoServiceにMapを渡せるよう変更しました。渡したMapはpageスコープの初期値として格納されます。</li>
+<li>templatePathPattern, notTemplatePathPatternのいずれにもマッチしない場合の判定を、以前の通りmime-typeで判定するように戻しました。</li>
+<li>テンプレートを探す位置をカスタマイズ(WEB-INF/pageなど)した場合に、テンプレートとして扱わないリソース(cssなど)を探せない問題を修正しました。</li>
+<li>JSPカスタムタグで例外が出たときに正しく行番号を表示するよう修正しました。</li>
+<li>ServiceCycle#load (m:exec src) のスクリプトをキャッシュするよう変更しました。</li>
+<li>QNameをSingletonにしてメモリを節約するよう変更しました。</li>
+</li>
+</ul>
+
 <H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="1.1.0-beta1"></A>変更点 1.0.3 -> 1.1.0-beta1 (2006/03/23)</H3>
 <ul>
 <li>実行時ツリーモデルを合理化し、静的なタグが多い場合のパフォーマンスを大幅に向上しました。</li>
