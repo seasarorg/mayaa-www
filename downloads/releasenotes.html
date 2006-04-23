@@ -31,6 +31,17 @@
 <DIV ID="contentsright">
 <H1>Release Note</H1>
 
+<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="1.1.0-beta3"></A>変更点 1.1.0-beta2 -> 1.1.0-beta3 (2006/04/23)</H3>
+<ul>
+<li>.mayaaファイル上に同一のm:idを複数定義した場合、Warningログを出すよう変更しました。ServiceProviderファイルでEqualsIDInjectionResolverのパラメータreportDuplicatedIDにfalseを設定すればログを出さないようにできます。</li>
+<li>何かのタグのボディ部に直接${}でスクリプトを書いた場合、そのスクリプト内のスコープがタグのスコープと同一になるよう変更しました。</li>
+<li>PageSourceFactoryのパラメータ folder と absolutePath を追加型に変更しました。複数書くことで複数のパスを有効にできます。上書きを前提として使用している場合には意図しない動作をする可能性がありますので、ご注意ください。</li>
+<li>スクリプトのブレースの数の整合性チェックをするとき、文字列内かどうかの判定をしていなかったバグを修正しました。</li>
+<li>パスの自動調整で"/"で終わるパスの場合に例外が出るのを修正しました。</li>
+<li>Mayaaファイルのタグボディとして&lt;などのエンティティ参照を書いた場合にエンティティ解決していなかったのを修正しました。このバグを前提に作られているものがある場合には正常に動作しなくなるかもしれませんのでご注意ください。</li>
+<li>jaxenを1.1-beta-8から1.1-beta-9にバージョンアップしました。</li>
+</ul>
+
 <H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle"><A name="1.1.0-beta2"></A>変更点 1.1.0-beta1 -> 1.1.0-beta2 (2006/04/08)</H3>
 <ul>
 <li>スコープ名修飾なしの場合に走査するスコープを追加できるよう、CycleFactoryImplのパラメータにaddedStandardScopeを追加しました。org.seasar.mayaa.cycle.CycleFactoryファイルに<br>&lt;parameter name="addedStandardScope" value="スコープ名" /&gt;<br>とすることで追加できます。</li>
