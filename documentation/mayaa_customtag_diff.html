@@ -1,52 +1,52 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<HTML lang="ja">
-<HEAD>
-<META http-equiv="Content-Type" content="text/html; charset=utf-8">
-<TITLE>Appendix 1. JSP カスタムタグの注意点 : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
-<LINK href="../css/base.css" rel="stylesheet" type="text/css">
-<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
-</HEAD>
-<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Appendix 1. JSP カスタムタグの注意点 : Documentation - JavaServer Templates &quot;Mayaa&quot;</title>
+<link href="../css/base.css" rel="stylesheet" type="text/css">
+<link href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
+<div align="center"><img src="../images/topbar.gif" width="760" height="4"></div>
 
-<DIV align="center">
-<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
-<DIV class="menudocs">
-<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
-</DIV>
-</DIV>
-
-
-<DIV class="maincontents">
-<DIV ID="contentsleft">
-<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
-<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
-<DIV class="sidemenu"><a href="changelog.html">更新履歴</a></DIV>
-<DIV class="sidemenu"><a href="slide.html">スライドなど</a></DIV>
-<DIV class="sidemenu"><a href="about.html">1. Mayaa 導入</a></DIV>
-<DIV class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></DIV>
-<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
-<DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
-<DIV class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></DIV>
-<DIV class="sidemenu"><a href="#top">付録</a></DIV>
-<DIV class="sidemenutext"><span>A-1. カスタムタグの注意点</span></DIV>
-<DIV class="sidemenutext"><a href="mayaa_rhino_tips.html">A-2. JavaScript Tips</a></DIV>
-<DIV class="sidemenutext"><a href="note.html">A-3. その他の注意点</a></DIV>
-<BR>
-<DIV class="sidemenu"><a href="link.html">外部へのリンク</a></DIV>
-</DIV>
+<div align="center">
+<div class="contentslogo"><a href="../index.html" id="menu08"><img src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></a><img src="../images/topstripe.gif" width="330" height="48"></div>
+<div class="menudocs">
+<a href="../about/index.html" id="menu01"><img src="images/menu_about.gif" width="125" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../news/index.html" id="menu02"><img src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></a><img src="images/menu_div.gif" width="1" height="55"><a href="index.html"><img src="images/menu_doc_o.gif" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../downloads/index.html" id="menu04"><img src="images/menu_down.gif" alt="downloads" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../subprojects/index.html" id="menu05"><img src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../support/index.html" id="menu06"><img src="images/menu_support.gif" alt="Support" width="126" height="55"></a>
+</div>
+</div>
 
 
-<DIV ID="contentsright">
-<H1><A name="top"></A>Documentation</H1>
-<H2>Appendix 1. カスタムタグの注意点</H2>
+<div class="maincontents">
+<div id="contentsleft">
+<img src="../images/arrow02.gif" align="absmiddle"><a href="../index.html" class="text11px">Top</a>
+<div class="sidemenu"><a href="index.html">Documentation Top</a></div>
+<div class="sidemenu"><a href="changelog.html">更新履歴</a></div>
+<div class="sidemenu"><a href="slide.html">スライドなど</a></div>
+<div class="sidemenu"><a href="about.html">1. Mayaa 導入</a></div>
+<div class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></div>
+<div class="sidemenu"><a href="default.html">3. How To</a></div>
+<div class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></div>
+<div class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></div>
+<div class="sidemenu"><a href="#top">付録</a></div>
+<div class="sidemenutext"><span>A-1. カスタムタグの注意点</span></div>
+<div class="sidemenutext"><a href="mayaa_rhino_tips.html">A-2. JavaScript Tips</a></div>
+<div class="sidemenutext"><a href="note.html">A-3. その他の注意点</a></div>
+<br>
+<div class="sidemenu"><a href="link.html">外部へのリンク</a></div>
+</div>
+
+
+<div id="contentsright">
+<h1><a id="top" name="top"></a>Documentation</h1>
+<h2>Appendix 1. カスタムタグの注意点</h2>
 
 <p>Mayaa で JSP カスタムタグを利用する場合、JSP カスタムタグの仕様と異なる点があります。</p>
 <p>JSTL を使う場合に注意する点は、動的な値の扱い方の違い、スクリプト変数のスコープの違いの 2 点です。</p>
 
 
-<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">動的な値の扱い方の違い</H3>
+<h3>動的な値の扱い方の違い</h3>
 
 <p>JSP との大きな違いは、動的な値の扱い方です。JSP カスタムタグの動的な値の扱い方は 3 種類あります。それぞれの場合について、JSP と Mayaa の違いを説明します。</p>
 
@@ -84,12 +84,13 @@
 <p>この例の場合に限れば、文字列に変換した後で渡す <code>fmt:numberFormat</code> を使うなどの回避策があります。式言語の暗黙的な動作を期待しているカスタムタグの場合はこのような回避策を取る必要があるかもしれません。</p>
 
 
-<DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
+<div class="navi"><a href="#top">↑このページのトップへ</a></div>
 
-</DIV>
-<DIV class="copyrights" align="center">
-<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2006 the Seasar Foundation and others. all rights reserved." width="760" height="20">
-</DIV>
-</DIV>
-</BODY>
-</HTML>
+</div>
+<div class="copyrights" align="center">
+<img src="../images/copyrights.gif" alt="Copyright (c) 2004-2006 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</div>
+</div>
+
+
+</body></html>

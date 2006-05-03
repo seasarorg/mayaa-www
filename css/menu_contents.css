@@ -1,1 +1,126 @@
-a:hover {	background-color: transparent;	text-decoration: underline; } #menu01 {    font-size:64px;}#menu02 {    font-size:64px;}#menu03 {    font-size:64px;}#menu04 {    font-size:64px;}#menu05 {    font-size:64px;}#menu06 {    font-size:64px;}#menu07 {    font-size:30px;}#menu08 {    font-size:64px;}.contentslogo {	width: 760px;	height: 48px;	background-color: white;	background-image: url(../images/logo.gif);	background-repeat: no-repeat;}.menuabout {	width: 760px;	height: 60px;	background-color: white;	background-image: url(../about/images/menuback.gif);	background-repeat: no-repeat;}.menuabout a:hover img {	visibility: hidden; } .menunews {	width: 760px;	height: 60px;	background-color: white;	background-image: url(../news/images/menuback.gif);	background-repeat: no-repeat;}.menunews a:hover img {	visibility: hidden; } .menudocs {	width: 760px;	height: 60px;	background-color: white;	background-image: url(../documentation/images/menuback.gif);	background-repeat: no-repeat;}.menudocs a:hover img {	visibility: hidden; } .menudown {	width: 760px;	height: 60px;	background-color: white;	background-image: url(../downloads/images/menuback.gif);	background-repeat: no-repeat;}.menudown a:hover img {	visibility: hidden; } .menusubpro {	width: 760px;	height: 60px;	background-color: white;	background-image: url(../subprojects/images/menuback.gif);	background-repeat: no-repeat;}.menusubpro a:hover img {	visibility: hidden; } .menusupport {	width: 760px;	height: 60px;	background-color: white;	background-image: url(../support/images/menuback.gif);	background-repeat: no-repeat;}.menusupport a:hover img {	visibility: hidden; } li {	font-size: 12px;	line-height: 140%;	margin-bottom: 6px;	margin-right: 10px;}
+﻿@charset "UTF-8";
+
+a:hover {
+	background-color: transparent;
+	text-decoration: underline; 
+} 
+
+#menu01 {
+    font-size:64px;
+}
+
+#menu02 {
+    font-size:64px;
+}
+
+#menu03 {
+    font-size:64px;
+}
+
+#menu04 {
+    font-size:64px;
+}
+
+#menu05 {
+    font-size:64px;
+}
+
+#menu06 {
+    font-size:64px;
+}
+
+#menu07 {
+    font-size:30px;
+}
+
+#menu08 {
+    font-size:64px;
+}
+
+.contentslogo {
+	width: 760px;
+	height: 48px;
+	background-color: white;
+	background-image: url(../images/logo.gif);
+	background-repeat: no-repeat;
+}
+
+
+.menuabout {
+	width: 760px;
+	height: 60px;
+	background-color: white;
+	background-image: url(../about/images/menuback.gif);
+	background-repeat: no-repeat;
+}
+
+.menuabout a:hover img {
+	visibility: hidden; 
+} 
+
+.menunews {
+	width: 760px;
+	height: 60px;
+	background-color: white;
+	background-image: url(../news/images/menuback.gif);
+	background-repeat: no-repeat;
+}
+
+.menunews a:hover img {
+	visibility: hidden; 
+} 
+
+.menudocs {
+	width: 760px;
+	height: 60px;
+	background-color: white;
+	background-image: url(../documentation/images/menuback.gif);
+	background-repeat: no-repeat;
+}
+
+.menudocs a:hover img {
+	visibility: hidden; 
+} 
+
+.menudown {
+	width: 760px;
+	height: 60px;
+	background-color: white;
+	background-image: url(../downloads/images/menuback.gif);
+	background-repeat: no-repeat;
+}
+
+.menudown a:hover img {
+	visibility: hidden; 
+} 
+
+.menusubpro {
+	width: 760px;
+	height: 60px;
+	background-color: white;
+	background-image: url(../subprojects/images/menuback.gif);
+	background-repeat: no-repeat;
+}
+
+.menusubpro a:hover img {
+	visibility: hidden; 
+} 
+
+.menusupport {
+	width: 760px;
+	height: 60px;
+	background-color: white;
+	background-image: url(../support/images/menuback.gif);
+	background-repeat: no-repeat;
+}
+
+.menusupport a:hover img {
+	visibility: hidden; 
+} 
+
+li {
+	font-size: 12px;
+	line-height: 140%;
+	margin-bottom: 6px;
+	margin-right: 10px;
+}

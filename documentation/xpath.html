@@ -1,63 +1,68 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<HTML lang="ja">
-<HEAD>
-<META http-equiv="Content-Type" content="text/html; charset=utf-8">
-<TITLE>3-6. id の代わりに XPath : Documentation - JavaServer Templates &quot;Mayaa&quot;</TITLE>
-<LINK href="../css/base.css" rel="stylesheet" type="text/css">
-<LINK href="../css/menu_contents.css" rel="stylesheet" type="text/css">
-</HEAD>
-<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
+<html lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>3-6. id の代わりに XPath : Documentation - JavaServer Templates &quot;Mayaa&quot;</title>
+  <link href="../css/base.css" rel="stylesheet" type="text/css">
+  <link href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</head>
 
-<DIV align="center"><IMG src="../images/topbar.gif" width="760" height="4"></DIV>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
 
-<DIV align="center">
-<DIV class="contentslogo"><A href="../index.html" id="menu08"><IMG src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></A><IMG src="../images/topstripe.gif" width="330" height="48"></DIV>
-<DIV class="menudocs">
-<A href="../about/index.html" id="menu01"><IMG src="images/menu_about.gif" width="125" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../news/index.html" id="menu02"><IMG src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="index.html"><IMG src="images/menu_doc_o.gif" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../downloads/index.html" id="menu04"><IMG src="images/menu_down.gif" alt="downloads" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../subprojects/index.html" id="menu05"><IMG src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></A><IMG src="images/menu_div.gif" width="1" height="55"><A href="../support/index.html" id="menu06"><IMG src="images/menu_support.gif" alt="Support" width="126" height="55"></A>
-</DIV>
-</DIV>
+<div align="center"><img src="../images/topbar.gif" width="760" height="4"></div>
 
-
-<DIV class="maincontents">
-<DIV ID="contentsleft">
-<IMG src="../images/arrow02.gif" align="absmiddle"><A href="../index.html" class="text11px">Top</A>
-<DIV class="sidemenu"><a href="index.html">Documentation Top</a></DIV>
-<DIV class="sidemenu"><a href="changelog.html">更新履歴</a></DIV>
-<DIV class="sidemenu"><a href="slide.html">スライドなど</a></DIV>
-<DIV class="sidemenu"><a href="about.html">1. Mayaa 導入</a></DIV>
-<DIV class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></DIV>
-<DIV class="sidemenu"><a href="default.html">3. How To</a></DIV>
-<DIV class="sidemenutext"><A href="default.html">3-1. ページ共通の設定</A></DIV>
-<DIV class="sidemenutext"><A href="before_render.html">3-2. 描画前後のスクリプト</A></DIV>
-<DIV class="sidemenutext"><A href="exec.html">3-3. タグ描画時のスクリプト</A></DIV>
-<DIV class="sidemenutext"><A href="echo.html">3-4. 属性のみを置き換える</A></DIV>
-<DIV class="sidemenutext"><A href="with.html">3-5. プロセッサをまとめる</A></DIV>
-<DIV class="sidemenutext"><span>3-6. id の代わりに XPath</span></DIV>
-<DIV class="sidemenutext"><A href="remove.html">3-7. タグを消す</A></DIV>
-<DIV class="sidemenutext"><A href="ignore.html">3-8. id を処理対象外に</A></DIV>
-<DIV class="sidemenutext"><A href="comment.html">3-9. コメントを書く</A></DIV>
-<DIV class="sidemenutext"><A href="template_suffix.html">3-10. テンプレート切り替え</A></DIV>
-<DIV class="sidemenutext"><A href="path_adjust.html">3-11. パスを自動調整する</A></DIV>
-<BR>
-
-<DIV class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></DIV>
-<DIV class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></DIV>
-<DIV class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></DIV>
-<br>
-<DIV class="sidemenu"><a href="link.html">外部へのリンク</a></DIV>
-</DIV>
+<div align="center">
+  <div class="contentslogo">
+    <a href="../index.html" id="menu08"><img src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></a><img src="../images/topstripe.gif" width="330" height="48"></div>
+  <div class="menudocs">
+    <a href="../about/index.html" id="menu01"><img src="images/menu_about.gif" width="125" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../news/index.html" id="menu02"><img src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></a><img src="images/menu_div.gif" width="1" height="55"><a href="index.html"><img src="images/menu_doc_o.gif" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../downloads/index.html" id="menu04"><img src="images/menu_down.gif" alt="downloads" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../subprojects/index.html" id="menu05"><img src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../support/index.html" id="menu06"><img src="images/menu_support.gif" alt="Support" width="126" height="55"></a>
+  </div>
+</div>
 
 
-<DIV ID="contentsright">
-<H1><A name="top"></A>Documentation</H1>
-<H2>3-6. id の代わりに XPath</H2>
+<div class="maincontents">
+  <div id="contentsleft">
+    <img src="../images/arrow02.gif" align="absmiddle"><a href="../index.html" class="text11px">Top</a>
+    <div class="sidemenu"><a href="index.html">Documentation Top</a></div>
+    <div class="sidemenu"><a href="changelog.html">更新履歴</a></div>
+    <div class="sidemenu"><a href="slide.html">スライドなど</a></div>
+    <div class="sidemenu"><a href="about.html">1. Mayaa 導入</a></div>
+    <div class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></div>
+    <div class="sidemenu"><a href="default.html">3. How To</a></div>
+    <div class="sidemenutext"><a href="default.html">3-1. ページ共通の設定</a></div>
+    <div class="sidemenutext"><a href="before_render.html">3-2. 描画前後のスクリプト</a></div>
+    <div class="sidemenutext"><a href="exec.html">3-3. タグ描画時のスクリプト</a></div>
+    <div class="sidemenutext"><a href="echo.html">3-4. 属性のみを置き換える</a></div>
+    <div class="sidemenutext"><a href="with.html">3-5. プロセッサをまとめる</a></div>
+    <div class="sidemenutext"><span>3-6. id の代わりに XPath</span></div>
+    <div class="sidemenutext"><a href="remove.html">3-7. タグを消す</a></div>
+    <div class="sidemenutext"><a href="ignore.html">3-8. id を処理対象外に</a></div>
+    <div class="sidemenutext"><a href="comment.html">3-9. コメントを書く</a></div>
+    <div class="sidemenutext"><a href="template_suffix.html">3-10. テンプレート切り替え</a></div>
+    <div class="sidemenutext"><a href="path_adjust.html">3-11. パスを自動調整する</a></div>
 
-<p>テンプレートのタグとプロセッサを関連付けるには id を使いますが、その代替手段として XPath を使う方法があります。使うには mayaa ファイルで id="テンプレートの id" と書く代わりに <code><strong>xpath="XPath ロケーションパス"</strong></code> と書きます。XPath に関する説明や参考資料はこのページの最後にあります。</p>
+    <br>
+
+    <div class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></div>
+    <div class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></div>
+    <div class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></div>
+    <br>
+    <div class="sidemenu"><a href="link.html">外部へのリンク</a></div>
+  </div>
 
 
-<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">簡単な例</H3>
+  <div id="contentsright">
 
-<p>テンプレートで <code>id</code> 属性を持たないタグのボディを置き換えてみましょう。XPath のロケーションパスで <code>h1</code> タグを指定します。</p>
+    <h1><a id="top" name="top"></a>Documentation</h1>
+
+    <h2>3-6. id の代わりに XPath</h2>
+
+    <p>テンプレートのタグとプロセッサを関連付けるには id を使いますが、その代替手段として XPath を使う方法があります。使うには mayaa ファイルで id="テンプレートの id" と書く代わりに <code><strong>xpath="XPath ロケーションパス"</strong></code> と書きます。XPath に関する説明や参考資料はこのページの最後にあります。</p>
+
+
+    <h3>簡単な例</h3>
+
+    <p>テンプレートで <code>id</code> 属性を持たないタグのボディを置き換えてみましょう。XPath のロケーションパスで <code>h1</code> タグを指定します。</p>
 
 <pre>
 xpath.html
@@ -68,13 +73,13 @@ xpath.html
 &lt;/body&gt;
 &lt;/html&gt;</div>
 xpath.mayaa
-<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:write <strong>xpath="/html/body/h1"</strong> value="<strong>Title</strong>" replace="false" /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
-<p>ルートはそのまま HTML のルートですので、 "<code>/html/body/h1</code>" というロケーションパスは <code>h1</code> タグを指します。</p>
-<p>ブラウザで <code><a href="http://localhost:8080/mayaa/xpath.html" target="_blank">http://localhost:8080/mayaa/xpath.html</a></code> にアクセスしてみましょう。</p>
+    <p>ルートはそのまま HTML のルートですので、 "<code>/html/body/h1</code>" というロケーションパスは <code>h1</code> タグを指します。</p>
+    <p>ブラウザで <code><a href="http://localhost:8080/mayaa/xpath.html" target="_blank">http://localhost:8080/mayaa/xpath.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
@@ -85,13 +90,13 @@ xpath.mayaa
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<p>テンプレートに <code>id</code> がなくても置き換わっているのがわかります。</p>
+    <p>テンプレートに <code>id</code> がなくても置き換わっているのがわかります。</p>
 
 
-<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">複数のタグを一度に指定する</H3>
+    <h3>複数のタグを一度に指定する</h3>
 
-<p>XPath では、複数のタグにマッチするロケーションパスを指定できます。複数のタグにマッチした場合、マッチしたすべてのタグがプロセッサに対応付けられます。</p>
-<p>次の例では XPath のロケーションパスに "<code>//a</code>" を指定しています。このパスはすべての <code>a</code> タグにマッチしますので、すべての <code>a</code> タグに <code>target="_blank"</code> を追加します。</p>
+    <p>XPath では、複数のタグにマッチするロケーションパスを指定できます。複数のタグにマッチした場合、マッチしたすべてのタグがプロセッサに対応付けられます。</p>
+    <p>次の例では XPath のロケーションパスに "<code>//a</code>" を指定しています。このパスはすべての <code>a</code> タグにマッチしますので、すべての <code>a</code> タグに <code>target="_blank"</code> を追加します。</p>
 
 <pre>
 xpath_multi.html
@@ -105,14 +110,14 @@ xpath_multi.html
 &lt;/body&gt;
 &lt;/html&gt;</div>
 xpath_multi.mayaa
-<div class="file">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:echo xpath="<strong>//a</strong>"&gt;
         <strong>&lt;m:attribute name="target" value="_blank" /&gt;</strong>
     &lt;/m:echo&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
-<p>ブラウザで <code><a href="http://localhost:8080/mayaa/xpath_multi.html" target="_blank">http://localhost:8080/mayaa/xpath_multi.html</a></code> にアクセスしてみましょう。</p>
+    <p>ブラウザで <code><a href="http://localhost:8080/mayaa/xpath_multi.html" target="_blank">http://localhost:8080/mayaa/xpath_multi.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
@@ -126,30 +131,32 @@ xpath_multi.mayaa
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<p>指定したロケーションパスにマッチするもの、つまりすべての <code>a</code> タグに <code>target="_blank"</code> が追加されているのが分かります。</p>
+    <p>指定したロケーションパスにマッチするもの、つまりすべての <code>a</code> タグに <code>target="_blank"</code> が追加されているのが分かります。</p>
 
 
-<H3><IMG src="../images/arrow01.gif" hspace="4" align="absmiddle">XPath</H3>
+    <h3>XPath</h3>
 
-<p>XPath は XML 文書からノードを選択するための簡潔な言語で、「ロケーションパス」という表記を使ってノードを指定します。"/" 区切りでノードを選択する表記はロケーションパスの簡略表記です。Java2 SDK 5.0 から XPath を評価するための API (javax.xml.xpath) が提供されます。</p>
-<p>XPath については参考文献をご覧ください。</p>
-
-
-<h4>■<a name="reference">参考文献</a></h4>
-
-<dl class="reference">
-<dt>XML Path Language (XPath)</dt>
-<dd><cite><a href="http://www.w3.org/TR/xpath">http://www.w3.org/TR/xpath</a></cite></dd>
-<dd>日本語訳: <cite><a href="http://www.infoteria.com/jp/contents/xml-data/REC-xpath-19991116-jpn.htm">http://www.infoteria.com/jp/contents/xml-data/REC-xpath-19991116-jpn.htm</a></cite></dd>
+    <p>XPath は XML 文書からノードを選択するための簡潔な言語で、「ロケーションパス」という表記を使ってノードを指定します。"/" 区切りでノードを選択する表記はロケーションパスの簡略表記です。Java2 SDK 5.0 から XPath を評価するための API (javax.xml.xpath) が提供されます。</p>
+    <p>XPath については参考文献をご覧ください。</p>
 
 
-<DIV class="navi"><a href="#top">↑このページのトップへ</a></DIV>
+    <h4>■<a id="reference" name="reference">参考文献</a></h4>
 
-</DIV>
+    <dl class="reference">
+      <dt>XML Path Language (XPath)</dt>
+      <dd><cite><a href="http://www.w3.org/TR/xpath">http://www.w3.org/TR/xpath</a></cite></dd>
+      <dd>日本語訳: <cite><a href="http://www.infoteria.com/jp/contents/xml-data/REC-xpath-19991116-jpn.htm">http://www.infoteria.com/jp/contents/xml-data/REC-xpath-19991116-jpn.htm</a></cite></dd>
+    </dl>
 
-<DIV class="copyrights" align="center">
-<IMG src="../images/copyrights.gif" alt="Copyright (c) 2004-2006 the Seasar Foundation and others. all rights reserved." width="760" height="20">
-</DIV>
-</DIV>
-</BODY>
-</HTML>
+    <div class="navi"><a href="#top">↑このページのトップへ</a></div>
+
+  </div>
+
+  <div class="copyrights" align="center">
+    <img src="../images/copyrights.gif" alt="Copyright (c) 2004-2006 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+  </div>
+
+</div>
+
+
+</body></html>
