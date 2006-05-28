@@ -137,7 +137,8 @@
     </table>
 
     <h4><a id="formatDate" name="formatDate"></a>■formatDate プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
-    <p>日付を指定したパターンにフォーマットして出力します。value に null を渡した場合は何も出力しません。</p>
+    <p>日付を指定したパターンにフォーマットして出力します。value に null を渡した場合、default 属性をしているなら default を出力します。そうでない場合は何も出力しません。</p>
+    <p>(<strong>※</strong>:1.0.5で追加されたもの)</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
     <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     
@@ -156,11 +157,19 @@
       <td>文字列</td>
       <td></td>
     </tr>
+    <tr>
+      <td nowrap="">default</td>
+      <td nowrap="">value が null の場合に出力する値。<strong>(※)</strong></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
     </tbody>
     </table>
 
     <h4><a id="formatNumber" name="formatNumber"></a>■formatNumber プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
-    <p>数値を指定したパターンにフォーマットして出力します。value に null を渡した場合は何も出力しません。</p>
+    <p>数値を指定したパターンにフォーマットして出力します。value に null を渡した場合、default 属性をしているなら default を出力します。そうでない場合は何も出力しません。</p>
+    <p>(<strong>※</strong>:1.0.5で追加されたもの)</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
     <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     
@@ -179,13 +188,19 @@
       <td>文字列</td>
       <td></td>
     </tr>
+    <tr>
+      <td nowrap="">default</td>
+      <td nowrap="">value が null の場合に出力する値。<strong>(※)</strong></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
     </tbody>
     </table>
 
     <h4><a id="write" name="write"></a>■write プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
     <p><a href="hello.html">利用例</a>。</p>
     <p>オブジェクトを文字列として出力します。</p>
-    <p>(<strong>※</strong>:1.0.2で変更されたもの)</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
     <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     
@@ -199,7 +214,7 @@
     </tr>
     <tr>
       <td nowrap="">default</td>
-      <td nowrap="">value が null の場合に出力する値。<br>(escapeXml, escapeWhitespace, escapeEol<br>による置換処理の対象になりません)<strong>(※)</strong></td>
+      <td nowrap="">value が null の場合に出力する値。<br>(escapeXml, escapeWhitespace, escapeEol<br>による置換処理の対象になりません)</td>
       <td></td>
       <td></td>
       <td></td>
