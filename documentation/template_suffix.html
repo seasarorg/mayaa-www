@@ -87,7 +87,7 @@ use_suffix$ja.html
 index.mayaa
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
-        <strong>m:templateSuffix="null"</strong>&gt;
+        <strong>m:templateSuffix="&#36;{ param.locale }"</strong>&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/use_suffix.html?locale=en" target="_blank">http://localhost:8080/mayaa/use_suffix.html?locale=en</a></code> にアクセスしてみましょう。「in English.」と表示されますね。次に <code><a href="http://localhost:8080/mayaa/use_suffix.html?locale=ja" target="_blank">http://localhost:8080/mayaa/use_suffix.html?locale=ja</a></code> にアクセスしてみましょう。今度は「in Japanese.」と表示されますね。</p>
@@ -141,6 +141,5 @@ use_suffix.html?locale=aaa の場合
 <img src="../images/copyrights.gif" alt="Copyright (c) 2004-2006 the Seasar Foundation and others. all rights reserved." width="760" height="20">
 </div>
 </div>
-
-
-</body></html>
+</body>
+</html>

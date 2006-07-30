@@ -37,6 +37,40 @@
     <h3>過去の変更履歴</h3>
 
 
+    <h4><a id="ver1.1.0-beta6" name="ver1.1.0-beta6"></a>変更点 1.1.0-beta5 -> 1.1.0-beta6 (2006/07/30)</h4>
+    <p>バグ修正などをおこなった後、正式版になる予定です。</p>
+    <ul>
+      <li>echoプロセッサにname属性を追加し、タグ名を変更できるようにしました。</li>
+      <li>定義されていないprefixが見つかった場合に例外を出さないようにしました。</li>
+      <li>直接出力となるスクリプトの処理で、処理結果がnullの場合に空文字列を出力するようにしました。</li>
+      <li>標準ではPageNotFoundExceptionのスタックトレースを出力しないよう変更しました。INFOレベルで"Page not found: /foo.html"の形(getMessage())のログを出力します。</li>
+      <li>例外ハンドラページからforwardやredirectができない問題を修正しました。</li>
+      <li>SessionScope#getUnderlyingContext()を呼び出したときにSessionオブジェクトを生成しないよう修正しました。Sessionオブジェクトがない場合はnullを返します。</li>
+      <li>beforeRenderおよびafterRenderでbindingを使えるようにしました。</li>
+      <li>m:attributeのvalueにがnullの場合、属性を削除するようにしました。</li>
+      <li>コンポーネントを再帰的に使用するとき、forEachが正常に動作しないのを修正しました。</li>
+      <li>コンポーネントから更にコンポーネントを呼び出すとき、同じbinding変数名を再定義できるように修正しました。</li>
+      <li>ページを再読込したときに古いページが解放されない問題を修正しました。</li>
+      <li>VariableInfo の NESTED が正常に動作しない問題を修正しました。</li>
+      <li>メモリ使用量を削減しました。</li>
+      <li>描画速度を向上させました。</li>
+      <li>ページのビルド結果をserialize/deserializeできるようにしました。WEB-INF/.mayaaSpecCacheフォルダ以下にserファイルが作成されます。デフォルトは無効です。ServiceProvider設定でEngineのパラメータに"pageSerialize"を追加し、値に"true"または"false"を指定してください。</li>
+      <li>ページのビルド結果をgcの回収対象にするまでの回数を指定できるようにしました。デフォルトでは5回目の解放要求で回収対象になります。ServiceProvider設定でEngineのパラメータに"surviveLimit"を追加し、値に解放要求を無視する回数を整数で指定してください。</li>
+      <li>アプリケーション起動時にすべてのページを自動的にビルドする機能を追加しました。デフォルトは無効です。ServiceProvider設定でEngineのパラメータに"autoBuild"を追加し、値に"true"または"false"を指定してください。</li>
+    </ul>
+
+    <h4><a id="ver1.0.6" name="ver1.0.6"></a>変更点 1.0.5 -> 1.0.6 (2006/07/30)</h4>
+    <p>1.0 系の機能追加はこのバージョンで終わりとし、以後は 1.1 系を主とします。</p>
+    <ul>
+      <li>定義されていないprefixが見つかった場合に例外を出さないようにしました。</li>
+      <li>直接出力となるスクリプトの処理で、処理結果がnullの場合に空文字列を出力するようにしました。</li>
+      <li>標準ではPageNotFoundExceptionのスタックトレースを出力しないよう変更しました。INFOレベルで"Page not found: /foo.html"の形(getMessage())のログを出力します。</li>
+      <li>echoプロセッサにname属性を追加し、タグ名を変更できるようにしました。</li>
+      <li>例外ハンドラページからforwardやredirectができない問題を修正しました。</li>
+      <li>SessionScope#getUnderlyingContext()を呼び出したときにSessionオブジェクトを生成しないよう修正しました。Sessionオブジェクトがない場合はnullを返します。</li>
+    </ul>
+
+
     <h4><a id="ver1.1.0-beta5" name="ver1.1.0-beta5"></a>変更点 1.1.0-beta4 -> 1.1.0-beta5 (2006/05/28)</h4>
     <ul>
       <li>グローバル関数redirect,error後も描画処理が実行されてしまうのを修正しました。</li>
@@ -73,7 +107,7 @@
       <li>JSPカスタムタグで例外が出たときに正しく行番号を表示するよう修正しました。</li>
       <li>ServiceCycle#load (m:exec src) のスクリプトをキャッシュするよう変更しました。</li>
       <li>.mayaaファイル上に同一のm:idを複数定義した場合、Warningログを出すよう変更しました。ServiceProviderファイルでEqualsIDInjectionResolverのパラメータreportDuplicatedIDにfalseを設定すればログを出さないようにできます。</li>
-      <li>何かのタグのボディ部に直接nullでスクリプトを書いた場合、そのスクリプト内のスコープがタグのスコープと同一になるよう変更しました。</li>
+      <li>何かのタグのボディ部に直接&#36;{}でスクリプトを書いた場合、そのスクリプト内のスコープがタグのスコープと同一になるよう変更しました。</li>
       <li>PageSourceFactoryのパラメータ folder と absolutePath を追加型に変更しました。複数書くことで複数のパスを有効にできます。上書きを前提として使用している場合には意図しない動作をする可能性がありますので、ご注意ください。</li>
       <li>スクリプトのブレースの数の整合性チェックをするとき、文字列内かどうかの判定をしていなかったバグを修正しました。</li>
       <li>パスの自動調整で"/"で終わるパスの場合に例外が出るのを修正しました。</li>
@@ -89,7 +123,7 @@
     <h4><a id="ver1.1.0-beta3" name="ver1.1.0-beta3"></a>変更点 1.1.0-beta2 -> 1.1.0-beta3 (2006/04/23)</h4>
     <ul>
       <li>.mayaaファイル上に同一のm:idを複数定義した場合、Warningログを出すよう変更しました。ServiceProviderファイルでEqualsIDInjectionResolverのパラメータreportDuplicatedIDにfalseを設定すればログを出さないようにできます。</li>
-      <li>何かのタグのボディ部に直接nullでスクリプトを書いた場合、そのスクリプト内のスコープがタグのスコープと同一になるよう変更しました。</li>
+      <li>何かのタグのボディ部に直接&#36;{}でスクリプトを書いた場合、そのスクリプト内のスコープがタグのスコープと同一になるよう変更しました。</li>
       <li>PageSourceFactoryのパラメータ folder と absolutePath を追加型に変更しました。複数書くことで複数のパスを有効にできます。上書きを前提として使用している場合には意図しない動作をする可能性がありますので、ご注意ください。</li>
       <li>スクリプトのブレースの数の整合性チェックをするとき、文字列内かどうかの判定をしていなかったバグを修正しました。</li>
       <li>パスの自動調整で"/"で終わるパスの場合に例外が出るのを修正しました。</li>
@@ -195,7 +229,7 @@
       <li>beforeRender, afterRenderのブレース整合性チェックを強化しました。</li>
       <li>テンプレートを探すパスの設定が正常に動作しないのを修正しました。</li>
       <li>テンプレートを全ファイルシステム上の指定パスから探せる設定を追加しました。org.seasar.mayaa.source.PageSourceFactoryに「absolutePath」というパラメータを設定した場合、その値をファイルシステムのパスとして扱います。</li>
-      <li>Mayaaエンジン設定ファイルのパラメータにnullで囲んだシステムプロパティを扱えるようにしました。</li>
+      <li>Mayaaエンジン設定ファイルのパラメータに&#36;{ }で囲んだシステムプロパティを扱えるようにしました。</li>
       <li>mayaaファイルでredirectした場合、responseを一度flushしないと例外が発生していたのを修正しました。</li>
     </ul>
 
@@ -430,6 +464,5 @@
 
 </div><!-- class="maincontents" -->
 
-
-
-</body></html>
+</body>
+</html>

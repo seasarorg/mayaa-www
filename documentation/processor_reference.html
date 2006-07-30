@@ -91,7 +91,8 @@
 
     <h4><a id="attribute" name="attribute"></a>■attribute プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
     <p><a href="echo.html">echo と組み合わせた利用例</a></p>
-    <p>echo プロセッサおよび element プロセッサの子として使用し、親プロセッサに属性を追加します。</p>
+    <p>echo プロセッサおよび element プロセッサの子として使用し、親プロセッサに属性を追加します。value の実行結果が null の場合はその属性を削除 (<strong>※</strong>) します。</p>
+    <p>(<strong>※</strong>:1.1.0-beta6で追加されたもの)</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
     <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     <tbody>
@@ -104,7 +105,7 @@
     </tr>
     <tr>
       <td>value</td>
-      <td>生成する属性値。</td>
+      <td>生成する属性値。null の場合はその属性自体を削除 (<strong>※</strong>)。</td>
       <td><div align="center">○</div></td>
       <td></td>
       <td></td>
@@ -118,7 +119,20 @@
 
     <h4><a id="echo" name="echo"></a>■echo プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
     <p>タグのボディが有効です。<a href="echo.html">利用例</a>。</p>
-    <p>割り当てられたタグをそのまま出力します。m:echo タグのボディに attribute プロセッサを書くと属性を追加または変更できます。</p>
+    <p>割り当てられたタグをそのまま出力します。m:echo タグのボディに attribute プロセッサを書くと属性を追加または変更、削除できます。</p>
+    <p>(<strong>※</strong>:1.0.6, 1.1.0-beta6で追加されたもの)</p>
+    <table align="center" cellpadding="5" cellspacing="2" class="tbline">
+    <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
+    <tbody>
+    <tr>
+      <td>name</td>
+      <td>出力するタグの要素名。</td>
+      <td>&nbsp;</td>
+      <td>文字列</td>
+      <td>要素名を置き換える場合のみ使用する。<strong>※</strong></td>
+    </tr>
+    </tbody>
+    </table>
 
     <h4><a id="element" name="element"></a>■element プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
     <p>タグのボディが有効です。</p>
@@ -478,6 +492,5 @@
 
 </div><!-- class="maincontents" -->
 
-
-
-</body></html>
+</body>
+</html>
