@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>5-4. ビルド結果保存 : Documentation - JavaServer Templates &quot;Mayaa&quot;</title>
+<link href="../css/base.css" rel="stylesheet" type="text/css">
+<link href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
+
+<div align="center"><img src="../images/topbar.gif" width="760" height="4"></div>
+
+<div align="center">
+<div class="contentslogo"><a href="../index.html" id="menu08"><img src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></a><img src="../images/topstripe.gif" width="330" height="48"></div>
+<div class="menudocs">
+<a href="../about/index.html" id="menu01"><img src="images/menu_about.gif" width="125" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../news/index.html" id="menu02"><img src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></a><img src="images/menu_div.gif" width="1" height="55"><a href="index.html"><img src="images/menu_doc_o.gif" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../downloads/index.html" id="menu04"><img src="images/menu_down.gif" alt="downloads" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../subprojects/index.html" id="menu05"><img src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../support/index.html" id="menu06"><img src="images/menu_support.gif" alt="Support" width="126" height="55"></a>
+</div>
+</div>
+
+
+<div class="maincontents">
+<div id="contentsleft">
+<img src="../images/arrow02.gif" align="absmiddle"><a href="../index.html" class="text11px">Top</a>
+<div class="sidemenu"><a href="index.html">Documentation Top</a></div>
+<div class="sidemenu"><a href="changelog.html">更新履歴</a></div>
+<div class="sidemenu"><a href="slide.html">スライドなど</a></div>
+<div class="sidemenu"><a href="about.html">1. Mayaa 導入</a></div>
+<div class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></div>
+<div class="sidemenu"><a href="default.html">3. How To</a></div>
+<div class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></div>
+<div class="sidemenu"><a href="#top">5. エンジン設定</a></div>
+<div class="sidemenutext"><a href="engine_settings.html">5-1. エンジン設定方法</a></div>
+<div class="sidemenutext"><a href="jsp_template_attribute.html">5-2. 属性自動セット</a></div>
+<div class="sidemenutext"><a href="auto_build.html">5-3. 自動ビルド</a></div>
+<div class="sidemenutext"><span>5-4. ビルド結果キャッシュ</span></div>
+<br>
+<div class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></div>
+<div class="sidemenu"><a href="link.html">外部へのリンク</a></div>
+</div>
+
+
+<div id="contentsright">
+<h1><a id="top" name="top"></a>Documentation</h1>
+<h2>5-4. ビルド結果保存</h2>
+
+<p>※この機能は 1.1.0-beta6 で実装されました。</p>
+
+<p>Mayaa ではページをビルドした結果、描画するために必要な情報をオブジェクトとして作成します。このオブジェクトはガーベジコレクションによって解放されることがあり、解放された場合には描画する前にもう一度ビルドすることになります。タグが多いページなど、ビルドに長めの時間がかかる場合もありますので、内容が変わらないページを何度もビルドすることは好ましくありません。</p>
+
+<p>この問題を軽減するため、ビルドした結果をシリアライズしてファイルにキャッシュし、2 回目以降のビルド時間を短縮することができます。この機能を有効にした 2 回目以降のビルドでは、ビルド元となるファイルとキャッシュファイルとのタイムスタンプを比較し、キャッシュの方が新しい場合には再ビルドする代わりにキャッシュを読み込みます。</p>
+
+<p>タグの数が多くてビルドに時間がかかる場合や、ページ数が多くてメモリを圧迫する場合などに有効です。</p>
+
+
+<h3>ビルド結果キャッシュを有効にする</h3>
+
+<p>ビルド結果キャッシュを有効にするには、<a href="engine_settings.html">ServiceProvider</a> ファイルで設定します。標準の設定は下記のようになっています。"<code>autoBuild</code>" パラメータを "<code>true</code>" に設定することで自動ビルドが有効になります。</p>
+
+<p>ビルド結果をシリアライズしたファイルは、アプリケーションの WEB-INF/.mayaaSpecCache フォルダの中に作成されます。この位置への読み書きができない場合、ビルド結果キャッシュは動作しませんのでご注意ください。</p>
+
+<pre>
+<code>org.seasar.mayaa.provider.ServiceProvider</code>
+<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE provider
+    PUBLIC "-//The Seasar Foundation//DTD Mayaa Provider 1.0//EN"
+    "http://mayaa.seasar.org/dtd/mayaa-provider_1_0.dtd"&gt;
+&lt;provider&gt;
+    &lt;engine&gt;
+        &lt;parameter name="<code>pageSerialize</code>" value="<code>false</code>"/&gt;
+    &lt;/engine&gt;
+&lt;/provider&gt;
+</div></pre>
+
+
+<h4>■設定項目について</h4>
+
+<p>設定項目は下記の 1 項目のみです。</p>
+
+<dl class="list">
+    <dt><code>pageSerialize</code></dt>
+    <dd>ビルド結果キャッシュを有効にするかどうかを設定します。"<code>true</code>" なら有効、"<code>false</code>" なら無効です。デフォルトは "<code>false</code>" です。</dd>
+</dl>
+
+
+<div class="navi"><a href="#top">↑このページのトップへ</a></div>
+
+</div>
+<div class="copyrights" align="center">
+<img src="../images/copyrights.gif" alt="Copyright (c) 2004-2006 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</div>
+</div>
+</body>
+</html>

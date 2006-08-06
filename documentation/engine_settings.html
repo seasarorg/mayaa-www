@@ -31,6 +31,8 @@
 <div class="sidemenu"><a href="#top">5. エンジン設定</a></div>
 <div class="sidemenutext"><span>5-1. エンジン設定方法</span></div>
 <div class="sidemenutext"><a href="jsp_template_attribute.html">5-2. 属性自動セット</a></div>
+<div class="sidemenutext"><a href="auto_build.html">5-3. 自動ビルド</a></div>
+<div class="sidemenutext"><a href="page_serialize.html">5-4. ビルド結果キャッシュ</a></div>
 <br>
 <div class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></div>
 <div class="sidemenu"><a href="link.html">外部へのリンク</a></div>
@@ -67,7 +69,7 @@
 
 <pre>
 <code>org.seasar.mayaa.provider.ServiceProvider</code>
-<div class="file">&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
+<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE provider
     PUBLIC "-//The Seasar Foundation//DTD Mayaa Provider 1.0//EN"
     "http://mayaa.seasar.org/dtd/mayaa-provider_1_0.dtd"&gt;
@@ -75,6 +77,50 @@
 
 &lt;/provider&gt;
 </div></pre>
+
+
+<h4>■Engine に対する設定</h4>
+
+<p>Mayaa 標準の Engine に対する設定項目をいくつか説明します。デフォルト設定は下記の通りです。</p>
+
+<p>これ以外にも設定項目はありますが、それらは 5 章の別ページで説明します。</p>
+
+<pre>
+<code>org.seasar.mayaa.provider.ServiceProvider</code>
+<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE provider
+    PUBLIC "-//The Seasar Foundation//DTD Mayaa Provider 1.0//EN"
+    "http://mayaa.seasar.org/dtd/mayaa-provider_1_0.dtd"&gt;
+&lt;provider&gt;
+    &lt;engine&gt;
+        &lt;parameter name="<code>defaultSpecification</code>" value="<code>/default.mayaa</code>"/&gt;
+        &lt;parameter name="<code>checkTimestamp</code>" value="<code>true</code>"/&gt;
+        &lt;parameter name="<code>suffixSeparator</code>" value="<code>$</code>"/&gt;
+        &lt;parameter name="<code>welcomeFileName</code>" value="<code>index.html</code>"/&gt;
+        &lt;parameter name="<code>requestCharacterEncoding</code>" value="<code>UTF-8</code>"/&gt;
+        &lt;parameter name="<code>surviveLimit</code>" value="<code>5</code>"/&gt;
+    &lt;/engine&gt;
+&lt;/provider&gt;
+</div></pre>
+
+
+<p>上記の 6 項目について説明します。</p>
+
+<dl class="list">
+    <dt><code>defaultSpecification</code></dt>
+    <dd><a href="default.html">すべてのページ共通に利用する Mayaa ファイル</a>のパスを指定します。デフォルトは "<code>/default.mayaa</code>" です。</dd>
+    <dt><code>checkTimestamp</code></dt>
+    <dd>HTML ファイル、Mayaa ファイルの更新を検知して再ビルドする機能を有効にするかどうかを設定します。"<code>true</code>" なら有効、"<code>false</code>" なら無効です。デフォルトは "<code>false</code>" です。</dd>
+    <dt><code>suffixSeparator</code></dt>
+    <dd><a href="template_suffix.html">テンプレート切り替え機能</a>でページ名と suffix とを区別するための文字列を指定します。デフォルトは "<code>$</code>" です。</dd>
+    <dt><code>welcomeFileName</code></dt>
+    <dd>URL の最後が "<code>/</code>" でアクセスされた場合にリダイレクトする先のファイル名を指定します。デフォルトは "<code>index.html</code>" です。</dd>
+    <dt><code>requestCharacterEncoding</code></dt>
+    <dd>Mayaa でリクエストパラメータを参照する際の文字コードを指定します。デフォルトは "<code>UTF-8</code>" です。<code>MayaaServlet</code> の前に <code>HttpServletRequest#setCharacterEncoding(String encoding)</code> でセットされている場合はこの設定を使用しません。</dd>
+    <dt><code>surviveLimit</code></dt>
+    <dd>ページのビルド結果をガーベジコレクションの対象にするまでの回数を指定します。デフォルトは "<code>5</code>" です。ここで指定した回数だけ解放要求が来たときに初めて、ページのビルド結果オブジェクトがガーベジコレクションの対象になります。</dd>
+</dl>
+
 
 
 <div class="navi"><a href="#top">↑このページのトップへ</a></div>

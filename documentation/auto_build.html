@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>5-3. 自動ビルド : Documentation - JavaServer Templates &quot;Mayaa&quot;</title>
+<link href="../css/base.css" rel="stylesheet" type="text/css">
+<link href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
+
+<div align="center"><img src="../images/topbar.gif" width="760" height="4"></div>
+
+<div align="center">
+<div class="contentslogo"><a href="../index.html" id="menu08"><img src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></a><img src="../images/topstripe.gif" width="330" height="48"></div>
+<div class="menudocs">
+<a href="../about/index.html" id="menu01"><img src="images/menu_about.gif" width="125" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../news/index.html" id="menu02"><img src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></a><img src="images/menu_div.gif" width="1" height="55"><a href="index.html"><img src="images/menu_doc_o.gif" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../downloads/index.html" id="menu04"><img src="images/menu_down.gif" alt="downloads" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../subprojects/index.html" id="menu05"><img src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../support/index.html" id="menu06"><img src="images/menu_support.gif" alt="Support" width="126" height="55"></a>
+</div>
+</div>
+
+
+<div class="maincontents">
+<div id="contentsleft">
+<img src="../images/arrow02.gif" align="absmiddle"><a href="../index.html" class="text11px">Top</a>
+<div class="sidemenu"><a href="index.html">Documentation Top</a></div>
+<div class="sidemenu"><a href="changelog.html">更新履歴</a></div>
+<div class="sidemenu"><a href="slide.html">スライドなど</a></div>
+<div class="sidemenu"><a href="about.html">1. Mayaa 導入</a></div>
+<div class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></div>
+<div class="sidemenu"><a href="default.html">3. How To</a></div>
+<div class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></div>
+<div class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></div>
+<div class="sidemenutext"><a href="engine_settings.html">5-1. エンジン設定方法</a></div>
+<div class="sidemenutext"><a href="jsp_template_attribute.html">5-2. 属性自動セット</a></div>
+<div class="sidemenutext"><span>5-3. 自動ビルド</span></div>
+<div class="sidemenutext"><a href="page_serialize.html">5-4. ビルド結果キャッシュ</a></div>
+<br>
+<div class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></div>
+<div class="sidemenu"><a href="link.html">外部へのリンク</a></div>
+</div>
+
+
+<div id="contentsright">
+<h1><a id="top" name="top"></a>Documentation</h1>
+<h2>5-3. 自動ビルド</h2>
+
+<p>※この機能は 1.1.0-beta6 で実装されました。</p>
+
+<p>標準設定の Mayaa は、ページへ最初にアクセスされたときに、そのページのビルド処理 (<a href="#note1"><strong>※</strong></a>) をおこないます。この処理にはある程度の時間がかかるため、最初にアクセスしたときとそれ以降では画面が表示されるまでの時間に大きな差ができてしまいます。初回アクセス時に時間がかかるということが好ましくない場合もあるでしょう。</p>
+<p>自動ビルド機能は、このビルド処理を初回アクセス時ではなくアプリケーション起動時に自動的におこなう機能です。自動ビルド処理は Web コンテナを起動してアプリケーションがロードされたあと、別スレッドで実行されます。自動ビルド対象となるファイルを検索し、それらのファイルに対して順番にビルド処理をおこないます。</p>
+<p>自動ビルド処理を実行しているときはすでに通常どおりアクセスできる状態になっているため、まだビルドされていないページへアクセスがあった場合には通常のビルド処理の後でページが描画されることになります。</p>
+<p>ページをビルドしたときの警告メッセージやエラーメッセージは、自動ビルド時も通常どおりログに出力されます。また、ビルドにかかった時間もログに出力されます。</p>
+
+<p><a id="note1" name="note1"></a><strong>※</strong> ビルド処理：HTML ファイル、Mayaa ファイルをパースして描画可能な状態にすること</p>
+
+
+<h3>自動ビルドを有効にする</h3>
+
+<p>自動ビルドを有効にするには、<a href="engine_settings.html">ServiceProvider</a> ファイルで設定します。標準の設定は下記のようになっています。"<code>autoBuild</code>" パラメータを "<code>true</code>" に設定することで自動ビルドが有効になります。</p>
+
+<pre>
+<code>org.seasar.mayaa.provider.ServiceProvider</code>
+<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE provider
+    PUBLIC "-//The Seasar Foundation//DTD Mayaa Provider 1.0//EN"
+    "http://mayaa.seasar.org/dtd/mayaa-provider_1_0.dtd"&gt;
+&lt;provider&gt;
+    &lt;engine&gt;
+        &lt;parameter name="<code>autoBuild</code>" value="<code>false</code>"/&gt;
+        &lt;parameter name="<code>autoBuild.repeat</code>" value="<code>false</code>"/&gt;
+        &lt;parameter name="<code>autoBuild.wait</code>" value="<code>60</code>"/&gt;
+        &lt;parameter name="<code>autoBuild.fileNameFilters</code>" value="<code>.html</code>"/&gt;
+        &lt;parameter name="<code>autoBuild.renderMate</code>" value="<code>false</code>"/&gt;
+    &lt;/engine&gt;
+&lt;/provider&gt;
+</div></pre>
+
+
+<h4>■設定項目について</h4>
+
+<p>設定項目は下記の 5 項目です。</p>
+
+<dl class="list">
+    <dt><code>autoBuild</code></dt>
+    <dd>自動ビルドを有効にするかどうかを設定します。"<code>true</code>" なら有効、"<code>false</code>" なら無効です。デフォルトは "<code>false</code>" です。</dd>
+    <dt><code>autoBuild.repeat</code></dt>
+    <dd>自動ビルドを定期的に実行するかどうかを設定します。"<code>true</code>" なら定期的に実行、"<code>false</code>" なら初回のみ実行します。デフォルトは "<code>false</code>" です。</dd>
+    <dt><code>autoBuild.wait</code></dt>
+    <dd>自動ビルドを定期的に実行するときの間隔を秒数で設定します。デフォルトは "<code>60</code>" です。対象となる全てのページをビルドしたあと、指定した秒数待機します。</dd>
+    <dt><code>autoBuild.fileNameFilters</code></dt>
+    <dd>自動ビルド対象とするファイルを選択します。デフォルトは "<code>.html</code>" です。セミコロン (;) で区切ることで複数の条件を指定できます。条件の指定方法は２種類あり、拡張子指定と正規表現指定が使えます。ピリオドで始まる英数字 (大文字小文字を区別しない) の場合は拡張子判定、それ以外は正規表現と見なします。正規表現はファイル名のみとマッチングし、マッチした場合に処理対象とします。(例: "<code>.html;^(sample|howto)_.+\.htm$</code>")</dd>
+    <dt><code>autoBuild.renderMate</code></dt>
+    <dd>自動ビルドした後で描画をするかどうかを設定します。"<code>true</code>" なら有効、"<code>false</code>" なら無効です。デフォルトは "<code>false</code>" です。有効にした場合、描画にかかった時間をログに出力します。事前に Servlet などでの処理が必要なページの場合は描画エラーになりますのでご注意ください。</dd>
+</dl>
+
+
+<div class="navi"><a href="#top">↑このページのトップへ</a></div>
+
+</div>
+<div class="copyrights" align="center">
+<img src="../images/copyrights.gif" alt="Copyright (c) 2004-2006 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</div>
+</div>
+</body>
+</html>
