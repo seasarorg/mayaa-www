@@ -76,14 +76,14 @@ remove.html
 remove.mayaa
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:for id="loop"
+    &lt;m:for m:id="loop"
             init="&#36;{ var i = 0; }"
             test="&#36;{ i &amp;lt; 5 }"
             after="&#36;{ i += 1 }" /&gt;
 
-    &lt;m:write id="message" value="&#36;{ i }" /&gt;
+    &lt;m:write m:id="message" value="&#36;{ i }" /&gt;
 
-    &lt;<strong>m:null</strong> <strong>xpath="//li[@class='dummy']"</strong> /&gt;
+    &lt;<strong>m:null</strong> <strong>m:xpath="//li[@class='dummy']"</strong> /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
 <p>実行時に出力したくないタグに <code>class="dummy"</code> を設定し、XPath を使って <code>null</code> プロセッサを対応させています。</p>

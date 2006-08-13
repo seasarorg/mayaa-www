@@ -126,9 +126,9 @@
 <code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:insert id="comp1"
+    &lt;m:insert m:id="comp1"
             path="/component.html" <strong>name="center1"</strong> replace="false" /&gt;
-    &lt;m:insert id="comp2"
+    &lt;m:insert m:id="comp2"
             path="/component.html" <strong>name="center2"</strong> replace="false" /&gt;
 &lt;/m:mayaa&gt;</div>
 <code>component.html</code>
@@ -146,8 +146,8 @@
 <code>component.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:doRender id="centered1" <strong>name="center1"</strong> replace="false" /&gt;
-    &lt;m:doRender id="centered2" <strong>name="center2"</strong> replace="false" /&gt;
+    &lt;m:doRender m:id="centered1" <strong>name="center1"</strong> replace="false" /&gt;
+    &lt;m:doRender m:id="centered2" <strong>name="center2"</strong> replace="false" /&gt;
 &lt;/m:mayaa&gt;</div>
 実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
@@ -179,7 +179,7 @@
 <code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:insert id="comp" path="/component1.html" replace="false" /&gt;
+    &lt;m:insert m:id="comp" path="/component1.html" replace="false" /&gt;
 &lt;/m:mayaa&gt;</div>
 <code>component1.html</code>
 <div class="file">&lt;html&gt;
@@ -194,8 +194,8 @@
 <code>component1.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:doRender id="centered" replace="false" /&gt;
-    &lt;m:insert id="comp2" path="/component2.html" replace="false" /&gt;
+    &lt;m:doRender m:id="centered" replace="false" /&gt;
+    &lt;m:insert m:id="comp2" path="/component2.html" replace="false" /&gt;
 &lt;/m:mayaa&gt;</div>
 <code>component2.html</code>
 <div class="file">&lt;html&gt;
@@ -209,7 +209,7 @@
 <code>component2.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    <strong>&lt;m:doRender id="righted" replace="false" /&gt;</strong>
+    <strong>&lt;m:doRender m:id="righted" replace="false" /&gt;</strong>
 &lt;/m:mayaa&gt;</div>
 実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;

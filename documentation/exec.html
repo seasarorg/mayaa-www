@@ -72,13 +72,13 @@ exec.mayaa
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
 
-    &lt;m:for id="loop" init="&#36;{ var i = 1 }"
+    &lt;m:for m:id="loop" init="&#36;{ var i = 1 }"
             test="&#36;{ i &amp;lt; 6 }" after="&#36;{ i += 1 }" /&gt;
 
-    &lt;m:exec <strong>id="evenodd"</strong> replace="false"
+    &lt;m:exec <strong>m:id="evenodd"</strong> replace="false"
         <strong>script="&#36;{ var evenodd = (i % 2 == 0) ? 'even' : 'odd'; }"</strong> /&gt;
 
-    &lt;m:write id="value" value="&#36;{ i + ': ' + evenodd }" /&gt;
+    &lt;m:write m:id="value" value="&#36;{ i + ': ' + evenodd }" /&gt;
 
 &lt;/m:mayaa&gt;</div></pre>
 

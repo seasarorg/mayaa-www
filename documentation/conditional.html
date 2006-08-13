@@ -67,9 +67,9 @@
 <code>if.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;<strong>m:if</strong> id="visible" <strong>test="&#36;{ 1 == 1 }"</strong> /&gt;
+    &lt;<strong>m:if</strong> m:id="visible" <strong>test="&#36;{ 1 == 1 }"</strong> /&gt;
 
-    &lt;m:write id="message" value="Hello Mayaa!" /&gt;
+    &lt;m:write m:id="message" value="Hello Mayaa!" /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
 <p>動作は Java の if 文と同じです。mayaa ファイルにある <code>m:if</code> の <code>test</code> を評価すると <code>true</code> になりますので、ボディの <code>span id="message"</code> が評価されて "Hello Mayaa!" と出力されます。</p>
@@ -99,9 +99,9 @@
 <code>if.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;<strong>m:if</strong> id="visible" <strong>test="&#36;{ 1 &amp;lt; 1 }"</strong> /&gt;
+    &lt;<strong>m:if</strong> m:id="visible" <strong>test="&#36;{ 1 &amp;lt; 1 }"</strong> /&gt;
 
-    &lt;m:write id="message" value="Hello Mayaa!" /&gt;
+    &lt;m:write m:id="message" value="Hello Mayaa!" /&gt;
 &lt;/m:mayaa&gt;</div>
 実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
@@ -131,12 +131,12 @@
 <code>for.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;<strong>m:for</strong> id="loop"
+    &lt;<strong>m:for</strong> m:id="loop"
             <strong>init="&#36;{ var i = 0 }"</strong>
             <strong>test="&#36;{ i &amp;lt; 5 }"</strong>
             <strong>after="&#36;{ i++ }"</strong> /&gt;
 
-    &lt;m:write id="message"
+    &lt;m:write m:id="message"
             value="Hello Mayaa!<strong>&amp;lt;br&amp;gt;</strong>" <strong>escapeXml="false"</strong> /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
@@ -170,12 +170,12 @@
 <code>for.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:for id="loop"
+    &lt;m:for m:id="loop"
             init="&#36;{ var i = 0 }"
             test="&#36;{ i &amp;lt; 5 }"
             after="&#36;{ i++ }" /&gt;
 
-    &lt;m:write id="message"
+    &lt;m:write m:id="message"
             value="<strong>&#36;{ i }</strong>&amp;lt;br&amp;gt;" escapeXml="false" /&gt;
 &lt;/m:mayaa&gt;</div>
 実行結果 (改行などは実際の実行結果と異なります)

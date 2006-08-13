@@ -86,7 +86,7 @@
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         extends="<strong>/layouts/layout.html</strong>"&gt;
 
-    &lt;m:doRender id="content" name="contentBody" /&gt;
+    &lt;m:doRender m:id="content" name="contentBody" /&gt;
 &lt;/m:mayaa&gt;</div>
 <code>layouts/layout.html</code>
 <div class="file">&lt;html&gt;
@@ -102,7 +102,7 @@
 <code>layouts/layout.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:insert id="contentPosition" name="contentBody" /&gt;
+    &lt;m:insert m:id="contentPosition" name="contentBody" /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello.html" target="_blank">http://localhost:8080/mayaa/hello.html</a></code> にアクセスしてみましょう。</p>

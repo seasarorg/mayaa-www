@@ -37,6 +37,17 @@
     <h3>過去の変更履歴</h3>
 
 
+    <h4><a id="ver1.1.0" name="ver1.1.0"></a>変更点 1.1.0-beta6 -> 1.1.0 (2006/08/13)</h4>
+    <ul>
+      <li><a href="https://www.seasar.org/issues/browse/MAYAA-1">JIRA[MAYAA-1]</a> ビルドした結果をログに出力する機能を追加しました。デフォルトは無効です。有効にするにはServiceProvider設定でEngineのパラメータに"dumpEnabled"を追加し、値に"true"または"false"を指定してください。現状ではテンプレート機能、コンポーネント機能には対応していません。</li>
+      <li>JSP2.0のDynamic Attributeをサポートしました。</li>
+      <li>１回のリクエスト中で同じページに一定回数以上forwardした場合に例外を投げるようにしました。この例外はエラーハンドラで扱えません。ServiceProvider設定でEngineのパラメータに"forwardLimit"を追加し、値に上限回数を指定してください。デフォルトは"10"です。</li>
+      <li>パスの自動調整機能でinputタグのsrc属性が対象になっていなかったのを修正しました。その他いくつかの属性も対象に追加しました。</li>
+      <li>XMLをテンプレートにした場合にデフォルト名前空間指定で例外が出る問題を修正しました。</li>
+      <li>Maven2 から利用できるようになりました。<br>groupId: org.seasar.mayaa<br>artifactId: mayaa<br>詳しくは Wiki をご覧ください。(<a href="http://www.seasar.org/wiki/index.php?Maven2RepoRemote">http://www.seasar.org/wiki/index.php?Maven2RepoRemote</a>)</li>
+    </ul>
+
+
     <h4><a id="ver1.1.0-beta6" name="ver1.1.0-beta6"></a>変更点 1.1.0-beta5 -> 1.1.0-beta6 (2006/07/30)</h4>
     <p>バグ修正などをおこなった後、正式版になる予定です。</p>
     <p>依存ライブラリに変更があります。追加: commons-collections-3.1.jar, バージョンアップ: commons-logging-1.1.jar</p>

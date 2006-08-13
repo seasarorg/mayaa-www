@@ -112,8 +112,8 @@ public class MyBean {
         request.setAttribute('bean', new Packages.example.MyBean());
     &lt;/m:beforeRender&gt;
 
-    &lt;m:write id="id" value="<strong>&#36;{ bean.id }</strong>" /&gt;
-    &lt;m:write id="name" value="<strong>&#36;{ bean.name }</strong>" /&gt;
+    &lt;m:write m:id="id" value="<strong>&#36;{ bean.id }</strong>" /&gt;
+    &lt;m:write m:id="name" value="<strong>&#36;{ bean.name }</strong>" /&gt;
     &lt;fmt:formatNumber m:id="decimal" value="<strong>&#36;{ bean.decimal }</strong>" /&gt;
     &lt;fmt:formatDate m:id="timestamp" value="<strong>&#36;{ bean.timestamp }</strong>" /&gt;
 

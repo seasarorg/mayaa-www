@@ -75,7 +75,7 @@ xpath.html
 xpath.mayaa
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:write <strong>xpath="/html/body/h1"</strong> value="<strong>Title</strong>" replace="false" /&gt;
+    &lt;m:write <strong>m:xpath="/html/body/h1"</strong> value="<strong>Title</strong>" replace="false" /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
     <p>ルートはそのまま HTML のルートですので、 "<code>/html/body/h1</code>" というロケーションパスは <code>h1</code> タグを指します。</p>
@@ -112,7 +112,7 @@ xpath_multi.html
 xpath_multi.mayaa
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:echo xpath="<strong>//a</strong>"&gt;
+    &lt;m:echo m:xpath="<strong>//a</strong>"&gt;
         <strong>&lt;m:attribute name="target" value="_blank" /&gt;</strong>
     &lt;/m:echo&gt;
 &lt;/m:mayaa&gt;</div></pre>

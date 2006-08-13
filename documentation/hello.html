@@ -65,7 +65,7 @@
 <code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:write <strong>id="message"</strong> value="<strong>Hello Mayaa!</strong>" /&gt;
+    &lt;m:write <strong>m:id="message"</strong> value="<strong>Hello Mayaa!</strong>" /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
 <p>テンプレート <code>hello.html</code> 上の span タグと <code>id</code> が一致するものを mayaa ファイル <code>hello.mayaa</code> 上から探し、<code>value</code> の値である「Hello mayaa!」という文字列に置き換えて出力します。</p>
@@ -94,7 +94,7 @@
 <code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:write id="message" value="Hello Mayaa!" <strong>replace="false"</strong> /&gt;
+    &lt;m:write m:id="message" value="Hello Mayaa!" <strong>replace="false"</strong> /&gt;
 &lt;/m:mayaa&gt;</div>
 実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
@@ -118,7 +118,7 @@
 <code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:write id="message" value="<strong>&#36;{ 1 + 2 }</strong>" /&gt;
+    &lt;m:write m:id="message" value="<strong>&#36;{ 1 + 2 }</strong>" /&gt;
 &lt;/m:mayaa&gt;</div>
 実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
@@ -140,7 +140,7 @@
 <code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:write id="message" value="Hello <strong>&#36;{ param.name }</strong>" /&gt;
+    &lt;m:write m:id="message" value="Hello <strong>&#36;{ param.name }</strong>" /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello.html?name=world" target="_blank">http://localhost:8080/mayaa/hello.html?name=world</a></code> にアクセスしてみましょう。</p>

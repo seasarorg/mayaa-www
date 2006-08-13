@@ -73,7 +73,7 @@
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         <strong>extends="/layout.html"</strong>&gt;
 
-    &lt;<strong>m:doRender</strong> <strong>id="content"</strong> <strong>name="contentBody"</strong> /&gt;
+    &lt;<strong>m:doRender</strong> <strong>m:id="content"</strong> <strong>name="contentBody"</strong> /&gt;
 &lt;/m:mayaa&gt;</div>
 <code>layout.html</code>
 <div class="file">&lt;html&gt;
@@ -86,7 +86,7 @@
 <code>layout.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;<strong>m:insert</strong> <strong>id="contentPosition"</strong> <strong>name="contentBody"</strong> /&gt;
+    &lt;<strong>m:insert</strong> <strong>m:id="contentPosition"</strong> <strong>name="contentBody"</strong> /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
 <p>コンポーネントの例と違う点は次の 4 点です。</p>
@@ -154,8 +154,8 @@
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         <strong>extends="/layout.html"</strong>&gt;
 
-    &lt;m:doRender <strong>id="content1"</strong> <strong>name="position1"</strong> /&gt;
-    &lt;m:doRender <strong>id="content2"</strong> <strong>name="position2"</strong> /&gt;
+    &lt;m:doRender <strong>m:id="content1"</strong> <strong>name="position1"</strong> /&gt;
+    &lt;m:doRender <strong>m:id="content2"</strong> <strong>name="position2"</strong> /&gt;
 &lt;/m:mayaa&gt;</div>
 <code>layout.html</code>
 <div class="file">&lt;html&gt;
@@ -169,8 +169,8 @@
 <code>layout.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:insert <strong>id="contentPosition1"</strong> <strong>name="position1"</strong> /&gt;
-    &lt;m:insert <strong>id="contentPosition2"</strong> <strong>name="position2"</strong> /&gt;
+    &lt;m:insert <strong>m:id="contentPosition1"</strong> <strong>name="position1"</strong> /&gt;
+    &lt;m:insert <strong>m:id="contentPosition2"</strong> <strong>name="position2"</strong> /&gt;
 &lt;/m:mayaa&gt;</div>
 実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
@@ -200,7 +200,7 @@
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         extends="/layout.html"&gt;
 
-    &lt;m:doRender id="content" name="contentBody" /&gt;
+    &lt;m:doRender m:id="content" name="contentBody" /&gt;
 &lt;/m:mayaa&gt;</div>
 <code>layout.html</code>
 <div class="file">&lt;html&gt;
@@ -213,7 +213,7 @@
 <code>layout.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    <strong>&lt;m:insert id="comp" path="/component.html" /&gt;</strong>
+    <strong>&lt;m:insert m:id="comp" path="/component.html" /&gt;</strong>
     &lt;m:insert id="contentPosition" name="contentBody" /&gt;
 &lt;/m:mayaa&gt;</div>
 <code>component.html</code>
@@ -228,7 +228,7 @@
 <code>component.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:doRender <strong>id="centered"</strong> /&gt;
+    &lt;m:doRender <strong>m:id="centered"</strong> /&gt;
 &lt;/m:mayaa&gt;</div>
 実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;

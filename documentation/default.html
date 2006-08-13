@@ -73,12 +73,12 @@
 <code>hello_with_time.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:write id="message" value="Hello Mayaa!" /&gt;
+    &lt;m:write m:id="message" value="Hello Mayaa!" /&gt;
 &lt;/m:mayaa&gt;</div>
 <code>default.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:write <strong>id="currentTime"</strong>
+    &lt;m:write <strong>m:id="currentTime"</strong>
             value="<strong>&#36;{ new java.util.Date().toString() }</strong>" /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
@@ -113,14 +113,14 @@
 <code>hello_with_time.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:write id="message" value="Hello Mayaa!" /&gt;
+    &lt;m:write m:id="message" value="Hello Mayaa!" /&gt;
 
-    &lt;m:write <strong>id="currentTime"</strong> value="<strong>Now</strong>" /&gt;
+    &lt;m:write <strong>m:id="currentTime"</strong> value="<strong>Now</strong>" /&gt;
 &lt;/m:mayaa&gt;</div>
 <code>default.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:write id="currentTime"
+    &lt;m:write m:id="currentTime"
             value="&#36;{ new java.util.Date().toString() }" /&gt;
 &lt;/m:mayaa&gt;</div>
 実行結果 (改行などは実際の実行結果と異なります)

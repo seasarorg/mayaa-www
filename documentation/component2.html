@@ -69,12 +69,12 @@
 <code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:for id="loop"
+    &lt;m:for m:id="loop"
             init="&#36;{ var <strong>count</strong> = 0 }"
             test="&#36;{ count &amp;lt; 5 }"
             after="&#36;{ count++ }" /&gt;
 
-    &lt;<strong>m:insert</strong> <strong>id="comp"</strong> path="/component.html" /&gt;
+    &lt;<strong>m:insert</strong> <strong>m:id="comp"</strong> path="/component.html" /&gt;
 &lt;/m:mayaa&gt;</div>
 <code>component.html</code>
 <div class="file">&lt;html&gt;
@@ -89,9 +89,9 @@
 <code>component.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;<strong>m:doRender</strong> <strong>id="centered"</strong> /&gt;
+    &lt;<strong>m:doRender</strong> <strong>m:id="centered"</strong> /&gt;
 
-    &lt;m:write <strong>id="message"</strong>
+    &lt;m:write <strong>m:id="message"</strong>
         value="Hello Mayaa! <strong>&#36;{ count }</strong>" replace="false" /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 
@@ -136,7 +136,7 @@
 <code>hello.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:insert id="comp" path="/component.html"
+    &lt;m:insert m:id="comp" path="/component.html"
         <strong>title="Component Title"</strong> /&gt;
 &lt;/m:mayaa&gt;</div>
 <code>component.html</code>
@@ -153,10 +153,10 @@
 <code>component.mayaa</code>
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:doRender id="centered" /&gt;
+    &lt;m:doRender m:id="centered" /&gt;
 
-    &lt;m:write <strong>id="componentTitle"</strong> value="<strong>&#36;{ binding.title }</strong>" /&gt;
-    &lt;m:write id="message" value="Hello Mayaa!" replace="false" /&gt;
+    &lt;m:write <strong>m:id="componentTitle"</strong> value="<strong>&#36;{ binding.title }</strong>" /&gt;
+    &lt;m:write m:id="message" value="Hello Mayaa!" replace="false" /&gt;
 &lt;/m:mayaa&gt;</div>
 実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
@@ -177,7 +177,7 @@
 <div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         <strong>xmlns:x="my_namespace"</strong>&gt;
-    &lt;m:insert id="comp" path="/component.html"
+    &lt;m:insert m:id="comp" path="/component.html"
         <strong>x:</strong>title="Component Title" /&gt;
 &lt;/m:mayaa&gt;</div></pre>
 

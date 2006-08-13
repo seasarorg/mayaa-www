@@ -120,6 +120,7 @@
     <h4><a id="echo" name="echo"></a>■echo プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
     <p>タグのボディが有効です。<a href="echo.html">利用例</a>。</p>
     <p>割り当てられたタグをそのまま出力します。m:echo タグのボディに attribute プロセッサを書くと属性を追加または変更、削除できます。</p>
+    <p>echo プロセッサの属性およびボディでは、スクリプトでテンプレート側の属性値を参照できます。属性名を変数名とし、属性値を文字列として持っています。たとえば a タグにバインディングした echo で &#36;{ href } とすれば、元の a タグの href 属性の値を取得できます。</p>
     <p>(<strong>※</strong>:1.0.6, 1.1.0-beta6で追加されたもの)</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
     <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
