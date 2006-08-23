@@ -22,6 +22,7 @@
 <div id="contentsleft">
 <img src="../images/arrow02.gif" align="absmiddle"><a href="../index.html" class="text11px">Top</a>
 <div class="sidemenu"><a href="#mayaafaces">Mayaa Faces</a></div>
+<div class="sidemenu"><a href="#mayaawebwork2">Mayaa WebWork2</a></div>
 </div>
 
 <div id="contentsright">
@@ -38,6 +39,61 @@
 	<div><a href="../downloads/mayaa-faces-0.3.war"><img src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle"> Blank War</a></div>
 </div>
 
+<h3><a id="mayaawebwork2" name="mayaawebwork2"></a>Mayaa WebWork2</h3>
+
+<h4>Mayaa WebWork2とは</h4>
+<p>Mayaa WebWork2は<a href="http://www.opensymphony.com/webwork/">WebWork2</a>からMayaaを利用するための実装を提供します。</p>
+
+<h4>Download ver 1.0.0 (2006/8/23)</h4>
+<br>
+<div class="download_direct">
+	<div><a href="../downloads/mayaa-webwork2-1.0.0.jar"><img src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle">Jar</a></div>
+	<div><a href="../downloads/mayaa-webwork2-example-1.0.0.war"><img src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle">Example War</a></div>
+</div>
+
+<h4>利用方法(WebWork2)</h4>
+<p>
+xwork.xmlのpackage要素内にMayaaResultの定義を追加し、Mayaaを使用するActionにresultの定義を追加します。<br />
+locationパラメータでMayaaが処理するHTMLファイルを指定することが出来ます。
+locationパラメータを指定しない場合は「actionのname属性.html」というファイルを使用します。
+</p>
+<pre>
+<code>xwork.xml</code>
+<div class="file">
+&lt;!DOCTYPE xwork PUBLIC 
+  "-//OpenSymphony Group//XWork 1.1.1//EN"
+  "http://www.opensymphony.com/xwork/xwork-1.1.1.dtd"&gt;
+&lt;xwork&gt;
+  &lt;include file="webwork-default.xml" /&gt;
+  &lt;package name="default" extends="webwork-default"&gt;
+    &lt;result-types&gt;<strong>
+      &lt;result-type class="org.seasar.mayaa.webwork.MayaaResult"
+        name="mayaa" /&gt;</strong>
+    &lt;/result-types&gt;
+
+    &lt;action name="index"
+      class="org.seasar.mayaa.webwork.example.action.TestAction"&gt;<strong>
+      &lt;result name="success" type="mayaa"&gt;
+        &lt;param name="location"&gt;test.html&lt;/param&gt;
+      &lt;/result&gt;</strong>
+    &lt;/action&gt;
+  &lt;/package&gt;
+&lt;/xwork&gt;
+</div>
+</pre>
+
+<h4>利用方法(Mayaa)</h4>
+<p>
+Mayaa側の設定は不要です。JarファイルをWEB-INF/libに追加すれば、JarファイルのMETA-INF内の設定ファイルが自動で読み込まれるようになります。<br />
+あとはMayaaファイルの属性部分で以下のように指定すればActionのプロパティなど、ValueStack経由でアクセスできるオブジェクトをMayaa側で使用できるようになります。
+ValueStackのオブジェクトにアクセスする際のプレフィックスは「ww」ですが、省略することも出来ます。
+</p>
+<pre>
+<code>prefix指定時</code>
+<div class="file">&lt;m;write value="${ww.プロパティ名}" /&gt;</div>
+<code>prefix省略時</code>
+<div class="file">&lt;m;write value="${プロパティ名}" /&gt;</div>
+</pre>
 
 </div>
 
