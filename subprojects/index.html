@@ -53,13 +53,13 @@
 
 <h4>利用方法(WebWork2)</h4>
 <p>
-xwork.xmlのpackage要素内にMayaaResultの定義を追加し、Mayaaを使用するActionにresultの定義を追加します。<br />
+xwork.xmlのpackage要素内にMayaaResultの定義を追加し、Mayaaを使用するActionにresultの定義を追加します。<br>
 locationパラメータでMayaaが処理するHTMLファイルを指定することが出来ます。
 locationパラメータを指定しない場合は「actionのname属性.html」というファイルを使用します。
 </p>
 <pre>
 <code>xwork.xml</code>
-<div class="file">&lt;!DOCTYPE xwork PUBLIC 
+<div class="file">&lt;!DOCTYPE xwork PUBLIC
   "-//OpenSymphony Group//XWork 1.1.1//EN"
   "http://www.opensymphony.com/xwork/xwork-1.1.1.dtd"&gt;
 &lt;xwork&gt;
@@ -83,15 +83,15 @@ locationパラメータを指定しない場合は「actionのname属性.html」
 
 <h4>利用方法(Mayaa)</h4>
 <p>
-Mayaa側の設定は不要です。JarファイルをWEB-INF/libに追加すれば、JarファイルのMETA-INF内の設定ファイルが自動で読み込まれるようになります。<br />
+Mayaa側の設定は不要です。JarファイルをWEB-INF/libに追加すれば、JarファイルのMETA-INF内の設定ファイルが自動で読み込まれるようになります。<br>
 あとはMayaaファイルの属性部分で以下のように指定すればActionのプロパティなど、ValueStack経由でアクセスできるオブジェクトをMayaa側で使用できるようになります。
 ValueStackのオブジェクトにアクセスする際のプレフィックスは「ww」ですが、省略することも出来ます。
 </p>
 <pre>
 <code>prefix指定時</code>
-<div class="file">&lt;m:write value="${ww.プロパティ名}" /&gt;</div>
+<div class="file">&lt;m:write value="&#36;{ww.プロパティ名}" /&gt;</div>
 <code>prefix省略時</code>
-<div class="file">&lt;m:write value="${プロパティ名}" /&gt;</div>
+<div class="file">&lt;m:write value="&#36;{プロパティ名}" /&gt;</div>
 </pre>
 
 </div>

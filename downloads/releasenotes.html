@@ -38,6 +38,21 @@
     <h3>過去の変更履歴</h3>
 
 
+    <h4><a id="ver1.1.1" name="ver1.1.1"></a>変更点 1.1.0 -> 1.1.1 (2006/09/02)</h4>
+    <ul>
+      <li><a href="https://www.seasar.org/issues/browse/MAYAA-4">JIRA[MAYAA-4]</a> m:injectでインジェクションしたもののnamespaceを持つ属性を出力しないよう修正しました。</li>
+      <li>ページのビルド結果をserializeする途中でWebアプリケーションを終了させたときに例外が出る問題を修正しました。</li>
+      <li>セッションが既に無効化されている場合に例外が発生する問題を修正しました。</li>
+      <li>SpecificationCacheのGCログをINFOレベルからDEBUGレベルに変更しました。</li>
+    </ul>
+
+    <h4><a id="ver1.0.7" name="ver1.0.7"></a>変更点 1.0.6 -> 1.0.7 (2006/09/02)</h4>
+    <ul>
+      <li><a href="https://www.seasar.org/issues/browse/MAYAA-3">JIRA[MAYAA-3]</a> テンプレートにprefix付きの属性を書いた場合、その属性が出力されない問題を修正しました。</li>
+      <li>セッションが既に無効化されている場合に例外が発生する問題を修正しました。</li>
+    </ul>
+
+
     <h4><a id="ver1.1.0" name="ver1.1.0"></a>変更点 1.1.0-beta6 -> 1.1.0 (2006/08/13)</h4>
     <ul>
       <li><a href="https://www.seasar.org/issues/browse/MAYAA-1">JIRA[MAYAA-1]</a> ビルドした結果をログに出力する機能を追加しました。デフォルトは無効です。有効にするにはServiceProvider設定でEngineのパラメータに"dumpEnabled"を追加し、値に"true"または"false"を指定してください。現状ではテンプレート機能、コンポーネント機能には対応していません。</li>
@@ -47,7 +62,6 @@
       <li>XMLをテンプレートにした場合にデフォルト名前空間指定で例外が出る問題を修正しました。</li>
       <li>Maven2 から利用できるようになりました。<br>groupId: org.seasar.mayaa<br>artifactId: mayaa<br>詳しくは Wiki をご覧ください。(<a href="http://www.seasar.org/wiki/index.php?Maven2RepoRemote">http://www.seasar.org/wiki/index.php?Maven2RepoRemote</a>)</li>
     </ul>
-
 
     <h4><a id="ver1.1.0-beta6" name="ver1.1.0-beta6"></a>変更点 1.1.0-beta5 -> 1.1.0-beta6 (2006/07/30)</h4>
     <p>バグ修正などをおこなった後、正式版になる予定です。</p>
@@ -82,7 +96,6 @@
       <li>例外ハンドラページからforwardやredirectができない問題を修正しました。</li>
       <li>SessionScope#getUnderlyingContext()を呼び出したときにSessionオブジェクトを生成しないよう修正しました。Sessionオブジェクトがない場合はnullを返します。</li>
     </ul>
-
 
     <h4><a id="ver1.1.0-beta5" name="ver1.1.0-beta5"></a>変更点 1.1.0-beta4 -> 1.1.0-beta5 (2006/05/28)</h4>
     <ul>
