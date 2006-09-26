@@ -40,29 +40,27 @@
     <!-- stable -->
     <h3><a id="new" name="new"></a>最新のリリース</h3>
 
-    <h4>Mayaa 1.1.1 (2006/09/02)</h4>
+    <h4>Mayaa 1.1.2 (2006/09/27)</h4>
     <br><!-- for IE -->
     <div class="download_direct">
-      <div class="filelink"><a href="mayaa-1.1.1.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Blank War</a></div>
-      <div class="filelink"><a href="mayaa-getting-started-1.1.1.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 導入 War</a> (<a href="../documentation/install.html">インストール方法</a>)</div>
-      <div class="filelink"><a href="mayaa-project-1.1.1.zip"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Eclipse Project Zip</a></div>
+      <div class="filelink"><a href="mayaa-1.1.2.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Blank War</a></div>
+      <div class="filelink"><a href="mayaa-getting-started-1.1.2.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 導入 War</a> (<a href="../documentation/install.html">インストール方法</a>)</div>
+      <div class="filelink"><a href="mayaa-project-1.1.2.zip"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Eclipse Project Zip</a></div>
     </div>
-
-
-    <h4>Mayaa 1.0.7 (2006/09/02)</h4>
-    <br><!-- for IE -->
-    <div class="download_direct">
-      <div class="filelink"><a href="mayaa-1.0.7.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Blank War</a></div>
-      <div class="filelink"><a href="mayaa-getting-started-1.0.7.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 導入 War</a> (<a href="../documentation/install.html">インストール方法</a>)</div>
-      <div class="filelink"><a href="mayaa-project-1.0.7.zip"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Eclipse Project Zip</a></div>
-    </div>
-
 
 
     <h3><a id="changelog" name="changelog"></a>変更履歴</h3>
 
     <div class="releasenote">(<a href="releasenotes.html">過去の変更履歴</a>)</div>
 
+
+    <h4><a id="ver1.1.2" name="ver1.1.2"></a>変更点 1.1.1 -> 1.1.2 (2006/09/27)</h4>
+    <ul>
+      <li>ソースコードの文字セットをUTF-8に変更しました。</li>
+      <li><a href="https://www.seasar.org/issues/browse/MAYAA-6">JIRA[MAYAA-6]</a> elementプロセッサ、echoプロセッサ、およびテンプレート上の属性において、「属性がnullの場合に出力しない」という処理で空文字列も出力しないようになっていた問題を修正しました。</li>
+      <li>jaxenを1.1-beta-10にしました。</li>
+      <li>エンジン設定にrequestedSuffixEnabledを追加しました。デフォルトはfalseで、trueにするとsuffix指定のアクセス(例:index$ja.html)が有効になります。suffix指定アクセスはm:templateSuffixの指定よりも優先されます。1.1.1まではデフォルトで有効な状態でした。アップグレードの際はご注意ください。</li>
+    </ul>
 
     <h4><a id="ver1.1.1" name="ver1.1.1"></a>変更点 1.1.0 -> 1.1.1 (2006/09/02)</h4>
     <ul>
@@ -72,12 +70,6 @@
       <li>SpecificationCacheのGCログをINFOレベルからDEBUGレベルに変更しました。</li>
     </ul>
 
-    <h4><a id="ver1.0.7" name="ver1.0.7"></a>変更点 1.0.6 -> 1.0.7 (2006/09/02)</h4>
-    <ul>
-      <li><a href="https://www.seasar.org/issues/browse/MAYAA-3">JIRA[MAYAA-3]</a> テンプレートにprefix付きの属性を書いた場合、その属性が出力されない問題を修正しました。</li>
-      <li>セッションが既に無効化されている場合に例外が発生する問題を修正しました。</li>
-    </ul>
-
 
 
     <h3><a id="sample-beta" name="sample-beta"></a>サンプル</h3>
@@ -85,28 +77,32 @@
 
 
 
-    <h4>バージョン 1.1.1</h4>
+    <h4>バージョン 1.1.2</h4>
     <ul>
-      <li>Mayaaの単独利用例：<br><a href="mayaa-sample-1.1.1.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Mayaaサンプル集</a> 2006/09/02</li>
-      <li>Strutsを利用した例：<br><a href="mayaa-hangman-struts-1.1.1.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Struts利用版Hangmanゲーム</a> 2006/09/02</li>
-      <li>Mayaaで簡易なMVCを実現した例：<br><a href="mayaa-hangman-solo-1.1.1.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Mayaa単独版Hangmanゲーム</a> 2006/09/02</li>
-      <li>Mayaaの内部API利用例：<br><a href="mayaa-libman-1.1.1.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Libman - Mayaa Library Manager</a> 2006/09/02</li>
-      <li>アプリケーション例：<br><a href="mayaa-sample-app-1.1.1.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 申し込みフォームアプリケーション</a> (S2Struts, HSQLDB) 2006/09/02</li>
+      <li>Mayaaの単独利用例：<br><a href="mayaa-sample-1.1.2.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Mayaaサンプル集</a> 2006/09/27</li>
+      <li>Strutsを利用した例：<br><a href="mayaa-hangman-struts-1.1.2.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Struts利用版Hangmanゲーム</a> 2006/09/27</li>
+      <li>Mayaaで簡易なMVCを実現した例：<br><a href="mayaa-hangman-solo-1.1.2.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Mayaa単独版Hangmanゲーム</a> 2006/09/27</li>
+      <li>Mayaaの内部API利用例：<br><a href="mayaa-libman-1.1.2.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Libman - Mayaa Library Manager</a> 2006/09/27</li>
+      <li>アプリケーション例：<br><a href="mayaa-sample-app-1.1.2.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 申し込みフォームアプリケーション</a> (S2Struts, HSQLDB) 2006/09/27</li>
     </ul>
-
-
-    <h4>バージョン 1.0.7</h4>
-    <ul>
-      <li>Mayaaの単独利用例：<br><a href="mayaa-sample-1.0.7.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Mayaaサンプル集</a> 2006/09/02</li>
-      <li>Strutsを利用した例：<br><a href="mayaa-hangman-struts-1.0.7.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Struts利用版Hangmanゲーム</a> 2006/09/02</li>
-      <li>Mayaaで簡易なMVCを実現した例：<br><a href="mayaa-hangman-solo-1.0.7.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Mayaa単独版Hangmanゲーム</a> 2006/09/02</li>
-      <li>Mayaaの内部API利用例：<br><a href="mayaa-libman-1.0.7.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Libman - Mayaa Library Manager</a> 2006/09/02</li>
-      <li>アプリケーション例：<br><a href="mayaa-sample-app-1.0.7.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 申し込みフォームアプリケーション</a> (S2Struts, HSQLDB) 2006/09/02</li>
-    </ul>
-
 
 
     <h3><a id="past" name="past"></a>過去のリリース</h3>
+
+
+    <h4>バージョン 1.1.1 (2006/09/02)</h4>
+    <ul>
+      <li><a href="mayaa-1.1.1.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Blank War</a></li>
+      <li><a href="mayaa-getting-started-1.1.1.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 導入 War</a></li>
+      <li><a href="mayaa-project-1.1.1.zip"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Eclipse Project Zip</a></li>
+
+      <li><a href="mayaa-sample-1.1.1.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Mayaaサンプル集</a></li>
+      <li><a href="mayaa-hangman-struts-1.1.1.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Struts利用版Hangmanゲーム</a></li>
+      <li><a href="mayaa-hangman-solo-1.1.1.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Mayaa単独版Hangmanゲーム</a></li>
+      <li><a href="mayaa-libman-1.1.1.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Libman - Mayaa Library Manager</a></li>
+      <li><a href="mayaa-sample-app-1.1.1.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 申し込みフォームアプリケーション</a></li>
+
+    </ul>
 
 
     <h4>バージョン 1.0.7 (2006/09/02)</h4>
@@ -130,12 +126,6 @@
       <li><a href="mayaa-getting-started-1.1.0.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 導入 War</a></li>
       <li><a href="mayaa-project-1.1.0.zip"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Eclipse Project Zip</a></li>
 
-      <li><a href="mayaa-sample-1.1.0.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Mayaaサンプル集</a></li>
-      <li><a href="mayaa-hangman-struts-1.1.0.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Struts利用版Hangmanゲーム</a></li>
-      <li><a href="mayaa-hangman-solo-1.1.0.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Mayaa単独版Hangmanゲーム</a></li>
-      <li><a href="mayaa-libman-1.1.0.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Libman - Mayaa Library Manager</a></li>
-      <li><a href="mayaa-sample-app-1.1.0.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 申し込みフォームアプリケーション</a></li>
-
     </ul>
 
 
@@ -153,24 +143,6 @@
       <li><a href="mayaa-1.0.6.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Blank War</a></li>
       <li><a href="mayaa-getting-started-1.0.6.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 導入 War</a></li>
       <li><a href="mayaa-project-1.0.6.zip"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Eclipse Project Zip</a></li>
-
-    </ul>
-
-
-    <h4>バージョン 1.1.0-beta5 (2006/05/28)</h4>
-    <ul>
-      <li><a href="mayaa-1.1.0-beta5.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Blank War</a></li>
-      <li><a href="mayaa-getting-started-1.1.0-beta5.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 導入 War</a></li>
-      <li><a href="mayaa-project-1.1.0-beta5.zip"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Eclipse Project Zip</a></li>
-
-    </ul>
-
-
-    <h4>バージョン 1.0.5 (2006/05/28)</h4>
-    <ul>
-      <li><a href="mayaa-1.0.5.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Blank War</a></li>
-      <li><a href="mayaa-getting-started-1.0.5.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 導入 War</a></li>
-      <li><a href="mayaa-project-1.0.5.zip"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Eclipse Project Zip</a></li>
 
     </ul>
 
