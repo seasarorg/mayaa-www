@@ -22,24 +22,29 @@
 <div id="contentsleft">
 <img src="../images/arrow02.gif" align="absmiddle"><a href="../index.html" class="text11px">Top</a>
 <div class="sidemenu"><a href="index.html">Documentation Top</a></div>
-<div class="sidemenu"><a href="changelog.html">更新履歴</a></div>
-<div class="sidemenu"><a href="slide.html">スライドなど</a></div>
-<div class="sidemenu"><a href="about.html">1. Mayaa 導入</a></div>
-<div class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></div>
-<div class="sidemenu"><a href="default.html">3. How To</a></div>
-<div class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></div>
-<div class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></div>
-<div class="sidemenu"><a href="#top">付録</a></div>
-<div class="sidemenutext"><span>A-1. カスタムタグの注意点</span></div>
-<div class="sidemenutext"><a href="mayaa_rhino_tips.html">A-2. JavaScript Tips</a></div>
-<div class="sidemenutext"><a href="note.html">A-3. その他の注意点</a></div>
-<br>
-<div class="sidemenu"><a href="link.html">外部へのリンク</a></div>
+
+    <div class="sidemenu"><a href="changelog.html">更新履歴</a></div>
+    <div class="sidemenu"><a href="slide.html">スライドなど</a></div>
+    <div class="sidemenu"><a href="about.html">1. Mayaa導入</a></div>
+    <div class="sidemenu"><a href="hello.html">2. チュートリアル</a></div>
+    <div class="sidemenu"><a href="default.html">3. How To</a></div>
+    <div class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></div>
+    <div class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></div>
+    <div class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></div>
+      <div class="sidemenutext"><span>A-1. カスタムタグの注意点</span></div>
+      <div class="sidemenutext"><a href="mayaa_rhino_tips.html">A-2. JavaScript Tips</a></div>
+      <div class="sidemenutext"><a href="note.html">A-3. その他の注意点</a></div>
+      <br>
+
+    <br>
+    <div class="sidemenu"><a href="link.html">外部へのリンク</a></div>
+
 </div>
 
 
 <div id="contentsright">
 <h1><a id="top" name="top"></a>Documentation</h1>
+
 <h2>Appendix 1. カスタムタグの注意点</h2>
 
 <p>Mayaa で JSP カスタムタグを利用する場合、JSP カスタムタグの仕様と異なる点があります。</p>
@@ -80,13 +85,14 @@
 <h4>■Mayaa のスクリプトと式言語の違い</h4>
 
 <p>Mayaa のスクリプトは JavaScript (ECMA Script: 実装は <a href="http://www.mozilla.org/rhino/" title="Rhino - JavaScript for Java">Rhino (http://www.mozilla.org/rhino/)</a>) です。文法は当然 Java と異なりますが、それ以外にも最終結果として Java のオブジェクトまたはプリミティブ値として返すときに期待する動作と異なる場合があります。</p>
-<p>たとえば「<a href="hello.html#script" title="2-1. 最初の一歩">スクリプトでオブジェクトを出力する</a>」の例では、結果として「3」を期待したところ「3.0」が返ってきました。これは JSP カスタムタグが Object 型を受け取るように作られているために型を決定できず、最も精度の高い double で渡していることが原因です。</p>
+<p>たとえば「<a href="hello.html#script" title="2-1. 最初の一歩">スクリプトでオブジェクトを出力する</a>」の例では、<strong>Mayaa 1.1.2 以前の場合、</strong>結果として「3」を期待したところ「3.0」が返ってきました。これは JSP カスタムタグが Object 型を受け取るように作られているために型を決定できず、最も精度の高い double で渡していることが原因です。Mayaa 1.1.3 にて Java ←→ JavaScript 間の変換時は元の型が維持されるよう修正しましたが、JavaScript 内で Object 型の引数に対して Number を渡す場合は、同様の問題が発生します。</p>
 <p>この例の場合に限れば、文字列に変換した後で渡す <code>fmt:numberFormat</code> を使うなどの回避策があります。式言語の暗黙的な動作を期待しているカスタムタグの場合はこのような回避策を取る必要があるかもしれません。</p>
 
 
 <div class="navi"><a href="#top">↑このページのトップへ</a></div>
 
 </div>
+
 <div class="copyrights" align="center">
 <img src="../images/copyrights.gif" alt="Copyright (c) 2004-2006 the Seasar Foundation and others. all rights reserved." width="760" height="20">
 </div>

@@ -22,31 +22,34 @@
 <div id="contentsleft">
 <img src="../images/arrow02.gif" align="absmiddle"><a href="../index.html" class="text11px">Top</a>
 <div class="sidemenu"><a href="index.html">Documentation Top</a></div>
-<div class="sidemenu"><a href="changelog.html">更新履歴</a></div>
-<div class="sidemenu"><a href="slide.html">スライドなど</a></div>
-<div class="sidemenu"><a href="about.html">1. Mayaa 導入</a></div>
-<div class="sidemenu"><a href="hello.html">2. Mayaa チュートリアル</a></div>
-<div class="sidemenutext"><a href="hello.html">2-1. 最初の一歩</a></div>
-<div class="sidemenutext"><a href="conditional.html">2-2. 条件分岐とループ</a></div>
-<div class="sidemenutext"><span>2-3. JSP カスタムタグを使う</span></div>
-<div class="sidemenutext"><a href="notation.html">2-4. 設定の記述方法</a></div>
-<div class="sidemenutext"><a href="component1.html">2-5. HTML 部品 (静的)</a></div>
-<div class="sidemenutext"><a href="component2.html">2-6. HTML 部品 (動的)</a></div>
-<div class="sidemenutext"><a href="layout.html">2-7. レイアウト共有</a></div>
-<div class="sidemenutext"><a href="deploy.html">2-8. サーバに配置する</a></div>
-<br>
 
-<div class="sidemenu"><a href="default.html">3. How To</a></div>
-<div class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></div>
-<div class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></div>
-<div class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></div>
-<br>
-<div class="sidemenu"><a href="link.html">外部へのリンク</a></div>
+    <div class="sidemenu"><a href="changelog.html">更新履歴</a></div>
+    <div class="sidemenu"><a href="slide.html">スライドなど</a></div>
+    <div class="sidemenu"><a href="about.html">1. Mayaa導入</a></div>
+    <div class="sidemenu"><a href="hello.html">2. チュートリアル</a></div>
+      <div class="sidemenutext"><a href="hello.html">2-1. 最初の一歩</a></div>
+      <div class="sidemenutext"><a href="conditional.html">2-2. 条件分岐とループ</a></div>
+      <div class="sidemenutext"><span>2-3. JSPカスタムタグを使う</span></div>
+      <div class="sidemenutext"><a href="notation.html">2-4. 設定の記述方法</a></div>
+      <div class="sidemenutext"><a href="component1.html">2-5. HTML部品 (静的)</a></div>
+      <div class="sidemenutext"><a href="component2.html">2-6. HTML部品 (動的)</a></div>
+      <div class="sidemenutext"><a href="layout.html">2-7. レイアウト共有</a></div>
+      <div class="sidemenutext"><a href="deploy.html">2-8. サーバに配置する</a></div>
+      <br>
+    <div class="sidemenu"><a href="default.html">3. How To</a></div>
+    <div class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></div>
+    <div class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></div>
+    <div class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></div>
+
+    <br>
+    <div class="sidemenu"><a href="link.html">外部へのリンク</a></div>
+
 </div>
 
 
 <div id="contentsright">
 <h1><a id="top" name="top"></a>Documentation</h1>
+
 <h2>2-3. JSP カスタムタグを使う</h2>
 
 <p>Mayaa では JSP カスタムタグをほぼそのまま利用できます (違いについては「<a href="mayaa_customtag_diff.html" title="appendix A. Mayaa と JSP カスタムタグ">Mayaa と JSP カスタムタグ</a>」を参照してください)。ここでは例として JSTL 1.0 の一部を使ってみましょう。Mayaa Getting Started package には JSTL 1.1 のライブラリ (Jakarta Taglibs - Standard Taglib 1.1.2) を同梱していますので、.mayaa ファイルに記述を追加するだけで使えるようになります。(core および format のみ)</p>
@@ -130,11 +133,11 @@
 実行結果 (改行などは実際の実行結果と異なります)
 <div class="file">&lt;html&gt;
 &lt;body&gt;
-    <strong>3.0</strong>
+    <strong>3</strong>
 &lt;/body&gt;
 &lt;/html&gt;</div></pre>
 
-<p>この実行結果は <code>m:write</code> の実行結果「3」と異なり、「3.0」になっています。これは、スクリプトから <code>c:out</code> に渡る値の型が double になるためです。(「<a href="mayaa_customtag_diff.html" title="appendix A. Mayaa と JSP カスタムタグ">Mayaa と JSP カスタムタグ</a>」を参照してください)</p>
+<p>この実行結果は <strong>Mayaa 1.1.2 以前の場合、</strong><code>m:write</code> の実行結果「3」と異なり、「3.0」となります。これは、スクリプトから <code>c:out</code> に渡る値の型が double になるためです。(「<a href="mayaa_customtag_diff.html" title="appendix A. Mayaa と JSP カスタムタグ">Mayaa と JSP カスタムタグ</a>」を参照してください)</p>
 
 
 <div class="navi"><a href="#top">↑このページのトップへ</a></div>

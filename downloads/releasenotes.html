@@ -38,6 +38,16 @@
     <h3>過去の変更履歴</h3>
 
 
+    <h4><a id="ver1.1.3" name="ver1.1.3"></a>変更点 1.1.2 -> 1.1.3 (2006/11/23)</h4>
+    <ul>
+      <li>Mayaaのjarを複数Webアプリで共有した場合でも正常に動作するよう修正しました。</li>
+      <li>PathAdjusterが適用されない場合があるのを修正しました。</li>
+      <li><a href="https://www.seasar.org/issues/browse/MAYAA-7">JIRA[MAYAA-7]</a> Jarの内容を参照するとき、URLConnectionのキャッシュを使わないよう修正しました。。Mayaaを含むwarをdeploy解除した場合などに、Mayaaが参照するリソース(tldなど)を含むjarファイルが削除されない問題の対処となります。</li>
+      <li><a href="https://www.seasar.org/issues/browse/MAYAA-13">JIRA[MAYAA-13]</a> レイアウト共有機能で、レイアウト側のhtml, mayaaを更新しても反映されない問題を修正しました。</li>
+      <li>テンプレートに文字セット指定がされていない場合、UTF-8と見なすように変更しました。</li>
+      <li>JavaScriptからJavaに数値を渡すとき、型情報があるならそれを維持するようにしました。</li>
+    </ul>
+
     <h4><a id="ver1.1.2" name="ver1.1.2"></a>変更点 1.1.1 -> 1.1.2 (2006/09/27)</h4>
     <ul>
       <li>ソースコードの文字セットをUTF-8に変更しました。</li>
@@ -46,6 +56,8 @@
       <li>エンジン設定にrequestedSuffixEnabledを追加しました。デフォルトはfalseで、trueにするとsuffix指定のアクセス(例:index$ja.html)が有効になります。suffix指定アクセスはm:templateSuffixの指定よりも優先されます。1.1.1まではデフォルトで有効な状態でした。アップグレードの際はご注意ください。</li>
     </ul>
 
+
+
     <h4><a id="ver1.1.1" name="ver1.1.1"></a>変更点 1.1.0 -> 1.1.1 (2006/09/02)</h4>
     <ul>
       <li><a href="https://www.seasar.org/issues/browse/MAYAA-4">JIRA[MAYAA-4]</a> m:injectでインジェクションしたもののnamespaceを持つ属性を出力しないよう修正しました。</li>
@@ -53,8 +65,6 @@
       <li>セッションが既に無効化されている場合に例外が発生する問題を修正しました。</li>
       <li>SpecificationCacheのGCログをINFOレベルからDEBUGレベルに変更しました。</li>
     </ul>
-
-
     <h4><a id="ver1.0.7" name="ver1.0.7"></a>変更点 1.0.6 -> 1.0.7 (2006/09/02)</h4>
     <ul>
       <li><a href="https://www.seasar.org/issues/browse/MAYAA-3">JIRA[MAYAA-3]</a> テンプレートにprefix付きの属性を書いた場合、その属性が出力されない問題を修正しました。</li>
