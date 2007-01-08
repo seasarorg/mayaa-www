@@ -42,7 +42,7 @@
       <br>
     <div class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></div>
     <div class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></div>
-    <div class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></div>
+    <div class="sidemenu"><a href="mayaa_customtag_diff.html">A. 付録</a></div>
 
     <br>
     <div class="sidemenu"><a href="link.html">外部へのリンク</a></div>
@@ -165,24 +165,34 @@
 <table align="center" cellpadding="5" cellspacing="2" class="tbline" summary="パスを自動調整するタグ名と属性名">
 <thead>
 <tr>
-<th nowrap=""><div align="center">タグ名</div></th>
-<th nowrap=""><div align="center">属性名</div></th>
+<th nowrap="nowrap"><div align="center">タグ名</div></th>
+<th nowrap="nowrap"><div align="center">属性名</div></th>
 </tr>
 </thead>
 <tbody>
-<tr><td>form</td><td>action</td></tr>
 <tr><td>a</td><td>href</td></tr>
-<tr><td>link</td><td>href</td></tr>
+<tr><td rowspan="2">applet</td><td>code</td></tr>
+<tr><!--            applet  --><td>codebase</td></tr>
 <tr><td>area</td><td>href</td></tr>
 <tr><td>base</td><td>href</td></tr>
-<tr><td>img</td><td>src</td></tr>
-<tr><td>script</td><td>src</td></tr>
+<tr><td>blockquote</td><td>cite</td></tr>
+<tr><td>del</td><td>cite</td></tr>
 <tr><td>embed</td><td>src</td></tr>
+<tr><td>form</td><td>action</td></tr>
+<tr><td rowspan="2">frame</td><td>longdesc</td></tr>
+<tr><!--            frame  --><td>src</td></tr>
 <tr><td>iframe</td><td>src</td></tr>
-<tr><td rowspan="2">frame</td><td>src</td></tr>
-<tr><td>longdesc</td></tr>
-<tr><td>applet</td><td>code</td></tr>
-<tr><td>object</td><td>data</td></tr>
+<tr><td rowspan="2">img</td><td>src</td></tr>
+<tr><!--            img  --><td>usemap</td></tr>
+<tr><td rowspan="2">input</td><td>src</td></tr>
+<tr><!--            input  --><td>usemap</td></tr>
+<tr><td>ins</td><td>cite</td></tr>
+<tr><td>link</td><td>href</td></tr>
+<tr><td rowspan="3">object</td><td>codebase</td></tr>
+<tr><!--            object  --><td>data</td></tr>
+<tr><!--            object  --><td>usemap</td></tr>
+<tr><td>q</td><td>cite</td></tr>
+<tr><td>script</td><td>src</td></tr>
 </tbody>
 </table>
 
@@ -193,8 +203,8 @@
 <table align="center" cellpadding="5" cellspacing="2" class="tbline" summary="パスを自動調整するタグ名 (プロセッサ名) と属性名">
 <thead>
 <tr>
-<th nowrap=""><div align="center">タグ名</div></th>
-<th nowrap=""><div align="center">属性名</div></th>
+<th nowrap="nowrap"><div align="center">タグ名</div></th>
+<th nowrap="nowrap"><div align="center">属性名</div></th>
 </tr>
 </thead>
 <tbody>

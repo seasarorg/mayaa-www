@@ -29,11 +29,11 @@
     <div class="sidemenu"><a href="hello.html">2. チュートリアル</a></div>
     <div class="sidemenu"><a href="default.html">3. How To</a></div>
     <div class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></div>
-      <div class="sidemenutext"><span>4-1. プロセッサ リファレンス</span></div>
+      <div class="sidemenutext"><span>4-1. プロセッサリファレンス</span></div>
       <div class="sidemenutext"><a href="implicit_object.html">4-2. 定義済みオブジェクト</a></div>
       <br>
     <div class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></div>
-    <div class="sidemenu"><a href="mayaa_customtag_diff.html">付録</a></div>
+    <div class="sidemenu"><a href="mayaa_customtag_diff.html">A. 付録</a></div>
 
     <br>
     <div class="sidemenu"><a href="link.html">外部へのリンク</a></div>
@@ -91,10 +91,9 @@
 
     <h4><a id="attribute" name="attribute"></a>■attribute プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
     <p><a href="echo.html">echo と組み合わせた利用例</a></p>
-    <p>echo プロセッサおよび element プロセッサの子として使用し、親プロセッサに属性を追加します。value の実行結果が null の場合はその属性を削除 (<strong>※</strong>) します。</p>
-    <p>(<strong>※</strong>:1.1.0-beta6で追加されたもの)</p>
+    <p>echo プロセッサおよび element プロセッサの子として使用し、親プロセッサに属性を追加します。value の実行結果が null の場合はその属性を削除します。</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
-    <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
+    <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     <tbody>
     <tr>
       <td>name</td>
@@ -105,7 +104,7 @@
     </tr>
     <tr>
       <td>value</td>
-      <td>生成する属性値。null の場合はその属性自体を削除 (<strong>※</strong>)。</td>
+      <td>生成する属性値。null の場合はその属性自体を削除。</td>
       <td><div align="center">○</div></td>
       <td></td>
       <td></td>
@@ -121,16 +120,15 @@
     <p>タグのボディが有効です。<a href="echo.html">利用例</a>。</p>
     <p>割り当てられたタグをそのまま出力します。m:echo タグのボディに attribute プロセッサを書くと属性を追加または変更、削除できます。</p>
     <p>echo プロセッサの属性およびボディでは、スクリプトでテンプレート側の属性値を参照できます。属性名を変数名とし、属性値を文字列として持っています。たとえば a タグにバインディングした echo で &#36;{ href } とすれば、元の a タグの href 属性の値を取得できます。</p>
-    <p>(<strong>※</strong>:1.0.6, 1.1.0-beta6で追加されたもの)</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
-    <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
+    <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     <tbody>
     <tr>
       <td>name</td>
       <td>出力するタグの要素名。</td>
       <td>&nbsp;</td>
       <td>文字列</td>
-      <td>要素名を置き換える場合のみ使用する。<strong>※</strong></td>
+      <td>要素名を置き換える場合のみ使用する。</td>
     </tr>
     </tbody>
     </table>
@@ -139,7 +137,7 @@
     <p>タグのボディが有効です。</p>
     <p><code>name</code> で指定したタグを出力します。m:element タグのボディに attribute プロセッサを書くと属性を追加できます。</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
-    <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
+    <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     <tbody>
     <tr>
       <td>name</td>
@@ -153,13 +151,12 @@
 
     <h4><a id="formatDate" name="formatDate"></a>■formatDate プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
     <p>日付を指定したパターンにフォーマットして出力します。value に null を渡した場合、default 属性をしているなら default を出力します。そうでない場合は何も出力しません。</p>
-    <p>(<strong>※</strong>:1.0.5で追加されたもの)</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
-    <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
+    <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     
     <tbody>
     <tr>
-      <td nowrap="">value</td>
+      <td nowrap="nowrap">value</td>
       <td>出力する値。</td>
       <td><div align="center">○</div></td>
       <td>java.util.Date</td>
@@ -173,8 +170,8 @@
       <td></td>
     </tr>
     <tr>
-      <td nowrap="">default</td>
-      <td nowrap="">value が null の場合に出力する値。<strong>(※)</strong></td>
+      <td nowrap="nowrap">default</td>
+      <td nowrap="nowrap">value が null の場合に出力する値。</td>
       <td></td>
       <td></td>
       <td></td>
@@ -184,13 +181,12 @@
 
     <h4><a id="formatNumber" name="formatNumber"></a>■formatNumber プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
     <p>数値を指定したパターンにフォーマットして出力します。value に null を渡した場合、default 属性をしているなら default を出力します。そうでない場合は何も出力しません。</p>
-    <p>(<strong>※</strong>:1.0.5で追加されたもの)</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
-    <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
+    <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     
     <tbody>
     <tr>
-      <td nowrap="">value</td>
+      <td nowrap="nowrap">value</td>
       <td>出力する値。</td>
       <td><div align="center">○</div></td>
       <td>数値</td>
@@ -204,8 +200,8 @@
       <td></td>
     </tr>
     <tr>
-      <td nowrap="">default</td>
-      <td nowrap="">value が null の場合に出力する値。<strong>(※)</strong></td>
+      <td nowrap="nowrap">default</td>
+      <td nowrap="nowrap">value が null の場合に出力する値。</td>
       <td></td>
       <td></td>
       <td></td>
@@ -217,39 +213,39 @@
     <p><a href="hello.html">利用例</a>。</p>
     <p>オブジェクトを文字列として出力します。</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
-    <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
+    <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     
     <tbody>
     <tr>
-      <td nowrap="">value</td>
+      <td nowrap="nowrap">value</td>
       <td>出力する値。</td>
       <td><div align="center">○</div></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-      <td nowrap="">default</td>
-      <td nowrap="">value が null の場合に出力する値。<br>(escapeXml, escapeWhitespace, escapeEol<br>による置換処理の対象になりません)</td>
+      <td nowrap="nowrap">default</td>
+      <td nowrap="nowrap">value が null の場合に出力する値。<br>(escapeXml, escapeWhitespace, escapeEol<br>による置換処理の対象になりません)</td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-      <td nowrap="">escapeXml</td>
+      <td nowrap="nowrap">escapeXml</td>
       <td>value の<br>&amp; , &lt; , &gt; , &quot; , &#39;<br>を<br>&amp;amp; , &amp;lt; , &amp;gt; , &amp;quot; , &amp;#39;<br>に置換する。</td>
       <td></td>
       <td>論理値</td>
       <td>true</td>
     </tr>
     <tr>
-      <td nowrap="">escapeWhitespace</td>
+      <td nowrap="nowrap">escapeWhitespace</td>
       <td>value の<br>CR , LF , TAB文字<br>を<br>&amp;#xd; , &amp;#xa; , &amp;#x9;<br>に置換する。</td>
       <td></td>
       <td>論理値</td>
       <td>false</td>
     </tr>
     <tr>
-      <td nowrap="">escapeEol</td>
+      <td nowrap="nowrap">escapeEol</td>
       <td>value の改行コード (CRLF, CR, LF) を<br>br タグに置換する。</td>
       <td></td>
       <td>論理値</td>
@@ -271,31 +267,31 @@
     </ol>
     <p class="nomargin-top">無限ループを避けるため、ループ回数が上限数以上になると例外が発生します。(<code>org.seasar.maya.impl.engine.processor.TooManyLoopException</code>)</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
-    <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
+    <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     <tbody>
     <tr>
-      <td nowrap="">init</td>
+      <td nowrap="nowrap">init</td>
       <td>初期化処理。</td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-      <td nowrap="">test</td>
+      <td nowrap="nowrap">test</td>
       <td>判定する条件式。true ならば処理を続行。</td>
       <td><div align="center">○</div></td>
       <td>論理値</td>
       <td></td>
     </tr>
     <tr>
-      <td nowrap="">after</td>
+      <td nowrap="nowrap">after</td>
       <td>ループ処理 1 回の後処理。</td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-      <td nowrap="">max</td>
+      <td nowrap="nowrap">max</td>
       <td>ループ回数の上限。</td>
       <td></td>
       <td>整数値</td>
@@ -311,24 +307,24 @@
     <p>Map は entrySet メソッドで取得した Set を利用し、Collection の処理に準じます。そのため Map を処理する場合には、要素は key と value の 2 つのプロパティを持ちます。</p>
     <p>items が null の場合は長さ 0 の配列として処理します。以上のもの以外を items に渡すと、長さ 1 の配列として処理します。</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
-    <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
+    <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     <tbody>
     <tr>
-      <td nowrap="">items</td>
+      <td nowrap="nowrap">items</td>
       <td>繰り返し処理する値。</td>
       <td><div align="center">○</div></td>
       <td>java.util.Collection,<br>java.util.Iterator,<br>java.util.Enumeration,<br>java.util.Map,<br>配列</td>
       <td></td>
     </tr>
     <tr>
-      <td nowrap="">var</td>
+      <td nowrap="nowrap">var</td>
       <td>繰り返しの現在要素の変数名。</td>
       <td><div align="center">○</div></td>
       <td>文字列</td>
       <td></td>
     </tr>
     <tr>
-      <td nowrap="">index</td>
+      <td nowrap="nowrap">index</td>
       <td>繰り返し回数の変数名。(0 開始)</td>
       <td></td>
       <td>文字列</td>
@@ -341,11 +337,11 @@
     <p>タグのボディが有効です。<a href="conditional.html">利用例</a>。</p>
     <p><code>test</code> の値が <code>true</code> の場合のみボディを処理します。</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
-    <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
+    <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     <tbody>
     <tr>
-      <td nowrap="">test</td>
-      <td nowrap="">判定する条件式。true ならば有効。</td>
+      <td nowrap="nowrap">test</td>
+      <td nowrap="nowrap">判定する条件式。true ならば有効。</td>
       <td><div align="center">○</div></td>
       <td>論理値</td>
       <td></td>
@@ -375,7 +371,7 @@
     <p class="nomargin-top"><a href="component1.html">利用例</a>。</p>
     <p>割り当てられたタグをコンポーネントとして定義します。名前は同じテンプレート上で重複しないように付けてください。</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
-    <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
+    <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     <tbody>
     <tr>
       <td>name</td>
@@ -390,7 +386,7 @@
     <p class="nomargin-top"><a href="layout.html">利用例</a>。</p>
     <p>レイアウトの insert に渡す部分を定義します。</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
-    <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
+    <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     <tbody>
     <tr>
       <td>name</td>
@@ -407,7 +403,7 @@
     <p class="nomargin-top"><a href="component1.html">利用例</a>。</p>
     <p>指定したパスのコンポーネントを割り当てます。</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
-    <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
+    <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     <tbody>
     <tr>
       <td>path</td>
@@ -429,7 +425,7 @@
     <p class="nomargin-top"><a href="layout.html">利用例</a>。</p>
     <p>extends しているテンプレートの名前が一致する doRender を割り当てます。</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
-    <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
+    <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     <tbody>
     <tr>
       <td>name</td>
@@ -448,7 +444,7 @@
     <p><a href="exec.html">利用例</a>。</p>
     <p>スクリプトを実行するために使います。script、srcの両方に指定された場合、srcから先に実行されます。</p>
     <table width="90%" align="center" cellpadding="5" cellspacing="2" class="tbline">
-    <thead><tr><th nowrap=""><div>属性名</div></th><th nowrap=""><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
+    <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     <tbody>
     <tr>
       <td>script</td>
