@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>5-6. id属性を無視する : Documentation - JavaServer Templates &quot;Mayaa&quot;</title>
+<link href="../css/base.css" rel="stylesheet" type="text/css">
+<link href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
+
+<div align="center"><img src="../images/topbar.gif" width="760" height="4"></div>
+
+<div align="center">
+<div class="contentslogo"><a href="../index.html" id="menu08"><img src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></a><img src="../images/topstripe.gif" width="330" height="48"></div>
+<div class="menudocs">
+<a href="../about/index.html" id="menu01"><img src="images/menu_about.gif" width="125" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../news/index.html" id="menu02"><img src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></a><img src="images/menu_div.gif" width="1" height="55"><a href="index.html"><img src="images/menu_doc_o.gif" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../downloads/index.html" id="menu04"><img src="images/menu_down.gif" alt="downloads" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../subprojects/index.html" id="menu05"><img src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../support/index.html" id="menu06"><img src="images/menu_support.gif" alt="Support" width="126" height="55"></a>
+</div>
+</div>
+
+
+<div class="maincontents">
+<div id="contentsleft">
+<img src="../images/arrow02.gif" align="absmiddle"><a href="../index.html" class="text11px">Top</a>
+<div class="sidemenu"><a href="index.html">Documentation Top</a></div>
+
+    <div class="sidemenu"><a href="changelog.html">更新履歴</a></div>
+    <div class="sidemenu"><a href="slide.html">スライドなど</a></div>
+    <div class="sidemenu"><a href="about.html">1. Mayaa導入</a></div>
+    <div class="sidemenu"><a href="hello.html">2. チュートリアル</a></div>
+    <div class="sidemenu"><a href="default.html">3. How To</a></div>
+    <div class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></div>
+    <div class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></div>
+      <div class="sidemenutext"><a href="engine_settings.html">5-1. エンジン設定方法</a></div>
+      <div class="sidemenutext"><a href="jsp_template_attribute.html">5-2. 属性自動セット</a></div>
+      <div class="sidemenutext"><a href="auto_build.html">5-3. 自動ビルド</a></div>
+      <div class="sidemenutext"><a href="page_serialize.html">5-4. ビルド結果キャッシュ</a></div>
+      <div class="sidemenutext"><a href="error_handler.html">5-5. エラー処理の設定</a></div>
+      <div class="sidemenutext"><span>5-6. id属性を無視する</span></div>
+      <br>
+    <div class="sidemenu"><a href="mayaa_customtag_diff.html">A. 付録</a></div>
+
+    <br>
+    <div class="sidemenu"><a href="link.html">外部へのリンク</a></div>
+
+</div>
+
+
+<div id="contentsright">
+<h1><a id="top" name="top"></a>Documentation</h1>
+
+<h2>5-6. id属性を無視する</h2>
+
+<p>HTML/XHTML の id 属性は、CSS や JavaScript でも使用しますので、Mayaa のバインディングのため id との使いわけが難しい場合があります。HTML/XHTML の id 属性をバインディングに使わず、Mayaa 名前空間の id 属性だけをバインディングに使うよう設定すれば、そのような煩雑さから解放されます。(その代わり、すべてのテンプレートに Mayaa の名前空間宣言 (<code>xmlns:m="http://mayaa.seasar.org"</code>) をする必要があります)</p>
+<p>HTML/XHTML の id 属性をバインディングに使わないよう設定するには、5-1「<a href="engine_settings.html">エンジン設定方法</a>」と同様に ServiceProvider ファイルを置き、その中で <code>templateBuilder</code> の設定をします。</p>
+
+<h3>templateBuilder の設定</h3>
+
+<p><code>templateBuilder</code> の設定は標準状態で下記のようになっています。テンプレートの id 属性と Mayaa ファイルの id 属性との一致を処理しているのは <code>EqualsIDInjectionResolver</code> です。</p>
+
+<pre>
+<code>org.seasar.mayaa.provider.ServiceProvider</code>
+<div>※レイアウトの都合で改行しています。</div>
+<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE provider
+    PUBLIC "-//The Seasar Foundation//DTD Mayaa Provider 1.0//EN"
+    "http://mayaa.seasar.org/dtd/mayaa-provider_1_0.dtd"&gt;
+&lt;provider&gt;
+    &lt;templateBuilder
+            class="org.seasar.mayaa.impl.builder.TemplateBuilderImpl"&gt;
+        &lt;resolver class="org.seasar.mayaa.impl.
+                builder.injection.MetaValuesSetter"/&gt;
+        &lt;resolver class="org.seasar.mayaa.impl.
+                builder.injection.ReplaceSetter"/&gt;
+        &lt;resolver class="org.seasar.mayaa.impl.
+                builder.injection.RenderedSetter"/&gt;
+        &lt;resolver class="org.seasar.mayaa.impl.
+                builder.injection.InsertSetter"/&gt;
+        &lt;resolver class="org.seasar.mayaa.impl.
+                builder.injection.InjectAttributeInjectionResolver"/&gt;
+        <strong>&lt;resolver class="org.seasar.mayaa.impl.
+                builder.injection.EqualsIDInjectionResolver"&gt;
+            &lt;parameter name="reportUnresolvedID" value="true"/&gt;
+            &lt;parameter name="reportDuplicatedID" value="true"/&gt;
+            &lt;parameter name="addAttribute"
+                    value="{http://www.w3.org/TR/html4}id"/&gt;
+            &lt;parameter name="addAttribute"
+                    value="{http://www.w3.org/1999/xhtml}id"/&gt;
+        &lt;/resolver&gt;</strong>
+        &lt;resolver class="org.seasar.mayaa.impl.builder.
+                injection.XPathMatchesInjectionResolver"/&gt;
+        &lt;parameter name="outputTemplateWhitespace" value="true"/&gt;
+        &lt;parameter name="outputMayaaWhitespace" value="false"/&gt;
+        &lt;parameter name="optimize" value="true"/&gt;
+    &lt;/templateBuilder&gt;
+&lt;/provider&gt;</div></pre>
+
+
+<p><code>EqualsIDInjectionResolver</code> のパラメータは 3 つです。</p>
+
+<dl class="list">
+    <dt><code>reportUnresolvedID</code></dt>
+    <dd>テンプレート側にバインディング対象の id 属性があり、対応する id 属性が Mayaa ファイルにない場合にメッセージをログ出力するかどうかを設定します。ログは commons-logging の WARN レベルで出力します。<code>true</code> を設定すると出力し、<code>false</code> に設定すると出力しません。デフォルトは "<code>true</code>" です。</dd>
+    <dt><code>reportDuplicatedID</code></dt>
+    <dd>Mayaa ファイルに同じ値を持つ id 属性が複数定義されている場合にメッセージをログ出力するかどうかを設定します。複数定義されている場合は最初に見つかったものを使うため、それ以外は使われません。ログは commons-logging の WARN レベルで出力します。<code>true</code> を設定すると出力し、<code>false</code> に設定すると出力しません。デフォルトは "<code>true</code>" です。</dd>
+    <dt><code>addAttribute</code></dt>
+    <dd>Mayaa ファイルの id 属性と対応させるテンプレート側の属性を追加します。属性は "<strong>{名前空間URI}属性名</strong>" の形式で指定します。デフォルトは HTML の id "<code>{http://www.w3.org/TR/html4}id</code>" と XHTML の id "<code>{http://www.w3.org/1999/xhtml}id</code>" です。(Mayaa の内部では、HTML の名前空間 URI を "http://www.w3.org/TR/html4" として扱っています)</dd>
+</dl>
+
+
+<h4>■HTML の id と XHTML の id を処理対象から外す</h4>
+
+<p><code>EqualsIDInjectionResolver</code> に HTML の id 属性と XHTML の id 属性を追加しないように設定すれば、バインディングに使う属性を Mayaa 名前空間の id 属性のみになります。(Mayaa 名前空間の id 属性は必ず対象になります)</p>
+<p>既存の設定を上書きするため、デフォルトの設定をそのまま定義しなおして、属性の追加をしないようコメントアウトします。</p>
+
+<pre>
+<code>org.seasar.mayaa.provider.ServiceProvider</code>
+<div>※レイアウトの都合で改行しています。</div>
+<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE provider
+    PUBLIC "-//The Seasar Foundation//DTD Mayaa Provider 1.0//EN"
+    "http://mayaa.seasar.org/dtd/mayaa-provider_1_0.dtd"&gt;
+&lt;provider&gt;
+    &lt;templateBuilder
+            class="org.seasar.mayaa.impl.builder.TemplateBuilderImpl"&gt;
+        &lt;resolver class="org.seasar.mayaa.impl.
+                builder.injection.MetaValuesSetter"/&gt;
+        &lt;resolver class="org.seasar.mayaa.impl.
+                builder.injection.ReplaceSetter"/&gt;
+        &lt;resolver class="org.seasar.mayaa.impl.
+                builder.injection.RenderedSetter"/&gt;
+        &lt;resolver class="org.seasar.mayaa.impl.
+                builder.injection.InsertSetter"/&gt;
+        &lt;resolver class="org.seasar.mayaa.impl.
+                builder.injection.InjectAttributeInjectionResolver"/&gt;
+        &lt;resolver class="org.seasar.mayaa.impl.
+                builder.injection.EqualsIDInjectionResolver"&gt;
+            &lt;parameter name="reportUnresolvedID" value="true"/&gt;
+            &lt;parameter name="reportDuplicatedID" value="true"/&gt;
+            <strong>&lt;!-- HTMLのidとXHTMLのidを追加しないようコメントアウト
+            &lt;parameter name="addAttribute"
+                    value="{http://www.w3.org/TR/html4}id"/&gt;
+            &lt;parameter name="addAttribute"
+                    value="{http://www.w3.org/1999/xhtml}id"/&gt;
+            --&gt;</strong>
+        &lt;/resolver&gt;
+        &lt;resolver class="org.seasar.mayaa.impl.builder.
+                injection.XPathMatchesInjectionResolver"/&gt;
+        &lt;parameter name="outputTemplateWhitespace" value="true"/&gt;
+        &lt;parameter name="outputMayaaWhitespace" value="false"/&gt;
+        &lt;parameter name="optimize" value="true"/&gt;
+    &lt;/templateBuilder&gt;
+&lt;/provider&gt;</div></pre>
+
+<p>これで Mayaa 名前空間の id 属性 (<code>xmlns:m="http://mayaa.seasar.org"</code>, <code>m:id</code>) のみが有効になります。</p>
+<p>必要に応じて、Tapestry の jwcid のような独自属性を追加することもできます。(HTML の名前空間を使う場合は HTML/XHTML の使いわけにご注意ください)</p>
+
+
+
+<div class="navi"><a href="#top">↑このページのトップへ</a></div>
+
+</div>
+
+<div class="copyrights" align="center">
+<img src="../images/copyrights.gif" alt="Copyright (c) 2004-2007 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</div>
+</div>
+</body>
+</html>

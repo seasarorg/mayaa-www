@@ -35,10 +35,11 @@
       <div class="sidemenutext"><a href="with.html">3-5. プロセッサをまとめる</a></div>
       <div class="sidemenutext"><a href="xpath.html">3-6. idの代わりにXPath</a></div>
       <div class="sidemenutext"><a href="remove.html">3-7. タグを消す</a></div>
-      <div class="sidemenutext"><a href="ignore.html">3-8. idを処理対象外に</a></div>
+      <div class="sidemenutext"><a href="ignore.html">3-8. 特定idを処理しない</a></div>
       <div class="sidemenutext"><a href="comment.html">3-9. コメントを書く</a></div>
       <div class="sidemenutext"><a href="template_suffix.html">3-10. テンプレート切り替え</a></div>
       <div class="sidemenutext"><a href="path_adjust.html">3-11. パスを自動調整する</a></div>
+      <div class="sidemenutext"><a href="throwable.html">3-12. 例外発生時のページ</a></div>
       <br>
     <div class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></div>
     <div class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></div>
@@ -56,9 +57,9 @@
 <h2>3-2. 描画前後のスクリプト</h2>
 
 
-<h3>レンダリング前にスクリプトを実行する</h3>
+<h3>描画前にスクリプトを実行する</h3>
 
-<p>レンダリングのための準備処理をしたい場合、<strong>beforeRender</strong> タグを使うことで、ページのレンダリング処理を開始する前に任意のスクリプトを実行できます。<code>beforeRender</code> タグのボディにスクリプトをそのまま書いてください。基本的に <code>beforeRender</code> は、<code>request</code> 内の値を別変数に入れ直すときなどに使います。</p>
+<p>描画のための準備処理をしたい場合、<strong>beforeRender</strong> タグを使うことで、ページの描画処理を開始する前に任意のスクリプトを実行できます。<code>beforeRender</code> タグのボディにスクリプトをそのまま書いてください。基本的に <code>beforeRender</code> は、<code>request</code> 内の値を別変数に入れ直すときなどに使います。</p>
 
 <p>次の例では <code>beforeRender</code> で定義した変数を <code>write</code> プロセッサで出力します。</p>
 
@@ -106,11 +107,11 @@
 </pre>
 
 
-<h3>レンダリング後にスクリプトを実行する</h3>
+<h3>描画後にスクリプトを実行する</h3>
 
-<p>ページのレンダリング処理が終了した後に任意のスクリプトを実行できます。<strong>afterRender</strong> プロセッサを使い、ボディにスクリプトをそのまま書いてください。<code>beforeRender</code> と同じく、CDATA 宣言すると不等号などをエスケープする必要がなくなります。</p>
+<p>ページの描画処理が終了した後に任意のスクリプトを実行できます。<strong>afterRender</strong> プロセッサを使い、ボディにスクリプトをそのまま書いてください。<code>beforeRender</code> と同じく、CDATA 宣言すると不等号などをエスケープする必要がなくなります。</p>
 
-<p>たとえばレンダリング処理が終わった後にログを出力する場合、次のように書くことで実現できます。</p>
+<p>たとえば描画処理が終わった後にログを出力する場合、次のように書くことで実現できます。</p>
 
 <pre>
     <strong>&lt;m:afterRender&gt;</strong>
@@ -118,7 +119,7 @@
     <strong>&lt;/m:afterRender&gt;</strong>
 </pre>
 
-<p>レンダリング処理の後に何かをするという場面は多くないでしょうから、<code>afterRender</code> を使う場面は少ないでしょう。描画のための一時リソースを開放する処理など、特殊な処理が必要な場合に <code>afterRender</code> を使ってください。</p>
+<p>描画処理の後に何かをするという場面は多くないでしょうから、<code>afterRender</code> を使う場面は少ないでしょう。描画のための一時リソースを開放する処理など、特殊な処理が必要な場合に <code>afterRender</code> を使ってください。</p>
 
 
 <h3>コンポーネントやレイアウトを使う場合の実行順</h3>
@@ -127,7 +128,7 @@
 
 <p>全体の設定である <code>default.mayaa</code> に書いた <code>beforeRender</code> は、他のすべての <code>beforeRender</code> よりも先に実行されます。そして <code>default.mayaa</code> の <code>afterRender</code> は他のすべての <code>afterRender</code> よりも後に実行されます。</p>
 <p>次にリクエストされたページの <code>beforeRender</code> が実行され、レイアウトを使っていればその次にレイアウトページの <code>beforeRender</code> が実行されます。全体の描画が終わったあと、レイアウトページの <code>afterRender</code>、リクエストされたページの <code>afterRender</code> が実行されます。</p>
-<p>コンポーネントの <code>beforeRender</code> はそのコンポーネントを処理する直前に処理されます。その後にコンポーネントがレンダリングされて <code>afterRender</code> が処理された後、コンポーネントを使うページのレンダリングに戻ります。ひとつのコンポーネントページに複数のコンポーネントを定義している場合、そのひとつひとつに同じ <code>beforeRender</code>、<code>afterRender</code> が定義されていると考えてください。</p>
+<p>コンポーネントの <code>beforeRender</code> はそのコンポーネントを処理する直前に処理されます。その後にコンポーネントが描画されて <code>afterRender</code> が処理された後、コンポーネントを使うページの描画に戻ります。ひとつのコンポーネントページに複数のコンポーネントを定義している場合、そのひとつひとつに同じ <code>beforeRender</code>、<code>afterRender</code> が定義されていると考えてください。</p>
 
 
 <h4>■実行順イメージ</h4>

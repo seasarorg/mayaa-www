@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>5-4. ビルド結果保存 : Documentation - JavaServer Templates &quot;Mayaa&quot;</title>
+<title>5-5. エラー処理の設定 : Documentation - JavaServer Templates &quot;Mayaa&quot;</title>
 <link href="../css/base.css" rel="stylesheet" type="text/css">
 <link href="../css/menu_contents.css" rel="stylesheet" type="text/css">
 </head>
@@ -33,8 +33,8 @@
       <div class="sidemenutext"><a href="engine_settings.html">5-1. エンジン設定方法</a></div>
       <div class="sidemenutext"><a href="jsp_template_attribute.html">5-2. 属性自動セット</a></div>
       <div class="sidemenutext"><a href="auto_build.html">5-3. 自動ビルド</a></div>
-      <div class="sidemenutext"><span>5-4. ビルド結果キャッシュ</span></div>
-      <div class="sidemenutext"><a href="error_handler.html">5-5. エラー処理の設定</a></div>
+      <div class="sidemenutext"><a href="page_serialize.html">5-4. ビルド結果キャッシュ</a></div>
+      <div class="sidemenutext"><span>5-5. エラー処理の設定</span></div>
       <div class="sidemenutext"><a href="equals_id_resolver.html">5-6. id属性を無視する</a></div>
       <br>
     <div class="sidemenu"><a href="mayaa_customtag_diff.html">A. 付録</a></div>
@@ -48,22 +48,13 @@
 <div id="contentsright">
 <h1><a id="top" name="top"></a>Documentation</h1>
 
-<h2>5-4. ビルド結果保存</h2>
+<h2>5-5. エラー処理の設定</h2>
 
-<p>※この機能は 1.1.0-beta6 で実装されました。</p>
+<p>5-1「<a href="engine_settings.html">エンジン設定方法</a>」の手順で、<a href="throwable.html">例外発生時のページ</a>を探す処理などの設定を変更できます。</p>
 
-<p>Mayaa ではページをビルドした結果、描画するために必要な情報をオブジェクトとして作成します。このオブジェクトはガーベジコレクションによって解放されることがあり、解放された場合には描画する前にもう一度ビルドすることになります。タグが多いページなど、ビルドに長めの時間がかかる場合もありますので、内容が変わらないページを何度もビルドすることは好ましくありません。</p>
+<h3>ErrorHandler の設定</h3>
 
-<p>この問題を軽減するため、ビルドした結果をシリアライズしてファイルにキャッシュし、2 回目以降のビルド時間を短縮することができます。この機能を有効にした 2 回目以降のビルドでは、ビルド元となるファイルとキャッシュファイルとのタイムスタンプを比較し、キャッシュの方が新しい場合には再ビルドする代わりにキャッシュを読み込みます。</p>
-
-<p>タグの数が多くてビルドに時間がかかる場合や、ページ数が多くてメモリを圧迫する場合などに有効です。</p>
-
-
-<h3>ビルド結果キャッシュを有効にする</h3>
-
-<p>ビルド結果キャッシュを有効にするには、<a href="engine_settings.html">ServiceProvider</a> ファイルで設定します。標準の設定は下記のようになっています。"<code>pageSerialize</code>" パラメータを "<code>true</code>" に設定することでビルド結果キャッシュが有効になります。</p>
-
-<p>ビルド結果をシリアライズしたファイルは、アプリケーションの WEB-INF/.mayaaSpecCache フォルダの中に作成されます。この位置への読み書きができない場合、ビルド結果キャッシュは動作しませんのでご注意ください。</p>
+<p><code>engine</code> の中に <code>errorHandler</code> 要素を書き、その子要素としてパラメータを設定します。</p>
 
 <pre>
 <code>org.seasar.mayaa.provider.ServiceProvider</code>
@@ -73,20 +64,48 @@
     "http://mayaa.seasar.org/dtd/mayaa-provider_1_0.dtd"&gt;
 &lt;provider&gt;
     &lt;engine&gt;
-        &lt;parameter name="<code>pageSerialize</code>" value="<code>false</code>"/&gt;
+        &lt;errorHandler&gt;
+            &lt;parameter name="<code>folder</code>" value="<code>/</code>"/&gt;
+            &lt;parameter name="<code>extension</code>" value="<code>html</code>"/&gt;
+        &lt;/errorHandler&gt;
+        &lt;parameter name="..." value="..."/&gt;
     &lt;/engine&gt;
 &lt;/provider&gt;
 </div></pre>
 
-
-<h4>■設定項目について</h4>
-
-<p>設定項目は下記の 1 項目のみです。</p>
+<p>パラメータは 2 つです。</p>
 
 <dl class="list">
-    <dt><code>pageSerialize</code></dt>
-    <dd>ビルド結果キャッシュを有効にするかどうかを設定します。"<code>true</code>" なら有効、"<code>false</code>" なら無効です。デフォルトは "<code>false</code>" です。</dd>
+    <dt><code>folder</code></dt>
+    <dd>例外ページを置くフォルダを指定します。"/" で始まり "/" で終わるよう指定してください。デフォルトは "<code>/</code>" です。</dd>
+    <dt><code>extension</code></dt>
+    <dd>例外ページの拡張子を指定します。デフォルトは "<code>html</code>" です。</dd>
 </dl>
+
+
+<h3>ErrorHandler の処理を変更</h3>
+
+<p><code>errorHandler</code> 要素の class 属性を指定することで、例外発生時の処理をするクラスを変更できます。ここで指定するクラスは <code>org.seasar.mayaa.engine.error.ErrorHandler</code> インターフェースを実装し、かつ引数無しのコンストラクタを持つ必要があります。デフォルトのクラスは <code>org.seasar.mayaa.impl.engine.error.TemplateErrorHandler</code> です。</p>
+
+<pre>
+<code>org.seasar.mayaa.provider.ServiceProvider</code>
+<div>※レイアウトの都合で改行しています。</div>
+<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE provider
+    PUBLIC "-//The Seasar Foundation//DTD Mayaa Provider 1.0//EN"
+    "http://mayaa.seasar.org/dtd/mayaa-provider_1_0.dtd"&gt;
+&lt;provider&gt;
+    &lt;engine&gt;
+        &lt;errorHandler class="<code>org.seasar.mayaa.
+                impl.engine.error.TemplateErrorHandler</code>"&gt;
+            &lt;parameter name="folder" value="/"/&gt;
+            &lt;parameter name="extension" value="html"/&gt;
+        &lt;/errorHandler&gt;
+        &lt;parameter name="..." value="..."/&gt;
+    &lt;/engine&gt;
+&lt;/provider&gt;
+</div></pre>
+
 
 
 <div class="navi"><a href="#top">↑このページのトップへ</a></div>
