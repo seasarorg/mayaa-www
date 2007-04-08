@@ -38,19 +38,34 @@
     <h3>過去の変更履歴</h3>
 
 
+    <h4><a id="ver1.1.8" name="ver1.1.8"></a>変更点 1.1.7 -> 1.1.8 (2007/04/08)</h4>
+    <ul>
+      <li class="fix">エラーページでArrayIndexOutOfBoundsExceptionが発生する問題を修正しました。</li>
+      <li class="enhance">プロセッサの必須属性を空文字として定義していた場合は、属性の定義がない場合と同じ扱いのエラーとしました。</li>
+      <li class="fix">attributeプロセッサのvalueを指定しないことで属性値なしの出力を可能にしました。旧仕様のHTMLの CHECKED SELECTED や、SGML用途に使用できます。ただし非推奨機能としていますのでデフォルトで有効になりません。この機能を有効にするには、標準プロセッサ定義である mayaa.mld を直接編集して、attributeのvalue属性のrequired="true"を除外する必要があります。</li>
+      <li class="enhance">論理値の属性に対して、論理値とならない設定がされている場合にビルドエラーとしました。</li>
+      <li class="enhance">writeプロセッサを機能拡張しました。<br>・value属性以外に、ボディで書き表すことができるようにしました。両方指定した場合は valueが優先されます。<br>・value属性内から、bodyTextというwriteプロセッサ専用の値が利用できます。bodyTextを参照すると、writeプロセッサのボディ内容が得られます。writeプロセッサがボディを持たない場合は、対象のHTMLテンプレート内容となります。</li>
+      <li class="enhance">insertプロセッサのpathの指定にスクリプトが使えるようになりました。これにより実行時に動的にコンポーネントを差し替えることが可能になります。</li>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-23">JIRA[MAYAA-23]</a> echoでの属性参照、JSP カスタムタグでの自動属性セットでテンプレートの特殊文字エスケープが解決されない問題を修正しました。</li>
+      <li class="enhance">未定義の識別子を参照すると例外になる問題を解消しました。これまでは、if (識別子 == undefined) といった式が例外が起きないようにするには、beforeRenderなどで、var 識別子; のように予め定義する必要がありました。クライアントJavaScriptと同様の扱いとなるように、NativeJavaScriptエンジンの層でも見つからない識別子に対しては、var 識別子 = undefined としたものと同等の扱いとしました。</li>
+      <li class="enhance">識別子が予約語とぶつかってしまう場合にその識別子を参照するためのスコープを用意しました。スコープ名は "_" で、_['class'] のように利用します。参照順は 現在位置からpageまで、request、session、applicationです。StandardScopeを変更している場合はそれに準じます。</li>
+      <li class="tune">XPathMatchesInjectionResolverがあるだけでビルドにかかる時間を軽減しました。</li>
+    </ul>
+
     <h4><a id="ver1.1.7" name="ver1.1.7"></a>変更点 1.1.6 -> 1.1.7 (2007/03/08)</h4>
     <ul>
-      <li><a href="https://www.seasar.org/issues/browse/MAYAA-17">JIRA[MAYAA-17]</a> echoをバインディングしたタグでパスの自動調整が効かない問題を修正しました。</li>
-      <li><a href="https://www.seasar.org/issues/browse/MAYAA-19">JIRA[MAYAA-19]</a> xpathのfunctionが使用できない問題を修正しました。</li>
-      <li>XHTMLの場合かつreplace="false"かm:attributeのいずれかを使っていた場合に、EMPTY なタグでも閉じタグを出力していた問題を修正しました。</li>
-      <li><a href="https://www.seasar.org/issues/browse/MAYAA-18">JIRA[MAYAA-18]</a> echo, elementを複数使う場合のcomponent再帰呼び出しで上手くレンダリングされない問題を修正しました。</li>
-      <li>htmlタグやbodyタグのないテンプレートの場合、出力にhtmlタグなどが自動的に追加されてしまう問題を修正しました。</li>
-      <li><a href="https://www.seasar.org/issues/browse/MAYAA-21">JIRA[MAYAA-21]</a> Specification#kill()が呼ばれるタイミングでdeadlockが発生する問題を修正しました。</li>
-      <li><a href="https://www.seasar.org/issues/browse/MAYAA-22">JIRA[MAYAA-22]</a> GCが頻繁に発生する状況でIllegalStateExceptionが発生する問題を修正しました。</li>
-      <li>APIのTemplateProcessor#kill(), NodeTreeWalker#kill() をdeprecatedにしました。同様の処理をおこないたい場合はObject#finalize()で実装してください。</li>
-      <li>ビルド結果キャッシュのファイル名規則を変更しました。ディレクトリ名の区切りを.(ピリオド)にして単一のファイル名にしていたところを、`(バッククォート)で区切るようにしました。</li>
-      <li>/default.mayaaを利用するリクエスト(/default.htmlへのアクセス)があった場合、内部エラーではなくPageNotFoundExceptionが発生するようにしました。この際、リクエストがあったことをdebugレベルでログ出力します。(/default.mayaaの名前は設定に準じます)</li>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-17">JIRA[MAYAA-17]</a> echoをバインディングしたタグでパスの自動調整が効かない問題を修正しました。</li>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-19">JIRA[MAYAA-19]</a> xpathのfunctionが使用できない問題を修正しました。</li>
+      <li class="fix">XHTMLの場合かつreplace="false"かm:attributeのいずれかを使っていた場合に、EMPTY なタグでも閉じタグを出力していた問題を修正しました。</li>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-18">JIRA[MAYAA-18]</a> echo, elementを複数使う場合のcomponent再帰呼び出しで上手くレンダリングされない問題を修正しました。</li>
+      <li class="fix">htmlタグやbodyタグのないテンプレートの場合、出力にhtmlタグなどが自動的に追加されてしまう問題を修正しました。</li>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-21">JIRA[MAYAA-21]</a> Specification#kill()が呼ばれるタイミングでdeadlockが発生する問題を修正しました。</li>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-22">JIRA[MAYAA-22]</a> GCが頻繁に発生する状況でIllegalStateExceptionが発生する問題を修正しました。</li>
+      <li class="enhance">APIのTemplateProcessor#kill(), NodeTreeWalker#kill() をdeprecatedにしました。同様の処理をおこないたい場合はObject#finalize()で実装してください。</li>
+      <li class="enhance">ビルド結果キャッシュのファイル名規則を変更しました。ディレクトリ名の区切りを.(ピリオド)にして単一のファイル名にしていたところを、`(バッククォート)で区切るようにしました。</li>
+      <li class="enhance">/default.mayaaを利用するリクエスト(/default.htmlへのアクセス)があった場合、内部エラーではなくPageNotFoundExceptionが発生するようにしました。この際、リクエストがあったことをdebugレベルでログ出力します。(/default.mayaaの名前は設定に準じます)</li>
     </ul>
+
 
     <h4><a id="ver1.1.6" name="ver1.1.6"></a>変更点 1.1.5 -> 1.1.6 (2007/01/14)</h4>
     <ul>
@@ -66,8 +81,6 @@
       <li>グローバル関数"throwJava"を追加しました。レンダリング中にスクリプトからJavaの例外を投げたい場合に使用します。(ServiceCycle#throwJava(Throwable)を追加)</li>
       <li>m:replace="false"としたテンプレート側タグのid属性にスクリプトを指定していた場合に属性が出力されない問題を修正しました。</li>
     </ul>
-
-
 
     <h4><a id="ver1.1.5" name="ver1.1.5"></a>変更点 1.1.4 -> 1.1.5 (2006/12/07)</h4>
     <ul>

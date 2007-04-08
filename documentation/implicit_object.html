@@ -59,6 +59,7 @@
 	<li><a href="#param">param: リクエストパラメータスコープ</a></li>
 	<li><a href="#binding">binding: コンポーネント引数スコープ</a></li>
 	<li><a href="#header">header: リクエストヘッダスコープ</a></li>
+	<li><a href="#default">_: 標準スコープ</a></li>
 </ul></li>
 <li><a href="#response">response: レスポンス</a></li>
 <li><a href="#functions">グローバル関数</a></li>
@@ -96,7 +97,8 @@
 </dl>
 
 
-<p>Mayaa 標準のスコープは次の 7 つです。</p>
+<p>Mayaa 標準のスコープは次の 8 つです。(<strong>※</strong>:1.1.8 で "_" が追加されました)</p>
+
 
 <h4><a id="application" name="application"></a>■application: アプリケーションスコープ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
 
@@ -153,6 +155,11 @@
 <p>HTTP ヘッダの読み出し専用スコープです。同じ名前のパラメータが複数ある場合には、一番先頭のものひとつを返します。</p>
 
 
+<h4><a id="default" name="default"></a>■_ (アンダースコア): 標準スコープ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
+
+<p>スコープを指定しない場合と同じ動作をするスコープです。JavaScript の予約語に含まれる名前のパラメータを探索するために使用します。<strong>※ 1.1.8 以降</strong></p>
+
+
 <h3><a id="response" name="response"></a>response: レスポンス <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
 
 <p>ブラウザへ返す情報を扱うオブジェクトです。Servlet の response にあたります。<strong>特殊な場合を除いて直接操作しないことを推奨します</strong>。</p>
@@ -195,7 +202,7 @@
 <dt><code>load(String scriptPath, String encoding)</code></dt>
 <dd>指定したパスのスクリプトを指定した文字コードで読み込み、実行します。<code>exec</code> プロセッサの <code>src</code> 属性、<code>encoding</code> 属性を使う場合と同様です。</dd>
 <dt><code>throwJava(Throwable t)</code></dt>
-<dd>引数 <code>t</code> の例外を throw します。<strong>※1.1.6 以降</strong></dd>
+<dd>引数 <code>t</code> の例外を throw します。<strong>※ 1.1.6 以降</strong></dd>
 </dl>
 
 

@@ -211,14 +211,17 @@
 
     <h4><a id="write" name="write"></a>■write プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
     <p><a href="hello.html">利用例</a>。</p>
-    <p>オブジェクトを文字列として出力します。</p>
+    <p>タグのボディが有効です。(<strong>※</strong>)</p>
+    <p>value で指定したオブジェクト、またはタグのボディを文字列として出力します。
+    <ul><li>value 属性とタグのボディの両方を記述した場合、value 属性が優先されます。</li><li>value 属性のスクリプトでは、bodyText という変数を利用できます。bodyText はタグに記述したボディの内容を持ちます。ボディを記述していない場合、対象の HTML テンプレートの内容を持ちます。</li></ul></p>
+    <p>(<strong>※</strong>:1.1.8 で追加されたもの)</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
     <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     
     <tbody>
     <tr>
       <td nowrap="nowrap">value</td>
-      <td>出力する値。</td>
+      <td>出力する値。<br>ボディまたはvalueのどちらか一方必須。(<strong>※</strong>)</td>
       <td><div align="center">○</div></td>
       <td></td>
       <td></td>
@@ -402,6 +405,8 @@
     <h5>・コンポーネントを使う場合</h5>
     <p class="nomargin-top"><a href="component1.html">利用例</a>。</p>
     <p>指定したパスのコンポーネントを割り当てます。</p>
+    <p>パスはスクリプトで指定することもできます。(<strong>※</strong>)</p>
+    <p>(<strong>※</strong>:1.1.8 で追加されたもの)</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
     <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     <tbody>
@@ -409,7 +414,7 @@
       <td>path</td>
       <td>コンポーネントのパス。</td>
       <td><div align="center">○</div></td>
-      <td>文字列</td>
+      <td>(<strong>※</strong> 1.1.7 以前は文字列)</td>
       <td></td>
     </tr>
     <tr>
