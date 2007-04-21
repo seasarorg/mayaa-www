@@ -52,6 +52,7 @@
 <ul>
 <li><a href="#javaclass">Java のクラスを使う</a></li>
 <li><a href="#exception">例外を処理する</a></li>
+<li><a href="#var">変数宣言時の注意</a></li>
 </ul>
 </div>
 
@@ -60,27 +61,45 @@
 
 <p>Java のクラスは、<code>java.lang.String</code> や <code>java.util.ArrayList</code> のようにパッケージが "<code>java.</code>" で始まるクラスであれば、完全修飾名をそのまま書くだけで利用できます。しかしそれ以外のパッケージ ("<code>org.</code>" や "<code>com.</code>" など) の場合、先頭に "<code>Packages.</code>" を付ける必要があります。</p>
 
-<pre>
-例:
+<pre>例:
 var list = new java.util.ArrayList();
-var myClass = new <strong>Packages.</strong>org.example.MyClass();
-</pre>
+var myClass = new <strong>Packages.</strong>org.example.MyClass();</pre>
 
 
 <h3><a id="exception" name="exception"></a>例外を処理する <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
 
 <p>JavaScript にも try ～ catch 構文はありますので、Java で発生した例外を JavaScript で処理することもできます。Java でアプリケーションを作るときには Java 内で処理するでしょうから、デバッグ時には役立つかもしれません。</p>
 
-<pre>
-var catched = "";
+<pre>var caught = "";
 <strong>try {</strong>
     var list = myLogic.findByName(name);
 <strong>} catch (e) {</strong>
-    catched = e;
+    caught = e;
 <strong>}</strong>
 
-&lt;m:write m:id="error" value="&#36;{ catched }" /&gt;
-</pre>
+&lt;m:write m:id="error" value="&#36;{ caught }" /&gt;</pre>
+
+
+<h3><a id="var" name="var"></a>変数宣言時の注意 <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
+
+<p>JavaScript では、ローカル変数を宣言するには var を使います。<a href="before_render.html">beforeRender</a> や <a href="exec.html">exec プロセッサ</a>でローカル変数を宣言した場合、この変数は描画が終わるまで有効です。<a href="before_render.html">beforeRender</a> や <a href="exec.html">exec プロセッサ</a>はそれ自身のスコープを持たないためです。</p>
+
+<pre>var foo = "bar";</pre>
+
+<p>もし一度も宣言されていない変数名に対して <code>var</code> を使わずに変数へ代入した場合、グローバル変数とでもいうべき状態になってしまいます。そうなった変数は、(Mayaa では) Web アプリケーション内で共通に利用されます。</p>
+<p>意図してこの状態にしたのでなければ、見つかりにくいバグとなってしまいますので、変数の宣言時は必ず <code>var</code> を使うようにし、そのスコープを意識するようにしてください。(初回アクセスとそれ以降とで動作が変わる、他のユーザの情報が見える、というような現象が起きる可能性があります)</p>
+
+<pre>&lt;m:beforeRender&gt;&lt;![CDATA[
+    // この時点で foo が無い場合
+    foo = "bar"; // <strong>Web アプリケーション内共通になってしまう</strong>
+    <strong>var</strong> foo1 = "bar1"; // このページのレンダリングが終われば無くなる
+    function greeting() {
+        <strong>var</strong> message = "hello"; // この function を抜ければ無くなる
+        java.lang.System.out.println(message);
+    }
+]]&gt;&lt;/m:beforeRender&gt;
+
+&lt;m:write m:id="message" value="&#36;{ foo1 }" /&gt;</pre>
 
 
 <div class="navi"><a href="#top">↑このページのトップへ</a></div>

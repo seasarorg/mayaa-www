@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>5-7. テンプレートの場所 : Documentation - JavaServer Templates &quot;Mayaa&quot;</title>
+<link href="../css/base.css" rel="stylesheet" type="text/css">
+<link href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
+
+<div align="center"><img src="../images/topbar.gif" width="760" height="4"></div>
+
+<div align="center">
+<div class="contentslogo"><a href="../index.html" id="menu08"><img src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></a><img src="../images/topstripe.gif" width="330" height="48"></div>
+<div class="menudocs">
+<a href="../about/index.html" id="menu01"><img src="images/menu_about.gif" width="125" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../news/index.html" id="menu02"><img src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></a><img src="images/menu_div.gif" width="1" height="55"><a href="index.html"><img src="images/menu_doc_o.gif" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../downloads/index.html" id="menu04"><img src="images/menu_down.gif" alt="downloads" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../subprojects/index.html" id="menu05"><img src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../support/index.html" id="menu06"><img src="images/menu_support.gif" alt="Support" width="126" height="55"></a>
+</div>
+</div>
+
+
+<div class="maincontents">
+<div id="contentsleft">
+<img src="../images/arrow02.gif" align="absmiddle"><a href="../index.html" class="text11px">Top</a>
+<div class="sidemenu"><a href="index.html">Documentation Top</a></div>
+
+    <div class="sidemenu"><a href="changelog.html">更新履歴</a></div>
+    <div class="sidemenu"><a href="slide.html">スライドなど</a></div>
+    <div class="sidemenu"><a href="about.html">1. Mayaa導入</a></div>
+    <div class="sidemenu"><a href="hello.html">2. チュートリアル</a></div>
+    <div class="sidemenu"><a href="default.html">3. How To</a></div>
+    <div class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></div>
+    <div class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></div>
+      <div class="sidemenutext"><a href="engine_settings.html">5-1. エンジン設定方法</a></div>
+      <div class="sidemenutext"><a href="jsp_template_attribute.html">5-2. 属性自動セット</a></div>
+      <div class="sidemenutext"><a href="auto_build.html">5-3. 自動ビルド</a></div>
+      <div class="sidemenutext"><a href="page_serialize.html">5-4. ビルド結果キャッシュ</a></div>
+      <div class="sidemenutext"><a href="error_handler.html">5-5. エラー処理の設定</a></div>
+      <div class="sidemenutext"><a href="equals_id_resolver.html">5-6. id属性を無視する</a></div>
+      <div class="sidemenutext"><span>5-7. テンプレートの場所</span></div>
+      <br>
+    <div class="sidemenu"><a href="mayaa_customtag_diff.html">A. 付録</a></div>
+
+    <br>
+    <div class="sidemenu"><a href="link.html">外部へのリンク</a></div>
+
+</div>
+
+
+<div id="contentsright">
+<h1><a id="top" name="top"></a>Documentation</h1>
+
+<h2>5-7. テンプレートの場所</h2>
+
+<div class="toc">
+<a id="toc" name="toc">目次</a>
+<ul>
+<li><a href="#pageSourceFactory">テンプレートを探すパスを設定</a></li>
+<li><a href="#templatePathPattern">テンプレートと見なすファイル / 見なさないファイルを設定</a></li>
+</ul>
+</div>
+
+<h3><a name="pageSourceFactory"></a>テンプレートを探すパスを設定</h3>
+
+<p>5-1「<a href="engine_settings.html">エンジン設定方法</a>」と同様に、PageSourceFactory の設定をすることで<a href="deploy.html">ページを置く場所</a>を追加できます。PageSourceFactory の設定には、次に示す XML ファイルを使います。このファイルは <code>META-INF</code> の下に <code>org.seasar.mayaa.source.PageSourceFactory</code> という名前で作成します。</p>
+
+<div class="figure">図 5-7-1: ファイルを置く場所<br>
+<pre>WEB-INF/
+ +-- classes/
+ |    |
+ |    +-- META-INF/
+ |    |    |
+ |    |    +-- <strong>org.seasar.mayaa.source.PageSourceFactory</strong>
+ |    |
+ |    +-- (クラスファイルなど)
+ |
+ +-- lib/
+ |
+ (省略)
+</pre></div>
+
+<h4>■設定ファイル</h4>
+
+<p>追加設定する場合、<code>factory</code> の子として <code>parameter</code> 要素を必要なだけ記述します。</p>
+
+<pre>
+<code>org.seasar.mayaa.source.PageSourceFactory</code>
+<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE factory
+    PUBLIC "-//The Seasar Foundation//DTD Mayaa Factory 1.0//EN"
+    "http://mayaa.seasar.org/dtd/mayaa-factory_1_0.dtd"&gt;
+&lt;factory&gt;
+    &lt;parameter name="folder" value="/WEB-INF/page2"/&gt;
+    &lt;parameter name="absolutePath" value="C:/page1"/&gt;
+    &lt;parameter name="absolutePath" value="C:/page2"/&gt;
+&lt;/factory&gt;</div></pre>
+
+<p>追加設定したパスは、追加設定した順に、下記の優先順で組み込まれます。</p>
+<ol>
+<li>コンテキストルートの下</li>
+<li>/WEB-INF/page の下</li>
+<li><strong>追加したパスの下</strong></li>
+<li>クラスパス</li>
+</ol>
+
+
+<p>パラメータの指定方法は 2 種類あります。</p>
+
+<dl class="list">
+    <dt><code>folder</code></dt>
+    <dd>コンテキストルート下のフォルダを指定します。"/" で始まり "/" なしで終わるよう指定してください。</dd>
+    <dt><code>absolutePath</code></dt>
+    <dd>フォルダの絶対パスを指定します。</dd>
+</dl>
+
+
+<h4>■活用例</h4>
+
+<p>パラメータの値には <code>&#36;{ ... }</code> と指定することで環境変数を利用できます。たとえば <code>absolutePath</code> を <code>&#36;{ mayaa_path }</code> と設定しておき、開発者 PC では環境変数を <code>-Dmayaa_path=C:/page</code>、運用環境では <code>-Dmayaa_path=/var/www/html</code> と定義しておくと、Java のコードと全く別の場所でテンプレートファイルを管理することができます。</p>
+
+
+<h3><a name="templatePathPattern"></a>テンプレートと見なすファイル / 見なさないファイルを設定</h3>
+
+<p>5-1「<a href="engine_settings.html">エンジン設定方法</a>」と同様に、engine にパラメータを設定をすることでテンプレートと見なすファイル、見なさないファイルを定義できます。(<strong>※PageSourceFactory への指定ではないことにご注意ください</strong>)</p>
+<p>たとえば、コンテキストルート直下にある HTML ファイルのうち、一部のみ Mayaa に処理させたくない場合などに利用します。</p>
+
+<h4>■設定例</h4>
+
+<pre>
+<code>org.seasar.mayaa.provider.ServiceProvider</code>
+<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE provider
+    PUBLIC "-//The Seasar Foundation//DTD Mayaa Provider 1.0//EN"
+    "http://mayaa.seasar.org/dtd/mayaa-provider_1_0.dtd"&gt;
+&lt;provider&gt;
+    &lt;engine&gt;
+        &lt;parameter name="<code>notTemplatePathPattern</code>" value="<code>.*</code>"/&gt;
+        &lt;parameter name="<code>templatePathPattern</code>" value="<code>.*\.html</code>"/&gt;
+        &lt;parameter name="<code>notTemplatePathPattern</code>" value="<code>/doc/.*\.html</code>"/&gt;
+    &lt;/engine&gt;
+&lt;/provider&gt;</div></pre>
+
+
+<p>パラメータの指定方法は 2 種類あります。これらは複数指定することができ、<strong>下に指定したものから順番に判定され</strong>、どれにもマッチしないパスの場合は何も設定しない場合と同様に mime-type で HTML と定義されているものがテンプレートとして判定されます。</p>
+
+<dl class="list">
+    <dt><code>templatePathPattern</code></dt>
+    <dd>テンプレートと見なすパターンを正規表現で指定します。</dd>
+    <dt><code>notTemplatePathPattern</code></dt>
+    <dd>テンプレートではないと見なすパターンを正規表現で指定します。</dd>
+</dl>
+
+<p>たとえば設定例のとおりに設定した場合、次の優先順で条件を満たすパスがテンプレートとして判定されます。</p>
+
+<ol>
+<li><code>/doc/.*\.html</code> にマッチしないこと</li>
+<li><code>.*\.html</code> にマッチすること</li>
+</ol>
+
+<p>この結果、<code>/doc/index.html</code> はテンプレートではない、<code>/index.html</code> はテンプレートである、<code>/help.htm</code> はテンプレートではない、と判定されます。</p>
+
+
+
+<div class="navi"><a href="#top">↑このページのトップへ</a></div>
+
+</div>
+
+<div class="copyrights" align="center">
+<img src="../images/copyrights.gif" alt="Copyright (c) 2004-2007 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</div>
+</div>
+</body>
+</html>

@@ -36,6 +36,7 @@
       <div class="sidemenutext"><a href="page_serialize.html">5-4. ビルド結果キャッシュ</a></div>
       <div class="sidemenutext"><a href="error_handler.html">5-5. エラー処理の設定</a></div>
       <div class="sidemenutext"><a href="equals_id_resolver.html">5-6. id属性を無視する</a></div>
+      <div class="sidemenutext"><a href="template_path.html">5-7. テンプレートの場所</a></div>
       <br>
     <div class="sidemenu"><a href="mayaa_customtag_diff.html">A. 付録</a></div>
 
@@ -49,8 +50,6 @@
 <h1><a id="top" name="top"></a>Documentation</h1>
 
 <h2>5-3. 自動ビルド</h2>
-
-<p>※この機能は 1.1.0-beta6 で実装されました。</p>
 
 <p>標準設定の Mayaa は、ページへ最初にアクセスされたときに、そのページのビルド処理 (<a href="#note1"><strong>※</strong></a>) をおこないます。この処理にはある程度の時間がかかるため、最初にアクセスしたときとそれ以降では画面が表示されるまでの時間に大きな差ができてしまいます。初回アクセス時に時間がかかるということが好ましくない場合もあるでしょう。</p>
 <p>自動ビルド機能は、このビルド処理を初回アクセス時ではなくアプリケーション起動時に自動的におこなう機能です。自動ビルド処理は Web コンテナを起動してアプリケーションがロードされたあと、別スレッドで実行されます。自動ビルド対象となるファイルを検索し、それらのファイルに対して順番にビルド処理をおこないます。</p>
