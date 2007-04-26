@@ -65,7 +65,7 @@
 
 <pre>
 remove.html
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;ul&gt;
         &lt;span id="loop"&gt;
@@ -76,9 +76,9 @@ remove.html
         <strong>&lt;li class="dummy"&gt;dummy 3&lt;/li&gt;</strong>
     &lt;/ul&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 remove.mayaa
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:for m:id="loop"
             init="&#36;{ var i = 0; }"
@@ -88,14 +88,14 @@ remove.mayaa
     &lt;m:write m:id="message" value="&#36;{ i }" /&gt;
 
     &lt;<strong>m:null</strong> <strong>m:xpath="//li[@class='dummy']"</strong> /&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>実行時に出力したくないタグに <code>class="dummy"</code> を設定し、XPath を使って <code>null</code> プロセッサを対応させています。</p>
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/remove.html" target="_blank">http://localhost:8080/mayaa/remove.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;ul&gt;
         &lt;li&gt;0&lt;/li&gt;
@@ -105,7 +105,7 @@ remove.mayaa
         &lt;li&gt;4&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>ダミーの要素は出力されず、ループして出力するよう設定したもののみが出力されていることがわかります。</p>
 

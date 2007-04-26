@@ -78,22 +78,22 @@
 
 <pre>
 <code>hello.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;DummyTitleHello&lt;/h1&gt;
 
     &lt;div id="content"&gt;Hello Mayaa!&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         extends="<strong>/layouts/layout.html</strong>"&gt;
 
     &lt;m:doRender m:id="content" name="contentBody" /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 <code>layouts/layout.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;head&gt;
     &lt;link href="<strong>../css/base.css</strong>" rel="stylesheet" type="text/css"&gt;
 &lt;/head&gt;
@@ -102,18 +102,18 @@
 
     &lt;div id="contentPosition"&gt;Dummy content&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>layouts/layout.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:insert m:id="contentPosition" name="contentBody" /&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello.html" target="_blank">http://localhost:8080/mayaa/hello.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;head&gt;
     &lt;link href="<strong>../css/base.css</strong>" rel="stylesheet" type="text/css"&gt;
 &lt;/head&gt;
@@ -121,7 +121,7 @@
     &lt;h1&gt;Hello&lt;/h1&gt;
     Hello Mayaa!
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>このとき、http://localhost:8080/css/base.css というスタイルシートを探していることになりますが、このパスには存在しないためスタイルシートは適用されません。</p>
 
@@ -131,7 +131,7 @@
 
 <pre>
 <code>layouts/layout.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;head&gt;
     &lt;link href="<strong>./../css/base.css</strong>" rel="stylesheet" type="text/css"&gt;
 &lt;/head&gt;
@@ -140,13 +140,13 @@
 
     &lt;div id="contentPosition"&gt;Dummy content&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>Mayaa はパスが<strong>"./"</strong>で始まっている場合、そのテンプレートからの相対パスと解釈して絶対パスに置き換えます。ブラウザで <code><a href="http://localhost:8080/mayaa/hello.html" target="_blank">http://localhost:8080/mayaa/hello.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;head&gt;
     &lt;link href="<strong>/mayaa/css/base.css</strong>" rel="stylesheet" type="text/css"&gt;
 &lt;/head&gt;
@@ -154,7 +154,7 @@
     &lt;h1&gt;Hello&lt;/h1&gt;
     Hello Mayaa!
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>スタイルシートのパスがコンテキストパスからの絶対パスに変換されているため、スタイルシートは正しく読み込まれます。</p>
 

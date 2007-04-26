@@ -65,29 +65,29 @@
 
 <pre>
 xpath.html
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Dummy&lt;/h1&gt;
     &lt;p&gt;content&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 xpath.mayaa
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:write <strong>m:xpath="/html/body/h1"</strong> value="<strong>Title</strong>" replace="false" /&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
     <p>ルートはそのまま HTML のルートですので、 "<code>/html/body/h1</code>" というロケーションパスは <code>h1</code> タグを指します。</p>
     <p>ブラウザで <code><a href="http://localhost:8080/mayaa/xpath.html" target="_blank">http://localhost:8080/mayaa/xpath.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;<strong>Title</strong>&lt;/h1&gt;
     &lt;p&gt;content&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
     <p>テンプレートに <code>id</code> がなくても置き換わっているのがわかります。</p>
 
@@ -99,7 +99,7 @@ xpath.mayaa
 
 <pre>
 xpath_multi.html
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;ul&gt;
         &lt;li&gt;&lt;a href="path1.html"&gt;link1&lt;/a&gt;&lt;/li&gt;
@@ -107,20 +107,20 @@ xpath_multi.html
         &lt;li&gt;&lt;a href="path3.html"&gt;link3&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 xpath_multi.mayaa
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:echo m:xpath="<strong>//a</strong>"&gt;
         <strong>&lt;m:attribute name="target" value="_blank" /&gt;</strong>
     &lt;/m:echo&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
     <p>ブラウザで <code><a href="http://localhost:8080/mayaa/xpath_multi.html" target="_blank">http://localhost:8080/mayaa/xpath_multi.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;ul&gt;
         &lt;li&gt;&lt;a href="path1.html" <strong>target="_blank"</strong>&gt;link1&lt;/a&gt;&lt;/li&gt;
@@ -128,7 +128,7 @@ xpath_multi.mayaa
         &lt;li&gt;&lt;a href="path3.html" <strong>target="_blank"</strong>&gt;link3&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
     <p>指定したロケーションパスにマッチするもの、つまりすべての <code>a</code> タグに <code>target="_blank"</code> が追加されているのが分かります。</p>
 

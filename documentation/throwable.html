@@ -75,7 +75,7 @@
 
 <pre>
 <code>org.seasar.mayaa.impl.engine.PageNotFoundException.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;head&gt;
     &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
     &lt;title&gt;404&lt;/title&gt;
@@ -83,13 +83,13 @@
 &lt;body&gt;
     &lt;p&gt;指定されたページが見つかりません。&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/not_exists.html">http://localhost:8080/mayaa/not_exists.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;head&gt;
     &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
     &lt;title&gt;404&lt;/title&gt;
@@ -97,7 +97,7 @@
 &lt;body&gt;
     &lt;p&gt;指定されたページが見つかりません。&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>先ほど作成したテンプレートの内容が表示されますね。</p>
 
@@ -110,7 +110,7 @@
 
 <pre>
 <code>org.seasar.mayaa.impl.engine.PageNotFoundException.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;head&gt;
     &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
     &lt;title&gt;404&lt;/title&gt;
@@ -120,19 +120,19 @@
         "&lt;span <strong>id="pageName"</strong>&gt;/dummy.html&lt;/span&gt;"
         が見つかりません。&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;/html&gt;</span>
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org" noCache="true"&gt;
 
     &lt;m:write <strong>m:id="pageName"</strong> value="<strong>&#36;{ request.requestedPath }</strong>" /&gt;
 
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/not_exists.html">http://localhost:8080/mayaa/not_exists.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;head&gt;
     &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
     &lt;title&gt;404&lt;/title&gt;
@@ -142,7 +142,7 @@
         <strong>/not_exists.html</strong>
         が見つかりません。&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>リクエストされたパス名が表示されますね。</p>
 

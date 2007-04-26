@@ -95,16 +95,14 @@
 <p>実行結果は、<code>beforeRender</code> で準備した変数 <code>date</code> の値が表示されています。変数 <code>date</code> には、現在時刻の年を 2000 にしたものがに入ります。</p>
 <p>また不等号など XML として意味のある文字を使う場合は、<code>beforeRender</code> のボディを CDATA 宣言するとエスケープする必要がなくなります。</p>
 
-<pre>
-    &lt;m:beforeRender&gt;<strong>&lt;![CDATA[</strong>
-        var sum = 0;
-        for (var i = 0; i < 10; i++) {
-            sum += i;
-        }
-    <strong>]]&gt;</strong>&lt;/m:beforeRender&gt;
+<pre>&lt;m:beforeRender&gt;<strong>&lt;![CDATA[</strong>
+    var sum = 0;
+    for (var i = 0; i < 10; i++) {
+        sum += i;
+    }
+<strong>]]&gt;</strong>&lt;/m:beforeRender&gt;
 
-    &lt;m:write m:id="result" value="&#36;{ sum }" /&gt;
-</pre>
+&lt;m:write m:id="result" value="&#36;{ sum }" /&gt;</pre>
 
 
 <h3>描画後にスクリプトを実行する</h3>
@@ -113,11 +111,9 @@
 
 <p>たとえば描画処理が終わった後にログを出力する場合、次のように書くことで実現できます。</p>
 
-<pre>
-    <strong>&lt;m:afterRender&gt;</strong>
-        Packages.org.example.Logger.log("rendered.");
-    <strong>&lt;/m:afterRender&gt;</strong>
-</pre>
+<pre><strong>&lt;m:afterRender&gt;</strong>
+    Packages.org.example.Logger.log("rendered.");
+<strong>&lt;/m:afterRender&gt;</strong></pre>
 
 <p>描画処理の後に何かをするという場面は多くないでしょうから、<code>afterRender</code> を使う場面は少ないでしょう。描画のための一時リソースを開放する処理など、特殊な処理が必要な場合に <code>afterRender</code> を使ってください。</p>
 

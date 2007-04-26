@@ -84,7 +84,7 @@
 
 <pre>
 <code>org.seasar.mayaa.source.PageSourceFactory</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE factory
     PUBLIC "-//The Seasar Foundation//DTD Mayaa Factory 1.0//EN"
     "http://mayaa.seasar.org/dtd/mayaa-factory_1_0.dtd"&gt;
@@ -92,7 +92,7 @@
     &lt;parameter name="folder" value="/WEB-INF/page2"/&gt;
     &lt;parameter name="absolutePath" value="C:/page1"/&gt;
     &lt;parameter name="absolutePath" value="C:/page2"/&gt;
-&lt;/factory&gt;</div></pre>
+&lt;/factory&gt;</span></pre>
 
 <p>追加設定したパスは、追加設定した順に、下記の優先順で組み込まれます。</p>
 <ol>
@@ -127,7 +127,7 @@
 
 <pre>
 <code>org.seasar.mayaa.provider.ServiceProvider</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE provider
     PUBLIC "-//The Seasar Foundation//DTD Mayaa Provider 1.0//EN"
     "http://mayaa.seasar.org/dtd/mayaa-provider_1_0.dtd"&gt;
@@ -137,7 +137,7 @@
         &lt;parameter name="<code>templatePathPattern</code>" value="<code>.*\.html</code>"/&gt;
         &lt;parameter name="<code>notTemplatePathPattern</code>" value="<code>/doc/.*\.html</code>"/&gt;
     &lt;/engine&gt;
-&lt;/provider&gt;</div></pre>
+&lt;/provider&gt;</span></pre>
 
 
 <p>パラメータの指定方法は 2 種類あります。これらは複数指定することができ、<strong>下に指定したものから順番に判定され</strong>、どれにもマッチしないパスの場合は何も設定しない場合と同様に mime-type で HTML と定義されているものがテンプレートとして判定されます。</p>

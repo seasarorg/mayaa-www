@@ -71,7 +71,7 @@
 
 <pre>
 comment.html
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;!--
         &lt;span id="inComment"&gt;<strong>&#36;{ commentValue }</strong>&lt;/span&gt;
@@ -79,9 +79,9 @@ comment.html
 
     &lt;span id="<strong>commentOut</strong>"&gt;<strong>hello</strong>&lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 comment.mayaa
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:beforeRender&gt;
         var <strong>commentValue</strong> = "script in comment";
@@ -93,13 +93,13 @@ comment.mayaa
         &lt;m:write value="comment out by mayaa " /&gt;
         &lt;<strong>m:doBody</strong> /&gt;
     &lt;/m:comment&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/comment.html" target="_blank">http://localhost:8080/mayaa/comment.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;!--
         &lt;span id="inComment"&gt;<strong>script in comment</strong>&lt;/span&gt;
@@ -107,7 +107,7 @@ comment.mayaa
 
     &lt;!--comment out by mayaa <strong>hello</strong>--&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>コメント内にある <code>id="inComment"</code> は処理されず、そのボディにあった<strong>&#36;{ commentValue }</strong> が変数 <code>commentValue</code> の内容に置き換わっています。また、<code>id="commentOut"</code> が <code>comment</code> プロセッサによってコメントアウトされています。このように、コメント内に動的な値を出したい場合にも対応できます。</p>
 

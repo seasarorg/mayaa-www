@@ -61,16 +61,16 @@
 
 <pre>
 <code>hello.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
     &lt;span id="loop"&gt;
         &lt;div <strong>id="comp"</strong>&gt;dummy&lt;/div&gt;
     &lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:for m:id="loop"
             init="&#36;{ var <strong>count</strong> = 0 }"
@@ -78,9 +78,9 @@
             after="&#36;{ count++ }" /&gt;
 
     &lt;<strong>m:insert</strong> <strong>m:id="comp"</strong> path="/component.html" /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 <code>component.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;dummy for preview&lt;/h1&gt;
     &lt;span <strong>id="centered"</strong>&gt;
@@ -88,21 +88,21 @@
             style="text-align: center"&gt;component value&lt;/div&gt;
     &lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>component.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;<strong>m:doRender</strong> <strong>m:id="centered"</strong> /&gt;
 
     &lt;m:write <strong>m:id="message"</strong>
         value="Hello Mayaa! <strong>&#36;{ count }</strong>" replace="false" /&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello.html" target="_blank">http://localhost:8080/mayaa/hello.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
         &lt;div id="message"
@@ -116,7 +116,7 @@
         &lt;div id="message"
             style="text-align: center"&gt;Hello Mayaa! <strong>4</strong>&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>親テンプレート側の変数を素直に利用できていることがわかります。イメージとしては、JavaScript の変数スコープの考え方と同じです。もしコンポーネントの処理をするスコープで <code>count</code> という名前の変数がない場合、変数が見つからないというエラーが発生します。</p>
 
@@ -130,20 +130,20 @@
 
 <pre>
 <code>hello.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
     &lt;div id="comp"&gt;dummy&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:insert m:id="comp" path="/component.html"
         <strong>title="Component Title"</strong> /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 <code>component.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;dummy for preview&lt;/h1&gt;
     &lt;span id="centered"&gt;
@@ -152,23 +152,23 @@
             style="text-align: center"&gt;component value&lt;/div&gt;
     &lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>component.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:doRender m:id="centered" /&gt;
 
     &lt;m:write <strong>m:id="componentTitle"</strong> value="<strong>&#36;{ binding.title }</strong>" /&gt;
     &lt;m:write m:id="message" value="Hello Mayaa!" replace="false" /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
         &lt;h2&gt;<strong>Component Title</strong>&lt;/h2&gt;
         &lt;div id="message" style="text-align: center"&gt;Hello Mayaa!&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>この表記法のため、<code>insert</code> プロセッサが本来持つ属性名と同じ変数名 (たとえば id, path) はそのままでは使用できません。そのような変数を渡すには、属性の名前空間を mayaa の名前空間以外にします。</p>
 <p>この変数の渡し方は、<code>insert</code> プロセッサの属性として正しくない属性を変数として扱うという仕組みのため、どんな名前空間を使っても問題ありません。プレフィクスを付けた場合でも、変数名には属性のローカル名 (プレフィクスの無い状態) が使われます。</p>
@@ -177,12 +177,12 @@
 <pre>
 独自の名前空間を作って割り当てる
 <code>hello.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         <strong>xmlns:x="my_namespace"</strong>&gt;
     &lt;m:insert m:id="comp" path="/component.html"
         <strong>x:</strong>title="Component Title" /&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 
 <h3>request, session で値を共有する</h3>

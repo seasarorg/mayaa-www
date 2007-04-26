@@ -65,13 +65,13 @@
 
 <pre>
 with.html
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;span <strong>id="message"</strong>&gt;dummy&lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 with.mayaa
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;<strong>m:with</strong> <strong>m:id="message"</strong>&gt;
         &lt;m:if test="&#36;{ param.name &amp;amp;&amp;amp; param.name.length &gt; 0 }"&gt;
@@ -79,18 +79,18 @@ with.mayaa
         &lt;/m:if&gt;
         &lt;m:write value="&#36;{ param.name }" default="no name" /&gt;
     &lt;/<strong>m:with</strong>&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>条件判定と <code>write</code> プロセッサの <code>default</code> を併用しています。パラメータ <code>param.name</code> 自体がない場合は <code>param.name</code> を <code>boolean</code> として評価した結果が <code>false</code> になります。(JavaScript の <code>undefined</code>)</p>
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/with.html?name=" target="_blank">http://localhost:8080/mayaa/with.html?name=</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     no name
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>パラメータ <code>name</code> の値が空ですので「<code>hello,</code>」は出力されず、<code>write</code> プロセッサの <code>default</code> 値である「<code>no name</code>」だけが出力されています。</p>
 
@@ -98,11 +98,11 @@ with.mayaa
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     hello, world
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>パラメータ <code>name</code> の値がありますので「<code>hello,</code>」に続いて <code>name</code> の値である「world」が出力されています。</p>
 

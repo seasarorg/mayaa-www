@@ -84,13 +84,13 @@
 
 <pre>
 図 2-5-2 のテンプレートを図 2-5-3 の mayaa ファイルと合わせた場合の実行結果
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;dynamic title&lt;/h1&gt;
 
     dynamic contents
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>(C) を有効にするには、(B) にボディ処理できるプロセッサを対応させます。ボディ処理できるプロセッサには、たとえば <code>if</code> があります。どのプロセッサがボディ処理できるかは<a href="processor_reference.html">プロセッサ リファレンス</a>を参照してください。</p>
 
@@ -102,16 +102,16 @@
 
 <pre>
 <code>hello.html</code>
-<div class="file">&lt;html <strong>xmlns:m="http://mayaa.seasar.org"</strong>&gt;
+<span class="file">&lt;html <strong>xmlns:m="http://mayaa.seasar.org"</strong>&gt;
 &lt;body&gt;
     &lt;span <strong>m:id="message"</strong> id="forCss"&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:write <strong>m:id="message"</strong> value="<strong>Hello Mayaa!</strong>" replace="false" /&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 
 <h3>テンプレート上に設定を書く</h3>
@@ -126,18 +126,18 @@
 
 <pre>
 <code>hello.html</code> でテンプレート上に設定を書いた場合
-<div class="file">&lt;html <strong>xmlns:m="http://mayaa.seasar.org"</strong>&gt;
+<span class="file">&lt;html <strong>xmlns:m="http://mayaa.seasar.org"</strong>&gt;
 &lt;body&gt;
     &lt;span <strong>m:inject="m:write"</strong> <strong>m:value="Hello Mayaa!"</strong>&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello_jstl.html</code> でテンプレート上に設定を書いた場合
-<div class="file">&lt;html <strong>xmlns:m="http://mayaa.seasar.org"</strong>
+<span class="file">&lt;html <strong>xmlns:m="http://mayaa.seasar.org"</strong>
       <strong>xmlns:c="http://java.sun.com/jsp/jstl/core"</strong>&gt;
 &lt;body&gt;
     &lt;span <strong>m:inject="c:out"</strong> <strong>c:value="Hello Mayaa!"</strong>&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 
 <h3>mayaa ファイルとテンプレート上の設定の両方を使う</h3>
@@ -147,18 +147,18 @@
 
 <pre>
 <code>hello.html</code> で id 指定とテンプレート上の設定の両方を使う
-<div class="file">&lt;html <strong>xmlns:m="http://mayaa.seasar.org"</strong>&gt;
+<span class="file">&lt;html <strong>xmlns:m="http://mayaa.seasar.org"</strong>&gt;
 &lt;body&gt;
     &lt;div <strong>id="condition"</strong>&gt;
     &lt;span <strong>m:inject="m:write" m:value="Hello Mayaa!"</strong>&gt;dummy message&lt;/span&gt;
     &lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:if <strong>m:id="condition"</strong> test="&#36;{ 1 == 1 }" /&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>同じタグにテンプレート上の指定、mayaa ファイルでの指定の両方を書いた場合、テンプレート上の指定が優先されます。</p>
 
@@ -183,7 +183,7 @@
 <p>属性の名前空間が属しているタグと同じ場合はプレフィクスを省略できます。下の例で青色・斜体になっているプレフィクスが省略可能なものです。これまでのサンプルは省略した形で表記していましたが、厳密な記述をするときにはこの例のようになります。</p>
 
 <pre>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         xmlns:c="http://java.sun.com/jsp/jstl/core"&gt;
     &lt;m:if <span class="omit">m:</span>id="role" <span class="omit">m:</span>test="&#36;{ user.isManager() }" &gt;
@@ -191,7 +191,7 @@
     &lt;/m:if&gt;
 
     &lt;c:out m:id="message" <span class="omit">c:</span>value="Hello Mayaa!" /&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 
 <h4>■<a id="reference" name="reference"></a>参考文献</h4>

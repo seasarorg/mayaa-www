@@ -60,27 +60,27 @@
 
 <pre>
 <code>hello.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;span <strong>id="message"</strong>&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:write <strong>m:id="message"</strong> value="<strong>Hello Mayaa!</strong>" /&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>テンプレート <code>hello.html</code> 上の span タグと <code>id</code> が一致するものを mayaa ファイル <code>hello.mayaa</code> 上から探し、<code>value</code> の値である「Hello mayaa!」という文字列に置き換えて出力します。</p>
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello.html" target="_blank">http://localhost:8080/mayaa/hello.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>Hello Mayaa!</strong>
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 
 <h3>テンプレート上のタグを残す</h3>
@@ -89,22 +89,22 @@
 
 <pre>
 <code>hello.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;span id="message"&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:write m:id="message" value="Hello Mayaa!" <strong>replace="false"</strong> /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>&lt;span id="message"&gt;</strong>Hello Mayaa!<strong>&lt;/span&gt;</strong>
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 
 <h3><a id="script" name="script"></a>スクリプトでオブジェクトを出力する</h3>
@@ -113,22 +113,22 @@
 
 <pre>
 <code>hello.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;span id="message"&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:write m:id="message" value="<strong>&#36;{ 1 + 2 }</strong>" /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>3</strong>
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 
 <h4>■request や session 等に格納されている値を使う</h4>
@@ -141,20 +141,20 @@
 
 <pre>
 <code>hello.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:write m:id="message" value="Hello <strong>&#36;{ param.name }</strong>" /&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello.html?name=world" target="_blank">http://localhost:8080/mayaa/hello.html?name=world</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>Hello world</strong>
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>URL で渡した name を参照できましたね。</p>
 

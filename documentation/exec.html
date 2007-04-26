@@ -65,15 +65,15 @@
 
 <pre>
 exec.html
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;div id="loop"&gt;
         &lt;div <strong>id="evenodd"</strong>&gt;&lt;span id="value"&gt;dummy&lt;/span&gt;&lt;/div&gt;
     &lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 exec.mayaa
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
 
     &lt;m:for m:id="loop" init="&#36;{ var i = 1 }"
@@ -84,14 +84,14 @@ exec.mayaa
 
     &lt;m:write m:id="value" value="&#36;{ i + ': ' + evenodd }" /&gt;
 
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>変数 <code>evenodd</code> は <code>exec</code> プロセッサのボディ内でのみ有効です。<code>id="value"</code> の span タグは <code>exec</code> プロセッサのボディ内にあると見なせますので、<code>evenodd</code> 変数を参照することができます。</p>
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/exec.html" target="_blank">http://localhost:8080/mayaa/exec.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;div id="evenodd"&gt;1: odd&lt;/div&gt;
     &lt;div id="evenodd"&gt;2: even&lt;/div&gt;
@@ -99,7 +99,7 @@ exec.mayaa
     &lt;div id="evenodd"&gt;4: even&lt;/div&gt;
     &lt;div id="evenodd"&gt;5: odd&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>実行結果には、正しく <code>evenodd</code> 変数の内容が出力されました。</p>
 

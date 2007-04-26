@@ -64,45 +64,45 @@
 
 <pre>
 <code>hello.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
     &lt;div <strong>id="comp"</strong>&gt;dummy&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;<strong>m:insert</strong> <strong>id="comp"</strong> <strong>path="/component.html"</strong> replace="false" /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 <code>component.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;dummy for preview&lt;/h1&gt;
     &lt;span <strong>id="centered"</strong>&gt;
         <strong>&lt;div style="text-align: center"&gt;component value&lt;/div&gt;</strong>
     &lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>component.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;<strong>m:doRender</strong> <strong>id="centered"</strong> replace="false" /&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>関係するファイルは４つです。ユーザからリクエストされる <code>hello.html</code> およびその mayaa ファイル、それと <code>hello.html</code> から呼び出される <code>component.html</code> およびその mayaa ファイルです。</p>
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello.html" target="_blank">http://localhost:8080/mayaa/hello.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
     &lt;div id="comp"&gt;<strong>&lt;span id="centered"&gt;</strong>
         <strong>&lt;div style="text-align: center"&gt;component value&lt;/div&gt;</strong>
     <strong>&lt;/span&gt;</strong>&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>実行結果は、ベースとなる <code>hello.html</code> の <code>&lt;div id="comp"&gt;</code> のボディが、コンポーネントである <code>component.html</code> の <code>&lt;span id="centered"&gt;</code> によって置き換えられたものになっています。</p>
 
@@ -119,23 +119,23 @@
 
 <pre>
 <code>hello.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
     &lt;div id="comp1"&gt;dummy&lt;/div&gt;
     &lt;div id="comp2"&gt;dummy&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:insert m:id="comp1"
             path="/component.html" <strong>name="center1"</strong> replace="false" /&gt;
     &lt;m:insert m:id="comp2"
             path="/component.html" <strong>name="center2"</strong> replace="false" /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 <code>component.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;dummy for preview&lt;/h1&gt;
     &lt;span <strong>id="centered1"</strong>&gt;
@@ -145,15 +145,15 @@
         &lt;div style="text-align: center"&gt;component value 2&lt;/div&gt;
     &lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>component.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:doRender m:id="centered1" <strong>name="center1"</strong> replace="false" /&gt;
     &lt;m:doRender m:id="centered2" <strong>name="center2"</strong> replace="false" /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
     &lt;div id="comp1"&gt;&lt;span id="centered1"&gt;
@@ -163,7 +163,7 @@
         &lt;div style="text-align: center"&gt;component value 2&lt;/div&gt;
     &lt;/span&gt;&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 
 <h3>コンポーネントでコンポーネントを使う</h3>
@@ -173,19 +173,19 @@
 
 <pre>
 <code>hello.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
     &lt;div id="comp"&gt;dummy&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:insert m:id="comp" path="/component1.html" replace="false" /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 <code>component1.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;dummy for preview&lt;/h1&gt;
     &lt;span id="centered"&gt;
@@ -193,29 +193,29 @@
         &lt;div id="comp2"&gt;dummy&lt;/div&gt;
     &lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>component1.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:doRender m:id="centered" replace="false" /&gt;
     &lt;m:insert m:id="comp2" path="/component2.html" replace="false" /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 <code>component2.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;dummy for preview&lt;/h1&gt;
     <strong>&lt;span id="righted"&gt;</strong>
         <strong>&lt;div style="text-align: right"&gt;component value 2&lt;/div&gt;</strong>
     <strong>&lt;/span&gt;</strong>
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>component2.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     <strong>&lt;m:doRender m:id="righted" replace="false" /&gt;</strong>
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
     &lt;div id="comp"&gt;&lt;span id="centered"&gt;
@@ -225,7 +225,7 @@
         <strong>&lt;/span&gt;&lt;/div&gt;</strong>
     &lt;/span&gt;&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <div class="figure">図 2-6-3: 2 段のコンポーネント描画イメージ<br><img src="images/component3.gif" title="図 2-6-3: 2 段のコンポーネント描画イメージ" width="481" height="254"></div>
 

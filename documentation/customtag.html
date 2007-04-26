@@ -63,28 +63,28 @@
 
 <pre>
 <code>hello_jstl.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;span id="message"&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello_jstl.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         <strong>xmlns:c="http://java.sun.com/jsp/jstl/core"</strong>&gt;
     &lt;<strong>c:out</strong> <strong>m:</strong>id="message" value="Hello Mayaa!" /&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>「2. 最初の一歩」で作成したものとの異なるのは mayaa ファイルのみです。記述方法については次の「6. 設定の記述方法」で説明しますので、ここでは例の通りに作成してください。</p>
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello_jstl.html" target="_blank">http://localhost:8080/mayaa/hello_jstl.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>Hello Mayaa!</strong>
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>「2. 最初の一歩」で <code>m:write</code> を使った場合と全く同じ結果になりました。id 指定したタグを出力することも、値としてスクリプトを使用することも、<code>m:write</code> と同様に実現できます。</p>
 
@@ -94,23 +94,23 @@
 
 <pre>
 <code>hello_jstl.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;span id="message"&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello_jstl.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         xmlns:c="http://java.sun.com/jsp/jstl/core"&gt;
     &lt;<strong>c:out</strong> <strong>m:</strong>id="message" value="Hello Mayaa!" <strong>m:</strong>replace="false" /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>&lt;span id="message"&gt;</strong>Hello Mayaa!<strong>&lt;/span&gt;</strong>
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 
 <h4>■スクリプトでオブジェクトを出力する</h4>
@@ -119,23 +119,23 @@
 
 <pre>
 <code>hello_jstl.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;span id="message"&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello_jstl.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         xmlns:c="http://java.sun.com/jsp/jstl/core"&gt;
     &lt;<strong>c:out</strong> <strong>m:</strong>id="message" value="<strong>&#36;{ 1 + 2 }</strong>" /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>3</strong>
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>この実行結果は <strong>Mayaa 1.1.2 以前の場合、</strong><code>m:write</code> の実行結果「3」と異なり、「3.0」となります。これは、スクリプトから <code>c:out</code> に渡る値の型が double になるためです。(「<a href="mayaa_customtag_diff.html" title="appendix A. Mayaa と JSP カスタムタグ">Mayaa と JSP カスタムタグ</a>」を参照してください)</p>
 

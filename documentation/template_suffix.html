@@ -77,39 +77,39 @@
 
 <pre>
 use_suffix$en.html
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;p&gt;in English.&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 use_suffix$ja.html
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;p&gt;in Japanese.&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 index.mayaa
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         <strong>m:templateSuffix="&#36;{ param.locale }"</strong>&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/use_suffix.html?locale=en" target="_blank">http://localhost:8080/mayaa/use_suffix.html?locale=en</a></code> にアクセスしてみましょう。「in English.」と表示されますね。次に <code><a href="http://localhost:8080/mayaa/use_suffix.html?locale=ja" target="_blank">http://localhost:8080/mayaa/use_suffix.html?locale=ja</a></code> にアクセスしてみましょう。今度は「in Japanese.」と表示されますね。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
 use_suffix.html?locale=en の場合
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;p&gt;in English.&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 use_suffix.html?locale=ja の場合
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;p&gt;in Japanese.&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 
 <h3>指定した種類が存在しない場合</h3>
@@ -119,22 +119,22 @@ use_suffix.html?locale=ja の場合
 
 <pre>
 use_suffix.html
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;p&gt;Default.&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/use_suffix.html?locale=aaa" target="_blank">http://localhost:8080/mayaa/use_suffix.html?locale=aaa</a></code> にアクセスしてみましょう。「Default.」と表示されますね。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
 use_suffix.html?locale=aaa の場合
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;p&gt;Default.&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 
 <div class="navi"><a href="#top">↑このページのトップへ</a></div>

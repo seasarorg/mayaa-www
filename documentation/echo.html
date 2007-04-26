@@ -65,7 +65,7 @@
 
 <pre>
 echo_list.html
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;ol id="list" <strong>type="A"</strong> start="3"&gt;
         &lt;li&gt;item 1&lt;/li&gt;
@@ -74,21 +74,21 @@ echo_list.html
         &lt;li&gt;item 4&lt;/li&gt;
     &lt;/ol&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 echo_list.mayaa
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;<strong>m:echo</strong> m:id="list"&gt;
         &lt;<strong>m:attribute</strong> name="type" value="i" /&gt;
     &lt;/<strong>m:echo</strong>&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>テンプレートの <code>ol</code> タグに <code>m:echo</code> を対応付け、<code>m:echo</code> の子として <code>m:attribute</code> を書きます。<code>m:attribute</code> の <code>name</code> 属性に変更したい属性名、<code>value</code> に変更後の属性値を設定します。<code>m:attribute</code> を複数書けば、複数の属性を置き換えられます。</p>
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/echo_list.html" target="_blank">http://localhost:8080/mayaa/echo_list.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;ol id="list" <strong>type="i"</strong> start="3"&gt;
         &lt;li&gt;item 1&lt;/li&gt;
@@ -97,8 +97,7 @@ echo_list.mayaa
         &lt;li&gt;item 4&lt;/li&gt;
     &lt;/ol&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>他の属性はそのままに、<code>type</code> 属性だけ置き換わりましたね。</p>
 
@@ -109,7 +108,7 @@ echo_list.mayaa
 
 <pre>
 echo_list.html
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;ol id="list" type="A" start="3"&gt;
         &lt;li&gt;item 1&lt;/li&gt;
@@ -118,17 +117,17 @@ echo_list.html
         &lt;li&gt;item 4&lt;/li&gt;
     &lt;/ol&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 echo_list.mayaa
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:echo m:id="list"&gt;
         &lt;m:attribute name="type" value="i" /&gt;
         &lt;m:attribute <strong>name="style"</strong> <strong>value="color: blue;"</strong> /&gt;
     &lt;/m:echo&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;ol id="list" type="i" start="3" <strong>style="color: blue;"</strong>&gt;
         &lt;li&gt;item 1&lt;/li&gt;
@@ -137,8 +136,7 @@ echo_list.mayaa
         &lt;li&gt;item 4&lt;/li&gt;
     &lt;/ol&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-</div></pre>
+&lt;/html&gt;</span></pre>
 
 
 <h3>テンプレートの属性値を利用する</h3>
@@ -147,7 +145,7 @@ echo_list.mayaa
 
 <pre>
 echo_list.html
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;ol id="list" type="A" <strong>start="3"</strong>&gt;
         &lt;li&gt;item 1&lt;/li&gt;
@@ -156,18 +154,18 @@ echo_list.html
         &lt;li&gt;item 4&lt;/li&gt;
     &lt;/ol&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 echo_list.mayaa
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:echo m:id="list"&gt;
         &lt;m:attribute name="type" value="i" /&gt;
         &lt;m:attribute name="style" value="color: blue;" /&gt;
         &lt;m:attribute name="<strong>start</strong>" value="<strong>&#36;{ new Number(start) + 2 }</strong>" /&gt;
     &lt;/m:echo&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;ol id="list" type="i" <strong>start="5"</strong> style="color: blue;"&gt;
         &lt;li&gt;item 1&lt;/li&gt;
@@ -176,8 +174,7 @@ echo_list.mayaa
         &lt;li&gt;item 4&lt;/li&gt;
     &lt;/ol&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-</div></pre>
+&lt;/html&gt;</span></pre>
 
 <h4>注意点</h4>
 

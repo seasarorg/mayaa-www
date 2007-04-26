@@ -65,38 +65,38 @@
 
 <pre>
 <code>hello.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;form id="greetingForm"&gt;
         &lt;input id="greetingInput" name="greeting" value="Hello."
             size="20" maxlength="20"&gt;
     &lt;/form&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
             xmlns:html="http://struts.apache.org/tags-html"&gt;
     &lt;html:form m:id="greetingForm" action="/hello" /&gt;
 
     &lt;!-- html:text には size, maxlength, styleId などの属性があります --&gt;
     &lt;html:text m:id="greetingInput" property="greeting" /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 実行結果
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;form action="/mayaa/hello.do"&gt;
         &lt;input id="greetingInput" name="greeting" value=""
             <strong>size="20"</strong> <strong>maxlength="20"</strong>&gt;
     &lt;/form&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>html:text タグには <code>size</code> 属性, <code>maxlength</code> 属性, <code>styleId</code> 属性を指定していませんが、出力はそれらを指定したかのようなものになっています。このような動作をさせるには、たとえば次のように設定します。</p>
 
 <pre>
 <code>org.seasar.mayaa.provider.ServiceProvider</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE provider
     PUBLIC "-//The Seasar Foundation//DTD Mayaa Provider 1.0//EN"
     "http://mayaa.seasar.org/dtd/mayaa-provider_1_0.dtd"&gt;
@@ -124,8 +124,7 @@
         &lt;<strong>parameter</strong> <strong>name</strong>="enabled" <strong>value</strong>="true" /&gt;
     &lt;/<strong>templateAttributeReader</strong>&gt;
 
-&lt;/provider&gt;
-</div></pre>
+&lt;/provider&gt;</span></pre>
 
 
 <h4>■設定タグ・属性の説明</h4>

@@ -64,33 +64,33 @@
 
 <pre>
 <code>hello.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;DummyTitleHello&lt;/h1&gt;
 
     &lt;div <strong>id="content"</strong>&gt;<strong>Hello Mayaa!</strong>&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         <strong>extends="/layout.html"</strong>&gt;
 
     &lt;<strong>m:doRender</strong> <strong>m:id="content"</strong> <strong>name="contentBody"</strong> /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 <code>layout.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
 
     &lt;div <strong>id="contentPosition"</strong>&gt;Dummy content&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>layout.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;<strong>m:insert</strong> <strong>m:id="contentPosition"</strong> <strong>name="contentBody"</strong> /&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>コンポーネントの例と違う点は次の 4 点です。</p>
 <ul>
@@ -103,12 +103,12 @@
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
     <strong>Hello Mayaa!</strong>
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>実行結果は、レイアウトを定義している <code>layout.html</code> の <code>&lt;div id="contentPosition"&gt;</code> が、アクセスされた <code>hello.html</code> の <code>&lt;span id="content"&gt;</code> のボディによって置き換えられたものになっています。元のタグを出力するかどうかはコンポーネント同様 <code>replace</code> の値に従いますので、この例ではどちらのタグも出力されません。</p>
 
@@ -119,20 +119,20 @@
 
 <pre>
 <code>layout.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;div <strong>id="contentPosition"</strong>&gt;Dummy content&lt;/div&gt;
 
     &lt;h1&gt;Hello&lt;/h1&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>Hello Mayaa!</strong>
     &lt;h1&gt;Hello&lt;/h1&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>内容を持つ <code>hello.html</code> を変更することなく、レイアウトの変更が反映されましたね。このように、レイアウトページを変更するだけで簡単にレイアウトを変更できます。</p>
 
@@ -143,7 +143,7 @@
 
 <pre>
 <code>hello.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;DummyTitleHello&lt;/h1&gt;
 
@@ -151,38 +151,38 @@
 
     &lt;div <strong>id="content2"</strong>&gt;Hello Mayaa! 2&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         <strong>extends="/layout.html"</strong>&gt;
 
     &lt;m:doRender <strong>m:id="content1"</strong> <strong>name="position1"</strong> /&gt;
     &lt;m:doRender <strong>m:id="content2"</strong> <strong>name="position2"</strong> /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 <code>layout.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
 
     &lt;div <strong>id="contentPosition1"</strong>&gt;Dummy content 1&lt;/div&gt;
     &lt;div <strong>id="contentPosition2"</strong>&gt;Dummy content 2&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>layout.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:insert <strong>m:id="contentPosition1"</strong> <strong>name="position1"</strong> /&gt;
     &lt;m:insert <strong>m:id="contentPosition2"</strong> <strong>name="position2"</strong> /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
     <strong>Hello Mayaa! 1</strong>
     <strong>Hello Mayaa! 2</strong>
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 
 <h3>レイアウトページにコンポーネントを追加する</h3>
@@ -191,56 +191,56 @@
 
 <pre>
 <code>hello.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;DummyTitleHello&lt;/h1&gt;
 
     &lt;div id="content"&gt;Hello Mayaa!&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         extends="/layout.html"&gt;
 
     &lt;m:doRender m:id="content" name="contentBody" /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 <code>layout.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
     <strong>&lt;div id="comp"&gt;Dummy component&lt;/div&gt;</strong>
     &lt;div id="contentPosition"&gt;Dummy content&lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>layout.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     <strong>&lt;m:insert m:id="comp" path="/component.html" /&gt;</strong>
     &lt;m:insert id="contentPosition" name="contentBody" /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 <code>component.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;dummy for preview&lt;/h1&gt;
     &lt;span <strong>id="centered"</strong>&gt;
         <strong>&lt;div style="text-align: center"&gt;component value&lt;/div&gt;</strong>
     &lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>component.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:doRender <strong>m:id="centered"</strong> /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;h1&gt;Hello&lt;/h1&gt;
     <strong>&lt;div style="text-align: center"&gt;component value&lt;/div&gt;</strong>
     Hello Mayaa!
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>レイアウトページを使う側は、特にコンポーネントを意識しません。レイアウトページの一部だと考えれば良いだけですので、違和感なく使えます。</p>
 

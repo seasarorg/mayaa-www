@@ -56,7 +56,7 @@
 
 <pre>
 <code>MyBean.java</code>
-<div class="file">package example;
+<span class="file">package example;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -71,14 +71,13 @@ public class MyBean {
 
     private Date _timestamp = <strong>new Date()</strong>;
 
-    // setter, getter 省略
-</div></pre>
+    // setter, getter 省略</span></pre>
 
 <p>この JavaBean を表示するサンプルは次の通りです。usebean.mayaa の 5 行目で request の属性として MyBean のインスタンスをセットし、それを画面に表示しています。</p>
 
 <pre>
 <code>usebean.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;head&gt;
     &lt;title&gt;use bean&lt;/title&gt;
 &lt;/head&gt;
@@ -107,9 +106,9 @@ public class MyBean {
     &lt;/tr&gt;
     &lt;/table&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>usebean.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"
         xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"&gt;
     &lt;m:beforeRender&gt;
@@ -121,13 +120,13 @@ public class MyBean {
     &lt;fmt:formatNumber m:id="decimal" value="<strong>&#36;{ bean.decimal }</strong>" /&gt;
     &lt;fmt:formatDate m:id="timestamp" value="<strong>&#36;{ bean.timestamp }</strong>" /&gt;
 
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>これらのファイルはあらかじめパッケージに含まれています。ブラウザで <code><a href="http://localhost:8080/mayaa/samples/tutorial/usebean.html" target="_blank">http://localhost:8080/mayaa/samples/tutorial/usebean.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;head&gt;
     &lt;title&gt;use bean&lt;/title&gt;
 &lt;/head&gt;
@@ -156,7 +155,7 @@ public class MyBean {
     &lt;/tr&gt;
     &lt;/table&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>テンプレートに JavaBean の内容を埋め込んだページが表示されました。それではテンプレートや .mayaa ファイルの書き方をチュートリアルをたどりながら見ていきましょう。</p>
 

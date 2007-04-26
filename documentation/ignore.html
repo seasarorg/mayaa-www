@@ -71,28 +71,28 @@ the injection id(<strong>[対象 id の値]</strong>) is not found on the templa
 
 <pre>
 ignore.html
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;span id="notfound"&gt;not found&lt;/span&gt;
     &lt;span <strong>id="ignored"</strong>&gt;ignored&lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 ignore.mayaa
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;<strong>m:ignore</strong> <strong>m:id="ignored"</strong> /&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/ignore.html" target="_blank">http://localhost:8080/mayaa/ignore.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;span id="notfound"&gt;not found&lt;/span&gt;
     &lt;span id="ignored"&gt;ignored&lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>何の処理も行いませんので、テンプレートがそのまま出力されているのがわかります。Tomcat のログに前述の警告が出ていることを確認してください。「notfound」は警告されますが、無視指定している「ignored」の警告は出ていませんね。</p>
 

@@ -67,36 +67,36 @@
 
 <pre>
 <code>hello_with_time.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;span <strong>id="currentTime"</strong>&gt;dummy time&lt;/span&gt;
     &lt;br&gt;
     &lt;span id="message"&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello_with_time.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:write m:id="message" value="Hello Mayaa!" /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 <code>default.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:write <strong>m:id="currentTime"</strong>
             value="<strong>&#36;{ new java.util.Date().toString() }</strong>" /&gt;
-&lt;/m:mayaa&gt;</div></pre>
+&lt;/m:mayaa&gt;</span></pre>
 
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/hello_with_time.html" target="_blank">http://localhost:8080/mayaa/hello_with_time.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>Thu Oct 20 20:01:38 JST 2005</strong>
     &lt;br&gt;
     Hello Mayaa!
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>実行結果は、<code>default.mayaa</code> で設定したとおりにシステム時刻が出力されています。</p>
 
@@ -107,34 +107,34 @@
 
 <pre>
 <code>hello_with_time.html</code>
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     &lt;span <strong>id="currentTime"</strong>&gt;dummy time&lt;/span&gt;
     &lt;br&gt;
     &lt;span id="message"&gt;dummy message&lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</span>
 <code>hello_with_time.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:write m:id="message" value="Hello Mayaa!" /&gt;
 
     &lt;m:write <strong>m:id="currentTime"</strong> value="<strong>Now</strong>" /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 <code>default.mayaa</code>
-<div class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
     &lt;m:write m:id="currentTime"
             value="&#36;{ new java.util.Date().toString() }" /&gt;
-&lt;/m:mayaa&gt;</div>
+&lt;/m:mayaa&gt;</span>
 実行結果 (改行などは実際の実行結果と異なります)
-<div class="file">&lt;html&gt;
+<span class="file">&lt;html&gt;
 &lt;body&gt;
     <strong>Now</strong>
     &lt;br&gt;
     Hello Mayaa!
 &lt;/body&gt;
-&lt;/html&gt;</div></pre>
+&lt;/html&gt;</span></pre>
 
 <p>デフォルト (<code>default.mayaa</code>) の設定ではなく <code>hello_with_time.mayaa</code> の設定が優先されていることがわかります。</p>
 
