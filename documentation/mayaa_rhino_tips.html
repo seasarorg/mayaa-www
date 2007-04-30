@@ -82,6 +82,7 @@ var myClass = new <strong>Packages.</strong>org.example.MyClass();</pre>
 
 <h3><a id="var" name="var"></a>変数宣言時の注意 <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
 
+<p><strong>※1.1.9　でこの問題は解消しました。ただしコードの読みやすさやメモリ効率、変数参照時のパフォーマンスを確保するためには、適切な位置で var を宣言するべきということは変わりません。</strong></p>
 <p>JavaScript では、ローカル変数を宣言するには var を使います。<a href="before_render.html">beforeRender</a> や <a href="exec.html">exec プロセッサ</a>でローカル変数を宣言した場合、この変数は描画が終わるまで有効です。<a href="before_render.html">beforeRender</a> や <a href="exec.html">exec プロセッサ</a>はそれ自身のスコープを持たないためです。</p>
 
 <pre>var foo = "bar";</pre>
