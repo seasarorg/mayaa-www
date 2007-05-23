@@ -56,7 +56,7 @@
 
 <h2>3-7. タグを消す</h2>
 
-<p>テンプレートを直接ブラウザでプレビューするときのためのダミーを、実行時に自動的に非表示にしたい場合があるでしょう。その場合は <strong>null プロセッサ</strong>もしくは <strong>rendered 属性</strong>を使います。<code>rendered</code> 属性に <code>false</code> をセットした場合、プロセッサとして <code>null</code> プロセッサを指定したものとして扱います。</p>
+<p>テンプレートを直接ブラウザでプレビューするときのためのダミーを、実行時に自動的に非表示にしたい場合があるでしょう。その場合は <a href="processor_reference.html#null"><strong>null タグ</strong></a>もしくは <strong>rendered 属性</strong>を使います。<code>rendered</code> 属性に <code>false</code> をセットした場合、プロセッサとして <a href="processor_reference.html#null"><code>null</code> タグ</a>を指定したものとして扱います。</p>
 
 
 <h3>簡単な例</h3>
@@ -90,7 +90,7 @@ remove.mayaa
     &lt;<strong>m:null</strong> <strong>m:xpath="//li[@class='dummy']"</strong> /&gt;
 &lt;/m:mayaa&gt;</span></pre>
 
-<p>実行時に出力したくないタグに <code>class="dummy"</code> を設定し、XPath を使って <code>null</code> プロセッサを対応させています。</p>
+<p>実行時に出力したくないタグに <code>class="dummy"</code> を設定し、XPath を使って <a href="processor_reference.html#null"><code>null</code> タグ</a>を対応させています。</p>
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/remove.html" target="_blank">http://localhost:8080/mayaa/remove.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
@@ -112,7 +112,7 @@ remove.mayaa
 
 <h3>使い分け</h3>
 
-<p>出力しない設定をする方法は <code>null</code> プロセッサと <code>rendered</code> 属性の 2 種類があります。基本的に mayaa ファイルに設定を記述する場合は <code>null</code> プロセッサを使い、テンプレートに設定を記述する場合は <code>rendered</code> 属性を使います。テンプレートに記述する場合は、純粋な HTML でなくなってしまうことと、複数要素を一括して指定する方法がないというデメリットがあります。</p>
+<p>出力しない設定をする方法は <a href="processor_reference.html#null"><code>null</code> タグ</a>と <code>rendered</code> 属性の 2 種類があります。基本的に mayaa ファイルに設定を記述する場合は <a href="processor_reference.html#null"><code>null</code> タグ</a>を使い、テンプレートに設定を記述する場合は <code>rendered</code> 属性を使います。テンプレートに記述する場合は、純粋な HTML でなくなってしまうことと、複数要素を一括して指定する方法がないというデメリットがあります。</p>
 
 
 <div class="navi"><a href="#top">↑このページのトップへ</a></div>

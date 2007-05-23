@@ -153,7 +153,7 @@
     <p>日付を指定したパターンにフォーマットして出力します。value に null を渡した場合、default 属性をしているなら default を出力します。そうでない場合は何も出力しません。</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
     <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
-
+    
     <tbody>
     <tr>
       <td nowrap="nowrap">value</td>
@@ -183,7 +183,7 @@
     <p>数値を指定したパターンにフォーマットして出力します。value に null を渡した場合、default 属性をしているなら default を出力します。そうでない場合は何も出力しません。</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
     <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
-
+    
     <tbody>
     <tr>
       <td nowrap="nowrap">value</td>
@@ -217,7 +217,7 @@
     <p>(<strong>※</strong>:1.1.8 で追加されたもの)</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
     <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
-
+    
     <tbody>
     <tr>
       <td nowrap="nowrap">value</td>
@@ -448,19 +448,20 @@
     <h4><a id="exec" name="exec"></a>■exec プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
     <p><a href="exec.html">利用例</a>。</p>
     <p>スクリプトを実行するために使います。script、srcの両方に指定された場合、srcから先に実行されます。</p>
+    <p>exec プロセッサで実行したスクリプトによって宣言された変数は、exec プロセッサと同じ階層のスコープで有効です。(1.1.9 以前の src 属性、および 1.1.0-beta6 以前の script 属性では、exec プロセッサの内側階層のスコープでのみ有効でした)</p>
     <table width="90%" align="center" cellpadding="5" cellspacing="2" class="tbline">
     <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     <tbody>
     <tr>
       <td>script</td>
-      <td>実行するスクリプト。</td>
+      <td>実行するスクリプト。<code>&#36;{}</code> 表記で記述します。</td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>src</td>
-      <td>実行する外部 JavaScript ファイルのパス。</td>
+      <td>実行する外部 JavaScript ファイルのパス。コンテキストルートからの絶対パス、Mayaa ファイルからの相対パスで記述できます。</td>
       <td></td>
       <td>文字列</td>
       <td></td>

@@ -62,7 +62,7 @@
 <h3>テンプレートの一部であるコメント</h3>
 
 <p>テンプレートの一部であるコメントとは、テンプレートに HTML コメントの形式 (<code>&lt;!-- --&gt;</code>) で記述したコメントのことで、処理結果として出力されます。このコメントの内側に <code>id</code> を持つタグがあっても無視されます。ただし <code>&#36;{ }</code> の形式でスクリプトが書かれている場合、それは処理対象になります。</p>
-<p>mayaa ファイルから HTML コメントを出力したい場合、<strong>comment プロセッサ</strong>を使います。</p>
+<p>mayaa ファイルから HTML コメントを出力したい場合、<a href="processor_reference.html#comment"><strong>comment プロセッサ</strong></a>を使います。</p>
 
 
 <h3>簡単な例</h3>
@@ -109,7 +109,7 @@ comment.mayaa
 &lt;/body&gt;
 &lt;/html&gt;</span></pre>
 
-<p>コメント内にある <code>id="inComment"</code> は処理されず、そのボディにあった<strong>&#36;{ commentValue }</strong> が変数 <code>commentValue</code> の内容に置き換わっています。また、<code>id="commentOut"</code> が <code>comment</code> プロセッサによってコメントアウトされています。このように、コメント内に動的な値を出したい場合にも対応できます。</p>
+<p>コメント内にある <code>id="inComment"</code> は処理されず、そのボディにあった<strong>&#36;{ commentValue }</strong> が変数 <code>commentValue</code> の内容に置き換わっています。また、<code>id="commentOut"</code> が <a href="processor_reference.html#comment"><code>comment</code> プロセッサ</a>によってコメントアウトされています。このように、コメント内に動的な値を出したい場合にも対応できます。</p>
 
 
 <h3>mayaa ファイルに書くコメント</h3>

@@ -68,7 +68,7 @@
 
 <h4>■mayaa ファイルのタグはプロセッサ</h4>
 
-<p>mayaa ファイルにタグとして書く、Mayaa の様々なテンプレート処理機能のことをプロセッサと呼びます。たとえば「<code>write</code> プロセッサ」を使うなら <code>&lt;m:write&gt;</code> タグを書き、「<code>if</code> プロセッサ」を使うなら <code>&lt;m:if&gt;</code> タグを書きます。</p>
+<p>mayaa ファイルにタグとして書く、Mayaa の様々なテンプレート処理機能のことをプロセッサと呼びます。たとえば「<a href="processor_reference.html#write"><code>write</code> プロセッサ</a>」を使うなら <code>&lt;m:write&gt;</code> タグを書き、「<a href="processor_reference.html#if"><code>if</code> プロセッサ</a>」を使うなら <code>&lt;m:if&gt;</code> タグを書きます。</p>
 
 
 <h4>■HTML タグにプロセッサを割り当てる</h4>
@@ -93,12 +93,23 @@
 &lt;/html&gt;</span></pre>
 
 <p>(C) を有効にするには、(B) にボディ処理できるプロセッサを対応させます。ボディ処理できるプロセッサには、たとえば <code>if</code> があります。どのプロセッサがボディ処理できるかは<a href="processor_reference.html">プロセッサ リファレンス</a>を参照してください。</p>
+<p>また、Mayaa ファイルの <code>m:id</code> を付けるプロセッサは、<code>&lt;m:mayaa&gt;</code> タグの子として書かれているプロセッサに限定されます。(<strong>※1.1.10 以降</strong>)</p>
+<pre>
+<a href="processor_reference.html#if"><code>m:if</code></a> の子に <code>m:id</code> を書いても有効にならない。
+また、<code>m:id</code> を書いていない <a href="processor_reference.html#if"><code>m:if</code></a> も有効にならない。
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
+    &lt;m:if test="&#36;{ foo == bar }"&gt;
+        &lt;m:write <strong>m:id="message"</strong> value="Hello Mayaa!" /&gt;
+    &lt;/m:if&gt;
+&lt;/m:mayaa&gt;</span></pre>
 
 
 <h4>■<a id="mayaaid" name="mayaaid"></a>バインディングに HTML の id を使いたくない場合</h4>
 
 <p>HTML の id 属性は CSS や JavaScript などから利用することもあります。mayaa ファイルとのバインディングに id 属性を使いたくない場合には、<code>m:id</code> として mayaa 名前空間の id を使うことができます。その場合、mayaa ファイルに書いていた Mayaa の名前空間指定 (<code>xmlns:m="http://mayaa.seasar.org"</code>) を、テンプレートの html タグの属性として書く必要があります。</p>
 <p><code>m:id</code> 属性と id 属性の両方がある場合、mayaa ファイルとのバインディングには <code>m:id</code> 属性が優先されます。また、<code>m:id</code> 属性は実行時に出力されません。</p>
+<p>また、HTML の id を完全に無視したい場合、5-6.「<a href="equals_id_resolver.html">id 属性を無視する</a>」に従って設定してください。</p>
 
 <pre>
 <code>hello.html</code>
@@ -122,7 +133,7 @@
 
 <p>mayaa ファイルを使う場合は、id によるマッピングで HTML タグにプロセッサを割り当てます。テンプレートに直接書く場合は、その代わりとして <code>m:inject</code> 属性を使います。また、mayaa ファイルに書いていた名前空間指定 (<code>xmlns:m="http://mayaa.seasar.org"</code>) を、テンプレートの html タグの属性として書く必要があります。</p>
 <p><code>m:inject</code> 属性の値にはマッピングするプロセッサ名 (mayaa ファイルに書く場合のタグ名) を書き、プロセッサの属性は mayaa ファイルと同様に書きます。ただし、プロセッサの属性のプレフィクスを省略することはできません。(名前空間とプレフィクスについてはこのページの最後で説明しています)</p>
-<p>例として <code>m:write</code> (hello.html) と <code>c:out</code> (hello_jstl.html) のサンプルを、テンプレート上に設定を書く形で書き換えてみます。特に <code>c:out</code> のサンプルに注意してください。<code>value</code> は <code>c:out</code> の属性であるため、プレフィクスとして <code>c:</code> が付きます。</p>
+<p>例として <a href="processor_reference.html#write"><code>m:write</code></a> (hello.html) と <code>c:out</code> (hello_jstl.html) のサンプルを、テンプレート上に設定を書く形で書き換えてみます。特に <code>c:out</code> のサンプルに注意してください。<code>value</code> は <code>c:out</code> の属性であるため、プレフィクスとして <code>c:</code> が付きます。</p>
 
 <pre>
 <code>hello.html</code> でテンプレート上に設定を書いた場合

@@ -75,7 +75,9 @@
     &lt;m:write m:id="message" value="Hello Mayaa!" /&gt;
 &lt;/m:mayaa&gt;</span></pre>
 
-<p>動作は Java の if 文と同じです。mayaa ファイルにある <code>m:if</code> の <code>test</code> を評価すると <code>true</code> になりますので、ボディの <code>span id="message"</code> が評価されて "Hello Mayaa!" と出力されます。</p>
+<p>動作は Java の if 文と同じです。mayaa ファイルにある <a href="processor_reference.html#if"><code>m:if</code></a> の <code>test</code> を評価すると <code>true</code> になりますので、ボディの <code>span id="message"</code> が評価されて "Hello Mayaa!" と出力されます。</p>
+<p><a href="processor_reference.html#if"><code>m:if</code></a> と <a href="processor_reference.html#write"><code>m:write</code></a> は別々に書かれていることに注意してください。HTML 側では <code>id="message"</code> のタグが <code>id="visible"</code> のタグ子として書かれていますが、Mayaa 側は <code>m:id</code> を持つタグが同列に並ぶように書きます。</p>
+
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/if.html" target="_blank">http://localhost:8080/mayaa/if.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
@@ -143,7 +145,7 @@
             value="Hello Mayaa!<strong>&amp;lt;br&amp;gt;</strong>" <strong>escapeXml="false"</strong> /&gt;
 &lt;/m:mayaa&gt;</span></pre>
 
-<p>動作は Java の for 文と同じです。mayaa ファイルにある <code>m:for</code> は、最初に一度だけ <code>init</code> を実行します。その後、<code>test</code> を評価して結果が <code>true</code> になるならボディを実行し、最後に <code>after</code> を実行してから <code>test</code> の評価に戻ります。(実行結果を見やすくするため、"<code>Hello Mayaa!</code>" の後ろに <code>&lt;br&gt;</code> を付け、タグをそのまま出力するよう <a href="processor_reference.html#write" title="プロセッサリファレンス">escapeXml 属性</a>を false に設定しています)</p>
+<p>動作は Java の for 文と同じです。mayaa ファイルにある <a href="processor_reference.html#for"><code>m:for</code></a> は、最初に一度だけ <code>init</code> を実行します。その後、<code>test</code> を評価して結果が <code>true</code> になるならボディを実行し、最後に <code>after</code> を実行してから <code>test</code> の評価に戻ります。(実行結果を見やすくするため、"<code>Hello Mayaa!</code>" の後ろに <code>&lt;br&gt;</code> を付け、タグをそのまま出力するよう <a href="processor_reference.html#write" title="プロセッサリファレンス">escapeXml 属性</a>を false に設定しています)</p>
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/for.html" target="_blank">http://localhost:8080/mayaa/for.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
@@ -159,7 +161,7 @@
 &lt;/html&gt;</span></pre>
 
 <p>結果として <code>"Hello Mayaa&lt;br&gt;"</code> が 5 回出力されます。</p>
-<p>初期化部 <code>init</code> で宣言した変数 <code>i</code> は、<code>m:for</code> の範囲内、つまり <strong>span id="loop" を処理する間</strong> で有効です。<code>m:write</code> を使って <code>i</code> の値を出力してみましょう。</p>
+<p>初期化部 <code>init</code> で宣言した変数 <code>i</code> は、<a href="processor_reference.html#for"><code>m:for</code></a> の範囲内、つまり <strong>span id="loop" を処理する間</strong> で有効です。<code>m:write</code> を使って <code>i</code> の値を出力してみましょう。</p>
 
 <pre>
 <code>for.html</code>

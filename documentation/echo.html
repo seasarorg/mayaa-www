@@ -56,7 +56,7 @@
 
 <h2>3-4. 属性のみを置き換える</h2>
 
-<p>通常はタグとボディを置き換えるかボディのみを置き換えることで動的ページを生成しますが、場合によってはテンプレートのタグの属性を一部のみ置き換えたいこともあるでしょう。その場合、<strong>echo プロセッサ</strong>を使います。</p>
+<p>通常はタグとボディを置き換えるかボディのみを置き換えることで動的ページを生成しますが、場合によってはテンプレートのタグの属性を一部のみ置き換えたいこともあるでしょう。その場合、<a href="processor_reference.html#echo"><strong>echo プロセッサ</strong></a>を使います。</p>
 
 
 <h3>簡単な例</h3>
@@ -83,7 +83,7 @@ echo_list.mayaa
     &lt;/<strong>m:echo</strong>&gt;
 &lt;/m:mayaa&gt;</span></pre>
 
-<p>テンプレートの <code>ol</code> タグに <code>m:echo</code> を対応付け、<code>m:echo</code> の子として <code>m:attribute</code> を書きます。<code>m:attribute</code> の <code>name</code> 属性に変更したい属性名、<code>value</code> に変更後の属性値を設定します。<code>m:attribute</code> を複数書けば、複数の属性を置き換えられます。</p>
+<p>テンプレートの <code>ol</code> タグに <a href="processor_reference.html#echo"><code>m:echo</code></a> を対応付け、<a href="processor_reference.html#echo"><code>m:echo</code></a> の子として <a href="processor_reference.html#attribute"><code>m:attribute</code></a> を書きます。<a href="processor_reference.html#attribute"><code>m:attribute</code></a> の <code>name</code> 属性に変更したい属性名、<code>value</code> に変更後の属性値を設定します。<a href="processor_reference.html#attribute"><code>m:attribute</code></a> を複数書けば、複数の属性を置き換えられます。</p>
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/echo_list.html" target="_blank">http://localhost:8080/mayaa/echo_list.html</a></code> にアクセスしてみましょう。</p>
 
 <pre>
@@ -104,7 +104,7 @@ echo_list.mayaa
 
 <h3>属性を追加する</h3>
 
-<p>先ほどの例は既存の属性値を変更するものでしたが、<code>echo</code> プロセッサで新規に属性を追加することもできます。テンプレートのタグで定義されていない属性名を指定すれば、新規に追加することになります。</p>
+<p>先ほどの例は既存の属性値を変更するものでしたが、<a href="processor_reference.html#echo"><code>echo</code> プロセッサ</a>で新規に属性を追加することもできます。テンプレートのタグで定義されていない属性名を指定すれば、新規に追加することになります。</p>
 
 <pre>
 echo_list.html
@@ -141,7 +141,7 @@ echo_list.mayaa
 
 <h3>テンプレートの属性値を利用する</h3>
 
-<p>置き換える <code>m:echo</code> のスコープ内で、テンプレートの属性名を変数名として使用することで、スクリプトからテンプレートの属性値を参照できます。</p>
+<p>置き換える <a href="processor_reference.html#echo"><code>m:echo</code></a> のスコープ内で、テンプレートの属性名を変数名として使用することで、スクリプトからテンプレートの属性値を参照できます。</p>
 
 <pre>
 echo_list.html

@@ -24,11 +24,11 @@
 <div class="sidemenu"><a href="index.html">Documentation Top</a></div>
 
     <div class="sidemenu"><a href="changelog.html">更新履歴</a></div>
+      <div class="sidemenutext"><a href="changelog.html#u20070523">2007/05/23</a></div>
       <div class="sidemenutext"><a href="changelog.html#u20070430">2007/04/30</a></div>
       <div class="sidemenutext"><a href="changelog.html#u20070421">2007/04/21</a></div>
       <div class="sidemenutext"><a href="changelog.html#u20070408">2007/04/08</a></div>
       <div class="sidemenutext"><a href="changelog.html#u20070114">2007/01/14</a></div>
-      <div class="sidemenutext"><a href="changelog.html#u20060927">2006/09/27</a></div>
       <div class="sidemenutext"><span>(過去の更新履歴)</span></div>
       <br>
     <div class="sidemenu"><a href="slide.html">スライドなど</a></div>
@@ -51,124 +51,135 @@
     <h2>更新履歴</h2>
 
 
+    <h3><a id="u20070523" name="u20070523"></a>2007/05/23</h3>
+    <ul>
+      <li>5-8.「<a href="default_layout.html">デフォルトレイアウト</a>」を追加しました。(1.1.10 新機能)</li>
+      <li>3-3.「<a href="exec.html">タグ描画時のスクリプト</a>」の説明に、スコープについての説明を追記しました。(1.1.10 より仕様変更があります)</li>
+      <li>4-1.「<a href="processor_reference.html">プロセッサリファレンス</a>」の <a href="processor_reference.html#exec">exec</a> の説明に、スコープについての説明を追記しました。(1.1.10 より仕様変更があります)</li>
+      <li>Appendix 3.「<a href="note.html">その他の注意点</a>」の 「<a href="note.html#charset">出力する文字エンコーディングを指定したい</a>」 の説明を、1.1.3 での変更に合わせて変更しました。(無指定の場合のエンコーディングを <code>UTF-8</code> 統一)</li>
+      <li>説明文の中に出てくるプロセッサ名からリファレンスへリンクを張りました。</li>
+      <li>2-4. 「<a href="notation.html">設定の記述方法</a>」に <code>m:id</code> は <code>&lt;m:mayaa&gt;</code> の子要素でのみ有効になることを追記しました。</li>
+      <li>3-6. 「<a href="xpath.html">id の代わりに XPath</a>」に <code>m:xpath</code> は <code>&lt;m:mayaa&gt;</code> の子要素でのみ有効になることを追記しました。</li>
+    </ul>
+
     <h3><a id="u20070430" name="u20070430"></a>2007/04/30</h3>
     <ul>
-      <li>appendix C「<a href="mayaa_rhino_tips.html">JavaScript を書くときの Tips</a>」の「<a href="mayaa_rhino_tips.html#var">変数宣言時の注意</a>」に1.1.9のリリース内容をふまえて追記しました。</li>
+      <li>Appendix 2.「<a href="mayaa_rhino_tips.html">JavaScript を書くときの Tips</a>」の「<a href="mayaa_rhino_tips.html#var">変数宣言時の注意</a>」に1.1.9のリリース内容をふまえて追記しました。</li>
     </ul>
 
     <h3><a id="u20070421" name="u20070421"></a>2007/04/21</h3>
     <ul>
-      <li>5-7「<a href="template_path.html">テンプレートの場所</a>」を追加しました。</li>
-      <li>appendix C「<a href="mayaa_rhino_tips.html">JavaScript を書くときの Tips</a>」に「<a href="mayaa_rhino_tips.html#var">変数宣言時の注意</a>」を追加しました。</li>
+      <li>5-7.「<a href="template_path.html">テンプレートの場所</a>」を追加しました。</li>
+      <li>Appendix 2.「<a href="mayaa_rhino_tips.html">JavaScript を書くときの Tips</a>」に「<a href="mayaa_rhino_tips.html#var">変数宣言時の注意</a>」を追加しました。</li>
     </ul>
 
     <h3><a id="u20070408" name="u20070408"></a>2007/04/08</h3>
     <ul>
-      <li>「<a href="processor_reference.html">プロセッサリファレンス</a>」の write の説明に、ボディを使用する方法を追記しました。</li>
-      <li>「<a href="processor_reference.html">プロセッサリファレンス</a>」の insert の説明に、パスをスクリプトで指定可能ということを追記しました。</li>
+      <li>4-1.「<a href="processor_reference.html">プロセッサリファレンス</a>」の <a href="processor_reference.html#write">write</a> の説明に、ボディを使用する方法を追記しました。</li>
+      <li>4-1.「<a href="processor_reference.html">プロセッサリファレンス</a>」の <a href="processor_reference.html#insert">insert</a> の説明に、パスをスクリプトで指定可能ということを追記しました。</li>
       <li>appendix E「<a href="implicit_object.html">定義済みオブジェクト</a>」に標準スコープ <code>_</code> (アンダースコア) の説明を追加しました。</li>
     </ul>
 
     <h3><a id="u20070114" name="u20070114"></a>2007/01/14</h3>
     <ul>
-      <li>3-12「<a href="throwable.html">例外発生時のページ</a>」を追加しました。</li>
-      <li>5-5「<a href="error_handler.html">エラー処理の設定</a>」を追加しました。</li>
-      <li>5-6「<a href="equals_id_resolver.html">id属性を無視する</a>」を追加しました。</li>
-      <li>appendix E「<a href="implicit_object.html">定義済みオブジェクト</a>」にグローバル関数 <code>throwJava</code> の説明を追加しました。</li>
+      <li>3-12.「<a href="throwable.html">例外発生時のページ</a>」を追加しました。</li>
+      <li>5-5.「<a href="error_handler.html">エラー処理の設定</a>」を追加しました。</li>
+      <li>5-6.「<a href="equals_id_resolver.html">id属性を無視する</a>」を追加しました。</li>
+      <li>4-2.「<a href="implicit_object.html">定義済みオブジェクト</a>」にグローバル関数 <code>throwJava</code> の説明を追加しました。</li>
     </ul>
 
     <h3><a id="u20060927" name="u20060927"></a>2006/09/27</h3>
     <ul>
-      <li>5-1「<a href="engine_settings.html">エンジン設定方法</a>」に設定項目"requestedSuffixEnabled"の説明を追加しました。</li>
+      <li>5-1.「<a href="engine_settings.html">エンジン設定方法</a>」に設定項目"requestedSuffixEnabled"の説明を追加しました。</li>
     </ul>
 
     <h3><a id="u20060813" name="u20060813"></a>2006/08/13</h3>
     <ul>
-      <li>「<a href="processor_reference.html">プロセッサリファレンス</a>」の echo の説明に、テンプレートの属性を参照する方法を追記しました。</li>
+      <li>4-1.「<a href="processor_reference.html">プロセッサリファレンス</a>」の <a href="processor_reference.html#echo">echo</a> の説明に、テンプレートの属性を参照する方法を追記しました。</li>
     </ul>
 
 
     <h3><a id="u20060806" name="u20060806"></a>2006/08/06</h3>
     <ul>
-      <li>エンジン設定「<a href="engine_settings.html">エンジン設定方法</a>」に設定項目の説明を追加しました。</li>
-      <li>エンジン設定「<a href="auto_build.html">自動ビルド</a>」を追加しました。</li>
-      <li>エンジン設定「<a href="page_serialize.html">ビルド結果保存</a>」を追加しました。</li>
+      <li>5-1.「<a href="engine_settings.html">エンジン設定方法</a>」に設定項目の説明を追加しました。</li>
+      <li>5-3.「<a href="auto_build.html">自動ビルド</a>」を追加しました。</li>
+      <li>5-4.「<a href="page_serialize.html">ビルド結果キャッシュ</a>」を追加しました。</li>
     </ul>
 
     <h3><a id="u20060801" name="u20060801"></a>2006/08/01</h3>
     <ul>
-      <li>appendix E「<a href="implicit_object.html">定義済みオブジェクト</a>」のrequestスコープにあるgetParamValuesとgetHeaderValuesの記述を修正しました。これらのメソッドはスコープを返します。</li>
+      <li>4-2.「<a href="implicit_object.html">定義済みオブジェクト</a>」のrequestスコープにあるgetParamValuesとgetHeaderValuesの記述を修正しました。これらのメソッドはスコープを返します。</li>
     </ul>
 
     <h3><a id="u20060730" name="u20060730"></a>2006/07/30</h3>
     <ul>
-      <li>「<a href="processor_reference.html">プロセッサリファレンス</a>」に1.0.6 (1.1.0-beta6) で追加した機能についての説明を追記しました。(echo の name 属性追加、attribute の属性削除機能)</li>
+      <li>4-1.「<a href="processor_reference.html">プロセッサリファレンス</a>」に1.0.6 (1.1.0-beta6) で追加した機能についての説明を追記しました。(<a href="processor_reference.html#echo">echo</a> の name 属性追加、<a href="processor_reference.html#attribute">attribute</a> の属性削除機能)</li>
     </ul>
 
     <h3><a id="u20060528" name="u20060528"></a>2006/05/28</h3>
     <ul>
-      <li>「<a href="processor_reference.html">プロセッサリファレンス</a>」に1.0.5 (1.1.0-beta5) で追加した機能についての説明を追記しました。(formatNumber, formatDate の default 属性追加)</li>
+      <li>4-1.「<a href="processor_reference.html">プロセッサリファレンス</a>」に1.0.5 (1.1.0-beta5) で追加した機能についての説明を追記しました。(<a href="processor_reference.html#formatNumber">formatNumber</a>, <a href="processor_reference.html#formatDate">formatDate</a> の default 属性追加)</li>
     </ul>
 
     <h3><a id="u20060506" name="u20060506"></a>2006/05/06</h3>
     <ul>
-      <li>「<a href="processor_reference.html">プロセッサリファレンス</a>」からそのプロセッサを使用しているページへリンクを張りました。</li>
+      <li>4-1.「<a href="processor_reference.html">プロセッサリファレンス</a>」からそのプロセッサを使用しているページへリンクを張りました。</li>
     </ul>
 
     <h3><a id="u20060409" name="u20060409"></a>2006/04/09</h3>
     <ul>
-      <li>「<a href="processor_reference.html">プロセッサリファレンス</a>」に comment についての説明を追加しました。</li>
+      <li>4-1.「<a href="processor_reference.html">プロセッサリファレンス</a>」に <a href="processor_reference.html#comment">comment</a> についての説明を追加しました。</li>
     </ul>
 
     <h3><a id="u20060408" name="u20060408"></a>2006/04/08</h3>
     <ul>
-      <li>appendix E 「<a href="implicit_object.html">定義済みオブジェクト</a>」にrequestスコープのみのメソッドを追記しました。</li>
+      <li>4-2.「<a href="implicit_object.html">定義済みオブジェクト</a>」にrequestスコープのみのメソッドを追記しました。</li>
     </ul>
 
     <h3><a id="u20060319" name="u20060319"></a>2006/03/19</h3>
     <ul>
-      <li>appendix E 「<a href="implicit_object.html">定義済みオブジェクト</a>」でrequestスコープのメソッドgetParamValuesとgetHeaderValuesを標準スコープとして記述していた誤りを修正しました。</li>
+      <li>4-2.「<a href="implicit_object.html">定義済みオブジェクト</a>」でrequestスコープのメソッドgetParamValuesとgetHeaderValuesを標準スコープとして記述していた誤りを修正しました。</li>
     </ul>
 
     <h3><a id="u20060226" name="u20060226"></a>2006/02/26</h3>
     <ul>
-      <li>「<a href="processor_reference.html">プロセッサリファレンス</a>」のwriteプロセッサのdefault属性仕様変更について追記しました。</li>
-      <li>エンジン設定「<a href="engine_settings.html">エンジン設定方法</a>」を追加しました。</li>
-      <li>エンジン設定「<a href="jsp_template_attribute.html">属性自動セット</a>」を追加しました。</li>
+      <li>4-1.「<a href="processor_reference.html">プロセッサリファレンス</a>」の <a href="processor_reference.html#write">write</a> プロセッサの default 属性仕様変更について追記しました。</li>
+      <li>5-1.「<a href="engine_settings.html">エンジン設定方法</a>」を追加しました。</li>
+      <li>5-2.「<a href="jsp_template_attribute.html">属性自動セット</a>」を追加しました。</li>
     </ul>
 
     <h3><a id="u20060123" name="u20060123"></a>2006/01/23</h3>
     <ul>
-      <li>appendix E 「<a href="implicit_object.html">定義済みオブジェクト</a>」にグローバル関数の説明を追加しました。</li>
+      <li>4-2.「<a href="implicit_object.html">定義済みオブジェクト</a>」にグローバル関数の説明を追加しました。</li>
       <li>「<a href="link.html">外部へのリンク</a>」を追加しました。</li>
     </ul>
 
     <h3><a id="u20060116" name="u20060116"></a>2006/01/16</h3>
     <ul>
-      <li>「<a href="processor_reference.html">プロセッサリファレンス</a>」に RC1 で追加された forEach、formatDate、formatNumber についての説明を追加しました。</li>
+      <li>4-1.「<a href="processor_reference.html">プロセッサリファレンス</a>」に RC1 で追加された <a href="processor_reference.html#forEach">forEach</a>、<a href="processor_reference.html#formatDate">formatDate</a>、<a href="processor_reference.html#formatNumber">formatNumber</a> についての説明を追加しました。</li>
       <li>「プロセッサリファレンス」を分類し、アルファベット順に並び替えました。</li>
     </ul>
 
     <h3><a id="u20060107" name="u20060107"></a>2006/01/07</h3>
     <ul>
       <li>3-11.「<a href="path_adjust.html">パスを自動調整する</a>」を追加しました。</li>
-      <li>「<a href="processor_reference.html">プロセッサリファレンス</a>」のwriteについて、仕様変更の内容を反映しました。</li>
+      <li>「<a href="processor_reference.html">プロセッサリファレンス</a>」の <a href="processor_reference.html#write">write</a> について、仕様変更の内容を反映しました。</li>
     </ul>
 
     <h3><a id="u20051214" name="u20051214"></a>2005/12/14</h3>
     <ul>
-      <li>「<a href="echo.html">属性のみを置き換える</a>」の最後に、タグの属性名が JavaScript の予約語と競合する場合の対応を追記しました。</li>
+      <li>3-4.「<a href="echo.html">属性のみを置き換える</a>」の最後に、タグの属性名が JavaScript の予約語と競合する場合の対応を追記しました。</li>
     </ul>
 
     <h3><a id="u20051208" name="u20051208"></a>2005/12/08</h3>
     <ul>
-      <li>「<a href="processor_reference.html">プロセッサリファレンス</a>」のfor, execについて規定値が誤っていたのを修正しました。</li>
-      <li>「<a href="template_suffix.html">テンプレート切り替え</a>」を追加しました。</li>
+      <li>4-1.「<a href="processor_reference.html">プロセッサリファレンス</a>」の <a href="processor_reference.html#for">for</a>, <a href="processor_reference.html#exec">exec</a> について規定値が誤っていたのを修正しました。</li>
+      <li>3-10.「<a href="template_suffix.html">テンプレート切り替え</a>」を追加しました。</li>
     </ul>
 
     <h3><a id="u20051207" name="u20051207"></a>2005/12/07</h3>
     <ul>
-      <li>サイトリニューアル時に「<a href="processor_reference.html">プロセッサリファレンス</a>」が古くなっていたのを修正しました。</li>
+      <li>サイトリニューアル時に 4-1.「<a href="processor_reference.html">プロセッサリファレンス</a>」が古くなっていたのを修正しました。</li>
     </ul>
 
     <h3><a id="u20051128" name="u20051128"></a>2005/11/28</h3>
@@ -178,38 +189,38 @@
 
     <h3><a id="u20051116" name="u20051116"></a>2005/11/16</h3>
     <ul>
-      <li>appendix A 「<a href="mayaa_customtag_diff.html">JSP カスタムタグを使う場合の注意点</a>」からスクリプティング変数の違いについての記述を削除しました。(0.9.20 の修正に対応)</li>
+      <li>Appendix 1.「<a href="mayaa_customtag_diff.html">カスタムタグの注意点</a>」からスクリプティング変数の違いについての記述を削除しました。(0.9.20 の修正に対応)</li>
     </ul>
 
     <h3><a id="u20051114" name="u20051114"></a>2005/11/14</h3>
     <ul>
-      <li>1-1 「<a href="about.html">Mayaa とは何か</a>」を追加しました。Mayaa の立ち位置、概要などです。</li>
-      <li>1-3 「<a href="usebean.html">どのように使うのか</a>」を追加しました。チュートリアルへ進む前に Mayaa を使う雰囲気を見るページです。</li>
+      <li>1-1.「<a href="about.html">Mayaa とは何か</a>」を追加しました。Mayaa の立ち位置、概要などです。</li>
+      <li>1-3.「<a href="usebean.html">どのように使うのか</a>」を追加しました。チュートリアルへ進む前に Mayaa を使う雰囲気を見るページです。</li>
     </ul>
 
     <h3><a id="u20051111" name="u20051111"></a>2005/11/11</h3>
     <ul>
-      <li>3-4 「<a href="echo.html">タグの属性のみを置き換える</a>」で eval を使っていたところを Number で説明するよう変更しました。</li>
-      <li>3-5 「<a href="with.html">ひとつのタグに複数のプロセッサを対応付ける</a>」で eval を使っていたところを Number で説明するよう変更しました。</li>
-      <li>3-5 「<a href="with.html">ひとつのタグに複数のプロセッサを対応付ける</a>」の param 利用例を改変しました。</li>
+      <li>3-4.「<a href="echo.html">タグの属性のみを置き換える</a>」で eval を使っていたところを Number で説明するよう変更しました。</li>
+      <li>3-5.「<a href="with.html">ひとつのタグに複数のプロセッサを対応付ける</a>」で eval を使っていたところを Number で説明するよう変更しました。</li>
+      <li>3-5.「<a href="with.html">ひとつのタグに複数のプロセッサを対応付ける</a>」の param 利用例を改変しました。</li>
     </ul>
 
     <h3><a id="u20051110" name="u20051110"></a>2005/11/10</h3>
     <ul>
-      <li>appendix E 「<a href="implicit_object.html">スクリプトで使える定義済みオブジェクト</a>」を追加しました。</li>
+      <li>4-2.「<a href="implicit_object.html">スクリプトで使える定義済みオブジェクト</a>」を追加しました。</li>
     </ul>
 
     <h3><a id="u20051029" name="u20051029"></a>2005/10/29</h3>
     <ul>
-      <li>appendix D 「<a href="note.html">その他の注意点</a>」の文字エンコーディングについての記述を修正しました。</li>
+      <li>Appendix 3.「<a href="note.html">その他の注意点</a>」の文字エンコーディングについての記述を修正しました。</li>
     </ul>
 
     <h3><a id="u20051028" name="u20051028"></a>2005/10/28</h3>
     <ul>
-      <li>appendix A 「<a href="mayaa_customtag_diff.html">JSP カスタムタグを使う場合の注意点</a>」を追加しました。</li>
-      <li>appendix B 「<a href="processor_reference.html">Mayaa core プロセッサ リファレンス</a>」を追加しました。</li>
-      <li>appendix C 「<a href="mayaa_rhino_tips.html">JavaScript を書くときの Tips</a>」を追加しました。</li>
-      <li>appendix D 「<a href="note.html">その他の注意点</a>」を追加しました。</li>
+      <li>Appendix 1.「<a href="mayaa_customtag_diff.html">カスタムタグの注意点</a>」を追加しました。</li>
+      <li>4-1.「<a href="processor_reference.html">Mayaa core プロセッサ リファレンス</a>」を追加しました。</li>
+      <li>Appendix 2.「<a href="mayaa_rhino_tips.html">JavaScript Tips</a>」を追加しました。</li>
+      <li>Appendix 3.「<a href="note.html">その他の注意点</a>」を追加しました。</li>
     </ul>
 
     <h3><a id="u20051025" name="u20051025"></a>2005/10/25</h3>

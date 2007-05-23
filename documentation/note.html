@@ -68,7 +68,8 @@
 <h3><a id="charset" name="charset"></a>出力する文字エンコーディングを指定したい <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>
 
 <p>Mayaa で出力する文字エンコーディングとテンプレート読み込み時の文字エンコーディングを決定するのは、テンプレートの文字エンコーディング指定です。HTML テンプレートであれば META タグでの指定、XML テンプレートであれば XML としての文字エンコーディング指定です。</p>
-<p>文字エンコーディングを指定しない場合、HTML と XML で動作が異なります。HTML の場合、<code>UTF-8</code> と自動判定できる場合は <code>UTF-8</code> として、それ以外は <code>ISO-8859-1</code> として扱います。XML の場合は <code>UTF-8</code> として扱います。文字エンコーディングはトラブルの元となりやすいため、基本的には明示的に文字エンコーディング指定をするようにしてください。</p>
+<p>文字エンコーディングを指定しない場合は <code>UTF-8</code> として扱います。文字エンコーディングはトラブルの元となりやすいため、基本的には明示的に文字エンコーディング指定をするようにしてください。</p>
+<p><strong>※1.1.3 で変更しました。</strong><strike>文字エンコーディングを指定しない場合、HTML と XML で動作が異なります。HTML の場合、<code>UTF-8</code> と自動判定できる場合は <code>UTF-8</code> として、それ以外は <code>ISO-8859-1</code> として扱います。XML の場合は <code>UTF-8</code> として扱います。</strike></p>
 
 
 <h3><a id="japanese" name="japanese"></a>Java から出力した "～" が文字化けする <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h3>

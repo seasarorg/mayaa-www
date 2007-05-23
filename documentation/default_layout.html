@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>5-8. デフォルトレイアウト : Documentation - JavaServer Templates &quot;Mayaa&quot;</title>
+<link href="../css/base.css" rel="stylesheet" type="text/css">
+<link href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
+
+<div align="center"><img src="../images/topbar.gif" width="760" height="4"></div>
+
+<div align="center">
+<div class="contentslogo"><a href="../index.html" id="menu08"><img src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></a><img src="../images/topstripe.gif" width="330" height="48"></div>
+<div class="menudocs">
+<a href="../about/index.html" id="menu01"><img src="images/menu_about.gif" width="125" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../news/index.html" id="menu02"><img src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></a><img src="images/menu_div.gif" width="1" height="55"><a href="index.html"><img src="images/menu_doc_o.gif" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../downloads/index.html" id="menu04"><img src="images/menu_down.gif" alt="downloads" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../subprojects/index.html" id="menu05"><img src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../support/index.html" id="menu06"><img src="images/menu_support.gif" alt="Support" width="126" height="55"></a>
+</div>
+</div>
+
+
+<div class="maincontents">
+<div id="contentsleft">
+<img src="../images/arrow02.gif" align="absmiddle"><a href="../index.html" class="text11px">Top</a>
+<div class="sidemenu"><a href="index.html">Documentation Top</a></div>
+
+    <div class="sidemenu"><a href="changelog.html">更新履歴</a></div>
+    <div class="sidemenu"><a href="slide.html">スライドなど</a></div>
+    <div class="sidemenu"><a href="about.html">1. Mayaa導入</a></div>
+    <div class="sidemenu"><a href="hello.html">2. チュートリアル</a></div>
+    <div class="sidemenu"><a href="default.html">3. How To</a></div>
+    <div class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></div>
+    <div class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></div>
+      <div class="sidemenutext"><a href="engine_settings.html">5-1. エンジン設定方法</a></div>
+      <div class="sidemenutext"><a href="jsp_template_attribute.html">5-2. 属性自動セット</a></div>
+      <div class="sidemenutext"><a href="auto_build.html">5-3. 自動ビルド</a></div>
+      <div class="sidemenutext"><a href="page_serialize.html">5-4. ビルド結果キャッシュ</a></div>
+      <div class="sidemenutext"><a href="error_handler.html">5-5. エラー処理の設定</a></div>
+      <div class="sidemenutext"><a href="equals_id_resolver.html">5-6. id属性を無視する</a></div>
+      <div class="sidemenutext"><a href="template_path.html">5-7. テンプレートの場所</a></div>
+      <div class="sidemenutext"><span>5-8. デフォルトレイアウト</span></div>
+      <br>
+    <div class="sidemenu"><a href="mayaa_customtag_diff.html">A. 付録</a></div>
+
+    <br>
+    <div class="sidemenu"><a href="link.html">外部へのリンク</a></div>
+
+</div>
+
+
+<div id="contentsright">
+<h1><a id="top" name="top"></a>Documentation</h1>
+
+<h2>5-7. デフォルトレイアウト</h2>
+
+<p><strong>※この機能は 1.1.10 で追加されました。</strong></p>
+
+<p><a href="layout.html">レイアウト共有機能</a>を使うためには、対象となるすべての Mayaa ファイルの <code>m:mayaa</code> 要素に <code>m:extends</code> 属性を書く必要があります。多数のページがあり、全部にこの設定をするのは手間がかかります。また、レイアウトを適用するためだけの Mayaa ファイルが必要になることもあるかもしれません。</p>
+<p>全部のページに共通で設定する場合、エンジン設定をすることで <code>m:extends</code> 属性を書くことなくレイアウト共有機能を利用できます。明示的に <code>m:extends</code> 属性が書かれているページには適用されません。手順は下記の通りです。</p>
+
+<ol>
+<li><a href="#setting">templateBuilder の設定</a></li>
+<li><a href="#defaultlayout">デフォルトレイアウト用のページを作成</a></li>
+<li><a href="#exclude">適用したくないページの定義</a></li>
+</ol>
+
+<h3><a name="setting"></a>templateBuilder の設定</h3>
+
+<p><code>templateBuilder</code> の設定を変更し、<code>TemplateBuilderImpl</code> の代わりに <code>DefaultLayoutTemplateBuilderImpl</code> を使うようにし、デフォルトレイアウト用の追加パラメータを設定します。</p>
+
+<pre>
+<code>org.seasar.mayaa.provider.ServiceProvider</code>
+※レイアウトの都合で改行しています。
+<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE provider
+    PUBLIC "-//The Seasar Foundation//DTD Mayaa Provider 1.0//EN"
+    "http://mayaa.seasar.org/dtd/mayaa-provider_1_0.dtd"&gt;
+&lt;provider&gt;
+    &lt;templateBuilder
+            <strong>class="org.seasar.mayaa.impl.builder.</strong>
+                             <strong>DefaultLayoutTemplateBuilderImpl"</strong>&gt;
+        (<a href="equals_id_resolver.html">標準の <code>TemplateBuilderImpl</code> と同じ部分</a>は省略)
+        &lt;parameter name="defaultLayoutPageName"
+                             value="/defaultlayout.html"/&gt;
+        &lt;parameter name="generateMayaaNode" value="true"/&gt;
+    &lt;/templateBuilder&gt;
+&lt;/provider&gt;</span></pre>
+
+<p><code>DefaultLayoutTemplateBuilderImpl</code> のデフォルトレイアウト用パラメータは 2 つです。その他は <code>TemplateBuilderImpl</code> と同じパラメータを使えます。</p>
+
+<dl class="list">
+    <dt><code>defaultLayoutPageName</code></dt>
+    <dd>デフォルトレイアウトとして使用するテンプレートの名前を "/" 始まりで指定します。Mayaa 起動時に指定したファイルが見つからない場合、デフォルトレイアウト機能は有効になりません。デフォルトは "/defaultlayout.html" です。</dd>
+    <dt><code>generateMayaaNode</code></dt>
+    <dd>Mayaa ファイルのない、テンプレートのみのページにもレイアウトを適用するかどうかを設定します。テンプレートのみのページの場合、<code>doRender</code> は <a href="default.html"><code>default.mayaa</code> で定義します</a>。<code>true</code> を設定するとテンプレートのみのページにも適用し、<code>false</code> に設定すると適用しません。デフォルトは "<code>true</code>" です。</dd>
+</dl>
+
+
+<h3><a name="defaultlayout"></a>デフォルトレイアウト用のページを作成</h3>
+
+<p>デフォルトレイアウトを使う場合も、各ページ自体は明示的に<a href="layout.html">レイアウト共有機能</a>を使う場合と同じです。Mayaa ファイルのない、テンプレートのみのページにデフォルトレイアウトを適用する場合には、<a href="default.html"><code>default.mayaa</code></a> で <code>doRender</code> プロセッサを定義する形になります。</p>
+
+
+<h3><a name="exclude"></a>適用したくないページの定義</h3>
+
+<p>明示的にレイアウト定義をしている場合、つまり Mayaa タグに <code>m:extends</code> 属性を記述している場合はデフォルトレイアウトは適用されません。</p>
+<p>一部のページのみデフォルトレイアウトを使いたくない場合、そのページには明示的に <code>m:extends</code> 属性を記述してください。値が空の場合、レイアウト共有機能は無効です。</p>
+
+
+
+<div class="navi"><a href="#top">↑このページのトップへ</a></div>
+
+</div>
+
+<div class="copyrights" align="center">
+<img src="../images/copyrights.gif" alt="Copyright (c) 2004-2007 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</div>
+</div>
+</body>
+</html>

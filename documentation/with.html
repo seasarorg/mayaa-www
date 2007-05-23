@@ -56,7 +56,7 @@
 
 <h2>3-5. プロセッサをまとめる</h2>
 
-<p>テンプレート上のタグひとつに対して複数のプロセッサを関連付けたい場合には、プロセッサの中に他のプロセッサを書くことで実現できます。複数のプロセッサをまとめる目的であれば、<strong>with プロセッサ</strong>を使います。</p>
+<p>テンプレート上のタグひとつに対して複数のプロセッサを関連付けたい場合には、プロセッサの中に他のプロセッサを書くことで実現できます。複数のプロセッサをまとめる目的であれば、<a href="processor_reference.html#with"><strong>with プロセッサ</strong></a>を使います。</p>
 
 
 <h3>簡単な例</h3>
@@ -81,7 +81,7 @@ with.mayaa
     &lt;/<strong>m:with</strong>&gt;
 &lt;/m:mayaa&gt;</span></pre>
 
-<p>条件判定と <code>write</code> プロセッサの <code>default</code> を併用しています。パラメータ <code>param.name</code> 自体がない場合は <code>param.name</code> を <code>boolean</code> として評価した結果が <code>false</code> になります。(JavaScript の <code>undefined</code>)</p>
+<p>条件判定と <a href="processor_reference.html#write"><code>write</code> プロセッサ</a>の <code>default</code> を併用しています。パラメータ <code>param.name</code> 自体がない場合は <code>param.name</code> を <code>boolean</code> として評価した結果が <code>false</code> になります。(JavaScript の <code>undefined</code>)</p>
 <p>ブラウザで <code><a href="http://localhost:8080/mayaa/with.html?name=" target="_blank">http://localhost:8080/mayaa/with.html?name=</a></code> にアクセスしてみましょう。</p>
 
 <pre>
@@ -92,7 +92,7 @@ with.mayaa
 &lt;/body&gt;
 &lt;/html&gt;</span></pre>
 
-<p>パラメータ <code>name</code> の値が空ですので「<code>hello,</code>」は出力されず、<code>write</code> プロセッサの <code>default</code> 値である「<code>no name</code>」だけが出力されています。</p>
+<p>パラメータ <code>name</code> の値が空ですので「<code>hello,</code>」は出力されず、<a href="processor_reference.html#write"><code>write</code> プロセッサ</a>の <code>default</code> 値である「<code>no name</code>」だけが出力されています。</p>
 
 <p>続いて <code><a href="http://localhost:8080/mayaa/with.html?name=world" target="_blank">http://localhost:8080/mayaa/with.html?name=world</a></code> にアクセスしてみましょう。</p>
 
