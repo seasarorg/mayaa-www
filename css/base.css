@@ -46,6 +46,20 @@ div.navi {
 	font-size: 12px;
 }
 
+div.navi-prev {
+	float: left;
+	font-size: 12px;
+}
+
+div.navi-next {
+	float: right;
+	font-size: 12px;
+}
+
+div.navi-end {
+	clear: all;
+}
+
 div.copyrights {
 	text-align: center;
 }
@@ -408,6 +422,27 @@ dl.list dd {
 	font-size: 12px;
 	margin-bottom: 1em;
 	margin-left: 20px;
+}
+
+
+li.fix {
+	list-style-type: square;
+	list-style-image: url("../images/list_fix.gif");
+}
+
+li.enhance {
+	list-style-type: circle;
+	list-style-image: url("../images/list_enhance.gif");
+}
+
+li.tune {
+	list-style-type: disc;
+	list-style-image: url("../images/list_tune.gif");
+}
+
+li.other {
+	list-style-type: disc;
+	list-style-image: url("../images/list_other.gif");
 }
 
 @media print {
