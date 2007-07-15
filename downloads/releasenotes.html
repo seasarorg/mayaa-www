@@ -40,6 +40,12 @@
 
     
 
+    <h4><a id="ver1.1.11" name="ver1.1.11"></a>変更点 1.1.10 -> 1.1.11 (2007/07/16)</h4>
+    <ul>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-29">JIRA[MAYAA-29]</a> /WEB-INF/を含むパスへのforwardを許すように修正しました。</li>
+      <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-30">JIRA[MAYAA-30]</a> テンプレートでcharsetを指定していない場合、レスポンスにはcharsetをUTF-8とするよう変更しました。</li>
+    </ul>
+
     <h4><a id="ver1.1.10" name="ver1.1.10"></a>変更点 1.1.9 -> 1.1.10 (2007/05/23)</h4>
     <ul>
       <li class="enhance">デフォルトでレイアウトを適用できる機能を追加しました。</li>
@@ -72,7 +78,6 @@
       <li class="enhance">識別子が予約語とぶつかってしまう場合にその識別子を参照するためのスコープを用意しました。スコープ名は "_" で、_['class'] のように利用します。参照順は 現在位置からpageまで、request、session、applicationです。StandardScopeを変更している場合はそれに準じます。</li>
       <li class="tune">XPathMatchesInjectionResolverがあるだけでビルドにかかる時間を軽減しました。</li>
     </ul>
-
 
     <h4><a id="ver1.1.7" name="ver1.1.7"></a>変更点 1.1.6 -> 1.1.7 (2007/03/08)</h4>
     <ul>
