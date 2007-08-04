@@ -40,6 +40,12 @@
 
     
 
+    <h4><a id="ver1.1.12" name="ver1.1.12"></a>変更点 1.1.11 -> 1.1.12 (2007/08/05)</h4>
+    <ul>
+      <li class="enhance">テンプレートのmetaタグでcontent-typeを指定し、かつcharsetを指定しない場合、レスポンスヘッダにはcharset=UTF-8付きで返すよう変更しました。</li>
+      <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-31">JIRA[MAYAA-31]</a> <a href="../documentation/engine_settings.html" title="エンジン設定方法">エンジン設定のengine</a>のパラメータに"convertCharset"を追加しました。デフォルトはfalseです。この値をtrueにすることで、テンプレートのmetaタグでcharset=Windows-31とした場合でもcharset=Shift_JISにして出力します。また同様にHTTPレスポンスヘッダもcharset=Shift_JISになります。</li>
+    </ul>
+
     <h4><a id="ver1.1.11" name="ver1.1.11"></a>変更点 1.1.10 -> 1.1.11 (2007/07/15)</h4>
     <ul>
       <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-29">JIRA[MAYAA-29]</a> /WEB-INF/を含むパスへのforwardを許すように修正しました。</li>
@@ -54,6 +60,7 @@
       <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-27">JIRA[MAYAA-27]</a> m:id属性やm:xpath属性は、m:mayaaノード直下のノードでのみ有効となるよう変更しました。m:mayaaノード直下でない場合は警告ログが出ます。ネストしている場合の誤解が多いことへの対策です。</li>
     </ul>
 
+
     <h4><a id="ver1.1.9" name="ver1.1.9"></a>変更点 1.1.8 -> 1.1.9 (2007/04/30)</h4>
     <ul>
       <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-25">JIRA[MAYAA-25]</a> Deserialize時にresolvePrefixで mayaa.seasar.orgのnamespaceの親参照でNullPointerExceptionが発生する問題に対応しました。</li>
@@ -64,7 +71,6 @@
       <li class="enhance">var 無指定で宣言される変数のスコープをJavaScript Nativeルートではなく、最も外側のpageスコープとしました。これまでのように、JavaScript Nativeルートを指定したい場合（共通的なもの）は、__global__ という予約語のスコープを使うことができます。</li>
       <li class="fix">var 無指定対応で、委譲オブジェクトに存在するが自身に存在しないものを取得しようとして連鎖しStackOverFlowになる不具合を修正しました。</li>
     </ul>
-
     <h4><a id="ver1.1.8" name="ver1.1.8"></a>変更点 1.1.7 -> 1.1.8 (2007/04/08)</h4>
     <ul>
       <li class="fix">エラーページでArrayIndexOutOfBoundsExceptionが発生する問題を修正しました。</li>

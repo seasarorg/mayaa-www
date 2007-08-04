@@ -107,6 +107,8 @@
         &lt;parameter name="<code>welcomeFileName</code>" value="<code>index.html</code>"/&gt;
         &lt;parameter name="<code>requestCharacterEncoding</code>" value="<code>UTF-8</code>"/&gt;
         &lt;parameter name="<code>surviveLimit</code>" value="<code>5</code>"/&gt;
+        &lt;parameter name="<code>forwardLimit</code>" value="<code>10</code>"/&gt;
+        &lt;parameter name="<code>convertCharset</code>" value="<code>false</code>"/&gt;
     &lt;/engine&gt;
 &lt;/provider&gt;</span></pre>
 
@@ -128,6 +130,10 @@
     <dd>Mayaa でリクエストパラメータを参照する際の文字コードを指定します。デフォルトは "<code>UTF-8</code>" です。<code>MayaaServlet</code> の前に <code>HttpServletRequest#setCharacterEncoding(String encoding)</code> でセットされている場合はこの設定を使用しません。</dd>
     <dt><code>surviveLimit</code></dt>
     <dd>ページのビルド結果をガーベジコレクションの対象にするまでの回数を指定します。デフォルトは "<code>5</code>" です。ここで指定した回数だけ解放要求が来たときに初めて、ページのビルド結果オブジェクトがガーベジコレクションの対象になります。また値として "<code>0</code>" を設定した場合、ビルド結果はガーベジコレクションの対象になりません。</dd>
+    <dt><code>forwardLimit</code></dt>
+    <dd>一回のレンダリング中に Mayaa の同一パスへ forward できる上限回数を指定します。デフォルトは "<code>10</code>" です。このオプションは記述ミスで無限ループしてしまうのを避けるためにあります。</dd>
+    <dt><code>convertCharset</code> (<strong>※</strong>1.1.12 で追加されたオプション)</dt>
+    <dd>テンプレートの meta タグで charset を "<code>Windows-31J</code>" としたとき、出力する HTML および HTTP レスポンスヘッダの Content-Type の charset として "<code>Shift_JIS</code>" を出力するかどうか設定します。"<code>true</code>" なら有効、"<code>false</code>" なら無効です。デフォルトは "<code>false</code>" です。</dd>
 </dl>
 
 
