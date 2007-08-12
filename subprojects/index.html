@@ -46,11 +46,11 @@
 <h4>Mayaa WebWork2とは</h4>
 <p>Mayaa WebWork2は<a href="http://www.opensymphony.com/webwork/">WebWork2</a>からMayaaを利用するための実装を提供します。</p>
 
-<h4>Download ver 1.0.0 (2006/8/23)</h4>
+<h4>Download ver 1.0.1 (2007/8/13)</h4>
 <br>
 <div class="download_direct">
-	<div class="filelink"><a href="../downloads/mayaa-webwork2-1.0.0.jar"><img src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle"> Jar</a></div>
-	<div class="filelink"><a href="../downloads/mayaa-webwork2-example-1.0.0.war"><img src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle"> Example War</a></div>
+	<div class="filelink"><a href="../downloads/mayaa-webwork2-1.0.1.jar"><img src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle"> Jar</a></div>
+	<div class="filelink"><a href="../downloads/mayaa-webwork2-example-1.0.1.war"><img src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle"> Example War</a></div>
 </div>
 
 <h4>利用方法(WebWork2)</h4>
@@ -94,6 +94,12 @@ ValueStackのオブジェクトにアクセスする際のプレフィックス�
 <span class="file">&lt;m:write value="&#36;{プロパティ名}" /&gt;</span>
 </pre>
 
+<h4>変更履歴</h4>
+<h5><a id="ver1.0.1" name="ver1.0.1"></a>変更点 1.0.0 -> 1.0.1 (2007/08/13)</h5>
+<ul>
+<li class="fix">相対パス指定の場合にpathInfoの始まりが"/"でなかったのを修正しました<a href="https://www.seasar.org/issues/browse/MAYAA-34">[MAYAA-34]</a></li>
+<li class="fix">Engine#doServiceの後にCycleUtil#cycleFinalizeを呼び出していなかったのを修正しました<a href="https://www.seasar.org/issues/browse/MAYAA-35">[MAYAA-35]</a></li>
+</ul>
 
 <h3><a id="matatabi" name="matatabi"></a>matatabi - Mayaa Plugin</h3>
 
@@ -175,11 +181,11 @@ ValueStackのオブジェクトにアクセスする際のプレフィックス�
 <h4>Struts2 Mayaa Pluginとは</h4>
 <p>Struts2 Mayaa Pluginは<a href="http://struts.apache.org/2.x/">Struts2</a>からMayaaを利用するための実装を提供します。</p>
 
-<h4>Download ver 1.0.0 (2007/5/24)</h4>
+<h4>Download ver 1.0.1 (2007/8/13)</h4>
 <br>
 <div class="download_direct">
-	<div class="filelink"><a href="../downloads/struts2-mayaa-plugin-1.0.0.jar"><img src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle"> Jar</a></div>
-	<div class="filelink"><a href="../downloads/struts2-mayaa-plugin-example-1.0.0.war"><img src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle"> Example War</a></div>
+	<div class="filelink"><a href="../downloads/struts2-mayaa-plugin-1.0.1.jar"><img src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle"> Jar</a></div>
+	<div class="filelink"><a href="../downloads/struts2-mayaa-plugin-example-1.0.1.war"><img src="../images/icon_download_direct.gif" width="24" height="17" align="absmiddle"> Example War</a></div>
 </div>
 
 <h4>利用方法(Struts2)</h4>
@@ -237,6 +243,13 @@ ValueStackのオブジェクトにアクセスする際のプレフィックス�
 <code>prefix省略時</code>
 <span class="file">&lt;m:write value="&#36;{プロパティ名}" /&gt;</span>
 </pre>
+
+<h4>変更履歴</h4>
+<h5><a id="ver1.0.1" name="ver1.0.1"></a>変更点 1.0.0 -> 1.0.1 (2007/08/13)</h5>
+<ul>
+<li class="fix">相対パス指定の場合にpathInfoの始まりが"/"でなかったのを修正しました</li>
+<li class="fix">Engine#doServiceの後にCycleUtil#cycleFinalizeを呼び出していなかったのを修正しました</li>
+</ul>
 
 </div>
 
