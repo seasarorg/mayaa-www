@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>5-5. エラー処理の設定 : Documentation - JavaServer Templates &quot;Mayaa&quot;</title>
+<title>5-9. パス自動調整の設定 : Documentation - JavaServer Templates &quot;Mayaa&quot;</title>
 <link href="../css/base.css" rel="stylesheet" type="text/css">
 <link href="../css/menu_contents.css" rel="stylesheet" type="text/css">
 </head>
@@ -34,11 +34,11 @@
       <div class="sidemenutext"><a href="jsp_template_attribute.html">5-2. 属性自動セット</a></div>
       <div class="sidemenutext"><a href="auto_build.html">5-3. 自動ビルド</a></div>
       <div class="sidemenutext"><a href="page_serialize.html">5-4. ビルド結果キャッシュ</a></div>
-      <div class="sidemenutext"><span>5-5. エラー処理の設定</span></div>
+      <div class="sidemenutext"><a href="error_handler.html">5-5. エラー処理の設定</a></div>
       <div class="sidemenutext"><a href="equals_id_resolver.html">5-6. id属性を無視する</a></div>
       <div class="sidemenutext"><a href="template_path.html">5-7. テンプレートの場所</a></div>
       <div class="sidemenutext"><a href="default_layout.html">5-8. デフォルトレイアウト</a></div>
-      <div class="sidemenutext"><a href="path_adjust_settings.html">5-9. パス自動調整の設定</a></div>
+      <div class="sidemenutext"><span>5-9. パス自動調整の設定</span></div>
       <br>
     <div class="sidemenu"><a href="mayaa_customtag_diff.html">A. 付録</a></div>
 
@@ -51,67 +51,37 @@
 <div id="contentsright">
 <h1><a id="top" name="top"></a>Documentation</h1>
 
-<h2>5-5. エラー処理の設定</h2>
+<h2>5-9. パス自動調整の設定</h2>
 
-<p>5-1「<a href="engine_settings.html">エンジン設定方法</a>」の手順で、<a href="throwable.html">例外発生時のページ</a>を探す処理などの設定を変更できます。</p>
-
-<h3>ErrorHandler の設定</h3>
-
-<p><code>engine</code> の中に <code>errorHandler</code> 要素を書き、その子要素としてパラメータを設定します。</p>
+<p>5-1「<a href="engine_settings.html">エンジン設定方法</a>」の手順で、<a href="path_adjust.html">パスの自動調整機能</a>の設定を変更できます。デフォルト設定は下記の通りです。</p>
 
 <pre>
 <code>org.seasar.mayaa.provider.ServiceProvider</code>
+※レイアウトの都合で改行しています。
 <span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE provider
     PUBLIC "-//The Seasar Foundation//DTD Mayaa Provider 1.0//EN"
     "http://mayaa.seasar.org/dtd/mayaa-provider_1_0.dtd"&gt;
 &lt;provider&gt;
-    &lt;engine&gt;
-        &lt;errorHandler&gt;
-            &lt;parameter name="<code>folder</code>" value="<code>/</code>"/&gt;
-            &lt;parameter name="<code>extension</code>" value="<code>html</code>"/&gt;
-        &lt;/errorHandler&gt;
-        &lt;parameter name="..." value="..."/&gt;
-    &lt;/engine&gt;
+    &lt;pathAdjuster&gt;
+        &lt;parameter name="enabled" value="true"/&gt;
+        &lt;parameter name="force" value="false"/&gt;&lt;!-- since 1.1.13 --&gt;
+    &lt;/pathAdjuster&gt;
 &lt;/provider&gt;</span></pre>
 
-<p>パラメータは 2 つです。</p>
+<p>設定可能なパラメータは 2 つです。</p>
 
 <dl class="list">
-    <dt><code>folder</code></dt>
-    <dd>例外ページを置くフォルダを指定します。"/" で始まり "/" で終わるよう指定してください。デフォルトは "<code>/</code>" です。</dd>
-    <dt><code>extension</code></dt>
-    <dd>例外ページの拡張子を指定します。デフォルトは "<code>html</code>" です。</dd>
+    <dt><code>enabled</code></dt>
+    <dd>パスの自動調整機能を有効にするかどうか設定します。<code>true</code> ならば有効です。デフォルトは <code>true</code> です。</dd>
+    <dt><code>force</code> <strong>※この機能は 1.1.13 で追加されました。</strong></dt>
+    <dd>パスが <strong>"./"</strong> で始まっていない場合も自動調整するかどうかを設定します。<code>true</code> を設定すると <strong>"./"</strong> で始まっていないパスも自動調整します。デフォルトは "<code>false</code>" です。</dd>
 </dl>
 
 
-<h3>ErrorHandler の処理を変更</h3>
-
-<p><code>errorHandler</code> 要素の class 属性を指定することで、例外発生時の処理をするクラスを変更できます。ここで指定するクラスは <code>org.seasar.mayaa.engine.error.ErrorHandler</code> インターフェースを実装し、かつ引数無しのコンストラクタを持つ必要があります。デフォルトのクラスは <code>org.seasar.mayaa.impl.engine.error.TemplateErrorHandler</code> です。</p>
-
-<pre>
-<code>org.seasar.mayaa.provider.ServiceProvider</code>
-<div>※レイアウトの都合で改行しています。</div>
-<span class="file">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;!DOCTYPE provider
-    PUBLIC "-//The Seasar Foundation//DTD Mayaa Provider 1.0//EN"
-    "http://mayaa.seasar.org/dtd/mayaa-provider_1_0.dtd"&gt;
-&lt;provider&gt;
-    &lt;engine&gt;
-        &lt;errorHandler class="<code>org.seasar.mayaa.
-                impl.engine.error.TemplateErrorHandler</code>"&gt;
-            &lt;parameter name="folder" value="/"/&gt;
-            &lt;parameter name="extension" value="html"/&gt;
-        &lt;/errorHandler&gt;
-        &lt;parameter name="..." value="..."/&gt;
-    &lt;/engine&gt;
-&lt;/provider&gt;</span></pre>
-
-
-
 <div class="navi"><a href="#top">↑このページのトップへ</a></div>
-<div class="navi-prev"><a href="page_serialize.html">＜ 5-4. ビルド結果キャッシュ</a></div>
-<div class="navi-next"><a href="equals_id_resolver.html">5-6. id属性を無視する ＞</a></div>
+<div class="navi-prev"><a href="default_layout.html">＜ 5-8. デフォルトレイアウト</a></div>
+<div class="navi-next"><a href="mayaa_customtag_diff.html">A-1. カスタムタグの注意点 ＞</a></div>
 <div class="navi-end">&nbsp;</div>
 
 </div>

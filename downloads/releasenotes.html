@@ -40,6 +40,14 @@
 
     
 
+    <h4><a id="ver1.1.13" name="ver1.1.13"></a>変更点 1.1.12 -> 1.1.13 (2007/08/19)</h4>
+    <ul>
+      <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-32">JIRA[MAYAA-32]</a> m:mayaaタグにcacheControl属性を追加しました。cacheControl属性には静的な文字列のみ記述でき、記述した文字列がそのままCache-Controlレスポンスヘッダの値としてセットされます。noCache="true"とcacheControl属性とを両方セットした場合、noCacheの場合のレスポンスヘッダのうちCache-Controlヘッダの値のみcacheControl属性の値が優先されます。</li>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-33">JIRA[MAYAA-33]</a> MayaaServlet 以外からの呼び出しで request 情報が誤っている場合、ページ名が内部で扱うものと一致しないことがある問題に対応しました。</li>
+      <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-36">JIRA[MAYAA-36]</a> XHTMLのemptyタグの閉じ記述で、"/>"の前に空白を含めるように変更しました。(HTML互換性ガイドライン <a href="http://www.w3.org/TR/2000/REC-xhtml1-20000126/#guidelines">http://www.w3.org/TR/2000/REC-xhtml1-20000126/#guidelines</a>)</li>
+      <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-37">JIRA[MAYAA-37]</a> パスの自動調整で、"./"で始まっているパス以外も対象とするオプションを追加しました。エンジン設定でPathAdjusterImplの"force"パラメータをtrueにすることで有効になります。</li>
+    </ul>
+
     <h4><a id="ver1.1.12" name="ver1.1.12"></a>変更点 1.1.11 -> 1.1.12 (2007/08/05)</h4>
     <ul>
       <li class="enhance">テンプレートのmetaタグでcontent-typeを指定し、かつcharsetを指定しない場合、レスポンスヘッダにはcharset=UTF-8付きで返すよう変更しました。</li>
@@ -52,6 +60,7 @@
       <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-30">JIRA[MAYAA-30]</a> テンプレートでcharsetを指定していない場合、レスポンスにはcharsetをUTF-8とするよう変更しました。</li>
     </ul>
 
+
     <h4><a id="ver1.1.10" name="ver1.1.10"></a>変更点 1.1.9 -> 1.1.10 (2007/05/23)</h4>
     <ul>
       <li class="enhance">デフォルトでレイアウトを適用できる機能を追加しました。</li>
@@ -59,7 +68,6 @@
       <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-9">JIRA[MAYAA-9]</a> pageスコープにNumber型オブジェクトをセットすると型情報が失われてしまう問題を修正しました。</li>
       <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-27">JIRA[MAYAA-27]</a> m:id属性やm:xpath属性は、m:mayaaノード直下のノードでのみ有効となるよう変更しました。m:mayaaノード直下でない場合は警告ログが出ます。ネストしている場合の誤解が多いことへの対策です。</li>
     </ul>
-
 
     <h4><a id="ver1.1.9" name="ver1.1.9"></a>変更点 1.1.8 -> 1.1.9 (2007/04/30)</h4>
     <ul>
