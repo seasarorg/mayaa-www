@@ -118,9 +118,11 @@ ValueStackのオブジェクトにアクセスする際のプレフィックス�
 	<li>エディタ機能
 		<ul>
 			<li>Mayaaで用意されているプロセッサの入力補完</li>
-			<li>Mayaaファイルでのid属性の値の補完</li>
+			<li>HTML,Mayaaファイルでのid属性の値の補完</li>
 			<li>Mayaaファイルでのタグライブラリの補完</li>
 			<li>Mayaaファイルでのタグライブラリの名前空間の補完</li>
+			<li>HTML,Mayaaファイルでのm:id属性入力支援</li>
+			<li>HTMLファイルでm:id付きのspanタグ入力支援</li>
 			<li>HTML,MayaaファイルとActionクラスの切り替え</li>
 			<li>HTMLファイルを外部ブラウザで開く</li>
 			<li>Mayaaファイルの静的チェック</li>
@@ -138,27 +140,41 @@ ValueStackのオブジェクトにアクセスする際のプレフィックス�
 <p>同梱のヘルプを参照してください</p>
 
 <h4>変更履歴</h4>
-<h5><a id="ver1.1.1" name="ver1.1.1"></a>変更点 1.1.0 -> 1.1.1 (2007/07/09)</h5>
+<h5><a id="matatabi_ver1.2.0" name="matatabi_ver1.2.0"></a>変更点 1.1.1 -> 1.2.0 (2007/09/12)</h5>
+<ul>
+<li class="enhance">HTMLファイルでのm:idの属性値の補完に対応しました</li>
+<li class="enhance">HTML,Mayaaファイルでのm:id属性の入力を支援する機能を追加しました</li>
+<li class="enhance">HTMLファイルでのm:id属性付きspanタグの入力を支援する機能を追加しました</li>
+<li class="enhance"><a href="/documentation/template_suffix.html">テンプレート切り替え機能</a>に対応しました</li>
+<li class="enhance">mayaaタグに対する属性の補完に対応しました</li>
+<li class="enhance">Validator機能のON/OFFを設定ページに追加しました</li>
+<li class="enhance">テンプレートファイルのm:idのみを処理対象にする設定を設定ページに追加しました</li>
+<li class="fix">バリデータでエラーになった箇所はそれ以降のバリデーションをしないように修正しました</li>
+<li class="fix">バリデータのエラーレベルを「エラー」にした際、設定値が消えていたのを修正しました</li>
+<li class="fix">フルビルドの際にエラーマーカーを消していなかったのを修正しました</li>
+</ul>
+
+<h5><a id="matatabi_ver1.1.1" name="matatabi_ver1.1.1"></a>変更点 1.1.0 -> 1.1.1 (2007/07/09)</h5>
 <ul>
 <li class="enhance">HTMLエディタと同じ機能をWTPのWebPageEditorで使用できるようにしました</li>
 <li class="fix">HTMLのid属性の取得方法が誤っていたのを修正しました</li>
 <li class="fix">プロジェクト直下のファイルの場合に補完機能でエラーが出ていたのを修正しました</li>
 </ul>
 
-<h5><a id="ver1.1.0" name="ver1.1.0"></a>変更点 1.0.0 -> 1.1.0 (2007/07/05)</h5>
+<h5><a id="matatabi_ver1.1.0" name="matatabi_ver1.1.0"></a>変更点 1.0.0 -> 1.1.0 (2007/07/05)</h5>
 <ul>
 <li class="enhance">HTML,MayaaファイルとActionクラスのエディタ切り替え機能を追加しました</li>
 <li class="fix">タグライブラリの名前空間の入力補完を変更しました</li>
 <li class="fix">編集途中のMayaaファイルで入力補完を行う際にエラーが発生する場合があったため修正しました</li>
 </ul>
 
-<h5><a id="ver1.0.0" name="ver1.0.0"></a>変更点 0.5.0 -> 1.0.0 (2007/07/03)</h5>
+<h5><a id="matatabi_ver1.0.0" name="matatabi_ver1.0.0"></a>変更点 0.5.0 -> 1.0.0 (2007/07/03)</h5>
 <ul>
 <li class="enhance">タグライブラリの入力補完機能を追加しました</li>
 <li class="enhance">タグライブラリの名前空間の入力補完機能を追加しました</li>
 </ul>
 
-<h5><a id="ver0.5.0" name="ver0.5.0"></a>変更点 0.4.0 -> 0.5.0 (2007/05/28)</h5>
+<h5><a id="matatabi_ver0.5.0" name="matatabi_ver0.5.0"></a>変更点 0.4.0 -> 0.5.0 (2007/05/28)</h5>
 <ul>
 <li class="enhance">自動生成するMayaaファイルの名前空間を指定できるようにしました</li>
 <li class="enhance">自動生成するMayaaファイルの変換ルールを指定できるようにしました</li>
@@ -168,7 +184,7 @@ ValueStackのオブジェクトにアクセスする際のプレフィックス�
 <li class="fix">HTMLファイルを開く機能が動いていなかったのを修正しました</li>
 </ul>
 
-<h5><a id="ver0.4.0" name="ver0.4.0"></a>変更点 0.3.0 -> 0.4.0 (2007/05/24)</h5>
+<h5><a id="matatabi_ver0.4.0" name="matatabi_ver0.4.0"></a>変更点 0.3.0 -> 0.4.0 (2007/05/24)</h5>
 <ul>
 <li class="enhance">プロジェクトごとにmatatabiを使用するか選べるようにしました</li>
 <li class="enhance">Mayaaファイルの静的チェック機能を追加しました</li>
