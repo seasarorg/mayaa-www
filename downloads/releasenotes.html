@@ -40,6 +40,12 @@
 
     
 
+    <h4><a id="ver1.1.15" name="ver1.1.15"></a>変更点 1.1.14 -> 1.1.15 (2007/09/30)</h4>
+    <ul>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-40">JIRA[MAYAA-40]</a> テンプレートにコメントがあるとき、xpath="//*" でバインディングしようとするとNullPointerExceptionが発生する問題を修正しました。</li>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-41">JIRA[MAYAA-41]</a> SimpleTagにDynamicAttributeを使えない問題を修正しました。</li>
+    </ul>
+
     <h4><a id="ver1.1.14" name="ver1.1.14"></a>変更点 1.1.13 -> 1.1.14 (2007/09/06)</h4>
     <ul>
       <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-38">JIRA[MAYAA-38]</a> DynaBeanのプロパティもJavaScriptから通常のJavaBeansと同じようにアクセスできるよう対応しました。</li>
@@ -54,12 +60,12 @@
       <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-37">JIRA[MAYAA-37]</a> パスの自動調整で、"./"で始まっているパス以外も対象とするオプションを追加しました。エンジン設定でPathAdjusterImplの"force"パラメータをtrueにすることで有効になります。</li>
     </ul>
 
+
     <h4><a id="ver1.1.12" name="ver1.1.12"></a>変更点 1.1.11 -> 1.1.12 (2007/08/05)</h4>
     <ul>
       <li class="enhance">テンプレートのmetaタグでcontent-typeを指定し、かつcharsetを指定しない場合、レスポンスヘッダにはcharset=UTF-8付きで返すよう変更しました。</li>
       <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-31">JIRA[MAYAA-31]</a> <a href="../documentation/engine_settings.html" title="エンジン設定方法">エンジン設定のengine</a>のパラメータに"convertCharset"を追加しました。デフォルトはfalseです。この値をtrueにすることで、テンプレートのmetaタグでcharset=Windows-31とした場合でもcharset=Shift_JISにして出力します。また同様にHTTPレスポンスヘッダもcharset=Shift_JISになります。</li>
     </ul>
-
 
     <h4><a id="ver1.1.11" name="ver1.1.11"></a>変更点 1.1.10 -> 1.1.11 (2007/07/15)</h4>
     <ul>
