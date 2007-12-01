@@ -40,6 +40,11 @@
 
     
 
+    <h4><a id="ver" name="ver1.1.16"></a>変更点 1.1.15 -> 1.1.16 (2007/12/01)</h4>
+    <ul>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-42">JIRA[MAYAA-42]</a> テンプレートがXMLの場合でもHTMLの閉じタグ調整が有効になってしまう問題を修正しました。</li>
+    </ul>
+
     <h4><a id="ver1.1.15" name="ver1.1.15"></a>変更点 1.1.14 -> 1.1.15 (2007/09/30)</h4>
     <ul>
       <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-40">JIRA[MAYAA-40]</a> テンプレートにコメントがあるとき、xpath="//*" でバインディングしようとするとNullPointerExceptionが発生する問題を修正しました。</li>
@@ -52,6 +57,7 @@
       <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-39">JIRA[MAYAA-39]</a> Pageスコープにあるjava.lang.Numberのオブジェクトにスクリプトで加算をおこなうと文字列加算になってしまう問題を修正しました。</li>
     </ul>
 
+
     <h4><a id="ver1.1.13" name="ver1.1.13"></a>変更点 1.1.12 -> 1.1.13 (2007/08/19)</h4>
     <ul>
       <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-32">JIRA[MAYAA-32]</a> m:mayaaタグにcacheControl属性を追加しました。cacheControl属性には静的な文字列のみ記述でき、記述した文字列がそのままCache-Controlレスポンスヘッダの値としてセットされます。noCache="true"とcacheControl属性とを両方セットした場合、noCacheの場合のレスポンスヘッダのうちCache-Controlヘッダの値のみcacheControl属性の値が優先されます。</li>
@@ -59,7 +65,6 @@
       <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-36">JIRA[MAYAA-36]</a> XHTMLのemptyタグの閉じ記述で、"/>"の前に空白を含めるように変更しました。(HTML互換性ガイドライン <a href="http://www.w3.org/TR/2000/REC-xhtml1-20000126/#guidelines">http://www.w3.org/TR/2000/REC-xhtml1-20000126/#guidelines</a>)</li>
       <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-37">JIRA[MAYAA-37]</a> パスの自動調整で、"./"で始まっているパス以外も対象とするオプションを追加しました。エンジン設定でPathAdjusterImplの"force"パラメータをtrueにすることで有効になります。</li>
     </ul>
-
 
     <h4><a id="ver1.1.12" name="ver1.1.12"></a>変更点 1.1.11 -> 1.1.12 (2007/08/05)</h4>
     <ul>
