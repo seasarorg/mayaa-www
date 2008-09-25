@@ -128,7 +128,7 @@
 				<xs:extension base="m:anyElements">
 					<xs:attribute name="items" type="xs:string" use="required"/>
 					<xs:attribute name="var" type="xs:string" use="required"/>
-					<xs:attribute name="index" type="xs:string" use="required"/>
+					<xs:attribute name="index" type="xs:string"/>
 					<xs:attributeGroup ref="m:injectionAttributeGroup"/>
 					<xs:attribute name="replace" type="xs:boolean" default="true"/>
 				</xs:extension>
@@ -152,6 +152,7 @@
 				<xs:extension base="m:anyElements">
 					<xs:attribute name="value" type="xs:string" use="required"/>
 					<xs:attribute name="pattern" type="xs:string"/>
+					<xs:attribute name="default" type="xs:string"/>
 					<xs:attributeGroup ref="m:injectionAttributeGroup"/>
 					<xs:attribute name="replace" type="xs:boolean" default="true"/>
 				</xs:extension>
@@ -164,6 +165,7 @@
 				<xs:extension base="m:anyElements">
 					<xs:attribute name="value" type="xs:string" use="required"/>
 					<xs:attribute name="pattern" type="xs:string"/>
+					<xs:attribute name="default" type="xs:string"/>
 					<xs:attributeGroup ref="m:injectionAttributeGroup"/>
 					<xs:attribute name="replace" type="xs:boolean" default="true"/>
 				</xs:extension>
@@ -177,8 +179,8 @@
 	</xs:element>
 	<xs:element name="insert">
 		<xs:complexType>
-			<xs:attribute name="path" type="xs:string" use="required"/>
-			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="path" type="xs:string"/><!-- component/required, layout/not required -->
+			<xs:attribute name="name" type="xs:string"/><!-- multi/required, single/not required (default "") -->
 			<xs:attributeGroup ref="m:anyAttributeGroup"/>
 			<xs:attributeGroup ref="m:injectionAttributeGroup"/>
 			<xs:attribute name="replace" type="xs:boolean" default="true"/>
@@ -201,7 +203,7 @@
 	</xs:element>
 	<xs:element name="write">
 		<xs:complexType>
-			<xs:attribute name="value" type="xs:string" use="required"/>
+			<xs:attribute name="value" type="xs:string"/><!-- either value or body is required -->
 			<xs:attribute name="default" type="xs:string"/>
 			<xs:attribute name="escapeXml" type="xs:boolean" default="false"/>
 			<xs:attribute name="escapeWhitespace" type="xs:boolean" default="false"/>
