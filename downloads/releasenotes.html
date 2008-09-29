@@ -38,7 +38,7 @@
     <h3>過去の変更履歴</h3>
 
 
-    
+
 
     <h4><a id="ver1.1.19" name="ver1.1.19"></a>変更点 1.1.18 -> 1.1.19 (2008/09/28)</h4>
     <ul>
@@ -108,7 +108,7 @@
       <li class="enhance">InformalPropertyAcceptableに型指定メソッド名を変更しました。古いメソッド名はdeprecatedとしました。</li>
       <li class="enhance">VirtualPropertyAcceptable#addVirtualProperty()の第2引数をjava.lang.Objectからjava.io.Serializableに変更しました。また、VirtualPropertyに型定義が必須となるよう変更しました。</li>
       <li class="enhance">InsertProcessorでVirtualPropertyを使えるよう変更しました。これにより、コンポーネントをMLDに定義する際にrequired指定などができるようになりました。ただし、VirtualPropertyもInformalPropertyとして扱います。</li>
-      <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-26">JIRA[MAYAA-26]</a> Mayaaファイル内のCDATAはノードと見なさないよう変更しました。ボディとして直接  を書いた場合、その内側に CDATA 宣言をできるようになりました。(例: &#36;{ &lt;![CDATA[ '&lt;...&gt;' ]]&gt; } → '&lt;...&gt;')</li>
+      <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-26">JIRA[MAYAA-26]</a> Mayaaファイル内のCDATAはノードと見なさないよう変更しました。ボディとして直接 &#36;{} を書いた場合、その内側に CDATA 宣言をできるようになりました。(例: &#36;{ &lt;![CDATA[ '&lt;...&gt;' ]]&gt; } → '&lt;...&gt;')</li>
       <li class="enhance">var 無指定で宣言される変数のスコープをJavaScript Nativeルートではなく、最も外側のpageスコープとしました。これまでのように、JavaScript Nativeルートを指定したい場合（共通的なもの）は、__global__ という予約語のスコープを使うことができます。</li>
       <li class="fix">var 無指定対応で、委譲オブジェクトに存在するが自身に存在しないものを取得しようとして連鎖しStackOverFlowになる不具合を修正しました。</li>
     </ul>
@@ -187,7 +187,7 @@
       <li>ソースコードの文字セットをUTF-8に変更しました。</li>
       <li><a href="https://www.seasar.org/issues/browse/MAYAA-6">JIRA[MAYAA-6]</a> elementプロセッサ、echoプロセッサ、およびテンプレート上の属性において、「属性がnullの場合に出力しない」という処理で空文字列も出力しないようになっていた問題を修正しました。</li>
       <li>jaxenを1.1-beta-10にしました。</li>
-      <li>エンジン設定にrequestedSuffixEnabledを追加しました。デフォルトはfalseで、trueにするとsuffix指定のアクセス(例:index$ja.html)が有効になります。suffix指定アクセスはm:templateSuffixの指定よりも優先されます。1.1.1まではデフォルトで有効な状態でした。アップグレードの際はご注意ください。</li>
+      <li>エンジン設定にrequestedSuffixEnabledを追加しました。デフォルトはfalseで、trueにするとsuffix指定のアクセス(例:index&#36;ja.html)が有効になります。suffix指定アクセスはm:templateSuffixの指定よりも優先されます。1.1.1まではデフォルトで有効な状態でした。アップグレードの際はご注意ください。</li>
     </ul>
 
     <h4><a id="ver1.1.1" name="ver1.1.1"></a>変更点 1.1.0 -> 1.1.1 (2006/09/02)</h4>
@@ -255,7 +255,7 @@
       <li>HTMLの場合にxmlnsが正しく出力されないのを修正しました。</li>
       <li>echoプロセッサとattributeプロセッサを組み合わせたとき、テンプレート上に存在する属性を上書きできていなかったのを修正しました。</li>
       <li>初期化時に発生する例外が他の例外を引き起こすのを修正しました。</li>
-      <li>スクリプトで"page"を直接した場合、ページスコープのルートを指すよう変更しました。<br>※"page"がカレントスコープを指すことを想定して使われている場合、意図したものと動作が変わる可能性があります。現在スコープを明示したい場合は page.__current__ を使用してください。<br>※現時点では VariableInfo の NESTED が正常に動作しないという問題があります。</li>
+      <li>スクリプトで"page"を直接指定した場合、ページスコープのルートを指すよう変更しました。<br>※"page"がカレントスコープを指すことを想定して使われている場合、意図したものと動作が変わる可能性があります。現在スコープを明示したい場合は page.__current__ を使用してください。<br>※現時点では VariableInfo の NESTED が正常に動作しないという問題があります。</li>
     </ul>
 
     <h4><a id="ver1.0.5" name="ver1.0.5"></a>変更点 1.0.4 -> 1.0.5 (2006/05/28)</h4>
