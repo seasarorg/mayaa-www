@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>更新履歴 : Documentation - JavaServer Templates &quot;Mayaa&quot;</title>
+<title>Appendix 4. IBM JDKの注意点 : Documentation - JavaServer Templates &quot;Mayaa&quot;</title>
 <link href="../css/base.css" rel="stylesheet" type="text/css">
 <link href="../css/menu_contents.css" rel="stylesheet" type="text/css">
 </head>
@@ -24,13 +24,6 @@
 <div class="sidemenu"><a href="index.html">Documentation Top</a></div>
 
     <div class="sidemenu"><a href="changelog.html">更新履歴</a></div>
-      <div class="sidemenutext"><a href="changelog.html#u20070819">2007/08/19</a></div>
-      <div class="sidemenutext"><a href="changelog.html#u20070805">2007/08/05</a></div>
-      <div class="sidemenutext"><a href="changelog.html#u20070525">2007/05/25</a></div>
-      <div class="sidemenutext"><a href="changelog.html#u20070523">2007/05/23</a></div>
-      <div class="sidemenutext"><a href="changelog.html#u20070430">2007/04/30</a></div>
-      <div class="sidemenutext"><a href="changelog_old.html">(過去の更新履歴)</a></div>
-      <br>
     <div class="sidemenu"><a href="slide.html">スライドなど</a></div>
     <div class="sidemenu"><a href="about.html">1. Mayaa導入</a></div>
     <div class="sidemenu"><a href="hello.html">2. チュートリアル</a></div>
@@ -38,6 +31,11 @@
     <div class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></div>
     <div class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></div>
     <div class="sidemenu"><a href="mayaa_customtag_diff.html">A. 付録</a></div>
+      <div class="sidemenutext"><a href="mayaa_customtag_diff.html">A-1. カスタムタグの注意点</a></div>
+      <div class="sidemenutext"><a href="mayaa_rhino_tips.html">A-2. JavaScript Tips</a></div>
+      <div class="sidemenutext"><a href="note.html">A-3. その他の注意点</a></div>
+      <div class="sidemenutext"><span>A-4. IBM JDKの注意点</span></div>
+      <br>
 
     <br>
     <div class="sidemenu"><a href="link.html">外部へのリンク</a></div>
@@ -48,43 +46,22 @@
 <div id="contentsright">
 <h1><a id="top" name="top"></a>Documentation</h1>
 
-    <h2>更新履歴</h2>
+<h2>Appendix 4. IBM JDKの注意点</h2>
 
+<p>IBM JDK (WebSphere<sup>TM</sup> 付属など) を使用していて、かつ下記の条件を満たすとき、テンプレートを読み込む際に sun.io.MalformedInputException が発生します。</p>
 
-    <h3><a id="u20081122" name="u20081122"></a>2008/11/22</h3>
-    <ul>
-      <li>5-1.「<a href="engine_settings.html">エンジン設定方法</a>」に <code>TemplateBuilder</code> のパラメータについての説明を追加しました。</li>
-      <li>A-4.「<a href="ibm_jdk.html">IBM_JDKの注意点</a>」を追加しました。</li>
-    </ul>
+<ul>
+    <li>HTML ファイルに UTF-8 以外の文字コードを使用している。</li>
+    <li>HTML ファイルの先頭 2048 バイト以内に ascii 文字以外がある。(正確には UTF-8 として読んだときに不正なバイトがある)</li>
+</ul>
 
-    <h3><a id="u20080313" name="u20080313"></a>2008/03/13</h3>
-    <ul>
-      <li>5-7.「<a href="template_path.html">テンプレートの場所</a>」でパスの説明が誤っていたのを修正しました。「クラスパスの下」ではなく、正しくは「クラスパスルート/META-INFの下」です。</li>
-    </ul>
+<h3>対応方法</h3>
 
-    <h3><a id="u20080302" name="u20030302"></a>2008/03/02</h3>
-    <ul>
-      <li>2-1.「<a href="hello.html">最初の一歩</a>」にファイル更新時の再ビルドについての記述を追加しました。</li>
-    </ul>
-
-    <h3><a id="u20070819" name="u20070819"></a>2007/08/19</h3>
-    <ul>
-      <li>5-9.「<a href="path_adjust_settings.html">パス自動調整の設定</a>」を追加しました。</li>
-    </ul>
-
-    <h3><a id="u20070805" name="u20070805"></a>2007/08/05</h3>
-    <ul>
-      <li>5-1.「<a href="engine_settings.html">エンジン設定方法</a>」に設定項目"<code>forwardLimit</code>"の説明を追加しました。</li>
-      <li>5-1.「<a href="engine_settings.html">エンジン設定方法</a>」に設定項目"<code>convertCharset</code>"の説明を追加しました。</li>
-      <li>Appendix 3.「<a href="note.html#charset">その他の注意点</a>」の文字エンコーディングの項に設定項目"<code>convertCharset</code>"の利用についての説明を追加しました。</li>
-    </ul>
-
-
-    <p><a href="changelog_old.html">(過去の更新履歴)</a></p>
+<p>5-1「<a href="engine_settings.html">エンジン設定方法</a>」に記載された方法で <code>TemplateBuilder</code> のパラメータ "<code>defaultCharset</code>" に適切な文字コードを指定してください。</p>
 
 
 <div class="navi"><a href="#top">↑このページのトップへ</a></div>
-<div class="navi-prev"></div>
+<div class="navi-prev"><a href="note.html">＜ A-3. その他の注意点</a></div>
 <div class="navi-next"></div>
 <div class="navi-end">&nbsp;</div>
 
