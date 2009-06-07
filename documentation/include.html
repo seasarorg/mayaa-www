@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>3-13. SSI includeの置き換え: Documentation - JavaServer Templates &quot;Mayaa&quot;</title>
+<link href="../css/base.css" rel="stylesheet" type="text/css">
+<link href="../css/menu_contents.css" rel="stylesheet" type="text/css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="background">
+
+<div align="center"><img src="../images/topbar.gif" width="760" height="4"></div>
+
+<div align="center">
+<div class="contentslogo"><a href="../index.html" id="menu08"><img src="../images/logo.gif" alt="Mayaa JavaServer Template" width="430" height="48"></a><img src="../images/topstripe.gif" width="330" height="48"></div>
+<div class="menudocs">
+<a href="../about/index.html" id="menu01"><img src="images/menu_about.gif" width="125" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../news/index.html" id="menu02"><img src="images/menu_news.gif" alt="News" width="126" height="55" border="0"></a><img src="images/menu_div.gif" width="1" height="55"><a href="index.html"><img src="images/menu_doc_o.gif" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../downloads/index.html" id="menu04"><img src="images/menu_down.gif" alt="downloads" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../subprojects/index.html" id="menu05"><img src="images/menu_subpro.gif" alt="SubProjects" width="126" height="55"></a><img src="images/menu_div.gif" width="1" height="55"><a href="../support/index.html" id="menu06"><img src="images/menu_support.gif" alt="Support" width="126" height="55"></a>
+</div>
+</div>
+
+
+<div class="maincontents">
+<div id="contentsleft">
+<img src="../images/arrow02.gif" align="absmiddle"><a href="../index.html" class="text11px">Top</a>
+<div class="sidemenu"><a href="index.html">Documentation Top</a></div>
+
+    <div class="sidemenu"><a href="changelog.html">更新履歴</a></div>
+    <div class="sidemenu"><a href="slide.html">スライドなど</a></div>
+    <div class="sidemenu"><a href="about.html">1. Mayaa導入</a></div>
+    <div class="sidemenu"><a href="hello.html">2. チュートリアル</a></div>
+    <div class="sidemenu"><a href="default.html">3. How To</a></div>
+      <div class="sidemenutext"><a href="default.html">3-1. ページ共通の設定</a></div>
+      <div class="sidemenutext"><a href="before_render.html">3-2. 描画前後のスクリプト</a></div>
+      <div class="sidemenutext"><a href="exec.html">3-3. タグ描画時のスクリプト</a></div>
+      <div class="sidemenutext"><a href="echo.html">3-4. 属性のみを置き換える</a></div>
+      <div class="sidemenutext"><a href="with.html">3-5. プロセッサをまとめる</a></div>
+      <div class="sidemenutext"><a href="xpath.html">3-6. idの代わりにXPath</a></div>
+      <div class="sidemenutext"><a href="remove.html">3-7. タグを消す</a></div>
+      <div class="sidemenutext"><a href="ignore.html">3-8. 特定idを処理しない</a></div>
+      <div class="sidemenutext"><a href="comment.html">3-9. コメントを書く</a></div>
+      <div class="sidemenutext"><a href="template_suffix.html">3-10. テンプレート切り替え</a></div>
+      <div class="sidemenutext"><a href="path_adjust.html">3-11. パスを自動調整する</a></div>
+      <div class="sidemenutext"><a href="throwable.html">3-12. 例外発生時のページ</a></div>
+      <div class="sidemenutext"><span>3-13. SSI includeの置き換え</span></div>
+      <br>
+    <div class="sidemenu"><a href="processor_reference.html">4. リファレンス</a></div>
+    <div class="sidemenu"><a href="engine_settings.html">5. エンジン設定</a></div>
+    <div class="sidemenu"><a href="mayaa_customtag_diff.html">A. 付録</a></div>
+
+    <br>
+    <div class="sidemenu"><a href="link.html">外部へのリンク</a></div>
+
+</div>
+
+
+<div id="contentsright">
+<h1><a id="top" name="top"></a>Documentation</h1>
+
+<h2>3-13. SSI include の置き換え</h2>
+
+<p><strong>(※1.1.25以降)</strong></p>
+<p><a href="engine_settings.html#templatebuilder">TemplateBuilder</a> のパラメータ <code>replaceSSIInclude</code> を true に設定することで、SSI Include の記述を <a href="processor_reference.html#insert"><code>insert</code> プロセッサ</a>に置き換える機能を有効にできます。</p>
+<p>SSI Include を Mayaa を通さずに動作させるには、Dreamweaver の Include が有効なバージョンか、または Apache などの Web サーバを通して閲覧します。デザイナーによるデザイン時に SSI Include を使うことで、コンポーネント部分を別ファイルにしたまま作業を進められます。</p>
+<p>この置き換え機能は、おおまかに次の２つの機能に分かれます。</p>
+<ul>
+<li>SSI Include の記述を <code>insert</code> プロセッサに置き換える。</li>
+<li>include される側のページ全体を無名の <a href="processor_reference.html#doRender"><code>doRender</code> プロセッサ</a>で囲む。</li>
+</ul>
+
+<h3>SSI Include の記述と変換</h3>
+
+<p>SSI Include は、例えば以下のような形で記述します。パス指定の属性には <code>file</code> と <code>virtual</code> があり、それぞれ挙動の異なるものですが、Mayaa では同等に扱います。</p>
+<pre>
+<span class="file">&lt;!--#include virtual="include.html" --&gt;</span></pre>
+
+<p>特定の記述をすることで、<code>insert</code> プロセッサの属性に値を指定することもできます。例えば次のような記述をしたとします。</p>
+<pre>
+<span class="file">&lt;!--#include virtual="include$suffix.html?foo=bar&amp;amp;bar=#fragment" --&gt;</span></pre>
+<p>このとき、次のような記述をしたように変換されます。</p>
+<pre>
+<span class="file">&lt;m:insert
+    path="include.html"
+    name="fragment"
+    auto:foo="bar"
+    auto:bar="" /&gt;</span></pre>
+<ul>
+<li>パスの suffix は無視されます。</li>
+<li># の後ろに書いた fragment は name の指定と見なします。</li>
+<li>パラメータはそのままパラメータになります。(名前空間は独自のものを使います)</li>
+</ul>
+<p>なお、include 対象のファイルはコンポーネントとなるため、全体をひとつのタグで囲んでいる必要があり、また <code>doRender</code> プロセッサで囲まれた領域を持つ必要があります。この制限を緩和するのが、自動的に <code>doRender</code> プロセッサで囲む機能です。</p>
+
+
+<h3>自動的に <code>doRender</code> プロセッサで囲む</h3>
+
+<p>本来の SSI Include で include する対象の形式は自由ですが、Mayaa の場合には <code>insert</code> プロセッサとなるため、いくつかの制限があります。</p>
+<ul>
+<li>全体をひとつのタグで囲んでいること。</li>
+<li><code>doRender</code> プロセッサで囲まれた領域を持つこと。</li>
+</ul>
+<p>この置き換え機能を有効にしている場合、次の条件を満たすことでこの制限を回避できます。</p>
+<ul>
+<li>拡張子が <code>inc</code> (<code>*.inc</code>) であること。</li>
+<li><code>*.inc</code> の MIME Type が HTML と同じであること。(web.xml で mime-mapping をする)</li>
+</ul>
+<p>これらを満たすとき、<code>*.inc</code> ファイルをビルドするときに全体を自動的に <code>doRender</code> プロセッサで囲みます。<code>name</code> 属性は空文字列です。</p>
+<p>ただし、<code>*.inc</code> ファイルに何のタグにも囲まれていない文字列がある場合、実装上の都合でその文字列は無視されます。例えば次のようなファイルの場合、最後の "baz" は無視されます。必ず何らかのタグで囲んでください。</p>
+<pre>
+<span class="file">&lt;span&gt;foo&lt;/span&gt;
+&lt;div&gt;bar&lt;/div&gt;
+<del>baz</del></span></pre>
+<p>このようにタグを並べただけの形式のファイルを使えることは、主にヘッダ (meta タグ、CSS や JavaScript など) を部品化する際に役立つでしょう。</p>
+<p>なお、<code>*.inc</code> ファイルを通常の <code>insert</code> プロセッサから呼び出すことももちろん可能です。</p>
+
+
+
+<div class="navi"><a href="#top">↑このページのトップへ</a></div>
+<div class="navi-prev"><a href="throwable.html">＜ 3-12. 例外発生時のページ</a></div>
+<div class="navi-next"><a href="processor_reference.html">4-1. プロセッサリファレンス ＞</a></div>
+<div class="navi-end">&nbsp;</div>
+
+</div>
+
+<div class="copyrights" align="center">
+<img src="../images/copyrights.gif" alt="Copyright (c) 2004-2009 the Seasar Foundation and others. all rights reserved." width="760" height="20">
+</div>
+</div>
+</body>
+</html>

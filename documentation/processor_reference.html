@@ -91,7 +91,7 @@
 
     <h4><a id="attribute" name="attribute"></a>■attribute プロセッサ <span class="to_toc">(<a href="#toc" title="目次へ">↑目次へ</a>)</span></h4>
     <p><a href="echo.html">echo と組み合わせた利用例</a></p>
-    <p>echo プロセッサおよび element プロセッサの子として使用し、親プロセッサに属性を追加します。value の実行結果が null の場合はその属性を削除します。</p>
+    <p>echo プロセッサおよび element プロセッサの子として使用し、親プロセッサに属性を追加します。value の実行結果が null の場合はその属性を削除します。<a href="#write">write プロセッサ</a>のescapeXml, escapeWhitespace相当の変換をしてから出力します。(<strong>※</strong>:1.1.25 で追加されたもの)</p>
     <table align="center" cellpadding="5" cellspacing="2" class="tbline">
     <thead><tr><th nowrap="nowrap"><div>属性名</div></th><th nowrap="nowrap"><div>説明</div></th><th><div>必須</div></th><th><div>値の制限</div></th><th><div>規定値</div></th></tr></thead>
     <tbody>
@@ -108,6 +108,13 @@
       <td><div align="center">○</div></td>
       <td></td>
       <td></td>
+    </tr>
+    <tr>
+      <td nowrap="nowrap">escapeAmp (<strong>※</strong>)</td>
+      <td>true の場合、value の<br>&amp;<br>を<br>&amp;amp;<br>に置換する。</td>
+      <td></td>
+      <td>論理値</td>
+      <td>true</td>
     </tr>
     </tbody>
     </table>
@@ -235,21 +242,21 @@
     </tr>
     <tr>
       <td nowrap="nowrap">escapeXml</td>
-      <td>value の<br>&amp; , &lt; , &gt; , &quot; , &#39;<br>を<br>&amp;amp; , &amp;lt; , &amp;gt; , &amp;quot; , &amp;#39;<br>に置換する。</td>
+      <td>true の場合、value の<br>&amp; , &lt; , &gt; , &quot;<br>を<br>&amp;amp; , &amp;lt; , &amp;gt; , &amp;quot;<br>に置換する。</td>
       <td></td>
       <td>論理値</td>
       <td>true</td>
     </tr>
     <tr>
       <td nowrap="nowrap">escapeWhitespace</td>
-      <td>value の<br>CR , LF , TAB文字<br>を<br>&amp;#xd; , &amp;#xa; , &amp;#x9;<br>に置換する。</td>
+      <td>true の場合、value の<br>CR , LF , TAB文字<br>を<br>&amp;#xd; , &amp;#xa; , &amp;#x9;<br>に置換する。</td>
       <td></td>
       <td>論理値</td>
       <td>false</td>
     </tr>
     <tr>
       <td nowrap="nowrap">escapeEol</td>
-      <td>value の改行コード (CRLF, CR, LF) を<br>br タグに置換する。</td>
+      <td>true の場合、value の改行コード (CRLF, CR, LF) を<br>br タグに置換する。</td>
       <td></td>
       <td>論理値</td>
       <td>true</td>
@@ -486,7 +493,7 @@
 
 
 <div class="navi"><a href="#top">↑このページのトップへ</a></div>
-<div class="navi-prev"><a href="throwable.html">＜ 3-12. 例外発生時のページ</a></div>
+<div class="navi-prev"><a href="include.html">＜ 3-13. SSI includeの置き換え</a></div>
 <div class="navi-next"><a href="implicit_object.html">4-2. 定義済みオブジェクト ＞</a></div>
 <div class="navi-end">&nbsp;</div>
 

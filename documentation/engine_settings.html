@@ -87,7 +87,7 @@
 
 &lt;/provider&gt;</span></pre>
 
-
+<a name="engine"></a>
 <h4>■Engine のパラメータ</h4>
 
 <p>Mayaa 標準の Engine に対するパラメータをいくつか説明します。デフォルト設定は下記の通りです。</p>
@@ -136,6 +136,7 @@
 </dl>
 
 
+<a name="templatebuilder"></a>
 <h4>■TemplateBuilder のパラメータ</h4>
 
 <p>Mayaa 標準の <code>TemplateBuilder</code> に対するパラメータをいくつか説明します。デフォルト設定は下記の通りです。</p>
@@ -154,6 +155,8 @@
         &lt;parameter name="<code>optimize</code>" value="<code>true</code>"/&gt;
         &lt;parameter name="<code>defaultCharset</code>" value="<code>UTF-8</code>"/&gt;
                 &lt;!-- <strong>※</strong>1.1.22 で追加されたパラメータ --&gt;
+        &lt;parameter name="<code>replaceSSIInclude</code>" value="<code>true</code>"/&gt;
+                &lt;!-- <strong>※</strong>1.1.25 で追加されたパラメータ --&gt;
     &lt;/templateBuilder&gt;
 &lt;/provider&gt;</span></pre>
 
@@ -168,6 +171,8 @@
     <dd>テンプレートビルド後の最適化をするかどうか設定します。最適化をすると描画パフォーマンスが向上します。"<code>true</code>" なら有効、"<code>false</code>" なら無効です。デフォルトは "<code>true</code>" です。</dd>
     <dt><code>defaultCharset</code></dt>
     <dd>HTML ファイルを読み込むときのデフォルト文字コードを指定します。デフォルトは "<code>UTF-8</code>" です。ここで指定した文字コードで HTML ファイルの先頭部分を読み込み、meta タグによる charset 指定を見つけたときは、meta タグで指定された文字コードで読み込み直します。</dd>
+    <dt><code>replaceSSIInclude</code></dt>
+    <dd><a href="include.html">SSI の include 記述を insert プロセッサに置き換える機能</a>を有効にするかを指定します。デフォルトは "<code>false</code>" です。</dd>
 </dl>
 
 

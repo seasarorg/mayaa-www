@@ -40,6 +40,17 @@
 
     
 
+    <h4><a id="ver1.1.25" name="ver1.1.25"></a>変更点 1.1.24 -> 1.1.25 (2009/06/07)</h4>
+    <ul>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-58">JIRA[MAYAA-58]</a> AutoBuildでコンテキストパスが"/"以外の場合に相対パスの絶対パス化処理が正しく動作しない問題を修正しました。</li>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-62">JIRA[MAYAA-62]</a> deserializeした際、.mayaaの無いページの場合にテンプレートを再ビルドしてしまう問題を修正しました。</li>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-67">JIRA[MAYAA-67]</a> スクリプトでoriginalNodeのtoString()を実行したときに無限ループが発生する問題を修正しました。</li>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-69">JIRA[MAYAA-69]</a> カスタムタグからコンポーネントを使う側の方に親を探しに行くよう修正しました。</li>
+      <li class="enhance">同梱するRhinoのバージョンを1.7-r2にアップデートしました。/li>
+      </li><li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-64">JIRA[MAYAA-64]</a> <a href="../documentation/include.html">SSI Includeの記述をm:insertに置き換える処理</a>を実装しました。また、この処理が有効なとき、拡張子".inc"のファイルは自動的に全体をm:doRender(name="")で囲むようにしました。ただしmime-mappingで".inc"をHTMLかXHTMLとして設定する必要があります。</li>
+      <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-68">JIRA[MAYAA-68]</a> attributeプロセッサに、&をエスケープするかどうかを決めるescapeAmp属性を追加しました。デフォルトはtrueです。</li>
+    </ul>
+
     <h4><a id="ver1.1.24" name="ver1.1.24"></a>変更点 1.1.23 -> 1.1.24 (2009/03/23)</h4>
     <ul>
       <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-60">JIRA[MAYAA-60]</a> Servlet 2.5, JSP 2.1 の xsd を利用するファイルをパースできるようにしました。JSP 2.1 の tld をパースできなかった問題が解決します。</li>
