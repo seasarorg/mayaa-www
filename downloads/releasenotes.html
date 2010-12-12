@@ -40,6 +40,14 @@
 
     
 
+    <h4><a id="ver1.1.28" name="ver1.1.28"></a>変更点 1.1.27 -> 1.1.28 (2010/12/12)</h4>
+    <ul>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-75">JIRA[MAYAA-75]</a> 動作中にdefault.mayaaのbeforeRenderを書き換えても反映されない問題を修正しました。</li>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-77">JIRA[MAYAA-77]</a> JIRA[MAYAA-77] ボディを処理する必要のあるタグの場合に、子のプロセッサでflushすると親よりも先に子が出力されてしまう問題を修正しました。</li>
+      <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-76">JIRA[MAYAA-76]</a> テンプレートに対する.mayaaファイル、および親mayaaファイルを探す処理を拡張可能にしました。org.seasar.mayaa.provider.ServiceProviderファイルのparentSpecificationResolverを 差し替えることで独自の処理に入れ換えられます。</li>
+      <li class="enhance">XML/XHTMLの出力時のxml宣言で?の前の空白をtrimして出力するようにしました。</li>
+    </ul>
+
     <h4><a id="ver1.1.27" name="ver1.1.27"></a>変更点 1.1.26 -> 1.1.27 (2009/10/30)</h4>
     <ul>
       <li class="enhance">MayaaApplicationFilterで例外ページの処理をできるようにしました。Strutsなどのフレームワークで発生した例外を対象とし、Mayaaのエラーページ処理に回せるようにします。web.xmlでMayaaApplicationFilterを設定し、パラメータ"handleException"に"true"を設定すると有効になります。</li>
@@ -55,6 +63,7 @@
       <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-70">JIRA[MAYAA-70]</a> メインページとレイアウトページの階層が異なる場合にinsertプロセッサの動的相対パス解決で失敗する問題を修正しました。(1.1.25で発生)</li>
     </ul>
 
+
     <h4><a id="ver1.1.25" name="ver1.1.25"></a>変更点 1.1.24 -> 1.1.25 (2009/06/07)</h4>
     <ul>
       <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-58">JIRA[MAYAA-58]</a> AutoBuildでコンテキストパスが"/"以外の場合に相対パスの絶対パス化処理が正しく動作しない問題を修正しました。</li>
@@ -65,8 +74,6 @@
       <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-64">JIRA[MAYAA-64]</a> <a href="../documentation/include.html">SSI Includeの記述をm:insertに置き換える処理</a>を実装しました。また、この処理が有効なとき、拡張子".inc"のファイルは自動的に全体をm:doRender(name="")で囲むようにしました。ただしmime-mappingで".inc"をHTMLかXHTMLとして設定する必要があります。</li>
       <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-68">JIRA[MAYAA-68]</a> attributeプロセッサに、&をエスケープするかどうかを決めるescapeAmp属性を追加しました。デフォルトはtrueです。</li>
     </ul>
-
-
     <h4><a id="ver1.1.24" name="ver1.1.24"></a>変更点 1.1.23 -> 1.1.24 (2009/03/23)</h4>
     <ul>
       <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-60">JIRA[MAYAA-60]</a> Servlet 2.5, JSP 2.1 の xsd を利用するファイルをパースできるようにしました。JSP 2.1 の tld をパースできなかった問題が解決します。</li>
