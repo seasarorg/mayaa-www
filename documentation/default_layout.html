@@ -66,7 +66,7 @@
 
 <h3><a name="setting"></a>templateBuilder の設定</h3>
 
-<p><code>templateBuilder</code> の設定を変更し、<code>TemplateBuilderImpl</code> の代わりに <code>DefaultLayoutTemplateBuilderImpl</code> を使うようにし、デフォルトレイアウト用の追加パラメータを設定します。</p>
+<p><code>templateBuilder</code> の設定を変更し、<code>TemplateBuilderImpl</code> の代わりに <code>DefaultLayoutTemplateBuilder</code> を使うようにし、デフォルトレイアウト用の追加パラメータを設定します。</p>
 
 <pre>
 <code>org.seasar.mayaa.provider.ServiceProvider</code>
@@ -78,7 +78,7 @@
 &lt;provider&gt;
     &lt;templateBuilder
             <strong>class="org.seasar.mayaa.impl.builder.</strong>
-                             <strong>DefaultLayoutTemplateBuilderImpl"</strong>&gt;
+                             <strong>DefaultLayoutTemplateBuilder"</strong>&gt;
         (<a href="equals_id_resolver.html">標準の <code>TemplateBuilderImpl</code> と同じ部分</a>は省略)
         &lt;parameter name="defaultLayoutPageName"
                              value="/defaultlayout.html"/&gt;
@@ -86,7 +86,7 @@
     &lt;/templateBuilder&gt;
 &lt;/provider&gt;</span></pre>
 
-<p><code>DefaultLayoutTemplateBuilderImpl</code> のデフォルトレイアウト用パラメータは 2 つです。その他は <code>TemplateBuilderImpl</code> と同じパラメータを使えます。</p>
+<p><code>DefaultLayoutTemplateBuilder</code> のデフォルトレイアウト用パラメータは 2 つです。その他は <code>TemplateBuilderImpl</code> と同じパラメータを使えます。</p>
 
 <dl class="list">
     <dt><code>defaultLayoutPageName</code></dt>
