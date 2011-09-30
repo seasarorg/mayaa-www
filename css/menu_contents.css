@@ -55,7 +55,7 @@ a:hover {
 }
 
 .menuabout a:hover img {
-	visibility: hidden; 
+/*	visibility: hidden; */
 } 
 
 .menunews {
@@ -67,7 +67,7 @@ a:hover {
 }
 
 .menunews a:hover img {
-	visibility: hidden; 
+/*	visibility: hidden; */
 } 
 
 .menudocs {
@@ -79,7 +79,7 @@ a:hover {
 }
 
 .menudocs a:hover img {
-	visibility: hidden; 
+/*	visibility: hidden; */
 } 
 
 .menudown {
@@ -91,7 +91,7 @@ a:hover {
 }
 
 .menudown a:hover img {
-	visibility: hidden; 
+/*	visibility: hidden; */
 } 
 
 .menusubpro {
@@ -103,7 +103,7 @@ a:hover {
 }
 
 .menusubpro a:hover img {
-	visibility: hidden; 
+/*	visibility: hidden; */
 } 
 
 .menusupport {
@@ -115,7 +115,7 @@ a:hover {
 }
 
 .menusupport a:hover img {
-	visibility: hidden; 
+/*	visibility: hidden; */
 } 
 
 li {
