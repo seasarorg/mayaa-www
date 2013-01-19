@@ -40,6 +40,11 @@
 
     
 
+    <h4><a id="ver1.1.30" name="ver1.1.30"></a>変更点 1.1.29 -> 1.1.30 (2013/01/19)</h4>
+    <ul>
+      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-80">JIRA[MAYAA-80]</a> Tomcat7上でload関数を使用した際に毎回コンパイルになってPermGenを使用していた問題を修正しました。</li>
+    </ul>
+
     <h4><a id="ver1.1.29" name="ver1.1.29"></a>変更点 1.1.28 -> 1.1.29 (2012/04/07)</h4>
     <ul>
       <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-78">JIRA[MAYAA-78]</a> commons-beanutilsを1.8.3に更新しました。</li>
@@ -55,6 +60,8 @@
       <li class="enhance">XML/XHTMLの出力時のxml宣言で?の前の空白をtrimして出力するようにしました。</li>
     </ul>
 
+
+
     <h4><a id="ver1.1.27" name="ver1.1.27"></a>変更点 1.1.26 -> 1.1.27 (2009/10/30)</h4>
     <ul>
       <li class="enhance">MayaaApplicationFilterで例外ページの処理をできるようにしました。Strutsなどのフレームワークで発生した例外を対象とし、Mayaaのエラーページ処理に回せるようにします。web.xmlでMayaaApplicationFilterを設定し、パラメータ"handleException"に"true"を設定すると有効になります。</li>
@@ -64,7 +71,6 @@
       <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-72">JIRA[MAYAA-72]</a> テンプレートファイル置き換え時に解放されないオブジェクトが発生する問題を修正しました。</li>
       <li class="enhance"><a href="https://www.seasar.org/issues/browse/MAYAA-73">JIRA[MAYAA-73]</a> m:noCache="true"のときにレスポンスのCache-Controlヘッダの値をServiceProviderファイルで設定できるようにしました。互換性のため、デフォルト値はこれまでどおり"no-cache"ですが、firefoxで戻るボタンのときにキャッシュを使わせないようにするには"no-cache, no-store"にする必要があります。キャッシュしないという動作になるため、挙動がすこし変わる場合があります。</li>
     </ul>
-
 
     <h4><a id="ver1.1.26" name="ver1.1.26"></a>変更点 1.1.25 -> 1.1.26 (2009/06/09)</h4>
     <ul>
