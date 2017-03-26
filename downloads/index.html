@@ -40,14 +40,14 @@
     <!-- stable -->
     <h3><a id="new" name="new"></a>最新のリリース</h3>
 
-    <h4>Mayaa 1.1.32 (2013/08/12)</h4>
+    <h4>Mayaa 1.1.33 (2017/03/27)</h4>
     <br><!-- for IE -->
+    <p>以後は<a href="https://github.com/seasarorg/mayaa">GitHub</a>での更新となります。</p>
     <div class="download_direct">
-      <div class="filelink"><a href="mayaa-1.1.32.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Blank War</a></div>
-      <div class="filelink"><a href="mayaa-getting-started-1.1.32.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 導入 War</a> (<a href="../documentation/install.html">インストール方法</a>)</div>
-      <div class="filelink"><a href="mayaa-project-1.1.32.zip"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Eclipse Project Zip</a></div>
-    </div>
+      <div class="filelink"><a href="http://repo1.maven.org/maven2/com/github/seasarorg/mayaa/mayaa/1.1.33/"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Mavenのjarをダウンロード</a></div>
+      <div></div>
 
+    </div>
 
 
     <h3><a id="changelog" name="changelog"></a>変更履歴</h3>
@@ -55,25 +55,15 @@
     <div class="releasenote">(<a href="releasenotes.html">過去の変更履歴</a>)</div>
 
 
-    
-
-    <h4><a id="ver1.1.32" name="ver1.1.32"></a>変更点 1.1.31 -> 1.1.32 (2013/08/12)</h4>
+    <h4><a id="ver1.1.33" name="ver1.1.33"></a>変更点 1.1.32 -> 1.1.33 (2017/03/27)</h4>
     <ul>
-      <li class="fix"> 高負荷時にスクリプトのキャッシュ取得で無限ループになる場合がある問題を修正しました。</li>
+      <li class="enhance"> Mavenについては<a href="https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22mayaa%22">Maven Central Repositoryへの公開</a>に変更しました。</li>
+      <li class="fix"> ファイルが存在しない場合、タイムスタンプチェックが無効なときにチェックし続ける問題を修正しました。</li>
+      <li class="fix"> Mayaaのforwardをしたさいにpageスコープのキャッシュが以前のままになっている問題を修正しました。</li>
+      <li class="fix"> Servlet API 3.1に対応しました。</li>
+      <li class="fix"> HttpSessionの無効判定を修正しました。</li>
+      <li class="fix"> ページオブジェクトのキャッシュの同一判定を修正しました。</li>
     </ul>
-
-    <h4><a id="ver1.1.31" name="ver1.1.31"></a>変更点 1.1.30 -> 1.1.31 (2013/04/07)</h4>
-    <ul>
-      <li class="fix"> 高負荷時にビルド結果取得に失敗する場合がある問題を修正しました。</li>
-      <li class="fix"> Webコンテナを使わない場合などのビルド時にNullPointerExceptionが発生する場合がある問題を修正しました。</li>
-      <li class="fix"> 1.1.30でFileGeneratorを使う処理が失敗するようになった問題を修正しました。</li>
-    </ul>
-
-    <h4><a id="ver1.1.30" name="ver1.1.30"></a>変更点 1.1.29 -> 1.1.30 (2013/01/19)</h4>
-    <ul>
-      <li class="fix"><a href="https://www.seasar.org/issues/browse/MAYAA-80">JIRA[MAYAA-80]</a> Tomcat7上でload関数を使用した際に毎回コンパイルになってPermGenを使用していた問題を修正しました。</li>
-    </ul>
-
 
 
     <h3><a id="sample" name="sample"></a>サンプル</h3>
@@ -95,43 +85,49 @@
     <h3><a id="past" name="past"></a>過去のリリース</h3>
 
 
+    <h4>バージョン 1.1.32 (2013/08/12)</h4>
+    <ul>
+      <li><a href="mayaa-1.1.32.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Blank War</a></li>
+      <li><a href="mayaa-getting-started-1.1.32.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 導入 War</a></li>
+      <li><a href="mayaa-project-1.1.32.zip"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Eclipse Project Zip</a></li>
+
+      <li><a href="mayaa-sample-1.1.32.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Mayaaサンプル集</a></li>
+      <li><a href="mayaa-hangman-struts-1.1.32.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Struts利用版Hangmanゲーム</a></li>
+      <li><a href="mayaa-hangman-solo-1.1.32.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Mayaa単独版Hangmanゲーム</a></li>
+      <li><a href="mayaa-libman-1.1.32.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Libman - Mayaa Library Manager</a></li>
+      <li><a href="mayaa-sample-app-1.1.32.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 申し込みフォームアプリケーション</a></li>
+
+    </ul>
+
     <h4>バージョン 1.1.31 (2013/04/07)</h4>
     <ul>
       <li><a href="mayaa-1.1.31.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Blank War</a></li>
       <li><a href="mayaa-getting-started-1.1.31.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 導入 War</a></li>
       <li><a href="mayaa-project-1.1.31.zip"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Eclipse Project Zip</a></li>
 
-      <li><a href="mayaa-sample-1.1.31.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Mayaaサンプル集</a></li>
-      <li><a href="mayaa-hangman-struts-1.1.31.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Struts利用版Hangmanゲーム</a></li>
-      <li><a href="mayaa-hangman-solo-1.1.31.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Mayaa単独版Hangmanゲーム</a></li>
-      <li><a href="mayaa-libman-1.1.31.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Libman - Mayaa Library Manager</a></li>
-      <li><a href="mayaa-sample-app-1.1.31.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 申し込みフォームアプリケーション</a></li>
-
     </ul>
-
-
-    <h4>バージョン 1.1.30 (2013/01/19)</h4>
-    <ul>
-      <li><a href="mayaa-1.1.30.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Blank War</a></li>
-      <li><a href="mayaa-getting-started-1.1.30.war"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> 導入 War</a></li>
-      <li><a href="mayaa-project-1.1.30.zip"><img src="../images/icon_download_direct.gif" alt="download" width="24" height="17"> Eclipse Project Zip</a></li>
-
-    </ul>
-
 
 
     <h3><a id="source" name="source"></a>ソースコード</h3>
 
     <p>ソースコードはSubversion（https/WebDAV）で管理されています。下記URLにTortoiseSVNやSubclipseなどのSVNクライアントでアクセスすると、ソースコードを取得することができます。WEBブラウザよりアクセスする場合、WebSVNをご利用いただけます。</p>
     <ul>
-      <li>リポジトリ: <a href="https://www.seasar.org/svn/mayaa/">https://www.seasar.org/svn/mayaa/</a></li>
-      <li><a href="http://svn.seasar.org/browse/trunk/mayaa/?root=mayaa">ViewVC で閲覧</a></li>
+        <li>GitHub: <a href="https://github.com/seasarorg/mayaa">https://github.com/seasarorg/mayaa</a></li>
     </ul>
 
 
     <h3><a id="maven2" name="maven2"></a>Maven2からの利用</h3>
 
-    <p>Mayaaはバージョン1.1.0以降、seasar.orgのMaven2リポジトリで配布しています。詳しくはWikiをご覧ください。(<a href="http://www.seasar.org/wiki/index.php?Maven2RepoRemote">http://www.seasar.org/wiki/index.php?Maven2RepoRemote</a>)</p>
+    <p>Mayaaはバージョン1.1.33以降、Central Maven Repositoryで配布しています。</p>
+
+    <ul>
+      <li>groupId: com.github.seasarorg.mayaa</li>
+      <li>artifactId: mayaa</li>
+    </ul>
+
+    <h4><a id="maven2_old" name="maven2_old"></a>旧バージョン</h4>
+
+    <p>バージョン1.1.0から1.1.32まではseasar.orgのMaven2リポジトリで配布しています。詳しくはWikiをご覧ください。(<a href="http://www.seasar.org/wiki/index.php?Maven2RepoRemote">http://www.seasar.org/wiki/index.php?Maven2RepoRemote</a>)</p>
     <ul>
       <li>seasar.orgのMaven2レポジトリ: <a href="http://maven.seasar.org/maven2/">http://maven.seasar.org/maven2/</a></li>
       <li>seasar.orgのMaven2-SNAPSHOTレポジトリ: <a href="http://maven.seasar.org/maven2-snapshot/">http://maven.seasar.org/maven2-snapshot/</a></li>
