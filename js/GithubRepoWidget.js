@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					'</div>'+
 					'<div class="github-box-content">'+
 					'<p class="description"><span></span> &mdash; <a href="' + repoUrl + '#readme">Read More</a></p>'+
-					'<p class="link"></p>'+
+					//'<p class="link"></p>'+
 					'</div>'+
 					'<div class="github-box-download">'+
 					'<div class="updated"></div>'+
